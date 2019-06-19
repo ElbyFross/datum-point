@@ -224,7 +224,7 @@ namespace UniformServer
             }
         }
 
-
+        #region Transmission APIO
         /// <summary>
         /// Open server line that will send answer backward to cliend by dirrect line.
         /// Line will established relative to the data shared by client query.
@@ -286,7 +286,7 @@ namespace UniformServer
             Console.WriteLine();
             return true;
         }
-
+        #endregion
 
         #region Multithreading
         /// <summary>
