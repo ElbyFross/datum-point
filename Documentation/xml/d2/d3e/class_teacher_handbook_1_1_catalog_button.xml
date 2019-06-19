@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d2/d3e/class_teacher_handbook_1_1_catalog_button" kind="class" language="C#" prot="public">
+    <compoundname>TeacherHandbook::CatalogButton</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="d2/d3e/class_teacher_handbook_1_1_catalog_button_1ac3f18f92030a50e2fb463d19c78f6cc0" prot="package" static="no" mutable="no">
+        <type>System.Windows.Controls.Button</type>
+        <definition>System.Windows.Controls.Button TeacherHandbook.CatalogButton.catalogButton</definition>
+        <argsstring></argsstring>
+        <name>catalogButton</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/CatalogButton.g.i.cs" line="46" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/CatalogButton.g.i.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d2/d3e/class_teacher_handbook_1_1_catalog_button_1a841881f1c8ba418ddd09ae373f0a51aa" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TeacherHandbook.CatalogButton._contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/CatalogButton.g.i.cs" line="51" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/CatalogButton.g.i.cs" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d2/d3e/class_teacher_handbook_1_1_catalog_button_1adb12d2ac86d6ce2674849f4fde4d4517" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TeacherHandbook.CatalogButton.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/CatalogButton.g.i.cs" line="58" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/CatalogButton.g.i.cs" bodystart="58" bodyend="70"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d2/d3e/class_teacher_handbook_1_1_catalog_button_1a0accf252602f5a0dc642e299bb64b970" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. TeacherHandbook.CatalogButton.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/CatalogButton.g.i.cs" line="78" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/CatalogButton.g.i.cs" bodystart="78" bodyend="92"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="d2/d3e/class_teacher_handbook_1_1_catalog_button" kindref="compound">CatalogButton</ref> </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="93">
+        <label>TeacherHandbook.CatalogButton</label>
+        <link refid="d2/d3e/class_teacher_handbook_1_1_catalog_button"/>
+        <childnode refid="94" relation="public-inheritance">
+        </childnode>
+        <childnode refid="95" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="94">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="95">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="99">
+        <label>System</label>
+      </node>
+      <node id="96">
+        <label>TeacherHandbook.CatalogButton</label>
+        <link refid="d2/d3e/class_teacher_handbook_1_1_catalog_button"/>
+        <childnode refid="97" relation="public-inheritance">
+        </childnode>
+        <childnode refid="98" relation="public-inheritance">
+        </childnode>
+        <childnode refid="99" relation="usage">
+          <edgelabel>catalogButton</edgelabel>
+        </childnode>
+      </node>
+      <node id="97">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="98">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/CatalogButton.g.i.cs" line="41" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/CatalogButton.g.i.cs" bodystart="41" bodyend="93"/>
+    <listofallmembers>
+      <member refid="d2/d3e/class_teacher_handbook_1_1_catalog_button_1a841881f1c8ba418ddd09ae373f0a51aa" prot="private" virt="non-virtual"><scope>TeacherHandbook::CatalogButton</scope><name>_contentLoaded</name></member>
+      <member refid="d2/d3e/class_teacher_handbook_1_1_catalog_button_1ac3f18f92030a50e2fb463d19c78f6cc0" prot="package" virt="non-virtual"><scope>TeacherHandbook::CatalogButton</scope><name>catalogButton</name></member>
+      <member refid="d2/d3e/class_teacher_handbook_1_1_catalog_button_1a0accf252602f5a0dc642e299bb64b970" prot="private" virt="non-virtual"><scope>TeacherHandbook::CatalogButton</scope><name>Connect</name></member>
+      <member refid="d2/d3e/class_teacher_handbook_1_1_catalog_button_1adb12d2ac86d6ce2674849f4fde4d4517" prot="public" virt="non-virtual"><scope>TeacherHandbook::CatalogButton</scope><name>InitializeComponent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

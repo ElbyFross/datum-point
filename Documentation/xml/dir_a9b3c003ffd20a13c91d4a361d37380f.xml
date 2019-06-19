@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_a9b3c003ffd20a13c91d4a361d37380f" kind="dir">
+    <compoundname>D:/Work/Tools/Plugins/THB Plugin Lesson/obj/Debug</compoundname>
+    <innerdir refid="dir_fc73e58113fef615b4ab163e500c9b22">D:/Work/Tools/Plugins/THB Plugin Lesson/obj/Debug/LessonBoard</innerdir>
+    <innerfile refid="d8/d4c/_debug_2_assesments_8g_8cs">Assesments.g.cs</innerfile>
+    <innerfile refid="d2/ddb/_debug_2_assesments_8g_8i_8cs">Assesments.g.i.cs</innerfile>
+    <innerfile refid="d4/d27/_debug_2_attendance_log_8g_8cs">AttendanceLog.g.cs</innerfile>
+    <innerfile refid="d3/d50/_debug_2_attendance_log_8g_8i_8cs">AttendanceLog.g.i.cs</innerfile>
+    <innerfile refid="d6/d0e/_debug_2_lesson_board_8g_8cs">LessonBoard.g.cs</innerfile>
+    <innerfile refid="d1/d38/_debug_2_lesson_board_8g_8i_8cs">LessonBoard.g.i.cs</innerfile>
+    <innerfile refid="db/d86/_debug_2_repository_8g_8cs">Repository.g.cs</innerfile>
+    <innerfile refid="d2/d60/_debug_2_repository_8g_8i_8cs">Repository.g.i.cs</innerfile>
+    <innerfile refid="d0/d5c/_plugins_2_t_h_b_01_plugin_01_lesson_2obj_2_debug_2_user_control1_8g_8i_8cs">UserControl1.g.i.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/Plugins/THB Plugin Lesson/obj/Debug/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d4/d31/namespace_t_h_b___plugin___social_1_1_personal_statistic" kind="namespace" language="C#">
+    <compoundname>THB_Plugin_Social::PersonalStatistic</compoundname>
+    <innerclass refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic" prot="public">THB_Plugin_Social::PersonalStatistic::PersonalStatistic</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic/PersonalStatistic.g.cs" line="35" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="df/d5d/_exam_planner_8xaml_8cs" kind="file" language="C#">
+    <compoundname>ExamPlanner.xaml.cs</compoundname>
+    <innerclass refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner" prot="public">THB_Plugin_Exams::ExamPlanner</innerclass>
+    <innernamespace refid="da/d44/namespace_t_h_b___plugin___exams">THB_Plugin_Exams</innernamespace>
+    <innernamespace refid="d7/d10/namespace_system_1_1_windows">System::Windows</innernamespace>
+    <innernamespace refid="de/da8/namespace_system_1_1_windows_1_1_controls">System::Windows::Controls</innernamespace>
+    <innernamespace refid="d6/dfa/namespace_system_1_1_windows_1_1_data">System::Windows::Data</innernamespace>
+    <innernamespace refid="da/ddf/namespace_system_1_1_windows_1_1_documents">System::Windows::Documents</innernamespace>
+    <innernamespace refid="d7/da9/namespace_system_1_1_windows_1_1_input">System::Windows::Input</innernamespace>
+    <innernamespace refid="db/d3d/namespace_system_1_1_windows_1_1_media">System::Windows::Media</innernamespace>
+    <innernamespace refid="d4/d2e/namespace_system_1_1_windows_1_1_media_1_1_imaging">System::Windows::Media::Imaging</innernamespace>
+    <innernamespace refid="d6/da6/namespace_system_1_1_windows_1_1_navigation">System::Windows::Navigation</innernamespace>
+    <innernamespace refid="dc/d6e/namespace_system_1_1_windows_1_1_shapes">System::Windows::Shapes</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Collections.Generic;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Linq;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Text;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Threading.Tasks;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Windows;</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Windows.Controls;</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Windows.Data;</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Windows.Documents;</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Windows.Input;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Windows.Media;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Windows.Media.Imaging;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Windows.Navigation;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Windows.Shapes;</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d0/d51/namespace_uniform_client" kindref="compound">UniformClient</ref>.<ref refid="da/d8c/namespace_uniform_client_1_1_plugins" kindref="compound">Plugins</ref>;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17" refid="da/d44/namespace_t_h_b___plugin___exams" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="da/d44/namespace_t_h_b___plugin___exams" kindref="compound">THB_Plugin_Exams</ref></highlight></codeline>
+<codeline lineno="18"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="22" refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">partial<sp/>class<sp/></highlight><highlight class="normal"><ref refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner" kindref="compound">ExamPlanner</ref><sp/>:<sp/>UserControl,<sp/><ref refid="d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin" kindref="compound">IPlugin</ref></highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner" kindref="compound">ExamPlanner</ref>()</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1aa5d0299d3f5a4130f99df3b9628d2f7a" kindref="member">InitializeComponent</ref>();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="dd/db0/class_uniform_client_1_1_plugins_1_1_menu_item_meta" kindref="compound">MenuItemMeta</ref><sp/>Meta<sp/>{<sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">;<sp/></highlight><highlight class="keyword">set</highlight><highlight class="normal">;<sp/>}<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="dd/db0/class_uniform_client_1_1_plugins_1_1_menu_item_meta" kindref="compound">MenuItemMeta</ref>()</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>defaultTitle<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;Exam<sp/>planner&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>domain<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;30_exams.10_examPlanner&quot;</highlight><highlight class="normal">,</highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>titleDictionaryCode<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;p_podshyvalov_examPlanner_menuTitle&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>};</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>OnStart(</highlight><highlight class="keywordtype">object</highlight><highlight class="normal"><sp/>sender)</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="da/d93/namespace_wpf_handler" kindref="compound">WpfHandler</ref>.<ref refid="d3/dfd/namespace_wpf_handler_1_1_plugins" kindref="compound">Plugins</ref>.<ref refid="d2/d9a/class_wpf_handler_1_1_plugins_1_1_a_p_i" kindref="compound">API</ref>.OpenGUI(</highlight><highlight class="keyword">this</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/Work/Tools/Plugins/THB Plugin Exams/ExamPlanner.xaml.cs"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,98 @@
+\hypertarget{interface_uniform_queries_1_1_i_query_handler_processor}{}\section{Uniform\+Queries.\+I\+Query\+Handler\+Processor Interface Reference}
+\label{interface_uniform_queries_1_1_i_query_handler_processor}\index{Uniform\+Queries.\+I\+Query\+Handler\+Processor@{Uniform\+Queries.\+I\+Query\+Handler\+Processor}}
+
+
+All classes that implements this interface will automaticly detected by Queries\+A\+PI via first use and connected to queries processing.  
+
+
+Inheritance diagram for Uniform\+Queries.\+I\+Query\+Handler\+Processor\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_uniform_queries_1_1_i_query_handler_processor_a60538b1b29c5d1d3bc67db28a265677a}{Execute}} (string\mbox{[}$\,$\mbox{]} query\+Parts)
+\begin{DoxyCompactList}\small\item\em Methods that process query. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{interface_uniform_queries_1_1_i_query_handler_processor_a435493887db64defdb6019c3c418a4d4}{Is\+Target}} (string\mbox{[}$\,$\mbox{]} query\+Parts)
+\begin{DoxyCompactList}\small\item\em Check by the entry params does it target Query Handler. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{interface_uniform_queries_1_1_i_query_handler_processor_ae7323367177cd11c787d61029de5b044}{Description}} (string culture\+Key)
+\begin{DoxyCompactList}\small\item\em Return the description relative to the lenguage code or default if not found. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+All classes that implements this interface will automaticly detected by Queries\+A\+PI via first use and connected to queries processing. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{interface_uniform_queries_1_1_i_query_handler_processor_ae7323367177cd11c787d61029de5b044}\label{interface_uniform_queries_1_1_i_query_handler_processor_ae7323367177cd11c787d61029de5b044}} 
+\index{Uniform\+Queries\+::\+I\+Query\+Handler\+Processor@{Uniform\+Queries\+::\+I\+Query\+Handler\+Processor}!Description@{Description}}
+\index{Description@{Description}!Uniform\+Queries\+::\+I\+Query\+Handler\+Processor@{Uniform\+Queries\+::\+I\+Query\+Handler\+Processor}}
+\subsubsection{\texorpdfstring{Description()}{Description()}}
+{\footnotesize\ttfamily string Uniform\+Queries.\+I\+Query\+Handler\+Processor.\+Description (\begin{DoxyParamCaption}\item[{string}]{culture\+Key }\end{DoxyParamCaption})}
+
+
+
+Return the description relative to the lenguage code or default if not found. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em culture\+Key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_aa91ce7c90a325c70aab9aaf112fe49f3}{T\+H\+B\+\_\+\+Data\+\_\+\+Server\+\_\+\+Queries.\+G\+E\+T\+\_\+\+D\+A\+Y\+S\+\_\+\+R\+A\+N\+GE}}.
+
+\mbox{\Hypertarget{interface_uniform_queries_1_1_i_query_handler_processor_a60538b1b29c5d1d3bc67db28a265677a}\label{interface_uniform_queries_1_1_i_query_handler_processor_a60538b1b29c5d1d3bc67db28a265677a}} 
+\index{Uniform\+Queries\+::\+I\+Query\+Handler\+Processor@{Uniform\+Queries\+::\+I\+Query\+Handler\+Processor}!Execute@{Execute}}
+\index{Execute@{Execute}!Uniform\+Queries\+::\+I\+Query\+Handler\+Processor@{Uniform\+Queries\+::\+I\+Query\+Handler\+Processor}}
+\subsubsection{\texorpdfstring{Execute()}{Execute()}}
+{\footnotesize\ttfamily void Uniform\+Queries.\+I\+Query\+Handler\+Processor.\+Execute (\begin{DoxyParamCaption}\item[{string \mbox{[}$\,$\mbox{]}}]{query\+Parts }\end{DoxyParamCaption})}
+
+
+
+Methods that process query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query\+Parts} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_adb606b0ed5b0bceaa96ce14ba34158c9}{T\+H\+B\+\_\+\+Data\+\_\+\+Server\+\_\+\+Queries.\+G\+E\+T\+\_\+\+D\+A\+Y\+S\+\_\+\+R\+A\+N\+GE}}.
+
+\mbox{\Hypertarget{interface_uniform_queries_1_1_i_query_handler_processor_a435493887db64defdb6019c3c418a4d4}\label{interface_uniform_queries_1_1_i_query_handler_processor_a435493887db64defdb6019c3c418a4d4}} 
+\index{Uniform\+Queries\+::\+I\+Query\+Handler\+Processor@{Uniform\+Queries\+::\+I\+Query\+Handler\+Processor}!Is\+Target@{Is\+Target}}
+\index{Is\+Target@{Is\+Target}!Uniform\+Queries\+::\+I\+Query\+Handler\+Processor@{Uniform\+Queries\+::\+I\+Query\+Handler\+Processor}}
+\subsubsection{\texorpdfstring{Is\+Target()}{IsTarget()}}
+{\footnotesize\ttfamily bool Uniform\+Queries.\+I\+Query\+Handler\+Processor.\+Is\+Target (\begin{DoxyParamCaption}\item[{string \mbox{[}$\,$\mbox{]}}]{query\+Parts }\end{DoxyParamCaption})}
+
+
+
+Check by the entry params does it target Query Handler. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query\+Parts} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_a2b21ca7e9599161544424cd0f7e55ef4}{T\+H\+B\+\_\+\+Data\+\_\+\+Server\+\_\+\+Queries.\+G\+E\+T\+\_\+\+D\+A\+Y\+S\+\_\+\+R\+A\+N\+GE}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Work/\+Tools/\+Uniform\+Queries/I\+Query.\+cs\end{DoxyCompactItemize}

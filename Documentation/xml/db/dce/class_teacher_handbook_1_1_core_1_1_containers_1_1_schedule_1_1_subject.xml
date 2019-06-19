@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="db/dce/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_subject" kind="class" language="C#" prot="public">
+    <compoundname>TeacherHandbook::Core::Containers::Schedule::Subject</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="db/dce/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_subject_1a464bb371a4d6eb0eb9bd0e0e096a5434" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string TeacherHandbook.Core.Containers.Schedule.Subject.key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+<para>Unique key of this subject. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/Subject.cs" line="15" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/Subject.cs" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="db/dce/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_subject_1ac024684f42182cdbcf4ae477395f92a1" prot="public" static="no" mutable="no">
+        <type>Hashtable</type>
+        <definition>Hashtable TeacherHandbook.Core.Containers.Schedule.Subject.titles</definition>
+        <argsstring></argsstring>
+        <name>titles</name>
+        <initializer>= new Hashtable()</initializer>
+        <briefdescription>
+<para>Hashtable that contain titles relative to the localization. Key(string): Language key. Value (List&lt;string&gt;): List of titles that describe this subject. (Example: Math, Mathematic, H.Math, etc.) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/Subject.cs" line="22" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/Subject.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Object that describe subject data. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/Subject.cs" line="11" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/Subject.cs" bodystart="10" bodyend="23"/>
+    <listofallmembers>
+      <member refid="db/dce/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_subject_1a464bb371a4d6eb0eb9bd0e0e096a5434" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Schedule::Subject</scope><name>key</name></member>
+      <member refid="db/dce/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_subject_1ac024684f42182cdbcf4ae477395f92a1" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Schedule::Subject</scope><name>titles</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

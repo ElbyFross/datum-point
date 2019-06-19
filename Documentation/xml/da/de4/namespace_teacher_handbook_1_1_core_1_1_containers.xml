@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="da/de4/namespace_teacher_handbook_1_1_core_1_1_containers" kind="namespace" language="C#">
+    <compoundname>TeacherHandbook::Core::Containers</compoundname>
+    <innernamespace refid="d9/db4/namespace_teacher_handbook_1_1_core_1_1_containers_1_1_cross_types">TeacherHandbook::Core::Containers::CrossTypes</innernamespace>
+    <innernamespace refid="de/d44/namespace_teacher_handbook_1_1_core_1_1_containers_1_1_entities">TeacherHandbook::Core::Containers::Entities</innernamespace>
+    <innernamespace refid="d3/df6/namespace_teacher_handbook_1_1_core_1_1_containers_1_1_schedule">TeacherHandbook::Core::Containers::Schedule</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="[generated]" line="1" column="1"/>
+  </compounddef>
+</doxygen>

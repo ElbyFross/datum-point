@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor" kind="interface" language="C#" prot="public">
+    <compoundname>UniformQueries::IQueryHandlerProcessor</compoundname>
+    <derivedcompoundref refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e" prot="public" virt="non-virtual">THB_Data_Server_Queries.GET_DAYS_RANGE</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1a60538b1b29c5d1d3bc67db28a265677a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void UniformQueries.IQueryHandlerProcessor.Execute</definition>
+        <argsstring>(string[] queryParts)</argsstring>
+        <name>Execute</name>
+        <reimplementedby refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1adb606b0ed5b0bceaa96ce14ba34158c9">Execute</reimplementedby>
+        <param>
+          <type>string []</type>
+          <declname>queryParts</declname>
+        </param>
+        <briefdescription>
+<para>Methods that process query. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>queryParts</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformQueries/IQuery.cs" line="19" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1a435493887db64defdb6019c3c418a4d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool UniformQueries.IQueryHandlerProcessor.IsTarget</definition>
+        <argsstring>(string[] queryParts)</argsstring>
+        <name>IsTarget</name>
+        <reimplementedby refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1a2b21ca7e9599161544424cd0f7e55ef4">IsTarget</reimplementedby>
+        <param>
+          <type>string []</type>
+          <declname>queryParts</declname>
+        </param>
+        <briefdescription>
+<para>Check by the entry params does it target Query Handler. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>queryParts</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformQueries/IQuery.cs" line="26" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1ae7323367177cd11c787d61029de5b044" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>string</type>
+        <definition>string UniformQueries.IQueryHandlerProcessor.Description</definition>
+        <argsstring>(string cultureKey)</argsstring>
+        <name>Description</name>
+        <reimplementedby refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1aa91ce7c90a325c70aab9aaf112fe49f3">Description</reimplementedby>
+        <param>
+          <type>string</type>
+          <declname>cultureKey</declname>
+        </param>
+        <briefdescription>
+<para>Return the description relative to the lenguage code or default if not found. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cultureKey</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformQueries/IQuery.cs" line="33" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>All classes that implements this interface will automaticly detected by QueriesAPI via first use and connected to queries processing. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="160">
+        <label>UniformQueries.IQueryHandlerProcessor</label>
+        <link refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor"/>
+      </node>
+      <node id="161">
+        <label>THB_Data_Server_Queries.GET_DAYS_RANGE</label>
+        <link refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e"/>
+        <childnode refid="160" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="D:/Work/Tools/UniformQueries/IQuery.cs" line="14" column="1" bodyfile="D:/Work/Tools/UniformQueries/IQuery.cs" bodystart="13" bodyend="34"/>
+    <listofallmembers>
+      <member refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1ae7323367177cd11c787d61029de5b044" prot="public" virt="non-virtual"><scope>UniformQueries::IQueryHandlerProcessor</scope><name>Description</name></member>
+      <member refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1a60538b1b29c5d1d3bc67db28a265677a" prot="public" virt="non-virtual"><scope>UniformQueries::IQueryHandlerProcessor</scope><name>Execute</name></member>
+      <member refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1a435493887db64defdb6019c3c418a4d4" prot="public" virt="non-virtual"><scope>UniformQueries::IQueryHandlerProcessor</scope><name>IsTarget</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

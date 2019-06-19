@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d3/d7d/namespace_teacher_handbook_1_1_properties" kind="namespace" language="C#">
+    <compoundname>TeacherHandbook::Properties</compoundname>
+    <innerclass refid="de/d69/class_teacher_handbook_1_1_properties_1_1_resources" prot="public">TeacherHandbook::Properties::Resources</innerclass>
+    <innerclass refid="d0/d4b/class_teacher_handbook_1_1_properties_1_1_settings" prot="package">TeacherHandbook::Properties::Settings</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/TeacherHandbook/Properties/Resources.Designer.cs" line="11" column="1"/>
+  </compounddef>
+</doxygen>

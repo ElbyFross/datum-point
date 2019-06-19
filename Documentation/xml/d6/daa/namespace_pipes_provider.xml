@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d6/daa/namespace_pipes_provider" kind="namespace" language="C#">
+    <compoundname>PipesProvider</compoundname>
+    <innerclass refid="d4/ddf/class_pipes_provider_1_1_a_p_i" prot="public">PipesProvider::API</innerclass>
+    <innerclass refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" prot="public">PipesProvider::ServerTransmissionMeta</innerclass>
+    <innerclass refid="d1/d09/class_pipes_provider_1_1_transmission_line" prot="public">PipesProvider::TransmissionLine</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/PipesProvider/ClientAPI.cs" line="12" column="1"/>
+  </compounddef>
+</doxygen>

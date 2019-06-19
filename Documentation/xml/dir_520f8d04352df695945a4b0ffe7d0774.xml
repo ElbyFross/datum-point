@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_520f8d04352df695945a4b0ffe7d0774" kind="dir">
+    <compoundname>D:/Work/Tools/THB Data Server Queries</compoundname>
+    <innerdir refid="dir_5840e1f4c5729ef220ab3ea45630876d">D:/Work/Tools/THB Data Server Queries/obj</innerdir>
+    <innerfile refid="da/d9d/_g_e_t___d_a_y_s___r_a_n_g_e_8cs">GET_DAYS_RANGE.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/THB Data Server Queries/"/>
+  </compounddef>
+</doxygen>

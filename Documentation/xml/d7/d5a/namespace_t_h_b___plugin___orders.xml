@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d7/d5a/namespace_t_h_b___plugin___orders" kind="namespace" language="C#">
+    <compoundname>THB_Plugin_Orders</compoundname>
+    <innerclass refid="d4/d17/class_t_h_b___plugin___orders_1_1_add_order" prot="public">THB_Plugin_Orders::AddOrder</innerclass>
+    <innerclass refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board" prot="public">THB_Plugin_Orders::OrdersBoard</innerclass>
+    <innerclass refid="d2/dc6/class_t_h_b___plugin___orders_1_1_user_control1" prot="public">THB_Plugin_Orders::UserControl1</innerclass>
+    <innernamespace refid="d1/d57/namespace_t_h_b___plugin___orders_1_1_properties">THB_Plugin_Orders::Properties</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/Plugins/THB Plugin Orders/AddOrder.xaml.cs" line="18" column="1"/>
+  </compounddef>
+</doxygen>

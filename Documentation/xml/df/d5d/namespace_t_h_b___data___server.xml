@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="df/d5d/namespace_t_h_b___data___server" kind="namespace" language="C#">
+    <compoundname>THB_Data_Server</compoundname>
+    <innerclass refid="d6/d8f/class_t_h_b___data___server_1_1_commands" prot="public">THB_Data_Server::Commands</innerclass>
+    <innerclass refid="dc/d42/class_t_h_b___data___server_1_1_server" prot="public">THB_Data_Server::Server</innerclass>
+    <innernamespace refid="dd/d08/namespace_t_h_b___data___server_1_1_properties">THB_Data_Server::Properties</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/THB Data Server/Commands.cs" line="8" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,176 @@
+\hypertarget{class_uniform_queries_1_1_a_p_i}{}\section{Uniform\+Queries.\+A\+PI Class Reference}
+\label{class_uniform_queries_1_1_a_p_i}\index{Uniform\+Queries.\+A\+PI@{Uniform\+Queries.\+A\+PI}}
+
+
+Class that provide methods for handling of queries.  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static async void \mbox{\hyperlink{class_uniform_queries_1_1_a_p_i_a2f6a1dee18c3b462a8a794d68e326dba}{P\+P\+Query\+Handler\+Async}} (\mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Pipes\+Provider.\+Server\+Transmission\+Meta}} meta, string query)
+\begin{DoxyCompactList}\small\item\em Handler that can be connected as callback to default Pipes\+Provides D\+NS Handler. Will validate and decompose querie on parts and send it to target Query\+Processor. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_uniform_queries_1_1_a_p_i_a1a0ad73e1dad7f7ec61398cb33ec18a4}{Query\+Param\+Exist}} (string param, string query)
+\begin{DoxyCompactList}\small\item\em Check existing of param in query parts. Exaple entry query part\+: \char`\"{}q=\+Get\char`\"{}, where target param is \char`\"{}q\char`\"{}. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_uniform_queries_1_1_a_p_i_a0f6c53ca64000015c8bf7bed30d9c57a}{Query\+Param\+Exist}} (string param, params string\mbox{[}$\,$\mbox{]} query\+Parts)
+\begin{DoxyCompactList}\small\item\em Check existing of param in query parts. Exaple entry query part\+: \char`\"{}q=\+Get\char`\"{}, where target param is \char`\"{}q\char`\"{}. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_uniform_queries_1_1_a_p_i_a987eb23a48b90e542001cc12fcbc1ddc}{Try\+Get\+Param\+Value}} (string param, out string value, string query)
+\begin{DoxyCompactList}\small\item\em Try to find requested param\textquotesingle{}s value in query. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_uniform_queries_1_1_a_p_i_a5747ff73a111b583fa01c442ca2a2d78}{Try\+Get\+Param\+Value}} (string param, out string value, params string\mbox{[}$\,$\mbox{]} query\+Parts)
+\begin{DoxyCompactList}\small\item\em Try to find requested param\textquotesingle{}s value among query parts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static List$<$ \mbox{\hyperlink{interface_uniform_queries_1_1_i_query_handler_processor}{I\+Query\+Handler\+Processor}} $>$ \mbox{\hyperlink{class_uniform_queries_1_1_a_p_i_a8fe90206df6a1ae2b052b82c30a32037}{Query\+Processors}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em List that contain references to all query\textquotesingle{}s processors instances. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_uniform_queries_1_1_a_p_i_a8dbe3d00dcf507ab3cea1dc58e1e154f}{A\+PI}} ()
+\begin{DoxyCompactList}\small\item\em Load query handlers during first call. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_uniform_queries_1_1_a_p_i_a4af16485a14a5acbd5ac442cf0467496}\label{class_uniform_queries_1_1_a_p_i_a4af16485a14a5acbd5ac442cf0467496}} 
+static readonly List$<$ \mbox{\hyperlink{interface_uniform_queries_1_1_i_query_handler_processor}{I\+Query\+Handler\+Processor}} $>$ {\bfseries query\+Processors} = null
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that provide methods for handling of queries. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_uniform_queries_1_1_a_p_i_a8dbe3d00dcf507ab3cea1dc58e1e154f}\label{class_uniform_queries_1_1_a_p_i_a8dbe3d00dcf507ab3cea1dc58e1e154f}} 
+\index{Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}!A\+PI@{A\+PI}}
+\index{A\+PI@{A\+PI}!Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}}
+\subsubsection{\texorpdfstring{A\+P\+I()}{API()}}
+{\footnotesize\ttfamily static Uniform\+Queries.\+A\+P\+I.\+A\+PI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Load query handlers during first call. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_uniform_queries_1_1_a_p_i_a2f6a1dee18c3b462a8a794d68e326dba}\label{class_uniform_queries_1_1_a_p_i_a2f6a1dee18c3b462a8a794d68e326dba}} 
+\index{Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}!P\+P\+Query\+Handler\+Async@{P\+P\+Query\+Handler\+Async}}
+\index{P\+P\+Query\+Handler\+Async@{P\+P\+Query\+Handler\+Async}!Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}}
+\subsubsection{\texorpdfstring{P\+P\+Query\+Handler\+Async()}{PPQueryHandlerAsync()}}
+{\footnotesize\ttfamily static async void Uniform\+Queries.\+A\+P\+I.\+P\+P\+Query\+Handler\+Async (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Pipes\+Provider.\+Server\+Transmission\+Meta}}}]{meta,  }\item[{string}]{query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Handler that can be connected as callback to default Pipes\+Provides D\+NS Handler. Will validate and decompose querie on parts and send it to target Query\+Processor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em meta} & \\
+\hline
+{\em query} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_uniform_queries_1_1_a_p_i_a1a0ad73e1dad7f7ec61398cb33ec18a4}\label{class_uniform_queries_1_1_a_p_i_a1a0ad73e1dad7f7ec61398cb33ec18a4}} 
+\index{Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}!Query\+Param\+Exist@{Query\+Param\+Exist}}
+\index{Query\+Param\+Exist@{Query\+Param\+Exist}!Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}}
+\subsubsection{\texorpdfstring{Query\+Param\+Exist()}{QueryParamExist()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool Uniform\+Queries.\+A\+P\+I.\+Query\+Param\+Exist (\begin{DoxyParamCaption}\item[{string}]{param,  }\item[{string}]{query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check existing of param in query parts. Exaple entry query part\+: \char`\"{}q=\+Get\char`\"{}, where target param is \char`\"{}q\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & \\
+\hline
+{\em query} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_uniform_queries_1_1_a_p_i_a0f6c53ca64000015c8bf7bed30d9c57a}\label{class_uniform_queries_1_1_a_p_i_a0f6c53ca64000015c8bf7bed30d9c57a}} 
+\index{Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}!Query\+Param\+Exist@{Query\+Param\+Exist}}
+\index{Query\+Param\+Exist@{Query\+Param\+Exist}!Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}}
+\subsubsection{\texorpdfstring{Query\+Param\+Exist()}{QueryParamExist()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool Uniform\+Queries.\+A\+P\+I.\+Query\+Param\+Exist (\begin{DoxyParamCaption}\item[{string}]{param,  }\item[{params string \mbox{[}$\,$\mbox{]}}]{query\+Parts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Check existing of param in query parts. Exaple entry query part\+: \char`\"{}q=\+Get\char`\"{}, where target param is \char`\"{}q\char`\"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & \\
+\hline
+{\em query\+Parts} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_uniform_queries_1_1_a_p_i_a987eb23a48b90e542001cc12fcbc1ddc}\label{class_uniform_queries_1_1_a_p_i_a987eb23a48b90e542001cc12fcbc1ddc}} 
+\index{Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}!Try\+Get\+Param\+Value@{Try\+Get\+Param\+Value}}
+\index{Try\+Get\+Param\+Value@{Try\+Get\+Param\+Value}!Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}}
+\subsubsection{\texorpdfstring{Try\+Get\+Param\+Value()}{TryGetParamValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static bool Uniform\+Queries.\+A\+P\+I.\+Try\+Get\+Param\+Value (\begin{DoxyParamCaption}\item[{string}]{param,  }\item[{out string}]{value,  }\item[{string}]{query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Try to find requested param\textquotesingle{}s value in query. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & \\
+\hline
+{\em value} & \\
+\hline
+{\em query} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_uniform_queries_1_1_a_p_i_a5747ff73a111b583fa01c442ca2a2d78}\label{class_uniform_queries_1_1_a_p_i_a5747ff73a111b583fa01c442ca2a2d78}} 
+\index{Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}!Try\+Get\+Param\+Value@{Try\+Get\+Param\+Value}}
+\index{Try\+Get\+Param\+Value@{Try\+Get\+Param\+Value}!Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}}
+\subsubsection{\texorpdfstring{Try\+Get\+Param\+Value()}{TryGetParamValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static bool Uniform\+Queries.\+A\+P\+I.\+Try\+Get\+Param\+Value (\begin{DoxyParamCaption}\item[{string}]{param,  }\item[{out string}]{value,  }\item[{params string \mbox{[}$\,$\mbox{]}}]{query\+Parts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Try to find requested param\textquotesingle{}s value among query parts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em param} & \\
+\hline
+{\em value} & \\
+\hline
+{\em query\+Parts} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_uniform_queries_1_1_a_p_i_a8fe90206df6a1ae2b052b82c30a32037}\label{class_uniform_queries_1_1_a_p_i_a8fe90206df6a1ae2b052b82c30a32037}} 
+\index{Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}!Query\+Processors@{Query\+Processors}}
+\index{Query\+Processors@{Query\+Processors}!Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}}
+\subsubsection{\texorpdfstring{Query\+Processors}{QueryProcessors}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{interface_uniform_queries_1_1_i_query_handler_processor}{I\+Query\+Handler\+Processor}}$>$ Uniform\+Queries.\+A\+P\+I.\+Query\+Processors\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+List that contain references to all query\textquotesingle{}s processors instances. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Work/\+Tools/\+Uniform\+Queries/Queries\+A\+P\+I.\+cs\end{DoxyCompactItemize}

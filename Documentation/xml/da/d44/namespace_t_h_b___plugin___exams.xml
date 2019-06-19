@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="da/d44/namespace_t_h_b___plugin___exams" kind="namespace" language="C#">
+    <compoundname>THB_Plugin_Exams</compoundname>
+    <innerclass refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner" prot="public">THB_Plugin_Exams::ExamPlanner</innerclass>
+    <innerclass refid="d9/d79/class_t_h_b___plugin___exams_1_1_monitor" prot="public">THB_Plugin_Exams::Monitor</innerclass>
+    <innerclass refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor" prot="public">THB_Plugin_Exams::TestConstructor</innerclass>
+    <innerclass refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1" prot="public">THB_Plugin_Exams::UserControl1</innerclass>
+    <innernamespace refid="d1/d7f/namespace_t_h_b___plugin___exams_1_1_properties">THB_Plugin_Exams::Properties</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/Plugins/THB Plugin Exams/ExamPlanner.xaml.cs" line="18" column="1"/>
+  </compounddef>
+</doxygen>

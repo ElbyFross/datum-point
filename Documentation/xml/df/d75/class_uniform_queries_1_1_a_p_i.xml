@@ -1,0 +1,275 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="df/d75/class_uniform_queries_1_1_a_p_i" kind="class" language="C#" prot="public">
+    <compoundname>UniformQueries::API</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="df/d75/class_uniform_queries_1_1_a_p_i_1a8fe90206df6a1ae2b052b82c30a32037" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>List&lt; <ref refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor" kindref="compound">IQueryHandlerProcessor</ref> &gt;</type>
+        <definition>List&lt;IQueryHandlerProcessor&gt; UniformQueries.API.QueryProcessors</definition>
+        <argsstring></argsstring>
+        <name>QueryProcessors</name>
+        <briefdescription>
+<para>List that contain references to all query&apos;s processors instances. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformQueries/QueriesAPI.cs" line="16" column="1" bodyfile="D:/Work/Tools/UniformQueries/QueriesAPI.cs" bodystart="17" bodyend="22"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="df/d75/class_uniform_queries_1_1_a_p_i_1a4af16485a14a5acbd5ac442cf0467496" prot="private" static="yes" mutable="no">
+        <type>readonly List&lt; <ref refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor" kindref="compound">IQueryHandlerProcessor</ref> &gt;</type>
+        <definition>readonly List&lt;IQueryHandlerProcessor&gt; UniformQueries.API.queryProcessors</definition>
+        <argsstring></argsstring>
+        <name>queryProcessors</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformQueries/QueriesAPI.cs" line="23" column="1" bodyfile="D:/Work/Tools/UniformQueries/QueriesAPI.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1a8dbe3d00dcf507ab3cea1dc58e1e154f" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>static</type>
+        <definition>static UniformQueries.API.API</definition>
+        <argsstring>()</argsstring>
+        <name>API</name>
+        <briefdescription>
+<para>Load query handlers during first call. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformQueries/QueriesAPI.cs" line="28" column="1" bodyfile="D:/Work/Tools/UniformQueries/QueriesAPI.cs" bodystart="28" bodyend="55"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1a2f6a1dee18c3b462a8a794d68e326dba" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async void</type>
+        <definition>static async void UniformQueries.API.PPQueryHandlerAsync</definition>
+        <argsstring>(PipesProvider.ServerTransmissionMeta meta, string query)</argsstring>
+        <name>PPQueryHandlerAsync</name>
+        <param>
+          <type><ref refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" kindref="compound">PipesProvider.ServerTransmissionMeta</ref></type>
+          <declname>meta</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>query</declname>
+        </param>
+        <briefdescription>
+<para>Handler that can be connected as callback to default PipesProvides DNS Handler. Will validate and decompose querie on parts and send it to target QueryProcessor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>meta</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>query</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformQueries/QueriesAPI.cs" line="63" column="1" bodyfile="D:/Work/Tools/UniformQueries/QueriesAPI.cs" bodystart="63" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1a1a0ad73e1dad7f7ec61398cb33ec18a4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool UniformQueries.API.QueryParamExist</definition>
+        <argsstring>(string param, string query)</argsstring>
+        <name>QueryParamExist</name>
+        <param>
+          <type>string</type>
+          <declname>param</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>query</declname>
+        </param>
+        <briefdescription>
+<para>Check existing of param in query parts. Exaple entry query part: &quot;q=Get&quot;, where target param is &quot;q&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>param</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>query</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformQueries/QueriesAPI.cs" line="120" column="1" bodyfile="D:/Work/Tools/UniformQueries/QueriesAPI.cs" bodystart="120" bodyend="123"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1a0f6c53ca64000015c8bf7bed30d9c57a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool UniformQueries.API.QueryParamExist</definition>
+        <argsstring>(string param, params string[] queryParts)</argsstring>
+        <name>QueryParamExist</name>
+        <param>
+          <type>string</type>
+          <declname>param</declname>
+        </param>
+        <param>
+          <type>params string []</type>
+          <declname>queryParts</declname>
+        </param>
+        <briefdescription>
+<para>Check existing of param in query parts. Exaple entry query part: &quot;q=Get&quot;, where target param is &quot;q&quot;. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>param</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>queryParts</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformQueries/QueriesAPI.cs" line="132" column="1" bodyfile="D:/Work/Tools/UniformQueries/QueriesAPI.cs" bodystart="132" bodyend="141"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1a987eb23a48b90e542001cc12fcbc1ddc" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool UniformQueries.API.TryGetParamValue</definition>
+        <argsstring>(string param, out string value, string query)</argsstring>
+        <name>TryGetParamValue</name>
+        <param>
+          <type>string</type>
+          <declname>param</declname>
+        </param>
+        <param>
+          <type>out string</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>query</declname>
+        </param>
+        <briefdescription>
+<para>Try to find requested param&apos;s value in query. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>param</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>query</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformQueries/QueriesAPI.cs" line="150" column="1" bodyfile="D:/Work/Tools/UniformQueries/QueriesAPI.cs" bodystart="150" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1a5747ff73a111b583fa01c442ca2a2d78" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool UniformQueries.API.TryGetParamValue</definition>
+        <argsstring>(string param, out string value, params string[] queryParts)</argsstring>
+        <name>TryGetParamValue</name>
+        <param>
+          <type>string</type>
+          <declname>param</declname>
+        </param>
+        <param>
+          <type>out string</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>params string []</type>
+          <declname>queryParts</declname>
+        </param>
+        <briefdescription>
+<para>Try to find requested param&apos;s value among query parts. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>param</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>queryParts</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformQueries/QueriesAPI.cs" line="162" column="1" bodyfile="D:/Work/Tools/UniformQueries/QueriesAPI.cs" bodystart="162" bodyend="180"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class that provide methods for handling of queries. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/UniformQueries/QueriesAPI.cs" line="12" column="1" bodyfile="D:/Work/Tools/UniformQueries/QueriesAPI.cs" bodystart="11" bodyend="181"/>
+    <listofallmembers>
+      <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a8dbe3d00dcf507ab3cea1dc58e1e154f" prot="private" virt="non-virtual"><scope>UniformQueries::API</scope><name>API</name></member>
+      <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a2f6a1dee18c3b462a8a794d68e326dba" prot="public" virt="non-virtual"><scope>UniformQueries::API</scope><name>PPQueryHandlerAsync</name></member>
+      <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a1a0ad73e1dad7f7ec61398cb33ec18a4" prot="public" virt="non-virtual"><scope>UniformQueries::API</scope><name>QueryParamExist</name></member>
+      <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a0f6c53ca64000015c8bf7bed30d9c57a" prot="public" virt="non-virtual"><scope>UniformQueries::API</scope><name>QueryParamExist</name></member>
+      <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a4af16485a14a5acbd5ac442cf0467496" prot="private" virt="non-virtual"><scope>UniformQueries::API</scope><name>queryProcessors</name></member>
+      <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a8fe90206df6a1ae2b052b82c30a32037" prot="public" virt="non-virtual"><scope>UniformQueries::API</scope><name>QueryProcessors</name></member>
+      <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a987eb23a48b90e542001cc12fcbc1ddc" prot="public" virt="non-virtual"><scope>UniformQueries::API</scope><name>TryGetParamValue</name></member>
+      <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a5747ff73a111b583fa01c442ca2a2d78" prot="public" virt="non-virtual"><scope>UniformQueries::API</scope><name>TryGetParamValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

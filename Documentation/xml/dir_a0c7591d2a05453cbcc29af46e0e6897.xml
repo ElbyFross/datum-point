@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_a0c7591d2a05453cbcc29af46e0e6897" kind="dir">
+    <compoundname>D:/Work/Tools/Plugins/THB Plugin Social/obj</compoundname>
+    <innerdir refid="dir_b38a4e81e137a245edc909d8475c33ae">D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug</innerdir>
+    <innerdir refid="dir_b214a4dbce77070e45bdfa29dc2aae55">D:/Work/Tools/Plugins/THB Plugin Social/obj/Release</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/Plugins/THB Plugin Social/obj/"/>
+  </compounddef>
+</doxygen>

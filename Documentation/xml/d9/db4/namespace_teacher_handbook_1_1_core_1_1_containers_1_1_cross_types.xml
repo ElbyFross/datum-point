@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d9/db4/namespace_teacher_handbook_1_1_core_1_1_containers_1_1_cross_types" kind="namespace" language="C#">
+    <compoundname>TeacherHandbook::Core::Containers::CrossTypes</compoundname>
+    <innerclass refid="d0/d8b/class_teacher_handbook_1_1_core_1_1_containers_1_1_cross_types_1_1_name_container" prot="public">TeacherHandbook::Core::Containers::CrossTypes::NameContainer</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/THB Data Types/Core/Containers/CrossTypes/NameContainer.cs" line="4" column="1"/>
+  </compounddef>
+</doxygen>

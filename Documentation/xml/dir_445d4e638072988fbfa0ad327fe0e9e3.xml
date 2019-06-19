@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_445d4e638072988fbfa0ad327fe0e9e3" kind="dir">
+    <compoundname>D:/Work/Tools/Plugins/THB Plugin Social/Feed</compoundname>
+    <innerfile refid="d3/d10/_feed_8xaml_8cs">Feed.xaml.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/Plugins/THB Plugin Social/Feed/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d8/d91/class_teacher_handbook_1_1_core_1_1_orders_1_1_mentoring_order" kind="class" language="C#" prot="public">
+    <compoundname>TeacherHandbook::Core::Orders::MentoringOrder</compoundname>
+    <basecompoundref refid="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order" prot="public" virt="non-virtual">TeacherHandbook.Core.Orders.BaseOrder</basecompoundref>
+    <briefdescription>
+<para>Order that change mentor of target group into selected time borders. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="194">
+        <label>IOrder</label>
+        <link refid="df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order"/>
+      </node>
+      <node id="193">
+        <label>BaseOrder</label>
+        <link refid="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order"/>
+        <childnode refid="194" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="192">
+        <label>TeacherHandbook.Core.Orders.MentoringOrder</label>
+        <link refid="d8/d91/class_teacher_handbook_1_1_core_1_1_orders_1_1_mentoring_order"/>
+        <childnode refid="193" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="197">
+        <label>IOrder</label>
+        <link refid="df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order"/>
+      </node>
+      <node id="196">
+        <label>BaseOrder</label>
+        <link refid="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order"/>
+        <childnode refid="197" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="195">
+        <label>TeacherHandbook.Core.Orders.MentoringOrder</label>
+        <link refid="d8/d91/class_teacher_handbook_1_1_core_1_1_orders_1_1_mentoring_order"/>
+        <childnode refid="196" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/Tools/THB Data Types/Core/Orders/MentoringOrder.cs" line="9" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Orders/MentoringOrder.cs" bodystart="8" bodyend="10"/>
+    <listofallmembers>
+      <member refid="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order_1a4b671ac999b946ff76f2a689bd456463" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Orders::MentoringOrder</scope><name>ExpireDate</name></member>
+      <member refid="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order_1a59ec952bde8892fe9c48d34c838be374" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Orders::MentoringOrder</scope><name>OrderPublisher</name></member>
+      <member refid="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order_1ac11e738e1d6b9e7ff3fe4b55e2bd50d5" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Orders::MentoringOrder</scope><name>PooledTime</name></member>
+      <member refid="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order_1a01ff46c6c7c2def5204de29b67f646c9" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Orders::MentoringOrder</scope><name>StartDate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

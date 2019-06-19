@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d6/dac/class_test_client_1_1_client" kind="class" language="C#" prot="public">
+    <compoundname>TestClient::Client</compoundname>
+    <basecompoundref refid="d4/deb/class_uniform_client_1_1_base_client" prot="public" virt="non-virtual">UniformClient.BaseClient</basecompoundref>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="d6/dac/class_test_client_1_1_client_1a236c6c2776f2ec6851c36a8714ef6e03" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void TestClient.Client.Main</definition>
+        <argsstring>(string[] args)</argsstring>
+        <name>Main</name>
+        <param>
+          <type>string []</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/TestClient/Client.cs" line="14" column="1" bodyfile="D:/Work/Tools/TestClient/Client.cs" bodystart="14" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/dac/class_test_client_1_1_client_1adae80a1bd43e9e383c52ebb6390f2507" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void TestClient.Client.UniformQueryPOSTProcessor</definition>
+        <argsstring>(object sharedObject)</argsstring>
+        <name>UniformQueryPOSTProcessor</name>
+        <param>
+          <type>object</type>
+          <declname>sharedObject</declname>
+        </param>
+        <briefdescription>
+<para>Query processor that send last dequeued query to server when connection will be established. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lineProcessor</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/TestClient/Client.cs" line="77" column="1" bodyfile="D:/Work/Tools/TestClient/Client.cs" bodystart="77" bodyend="115"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="105">
+        <label>UniformClient::BaseClient</label>
+        <link refid="d4/deb/class_uniform_client_1_1_base_client"/>
+      </node>
+      <node id="104">
+        <label>TestClient.Client</label>
+        <link refid="d6/dac/class_test_client_1_1_client"/>
+        <childnode refid="105" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="107">
+        <label>UniformClient::BaseClient</label>
+        <link refid="d4/deb/class_uniform_client_1_1_base_client"/>
+      </node>
+      <node id="106">
+        <label>TestClient.Client</label>
+        <link refid="d6/dac/class_test_client_1_1_client"/>
+        <childnode refid="107" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/Tools/TestClient/Client.cs" line="13" column="1" bodyfile="D:/Work/Tools/TestClient/Client.cs" bodystart="12" bodyend="116"/>
+    <listofallmembers>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a1c02c6bb48c54e59c2581fe8097a4052" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>appTerminated</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a7ec48981cf3e7ec10d2cb7dff81f912a" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>ArgsReactor</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1aafcfed25b79baed0db4448f2e30f2aa2" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>GetConsoleWindow</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a8abbd1d46cc50556eeae8bbd55ce680f" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>LoadAssemblies</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a99ae0bb1dd5bef374fcedb3f873bfe8b" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>LoadPluginsCollection</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1aa60dbfa5bd8c46659aec7738193315f1" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>LoadPluginsEnumerable</name></member>
+      <member refid="d6/dac/class_test_client_1_1_client_1a236c6c2776f2ec6851c36a8714ef6e03" prot="private" virt="non-virtual"><scope>TestClient::Client</scope><name>Main</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a3b09387a94e46bf9365ee603202ba488" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>OpenTransmissionLine</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a47b6d88848854c59fafefeeae3956699" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>ShowWindow</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a194b46bb0e889d07cade81c0aeab7cea" prot="protected" virt="virtual"><scope>TestClient::Client</scope><name>StartClientThread</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a6060f2eb1d44ec518f2dfc99c8b4f7aa" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>SW_HIDE</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a7545b9c72eef6cb7594a7001d3f558e4" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>SW_SHOW</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a458271823ca5e21612c0947e1db695a0" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>thread</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a2c4762c1be5eac42b8b5d189530d0952" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>threadSleepTime</name></member>
+      <member refid="d6/dac/class_test_client_1_1_client_1adae80a1bd43e9e383c52ebb6390f2507" prot="private" virt="non-virtual"><scope>TestClient::Client</scope><name>UniformQueryPOSTProcessor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

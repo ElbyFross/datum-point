@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d3/dfd/namespace_wpf_handler_1_1_plugins" kind="namespace" language="C#">
+    <compoundname>WpfHandler::Plugins</compoundname>
+    <innerclass refid="d2/d9a/class_wpf_handler_1_1_plugins_1_1_a_p_i" prot="public">WpfHandler::Plugins::API</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/WpfHandler/Plugins/API.cs" line="10" column="1"/>
+  </compounddef>
+</doxygen>

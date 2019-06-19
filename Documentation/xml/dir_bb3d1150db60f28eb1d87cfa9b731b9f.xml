@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_bb3d1150db60f28eb1d87cfa9b731b9f" kind="dir">
+    <compoundname>D:/Work/Tools/TeacherHandbook/obj/Debug/Plugins</compoundname>
+    <innerdir refid="dir_0a0e6c4866f73fa4dcf5039e6dc71ac5">D:/Work/Tools/TeacherHandbook/obj/Debug/Plugins/Feed</innerdir>
+    <innerdir refid="dir_8a0840ed80b2a3f300c779ec3895e941">D:/Work/Tools/TeacherHandbook/obj/Debug/Plugins/Schedule</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/Plugins/"/>
+  </compounddef>
+</doxygen>

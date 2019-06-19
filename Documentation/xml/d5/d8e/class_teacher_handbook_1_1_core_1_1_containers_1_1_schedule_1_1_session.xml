@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d5/d8e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_session" kind="class" language="C#" prot="public">
+    <compoundname>TeacherHandbook::Core::Containers::Schedule::Session</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d5/d8e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_session_1a1e3ab318ef7a0b8330eb06704d129531" prot="public" static="no" mutable="no">
+        <type>Hashtable</type>
+        <definition>Hashtable TeacherHandbook.Core.Containers.Schedule.Session.subjects</definition>
+        <argsstring></argsstring>
+        <name>subjects</name>
+        <initializer>= new Hashtable()</initializer>
+        <briefdescription>
+<para>Hashtable that contain data pairs: subject (string key) -&gt; groups (string key) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/Session.cs" line="16" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/Session.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Single session binded to the groups and teacher. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/Session.cs" line="11" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/Session.cs" bodystart="10" bodyend="17"/>
+    <listofallmembers>
+      <member refid="d5/d8e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_session_1a1e3ab318ef7a0b8330eb06704d129531" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Schedule::Session</scope><name>subjects</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

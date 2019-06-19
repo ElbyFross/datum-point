@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d8/d5b/namespace_uniform_server" kind="namespace" language="C#">
+    <compoundname>UniformServer</compoundname>
+    <innerclass refid="d7/d32/class_uniform_server_1_1_base_server" prot="public">UniformServer::BaseServer</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="9" column="1"/>
+  </compounddef>
+</doxygen>

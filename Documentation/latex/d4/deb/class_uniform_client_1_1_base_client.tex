@@ -1,0 +1,265 @@
+\hypertarget{class_uniform_client_1_1_base_client}{}\section{Uniform\+Client.\+Base\+Client Class Reference}
+\label{class_uniform_client_1_1_base_client}\index{Uniform\+Client.\+Base\+Client@{Uniform\+Client.\+Base\+Client}}
+
+
+Class that provide base client features and envirounment static A\+PI.  
+
+
+Inheritance diagram for Uniform\+Client.\+Base\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d4/deb/class_uniform_client_1_1_base_client}
+\end{center}
+\end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static System.\+Collections.\+Generic.\+I\+Enumerable$<$ \mbox{\hyperlink{interface_uniform_client_1_1_plugins_1_1_i_plugin}{Plugins.\+I\+Plugin}} $>$ \mbox{\hyperlink{class_uniform_client_1_1_base_client_aa60dbfa5bd8c46659aec7738193315f1}{Load\+Plugins\+Enumerable}} ()
+\begin{DoxyCompactList}\small\item\em Load plugins from assembly and instiniate them to list. \end{DoxyCompactList}\item 
+static System.\+Collections.\+Object\+Model.\+Observable\+Collection$<$ \mbox{\hyperlink{interface_uniform_client_1_1_plugins_1_1_i_plugin}{Plugins.\+I\+Plugin}} $>$ \mbox{\hyperlink{class_uniform_client_1_1_base_client_a99ae0bb1dd5bef374fcedb3f873bfe8b}{Load\+Plugins\+Collection}} ()
+\begin{DoxyCompactList}\small\item\em Load plugins from assembly and instiniate them to list. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Pipes\+Provider.\+Transmission\+Line}} \mbox{\hyperlink{class_uniform_client_1_1_base_client_a3b09387a94e46bf9365ee603202ba488}{Open\+Transmission\+Line}} (\mbox{\hyperlink{class_uniform_client_1_1_base_client}{Base\+Client}} client, string guid, string server\+Name, string pipe\+Name, System.\+Action$<$ object $>$ callback)
+\begin{DoxyCompactList}\small\item\em Provide complex initalization of all relative systems. Build meta data, regitrate line in common table. Start new thread to avoid freezes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Thread \mbox{\hyperlink{class_uniform_client_1_1_base_client_a458271823ca5e21612c0947e1db695a0}{thread}}
+\begin{DoxyCompactList}\small\item\em Reference to thread that host this server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_uniform_client_1_1_base_client_a1c02c6bb48c54e59c2581fe8097a4052}{app\+Terminated}}
+\begin{DoxyCompactList}\small\item\em If true then will stop main loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_uniform_client_1_1_base_client_a47b6d88848854c59fafefeeae3956699}{Show\+Window}} (Int\+Ptr h\+Wnd, int n\+Cmd\+Show)
+\begin{DoxyCompactList}\small\item\em Imported method that allo to controll console window state. \end{DoxyCompactList}\item 
+static Int\+Ptr \mbox{\hyperlink{class_uniform_client_1_1_base_client_aafcfed25b79baed0db4448f2e30f2aa2}{Get\+Console\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Inported method that allow acces to console window. \end{DoxyCompactList}\item 
+virtual Thread \mbox{\hyperlink{class_uniform_client_1_1_base_client_a194b46bb0e889d07cade81c0aeab7cea}{Start\+Client\+Thread}} (string thread\+Name, object shareble\+Param, Parameterized\+Thread\+Start client\+Loop)
+\begin{DoxyCompactList}\small\item\em Method that starting client thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_uniform_client_1_1_base_client_a8abbd1d46cc50556eeae8bbd55ce680f}{Load\+Assemblies}} (string path)
+\begin{DoxyCompactList}\small\item\em Loading assemblies from requested path. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_uniform_client_1_1_base_client_a7ec48981cf3e7ec10d2cb7dff81f912a}{Args\+Reactor}} (string\mbox{[}$\,$\mbox{]} args)
+\begin{DoxyCompactList}\small\item\em Method that will configurate application and server relative to the uniform arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_uniform_client_1_1_base_client_a6060f2eb1d44ec518f2dfc99c8b4f7aa}{S\+W\+\_\+\+H\+I\+DE}} = 0
+\begin{DoxyCompactList}\small\item\em Argument that will hide console window. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_uniform_client_1_1_base_client_a7545b9c72eef6cb7594a7001d3f558e4}{S\+W\+\_\+\+S\+H\+OW}} = 5
+\begin{DoxyCompactList}\small\item\em Agrument that will show console window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_uniform_client_1_1_base_client_a2c4762c1be5eac42b8b5d189530d0952}{thread\+Sleep\+Time}} = 150
+\begin{DoxyCompactList}\small\item\em How many milisseconds will sleep thread after tick. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that provide base client features and envirounment static A\+PI. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_uniform_client_1_1_base_client_a7ec48981cf3e7ec10d2cb7dff81f912a}\label{class_uniform_client_1_1_base_client_a7ec48981cf3e7ec10d2cb7dff81f912a}} 
+\index{Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}!Args\+Reactor@{Args\+Reactor}}
+\index{Args\+Reactor@{Args\+Reactor}!Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}}
+\subsubsection{\texorpdfstring{Args\+Reactor()}{ArgsReactor()}}
+{\footnotesize\ttfamily static void Uniform\+Client.\+Base\+Client.\+Args\+Reactor (\begin{DoxyParamCaption}\item[{string \mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Method that will configurate application and server relative to the uniform arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_uniform_client_1_1_base_client_aafcfed25b79baed0db4448f2e30f2aa2}\label{class_uniform_client_1_1_base_client_aafcfed25b79baed0db4448f2e30f2aa2}} 
+\index{Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}!Get\+Console\+Window@{Get\+Console\+Window}}
+\index{Get\+Console\+Window@{Get\+Console\+Window}!Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}}
+\subsubsection{\texorpdfstring{Get\+Console\+Window()}{GetConsoleWindow()}}
+{\footnotesize\ttfamily static Int\+Ptr Uniform\+Client.\+Base\+Client.\+Get\+Console\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Inported method that allow acces to console window. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_uniform_client_1_1_base_client_a8abbd1d46cc50556eeae8bbd55ce680f}\label{class_uniform_client_1_1_base_client_a8abbd1d46cc50556eeae8bbd55ce680f}} 
+\index{Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}!Load\+Assemblies@{Load\+Assemblies}}
+\index{Load\+Assemblies@{Load\+Assemblies}!Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}}
+\subsubsection{\texorpdfstring{Load\+Assemblies()}{LoadAssemblies()}}
+{\footnotesize\ttfamily static void Uniform\+Client.\+Base\+Client.\+Load\+Assemblies (\begin{DoxyParamCaption}\item[{string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Loading assemblies from requested path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_uniform_client_1_1_base_client_a99ae0bb1dd5bef374fcedb3f873bfe8b}\label{class_uniform_client_1_1_base_client_a99ae0bb1dd5bef374fcedb3f873bfe8b}} 
+\index{Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}!Load\+Plugins\+Collection@{Load\+Plugins\+Collection}}
+\index{Load\+Plugins\+Collection@{Load\+Plugins\+Collection}!Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}}
+\subsubsection{\texorpdfstring{Load\+Plugins\+Collection()}{LoadPluginsCollection()}}
+{\footnotesize\ttfamily static System.\+Collections.\+Object\+Model.\+Observable\+Collection$<$\mbox{\hyperlink{interface_uniform_client_1_1_plugins_1_1_i_plugin}{Plugins.\+I\+Plugin}}$>$ Uniform\+Client.\+Base\+Client.\+Load\+Plugins\+Collection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Load plugins from assembly and instiniate them to list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em list} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_uniform_client_1_1_base_client_aa60dbfa5bd8c46659aec7738193315f1}\label{class_uniform_client_1_1_base_client_aa60dbfa5bd8c46659aec7738193315f1}} 
+\index{Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}!Load\+Plugins\+Enumerable@{Load\+Plugins\+Enumerable}}
+\index{Load\+Plugins\+Enumerable@{Load\+Plugins\+Enumerable}!Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}}
+\subsubsection{\texorpdfstring{Load\+Plugins\+Enumerable()}{LoadPluginsEnumerable()}}
+{\footnotesize\ttfamily static System.\+Collections.\+Generic.\+I\+Enumerable$<$\mbox{\hyperlink{interface_uniform_client_1_1_plugins_1_1_i_plugin}{Plugins.\+I\+Plugin}}$>$ Uniform\+Client.\+Base\+Client.\+Load\+Plugins\+Enumerable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Load plugins from assembly and instiniate them to list. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_uniform_client_1_1_base_client_a3b09387a94e46bf9365ee603202ba488}\label{class_uniform_client_1_1_base_client_a3b09387a94e46bf9365ee603202ba488}} 
+\index{Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}!Open\+Transmission\+Line@{Open\+Transmission\+Line}}
+\index{Open\+Transmission\+Line@{Open\+Transmission\+Line}!Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}}
+\subsubsection{\texorpdfstring{Open\+Transmission\+Line()}{OpenTransmissionLine()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Pipes\+Provider.\+Transmission\+Line}} Uniform\+Client.\+Base\+Client.\+Open\+Transmission\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_uniform_client_1_1_base_client}{Base\+Client}}}]{client,  }\item[{string}]{guid,  }\item[{string}]{server\+Name,  }\item[{string}]{pipe\+Name,  }\item[{System.\+Action$<$ object $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Provide complex initalization of all relative systems. Build meta data, regitrate line in common table. Start new thread to avoid freezes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em client} & \\
+\hline
+{\em guid} & \\
+\hline
+{\em server\+Name} & \\
+\hline
+{\em pipe\+Name} & \\
+\hline
+{\em callback} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Opened transmission line. Use line.\+Enqueue to add your query.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_uniform_client_1_1_base_client_a47b6d88848854c59fafefeeae3956699}\label{class_uniform_client_1_1_base_client_a47b6d88848854c59fafefeeae3956699}} 
+\index{Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}!Show\+Window@{Show\+Window}}
+\index{Show\+Window@{Show\+Window}!Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}}
+\subsubsection{\texorpdfstring{Show\+Window()}{ShowWindow()}}
+{\footnotesize\ttfamily static bool Uniform\+Client.\+Base\+Client.\+Show\+Window (\begin{DoxyParamCaption}\item[{Int\+Ptr}]{h\+Wnd,  }\item[{int}]{n\+Cmd\+Show }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Imported method that allo to controll console window state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h\+Wnd} & \\
+\hline
+{\em n\+Cmd\+Show} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_uniform_client_1_1_base_client_a194b46bb0e889d07cade81c0aeab7cea}\label{class_uniform_client_1_1_base_client_a194b46bb0e889d07cade81c0aeab7cea}} 
+\index{Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}!Start\+Client\+Thread@{Start\+Client\+Thread}}
+\index{Start\+Client\+Thread@{Start\+Client\+Thread}!Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}}
+\subsubsection{\texorpdfstring{Start\+Client\+Thread()}{StartClientThread()}}
+{\footnotesize\ttfamily virtual Thread Uniform\+Client.\+Base\+Client.\+Start\+Client\+Thread (\begin{DoxyParamCaption}\item[{string}]{thread\+Name,  }\item[{object}]{shareble\+Param,  }\item[{Parameterized\+Thread\+Start}]{client\+Loop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Method that starting client thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em thread\+Name} & \\
+\hline
+{\em shareble\+Param} & \\
+\hline
+{\em client\+Loop} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_uniform_client_1_1_base_client_a1c02c6bb48c54e59c2581fe8097a4052}\label{class_uniform_client_1_1_base_client_a1c02c6bb48c54e59c2581fe8097a4052}} 
+\index{Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}!app\+Terminated@{app\+Terminated}}
+\index{app\+Terminated@{app\+Terminated}!Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}}
+\subsubsection{\texorpdfstring{app\+Terminated}{appTerminated}}
+{\footnotesize\ttfamily bool Uniform\+Client.\+Base\+Client.\+app\+Terminated\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+If true then will stop main loop. 
+
+\mbox{\Hypertarget{class_uniform_client_1_1_base_client_a6060f2eb1d44ec518f2dfc99c8b4f7aa}\label{class_uniform_client_1_1_base_client_a6060f2eb1d44ec518f2dfc99c8b4f7aa}} 
+\index{Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}!S\+W\+\_\+\+H\+I\+DE@{S\+W\+\_\+\+H\+I\+DE}}
+\index{S\+W\+\_\+\+H\+I\+DE@{S\+W\+\_\+\+H\+I\+DE}!Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}}
+\subsubsection{\texorpdfstring{S\+W\+\_\+\+H\+I\+DE}{SW\_HIDE}}
+{\footnotesize\ttfamily const int Uniform\+Client.\+Base\+Client.\+S\+W\+\_\+\+H\+I\+DE = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Argument that will hide console window. 
+
+\mbox{\Hypertarget{class_uniform_client_1_1_base_client_a7545b9c72eef6cb7594a7001d3f558e4}\label{class_uniform_client_1_1_base_client_a7545b9c72eef6cb7594a7001d3f558e4}} 
+\index{Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}!S\+W\+\_\+\+S\+H\+OW@{S\+W\+\_\+\+S\+H\+OW}}
+\index{S\+W\+\_\+\+S\+H\+OW@{S\+W\+\_\+\+S\+H\+OW}!Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}}
+\subsubsection{\texorpdfstring{S\+W\+\_\+\+S\+H\+OW}{SW\_SHOW}}
+{\footnotesize\ttfamily const int Uniform\+Client.\+Base\+Client.\+S\+W\+\_\+\+S\+H\+OW = 5\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Agrument that will show console window. 
+
+\mbox{\Hypertarget{class_uniform_client_1_1_base_client_a458271823ca5e21612c0947e1db695a0}\label{class_uniform_client_1_1_base_client_a458271823ca5e21612c0947e1db695a0}} 
+\index{Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}!thread@{thread}}
+\index{thread@{thread}!Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}}
+\subsubsection{\texorpdfstring{thread}{thread}}
+{\footnotesize\ttfamily Thread Uniform\+Client.\+Base\+Client.\+thread}
+
+
+
+Reference to thread that host this server. 
+
+\mbox{\Hypertarget{class_uniform_client_1_1_base_client_a2c4762c1be5eac42b8b5d189530d0952}\label{class_uniform_client_1_1_base_client_a2c4762c1be5eac42b8b5d189530d0952}} 
+\index{Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}!thread\+Sleep\+Time@{thread\+Sleep\+Time}}
+\index{thread\+Sleep\+Time@{thread\+Sleep\+Time}!Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}}
+\subsubsection{\texorpdfstring{thread\+Sleep\+Time}{threadSleepTime}}
+{\footnotesize\ttfamily int Uniform\+Client.\+Base\+Client.\+thread\+Sleep\+Time = 150\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+How many milisseconds will sleep thread after tick. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Work/\+Tools/\+Uniform\+Client/Base\+Client.\+cs\end{DoxyCompactItemize}

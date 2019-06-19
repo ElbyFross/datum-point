@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d3/d0f/_week_8cs" kind="file" language="C#">
+    <compoundname>Week.cs</compoundname>
+    <innerclass refid="de/d25/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_week" prot="public">TeacherHandbook::Core::Containers::Schedule::Week</innerclass>
+    <innernamespace refid="d3/df6/namespace_teacher_handbook_1_1_core_1_1_containers_1_1_schedule">TeacherHandbook::Core::Containers::Schedule</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="dc/da6/namespace_teacher_handbook" kindref="compound">TeacherHandbook</ref>.Core.Containers.Schedule</highlight></codeline>
+<codeline lineno="4"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/>[Serializable]</highlight></codeline>
+<codeline lineno="9" refid="de/d25/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_week" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="de/d25/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_week" kindref="compound">Week</ref></highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="12"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/Week.cs"/>
+  </compounddef>
+</doxygen>

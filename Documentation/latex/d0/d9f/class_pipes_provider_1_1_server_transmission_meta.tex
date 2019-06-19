@@ -1,0 +1,158 @@
+\hypertarget{class_pipes_provider_1_1_server_transmission_meta}{}\section{Pipes\+Provider.\+Server\+Transmission\+Meta Class Reference}
+\label{class_pipes_provider_1_1_server_transmission_meta}\index{Pipes\+Provider.\+Server\+Transmission\+Meta@{Pipes\+Provider.\+Server\+Transmission\+Meta}}
+
+
+Container that contain meta data about server instance.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_pipes_provider_1_1_server_transmission_meta_a665969b5b071d7fdc931e9e9f223652b}\label{class_pipes_provider_1_1_server_transmission_meta_a665969b5b071d7fdc931e9e9f223652b}} 
+{\bfseries Server\+Transmission\+Meta} (I\+Async\+Result \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_a1d4a87ad9a66bd81bc68f48fa28dbf32}{connection\+Marker}}, System.\+Action$<$ \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}} $>$ \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_a6e9fa5426107e5d4265273e5be439a62}{connection\+Callback}}, System.\+Action$<$ \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}}, string $>$ \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_aa663870a4d61945bcedd85721ede42a5}{query\+Handler\+Callback}}, Named\+Pipe\+Server\+Stream \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_a8b2ff8796056a5a2fbe0dbb4c4fd5dab}{pipe}}, string pipe\+Name)
+\item 
+void \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_a29b2b6d3e06632b362a2101b12f082f7}{Set\+Expired}} ()
+\begin{DoxyCompactList}\small\item\em Maeking transmission as expired. Line will be remaked. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_acf5d5cd3ea8799d979a0208d8ae50ff1}{Set\+Stoped}} ()
+\begin{DoxyCompactList}\small\item\em Marking transmission as expired and stoped for full exclusion from automatic server operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+I\+Async\+Result \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_a1d4a87ad9a66bd81bc68f48fa28dbf32}{connection\+Marker}}
+\begin{DoxyCompactList}\small\item\em Object that provide access to async connection. \end{DoxyCompactList}\item 
+System.\+Action$<$ \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}} $>$ \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_a6e9fa5426107e5d4265273e5be439a62}{connection\+Callback}}
+\begin{DoxyCompactList}\small\item\em Delegate that will be called when connection will be established. \end{DoxyCompactList}\item 
+System.\+Action$<$ \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}}, string $>$ \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_aa663870a4d61945bcedd85721ede42a5}{query\+Handler\+Callback}}
+\begin{DoxyCompactList}\small\item\em Delegate that will be called when server will recive query. \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}} -\/ meta data of transmission. string -\/ recived query. \end{DoxyCompactList}\item 
+Named\+Pipe\+Server\+Stream \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_a8b2ff8796056a5a2fbe0dbb4c4fd5dab}{pipe}}
+\begin{DoxyCompactList}\small\item\em Reference to created pipe. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_abed6acbaaf01392151667fad217ec7c3}{name}}
+\begin{DoxyCompactList}\small\item\em Name of this connection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_acdc3e400b26c044443a9c3ce367433f4}{Expired}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Marker that show does current transmission is relevant. When it\textquotesingle{}ll become true this pipe connection will be desconected. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_a9b501faba9c2cb9ed8873f1935d95b7c}{Stoped}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Marker that show does this transmition stoped. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}} \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_aad6b35f35e7976ae9ee3f386b65dd128}{None}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Return instance that not contain initialized fields. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Container that contain meta data about server instance. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pipes_provider_1_1_server_transmission_meta_a29b2b6d3e06632b362a2101b12f082f7}\label{class_pipes_provider_1_1_server_transmission_meta_a29b2b6d3e06632b362a2101b12f082f7}} 
+\index{Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}!Set\+Expired@{Set\+Expired}}
+\index{Set\+Expired@{Set\+Expired}!Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}}
+\subsubsection{\texorpdfstring{Set\+Expired()}{SetExpired()}}
+{\footnotesize\ttfamily void Pipes\+Provider.\+Server\+Transmission\+Meta.\+Set\+Expired (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Maeking transmission as expired. Line will be remaked. 
+
+\mbox{\Hypertarget{class_pipes_provider_1_1_server_transmission_meta_acf5d5cd3ea8799d979a0208d8ae50ff1}\label{class_pipes_provider_1_1_server_transmission_meta_acf5d5cd3ea8799d979a0208d8ae50ff1}} 
+\index{Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}!Set\+Stoped@{Set\+Stoped}}
+\index{Set\+Stoped@{Set\+Stoped}!Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}}
+\subsubsection{\texorpdfstring{Set\+Stoped()}{SetStoped()}}
+{\footnotesize\ttfamily void Pipes\+Provider.\+Server\+Transmission\+Meta.\+Set\+Stoped (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Marking transmission as expired and stoped for full exclusion from automatic server operations. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_pipes_provider_1_1_server_transmission_meta_a6e9fa5426107e5d4265273e5be439a62}\label{class_pipes_provider_1_1_server_transmission_meta_a6e9fa5426107e5d4265273e5be439a62}} 
+\index{Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}!connection\+Callback@{connection\+Callback}}
+\index{connection\+Callback@{connection\+Callback}!Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}}
+\subsubsection{\texorpdfstring{connection\+Callback}{connectionCallback}}
+{\footnotesize\ttfamily System.\+Action$<$\mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}}$>$ Pipes\+Provider.\+Server\+Transmission\+Meta.\+connection\+Callback}
+
+
+
+Delegate that will be called when connection will be established. 
+
+\mbox{\Hypertarget{class_pipes_provider_1_1_server_transmission_meta_a1d4a87ad9a66bd81bc68f48fa28dbf32}\label{class_pipes_provider_1_1_server_transmission_meta_a1d4a87ad9a66bd81bc68f48fa28dbf32}} 
+\index{Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}!connection\+Marker@{connection\+Marker}}
+\index{connection\+Marker@{connection\+Marker}!Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}}
+\subsubsection{\texorpdfstring{connection\+Marker}{connectionMarker}}
+{\footnotesize\ttfamily I\+Async\+Result Pipes\+Provider.\+Server\+Transmission\+Meta.\+connection\+Marker}
+
+
+
+Object that provide access to async connection. 
+
+\mbox{\Hypertarget{class_pipes_provider_1_1_server_transmission_meta_abed6acbaaf01392151667fad217ec7c3}\label{class_pipes_provider_1_1_server_transmission_meta_abed6acbaaf01392151667fad217ec7c3}} 
+\index{Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}!name@{name}}
+\index{name@{name}!Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily string Pipes\+Provider.\+Server\+Transmission\+Meta.\+name}
+
+
+
+Name of this connection. 
+
+\mbox{\Hypertarget{class_pipes_provider_1_1_server_transmission_meta_a8b2ff8796056a5a2fbe0dbb4c4fd5dab}\label{class_pipes_provider_1_1_server_transmission_meta_a8b2ff8796056a5a2fbe0dbb4c4fd5dab}} 
+\index{Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}!pipe@{pipe}}
+\index{pipe@{pipe}!Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}}
+\subsubsection{\texorpdfstring{pipe}{pipe}}
+{\footnotesize\ttfamily Named\+Pipe\+Server\+Stream Pipes\+Provider.\+Server\+Transmission\+Meta.\+pipe}
+
+
+
+Reference to created pipe. 
+
+\mbox{\Hypertarget{class_pipes_provider_1_1_server_transmission_meta_aa663870a4d61945bcedd85721ede42a5}\label{class_pipes_provider_1_1_server_transmission_meta_aa663870a4d61945bcedd85721ede42a5}} 
+\index{Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}!query\+Handler\+Callback@{query\+Handler\+Callback}}
+\index{query\+Handler\+Callback@{query\+Handler\+Callback}!Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}}
+\subsubsection{\texorpdfstring{query\+Handler\+Callback}{queryHandlerCallback}}
+{\footnotesize\ttfamily System.\+Action$<$\mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}}, string$>$ Pipes\+Provider.\+Server\+Transmission\+Meta.\+query\+Handler\+Callback}
+
+
+
+Delegate that will be called when server will recive query. \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}} -\/ meta data of transmission. string -\/ recived query. 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_pipes_provider_1_1_server_transmission_meta_acdc3e400b26c044443a9c3ce367433f4}\label{class_pipes_provider_1_1_server_transmission_meta_acdc3e400b26c044443a9c3ce367433f4}} 
+\index{Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}!Expired@{Expired}}
+\index{Expired@{Expired}!Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}}
+\subsubsection{\texorpdfstring{Expired}{Expired}}
+{\footnotesize\ttfamily bool Pipes\+Provider.\+Server\+Transmission\+Meta.\+Expired\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Marker that show does current transmission is relevant. When it\textquotesingle{}ll become true this pipe connection will be desconected. 
+
+\mbox{\Hypertarget{class_pipes_provider_1_1_server_transmission_meta_aad6b35f35e7976ae9ee3f386b65dd128}\label{class_pipes_provider_1_1_server_transmission_meta_aad6b35f35e7976ae9ee3f386b65dd128}} 
+\index{Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}!None@{None}}
+\index{None@{None}!Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}}
+\subsubsection{\texorpdfstring{None}{None}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}} Pipes\+Provider.\+Server\+Transmission\+Meta.\+None\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}}
+
+
+
+Return instance that not contain initialized fields. 
+
+\mbox{\Hypertarget{class_pipes_provider_1_1_server_transmission_meta_a9b501faba9c2cb9ed8873f1935d95b7c}\label{class_pipes_provider_1_1_server_transmission_meta_a9b501faba9c2cb9ed8873f1935d95b7c}} 
+\index{Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}!Stoped@{Stoped}}
+\index{Stoped@{Stoped}!Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}}
+\subsubsection{\texorpdfstring{Stoped}{Stoped}}
+{\footnotesize\ttfamily bool Pipes\+Provider.\+Server\+Transmission\+Meta.\+Stoped\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Marker that show does this transmition stoped. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Work/\+Tools/\+Pipes\+Provider/Server\+Transmission\+Meta.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,382 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d4/deb/class_uniform_client_1_1_base_client" kind="class" language="C#" prot="public">
+    <compoundname>UniformClient::BaseClient</compoundname>
+    <derivedcompoundref refid="d8/de3/class_teacher_handbook_1_1_client" prot="public" virt="non-virtual">TeacherHandbook.Client</derivedcompoundref>
+    <derivedcompoundref refid="d6/dac/class_test_client_1_1_client" prot="public" virt="non-virtual">TestClient.Client</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="d4/deb/class_uniform_client_1_1_base_client_1a6060f2eb1d44ec518f2dfc99c8b4f7aa" prot="protected" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int UniformClient.BaseClient.SW_HIDE</definition>
+        <argsstring></argsstring>
+        <name>SW_HIDE</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Argument that will hide console window. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformClient/BaseClient.cs" line="37" column="1" bodyfile="D:/Work/Tools/UniformClient/BaseClient.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/deb/class_uniform_client_1_1_base_client_1a7545b9c72eef6cb7594a7001d3f558e4" prot="protected" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int UniformClient.BaseClient.SW_SHOW</definition>
+        <argsstring></argsstring>
+        <name>SW_SHOW</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+<para>Agrument that will show console window. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformClient/BaseClient.cs" line="42" column="1" bodyfile="D:/Work/Tools/UniformClient/BaseClient.cs" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="d4/deb/class_uniform_client_1_1_base_client_1a2c4762c1be5eac42b8b5d189530d0952" prot="protected" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int UniformClient.BaseClient.threadSleepTime</definition>
+        <argsstring></argsstring>
+        <name>threadSleepTime</name>
+        <initializer>= 150</initializer>
+        <briefdescription>
+<para>How many milisseconds will sleep thread after tick. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformClient/BaseClient.cs" line="47" column="1" bodyfile="D:/Work/Tools/UniformClient/BaseClient.cs" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="d4/deb/class_uniform_client_1_1_base_client_1a1c02c6bb48c54e59c2581fe8097a4052" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool UniformClient.BaseClient.appTerminated</definition>
+        <argsstring></argsstring>
+        <name>appTerminated</name>
+        <briefdescription>
+<para>If true then will stop main loop. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformClient/BaseClient.cs" line="52" column="1" bodyfile="D:/Work/Tools/UniformClient/BaseClient.cs" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d4/deb/class_uniform_client_1_1_base_client_1a458271823ca5e21612c0947e1db695a0" prot="public" static="no" mutable="no">
+        <type>Thread</type>
+        <definition>Thread UniformClient.BaseClient.thread</definition>
+        <argsstring></argsstring>
+        <name>thread</name>
+        <briefdescription>
+<para>Reference to thread that host this server. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformClient/BaseClient.cs" line="58" column="1" bodyfile="D:/Work/Tools/UniformClient/BaseClient.cs" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1a47b6d88848854c59fafefeeae3956699" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool UniformClient.BaseClient.ShowWindow</definition>
+        <argsstring>(IntPtr hWnd, int nCmdShow)</argsstring>
+        <name>ShowWindow</name>
+        <param>
+          <type>IntPtr</type>
+          <declname>hWnd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nCmdShow</declname>
+        </param>
+        <briefdescription>
+<para>Imported method that allo to controll console window state. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hWnd</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nCmdShow</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformClient/BaseClient.cs" line="25" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1aafcfed25b79baed0db4448f2e30f2aa2" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>IntPtr</type>
+        <definition>static IntPtr UniformClient.BaseClient.GetConsoleWindow</definition>
+        <argsstring>()</argsstring>
+        <name>GetConsoleWindow</name>
+        <briefdescription>
+<para>Inported method that allow acces to console window. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformClient/BaseClient.cs" line="32" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1a194b46bb0e889d07cade81c0aeab7cea" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>Thread</type>
+        <definition>virtual Thread UniformClient.BaseClient.StartClientThread</definition>
+        <argsstring>(string threadName, object sharebleParam, ParameterizedThreadStart clientLoop)</argsstring>
+        <name>StartClientThread</name>
+        <param>
+          <type>string</type>
+          <declname>threadName</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>sharebleParam</declname>
+        </param>
+        <param>
+          <type>ParameterizedThreadStart</type>
+          <declname>clientLoop</declname>
+        </param>
+        <briefdescription>
+<para>Method that starting client thread. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>threadName</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sharebleParam</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>clientLoop</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformClient/BaseClient.cs" line="135" column="1" bodyfile="D:/Work/Tools/UniformClient/BaseClient.cs" bodystart="135" bodyend="160"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1a8abbd1d46cc50556eeae8bbd55ce680f" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void UniformClient.BaseClient.LoadAssemblies</definition>
+        <argsstring>(string path)</argsstring>
+        <name>LoadAssemblies</name>
+        <param>
+          <type>string</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+<para>Loading assemblies from requested path. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformClient/BaseClient.cs" line="64" column="1" bodyfile="D:/Work/Tools/UniformClient/BaseClient.cs" bodystart="64" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1a7ec48981cf3e7ec10d2cb7dff81f912a" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void UniformClient.BaseClient.ArgsReactor</definition>
+        <argsstring>(string[] args)</argsstring>
+        <name>ArgsReactor</name>
+        <param>
+          <type>string []</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Method that will configurate application and server relative to the uniform arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformClient/BaseClient.cs" line="108" column="1" bodyfile="D:/Work/Tools/UniformClient/BaseClient.cs" bodystart="108" bodyend="126"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1aa60dbfa5bd8c46659aec7738193315f1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>System.Collections.Generic.IEnumerable&lt; <ref refid="d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin" kindref="compound">Plugins.IPlugin</ref> &gt;</type>
+        <definition>static System.Collections.Generic.IEnumerable&lt;Plugins.IPlugin&gt; UniformClient.BaseClient.LoadPluginsEnumerable</definition>
+        <argsstring>()</argsstring>
+        <name>LoadPluginsEnumerable</name>
+        <briefdescription>
+<para>Load plugins from assembly and instiniate them to list. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformClient/BaseClient.cs" line="167" column="1" bodyfile="D:/Work/Tools/UniformClient/BaseClient.cs" bodystart="167" bodyend="188"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1a99ae0bb1dd5bef374fcedb3f873bfe8b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>System.Collections.ObjectModel.ObservableCollection&lt; <ref refid="d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin" kindref="compound">Plugins.IPlugin</ref> &gt;</type>
+        <definition>static System.Collections.ObjectModel.ObservableCollection&lt;Plugins.IPlugin&gt; UniformClient.BaseClient.LoadPluginsCollection</definition>
+        <argsstring>()</argsstring>
+        <name>LoadPluginsCollection</name>
+        <briefdescription>
+<para>Load plugins from assembly and instiniate them to list. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>list</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformClient/BaseClient.cs" line="194" column="1" bodyfile="D:/Work/Tools/UniformClient/BaseClient.cs" bodystart="194" bodyend="218"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1a3b09387a94e46bf9365ee603202ba488" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">PipesProvider.TransmissionLine</ref></type>
+        <definition>static PipesProvider.TransmissionLine UniformClient.BaseClient.OpenTransmissionLine</definition>
+        <argsstring>(BaseClient client, string guid, string serverName, string pipeName, System.Action&lt; object &gt; callback)</argsstring>
+        <name>OpenTransmissionLine</name>
+        <param>
+          <type><ref refid="d4/deb/class_uniform_client_1_1_base_client" kindref="compound">BaseClient</ref></type>
+          <declname>client</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>guid</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>serverName</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>pipeName</declname>
+        </param>
+        <param>
+          <type>System.Action&lt; object &gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Provide complex initalization of all relative systems. Build meta data, regitrate line in common table. Start new thread to avoid freezes. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>client</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>guid</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>serverName</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pipeName</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Opened transmission line. Use line.Enqueue to add your query.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformClient/BaseClient.cs" line="231" column="1" bodyfile="D:/Work/Tools/UniformClient/BaseClient.cs" bodystart="231" bodyend="261"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class that provide base client features and envirounment static API. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="65">
+        <label>TeacherHandbook.Client</label>
+        <link refid="d8/de3/class_teacher_handbook_1_1_client"/>
+        <childnode refid="64" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>TestClient.Client</label>
+        <link refid="d6/dac/class_test_client_1_1_client"/>
+        <childnode refid="64" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>UniformClient.BaseClient</label>
+        <link refid="d4/deb/class_uniform_client_1_1_base_client"/>
+      </node>
+    </inheritancegraph>
+    <location file="D:/Work/Tools/UniformClient/BaseClient.cs" line="16" column="1" bodyfile="D:/Work/Tools/UniformClient/BaseClient.cs" bodystart="15" bodyend="262"/>
+    <listofallmembers>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a1c02c6bb48c54e59c2581fe8097a4052" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>appTerminated</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a7ec48981cf3e7ec10d2cb7dff81f912a" prot="protected" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>ArgsReactor</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1aafcfed25b79baed0db4448f2e30f2aa2" prot="protected" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>GetConsoleWindow</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a8abbd1d46cc50556eeae8bbd55ce680f" prot="protected" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>LoadAssemblies</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a99ae0bb1dd5bef374fcedb3f873bfe8b" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>LoadPluginsCollection</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1aa60dbfa5bd8c46659aec7738193315f1" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>LoadPluginsEnumerable</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a3b09387a94e46bf9365ee603202ba488" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>OpenTransmissionLine</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a47b6d88848854c59fafefeeae3956699" prot="protected" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>ShowWindow</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a194b46bb0e889d07cade81c0aeab7cea" prot="protected" virt="virtual"><scope>UniformClient::BaseClient</scope><name>StartClientThread</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a6060f2eb1d44ec518f2dfc99c8b4f7aa" prot="protected" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>SW_HIDE</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a7545b9c72eef6cb7594a7001d3f558e4" prot="protected" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>SW_SHOW</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a458271823ca5e21612c0947e1db695a0" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>thread</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a2c4762c1be5eac42b8b5d189530d0952" prot="protected" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>threadSleepTime</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

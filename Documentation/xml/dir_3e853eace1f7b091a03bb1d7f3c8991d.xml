@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_3e853eace1f7b091a03bb1d7f3c8991d" kind="dir">
+    <compoundname>D:/Work/Tools/UniformClient</compoundname>
+    <innerdir refid="dir_9fbeb5beea3f6d8d7ea6ed31fd8281c7">D:/Work/Tools/UniformClient/obj</innerdir>
+    <innerdir refid="dir_afd1537ae19fcc45c67a4230f68cbaa8">D:/Work/Tools/UniformClient/Plugins</innerdir>
+    <innerfile refid="d0/db0/_base_client_8cs">BaseClient.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/UniformClient/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d2/d9a/class_queries_server_1_1_server" kind="class" language="C#" prot="public">
+    <compoundname>QueriesServer::Server</compoundname>
+    <basecompoundref refid="d7/d32/class_uniform_server_1_1_base_server" prot="public" virt="non-virtual">UniformServer.BaseServer</basecompoundref>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="d2/d9a/class_queries_server_1_1_server_1ae294b75511557ef0701455c0e2ba785d" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void QueriesServer.Server.Main</definition>
+        <argsstring>(string[] args)</argsstring>
+        <name>Main</name>
+        <param>
+          <type>string []</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/QueriesServer/Server.cs" line="11" column="1" bodyfile="D:/Work/Tools/QueriesServer/Server.cs" bodystart="11" bodyend="13"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="283">
+        <label>UniformServer::BaseServer</label>
+        <link refid="d7/d32/class_uniform_server_1_1_base_server"/>
+      </node>
+      <node id="282">
+        <label>QueriesServer.Server</label>
+        <link refid="d2/d9a/class_queries_server_1_1_server"/>
+        <childnode refid="283" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="286">
+        <label>UniformServer.BaseServer</label>
+        <link refid="d7/d32/class_uniform_server_1_1_base_server"/>
+        <childnode refid="286" relation="usage">
+          <edgelabel>serverThreads</edgelabel>
+        </childnode>
+      </node>
+      <node id="285">
+        <label>UniformServer::BaseServer</label>
+        <link refid="d7/d32/class_uniform_server_1_1_base_server"/>
+        <childnode refid="286" relation="usage">
+          <edgelabel>serverThreads</edgelabel>
+        </childnode>
+      </node>
+      <node id="284">
+        <label>QueriesServer.Server</label>
+        <link refid="d2/d9a/class_queries_server_1_1_server"/>
+        <childnode refid="285" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/Tools/QueriesServer/Server.cs" line="10" column="1" bodyfile="D:/Work/Tools/QueriesServer/Server.cs" bodystart="9" bodyend="14"/>
+    <listofallmembers>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a632ed557976f4d7bd9b41502bb9a262b" prot="public" virt="non-virtual"><scope>QueriesServer::Server</scope><name>appTerminated</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a992660752da60019c348e18226a87bf2" prot="protected" virt="non-virtual"><scope>QueriesServer::Server</scope><name>ArgsReactor</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a1b7d5587de4974fad2ec366a571791e0" prot="protected" virt="non-virtual"><scope>QueriesServer::Server</scope><name>GetConsoleWindow</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a22b92ad517cd1003fe4fe3c86d857169" prot="protected" virt="non-virtual"><scope>QueriesServer::Server</scope><name>LoadAssemblies</name></member>
+      <member refid="d2/d9a/class_queries_server_1_1_server_1ae294b75511557ef0701455c0e2ba785d" prot="private" virt="non-virtual"><scope>QueriesServer::Server</scope><name>Main</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a051bdce3aec037df76d8efe3b9938198" prot="protected" virt="non-virtual"><scope>QueriesServer::Server</scope><name>mutexObj</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1aaa318b3ed503dd8ccf381c9f3a81ecf2" prot="public" virt="non-virtual"><scope>QueriesServer::Server</scope><name>pipeName</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a3b4049daf3614587c02fb4f1fab870a6" prot="protected" virt="non-virtual"><scope>QueriesServer::Server</scope><name>serverThreads</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a16cf4f4f9de9d6d6586631640d3d867b" prot="protected" virt="non-virtual"><scope>QueriesServer::Server</scope><name>ShowWindow</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a27e52ba4c6bc40a47795085a7e3d03cd" prot="protected" virt="virtual"><scope>QueriesServer::Server</scope><name>StartServerThread</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1aaff91507b262d2a1b9021caa2d01640f" prot="protected" virt="non-virtual"><scope>QueriesServer::Server</scope><name>SW_HIDE</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a494087cabc03c54c3dc0ac1cc1048860" prot="protected" virt="non-virtual"><scope>QueriesServer::Server</scope><name>SW_SHOW</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a52485a2d70e615a5cbf720c952a8d62f" prot="public" virt="non-virtual"><scope>QueriesServer::Server</scope><name>thread</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a31cc7d436bb2dd344ec275fd0fa0061e" prot="public" virt="non-virtual"><scope>QueriesServer::Server</scope><name>ThreadsCount</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1aa40c02a1eec7eda4c36a8ac08119b414" prot="protected" virt="non-virtual"><scope>QueriesServer::Server</scope><name>threadsCount</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a4dbe04636a763decfae22ddb2fe26c7a" prot="protected" virt="non-virtual"><scope>QueriesServer::Server</scope><name>threadSleepTime</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a440a854a955ab7c5e563918c12e9b32c" prot="public" virt="non-virtual"><scope>QueriesServer::Server</scope><name>ThreadStartRequest</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a889c3aaa1cca7f4a9a4e32617516f4be" prot="public" virt="non-virtual"><scope>QueriesServer::Server</scope><name>ThreadTerminateRequest</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

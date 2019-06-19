@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="de/d44/namespace_teacher_handbook_1_1_core_1_1_containers_1_1_entities" kind="namespace" language="C#">
+    <compoundname>TeacherHandbook::Core::Containers::Entities</compoundname>
+    <innerclass refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user" prot="public">TeacherHandbook::Core::Containers::Entities::BaseUser</innerclass>
+    <innerclass refid="da/dfa/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_group" prot="public">TeacherHandbook::Core::Containers::Entities::Group</innerclass>
+    <innerclass refid="d1/dfc/interface_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_i_user" prot="public">TeacherHandbook::Core::Containers::Entities::IUser</innerclass>
+    <innerclass refid="d5/d63/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_teacher" prot="public">TeacherHandbook::Core::Containers::Entities::Teacher</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Group.cs" line="5" column="1"/>
+  </compounddef>
+</doxygen>

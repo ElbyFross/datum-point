@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="db/db0/namespace_teacher_handbook_1_1_plugins_1_1_schedule" kind="namespace" language="C#">
+    <compoundname>TeacherHandbook::Plugins::Schedule</compoundname>
+    <innerclass refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule" prot="public">TeacherHandbook::Plugins::Schedule::Schedule</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/Schedule/Schedule.g.cs" line="35" column="1"/>
+  </compounddef>
+</doxygen>

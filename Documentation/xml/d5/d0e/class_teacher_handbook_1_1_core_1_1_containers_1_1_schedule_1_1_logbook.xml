@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d5/d0e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_logbook" kind="class" language="C#" prot="public">
+    <compoundname>TeacherHandbook::Core::Containers::Schedule::Logbook</compoundname>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="d5/d0e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_logbook_1ac848ae0c5ec991bae660417d0b96a13c" prot="protected" static="no" mutable="no">
+        <type>System.Collections.Hashtable</type>
+        <definition>System.Collections.Hashtable TeacherHandbook.Core.Containers.Schedule.Logbook.recordedDays</definition>
+        <argsstring></argsstring>
+        <name>recordedDays</name>
+        <initializer>= new System.Collections.Hashtable()</initializer>
+        <briefdescription>
+<para>Hashtable that contain all recorded days. Key(string) : day key in format dd.mm.yyyy Value(Day): day data </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/Logbook.cs" line="16" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/Logbook.cs" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d0e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_logbook_1a563af1c666ffd5e11808ed38b7f2ed83" prot="protected" static="no" mutable="no">
+        <type>List&lt; <ref refid="df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order" kindref="compound">TeacherHandbook.Core.Orders.IOrder</ref> &gt;</type>
+        <definition>List&lt;TeacherHandbook.Core.Orders.IOrder&gt; TeacherHandbook.Core.Containers.Schedule.Logbook.orders</definition>
+        <argsstring></argsstring>
+        <name>orders</name>
+        <initializer>= new List&lt;<ref refid="df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order" kindref="compound">Orders.IOrder</ref>&gt;()</initializer>
+        <briefdescription>
+<para>List of pooled orders. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/Logbook.cs" line="21" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/Logbook.cs" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Container that contain long term data about sessions. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="181">
+        <label>TeacherHandbook.Core.Containers.Schedule.Logbook</label>
+        <link refid="d5/d0e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_logbook"/>
+        <childnode refid="182" relation="usage">
+          <edgelabel>recordedDays</edgelabel>
+        </childnode>
+      </node>
+      <node id="182">
+        <label>System</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/Logbook.cs" line="10" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/Logbook.cs" bodystart="9" bodyend="22"/>
+    <listofallmembers>
+      <member refid="d5/d0e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_logbook_1a563af1c666ffd5e11808ed38b7f2ed83" prot="protected" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Schedule::Logbook</scope><name>orders</name></member>
+      <member refid="d5/d0e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_logbook_1ac848ae0c5ec991bae660417d0b96a13c" prot="protected" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Schedule::Logbook</scope><name>recordedDays</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_8088bf23e9a3b1805263e477b59597ab" kind="dir">
+    <compoundname>D:/Work/Tools/THB Data Types/obj</compoundname>
+    <innerdir refid="dir_60dd52520ab935105fefb935543e9aae">D:/Work/Tools/THB Data Types/obj/Debug</innerdir>
+    <innerdir refid="dir_8d5b170423417a867aca133a58ea720e">D:/Work/Tools/THB Data Types/obj/Release</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/THB Data Types/obj/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d3/df6/namespace_teacher_handbook_1_1_core_1_1_containers_1_1_schedule" kind="namespace" language="C#">
+    <compoundname>TeacherHandbook::Core::Containers::Schedule</compoundname>
+    <innerclass refid="d5/d0b/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_day" prot="public">TeacherHandbook::Core::Containers::Schedule::Day</innerclass>
+    <innerclass refid="d5/d0e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_logbook" prot="public">TeacherHandbook::Core::Containers::Schedule::Logbook</innerclass>
+    <innerclass refid="d5/d8e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_session" prot="public">TeacherHandbook::Core::Containers::Schedule::Session</innerclass>
+    <innerclass refid="db/dce/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_subject" prot="public">TeacherHandbook::Core::Containers::Schedule::Subject</innerclass>
+    <innerclass refid="de/d25/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_week" prot="public">TeacherHandbook::Core::Containers::Schedule::Week</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/Day.cs" line="4" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_0d6af4c17ae8c86f2c57a6f39b262849" kind="dir">
+    <compoundname>D:/Work/Tools/THB Data Types/Core/Localization</compoundname>
+    <innerfile refid="df/dbe/_language_contaier_8cs">LanguageContaier.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/THB Data Types/Core/Localization/"/>
+  </compounddef>
+</doxygen>

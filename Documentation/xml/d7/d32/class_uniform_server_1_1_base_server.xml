@@ -1,0 +1,385 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d7/d32/class_uniform_server_1_1_base_server" kind="class" language="C#" prot="public">
+    <compoundname>UniformServer::BaseServer</compoundname>
+    <derivedcompoundref refid="d2/d9a/class_queries_server_1_1_server" prot="public" virt="non-virtual">QueriesServer.Server</derivedcompoundref>
+    <derivedcompoundref refid="d8/d17/class_session_provider_1_1_server" prot="public" virt="non-virtual">SessionProvider.Server</derivedcompoundref>
+    <derivedcompoundref refid="dc/d42/class_t_h_b___data___server_1_1_server" prot="public" virt="non-virtual">THB_Data_Server.Server</derivedcompoundref>
+      <sectiondef kind="event">
+      <memberdef kind="event" id="d7/d32/class_uniform_server_1_1_base_server_1a889c3aaa1cca7f4a9a4e32617516f4be" prot="public" static="yes" add="no" remove="no" raise="no">
+        <type>System.Action&lt; int &gt;</type>
+        <definition>System.Action&lt;int&gt; UniformServer.BaseServer.ThreadTerminateRequest</definition>
+        <argsstring></argsstring>
+        <name>ThreadTerminateRequest</name>
+        <briefdescription>
+<para>Event will be called when system will request a thread termination. Argument - index of thread. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="20" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="event" id="d7/d32/class_uniform_server_1_1_base_server_1a440a854a955ab7c5e563918c12e9b32c" prot="public" static="yes" add="no" remove="no" raise="no">
+        <type>System.Action&lt; int &gt;</type>
+        <definition>System.Action&lt;int&gt; UniformServer.BaseServer.ThreadStartRequest</definition>
+        <argsstring></argsstring>
+        <name>ThreadStartRequest</name>
+        <briefdescription>
+<para>Event that will be called when seystem will require a thread start. Argument - index of thread. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="26" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1aaff91507b262d2a1b9021caa2d01640f" prot="protected" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int UniformServer.BaseServer.SW_HIDE</definition>
+        <argsstring></argsstring>
+        <name>SW_HIDE</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Argument that will hide console window. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="50" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1a494087cabc03c54c3dc0ac1cc1048860" prot="protected" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int UniformServer.BaseServer.SW_SHOW</definition>
+        <argsstring></argsstring>
+        <name>SW_SHOW</name>
+        <initializer>= 5</initializer>
+        <briefdescription>
+<para>Agrument that will show console window. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="55" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1a051bdce3aec037df76d8efe3b9938198" prot="protected" static="yes" mutable="no">
+        <type>Mutex</type>
+        <definition>Mutex UniformServer.BaseServer.mutexObj</definition>
+        <argsstring></argsstring>
+        <name>mutexObj</name>
+        <initializer>= new Mutex()</initializer>
+        <briefdescription>
+<para>Object that allow to detect processes conflict. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="60" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1a4dbe04636a763decfae22ddb2fe26c7a" prot="protected" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int UniformServer.BaseServer.threadSleepTime</definition>
+        <argsstring></argsstring>
+        <name>threadSleepTime</name>
+        <initializer>= 150</initializer>
+        <briefdescription>
+<para>How many milisseconds will sleep thread after tick. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="118" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1aa40c02a1eec7eda4c36a8ac08119b414" prot="protected" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int UniformServer.BaseServer.threadsCount</definition>
+        <argsstring></argsstring>
+        <name>threadsCount</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Count of threads. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="123" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1a3b4049daf3614587c02fb4f1fab870a6" prot="protected" static="yes" mutable="no">
+        <type><ref refid="d7/d32/class_uniform_server_1_1_base_server" kindref="compound">BaseServer</ref> []</type>
+        <definition>BaseServer [] UniformServer.BaseServer.serverThreads</definition>
+        <argsstring></argsstring>
+        <name>serverThreads</name>
+        <briefdescription>
+<para>Threads that contai servers. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="128" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1a632ed557976f4d7bd9b41502bb9a262b" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool UniformServer.BaseServer.appTerminated</definition>
+        <argsstring></argsstring>
+        <name>appTerminated</name>
+        <briefdescription>
+<para>If true then will stop main loop. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="65" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="d7/d32/class_uniform_server_1_1_base_server_1a31cc7d436bb2dd344ec275fd0fa0061e" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int UniformServer.BaseServer.ThreadsCount</definition>
+        <argsstring></argsstring>
+        <name>ThreadsCount</name>
+        <briefdescription>
+<para>Count of threads that will started on server. Changing during fly permited and safely. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="71" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="72" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1a52485a2d70e615a5cbf720c952a8d62f" prot="public" static="no" mutable="no">
+        <type>Thread</type>
+        <definition>Thread UniformServer.BaseServer.thread</definition>
+        <argsstring></argsstring>
+        <name>thread</name>
+        <briefdescription>
+<para>Reference to thread that host this server. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="135" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1aaa318b3ed503dd8ccf381c9f3a81ecf2" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string UniformServer.BaseServer.pipeName</definition>
+        <argsstring></argsstring>
+        <name>pipeName</name>
+        <briefdescription>
+<para>Name that will be applied to the pipe. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="140" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="140" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="d7/d32/class_uniform_server_1_1_base_server_1a16cf4f4f9de9d6d6586631640d3d867b" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool UniformServer.BaseServer.ShowWindow</definition>
+        <argsstring>(IntPtr hWnd, int nCmdShow)</argsstring>
+        <name>ShowWindow</name>
+        <param>
+          <type>IntPtr</type>
+          <declname>hWnd</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>nCmdShow</declname>
+        </param>
+        <briefdescription>
+<para>Imported method that allo to controll console window state. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>hWnd</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>nCmdShow</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="38" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d32/class_uniform_server_1_1_base_server_1a1b7d5587de4974fad2ec366a571791e0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>IntPtr</type>
+        <definition>static IntPtr UniformServer.BaseServer.GetConsoleWindow</definition>
+        <argsstring>()</argsstring>
+        <name>GetConsoleWindow</name>
+        <briefdescription>
+<para>Inported method that allow acces to console window. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="45" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d32/class_uniform_server_1_1_base_server_1a27e52ba4c6bc40a47795085a7e3d03cd" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>Thread</type>
+        <definition>virtual Thread UniformServer.BaseServer.StartServerThread</definition>
+        <argsstring>(string threadName, object sharebleParam, ParameterizedThreadStart serverLoop)</argsstring>
+        <name>StartServerThread</name>
+        <param>
+          <type>string</type>
+          <declname>threadName</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>sharebleParam</declname>
+        </param>
+        <param>
+          <type>ParameterizedThreadStart</type>
+          <declname>serverLoop</declname>
+        </param>
+        <briefdescription>
+<para>Method that starting server thread. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>threadName</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>sharebleParam</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="221" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="221" bodyend="233"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="d7/d32/class_uniform_server_1_1_base_server_1a22b92ad517cd1003fe4fe3c86d857169" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void UniformServer.BaseServer.LoadAssemblies</definition>
+        <argsstring>(string path)</argsstring>
+        <name>LoadAssemblies</name>
+        <param>
+          <type>string</type>
+          <declname>path</declname>
+        </param>
+        <briefdescription>
+<para>Loading assemblies from requested path. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>path</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="147" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="147" bodyend="172"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d32/class_uniform_server_1_1_base_server_1a992660752da60019c348e18226a87bf2" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void UniformServer.BaseServer.ArgsReactor</definition>
+        <argsstring>(string[] args)</argsstring>
+        <name>ArgsReactor</name>
+        <param>
+          <type>string []</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Method that will configurate application and server relative to the uniform arguments. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="178" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="178" bodyend="213"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class that provide base server features and envirounment static API. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="73">
+        <label>UniformServer.BaseServer</label>
+        <link refid="d7/d32/class_uniform_server_1_1_base_server"/>
+      </node>
+      <node id="76">
+        <label>THB_Data_Server.Server</label>
+        <link refid="dc/d42/class_t_h_b___data___server_1_1_server"/>
+        <childnode refid="73" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="75">
+        <label>SessionProvider.Server</label>
+        <link refid="d8/d17/class_session_provider_1_1_server"/>
+        <childnode refid="73" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="74">
+        <label>QueriesServer.Server</label>
+        <link refid="d2/d9a/class_queries_server_1_1_server"/>
+        <childnode refid="73" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="77">
+        <label>UniformServer.BaseServer</label>
+        <link refid="d7/d32/class_uniform_server_1_1_base_server"/>
+        <childnode refid="77" relation="usage">
+          <edgelabel>serverThreads</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="14" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="13" bodyend="234"/>
+    <listofallmembers>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a632ed557976f4d7bd9b41502bb9a262b" prot="public" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>appTerminated</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a992660752da60019c348e18226a87bf2" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>ArgsReactor</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a1b7d5587de4974fad2ec366a571791e0" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>GetConsoleWindow</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a22b92ad517cd1003fe4fe3c86d857169" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>LoadAssemblies</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a051bdce3aec037df76d8efe3b9938198" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>mutexObj</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1aaa318b3ed503dd8ccf381c9f3a81ecf2" prot="public" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>pipeName</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a3b4049daf3614587c02fb4f1fab870a6" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>serverThreads</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a16cf4f4f9de9d6d6586631640d3d867b" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>ShowWindow</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a27e52ba4c6bc40a47795085a7e3d03cd" prot="protected" virt="virtual"><scope>UniformServer::BaseServer</scope><name>StartServerThread</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1aaff91507b262d2a1b9021caa2d01640f" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>SW_HIDE</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a494087cabc03c54c3dc0ac1cc1048860" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>SW_SHOW</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a52485a2d70e615a5cbf720c952a8d62f" prot="public" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>thread</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1aa40c02a1eec7eda4c36a8ac08119b414" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>threadsCount</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a31cc7d436bb2dd344ec275fd0fa0061e" prot="public" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>ThreadsCount</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a4dbe04636a763decfae22ddb2fe26c7a" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>threadSleepTime</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a440a854a955ab7c5e563918c12e9b32c" prot="public" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>ThreadStartRequest</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a889c3aaa1cca7f4a9a4e32617516f4be" prot="public" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>ThreadTerminateRequest</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

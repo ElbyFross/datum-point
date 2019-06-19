@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_1c3ca9b4d75d703a8e054452029b21a2" kind="dir">
+    <compoundname>D:/Work/Tools/Plugins/THB Plugin Lesson/obj</compoundname>
+    <innerdir refid="dir_a9b3c003ffd20a13c91d4a361d37380f">D:/Work/Tools/Plugins/THB Plugin Lesson/obj/Debug</innerdir>
+    <innerdir refid="dir_6752f573bc751348b328be96d0493c0a">D:/Work/Tools/Plugins/THB Plugin Lesson/obj/Release</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/Plugins/THB Plugin Lesson/obj/"/>
+  </compounddef>
+</doxygen>

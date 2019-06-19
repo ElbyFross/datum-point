@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d0/d8b/class_teacher_handbook_1_1_core_1_1_containers_1_1_cross_types_1_1_name_container" kind="class" language="C#" prot="public">
+    <compoundname>TeacherHandbook::Core::Containers::CrossTypes::NameContainer</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d0/d8b/class_teacher_handbook_1_1_core_1_1_containers_1_1_cross_types_1_1_name_container_1a25225029333995c9cf056b2a6a5eafb9" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string TeacherHandbook.Core.Containers.CrossTypes.NameContainer.firstName</definition>
+        <argsstring></argsstring>
+        <name>firstName</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/THB Data Types/Core/Containers/CrossTypes/NameContainer.cs" line="11" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/CrossTypes/NameContainer.cs" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d8b/class_teacher_handbook_1_1_core_1_1_containers_1_1_cross_types_1_1_name_container_1a11d62ef2b09dcf50ec4c9d1e6bb36f85" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string TeacherHandbook.Core.Containers.CrossTypes.NameContainer.middleName</definition>
+        <argsstring></argsstring>
+        <name>middleName</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/THB Data Types/Core/Containers/CrossTypes/NameContainer.cs" line="12" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/CrossTypes/NameContainer.cs" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d0/d8b/class_teacher_handbook_1_1_core_1_1_containers_1_1_cross_types_1_1_name_container_1a7427eea89f14e950f33efd2135607d4a" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string TeacherHandbook.Core.Containers.CrossTypes.NameContainer.lastName</definition>
+        <argsstring></argsstring>
+        <name>lastName</name>
+        <initializer>= &quot;&quot;</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/THB Data Types/Core/Containers/CrossTypes/NameContainer.cs" line="13" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/CrossTypes/NameContainer.cs" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Container that contain name data </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/THB Data Types/Core/Containers/CrossTypes/NameContainer.cs" line="10" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/CrossTypes/NameContainer.cs" bodystart="9" bodyend="14"/>
+    <listofallmembers>
+      <member refid="d0/d8b/class_teacher_handbook_1_1_core_1_1_containers_1_1_cross_types_1_1_name_container_1a25225029333995c9cf056b2a6a5eafb9" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::CrossTypes::NameContainer</scope><name>firstName</name></member>
+      <member refid="d0/d8b/class_teacher_handbook_1_1_core_1_1_containers_1_1_cross_types_1_1_name_container_1a7427eea89f14e950f33efd2135607d4a" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::CrossTypes::NameContainer</scope><name>lastName</name></member>
+      <member refid="d0/d8b/class_teacher_handbook_1_1_core_1_1_containers_1_1_cross_types_1_1_name_container_1a11d62ef2b09dcf50ec4c9d1e6bb36f85" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::CrossTypes::NameContainer</scope><name>middleName</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_007c9a3ec5c2060f1503ab1708596658" kind="dir">
+    <compoundname>D:/Work/Tools/TeacherHandbook/obj/Debug</compoundname>
+    <innerdir refid="dir_2554cbb0596c5d39303ec6c2baa46fae">D:/Work/Tools/TeacherHandbook/obj/Debug/Controls</innerdir>
+    <innerdir refid="dir_bb3d1150db60f28eb1d87cfa9b731b9f">D:/Work/Tools/TeacherHandbook/obj/Debug/Plugins</innerdir>
+    <innerfile refid="d5/d62/_debug_2_app_8g_8cs">App.g.cs</innerfile>
+    <innerfile refid="d7/d83/_debug_2_app_8g_8i_8cs">App.g.i.cs</innerfile>
+    <innerfile refid="d2/d0a/_debug_2_catalog_button_8g_8i_8cs">CatalogButton.g.i.cs</innerfile>
+    <innerfile refid="df/dde/_debug_2_generated_internal_type_helper_8g_8cs">GeneratedInternalTypeHelper.g.cs</innerfile>
+    <innerfile refid="d7/de7/_debug_2_generated_internal_type_helper_8g_8i_8cs">GeneratedInternalTypeHelper.g.i.cs</innerfile>
+    <innerfile refid="de/d02/_debug_2_main_window_8g_8cs">MainWindow.g.cs</innerfile>
+    <innerfile refid="d8/d80/_debug_2_main_window_8g_8i_8cs">MainWindow.g.i.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d0/dbb/namespace_teacher_handbook_1_1_core_1_1_enums" kind="namespace" language="C#">
+    <compoundname>TeacherHandbook::Core::Enums</compoundname>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="d0/dbb/namespace_teacher_handbook_1_1_core_1_1_enums_1a3bb1f3ee99d8144754e5d217f7bd2b38" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>UserRights</name>
+        <enumvalue id="d0/dbb/namespace_teacher_handbook_1_1_core_1_1_enums_1a3bb1f3ee99d8144754e5d217f7bd2b38aadb831a7fdd83dd1e2a309ce7591dff8" prot="public">
+          <name>Guest</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d0/dbb/namespace_teacher_handbook_1_1_core_1_1_enums_1a3bb1f3ee99d8144754e5d217f7bd2b38a8f9bfe9d1345237cb3b2b205864da075" prot="public">
+          <name>User</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d0/dbb/namespace_teacher_handbook_1_1_core_1_1_enums_1a3bb1f3ee99d8144754e5d217f7bd2b38aca65a68e10b3c65ac897ff8b89f9f728" prot="public">
+          <name>Moderator</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d0/dbb/namespace_teacher_handbook_1_1_core_1_1_enums_1a3bb1f3ee99d8144754e5d217f7bd2b38a7b7bc2512ee1fedcd76bdc68926d4f7b" prot="public">
+          <name>Administrator</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/THB Data Types/Core/Enums/UserRights.cs" line="6" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Enums/UserRights.cs" bodystart="5" bodyend="11"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/THB Data Types/Core/Enums/UserRights.cs" line="4" column="1"/>
+  </compounddef>
+</doxygen>

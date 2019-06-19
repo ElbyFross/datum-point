@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d0/d99/namespace_teacher_handbook_1_1_core" kind="namespace" language="C#">
+    <compoundname>TeacherHandbook::Core</compoundname>
+    <innernamespace refid="da/de4/namespace_teacher_handbook_1_1_core_1_1_containers">TeacherHandbook::Core::Containers</innernamespace>
+    <innernamespace refid="d0/dbb/namespace_teacher_handbook_1_1_core_1_1_enums">TeacherHandbook::Core::Enums</innernamespace>
+    <innernamespace refid="d4/d5d/namespace_teacher_handbook_1_1_core_1_1_localization">TeacherHandbook::Core::Localization</innernamespace>
+    <innernamespace refid="d9/d79/namespace_teacher_handbook_1_1_core_1_1_orders">TeacherHandbook::Core::Orders</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="[generated]" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dc/da6/namespace_teacher_handbook" kind="namespace" language="C#">
+    <compoundname>TeacherHandbook</compoundname>
+    <innerclass refid="d2/d56/class_teacher_handbook_1_1_app" prot="public">TeacherHandbook::App</innerclass>
+    <innerclass refid="d2/d3e/class_teacher_handbook_1_1_catalog_button" prot="public">TeacherHandbook::CatalogButton</innerclass>
+    <innerclass refid="d8/de3/class_teacher_handbook_1_1_client" prot="public">TeacherHandbook::Client</innerclass>
+    <innerclass refid="df/d32/class_teacher_handbook_1_1_main_window" prot="public">TeacherHandbook::MainWindow</innerclass>
+    <innernamespace refid="db/d68/namespace_teacher_handbook_1_1_controls">TeacherHandbook::Controls</innernamespace>
+    <innernamespace refid="d0/d99/namespace_teacher_handbook_1_1_core">TeacherHandbook::Core</innernamespace>
+    <innernamespace refid="db/d63/namespace_teacher_handbook_1_1_plugins">TeacherHandbook::Plugins</innernamespace>
+    <innernamespace refid="d3/d7d/namespace_teacher_handbook_1_1_properties">TeacherHandbook::Properties</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="[generated]" line="1" column="1"/>
+  </compounddef>
+</doxygen>

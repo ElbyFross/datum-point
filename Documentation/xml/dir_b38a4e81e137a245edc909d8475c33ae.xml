@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_b38a4e81e137a245edc909d8475c33ae" kind="dir">
+    <compoundname>D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug</compoundname>
+    <innerdir refid="dir_1a6327bbcac0a8b37e3c3b12f8e2d4c6">D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/Achivments</innerdir>
+    <innerdir refid="dir_16b48716d1e7b4a81b16d645efae4a28">D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/Advices</innerdir>
+    <innerdir refid="dir_745eb98171660095f73dd48c48878016">D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/Feed</innerdir>
+    <innerdir refid="dir_010748947a0fa5f093ca1ae5d122ebb1">D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic</innerdir>
+    <innerdir refid="dir_0bd7077f9e9578b00f60b639e75569a6">D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/Schedule</innerdir>
+    <innerfile refid="d2/dbb/_plugins_2_t_h_b_01_plugin_01_social_2obj_2_debug_2_user_control1_8g_8i_8cs">UserControl1.g.i.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/"/>
+  </compounddef>
+</doxygen>

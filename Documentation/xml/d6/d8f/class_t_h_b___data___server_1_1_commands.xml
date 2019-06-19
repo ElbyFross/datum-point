@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d6/d8f/class_t_h_b___data___server_1_1_commands" kind="class" language="C#" prot="public">
+    <compoundname>THB_Data_Server::Commands</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d6/d8f/class_t_h_b___data___server_1_1_commands_1a996531160e55feb986342fac81c89d71" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool THB_Data_Server.Commands.CommandResponseProcessor</definition>
+        <argsstring>(string command)</argsstring>
+        <name>CommandResponseProcessor</name>
+        <param>
+          <type>string</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+<para>React to the command. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>command</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/THB Data Server/Commands.cs" line="15" column="1" bodyfile="D:/Work/Tools/THB Data Server/Commands.cs" bodystart="15" bodyend="93"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/THB Data Server/Commands.cs" line="10" column="1" bodyfile="D:/Work/Tools/THB Data Server/Commands.cs" bodystart="9" bodyend="94"/>
+    <listofallmembers>
+      <member refid="d6/d8f/class_t_h_b___data___server_1_1_commands_1a996531160e55feb986342fac81c89d71" prot="public" virt="non-virtual"><scope>THB_Data_Server::Commands</scope><name>CommandResponseProcessor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

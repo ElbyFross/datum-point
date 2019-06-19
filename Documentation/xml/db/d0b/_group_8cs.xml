@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="db/d0b/_group_8cs" kind="file" language="C#">
+    <compoundname>Group.cs</compoundname>
+    <innerclass refid="da/dfa/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_group" prot="public">TeacherHandbook::Core::Containers::Entities::Group</innerclass>
+    <innernamespace refid="de/d44/namespace_teacher_handbook_1_1_core_1_1_containers_1_1_entities">TeacherHandbook::Core::Containers::Entities</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Collections;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="4" refid="de/d44/namespace_teacher_handbook_1_1_core_1_1_containers_1_1_entities" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="dc/da6/namespace_teacher_handbook" kindref="compound">TeacherHandbook</ref>.Core.Containers.Entities</highlight></codeline>
+<codeline lineno="5"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/>[Serializable]</highlight></codeline>
+<codeline lineno="10" refid="da/dfa/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_group" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="da/dfa/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_group" kindref="compound">Group</ref></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>key<sp/>=<sp/>null;</highlight></codeline>
+<codeline lineno="16"><highlight class="normal"></highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>title<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;New<sp/>group&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"></highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Hashtable<sp/>descriptions<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Hashtable();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="29"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Group.cs"/>
+  </compounddef>
+</doxygen>

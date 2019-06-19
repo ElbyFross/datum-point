@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_51f4e2ff08982bf4d6d2f1c2ac526de3" kind="dir">
+    <compoundname>D:/Work/Tools/TeacherHandbook/obj/Release/Controls</compoundname>
+    <innerfile refid="d8/d26/_release_2_controls_2_catalog_button_8g_8cs">CatalogButton.g.cs</innerfile>
+    <innerfile refid="d9/d38/_release_2_controls_2_catalog_button_8g_8i_8cs">CatalogButton.g.i.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/TeacherHandbook/obj/Release/Controls/"/>
+  </compounddef>
+</doxygen>

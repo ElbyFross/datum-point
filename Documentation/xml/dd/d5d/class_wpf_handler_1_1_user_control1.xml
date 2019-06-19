@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dd/d5d/class_wpf_handler_1_1_user_control1" kind="class" language="C#" prot="public">
+    <compoundname>WpfHandler::UserControl1</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="dd/d5d/class_wpf_handler_1_1_user_control1_1a5205c49dc7ecde88eb8ed4a0f3468b47" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool WpfHandler.UserControl1._contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/WpfHandler/obj/Debug/UserControl1.g.i.cs" line="43" column="1" bodyfile="D:/Work/Tools/WpfHandler/obj/Debug/UserControl1.g.i.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="dd/d5d/class_wpf_handler_1_1_user_control1_1a4be9da09a92a3fd301a67bf224d2f3d5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void WpfHandler.UserControl1.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/WpfHandler/obj/Debug/UserControl1.g.i.cs" line="50" column="1" bodyfile="D:/Work/Tools/WpfHandler/obj/Debug/UserControl1.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="dd/d5d/class_wpf_handler_1_1_user_control1_1aa7f1658efb648be3e096fdb65e9d9573" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. WpfHandler.UserControl1.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/WpfHandler/obj/Debug/UserControl1.g.i.cs" line="70" column="1" bodyfile="D:/Work/Tools/WpfHandler/obj/Debug/UserControl1.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="dd/d5d/class_wpf_handler_1_1_user_control1" kindref="compound">UserControl1</ref> </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="361">
+        <label>WpfHandler.UserControl1</label>
+        <link refid="dd/d5d/class_wpf_handler_1_1_user_control1"/>
+        <childnode refid="362" relation="public-inheritance">
+        </childnode>
+        <childnode refid="363" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="362">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="363">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="364">
+        <label>WpfHandler.UserControl1</label>
+        <link refid="dd/d5d/class_wpf_handler_1_1_user_control1"/>
+        <childnode refid="365" relation="public-inheritance">
+        </childnode>
+        <childnode refid="366" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="365">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="366">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/Tools/WpfHandler/obj/Debug/UserControl1.g.i.cs" line="41" column="1" bodyfile="D:/Work/Tools/WpfHandler/obj/Debug/UserControl1.g.i.cs" bodystart="41" bodyend="73"/>
+    <listofallmembers>
+      <member refid="dd/d5d/class_wpf_handler_1_1_user_control1_1a5205c49dc7ecde88eb8ed4a0f3468b47" prot="private" virt="non-virtual"><scope>WpfHandler::UserControl1</scope><name>_contentLoaded</name></member>
+      <member refid="dd/d5d/class_wpf_handler_1_1_user_control1_1aa7f1658efb648be3e096fdb65e9d9573" prot="private" virt="non-virtual"><scope>WpfHandler::UserControl1</scope><name>Connect</name></member>
+      <member refid="dd/d5d/class_wpf_handler_1_1_user_control1_1a4be9da09a92a3fd301a67bf224d2f3d5" prot="public" virt="non-virtual"><scope>WpfHandler::UserControl1</scope><name>InitializeComponent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

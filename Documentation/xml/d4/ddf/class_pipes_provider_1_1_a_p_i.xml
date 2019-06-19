@@ -1,0 +1,645 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d4/ddf/class_pipes_provider_1_1_a_p_i" kind="class" language="C#" prot="public">
+    <compoundname>PipesProvider::API</compoundname>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1a8efe588e9c6f7bf610310d9f6223a0f8" prot="private" static="yes" mutable="no">
+        <type>readonly Hashtable</type>
+        <definition>readonly Hashtable PipesProvider.API.openedClients</definition>
+        <argsstring></argsstring>
+        <name>openedClients</name>
+        <initializer>= new Hashtable()</initializer>
+        <briefdescription>
+<para>Hashtable thast contain references to oppened pipes. Key (string) server_name.pipe_name; Value (LineProcessor) meta data about transmition. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/PipesProvider/ClientAPI.cs" line="23" column="1" bodyfile="D:/Work/Tools/PipesProvider/ClientAPI.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1ae5d6ee8740cc704d7ac5fc619349b603" prot="private" static="yes" mutable="no">
+        <type>readonly Hashtable</type>
+        <definition>readonly Hashtable PipesProvider.API.openedServers</definition>
+        <argsstring></argsstring>
+        <name>openedServers</name>
+        <initializer>= new Hashtable()</initializer>
+        <briefdescription>
+<para>Hashtable thast contain references to oppened pipes. Key (string) pipe_name; Value (<ref refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" kindref="compound">ServerTransmissionMeta</ref>) meta data about transmition. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/PipesProvider/ServerAPI.cs" line="23" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerAPI.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1a5314727d43f5fafc8630dbc814cebeac" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async void</type>
+        <definition>static async void PipesProvider.API.ConnectToServerAsync</definition>
+        <argsstring>(NamedPipeClientStream pipeClient, TransmissionLine lineProcessor)</argsstring>
+        <name>ConnectToServerAsync</name>
+        <param>
+          <type>NamedPipeClientStream</type>
+          <declname>pipeClient</declname>
+        </param>
+        <param>
+          <type><ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">TransmissionLine</ref></type>
+          <declname>lineProcessor</declname>
+        </param>
+        <briefdescription>
+<para>Start saftely async waiting connection operation. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pipeClient</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lineProcessor</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/PipesProvider/ClientAPI.cs" line="30" column="1" bodyfile="D:/Work/Tools/PipesProvider/ClientAPI.cs" bodystart="30" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1a0feeed2f76dc4292c3b85fdd054bd77e" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async void</type>
+        <definition>static async void PipesProvider.API.ConnectionEstablishedCallbackRetranslator</definition>
+        <argsstring>(IAsyncResult result)</argsstring>
+        <name>ConnectionEstablishedCallbackRetranslator</name>
+        <param>
+          <type>IAsyncResult</type>
+          <declname>result</declname>
+        </param>
+        <briefdescription>
+<para>Callback that will react on connection esstablishing. Will close waiting async operation and call shared delegate with server loop&apos;s code. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>result</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/PipesProvider/ServerAPI.cs" line="208" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerAPI.cs" bodystart="208" bodyend="259"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1aaccf777b3b489b550739dd8adcf4a1d3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void PipesProvider.API.ClientLoop</definition>
+        <argsstring>(TransmissionLine lineProcessor, PipeDirection pipeDirection, PipeOptions pipeOptions)</argsstring>
+        <name>ClientLoop</name>
+        <param>
+          <type><ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">TransmissionLine</ref></type>
+          <declname>lineProcessor</declname>
+        </param>
+        <param>
+          <type>PipeDirection</type>
+          <declname>pipeDirection</declname>
+        </param>
+        <param>
+          <type>PipeOptions</type>
+          <declname>pipeOptions</declname>
+        </param>
+        <briefdescription>
+<para>Provide stable client loop controlled by data of LineProcessor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lineProcessor</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pipeDirection</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pipeOptions</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>If queries not placed then wait. </para>        </inbodydescription>
+        <location file="D:/Work/Tools/PipesProvider/ClientAPI.cs" line="53" column="1" bodyfile="D:/Work/Tools/PipesProvider/ClientAPI.cs" bodystart="53" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1ad57a87e88181644685a947f951b9fe0f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool PipesProvider.API.TryGetLineProcessorByGUID</definition>
+        <argsstring>(string guid, out TransmissionLine lineProcessor)</argsstring>
+        <name>TryGetLineProcessorByGUID</name>
+        <param>
+          <type>string</type>
+          <declname>guid</declname>
+        </param>
+        <param>
+          <type>out <ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">TransmissionLine</ref></type>
+          <declname>lineProcessor</declname>
+        </param>
+        <briefdescription>
+<para>Try to find out registred LineProcessor by GUID. If client not strted then return false. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>guid</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lineProcessor</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/PipesProvider/ClientAPI.cs" line="123" column="1" bodyfile="D:/Work/Tools/PipesProvider/ClientAPI.cs" bodystart="123" bodyend="129"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1af785a9d8707a831a6b84ac63ae96e755" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool PipesProvider.API.TryToRegisterLineProcessor</definition>
+        <argsstring>(TransmissionLine lineProcessor)</argsstring>
+        <name>TryToRegisterLineProcessor</name>
+        <param>
+          <type><ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">TransmissionLine</ref></type>
+          <declname>lineProcessor</declname>
+        </param>
+        <briefdescription>
+<para>Trying to register line processor in common table by key: ServerName.PipeLine </para>        </briefdescription>
+        <detaileddescription>
+<para>If exist return false. Retrun sycces if added to table. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>lineProcessor</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/PipesProvider/ClientAPI.cs" line="140" column="1" bodyfile="D:/Work/Tools/PipesProvider/ClientAPI.cs" bodystart="140" bodyend="155"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1abea09e221bfe03713f46b7223c6dd62f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void PipesProvider.API.ServerLoop</definition>
+        <argsstring>(System.Action&lt; ServerTransmissionMeta, string &gt; queryHandlerCallback, string pipeName, out string guid)</argsstring>
+        <name>ServerLoop</name>
+        <param>
+          <type>System.Action&lt; <ref refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" kindref="compound">ServerTransmissionMeta</ref>, string &gt;</type>
+          <declname>queryHandlerCallback</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>pipeName</declname>
+        </param>
+        <param>
+          <type>out string</type>
+          <declname>guid</declname>
+        </param>
+        <briefdescription>
+<para>Automaticly create server&apos;s pipe. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>queryHandlerCallback</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pipeName</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/PipesProvider/ServerAPI.cs" line="31" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerAPI.cs" bodystart="31" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1aef65cfb6e72f44adf25b3cf8bc0d8656" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void PipesProvider.API.ServerLoop</definition>
+        <argsstring>(string guid, System.Action&lt; ServerTransmissionMeta, string &gt; queryHandlerCallback, string pipeName)</argsstring>
+        <name>ServerLoop</name>
+        <param>
+          <type>string</type>
+          <declname>guid</declname>
+        </param>
+        <param>
+          <type>System.Action&lt; <ref refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" kindref="compound">ServerTransmissionMeta</ref>, string &gt;</type>
+          <declname>queryHandlerCallback</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>pipeName</declname>
+        </param>
+        <briefdescription>
+<para>Automaticly create server&apos;s pipe. Allow to customise GUID. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>guid</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>queryHandlerCallback</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pipeName</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/PipesProvider/ServerAPI.cs" line="58" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerAPI.cs" bodystart="58" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1abf7202abca50566888c625b928d0cbaa" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void PipesProvider.API.ServerLoop</definition>
+        <argsstring>(string guid, System.Action&lt; ServerTransmissionMeta, string &gt; queryHandlerCallback, string pipeName, PipeDirection pipeDirection, int allowedServerInstances, PipeTransmissionMode transmissionMode, PipeOptions pipeOptions)</argsstring>
+        <name>ServerLoop</name>
+        <param>
+          <type>string</type>
+          <declname>guid</declname>
+        </param>
+        <param>
+          <type>System.Action&lt; <ref refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" kindref="compound">ServerTransmissionMeta</ref>, string &gt;</type>
+          <declname>queryHandlerCallback</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>pipeName</declname>
+        </param>
+        <param>
+          <type>PipeDirection</type>
+          <declname>pipeDirection</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>allowedServerInstances</declname>
+        </param>
+        <param>
+          <type>PipeTransmissionMode</type>
+          <declname>transmissionMode</declname>
+        </param>
+        <param>
+          <type>PipeOptions</type>
+          <declname>pipeOptions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>guid</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>queryHandlerCallback</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pipeName</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pipeDirection</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>allowedServerInstances</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>transmissionMode</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pipeOptions</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/PipesProvider/ServerAPI.cs" line="84" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerAPI.cs" bodystart="84" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1ab18891bb1d9c04a9c9144e0d8c89aebf" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void PipesProvider.API.ServerLoop</definition>
+        <argsstring>(string guid, System.Action&lt; ServerTransmissionMeta &gt; connectionCallback, System.Action&lt; ServerTransmissionMeta, string &gt; queryHandlerCallback, string pipeName, PipeDirection pipeDirection, int allowedServerInstances, PipeTransmissionMode transmissionMode, PipeOptions pipeOptions)</argsstring>
+        <name>ServerLoop</name>
+        <param>
+          <type>string</type>
+          <declname>guid</declname>
+        </param>
+        <param>
+          <type>System.Action&lt; <ref refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" kindref="compound">ServerTransmissionMeta</ref> &gt;</type>
+          <declname>connectionCallback</declname>
+        </param>
+        <param>
+          <type>System.Action&lt; <ref refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" kindref="compound">ServerTransmissionMeta</ref>, string &gt;</type>
+          <declname>queryHandlerCallback</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>pipeName</declname>
+        </param>
+        <param>
+          <type>PipeDirection</type>
+          <declname>pipeDirection</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>allowedServerInstances</declname>
+        </param>
+        <param>
+          <type>PipeTransmissionMode</type>
+          <declname>transmissionMode</declname>
+        </param>
+        <param>
+          <type>PipeOptions</type>
+          <declname>pipeOptions</declname>
+        </param>
+        <briefdescription>
+<para>Provide base server loop that control pipe. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>connectionCallback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Delegate that will be called when connection will be established.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pipeName</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pipeDirection</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>allowedServerInstances</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>transmissionMode</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pipeOptions</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Update data. </para>        </inbodydescription>
+        <location file="D:/Work/Tools/PipesProvider/ServerAPI.cs" line="113" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerAPI.cs" bodystart="113" bodyend="198"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1ab525aaa0c87f23cfbe4ad6d0ed1b1b4c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void PipesProvider.API.SetExpired</definition>
+        <argsstring>(string pipeName)</argsstring>
+        <name>SetExpired</name>
+        <param>
+          <type>string</type>
+          <declname>pipeName</declname>
+        </param>
+        <briefdescription>
+<para>Marking pipe as expired. On the next loop tick connections will be disconnect and pipe will close. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pipeName</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/PipesProvider/ServerAPI.cs" line="266" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerAPI.cs" bodystart="266" bodyend="277"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1a9bfed3a9b5733c6a76235ec096c903e3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void PipesProvider.API.SetExpired</definition>
+        <argsstring>(ServerTransmissionMeta meta)</argsstring>
+        <name>SetExpired</name>
+        <param>
+          <type><ref refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" kindref="compound">ServerTransmissionMeta</ref></type>
+          <declname>meta</declname>
+        </param>
+        <briefdescription>
+<para>Marking pipe as expired. On the next loop tick connections will be disconnect and pipe will close. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pipeName</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/PipesProvider/ServerAPI.cs" line="284" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerAPI.cs" bodystart="284" bodyend="288"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1a7e26cdf7c5b1f43abd155b4988f7bab1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void PipesProvider.API.SetExpiredAll</definition>
+        <argsstring>()</argsstring>
+        <name>SetExpiredAll</name>
+        <briefdescription>
+<para>Markin all pipes as expired. Connection will be terminated. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/PipesProvider/ServerAPI.cs" line="294" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerAPI.cs" bodystart="294" bodyend="300"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1a1a81c47121d56bca83bd3cbf058d6478" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void PipesProvider.API.StopServer</definition>
+        <argsstring>(string pipeName)</argsstring>
+        <name>StopServer</name>
+        <param>
+          <type>string</type>
+          <declname>pipeName</declname>
+        </param>
+        <briefdescription>
+<para>Stop server by pipe name. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pipeName</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/PipesProvider/ServerAPI.cs" line="306" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerAPI.cs" bodystart="306" bodyend="320"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1aec56e2367941c5cbf6501298a946b41a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void PipesProvider.API.StopServer</definition>
+        <argsstring>(ServerTransmissionMeta meta)</argsstring>
+        <name>StopServer</name>
+        <param>
+          <type><ref refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" kindref="compound">ServerTransmissionMeta</ref></type>
+          <declname>meta</declname>
+        </param>
+        <briefdescription>
+<para>Stop server by relative meta data. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>meta</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Log error. </para>        </inbodydescription>
+        <location file="D:/Work/Tools/PipesProvider/ServerAPI.cs" line="326" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerAPI.cs" bodystart="326" bodyend="354"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1a5ec1b30c068984a8dbff3a5a4d41a8b7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void PipesProvider.API.StopAllServers</definition>
+        <argsstring>()</argsstring>
+        <name>StopAllServers</name>
+        <briefdescription>
+<para>Stoping all regirated servers. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/PipesProvider/ServerAPI.cs" line="359" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerAPI.cs" bodystart="359" bodyend="381"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1a90278e985fdf5488b1a60787fa1ff5ac" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async void</type>
+        <definition>static async void PipesProvider.API.DNSHandler</definition>
+        <argsstring>(PipesProvider.ServerTransmissionMeta meta)</argsstring>
+        <name>DNSHandler</name>
+        <param>
+          <type><ref refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" kindref="compound">PipesProvider.ServerTransmissionMeta</ref></type>
+          <declname>meta</declname>
+        </param>
+        <briefdescription>
+<para>Code that will work on server loop when connection will be established. Recoomended to using as default DNS Handler </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Avoid disconnectin error. </para>        </inbodydescription>
+        <location file="D:/Work/Tools/PipesProvider/ServerAPI.cs" line="390" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerAPI.cs" bodystart="390" bodyend="455"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class that provide common methods for easy work with pipes&apos; tasks. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/PipesProvider/ClientAPI.cs" line="17" column="1" bodyfile="D:/Work/Tools/PipesProvider/ClientAPI.cs" bodystart="16" bodyend="157"/>
+    <listofallmembers>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1aaccf777b3b489b550739dd8adcf4a1d3" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>ClientLoop</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a0feeed2f76dc4292c3b85fdd054bd77e" prot="private" virt="non-virtual"><scope>PipesProvider::API</scope><name>ConnectionEstablishedCallbackRetranslator</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a5314727d43f5fafc8630dbc814cebeac" prot="private" virt="non-virtual"><scope>PipesProvider::API</scope><name>ConnectToServerAsync</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a90278e985fdf5488b1a60787fa1ff5ac" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>DNSHandler</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a8efe588e9c6f7bf610310d9f6223a0f8" prot="private" virt="non-virtual"><scope>PipesProvider::API</scope><name>openedClients</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1ae5d6ee8740cc704d7ac5fc619349b603" prot="private" virt="non-virtual"><scope>PipesProvider::API</scope><name>openedServers</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1abea09e221bfe03713f46b7223c6dd62f" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>ServerLoop</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1aef65cfb6e72f44adf25b3cf8bc0d8656" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>ServerLoop</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1abf7202abca50566888c625b928d0cbaa" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>ServerLoop</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1ab18891bb1d9c04a9c9144e0d8c89aebf" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>ServerLoop</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1ab525aaa0c87f23cfbe4ad6d0ed1b1b4c" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>SetExpired</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a9bfed3a9b5733c6a76235ec096c903e3" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>SetExpired</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a7e26cdf7c5b1f43abd155b4988f7bab1" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>SetExpiredAll</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a5ec1b30c068984a8dbff3a5a4d41a8b7" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>StopAllServers</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a1a81c47121d56bca83bd3cbf058d6478" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>StopServer</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1aec56e2367941c5cbf6501298a946b41a" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>StopServer</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1ad57a87e88181644685a947f951b9fe0f" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>TryGetLineProcessorByGUID</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1af785a9d8707a831a6b84ac63ae96e755" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>TryToRegisterLineProcessor</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

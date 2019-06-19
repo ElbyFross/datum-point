@@ -1,0 +1,296 @@
+\hypertarget{class_uniform_server_1_1_base_server}{}\section{Uniform\+Server.\+Base\+Server Class Reference}
+\label{class_uniform_server_1_1_base_server}\index{Uniform\+Server.\+Base\+Server@{Uniform\+Server.\+Base\+Server}}
+
+
+Class that provide base server features and envirounment static A\+PI.  
+
+
+Inheritance diagram for Uniform\+Server.\+Base\+Server\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d7/d32/class_uniform_server_1_1_base_server}
+\end{center}
+\end{figure}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Thread \mbox{\hyperlink{class_uniform_server_1_1_base_server_a52485a2d70e615a5cbf720c952a8d62f}{thread}}
+\begin{DoxyCompactList}\small\item\em Reference to thread that host this server. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_uniform_server_1_1_base_server_aaa318b3ed503dd8ccf381c9f3a81ecf2}{pipe\+Name}}
+\begin{DoxyCompactList}\small\item\em Name that will be applied to the pipe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_uniform_server_1_1_base_server_a632ed557976f4d7bd9b41502bb9a262b}{app\+Terminated}}
+\begin{DoxyCompactList}\small\item\em If true then will stop main loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_uniform_server_1_1_base_server_a16cf4f4f9de9d6d6586631640d3d867b}{Show\+Window}} (Int\+Ptr h\+Wnd, int n\+Cmd\+Show)
+\begin{DoxyCompactList}\small\item\em Imported method that allo to controll console window state. \end{DoxyCompactList}\item 
+static Int\+Ptr \mbox{\hyperlink{class_uniform_server_1_1_base_server_a1b7d5587de4974fad2ec366a571791e0}{Get\+Console\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Inported method that allow acces to console window. \end{DoxyCompactList}\item 
+virtual Thread \mbox{\hyperlink{class_uniform_server_1_1_base_server_a27e52ba4c6bc40a47795085a7e3d03cd}{Start\+Server\+Thread}} (string thread\+Name, object shareble\+Param, Parameterized\+Thread\+Start server\+Loop)
+\begin{DoxyCompactList}\small\item\em Method that starting server thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_uniform_server_1_1_base_server_a22b92ad517cd1003fe4fe3c86d857169}{Load\+Assemblies}} (string path)
+\begin{DoxyCompactList}\small\item\em Loading assemblies from requested path. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_uniform_server_1_1_base_server_a992660752da60019c348e18226a87bf2}{Args\+Reactor}} (string\mbox{[}$\,$\mbox{]} args)
+\begin{DoxyCompactList}\small\item\em Method that will configurate application and server relative to the uniform arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_uniform_server_1_1_base_server_aaff91507b262d2a1b9021caa2d01640f}{S\+W\+\_\+\+H\+I\+DE}} = 0
+\begin{DoxyCompactList}\small\item\em Argument that will hide console window. \end{DoxyCompactList}\item 
+const int \mbox{\hyperlink{class_uniform_server_1_1_base_server_a494087cabc03c54c3dc0ac1cc1048860}{S\+W\+\_\+\+S\+H\+OW}} = 5
+\begin{DoxyCompactList}\small\item\em Agrument that will show console window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Mutex \mbox{\hyperlink{class_uniform_server_1_1_base_server_a051bdce3aec037df76d8efe3b9938198}{mutex\+Obj}} = new Mutex()
+\begin{DoxyCompactList}\small\item\em Object that allow to detect processes conflict. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_uniform_server_1_1_base_server_a4dbe04636a763decfae22ddb2fe26c7a}{thread\+Sleep\+Time}} = 150
+\begin{DoxyCompactList}\small\item\em How many milisseconds will sleep thread after tick. \end{DoxyCompactList}\item 
+static int \mbox{\hyperlink{class_uniform_server_1_1_base_server_aa40c02a1eec7eda4c36a8ac08119b414}{threads\+Count}} = 1
+\begin{DoxyCompactList}\small\item\em Count of threads. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_uniform_server_1_1_base_server}{Base\+Server}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_uniform_server_1_1_base_server_a3b4049daf3614587c02fb4f1fab870a6}{server\+Threads}}
+\begin{DoxyCompactList}\small\item\em Threads that contai servers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_uniform_server_1_1_base_server_a31cc7d436bb2dd344ec275fd0fa0061e}{Threads\+Count}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Count of threads that will started on server. Changing during fly permited and safely. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+static System.\+Action$<$ int $>$ \mbox{\hyperlink{class_uniform_server_1_1_base_server_a889c3aaa1cca7f4a9a4e32617516f4be}{Thread\+Terminate\+Request}}
+\begin{DoxyCompactList}\small\item\em Event will be called when system will request a thread termination. Argument -\/ index of thread. \end{DoxyCompactList}\item 
+static System.\+Action$<$ int $>$ \mbox{\hyperlink{class_uniform_server_1_1_base_server_a440a854a955ab7c5e563918c12e9b32c}{Thread\+Start\+Request}}
+\begin{DoxyCompactList}\small\item\em Event that will be called when seystem will require a thread start. Argument -\/ index of thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that provide base server features and envirounment static A\+PI. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a992660752da60019c348e18226a87bf2}\label{class_uniform_server_1_1_base_server_a992660752da60019c348e18226a87bf2}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!Args\+Reactor@{Args\+Reactor}}
+\index{Args\+Reactor@{Args\+Reactor}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{Args\+Reactor()}{ArgsReactor()}}
+{\footnotesize\ttfamily static void Uniform\+Server.\+Base\+Server.\+Args\+Reactor (\begin{DoxyParamCaption}\item[{string \mbox{[}$\,$\mbox{]}}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Method that will configurate application and server relative to the uniform arguments. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a1b7d5587de4974fad2ec366a571791e0}\label{class_uniform_server_1_1_base_server_a1b7d5587de4974fad2ec366a571791e0}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!Get\+Console\+Window@{Get\+Console\+Window}}
+\index{Get\+Console\+Window@{Get\+Console\+Window}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{Get\+Console\+Window()}{GetConsoleWindow()}}
+{\footnotesize\ttfamily static Int\+Ptr Uniform\+Server.\+Base\+Server.\+Get\+Console\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Inported method that allow acces to console window. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a22b92ad517cd1003fe4fe3c86d857169}\label{class_uniform_server_1_1_base_server_a22b92ad517cd1003fe4fe3c86d857169}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!Load\+Assemblies@{Load\+Assemblies}}
+\index{Load\+Assemblies@{Load\+Assemblies}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{Load\+Assemblies()}{LoadAssemblies()}}
+{\footnotesize\ttfamily static void Uniform\+Server.\+Base\+Server.\+Load\+Assemblies (\begin{DoxyParamCaption}\item[{string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Loading assemblies from requested path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a16cf4f4f9de9d6d6586631640d3d867b}\label{class_uniform_server_1_1_base_server_a16cf4f4f9de9d6d6586631640d3d867b}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!Show\+Window@{Show\+Window}}
+\index{Show\+Window@{Show\+Window}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{Show\+Window()}{ShowWindow()}}
+{\footnotesize\ttfamily static bool Uniform\+Server.\+Base\+Server.\+Show\+Window (\begin{DoxyParamCaption}\item[{Int\+Ptr}]{h\+Wnd,  }\item[{int}]{n\+Cmd\+Show }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Imported method that allo to controll console window state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em h\+Wnd} & \\
+\hline
+{\em n\+Cmd\+Show} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a27e52ba4c6bc40a47795085a7e3d03cd}\label{class_uniform_server_1_1_base_server_a27e52ba4c6bc40a47795085a7e3d03cd}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!Start\+Server\+Thread@{Start\+Server\+Thread}}
+\index{Start\+Server\+Thread@{Start\+Server\+Thread}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{Start\+Server\+Thread()}{StartServerThread()}}
+{\footnotesize\ttfamily virtual Thread Uniform\+Server.\+Base\+Server.\+Start\+Server\+Thread (\begin{DoxyParamCaption}\item[{string}]{thread\+Name,  }\item[{object}]{shareble\+Param,  }\item[{Parameterized\+Thread\+Start}]{server\+Loop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Method that starting server thread. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em thread\+Name} & \\
+\hline
+{\em shareble\+Param} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a632ed557976f4d7bd9b41502bb9a262b}\label{class_uniform_server_1_1_base_server_a632ed557976f4d7bd9b41502bb9a262b}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!app\+Terminated@{app\+Terminated}}
+\index{app\+Terminated@{app\+Terminated}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{app\+Terminated}{appTerminated}}
+{\footnotesize\ttfamily bool Uniform\+Server.\+Base\+Server.\+app\+Terminated\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+If true then will stop main loop. 
+
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a051bdce3aec037df76d8efe3b9938198}\label{class_uniform_server_1_1_base_server_a051bdce3aec037df76d8efe3b9938198}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!mutex\+Obj@{mutex\+Obj}}
+\index{mutex\+Obj@{mutex\+Obj}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{mutex\+Obj}{mutexObj}}
+{\footnotesize\ttfamily Mutex Uniform\+Server.\+Base\+Server.\+mutex\+Obj = new Mutex()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Object that allow to detect processes conflict. 
+
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_aaa318b3ed503dd8ccf381c9f3a81ecf2}\label{class_uniform_server_1_1_base_server_aaa318b3ed503dd8ccf381c9f3a81ecf2}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!pipe\+Name@{pipe\+Name}}
+\index{pipe\+Name@{pipe\+Name}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{pipe\+Name}{pipeName}}
+{\footnotesize\ttfamily string Uniform\+Server.\+Base\+Server.\+pipe\+Name}
+
+
+
+Name that will be applied to the pipe. 
+
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a3b4049daf3614587c02fb4f1fab870a6}\label{class_uniform_server_1_1_base_server_a3b4049daf3614587c02fb4f1fab870a6}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!server\+Threads@{server\+Threads}}
+\index{server\+Threads@{server\+Threads}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{server\+Threads}{serverThreads}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_uniform_server_1_1_base_server}{Base\+Server}} \mbox{[}$\,$\mbox{]} Uniform\+Server.\+Base\+Server.\+server\+Threads\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Threads that contai servers. 
+
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_aaff91507b262d2a1b9021caa2d01640f}\label{class_uniform_server_1_1_base_server_aaff91507b262d2a1b9021caa2d01640f}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!S\+W\+\_\+\+H\+I\+DE@{S\+W\+\_\+\+H\+I\+DE}}
+\index{S\+W\+\_\+\+H\+I\+DE@{S\+W\+\_\+\+H\+I\+DE}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{S\+W\+\_\+\+H\+I\+DE}{SW\_HIDE}}
+{\footnotesize\ttfamily const int Uniform\+Server.\+Base\+Server.\+S\+W\+\_\+\+H\+I\+DE = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Argument that will hide console window. 
+
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a494087cabc03c54c3dc0ac1cc1048860}\label{class_uniform_server_1_1_base_server_a494087cabc03c54c3dc0ac1cc1048860}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!S\+W\+\_\+\+S\+H\+OW@{S\+W\+\_\+\+S\+H\+OW}}
+\index{S\+W\+\_\+\+S\+H\+OW@{S\+W\+\_\+\+S\+H\+OW}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{S\+W\+\_\+\+S\+H\+OW}{SW\_SHOW}}
+{\footnotesize\ttfamily const int Uniform\+Server.\+Base\+Server.\+S\+W\+\_\+\+S\+H\+OW = 5\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Agrument that will show console window. 
+
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a52485a2d70e615a5cbf720c952a8d62f}\label{class_uniform_server_1_1_base_server_a52485a2d70e615a5cbf720c952a8d62f}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!thread@{thread}}
+\index{thread@{thread}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{thread}{thread}}
+{\footnotesize\ttfamily Thread Uniform\+Server.\+Base\+Server.\+thread}
+
+
+
+Reference to thread that host this server. 
+
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_aa40c02a1eec7eda4c36a8ac08119b414}\label{class_uniform_server_1_1_base_server_aa40c02a1eec7eda4c36a8ac08119b414}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!threads\+Count@{threads\+Count}}
+\index{threads\+Count@{threads\+Count}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{threads\+Count}{threadsCount}}
+{\footnotesize\ttfamily int Uniform\+Server.\+Base\+Server.\+threads\+Count = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Count of threads. 
+
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a4dbe04636a763decfae22ddb2fe26c7a}\label{class_uniform_server_1_1_base_server_a4dbe04636a763decfae22ddb2fe26c7a}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!thread\+Sleep\+Time@{thread\+Sleep\+Time}}
+\index{thread\+Sleep\+Time@{thread\+Sleep\+Time}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{thread\+Sleep\+Time}{threadSleepTime}}
+{\footnotesize\ttfamily int Uniform\+Server.\+Base\+Server.\+thread\+Sleep\+Time = 150\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+How many milisseconds will sleep thread after tick. 
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a31cc7d436bb2dd344ec275fd0fa0061e}\label{class_uniform_server_1_1_base_server_a31cc7d436bb2dd344ec275fd0fa0061e}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!Threads\+Count@{Threads\+Count}}
+\index{Threads\+Count@{Threads\+Count}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{Threads\+Count}{ThreadsCount}}
+{\footnotesize\ttfamily int Uniform\+Server.\+Base\+Server.\+Threads\+Count\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Count of threads that will started on server. Changing during fly permited and safely. 
+
+
+
+\subsection{Event Documentation}
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a440a854a955ab7c5e563918c12e9b32c}\label{class_uniform_server_1_1_base_server_a440a854a955ab7c5e563918c12e9b32c}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!Thread\+Start\+Request@{Thread\+Start\+Request}}
+\index{Thread\+Start\+Request@{Thread\+Start\+Request}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{Thread\+Start\+Request}{ThreadStartRequest}}
+{\footnotesize\ttfamily System.\+Action$<$int$>$ Uniform\+Server.\+Base\+Server.\+Thread\+Start\+Request\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Event that will be called when seystem will require a thread start. Argument -\/ index of thread. 
+
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a889c3aaa1cca7f4a9a4e32617516f4be}\label{class_uniform_server_1_1_base_server_a889c3aaa1cca7f4a9a4e32617516f4be}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!Thread\+Terminate\+Request@{Thread\+Terminate\+Request}}
+\index{Thread\+Terminate\+Request@{Thread\+Terminate\+Request}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{Thread\+Terminate\+Request}{ThreadTerminateRequest}}
+{\footnotesize\ttfamily System.\+Action$<$int$>$ Uniform\+Server.\+Base\+Server.\+Thread\+Terminate\+Request\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Event will be called when system will request a thread termination. Argument -\/ index of thread. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Work/\+Tools/\+Uniform\+Server/Base\+Server.\+cs\end{DoxyCompactItemize}

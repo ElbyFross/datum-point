@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="da/df3/_i_query_8cs" kind="file" language="C#">
+    <compoundname>IQuery.cs</compoundname>
+    <innerclass refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor" prot="public">UniformQueries::IQueryHandlerProcessor</innerclass>
+    <innernamespace refid="d4/daa/namespace_uniform_queries">UniformQueries</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Collections.Generic;</highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Linq;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Text;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">using</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Threading.Tasks;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7" refid="d4/daa/namespace_uniform_queries" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="d4/daa/namespace_uniform_queries" kindref="compound">UniformQueries</ref></highlight></codeline>
+<codeline lineno="8"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="13" refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">interface<sp/></highlight><highlight class="normal"><ref refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor" kindref="compound">IQueryHandlerProcessor</ref></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"><sp/><sp/><sp/><sp/>{</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1a60538b1b29c5d1d3bc67db28a265677a" kindref="member">Execute</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">[]<sp/>queryParts);</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/><ref refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1a435493887db64defdb6019c3c418a4d4" kindref="member">IsTarget</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal">[]<sp/>queryParts);</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/><ref refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1ae7323367177cd11c787d61029de5b044" kindref="member">Description</ref>(</highlight><highlight class="keywordtype">string</highlight><highlight class="normal"><sp/>cultureKey);</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="D:/Work/Tools/UniformQueries/IQuery.cs"/>
+  </compounddef>
+</doxygen>

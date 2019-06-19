@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d9/d79/namespace_teacher_handbook_1_1_core_1_1_orders" kind="namespace" language="C#">
+    <compoundname>TeacherHandbook::Core::Orders</compoundname>
+    <innerclass refid="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order" prot="public">TeacherHandbook::Core::Orders::BaseOrder</innerclass>
+    <innerclass refid="df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order" prot="public">TeacherHandbook::Core::Orders::IOrder</innerclass>
+    <innerclass refid="d8/d91/class_teacher_handbook_1_1_core_1_1_orders_1_1_mentoring_order" prot="public">TeacherHandbook::Core::Orders::MentoringOrder</innerclass>
+    <innerclass refid="dc/d14/struct_teacher_handbook_1_1_core_1_1_orders_1_1_order_date" prot="public">TeacherHandbook::Core::Orders::OrderDate</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/THB Data Types/Core/Orders/BaseOrder.cs" line="4" column="1"/>
+  </compounddef>
+</doxygen>

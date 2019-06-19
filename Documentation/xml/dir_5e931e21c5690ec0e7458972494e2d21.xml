@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_5e931e21c5690ec0e7458972494e2d21" kind="dir">
+    <compoundname>D:/Work/Tools/THB Data Types/Core</compoundname>
+    <innerdir refid="dir_49033eab1d854dbe4f013da03c22bac7">D:/Work/Tools/THB Data Types/Core/Containers</innerdir>
+    <innerdir refid="dir_cf5903973dc6be319295cba59620ac75">D:/Work/Tools/THB Data Types/Core/Enums</innerdir>
+    <innerdir refid="dir_0d6af4c17ae8c86f2c57a6f39b262849">D:/Work/Tools/THB Data Types/Core/Localization</innerdir>
+    <innerdir refid="dir_a1572d7f8f8e653d4dac362b7a4af60a">D:/Work/Tools/THB Data Types/Core/Orders</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/THB Data Types/Core/"/>
+  </compounddef>
+</doxygen>

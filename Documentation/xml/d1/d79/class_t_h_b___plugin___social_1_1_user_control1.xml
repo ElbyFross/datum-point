@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d1/d79/class_t_h_b___plugin___social_1_1_user_control1" kind="class" language="C#" prot="public">
+    <compoundname>THB_Plugin_Social::UserControl1</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d1/d79/class_t_h_b___plugin___social_1_1_user_control1_1a3f1b09bbced6d4b895eff4b6a376601e" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool THB_Plugin_Social.UserControl1._contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/UserControl1.g.i.cs" line="43" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/UserControl1.g.i.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d1/d79/class_t_h_b___plugin___social_1_1_user_control1_1a25fbdc8418a5a7c4054d91d6aeb14fcf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Social.UserControl1.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/UserControl1.g.i.cs" line="50" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/UserControl1.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d1/d79/class_t_h_b___plugin___social_1_1_user_control1_1ae3f433a2f257e1f3ebec48d3b1d5365f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Social.UserControl1.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/UserControl1.g.i.cs" line="70" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/UserControl1.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="d1/d79/class_t_h_b___plugin___social_1_1_user_control1" kindref="compound">UserControl1</ref> </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="355">
+        <label>THB_Plugin_Social.UserControl1</label>
+        <link refid="d1/d79/class_t_h_b___plugin___social_1_1_user_control1"/>
+        <childnode refid="356" relation="public-inheritance">
+        </childnode>
+        <childnode refid="357" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="356">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="357">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="358">
+        <label>THB_Plugin_Social.UserControl1</label>
+        <link refid="d1/d79/class_t_h_b___plugin___social_1_1_user_control1"/>
+        <childnode refid="359" relation="public-inheritance">
+        </childnode>
+        <childnode refid="360" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="359">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="360">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/UserControl1.g.i.cs" line="41" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/UserControl1.g.i.cs" bodystart="41" bodyend="73"/>
+    <listofallmembers>
+      <member refid="d1/d79/class_t_h_b___plugin___social_1_1_user_control1_1a3f1b09bbced6d4b895eff4b6a376601e" prot="private" virt="non-virtual"><scope>THB_Plugin_Social::UserControl1</scope><name>_contentLoaded</name></member>
+      <member refid="d1/d79/class_t_h_b___plugin___social_1_1_user_control1_1ae3f433a2f257e1f3ebec48d3b1d5365f" prot="private" virt="non-virtual"><scope>THB_Plugin_Social::UserControl1</scope><name>Connect</name></member>
+      <member refid="d1/d79/class_t_h_b___plugin___social_1_1_user_control1_1a25fbdc8418a5a7c4054d91d6aeb14fcf" prot="public" virt="non-virtual"><scope>THB_Plugin_Social::UserControl1</scope><name>InitializeComponent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

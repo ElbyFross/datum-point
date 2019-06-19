@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d5/d63/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_teacher" kind="class" language="C#" prot="public">
+    <compoundname>TeacherHandbook::Core::Containers::Entities::Teacher</compoundname>
+    <basecompoundref refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user" prot="public" virt="non-virtual">TeacherHandbook.Core.Containers.Entities.BaseUser</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d5/d63/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_teacher_1ad02f1edfb4ccf083314696c9a3a5248b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>TeacherHandbook.Core.Containers.Entities.Teacher.Teacher</definition>
+        <argsstring>()</argsstring>
+        <name>Teacher</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Set default rights. </para>        </inbodydescription>
+        <location file="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users/Teacher.cs" line="17" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users/Teacher.cs" bodystart="17" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Data about teacher. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="324">
+        <label>BaseUser</label>
+        <link refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user"/>
+        <childnode refid="325" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="325">
+        <label>IUser</label>
+        <link refid="d1/dfc/interface_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_i_user"/>
+      </node>
+      <node id="323">
+        <label>TeacherHandbook.Core.Containers.Entities.Teacher</label>
+        <link refid="d5/d63/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_teacher"/>
+        <childnode refid="324" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="327">
+        <label>BaseUser</label>
+        <link refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user"/>
+        <childnode refid="328" relation="public-inheritance">
+        </childnode>
+        <childnode refid="329" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="328">
+        <label>IUser</label>
+        <link refid="d1/dfc/interface_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_i_user"/>
+      </node>
+      <node id="329">
+        <label>System</label>
+      </node>
+      <node id="326">
+        <label>TeacherHandbook.Core.Containers.Entities.Teacher</label>
+        <link refid="d5/d63/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_teacher"/>
+        <childnode refid="327" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users/Teacher.cs" line="16" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users/Teacher.cs" bodystart="15" bodyend="22"/>
+    <listofallmembers>
+      <member refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1a53a606a419de1741eb85a13062267be9" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Entities::Teacher</scope><name>Name</name></member>
+      <member refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1ad8da6882147f62d42960e2a436b8dff1" prot="protected" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Entities::Teacher</scope><name>name</name></member>
+      <member refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1ad553bd1715f8aa5ab9253027533b8287" prot="protected" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Entities::Teacher</scope><name>rights</name></member>
+      <member refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1a0aeebd3854d7996435cdb2fc691c2bc3" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Entities::Teacher</scope><name>Rigts</name></member>
+      <member refid="d5/d63/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_teacher_1ad02f1edfb4ccf083314696c9a3a5248b" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Entities::Teacher</scope><name>Teacher</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

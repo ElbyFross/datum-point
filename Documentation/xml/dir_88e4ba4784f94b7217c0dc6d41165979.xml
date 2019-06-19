@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_88e4ba4784f94b7217c0dc6d41165979" kind="dir">
+    <compoundname>D:/Work/Tools/THB Data Types/Core/Containers/Schedule</compoundname>
+    <innerfile refid="db/d69/_day_8cs">Day.cs</innerfile>
+    <innerfile refid="db/dcb/_logbook_8cs">Logbook.cs</innerfile>
+    <innerfile refid="dc/dba/_session_8cs">Session.cs</innerfile>
+    <innerfile refid="db/dfd/_subject_8cs">Subject.cs</innerfile>
+    <innerfile refid="d3/d0f/_week_8cs">Week.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/THB Data Types/Core/Containers/Schedule/"/>
+  </compounddef>
+</doxygen>

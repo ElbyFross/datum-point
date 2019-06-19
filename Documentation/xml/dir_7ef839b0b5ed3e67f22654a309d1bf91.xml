@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_7ef839b0b5ed3e67f22654a309d1bf91" kind="dir">
+    <compoundname>D:/Work/Tools/Plugins/THB Plugin Social</compoundname>
+    <innerdir refid="dir_b916ef347058ae3fd5fd6c541d0a01e6">D:/Work/Tools/Plugins/THB Plugin Social/Achivments</innerdir>
+    <innerdir refid="dir_9ebcd86fc9be2514b467fe82ccae6c9a">D:/Work/Tools/Plugins/THB Plugin Social/Advices</innerdir>
+    <innerdir refid="dir_445d4e638072988fbfa0ad327fe0e9e3">D:/Work/Tools/Plugins/THB Plugin Social/Feed</innerdir>
+    <innerdir refid="dir_a0c7591d2a05453cbcc29af46e0e6897">D:/Work/Tools/Plugins/THB Plugin Social/obj</innerdir>
+    <innerdir refid="dir_9c4b3c310b9b5c8f662cd0213206d735">D:/Work/Tools/Plugins/THB Plugin Social/PersonalStatistic</innerdir>
+    <innerdir refid="dir_e438c529c8af60ade2ffa19ab80a589c">D:/Work/Tools/Plugins/THB Plugin Social/Properties</innerdir>
+    <innerdir refid="dir_2176c7245e6b03875bae5a747cc5625c">D:/Work/Tools/Plugins/THB Plugin Social/Schedule</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/Plugins/THB Plugin Social/"/>
+  </compounddef>
+</doxygen>

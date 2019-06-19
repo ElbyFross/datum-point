@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1" kind="class" language="C#" prot="public">
+    <compoundname>TeacherHandbook::Controls::UserControl1</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1a57070769f7910e144693661a022177be" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TeacherHandbook.Controls.UserControl1._contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" line="43" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1afbcb7046a6000b1f69c161bb9e5c69b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TeacherHandbook.Controls.UserControl1.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" line="50" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1ae5076c67f52166ebffbcdd33f5270a6c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. TeacherHandbook.Controls.UserControl1.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" line="70" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1" kindref="compound">UserControl1</ref> </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="349">
+        <label>TeacherHandbook.Controls.UserControl1</label>
+        <link refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1"/>
+        <childnode refid="350" relation="public-inheritance">
+        </childnode>
+        <childnode refid="351" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="350">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="351">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="352">
+        <label>TeacherHandbook.Controls.UserControl1</label>
+        <link refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1"/>
+        <childnode refid="353" relation="public-inheritance">
+        </childnode>
+        <childnode refid="354" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="353">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="354">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" line="41" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" bodystart="41" bodyend="73"/>
+    <listofallmembers>
+      <member refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1a57070769f7910e144693661a022177be" prot="private" virt="non-virtual"><scope>TeacherHandbook::Controls::UserControl1</scope><name>_contentLoaded</name></member>
+      <member refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1ae5076c67f52166ebffbcdd33f5270a6c" prot="private" virt="non-virtual"><scope>TeacherHandbook::Controls::UserControl1</scope><name>Connect</name></member>
+      <member refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1afbcb7046a6000b1f69c161bb9e5c69b2" prot="public" virt="non-virtual"><scope>TeacherHandbook::Controls::UserControl1</scope><name>InitializeComponent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

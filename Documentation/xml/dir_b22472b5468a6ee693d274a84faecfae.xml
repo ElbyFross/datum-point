@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_b22472b5468a6ee693d274a84faecfae" kind="dir">
+    <compoundname>D:/Work/Tools/TeacherHandbook</compoundname>
+    <innerdir refid="dir_f951477965820d8ebc2c00a856505c51">D:/Work/Tools/TeacherHandbook/Controls</innerdir>
+    <innerdir refid="dir_b1db848416afa29287c20bd37e2c3d2a">D:/Work/Tools/TeacherHandbook/obj</innerdir>
+    <innerdir refid="dir_eca680429e4f7c39fe2dbe928f450aae">D:/Work/Tools/TeacherHandbook/Properties</innerdir>
+    <innerfile refid="db/da1/_app_8xaml_8cs">App.xaml.cs</innerfile>
+    <innerfile refid="d2/d01/_teacher_handbook_2_client_8cs">Client.cs</innerfile>
+    <innerfile refid="d6/d57/_main_window_8xaml_8cs">MainWindow.xaml.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/Tools/TeacherHandbook/"/>
+  </compounddef>
+</doxygen>

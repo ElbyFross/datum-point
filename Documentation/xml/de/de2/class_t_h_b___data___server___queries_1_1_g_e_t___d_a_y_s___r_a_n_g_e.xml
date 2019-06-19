@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e" kind="class" language="C#" prot="public">
+    <compoundname>THB_Data_Server_Queries::GET_DAYS_RANGE</compoundname>
+    <basecompoundref refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor" prot="public" virt="non-virtual">UniformQueries.IQueryHandlerProcessor</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1aa91ce7c90a325c70aab9aaf112fe49f3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string THB_Data_Server_Queries.GET_DAYS_RANGE.Description</definition>
+        <argsstring>(string cultureKey)</argsstring>
+        <name>Description</name>
+        <reimplements refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1ae7323367177cd11c787d61029de5b044">Description</reimplements>
+        <param>
+          <type>string</type>
+          <declname>cultureKey</declname>
+        </param>
+        <briefdescription>
+<para>Return the description relative to the lenguage code or default if not found. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cultureKey</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/THB Data Server Queries/GET_DAYS_RANGE.cs" line="9" column="1" bodyfile="D:/Work/Tools/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="9" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1adb606b0ed5b0bceaa96ce14ba34158c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Data_Server_Queries.GET_DAYS_RANGE.Execute</definition>
+        <argsstring>(string[] queryParts)</argsstring>
+        <name>Execute</name>
+        <reimplements refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1a60538b1b29c5d1d3bc67db28a265677a">Execute</reimplements>
+        <param>
+          <type>string []</type>
+          <declname>queryParts</declname>
+        </param>
+        <briefdescription>
+<para>Methods that process query. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>queryParts</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/THB Data Server Queries/GET_DAYS_RANGE.cs" line="21" column="1" bodyfile="D:/Work/Tools/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="21" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1a2b21ca7e9599161544424cd0f7e55ef4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool THB_Data_Server_Queries.GET_DAYS_RANGE.IsTarget</definition>
+        <argsstring>(string[] queryParts)</argsstring>
+        <name>IsTarget</name>
+        <reimplements refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1a435493887db64defdb6019c3c418a4d4">IsTarget</reimplements>
+        <param>
+          <type>string []</type>
+          <declname>queryParts</declname>
+        </param>
+        <briefdescription>
+<para>Check by the entry params does it target Query Handler. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>queryParts</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/Tools/THB Data Server Queries/GET_DAYS_RANGE.cs" line="26" column="1" bodyfile="D:/Work/Tools/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="26" bodyend="40"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="141">
+        <label>THB_Data_Server_Queries.GET_DAYS_RANGE</label>
+        <link refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e"/>
+        <childnode refid="142" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="142">
+        <label>UniformQueries::IQueryHandlerProcessor</label>
+        <link refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="143">
+        <label>THB_Data_Server_Queries.GET_DAYS_RANGE</label>
+        <link refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e"/>
+        <childnode refid="144" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="144">
+        <label>UniformQueries::IQueryHandlerProcessor</label>
+        <link refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/Tools/THB Data Server Queries/GET_DAYS_RANGE.cs" line="8" column="1" bodyfile="D:/Work/Tools/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="7" bodyend="41"/>
+    <listofallmembers>
+      <member refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1aa91ce7c90a325c70aab9aaf112fe49f3" prot="public" virt="non-virtual"><scope>THB_Data_Server_Queries::GET_DAYS_RANGE</scope><name>Description</name></member>
+      <member refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1adb606b0ed5b0bceaa96ce14ba34158c9" prot="public" virt="non-virtual"><scope>THB_Data_Server_Queries::GET_DAYS_RANGE</scope><name>Execute</name></member>
+      <member refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1a2b21ca7e9599161544424cd0f7e55ef4" prot="public" virt="non-virtual"><scope>THB_Data_Server_Queries::GET_DAYS_RANGE</scope><name>IsTarget</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
