@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/WpfHandler/Properties/Settings.Designer.cs" line="20" column="1" bodyfile="D:/Work/Tools/WpfHandler/Properties/Settings.Designer.cs" bodystart="20" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/WpfHandler/Properties/Settings.Designer.cs" line="20" column="1" bodyfile="D:/Work/GitHub/datum-point/WpfHandler/Properties/Settings.Designer.cs" bodystart="20" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/WpfHandler/Properties/Settings.Designer.cs" line="22" column="1" bodyfile="D:/Work/Tools/WpfHandler/Properties/Settings.Designer.cs" bodystart="23" bodyend="28"/>
+        <location file="D:/Work/GitHub/datum-point/WpfHandler/Properties/Settings.Designer.cs" line="22" column="1" bodyfile="D:/Work/GitHub/datum-point/WpfHandler/Properties/Settings.Designer.cs" bodystart="23" bodyend="28"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -39,31 +39,31 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="314">
+      <node id="322">
         <label>global::SystemConfiguration::ApplicationSettingsBase</label>
       </node>
-      <node id="313">
+      <node id="321">
         <label>WpfHandler.Properties.Settings</label>
         <link refid="d7/d4f/class_wpf_handler_1_1_properties_1_1_settings"/>
-        <childnode refid="314" relation="public-inheritance">
+        <childnode refid="322" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="316">
+      <node id="324">
         <label>global::SystemConfiguration::ApplicationSettingsBase</label>
       </node>
-      <node id="315">
+      <node id="323">
         <label>WpfHandler.Properties.Settings</label>
         <link refid="d7/d4f/class_wpf_handler_1_1_properties_1_1_settings"/>
-        <childnode refid="316" relation="public-inheritance">
+        <childnode refid="324" relation="public-inheritance">
         </childnode>
-        <childnode refid="315" relation="usage">
+        <childnode refid="323" relation="usage">
           <edgelabel>defaultInstance</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/WpfHandler/Properties/Settings.Designer.cs" line="18" column="1" bodyfile="D:/Work/Tools/WpfHandler/Properties/Settings.Designer.cs" bodystart="17" bodyend="29"/>
+    <location file="D:/Work/GitHub/datum-point/WpfHandler/Properties/Settings.Designer.cs" line="18" column="1" bodyfile="D:/Work/GitHub/datum-point/WpfHandler/Properties/Settings.Designer.cs" bodystart="17" bodyend="29"/>
     <listofallmembers>
       <member refid="d7/d4f/class_wpf_handler_1_1_properties_1_1_settings_1a252db64811cbf5a2fccc03433c9566c3" prot="public" virt="non-virtual"><scope>WpfHandler::Properties::Settings</scope><name>Default</name></member>
       <member refid="d7/d4f/class_wpf_handler_1_1_properties_1_1_settings_1a7b2e360d53ec59976635347e45223008" prot="private" virt="non-virtual"><scope>WpfHandler::Properties::Settings</scope><name>defaultInstance</name></member>

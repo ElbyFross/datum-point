@@ -70,6 +70,7 @@ namespace UniformClient
         /// </summary>
         public Thread thread;
 
+
         /// <summary>
         /// Loading assemblies from requested path.
         /// </summary>
@@ -172,7 +173,6 @@ namespace UniformClient
             return thread;
         }
 
-
         /// <summary>
         /// Load plugins from assembly and instiniate them to list.
         /// </summary>
@@ -229,7 +229,10 @@ namespace UniformClient
             }
             return collection;
         }
-        
+
+
+
+        #region Transmission API
         /// <summary>
         /// Provide complex initalization of all relative systems. 
         /// Build meta data, regitrate line in common table.
@@ -246,10 +249,10 @@ namespace UniformClient
             string guid,
             string serverName,
             string pipeName,
-            System.Action<object> callback)
+            System.Action<PipesProvider.TransmissionLine> callback)
         {
             // Validate client.
-            if(client == null)
+            if (client == null)
             {
                 Console.WriteLine("CLIENT is NULL (BC_OTL_0). Unable to open new transmission line.");
                 return null;
@@ -272,5 +275,153 @@ namespace UniformClient
             // Return oppened line.
             return trnsLine;
         }
+
+
+        /// <summary>
+        /// Handler that send last dequeued query to server when connection will be established.
+        /// </summary>
+        /// <param name="sharedObject">
+        /// Normaly is a PipesProvider.TransmissionLine that contain information about actual transmission.</param>
+        public static void UniformQueryPostHandler(object sharedObject)
+        { 
+            // Drop as invalid in case of incorrect transmitted data.
+            if (!(sharedObject is PipesProvider.TransmissionLine lineProcessor))
+            {
+                Console.WriteLine("TRANSMISSION ERROR (UQPP0): INCORRECT TRANSFERD DATA TYPE. PERMITED ONLY \"LineProcessor\"");
+                return;
+            }
+            
+            /// If queries not placed then wait.
+            while (!lineProcessor.HasQueries || !lineProcessor.TryDequeQuery(out PipesProvider.QueryContainer query))
+            {
+                Thread.Sleep(50);
+                continue;
+            }
+
+            // Open stream writer.
+            StreamWriter sw = new StreamWriter(lineProcessor.pipeClient);
+            try
+            {
+                sw.Write(lineProcessor.LastQuery);
+                sw.Flush();
+                Console.WriteLine("TRANSMITED: {0}", lineProcessor.LastQuery);
+                //sw.Close();
+            }
+            // Catch the Exception that is raised if the pipe is broken or disconnected.
+            catch (Exception e)
+            {
+                Console.WriteLine("DNS HANDLER ERROR ({1}): {0}", e.Message, lineProcessor.pipeClient.GetHashCode());
+
+                // Retry transmission.
+                if (lineProcessor.LastQuery.Attempts < 10)
+                {
+                    // Add to queue.
+                    lineProcessor.EnqueueQuery(lineProcessor.LastQuery);
+
+                    // Add attempt.
+                    PipesProvider.QueryContainer qcl = lineProcessor.LastQuery;
+                    qcl++;
+                }
+                else
+                {
+                    // If transmission attempts over the max count.
+                }
+            }
+
+            lineProcessor.Processing = false;
+        }
+
+
+        /// <summary>
+        /// Handler that will recive message from the server.
+        /// </summary>
+        /// <param name="sharedObject">
+        /// Normaly is a PipesProvider.TransmissionLine that contain information about actual transmission.</param>
+        public static async void UniformServerAnswerHandler(object sharedObject)
+        {
+            // Drop as invalid in case of incorrect transmitted data.
+            if (!(sharedObject is PipesProvider.TransmissionLine lineProcessor))
+            {
+                Console.WriteLine("TRANSMISSION ERROR (UQPP0): INCORRECT TRANSFERD DATA TYPE. PERMITED ONLY \"LineProcessor\"");
+                return;
+            }
+
+            lineProcessor.Processing = true;
+
+            //Console.WriteLine("{0}/{1}: ANSWER READING STARTED.",
+            //     lineProcessor.ServerName, lineProcessor.ServerPipeName);
+            
+            // Open stream reader.
+            StreamReader sr = new StreamReader(lineProcessor.pipeClient);
+            //StreamReader sr = new StreamReader(lineProcessor.pipeClient, System.Text.Encoding.UTF8, true, 128, true);
+            try
+            {
+                string message = null;
+                while (string.IsNullOrEmpty(message))
+                {
+                    // Avoid an error caused to disconection of client.
+                    try
+                    {
+                        //Console.WriteLine("{0}/{1}: READ Started: {2}", lineProcessor.ServerName, lineProcessor.ServerPipeName, DateTime.Now.ToString("HH:mm:ss.fff"));
+                        message = await sr.ReadToEndAsync();
+                        //Console.WriteLine("{0}/{1}: READ Finished: {2}", lineProcessor.ServerName, lineProcessor.ServerPipeName, DateTime.Now.ToString("HH:mm:ss.fff"));
+                    }
+                    // Catch the Exception that is raised if the pipe is broken or disconnected.
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("DNS HANDLER ERROR (USAH0): {0}", e.Message);
+                        lineProcessor.Processing = false;
+                        return;
+                    }
+                }
+
+                //Console.WriteLine("{0}/{1}: ANSWER READING FINISH.\nMESSAGE: {2}", 
+                //    lineProcessor.ServerName, lineProcessor.ServerPipeName, message);
+            }
+            // Catch the Exception that is raised if the pipe is broken or disconnected.
+            catch (Exception e)
+            {
+                Console.WriteLine("DNS HANDLER ERROR ({1}): {0}", e.Message, lineProcessor.pipeClient.GetHashCode());
+            }
+
+            lineProcessor.Processing = false;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="line">Line that was used to transmition</param>
+        /// <param name="answerHandler">Delegate that will be called as handler for answer processing. 
+        /// TransmissionLine contain data about actual transmission.
+        /// object contain recived query (usualy string or byte[]).</param>
+        /// <param name="entryQueryParts">Parts of query that was recived from client. 
+        /// Method will detect core part and establish backward connection.</param>
+        /// <returns></returns>
+        public static bool ReciveAnswer(
+            PipesProvider.TransmissionLine line,
+            UniformQueries.QueryPart[] entryQueryParts, 
+            System.Action<PipesProvider.TransmissionLine, object> answerHandler)
+        {
+            // Try to compute bacward domaint to contact with client.
+            if (!UniformQueries.QueryPart.TryGetBackwardDomain(entryQueryParts, out string domain))
+            {
+                Console.WriteLine("Unable to buid backward domain. QUERY: {0}", 
+                    UniformQueries.QueryPart.QueryPartsArrayToString(entryQueryParts));
+                return false;
+            }
+
+            // Create transmission line.
+            PipesProvider.TransmissionLine lineProcessor = OpenTransmissionLine(
+                new SimpleClient(),
+                domain,
+                line.ServerName, domain,
+                UniformServerAnswerHandler
+                );
+
+            // Skip line
+            Console.WriteLine();
+            return true;
+        }
+        #endregion
     }
 }

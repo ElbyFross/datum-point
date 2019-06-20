@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_b214a4dbce77070e45bdfa29dc2aae55" kind="dir">
-    <compoundname>D:/Work/Tools/Plugins/THB Plugin Social/obj/Release</compoundname>
-    <innerdir refid="dir_9a1dd7fde4ad72f2764281303b8f3543">D:/Work/Tools/Plugins/THB Plugin Social/obj/Release/Achivments</innerdir>
-    <innerdir refid="dir_88cbc80a45f57d0edf0c6bbfd5312489">D:/Work/Tools/Plugins/THB Plugin Social/obj/Release/Advices</innerdir>
-    <innerdir refid="dir_d88bd695dcab445e581605c453f14e29">D:/Work/Tools/Plugins/THB Plugin Social/obj/Release/Feed</innerdir>
-    <innerdir refid="dir_2d780dd0a71081273e3358dac60cc725">D:/Work/Tools/Plugins/THB Plugin Social/obj/Release/PersonalStatistic</innerdir>
-    <innerdir refid="dir_082c9ed610a0416a01316141fe5c2855">D:/Work/Tools/Plugins/THB Plugin Social/obj/Release/Schedule</innerdir>
+    <compoundname>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release</compoundname>
+    <innerdir refid="dir_9a1dd7fde4ad72f2764281303b8f3543">D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Achivments</innerdir>
+    <innerdir refid="dir_88cbc80a45f57d0edf0c6bbfd5312489">D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Advices</innerdir>
+    <innerdir refid="dir_d88bd695dcab445e581605c453f14e29">D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Feed</innerdir>
+    <innerdir refid="dir_2d780dd0a71081273e3358dac60cc725">D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/PersonalStatistic</innerdir>
+    <innerdir refid="dir_082c9ed610a0416a01316141fe5c2855">D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Schedule</innerdir>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/Tools/Plugins/THB Plugin Social/obj/Release/"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/"/>
   </compounddef>
 </doxygen>

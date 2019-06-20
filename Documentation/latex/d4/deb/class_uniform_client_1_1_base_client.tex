@@ -18,8 +18,14 @@ static System.\+Collections.\+Generic.\+I\+Enumerable$<$ \mbox{\hyperlink{interf
 \begin{DoxyCompactList}\small\item\em Load plugins from assembly and instiniate them to list. \end{DoxyCompactList}\item 
 static System.\+Collections.\+Object\+Model.\+Observable\+Collection$<$ \mbox{\hyperlink{interface_uniform_client_1_1_plugins_1_1_i_plugin}{Plugins.\+I\+Plugin}} $>$ \mbox{\hyperlink{class_uniform_client_1_1_base_client_a99ae0bb1dd5bef374fcedb3f873bfe8b}{Load\+Plugins\+Collection}} ()
 \begin{DoxyCompactList}\small\item\em Load plugins from assembly and instiniate them to list. \end{DoxyCompactList}\item 
-static \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Pipes\+Provider.\+Transmission\+Line}} \mbox{\hyperlink{class_uniform_client_1_1_base_client_a3b09387a94e46bf9365ee603202ba488}{Open\+Transmission\+Line}} (\mbox{\hyperlink{class_uniform_client_1_1_base_client}{Base\+Client}} client, string guid, string server\+Name, string pipe\+Name, System.\+Action$<$ object $>$ callback)
-\begin{DoxyCompactList}\small\item\em Provide complex initalization of all relative systems. Build meta data, regitrate line in common table. Start new thread to avoid freezes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Pipes\+Provider.\+Transmission\+Line}} \mbox{\hyperlink{class_uniform_client_1_1_base_client_a9c59b23626ff132aa96630654d7bc410}{Open\+Transmission\+Line}} (\mbox{\hyperlink{class_uniform_client_1_1_base_client}{Base\+Client}} client, string guid, string server\+Name, string pipe\+Name, System.\+Action$<$ \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Pipes\+Provider.\+Transmission\+Line}} $>$ callback)
+\begin{DoxyCompactList}\small\item\em Provide complex initalization of all relative systems. Build meta data, regitrate line in common table. Start new thread to avoid freezes. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_uniform_client_1_1_base_client_acd2e71dcb27e97f900f887233e6b8f9c}{Uniform\+Query\+Post\+Handler}} (object shared\+Object)
+\begin{DoxyCompactList}\small\item\em Handler that send last dequeued query to server when connection will be established. \end{DoxyCompactList}\item 
+static async void \mbox{\hyperlink{class_uniform_client_1_1_base_client_af7a3c613846c8595431272c4c9d531f3}{Uniform\+Server\+Answer\+Handler}} (object shared\+Object)
+\begin{DoxyCompactList}\small\item\em Handler that will recive message from the server. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_uniform_client_1_1_base_client_a06d3340dd02ec4abfe9cf55bc1db0f03}{Recive\+Answer}} (\mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Pipes\+Provider.\+Transmission\+Line}} line, \mbox{\hyperlink{struct_uniform_queries_1_1_query_part}{Uniform\+Queries.\+Query\+Part}}\mbox{[}$\,$\mbox{]} entry\+Query\+Parts, System.\+Action$<$ \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Pipes\+Provider.\+Transmission\+Line}}, object $>$ answer\+Handler)
+\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -137,11 +143,11 @@ Load plugins from assembly and instiniate them to list.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_uniform_client_1_1_base_client_a3b09387a94e46bf9365ee603202ba488}\label{class_uniform_client_1_1_base_client_a3b09387a94e46bf9365ee603202ba488}} 
+\mbox{\Hypertarget{class_uniform_client_1_1_base_client_a9c59b23626ff132aa96630654d7bc410}\label{class_uniform_client_1_1_base_client_a9c59b23626ff132aa96630654d7bc410}} 
 \index{Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}!Open\+Transmission\+Line@{Open\+Transmission\+Line}}
 \index{Open\+Transmission\+Line@{Open\+Transmission\+Line}!Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}}
 \subsubsection{\texorpdfstring{Open\+Transmission\+Line()}{OpenTransmissionLine()}}
-{\footnotesize\ttfamily static \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Pipes\+Provider.\+Transmission\+Line}} Uniform\+Client.\+Base\+Client.\+Open\+Transmission\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_uniform_client_1_1_base_client}{Base\+Client}}}]{client,  }\item[{string}]{guid,  }\item[{string}]{server\+Name,  }\item[{string}]{pipe\+Name,  }\item[{System.\+Action$<$ object $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Pipes\+Provider.\+Transmission\+Line}} Uniform\+Client.\+Base\+Client.\+Open\+Transmission\+Line (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_uniform_client_1_1_base_client}{Base\+Client}}}]{client,  }\item[{string}]{guid,  }\item[{string}]{server\+Name,  }\item[{string}]{pipe\+Name,  }\item[{System.\+Action$<$ \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Pipes\+Provider.\+Transmission\+Line}} $>$}]{callback }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -162,6 +168,28 @@ Provide complex initalization of all relative systems. Build meta data, regitrat
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Opened transmission line. Use line.\+Enqueue to add your query.
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_uniform_client_1_1_base_client_a06d3340dd02ec4abfe9cf55bc1db0f03}\label{class_uniform_client_1_1_base_client_a06d3340dd02ec4abfe9cf55bc1db0f03}} 
+\index{Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}!Recive\+Answer@{Recive\+Answer}}
+\index{Recive\+Answer@{Recive\+Answer}!Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}}
+\subsubsection{\texorpdfstring{Recive\+Answer()}{ReciveAnswer()}}
+{\footnotesize\ttfamily static bool Uniform\+Client.\+Base\+Client.\+Recive\+Answer (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Pipes\+Provider.\+Transmission\+Line}}}]{line,  }\item[{\mbox{\hyperlink{struct_uniform_queries_1_1_query_part}{Uniform\+Queries.\+Query\+Part}} \mbox{[}$\,$\mbox{]}}]{entry\+Query\+Parts,  }\item[{System.\+Action$<$ \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Pipes\+Provider.\+Transmission\+Line}}, object $>$}]{answer\+Handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & Line that was used to transmition\\
+\hline
+{\em answer\+Handler} & Delegate that will be called as handler for answer processing. Transmission\+Line contain data about actual transmission. object contain recived query (usualy string or byte\mbox{[}\mbox{]}).\\
+\hline
+{\em entry\+Query\+Parts} & Parts of query that was recived from client. Method will detect core part and establish backward connection.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
 \end{DoxyReturn}
 \mbox{\Hypertarget{class_uniform_client_1_1_base_client_a47b6d88848854c59fafefeeae3956699}\label{class_uniform_client_1_1_base_client_a47b6d88848854c59fafefeeae3956699}} 
 \index{Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}!Show\+Window@{Show\+Window}}
@@ -205,6 +233,36 @@ Method that starting client thread.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_uniform_client_1_1_base_client_acd2e71dcb27e97f900f887233e6b8f9c}\label{class_uniform_client_1_1_base_client_acd2e71dcb27e97f900f887233e6b8f9c}} 
+\index{Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}!Uniform\+Query\+Post\+Handler@{Uniform\+Query\+Post\+Handler}}
+\index{Uniform\+Query\+Post\+Handler@{Uniform\+Query\+Post\+Handler}!Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}}
+\subsubsection{\texorpdfstring{Uniform\+Query\+Post\+Handler()}{UniformQueryPostHandler()}}
+{\footnotesize\ttfamily static void Uniform\+Client.\+Base\+Client.\+Uniform\+Query\+Post\+Handler (\begin{DoxyParamCaption}\item[{object}]{shared\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Handler that send last dequeued query to server when connection will be established. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shared\+Object} & Normaly is a \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Pipes\+Provider.\+Transmission\+Line}} that contain information about actual transmission.\\
+\hline
+\end{DoxyParams}
+If queries not placed then wait. \mbox{\Hypertarget{class_uniform_client_1_1_base_client_af7a3c613846c8595431272c4c9d531f3}\label{class_uniform_client_1_1_base_client_af7a3c613846c8595431272c4c9d531f3}} 
+\index{Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}!Uniform\+Server\+Answer\+Handler@{Uniform\+Server\+Answer\+Handler}}
+\index{Uniform\+Server\+Answer\+Handler@{Uniform\+Server\+Answer\+Handler}!Uniform\+Client\+::\+Base\+Client@{Uniform\+Client\+::\+Base\+Client}}
+\subsubsection{\texorpdfstring{Uniform\+Server\+Answer\+Handler()}{UniformServerAnswerHandler()}}
+{\footnotesize\ttfamily static async void Uniform\+Client.\+Base\+Client.\+Uniform\+Server\+Answer\+Handler (\begin{DoxyParamCaption}\item[{object}]{shared\+Object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Handler that will recive message from the server. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shared\+Object} & Normaly is a \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Pipes\+Provider.\+Transmission\+Line}} that contain information about actual transmission.\\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Data Documentation}
@@ -262,4 +320,4 @@ How many milisseconds will sleep thread after tick.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Work/\+Tools/\+Uniform\+Client/Base\+Client.\+cs\end{DoxyCompactItemize}
+D\+:/\+Work/\+Git\+Hub/datum-\/point/\+Uniform\+Client/Base\+Client.\+cs\end{DoxyCompactItemize}

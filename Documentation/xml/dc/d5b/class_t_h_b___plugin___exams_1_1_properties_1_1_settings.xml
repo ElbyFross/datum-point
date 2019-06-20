@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Exams/Properties/Settings.Designer.cs" line="20" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Exams/Properties/Settings.Designer.cs" bodystart="20" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/Properties/Settings.Designer.cs" line="20" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/Properties/Settings.Designer.cs" bodystart="20" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Exams/Properties/Settings.Designer.cs" line="22" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Exams/Properties/Settings.Designer.cs" bodystart="23" bodyend="28"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/Properties/Settings.Designer.cs" line="22" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/Properties/Settings.Designer.cs" bodystart="23" bodyend="28"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -39,31 +39,31 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="298">
+      <node id="330">
         <label>global::SystemConfiguration::ApplicationSettingsBase</label>
       </node>
-      <node id="297">
+      <node id="329">
         <label>THB_Plugin_Exams.Properties.Settings</label>
         <link refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings"/>
-        <childnode refid="298" relation="public-inheritance">
+        <childnode refid="330" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="300">
+      <node id="332">
         <label>global::SystemConfiguration::ApplicationSettingsBase</label>
       </node>
-      <node id="299">
+      <node id="331">
         <label>THB_Plugin_Exams.Properties.Settings</label>
         <link refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings"/>
-        <childnode refid="300" relation="public-inheritance">
+        <childnode refid="332" relation="public-inheritance">
         </childnode>
-        <childnode refid="299" relation="usage">
+        <childnode refid="331" relation="usage">
           <edgelabel>defaultInstance</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/Plugins/THB Plugin Exams/Properties/Settings.Designer.cs" line="18" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Exams/Properties/Settings.Designer.cs" bodystart="17" bodyend="29"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/Properties/Settings.Designer.cs" line="18" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/Properties/Settings.Designer.cs" bodystart="17" bodyend="29"/>
     <listofallmembers>
       <member refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings_1a66f1b0647e31c1a4ca44a07101154767" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::Properties::Settings</scope><name>Default</name></member>
       <member refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings_1a9aa1e91ef757890464a72793f1eb73f5" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::Properties::Settings</scope><name>defaultInstance</name></member>

@@ -26,14 +26,14 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/THB Data Server/Commands.cs" line="15" column="1" bodyfile="D:/Work/Tools/THB Data Server/Commands.cs" bodystart="15" bodyend="93"/>
+        <location file="D:/Work/GitHub/datum-point/THB Data Server/Commands.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server/Commands.cs" bodystart="29" bodyend="107"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/Tools/THB Data Server/Commands.cs" line="10" column="1" bodyfile="D:/Work/Tools/THB Data Server/Commands.cs" bodystart="9" bodyend="94"/>
+    <location file="D:/Work/GitHub/datum-point/THB Data Server/Commands.cs" line="24" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server/Commands.cs" bodystart="23" bodyend="108"/>
     <listofallmembers>
       <member refid="d6/d8f/class_t_h_b___data___server_1_1_commands_1a996531160e55feb986342fac81c89d71" prot="public" virt="non-virtual"><scope>THB_Data_Server::Commands</scope><name>CommandResponseProcessor</name></member>
     </listofallmembers>

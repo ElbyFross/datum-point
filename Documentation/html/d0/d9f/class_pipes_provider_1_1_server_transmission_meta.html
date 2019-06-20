@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>THB+ | Network Platform: PipesProvider.ServerTransmissionMeta Class Reference</title>
+<title>Datum Point: PipesProvider.ServerTransmissionMeta Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -29,8 +29,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">THB+ | Network Platform
-   &#160;<span id="projectnumber">1.0</span>
+   <div id="projectname">Datum Point
+   &#160;<span id="projectnumber">0.1.3</span>
    </div>
   </td>
  </tr>
@@ -117,10 +117,10 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a1d4a87ad9a66bd81bc68f48fa28dbf32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object that provide access to async connection.  <a href="#a1d4a87ad9a66bd81bc68f48fa28dbf32">More...</a><br /></td></tr>
 <tr class="separator:a1d4a87ad9a66bd81bc68f48fa28dbf32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e9fa5426107e5d4265273e5be439a62"><td class="memItemLeft" align="right" valign="top">System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html#a6e9fa5426107e5d4265273e5be439a62">connectionCallback</a></td></tr>
-<tr class="memdesc:a6e9fa5426107e5d4265273e5be439a62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delegate that will be called when connection will be established.  <a href="#a6e9fa5426107e5d4265273e5be439a62">More...</a><br /></td></tr>
+<tr class="memdesc:a6e9fa5426107e5d4265273e5be439a62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delegate that will be called when connection will be established. <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html" title="Container that contain meta data about server instance. ">ServerTransmissionMeta</a> - meta data of transmission.  <a href="#a6e9fa5426107e5d4265273e5be439a62">More...</a><br /></td></tr>
 <tr class="separator:a6e9fa5426107e5d4265273e5be439a62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa663870a4d61945bcedd85721ede42a5"><td class="memItemLeft" align="right" valign="top">System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>, string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html#aa663870a4d61945bcedd85721ede42a5">queryHandlerCallback</a></td></tr>
-<tr class="memdesc:aa663870a4d61945bcedd85721ede42a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delegate that will be called when server will recive query. <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html" title="Container that contain meta data about server instance. ">ServerTransmissionMeta</a> - meta data of transmission. string - recived query.  <a href="#aa663870a4d61945bcedd85721ede42a5">More...</a><br /></td></tr>
+<tr class="memdesc:aa663870a4d61945bcedd85721ede42a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delegate that will be called when server will recive query. <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html" title="Container that contain meta data about server instance. ">ServerTransmissionMeta</a> - meta data of transmission. string - shared query.  <a href="#aa663870a4d61945bcedd85721ede42a5">More...</a><br /></td></tr>
 <tr class="separator:aa663870a4d61945bcedd85721ede42a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b2ff8796056a5a2fbe0dbb4c4fd5dab"><td class="memItemLeft" align="right" valign="top">NamedPipeServerStream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html#a8b2ff8796056a5a2fbe0dbb4c4fd5dab">pipe</a></td></tr>
 <tr class="memdesc:a8b2ff8796056a5a2fbe0dbb4c4fd5dab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to created pipe.  <a href="#a8b2ff8796056a5a2fbe0dbb4c4fd5dab">More...</a><br /></td></tr>
@@ -137,6 +137,9 @@ Properties</h2></td></tr>
 <tr class="memitem:a9b501faba9c2cb9ed8873f1935d95b7c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html#a9b501faba9c2cb9ed8873f1935d95b7c">Stoped</a><code> [get, protected set]</code></td></tr>
 <tr class="memdesc:a9b501faba9c2cb9ed8873f1935d95b7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marker that show does this transmition stoped.  <a href="#a9b501faba9c2cb9ed8873f1935d95b7c">More...</a><br /></td></tr>
 <tr class="separator:a9b501faba9c2cb9ed8873f1935d95b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abdf46c54f238645728488c757a53097e"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html#abdf46c54f238645728488c757a53097e">ProcessingQuery</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:abdf46c54f238645728488c757a53097e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Query that aqtualu in processing.  <a href="#abdf46c54f238645728488c757a53097e">More...</a><br /></td></tr>
+<tr class="separator:abdf46c54f238645728488c757a53097e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad6b35f35e7976ae9ee3f386b65dd128"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html#aad6b35f35e7976ae9ee3f386b65dd128">None</a><code> [get]</code></td></tr>
 <tr class="memdesc:aad6b35f35e7976ae9ee3f386b65dd128"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return instance that not contain initialized fields.  <a href="#aad6b35f35e7976ae9ee3f386b65dd128">More...</a><br /></td></tr>
 <tr class="separator:aad6b35f35e7976ae9ee3f386b65dd128"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,7 +198,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Delegate that will be called when connection will be established. </p>
+<p>Delegate that will be called when connection will be established. <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html" title="Container that contain meta data about server instance. ">ServerTransmissionMeta</a> - meta data of transmission. </p>
 
 </div>
 </div>
@@ -259,7 +262,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Delegate that will be called when server will recive query. <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html" title="Container that contain meta data about server instance. ">ServerTransmissionMeta</a> - meta data of transmission. string - recived query. </p>
+<p>Delegate that will be called when server will recive query. <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html" title="Container that contain meta data about server instance. ">ServerTransmissionMeta</a> - meta data of transmission. string - shared query. </p>
 
 </div>
 </div>
@@ -312,6 +315,31 @@ Properties</h2></td></tr>
 
 </div>
 </div>
+<a id="abdf46c54f238645728488c757a53097e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abdf46c54f238645728488c757a53097e">&#9670;&nbsp;</a></span>ProcessingQuery</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string PipesProvider.ServerTransmissionMeta.ProcessingQuery</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Query that aqtualu in processing. </p>
+<p>Attention: Value can be changed if some of handlers will call disconecction or transmission error. This situation will lead to establishing new connection that lead to changing of this value. </p>
+
+</div>
+</div>
 <a id="a9b501faba9c2cb9ed8873f1935d95b7c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9b501faba9c2cb9ed8873f1935d95b7c">&#9670;&nbsp;</a></span>Stoped</h2>
 
@@ -337,7 +365,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs</li>
+<li>D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

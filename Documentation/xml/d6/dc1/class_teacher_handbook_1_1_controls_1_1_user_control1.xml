@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" line="43" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" bodystart="43" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" bodystart="43" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" line="50" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" bodystart="50" bodyend="62"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" bodystart="50" bodyend="62"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" line="70" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" bodystart="70" bodyend="72"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" bodystart="70" bodyend="72"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -62,38 +62,38 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="349">
+      <node id="399">
         <label>TeacherHandbook.Controls.UserControl1</label>
         <link refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1"/>
-        <childnode refid="350" relation="public-inheritance">
+        <childnode refid="400" relation="public-inheritance">
         </childnode>
-        <childnode refid="351" relation="public-inheritance">
+        <childnode refid="401" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="350">
+      <node id="400">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="351">
+      <node id="401">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="352">
+      <node id="402">
         <label>TeacherHandbook.Controls.UserControl1</label>
         <link refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1"/>
-        <childnode refid="353" relation="public-inheritance">
+        <childnode refid="403" relation="public-inheritance">
         </childnode>
-        <childnode refid="354" relation="public-inheritance">
+        <childnode refid="404" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="353">
+      <node id="403">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="354">
+      <node id="404">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" line="41" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" bodystart="41" bodyend="73"/>
+    <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/UserControl1.g.i.cs" bodystart="41" bodyend="73"/>
     <listofallmembers>
       <member refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1a57070769f7910e144693661a022177be" prot="private" virt="non-virtual"><scope>TeacherHandbook::Controls::UserControl1</scope><name>_contentLoaded</name></member>
       <member refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1ae5076c67f52166ebffbcdd33f5270a6c" prot="private" virt="non-virtual"><scope>TeacherHandbook::Controls::UserControl1</scope><name>Connect</name></member>

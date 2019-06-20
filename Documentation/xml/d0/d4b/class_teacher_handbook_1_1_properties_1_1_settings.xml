@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Properties/Settings.Designer.cs" line="20" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Properties/Settings.Designer.cs" bodystart="20" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Properties/Settings.Designer.cs" line="20" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Properties/Settings.Designer.cs" bodystart="20" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Properties/Settings.Designer.cs" line="22" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Properties/Settings.Designer.cs" bodystart="23" bodyend="28"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Properties/Settings.Designer.cs" line="22" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Properties/Settings.Designer.cs" bodystart="23" bodyend="28"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -39,31 +39,31 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="306">
+      <node id="314">
         <label>global::SystemConfiguration::ApplicationSettingsBase</label>
       </node>
-      <node id="305">
+      <node id="313">
         <label>TeacherHandbook.Properties.Settings</label>
         <link refid="d0/d4b/class_teacher_handbook_1_1_properties_1_1_settings"/>
-        <childnode refid="306" relation="public-inheritance">
+        <childnode refid="314" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="308">
+      <node id="316">
         <label>global::SystemConfiguration::ApplicationSettingsBase</label>
       </node>
-      <node id="307">
+      <node id="315">
         <label>TeacherHandbook.Properties.Settings</label>
         <link refid="d0/d4b/class_teacher_handbook_1_1_properties_1_1_settings"/>
-        <childnode refid="308" relation="public-inheritance">
+        <childnode refid="316" relation="public-inheritance">
         </childnode>
-        <childnode refid="307" relation="usage">
+        <childnode refid="315" relation="usage">
           <edgelabel>defaultInstance</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/TeacherHandbook/Properties/Settings.Designer.cs" line="18" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Properties/Settings.Designer.cs" bodystart="17" bodyend="29"/>
+    <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Properties/Settings.Designer.cs" line="18" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Properties/Settings.Designer.cs" bodystart="17" bodyend="29"/>
     <listofallmembers>
       <member refid="d0/d4b/class_teacher_handbook_1_1_properties_1_1_settings_1a7c06e1129e2b621773a8243e3ff15641" prot="public" virt="non-virtual"><scope>TeacherHandbook::Properties::Settings</scope><name>Default</name></member>
       <member refid="d0/d4b/class_teacher_handbook_1_1_properties_1_1_settings_1a0ab4c8518be984ba2f07b4553ab289f2" prot="private" virt="non-virtual"><scope>TeacherHandbook::Properties::Settings</scope><name>defaultInstance</name></member>

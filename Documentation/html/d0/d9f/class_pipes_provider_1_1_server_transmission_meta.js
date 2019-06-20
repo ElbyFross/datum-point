@@ -11,5 +11,6 @@ var class_pipes_provider_1_1_server_transmission_meta =
     [ "queryHandlerCallback", "d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html#aa663870a4d61945bcedd85721ede42a5", null ],
     [ "Expired", "d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html#acdc3e400b26c044443a9c3ce367433f4", null ],
     [ "None", "d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html#aad6b35f35e7976ae9ee3f386b65dd128", null ],
+    [ "ProcessingQuery", "d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html#abdf46c54f238645728488c757a53097e", null ],
     [ "Stoped", "d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html#a9b501faba9c2cb9ed8873f1935d95b7c", null ]
 ];

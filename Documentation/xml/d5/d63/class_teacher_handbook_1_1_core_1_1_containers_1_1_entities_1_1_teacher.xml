@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
 <para>Set default rights. </para>        </inbodydescription>
-        <location file="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users/Teacher.cs" line="17" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users/Teacher.cs" bodystart="17" bodyend="21"/>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/Teacher.cs" line="31" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/Teacher.cs" bodystart="31" bodyend="35"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -23,48 +23,48 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="324">
+      <node id="349">
         <label>BaseUser</label>
         <link refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user"/>
-        <childnode refid="325" relation="public-inheritance">
+        <childnode refid="350" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="325">
+      <node id="350">
         <label>IUser</label>
         <link refid="d1/dfc/interface_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_i_user"/>
       </node>
-      <node id="323">
+      <node id="348">
         <label>TeacherHandbook.Core.Containers.Entities.Teacher</label>
         <link refid="d5/d63/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_teacher"/>
-        <childnode refid="324" relation="public-inheritance">
+        <childnode refid="349" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="327">
+      <node id="352">
         <label>BaseUser</label>
         <link refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user"/>
-        <childnode refid="328" relation="public-inheritance">
+        <childnode refid="353" relation="public-inheritance">
         </childnode>
-        <childnode refid="329" relation="usage">
+        <childnode refid="354" relation="usage">
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="328">
+      <node id="353">
         <label>IUser</label>
         <link refid="d1/dfc/interface_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_i_user"/>
       </node>
-      <node id="329">
+      <node id="354">
         <label>System</label>
       </node>
-      <node id="326">
+      <node id="351">
         <label>TeacherHandbook.Core.Containers.Entities.Teacher</label>
         <link refid="d5/d63/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_teacher"/>
-        <childnode refid="327" relation="public-inheritance">
+        <childnode refid="352" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users/Teacher.cs" line="16" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users/Teacher.cs" bodystart="15" bodyend="22"/>
+    <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/Teacher.cs" line="30" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/Teacher.cs" bodystart="29" bodyend="36"/>
     <listofallmembers>
       <member refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1a53a606a419de1741eb85a13062267be9" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Entities::Teacher</scope><name>Name</name></member>
       <member refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1ad8da6882147f62d42960e2a436b8dff1" prot="protected" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Entities::Teacher</scope><name>name</name></member>

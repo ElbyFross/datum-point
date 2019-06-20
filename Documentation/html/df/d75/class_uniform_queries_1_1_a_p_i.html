@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>THB+ | Network Platform: UniformQueries.API Class Reference</title>
+<title>Datum Point: UniformQueries.API Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -29,8 +29,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">THB+ | Network Platform
-   &#160;<span id="projectnumber">1.0</span>
+   <div id="projectname">Datum Point
+   &#160;<span id="projectnumber">0.1.3</span>
    </div>
   </td>
  </tr>
@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('df/d75/class_uniform_queries_1_1_a_p_i
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
 <a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
@@ -102,21 +103,45 @@ $(document).ready(function(){initNavTree('df/d75/class_uniform_queries_1_1_a_p_i
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a2f6a1dee18c3b462a8a794d68e326dba"><td class="memItemLeft" align="right" valign="top">static async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d75/class_uniform_queries_1_1_a_p_i.html#a2f6a1dee18c3b462a8a794d68e326dba">PPQueryHandlerAsync</a> (<a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">PipesProvider.ServerTransmissionMeta</a> meta, string query)</td></tr>
-<tr class="memdesc:a2f6a1dee18c3b462a8a794d68e326dba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler that can be connected as callback to default PipesProvides DNS Handler. Will validate and decompose querie on parts and send it to target QueryProcessor.  <a href="#a2f6a1dee18c3b462a8a794d68e326dba">More...</a><br /></td></tr>
-<tr class="separator:a2f6a1dee18c3b462a8a794d68e326dba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1b8242cd1055572d996ff97b5653345"><td class="memItemLeft" align="right" valign="top">static async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d75/class_uniform_queries_1_1_a_p_i.html#ae1b8242cd1055572d996ff97b5653345">PPReceivedQueryHandlerAsync</a> (<a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">PipesProvider.ServerTransmissionMeta</a> meta, string query)</td></tr>
+<tr class="memdesc:ae1b8242cd1055572d996ff97b5653345"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler that can be connected as callback to default PipesProvides DNS Handler. Will validate and decompose querie on parts and send it to target QueryProcessor.  <a href="#ae1b8242cd1055572d996ff97b5653345">More...</a><br /></td></tr>
+<tr class="separator:ae1b8242cd1055572d996ff97b5653345"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a0ad73e1dad7f7ec61398cb33ec18a4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d75/class_uniform_queries_1_1_a_p_i.html#a1a0ad73e1dad7f7ec61398cb33ec18a4">QueryParamExist</a> (string param, string query)</td></tr>
-<tr class="memdesc:a1a0ad73e1dad7f7ec61398cb33ec18a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check existing of param in query parts. Exaple entry query part: "q=Get", where target param is "q".  <a href="#a1a0ad73e1dad7f7ec61398cb33ec18a4">More...</a><br /></td></tr>
+<tr class="memdesc:a1a0ad73e1dad7f7ec61398cb33ec18a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check existing of param in query parts. Example entry query part: "q=Get", where target param is "q".  <a href="#a1a0ad73e1dad7f7ec61398cb33ec18a4">More...</a><br /></td></tr>
 <tr class="separator:a1a0ad73e1dad7f7ec61398cb33ec18a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f6c53ca64000015c8bf7bed30d9c57a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d75/class_uniform_queries_1_1_a_p_i.html#a0f6c53ca64000015c8bf7bed30d9c57a">QueryParamExist</a> (string param, params string[] queryParts)</td></tr>
-<tr class="memdesc:a0f6c53ca64000015c8bf7bed30d9c57a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check existing of param in query parts. Exaple entry query part: "q=Get", where target param is "q".  <a href="#a0f6c53ca64000015c8bf7bed30d9c57a">More...</a><br /></td></tr>
+<tr class="memdesc:a0f6c53ca64000015c8bf7bed30d9c57a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check existing of param in query parts. Example entry query part: "q=Get", where target param is "q".  <a href="#a0f6c53ca64000015c8bf7bed30d9c57a">More...</a><br /></td></tr>
 <tr class="separator:a0f6c53ca64000015c8bf7bed30d9c57a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0f8c9faebdc4a69f2072c0bb9e955e1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d75/class_uniform_queries_1_1_a_p_i.html#ac0f8c9faebdc4a69f2072c0bb9e955e1">QueryParamExist</a> (string param, params <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">QueryPart</a>[] queryParts)</td></tr>
+<tr class="memdesc:ac0f8c9faebdc4a69f2072c0bb9e955e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check existing of param in query parts.  <a href="#ac0f8c9faebdc4a69f2072c0bb9e955e1">More...</a><br /></td></tr>
+<tr class="separator:ac0f8c9faebdc4a69f2072c0bb9e955e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a987eb23a48b90e542001cc12fcbc1ddc"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d75/class_uniform_queries_1_1_a_p_i.html#a987eb23a48b90e542001cc12fcbc1ddc">TryGetParamValue</a> (string param, out string value, string query)</td></tr>
 <tr class="memdesc:a987eb23a48b90e542001cc12fcbc1ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to find requested param's value in query.  <a href="#a987eb23a48b90e542001cc12fcbc1ddc">More...</a><br /></td></tr>
 <tr class="separator:a987eb23a48b90e542001cc12fcbc1ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5747ff73a111b583fa01c442ca2a2d78"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d75/class_uniform_queries_1_1_a_p_i.html#a5747ff73a111b583fa01c442ca2a2d78">TryGetParamValue</a> (string param, out string value, params string[] queryParts)</td></tr>
 <tr class="memdesc:a5747ff73a111b583fa01c442ca2a2d78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to find requested param's value among query parts.  <a href="#a5747ff73a111b583fa01c442ca2a2d78">More...</a><br /></td></tr>
 <tr class="separator:a5747ff73a111b583fa01c442ca2a2d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57f11d169fede8dc343e8fcce0af1c6a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d75/class_uniform_queries_1_1_a_p_i.html#a57f11d169fede8dc343e8fcce0af1c6a">TryGetParamValue</a> (string param, out <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">QueryPart</a> value, params <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">QueryPart</a>[] queryParts)</td></tr>
+<tr class="memdesc:a57f11d169fede8dc343e8fcce0af1c6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to find requested param's value among query parts.  <a href="#a57f11d169fede8dc343e8fcce0af1c6a">More...</a><br /></td></tr>
+<tr class="separator:a57f11d169fede8dc343e8fcce0af1c6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8a8215bbad2752c291803011dc49ff4"><td class="memItemLeft" align="right" valign="top">static List&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d75/class_uniform_queries_1_1_a_p_i.html#aa8a8215bbad2752c291803011dc49ff4">GetParamValues</a> (string param, params string[] queryParts)</td></tr>
+<tr class="memdesc:aa8a8215bbad2752c291803011dc49ff4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to find requested all param's value among query parts by requested param name.  <a href="#aa8a8215bbad2752c291803011dc49ff4">More...</a><br /></td></tr>
+<tr class="separator:aa8a8215bbad2752c291803011dc49ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae481c9b7a800886a2b461a7456043494"><td class="memItemLeft" align="right" valign="top">static List&lt; <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">QueryPart</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d75/class_uniform_queries_1_1_a_p_i.html#ae481c9b7a800886a2b461a7456043494">GetParamValues</a> (string param, params <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">QueryPart</a>[] queryParts)</td></tr>
+<tr class="memdesc:ae481c9b7a800886a2b461a7456043494"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to find requested all param's value among query parts by requested param name.  <a href="#ae481c9b7a800886a2b461a7456043494">More...</a><br /></td></tr>
+<tr class="separator:ae481c9b7a800886a2b461a7456043494"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a132ca74ba34302f216b61668dd32a207"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d75/class_uniform_queries_1_1_a_p_i.html#a132ca74ba34302f216b61668dd32a207">MakeQuery</a> (string guid, string token, params <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">QueryPart</a>[] queryParams)</td></tr>
+<tr class="memdesc:a132ca74ba34302f216b61668dd32a207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build query string with requested parts and core data.  <a href="#a132ca74ba34302f216b61668dd32a207">More...</a><br /></td></tr>
+<tr class="separator:a132ca74ba34302f216b61668dd32a207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a013ca0eff0e67d7f30a6be289312b859"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">QueryPart</a> []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d75/class_uniform_queries_1_1_a_p_i.html#a013ca0eff0e67d7f30a6be289312b859">DetectQueryParts</a> (string query)</td></tr>
+<tr class="memdesc:a013ca0eff0e67d7f30a6be289312b859"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert query's string to array of query parts.  <a href="#a013ca0eff0e67d7f30a6be289312b859">More...</a><br /></td></tr>
+<tr class="separator:a013ca0eff0e67d7f30a6be289312b859"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:aa906970223172f9f2068baa410b621d8"><td class="memItemLeft" align="right" valign="top">const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d75/class_uniform_queries_1_1_a_p_i.html#aa906970223172f9f2068baa410b621d8">SPLITTING_SYMBOL</a> = '&amp;'</td></tr>
+<tr class="memdesc:aa906970223172f9f2068baa410b621d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Symbol that divide query to parameters array.  <a href="#aa906970223172f9f2068baa410b621d8">More...</a><br /></td></tr>
+<tr class="separator:aa906970223172f9f2068baa410b621d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -167,8 +192,8 @@ static readonly List&lt; <a class="el" href="../../d4/dc9/interface_uniform_quer
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2f6a1dee18c3b462a8a794d68e326dba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f6a1dee18c3b462a8a794d68e326dba">&#9670;&nbsp;</a></span>PPQueryHandlerAsync()</h2>
+<a id="a013ca0eff0e67d7f30a6be289312b859"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a013ca0eff0e67d7f30a6be289312b859">&#9670;&nbsp;</a></span>DetectQueryParts()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,7 +202,189 @@ static readonly List&lt; <a class="el" href="../../d4/dc9/interface_uniform_quer
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static async void UniformQueries.API.PPQueryHandlerAsync </td>
+          <td class="memname">static <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">QueryPart</a> [] UniformQueries.API.DetectQueryParts </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>query</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Convert query's string to array of query parts. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="aa8a8215bbad2752c291803011dc49ff4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8a8215bbad2752c291803011dc49ff4">&#9670;&nbsp;</a></span>GetParamValues() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static List&lt;string&gt; UniformQueries.API.GetParamValues </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>param</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">params string []&#160;</td>
+          <td class="paramname"><em>queryParts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to find requested all param's value among query parts by requested param name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td></td></tr>
+    <tr><td class="paramname">value</td><td></td></tr>
+    <tr><td class="paramname">queryParts</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ae481c9b7a800886a2b461a7456043494"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae481c9b7a800886a2b461a7456043494">&#9670;&nbsp;</a></span>GetParamValues() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static List&lt;<a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">QueryPart</a>&gt; UniformQueries.API.GetParamValues </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>param</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">params <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">QueryPart</a> []&#160;</td>
+          <td class="paramname"><em>queryParts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to find requested all param's value among query parts by requested param name. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td></td></tr>
+    <tr><td class="paramname">value</td><td></td></tr>
+    <tr><td class="paramname">queryParts</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a132ca74ba34302f216b61668dd32a207"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a132ca74ba34302f216b61668dd32a207">&#9670;&nbsp;</a></span>MakeQuery()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string UniformQueries.API.MakeQuery </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>guid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>token</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">params <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">QueryPart</a> []&#160;</td>
+          <td class="paramname"><em>queryParams</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Build query string with requested parts and core data. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">guid</td><td></td></tr>
+    <tr><td class="paramname">token</td><td></td></tr>
+    <tr><td class="paramname">queryParams</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ae1b8242cd1055572d996ff97b5653345"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1b8242cd1055572d996ff97b5653345">&#9670;&nbsp;</a></span>PPReceivedQueryHandlerAsync()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static async void UniformQueries.API.PPReceivedQueryHandlerAsync </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">PipesProvider.ServerTransmissionMeta</a>&#160;</td>
           <td class="paramname"><em>meta</em>, </td>
@@ -213,7 +420,7 @@ static readonly List&lt; <a class="el" href="../../d4/dc9/interface_uniform_quer
 </div>
 </div>
 <a id="a1a0ad73e1dad7f7ec61398cb33ec18a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a0ad73e1dad7f7ec61398cb33ec18a4">&#9670;&nbsp;</a></span>QueryParamExist() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a0ad73e1dad7f7ec61398cb33ec18a4">&#9670;&nbsp;</a></span>QueryParamExist() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -246,7 +453,7 @@ static readonly List&lt; <a class="el" href="../../d4/dc9/interface_uniform_quer
 </table>
 </div><div class="memdoc">
 
-<p>Check existing of param in query parts. Exaple entry query part: "q=Get", where target param is "q". </p>
+<p>Check existing of param in query parts. Example entry query part: "q=Get", where target param is "q". </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">param</td><td></td></tr>
@@ -259,7 +466,7 @@ static readonly List&lt; <a class="el" href="../../d4/dc9/interface_uniform_quer
 </div>
 </div>
 <a id="a0f6c53ca64000015c8bf7bed30d9c57a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f6c53ca64000015c8bf7bed30d9c57a">&#9670;&nbsp;</a></span>QueryParamExist() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f6c53ca64000015c8bf7bed30d9c57a">&#9670;&nbsp;</a></span>QueryParamExist() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -292,7 +499,53 @@ static readonly List&lt; <a class="el" href="../../d4/dc9/interface_uniform_quer
 </table>
 </div><div class="memdoc">
 
-<p>Check existing of param in query parts. Exaple entry query part: "q=Get", where target param is "q". </p>
+<p>Check existing of param in query parts. Example entry query part: "q=Get", where target param is "q". </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td></td></tr>
+    <tr><td class="paramname">queryParts</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ac0f8c9faebdc4a69f2072c0bb9e955e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0f8c9faebdc4a69f2072c0bb9e955e1">&#9670;&nbsp;</a></span>QueryParamExist() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool UniformQueries.API.QueryParamExist </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>param</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">params <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">QueryPart</a> []&#160;</td>
+          <td class="paramname"><em>queryParts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check existing of param in query parts. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">param</td><td></td></tr>
@@ -305,7 +558,7 @@ static readonly List&lt; <a class="el" href="../../d4/dc9/interface_uniform_quer
 </div>
 </div>
 <a id="a987eb23a48b90e542001cc12fcbc1ddc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a987eb23a48b90e542001cc12fcbc1ddc">&#9670;&nbsp;</a></span>TryGetParamValue() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a987eb23a48b90e542001cc12fcbc1ddc">&#9670;&nbsp;</a></span>TryGetParamValue() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -358,7 +611,7 @@ static readonly List&lt; <a class="el" href="../../d4/dc9/interface_uniform_quer
 </div>
 </div>
 <a id="a5747ff73a111b583fa01c442ca2a2d78"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5747ff73a111b583fa01c442ca2a2d78">&#9670;&nbsp;</a></span>TryGetParamValue() <span class="overload">[2/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a5747ff73a111b583fa01c442ca2a2d78">&#9670;&nbsp;</a></span>TryGetParamValue() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -410,6 +663,76 @@ static readonly List&lt; <a class="el" href="../../d4/dc9/interface_uniform_quer
 
 </div>
 </div>
+<a id="a57f11d169fede8dc343e8fcce0af1c6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57f11d169fede8dc343e8fcce0af1c6a">&#9670;&nbsp;</a></span>TryGetParamValue() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool UniformQueries.API.TryGetParamValue </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>param</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">QueryPart</a>&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">params <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">QueryPart</a> []&#160;</td>
+          <td class="paramname"><em>queryParts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to find requested param's value among query parts. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td></td></tr>
+    <tr><td class="paramname">value</td><td></td></tr>
+    <tr><td class="paramname">queryParts</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="aa906970223172f9f2068baa410b621d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa906970223172f9f2068baa410b621d8">&#9670;&nbsp;</a></span>SPLITTING_SYMBOL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char UniformQueries.API.SPLITTING_SYMBOL = '&amp;'</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Symbol that divide query to parameters array. </p>
+
+</div>
+</div>
 <h2 class="groupheader">Property Documentation</h2>
 <a id="a8fe90206df6a1ae2b052b82c30a32037"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8fe90206df6a1ae2b052b82c30a32037">&#9670;&nbsp;</a></span>QueryProcessors</h2>
@@ -436,7 +759,7 @@ static readonly List&lt; <a class="el" href="../../d4/dc9/interface_uniform_quer
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/Work/Tools/UniformQueries/QueriesAPI.cs</li>
+<li>D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

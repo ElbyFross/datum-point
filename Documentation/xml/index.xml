@@ -42,33 +42,21 @@
     <member refid="dc/d36/class_t_h_b___plugin___social_1_1_advices_1_1_advices_1a13d20d8ac01863194fee5df3ef954add" kind="function"><name>Connect</name></member>
     <member refid="dc/d36/class_t_h_b___plugin___social_1_1_advices_1_1_advices_1a13d20d8ac01863194fee5df3ef954add" kind="function"><name>Connect</name></member>
   </compound>
-  <compound refid="d5/d12/class_uniform_client_1_1_plugins_1_1_a_p_i" kind="class"><name>UniformClient::Plugins::API</name>
-    <member refid="d5/d12/class_uniform_client_1_1_plugins_1_1_a_p_i_1a0f983601b51597ea8ab13f718c58f80c" kind="function"><name>SortByDomains</name></member>
-  </compound>
-  <compound refid="df/d75/class_uniform_queries_1_1_a_p_i" kind="class"><name>UniformQueries::API</name>
-    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a8fe90206df6a1ae2b052b82c30a32037" kind="property"><name>QueryProcessors</name></member>
-    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a4af16485a14a5acbd5ac442cf0467496" kind="variable"><name>queryProcessors</name></member>
-    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a8dbe3d00dcf507ab3cea1dc58e1e154f" kind="function"><name>API</name></member>
-    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a2f6a1dee18c3b462a8a794d68e326dba" kind="function"><name>PPQueryHandlerAsync</name></member>
-    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a1a0ad73e1dad7f7ec61398cb33ec18a4" kind="function"><name>QueryParamExist</name></member>
-    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a0f6c53ca64000015c8bf7bed30d9c57a" kind="function"><name>QueryParamExist</name></member>
-    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a987eb23a48b90e542001cc12fcbc1ddc" kind="function"><name>TryGetParamValue</name></member>
-    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a5747ff73a111b583fa01c442ca2a2d78" kind="function"><name>TryGetParamValue</name></member>
-  </compound>
-  <compound refid="d2/d9a/class_wpf_handler_1_1_plugins_1_1_a_p_i" kind="class"><name>WpfHandler::Plugins::API</name>
-    <member refid="d2/d9a/class_wpf_handler_1_1_plugins_1_1_a_p_i_1ab5fa2212cf7d00290d86c0aa5bc65f91" kind="function"><name>OpenGUI</name></member>
-  </compound>
   <compound refid="d4/ddf/class_pipes_provider_1_1_a_p_i" kind="class"><name>PipesProvider::API</name>
     <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a8efe588e9c6f7bf610310d9f6223a0f8" kind="variable"><name>openedClients</name></member>
     <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1ae5d6ee8740cc704d7ac5fc619349b603" kind="variable"><name>openedServers</name></member>
+    <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a88d536e98d1ea1c34d4331fef67a7561" kind="event"><name>ServerTransmissionMeta_InProcessing</name></member>
     <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a5314727d43f5fafc8630dbc814cebeac" kind="function"><name>ConnectToServerAsync</name></member>
     <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a0feeed2f76dc4292c3b85fdd054bd77e" kind="function"><name>ConnectionEstablishedCallbackRetranslator</name></member>
     <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1aaccf777b3b489b550739dd8adcf4a1d3" kind="function"><name>ClientLoop</name></member>
-    <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1ad57a87e88181644685a947f951b9fe0f" kind="function"><name>TryGetLineProcessorByGUID</name></member>
-    <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1af785a9d8707a831a6b84ac63ae96e755" kind="function"><name>TryToRegisterLineProcessor</name></member>
-    <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1abea09e221bfe03713f46b7223c6dd62f" kind="function"><name>ServerLoop</name></member>
-    <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1aef65cfb6e72f44adf25b3cf8bc0d8656" kind="function"><name>ServerLoop</name></member>
-    <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1abf7202abca50566888c625b928d0cbaa" kind="function"><name>ServerLoop</name></member>
+    <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1ae1abc16273a4b459fdbf63e68c44d11f" kind="function"><name>TryGetTransmissionLineByGUID</name></member>
+    <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a39e17f30d2ee8c716efeb92f947fb72e" kind="function"><name>TryToRegisterTransmissionLine</name></member>
+    <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a99feebefadd9a40a3c1fa7175324d950" kind="function"><name>ClientToServerLoop</name></member>
+    <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a06ee04a0e80238a176b7b2cac3f6bb4b" kind="function"><name>ClientToServerLoop</name></member>
+    <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a740e60d5cfd04fcc434e05b40910e493" kind="function"><name>ClientToServerLoop</name></member>
+    <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a9eacd5177e24badabe5ac8a3fe30d5d3" kind="function"><name>ClientToServerLoop</name></member>
+    <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a793d388ee138476bcea3256146851432" kind="function"><name>ServerToClientLoop</name></member>
+    <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1ae24aa9b5d3220b373d5689bddc22e924" kind="function"><name>ServerToClientLoop</name></member>
     <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1ab18891bb1d9c04a9c9144e0d8c89aebf" kind="function"><name>ServerLoop</name></member>
     <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1ab525aaa0c87f23cfbe4ad6d0ed1b1b4c" kind="function"><name>SetExpired</name></member>
     <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a9bfed3a9b5733c6a76235ec096c903e3" kind="function"><name>SetExpired</name></member>
@@ -76,7 +64,32 @@
     <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a1a81c47121d56bca83bd3cbf058d6478" kind="function"><name>StopServer</name></member>
     <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1aec56e2367941c5cbf6501298a946b41a" kind="function"><name>StopServer</name></member>
     <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a5ec1b30c068984a8dbff3a5a4d41a8b7" kind="function"><name>StopAllServers</name></member>
-    <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a90278e985fdf5488b1a60787fa1ff5ac" kind="function"><name>DNSHandler</name></member>
+    <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a5eb987a8a4edfb2b26d861071aca70a2" kind="function"><name>TryGetServerTransmissionMeta</name></member>
+    <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1ade8af5541a5787e55fe07bad71298132" kind="function"><name>DNSHandler_ClientToSerever_Async</name></member>
+    <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1af1648503e83d5ecd72af553ea5d461f5" kind="function"><name>DNSHandler_ServerToClient_Async</name></member>
+  </compound>
+  <compound refid="d5/d12/class_uniform_client_1_1_plugins_1_1_a_p_i" kind="class"><name>UniformClient::Plugins::API</name>
+    <member refid="d5/d12/class_uniform_client_1_1_plugins_1_1_a_p_i_1a0f983601b51597ea8ab13f718c58f80c" kind="function"><name>SortByDomains</name></member>
+  </compound>
+  <compound refid="df/d75/class_uniform_queries_1_1_a_p_i" kind="class"><name>UniformQueries::API</name>
+    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1aa906970223172f9f2068baa410b621d8" kind="variable"><name>SPLITTING_SYMBOL</name></member>
+    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a8fe90206df6a1ae2b052b82c30a32037" kind="property"><name>QueryProcessors</name></member>
+    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a4af16485a14a5acbd5ac442cf0467496" kind="variable"><name>queryProcessors</name></member>
+    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a8dbe3d00dcf507ab3cea1dc58e1e154f" kind="function"><name>API</name></member>
+    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1ae1b8242cd1055572d996ff97b5653345" kind="function"><name>PPReceivedQueryHandlerAsync</name></member>
+    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a1a0ad73e1dad7f7ec61398cb33ec18a4" kind="function"><name>QueryParamExist</name></member>
+    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a0f6c53ca64000015c8bf7bed30d9c57a" kind="function"><name>QueryParamExist</name></member>
+    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1ac0f8c9faebdc4a69f2072c0bb9e955e1" kind="function"><name>QueryParamExist</name></member>
+    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a987eb23a48b90e542001cc12fcbc1ddc" kind="function"><name>TryGetParamValue</name></member>
+    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a5747ff73a111b583fa01c442ca2a2d78" kind="function"><name>TryGetParamValue</name></member>
+    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a57f11d169fede8dc343e8fcce0af1c6a" kind="function"><name>TryGetParamValue</name></member>
+    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1aa8a8215bbad2752c291803011dc49ff4" kind="function"><name>GetParamValues</name></member>
+    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1ae481c9b7a800886a2b461a7456043494" kind="function"><name>GetParamValues</name></member>
+    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a132ca74ba34302f216b61668dd32a207" kind="function"><name>MakeQuery</name></member>
+    <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a013ca0eff0e67d7f30a6be289312b859" kind="function"><name>DetectQueryParts</name></member>
+  </compound>
+  <compound refid="d2/d9a/class_wpf_handler_1_1_plugins_1_1_a_p_i" kind="class"><name>WpfHandler::Plugins::API</name>
+    <member refid="d2/d9a/class_wpf_handler_1_1_plugins_1_1_a_p_i_1ab5fa2212cf7d00290d86c0aa5bc65f91" kind="function"><name>OpenGUI</name></member>
   </compound>
   <compound refid="d2/d56/class_teacher_handbook_1_1_app" kind="class"><name>TeacherHandbook::App</name>
     <member refid="d2/d56/class_teacher_handbook_1_1_app_1af85a80dcd07d73660fe52c78248265eb" kind="variable"><name>_contentLoaded</name></member>
@@ -130,7 +143,10 @@
     <member refid="d4/deb/class_uniform_client_1_1_base_client_1a7ec48981cf3e7ec10d2cb7dff81f912a" kind="function"><name>ArgsReactor</name></member>
     <member refid="d4/deb/class_uniform_client_1_1_base_client_1aa60dbfa5bd8c46659aec7738193315f1" kind="function"><name>LoadPluginsEnumerable</name></member>
     <member refid="d4/deb/class_uniform_client_1_1_base_client_1a99ae0bb1dd5bef374fcedb3f873bfe8b" kind="function"><name>LoadPluginsCollection</name></member>
-    <member refid="d4/deb/class_uniform_client_1_1_base_client_1a3b09387a94e46bf9365ee603202ba488" kind="function"><name>OpenTransmissionLine</name></member>
+    <member refid="d4/deb/class_uniform_client_1_1_base_client_1a9c59b23626ff132aa96630654d7bc410" kind="function"><name>OpenTransmissionLine</name></member>
+    <member refid="d4/deb/class_uniform_client_1_1_base_client_1acd2e71dcb27e97f900f887233e6b8f9c" kind="function"><name>UniformQueryPostHandler</name></member>
+    <member refid="d4/deb/class_uniform_client_1_1_base_client_1af7a3c613846c8595431272c4c9d531f3" kind="function"><name>UniformServerAnswerHandler</name></member>
+    <member refid="d4/deb/class_uniform_client_1_1_base_client_1a06d3340dd02ec4abfe9cf55bc1db0f03" kind="function"><name>ReciveAnswer</name></member>
   </compound>
   <compound refid="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order" kind="class"><name>TeacherHandbook::Core::Orders::BaseOrder</name>
     <member refid="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order_1a01ff46c6c7c2def5204de29b67f646c9" kind="property"><name>StartDate</name></member>
@@ -141,21 +157,24 @@
   <compound refid="d7/d32/class_uniform_server_1_1_base_server" kind="class"><name>UniformServer::BaseServer</name>
     <member refid="d7/d32/class_uniform_server_1_1_base_server_1a889c3aaa1cca7f4a9a4e32617516f4be" kind="event"><name>ThreadTerminateRequest</name></member>
     <member refid="d7/d32/class_uniform_server_1_1_base_server_1a440a854a955ab7c5e563918c12e9b32c" kind="event"><name>ThreadStartRequest</name></member>
-    <member refid="d7/d32/class_uniform_server_1_1_base_server_1aaff91507b262d2a1b9021caa2d01640f" kind="variable"><name>SW_HIDE</name></member>
-    <member refid="d7/d32/class_uniform_server_1_1_base_server_1a494087cabc03c54c3dc0ac1cc1048860" kind="variable"><name>SW_SHOW</name></member>
-    <member refid="d7/d32/class_uniform_server_1_1_base_server_1a051bdce3aec037df76d8efe3b9938198" kind="variable"><name>mutexObj</name></member>
-    <member refid="d7/d32/class_uniform_server_1_1_base_server_1a4dbe04636a763decfae22ddb2fe26c7a" kind="variable"><name>threadSleepTime</name></member>
-    <member refid="d7/d32/class_uniform_server_1_1_base_server_1aa40c02a1eec7eda4c36a8ac08119b414" kind="variable"><name>threadsCount</name></member>
-    <member refid="d7/d32/class_uniform_server_1_1_base_server_1a3b4049daf3614587c02fb4f1fab870a6" kind="variable"><name>serverThreads</name></member>
     <member refid="d7/d32/class_uniform_server_1_1_base_server_1a632ed557976f4d7bd9b41502bb9a262b" kind="variable"><name>appTerminated</name></member>
     <member refid="d7/d32/class_uniform_server_1_1_base_server_1a31cc7d436bb2dd344ec275fd0fa0061e" kind="property"><name>ThreadsCount</name></member>
+    <member refid="d7/d32/class_uniform_server_1_1_base_server_1a4dbe04636a763decfae22ddb2fe26c7a" kind="variable"><name>threadSleepTime</name></member>
+    <member refid="d7/d32/class_uniform_server_1_1_base_server_1aa40c02a1eec7eda4c36a8ac08119b414" kind="variable"><name>threadsCount</name></member>
+    <member refid="d7/d32/class_uniform_server_1_1_base_server_1a9c14e919da0c2b9b7f8e57a92c9b0742" kind="variable"><name>longTermServerThreads</name></member>
+    <member refid="d7/d32/class_uniform_server_1_1_base_server_1a051bdce3aec037df76d8efe3b9938198" kind="variable"><name>mutexObj</name></member>
+    <member refid="d7/d32/class_uniform_server_1_1_base_server_1aaff91507b262d2a1b9021caa2d01640f" kind="variable"><name>SW_HIDE</name></member>
+    <member refid="d7/d32/class_uniform_server_1_1_base_server_1a494087cabc03c54c3dc0ac1cc1048860" kind="variable"><name>SW_SHOW</name></member>
     <member refid="d7/d32/class_uniform_server_1_1_base_server_1a52485a2d70e615a5cbf720c952a8d62f" kind="variable"><name>thread</name></member>
     <member refid="d7/d32/class_uniform_server_1_1_base_server_1aaa318b3ed503dd8ccf381c9f3a81ecf2" kind="variable"><name>pipeName</name></member>
     <member refid="d7/d32/class_uniform_server_1_1_base_server_1a16cf4f4f9de9d6d6586631640d3d867b" kind="function"><name>ShowWindow</name></member>
     <member refid="d7/d32/class_uniform_server_1_1_base_server_1a1b7d5587de4974fad2ec366a571791e0" kind="function"><name>GetConsoleWindow</name></member>
-    <member refid="d7/d32/class_uniform_server_1_1_base_server_1a27e52ba4c6bc40a47795085a7e3d03cd" kind="function"><name>StartServerThread</name></member>
+    <member refid="d7/d32/class_uniform_server_1_1_base_server_1aa4a1412b217944e7f8d6ccae6ac68289" kind="function"><name>StartServerThread</name></member>
     <member refid="d7/d32/class_uniform_server_1_1_base_server_1a22b92ad517cd1003fe4fe3c86d857169" kind="function"><name>LoadAssemblies</name></member>
     <member refid="d7/d32/class_uniform_server_1_1_base_server_1a992660752da60019c348e18226a87bf2" kind="function"><name>ArgsReactor</name></member>
+    <member refid="d7/d32/class_uniform_server_1_1_base_server_1a6f6857c6f0644118294fa56c92f00e5c" kind="function"><name>ThreadingServerLoop_Answer</name></member>
+    <member refid="d7/d32/class_uniform_server_1_1_base_server_1a9e42ffc373c7fa23f401957251b0943d" kind="function"><name>ThreadingServerLoop_OpenChanel</name></member>
+    <member refid="d7/d32/class_uniform_server_1_1_base_server_1aa85e82df10ecec8324e2ccf7611d8cbf" kind="function"><name>SendAnswer</name></member>
   </compound>
   <compound refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user" kind="class"><name>TeacherHandbook::Core::Containers::Entities::BaseUser</name>
     <member refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1a0aeebd3854d7996435cdb2fc691c2bc3" kind="property"><name>Rigts</name></member>
@@ -204,7 +223,6 @@
   </compound>
   <compound refid="d6/dac/class_test_client_1_1_client" kind="class"><name>TestClient::Client</name>
     <member refid="d6/dac/class_test_client_1_1_client_1a236c6c2776f2ec6851c36a8714ef6e03" kind="function"><name>Main</name></member>
-    <member refid="d6/dac/class_test_client_1_1_client_1adae80a1bd43e9e383c52ebb6390f2507" kind="function"><name>UniformQueryPOSTProcessor</name></member>
   </compound>
   <compound refid="d6/d8f/class_t_h_b___data___server_1_1_commands" kind="class"><name>THB_Data_Server::Commands</name>
     <member refid="d6/d8f/class_t_h_b___data___server_1_1_commands_1a996531160e55feb986342fac81c89d71" kind="function"><name>CommandResponseProcessor</name></member>
@@ -274,8 +292,13 @@
   </compound>
   <compound refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e" kind="class"><name>THB_Data_Server_Queries::GET_DAYS_RANGE</name>
     <member refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1aa91ce7c90a325c70aab9aaf112fe49f3" kind="function"><name>Description</name></member>
-    <member refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1adb606b0ed5b0bceaa96ce14ba34158c9" kind="function"><name>Execute</name></member>
-    <member refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1a2b21ca7e9599161544424cd0f7e55ef4" kind="function"><name>IsTarget</name></member>
+    <member refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1a6c1884577a045fad484de904dc0da636" kind="function"><name>Execute</name></member>
+    <member refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1a1f27cee6dbc3ba3fdfad0590a75d239b" kind="function"><name>IsTarget</name></member>
+  </compound>
+  <compound refid="da/d43/class_uniform_server_1_1_queries_1_1_g_e_t___p_u_b_l_i_c___k_e_y" kind="class"><name>UniformServer::Queries::GET_PUBLIC_KEY</name>
+    <member refid="da/d43/class_uniform_server_1_1_queries_1_1_g_e_t___p_u_b_l_i_c___k_e_y_1aee414e6882494609ed576f061d662dc2" kind="function"><name>Description</name></member>
+    <member refid="da/d43/class_uniform_server_1_1_queries_1_1_g_e_t___p_u_b_l_i_c___k_e_y_1a63367fa9543a3fb4a1126373a833c317" kind="function"><name>Execute</name></member>
+    <member refid="da/d43/class_uniform_server_1_1_queries_1_1_g_e_t___p_u_b_l_i_c___k_e_y_1ae27d462fe9ccbbf22ac03c9ead9cbe8f" kind="function"><name>IsTarget</name></member>
   </compound>
   <compound refid="da/dfa/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_group" kind="class"><name>TeacherHandbook::Core::Containers::Entities::Group</name>
     <member refid="da/dfa/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_group_1a310647f18ded4bc06e52f6840b11d7ea" kind="variable"><name>key</name></member>
@@ -293,8 +316,8 @@
     <member refid="d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin_1a1ca2220c7ce4a23f8f41af10efccf328" kind="function"><name>OnStart</name></member>
   </compound>
   <compound refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor" kind="interface"><name>UniformQueries::IQueryHandlerProcessor</name>
-    <member refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1a60538b1b29c5d1d3bc67db28a265677a" kind="function"><name>Execute</name></member>
-    <member refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1a435493887db64defdb6019c3c418a4d4" kind="function"><name>IsTarget</name></member>
+    <member refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1a2cf42ac286a12dea98c703a86478d36b" kind="function"><name>Execute</name></member>
+    <member refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1a0edbfe93aab9f1787e4dc0311f7695c7" kind="function"><name>IsTarget</name></member>
     <member refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1ae7323367177cd11c787d61029de5b044" kind="function"><name>Description</name></member>
   </compound>
   <compound refid="d1/dfc/interface_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_i_user" kind="interface"><name>TeacherHandbook::Core::Containers::Entities::IUser</name>
@@ -419,6 +442,32 @@
     <member refid="db/d7f/class_console_draw_1_1_primitives_1ad4b6aaed88ef18e2926febca63abf667" kind="function"><name>DrawLine</name></member>
     <member refid="db/d7f/class_console_draw_1_1_primitives_1a56f4fc0b28e3e0182208dccaf6944fdb" kind="function"><name>DrawSpacedLine</name></member>
   </compound>
+  <compound refid="d2/d85/struct_pipes_provider_1_1_query_container" kind="struct"><name>PipesProvider::QueryContainer</name>
+    <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1a6d66f084a62271934e708750d4c4dafa" kind="property"><name>Query</name></member>
+    <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1a3daff9827ee4f77286eb4385a64e2fe2" kind="property"><name>Empty</name></member>
+    <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1a3449e3e35c97dd80bd2f8076160633fa" kind="property"><name>IsEmpty</name></member>
+    <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1aaeb530fcd4fde620a6f32343dcecfc4b" kind="property"><name>Attempts</name></member>
+    <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1aa04364ca7f1fc51a91671d1d74b8d810" kind="variable"><name>AnswerHandler</name></member>
+    <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1aa607957de2e6f04d20cadfa30f0ddfbd" kind="function"><name>QueryContainer</name></member>
+    <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1ae1f22042b19452f4037480d531f8ea86" kind="function"><name>ToString</name></member>
+    <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1a4b91c3b8947613c8326451df7a1ff2a0" kind="function"><name>Copy</name></member>
+    <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1abebe8bf09a00209626a0e13c0db64b27" kind="function"><name>operator++</name></member>
+    <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1a5eb5c53a2438e58e2f284c1b4a049d24" kind="function"><name>operator string</name></member>
+  </compound>
+  <compound refid="d5/d61/struct_uniform_queries_1_1_query_part" kind="struct"><name>UniformQueries::QueryPart</name>
+    <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1a24186fc4f67752331342e84554f806ff" kind="variable"><name>key</name></member>
+    <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1aa8167f347217469ed47b298f2bc16381" kind="variable"><name>property</name></member>
+    <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1af380375ca82e9dc2eecf899b5933fe2b" kind="property"><name>IsNone</name></member>
+    <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1a5be54faa8b7723167257e930a71457a4" kind="property"><name>None</name></member>
+    <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1adabbcaa15ccf653f686d4f2bcd39ce09" kind="function"><name>QueryPart</name></member>
+    <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1acf5597530f693df3804fc2e638805245" kind="function"><name>ToString</name></member>
+    <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1a5252d13a0a8c211c47cba54f3749aad1" kind="function"><name>ParamKeyEqual</name></member>
+    <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1abda3bf2ddc04c911364a09655e8fc4f2" kind="function"><name>ParamEqual</name></member>
+    <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1a274b321f91ecbda08f01c23536a568b6" kind="function"><name>operator string</name></member>
+    <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1ab0c6ca9b91045a64286bf730ad97dc43" kind="function"><name>operator QueryPart</name></member>
+    <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1a053c8ba08ddd1a20d5b50128a524da09" kind="function"><name>QueryPartsArrayToString</name></member>
+    <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1accd3b435809c426dd92456ffee0a996d" kind="function"><name>TryGetBackwardDomain</name></member>
+  </compound>
   <compound refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository" kind="class"><name>THB_Plugin_Lesson::Repository</name>
     <member refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository_1ac8b761093ce23e767c2d550872d2b804" kind="variable"><name>_contentLoaded</name></member>
     <member refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository_1aa8951c83aac524f207e3b97c83fa226e" kind="property"><name>Meta</name></member>
@@ -454,19 +503,19 @@
     <member refid="d8/d18/class_t_h_b___plugin___exams_1_1_properties_1_1_resources_1ad00eb8a1a616471660b17263b4e580ad" kind="property"><name>Culture</name></member>
     <member refid="d8/d18/class_t_h_b___plugin___exams_1_1_properties_1_1_resources_1a0c53088172773a253a38f9b08ef5fcb2" kind="function"><name>Resources</name></member>
   </compound>
-  <compound refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources" kind="class"><name>THB_Plugin_Social::Properties::Resources</name>
-    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1a8ff25bc7c1484e726983f36b516c56f7" kind="variable"><name>resourceMan</name></member>
-    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1af6f06bd4c037c13a9c69e7700a6950b9" kind="variable"><name>resourceCulture</name></member>
-    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1a480b09e333fe9a3de46ecf95895fdde8" kind="property"><name>ResourceManager</name></member>
-    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1a4b1ade895a2309c9b4020346f8ed51c3" kind="property"><name>Culture</name></member>
-    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1aafcc2b3edf5a61df82d719606256fdc4" kind="function"><name>Resources</name></member>
-  </compound>
   <compound refid="de/d69/class_teacher_handbook_1_1_properties_1_1_resources" kind="class"><name>TeacherHandbook::Properties::Resources</name>
     <member refid="de/d69/class_teacher_handbook_1_1_properties_1_1_resources_1a744ab1269c4931be089de79e8e1866bb" kind="variable"><name>resourceMan</name></member>
     <member refid="de/d69/class_teacher_handbook_1_1_properties_1_1_resources_1a63cc181fd05c1ca38e3524ff28794761" kind="variable"><name>resourceCulture</name></member>
     <member refid="de/d69/class_teacher_handbook_1_1_properties_1_1_resources_1a21ca51d6f85c0dfdff618767488d942f" kind="property"><name>ResourceManager</name></member>
     <member refid="de/d69/class_teacher_handbook_1_1_properties_1_1_resources_1a7d2a69e42deca52f95de104f0283705c" kind="property"><name>Culture</name></member>
     <member refid="de/d69/class_teacher_handbook_1_1_properties_1_1_resources_1a79af218580b0d5791b9650661e1f84dd" kind="function"><name>Resources</name></member>
+  </compound>
+  <compound refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources" kind="class"><name>THB_Plugin_Orders::Properties::Resources</name>
+    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1a55f529fe90663a657c5b13d890aa9940" kind="variable"><name>resourceMan</name></member>
+    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1a92e2dbc2c2b32065ca3b5196eeb94e3c" kind="variable"><name>resourceCulture</name></member>
+    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1af9431eab17864a9aff07751c973e07b4" kind="property"><name>ResourceManager</name></member>
+    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1abc067a0bcc5bdc35ac68752a464d42cc" kind="property"><name>Culture</name></member>
+    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1a32135e8b0c0f9fc6403e77ae86fc446d" kind="function"><name>Resources</name></member>
   </compound>
   <compound refid="d1/d40/class_t_h_b___data___server_1_1_properties_1_1_resources" kind="class"><name>THB_Data_Server::Properties::Resources</name>
     <member refid="d1/d40/class_t_h_b___data___server_1_1_properties_1_1_resources_1a713fd57fd8801c7746351c27854346b3" kind="variable"><name>resourceMan</name></member>
@@ -475,12 +524,12 @@
     <member refid="d1/d40/class_t_h_b___data___server_1_1_properties_1_1_resources_1a0f9c72f240b5984d2407f2bab6d3372a" kind="property"><name>Culture</name></member>
     <member refid="d1/d40/class_t_h_b___data___server_1_1_properties_1_1_resources_1a389c6ec3ae6ddbde43ad259d98361e89" kind="function"><name>Resources</name></member>
   </compound>
-  <compound refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources" kind="class"><name>THB_Plugin_Orders::Properties::Resources</name>
-    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1a55f529fe90663a657c5b13d890aa9940" kind="variable"><name>resourceMan</name></member>
-    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1a92e2dbc2c2b32065ca3b5196eeb94e3c" kind="variable"><name>resourceCulture</name></member>
-    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1af9431eab17864a9aff07751c973e07b4" kind="property"><name>ResourceManager</name></member>
-    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1abc067a0bcc5bdc35ac68752a464d42cc" kind="property"><name>Culture</name></member>
-    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1a32135e8b0c0f9fc6403e77ae86fc446d" kind="function"><name>Resources</name></member>
+  <compound refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources" kind="class"><name>THB_Plugin_Social::Properties::Resources</name>
+    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1a8ff25bc7c1484e726983f36b516c56f7" kind="variable"><name>resourceMan</name></member>
+    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1af6f06bd4c037c13a9c69e7700a6950b9" kind="variable"><name>resourceCulture</name></member>
+    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1a480b09e333fe9a3de46ecf95895fdde8" kind="property"><name>ResourceManager</name></member>
+    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1a4b1ade895a2309c9b4020346f8ed51c3" kind="property"><name>Culture</name></member>
+    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1aafcc2b3edf5a61df82d719606256fdc4" kind="function"><name>Resources</name></member>
   </compound>
   <compound refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule" kind="class"><name>TeacherHandbook::Plugins::Schedule::Schedule</name>
     <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1aa1b4c4609f2d3f479a8c8566f988d11e" kind="variable"><name>_contentLoaded</name></member>
@@ -498,15 +547,34 @@
     <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a6b69e488632bb6650e94e68de0137da0" kind="function"><name>Connect</name></member>
     <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a6b69e488632bb6650e94e68de0137da0" kind="function"><name>Connect</name></member>
   </compound>
+  <compound refid="d3/d16/class_uniform_client_1_1_security_a_p_i" kind="class"><name>UniformClient::SecurityAPI</name>
+    <member refid="d3/d16/class_uniform_client_1_1_security_a_p_i_1a9067bf06fedba68934b88fdac3f2ca61" kind="function"><name>EncryptString</name></member>
+    <member refid="d3/d16/class_uniform_client_1_1_security_a_p_i_1ae6f06f76d98654dd1362e09ca36039c6" kind="function"><name>RSAEncrypt</name></member>
+  </compound>
+  <compound refid="d6/d3d/class_uniform_server_1_1_security_a_p_i" kind="class"><name>UniformServer::SecurityAPI</name>
+    <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a0013616bf69cff8555e697c0c4960240" kind="enum"><name>SHATypes</name></member>
+    <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a0013616bf69cff8555e697c0c4960240a9a9f4eb6d0036a164588b6ee74390442" kind="enumvalue"><name>SHA1</name></member>
+    <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a0013616bf69cff8555e697c0c4960240ab505df5aa812b4f320420b8a952f20e5" kind="enumvalue"><name>SHA256</name></member>
+    <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a0013616bf69cff8555e697c0c4960240ae446c175009b980a004574cb795388ab" kind="enumvalue"><name>SHA384</name></member>
+    <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a0013616bf69cff8555e697c0c4960240adb6c5a350bb792ef07a62a1750962737" kind="enumvalue"><name>SHA512</name></member>
+    <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a382d85d8db483cd87e51ea8adfec2317" kind="property"><name>CryptoServiceProvider_RSA</name></member>
+    <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a0760e6025414a7cb1e19528fe8c4697d" kind="property"><name>PublicKey</name></member>
+    <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a79bddf5d4d9a983f35629d2af14c1118" kind="property"><name>PublicKeyXML</name></member>
+    <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1ad2b3a776434e5529b4ed9b4d94ab122c" kind="property"><name>PrivateKey</name></member>
+    <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a705f1d9f4a89186f64ccf451c34e4d53" kind="variable"><name>_CryptoServiceProvider_RSA</name></member>
+    <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a46e3150c9c1024c0cc9a56b03f02624e" kind="function"><name>RSADecrypt</name></member>
+    <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a45566f4aed87cbfabbcf00b7fca118db" kind="function"><name>StringToSHA</name></member>
+    <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a417561751e136d3c7d1fdeab5cbcd18d" kind="function"><name>StringToSHA</name></member>
+    <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a47f4dbc862a92f24b030d52b2a79f92b" kind="function"><name>GenerateUniqueKey256Bit</name></member>
+  </compound>
+  <compound refid="dc/d42/class_t_h_b___data___server_1_1_server" kind="class"><name>THB_Data_Server::Server</name>
+    <member refid="dc/d42/class_t_h_b___data___server_1_1_server_1a87515fb7b3422af002d33dd3fbe8f4e9" kind="function"><name>Main</name></member>
+  </compound>
   <compound refid="d8/d17/class_session_provider_1_1_server" kind="class"><name>SessionProvider::Server</name>
     <member refid="d8/d17/class_session_provider_1_1_server_1a78068e966b78f7579b01ba80f53b87ea" kind="function"><name>Main</name></member>
   </compound>
   <compound refid="d2/d9a/class_queries_server_1_1_server" kind="class"><name>QueriesServer::Server</name>
     <member refid="d2/d9a/class_queries_server_1_1_server_1ae294b75511557ef0701455c0e2ba785d" kind="function"><name>Main</name></member>
-  </compound>
-  <compound refid="dc/d42/class_t_h_b___data___server_1_1_server" kind="class"><name>THB_Data_Server::Server</name>
-    <member refid="dc/d42/class_t_h_b___data___server_1_1_server_1a87515fb7b3422af002d33dd3fbe8f4e9" kind="function"><name>Main</name></member>
-    <member refid="dc/d42/class_t_h_b___data___server_1_1_server_1a7410e66cc0584f3d59d6b2c5892e9b12" kind="function"><name>MonitorLoop</name></member>
   </compound>
   <compound refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" kind="class"><name>PipesProvider::ServerTransmissionMeta</name>
     <member refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1a1d4a87ad9a66bd81bc68f48fa28dbf32" kind="variable"><name>connectionMarker</name></member>
@@ -516,6 +584,7 @@
     <member refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1abed6acbaaf01392151667fad217ec7c3" kind="variable"><name>name</name></member>
     <member refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1acdc3e400b26c044443a9c3ce367433f4" kind="property"><name>Expired</name></member>
     <member refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1a9b501faba9c2cb9ed8873f1935d95b7c" kind="property"><name>Stoped</name></member>
+    <member refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1abdf46c54f238645728488c757a53097e" kind="property"><name>ProcessingQuery</name></member>
     <member refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1aad6b35f35e7976ae9ee3f386b65dd128" kind="property"><name>None</name></member>
     <member refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1abca2ef9b22e5cb29dac8f5c23da8c64f" kind="function"><name>ServerTransmissionMeta</name></member>
     <member refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1a665969b5b071d7fdc931e9e9f223652b" kind="function"><name>ServerTransmissionMeta</name></member>
@@ -525,29 +594,33 @@
   <compound refid="d5/d8e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_session" kind="class"><name>TeacherHandbook::Core::Containers::Schedule::Session</name>
     <member refid="d5/d8e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_session_1a1e3ab318ef7a0b8330eb06704d129531" kind="variable"><name>subjects</name></member>
   </compound>
-  <compound refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings" kind="class"><name>THB_Plugin_Exams::Properties::Settings</name>
-    <member refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings_1a9aa1e91ef757890464a72793f1eb73f5" kind="variable"><name>defaultInstance</name></member>
-    <member refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings_1a66f1b0647e31c1a4ca44a07101154767" kind="property"><name>Default</name></member>
-  </compound>
-  <compound refid="d5/dbf/class_t_h_b___plugin___social_1_1_properties_1_1_settings" kind="class"><name>THB_Plugin_Social::Properties::Settings</name>
-    <member refid="d5/dbf/class_t_h_b___plugin___social_1_1_properties_1_1_settings_1ad13b332c3b0bb32f646f60e018fb93cd" kind="variable"><name>defaultInstance</name></member>
-    <member refid="d5/dbf/class_t_h_b___plugin___social_1_1_properties_1_1_settings_1a561f116fda9ea9e2cee13c36295a5a8a" kind="property"><name>Default</name></member>
-  </compound>
   <compound refid="d0/d4b/class_teacher_handbook_1_1_properties_1_1_settings" kind="class"><name>TeacherHandbook::Properties::Settings</name>
     <member refid="d0/d4b/class_teacher_handbook_1_1_properties_1_1_settings_1a0ab4c8518be984ba2f07b4553ab289f2" kind="variable"><name>defaultInstance</name></member>
     <member refid="d0/d4b/class_teacher_handbook_1_1_properties_1_1_settings_1a7c06e1129e2b621773a8243e3ff15641" kind="property"><name>Default</name></member>
   </compound>
-  <compound refid="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings" kind="class"><name>THB_Plugin_Orders::Properties::Settings</name>
-    <member refid="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings_1af1617d6bc9802134b5f147a6eaa63627" kind="variable"><name>defaultInstance</name></member>
-    <member refid="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings_1aa9bb1b48c0521b2a4e7d2d390dccd7ed" kind="property"><name>Default</name></member>
+  <compound refid="d2/d6c/class_t_h_b___plugin___lesson_1_1_properties_1_1_settings" kind="class"><name>THB_Plugin_Lesson::Properties::Settings</name>
+    <member refid="d2/d6c/class_t_h_b___plugin___lesson_1_1_properties_1_1_settings_1a3468ef1e17fceecd069556491bd2fd4d" kind="variable"><name>defaultInstance</name></member>
+    <member refid="d2/d6c/class_t_h_b___plugin___lesson_1_1_properties_1_1_settings_1a62c075a5b387e28e65836510eb611744" kind="property"><name>Default</name></member>
   </compound>
   <compound refid="d7/d4f/class_wpf_handler_1_1_properties_1_1_settings" kind="class"><name>WpfHandler::Properties::Settings</name>
     <member refid="d7/d4f/class_wpf_handler_1_1_properties_1_1_settings_1a7b2e360d53ec59976635347e45223008" kind="variable"><name>defaultInstance</name></member>
     <member refid="d7/d4f/class_wpf_handler_1_1_properties_1_1_settings_1a252db64811cbf5a2fccc03433c9566c3" kind="property"><name>Default</name></member>
   </compound>
-  <compound refid="d2/d6c/class_t_h_b___plugin___lesson_1_1_properties_1_1_settings" kind="class"><name>THB_Plugin_Lesson::Properties::Settings</name>
-    <member refid="d2/d6c/class_t_h_b___plugin___lesson_1_1_properties_1_1_settings_1a3468ef1e17fceecd069556491bd2fd4d" kind="variable"><name>defaultInstance</name></member>
-    <member refid="d2/d6c/class_t_h_b___plugin___lesson_1_1_properties_1_1_settings_1a62c075a5b387e28e65836510eb611744" kind="property"><name>Default</name></member>
+  <compound refid="d5/dbf/class_t_h_b___plugin___social_1_1_properties_1_1_settings" kind="class"><name>THB_Plugin_Social::Properties::Settings</name>
+    <member refid="d5/dbf/class_t_h_b___plugin___social_1_1_properties_1_1_settings_1ad13b332c3b0bb32f646f60e018fb93cd" kind="variable"><name>defaultInstance</name></member>
+    <member refid="d5/dbf/class_t_h_b___plugin___social_1_1_properties_1_1_settings_1a561f116fda9ea9e2cee13c36295a5a8a" kind="property"><name>Default</name></member>
+  </compound>
+  <compound refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings" kind="class"><name>THB_Plugin_Exams::Properties::Settings</name>
+    <member refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings_1a9aa1e91ef757890464a72793f1eb73f5" kind="variable"><name>defaultInstance</name></member>
+    <member refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings_1a66f1b0647e31c1a4ca44a07101154767" kind="property"><name>Default</name></member>
+  </compound>
+  <compound refid="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings" kind="class"><name>THB_Plugin_Orders::Properties::Settings</name>
+    <member refid="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings_1af1617d6bc9802134b5f147a6eaa63627" kind="variable"><name>defaultInstance</name></member>
+    <member refid="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings_1aa9bb1b48c0521b2a4e7d2d390dccd7ed" kind="property"><name>Default</name></member>
+  </compound>
+  <compound refid="d4/d3e/class_uniform_client_1_1_simple_client" kind="class"><name>UniformClient::SimpleClient</name>
+  </compound>
+  <compound refid="dc/d09/class_uniform_server_1_1_simple_server" kind="class"><name>UniformServer::SimpleServer</name>
   </compound>
   <compound refid="db/dce/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_subject" kind="class"><name>TeacherHandbook::Core::Containers::Schedule::Subject</name>
     <member refid="db/dce/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_subject_1a464bb371a4d6eb0eb9bd0e0e096a5434" kind="variable"><name>key</name></member>
@@ -576,15 +649,16 @@
     <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a549bd893bb66b3f56e87209d3e776227" kind="property"><name>ServerName</name></member>
     <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a4edc70c5ef641b2c600b69b65ff4ba00" kind="property"><name>Closed</name></member>
     <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1af5717e4ea0ba1bbca5685de995c1c88f" kind="property"><name>Processing</name></member>
-    <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1ae74210ed172643f6e9bd23bc7913f9b1" kind="property"><name>LastQuery</name></member>
+    <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a3cc3f03332be99b5f380772587ca2883" kind="property"><name>LastQuery</name></member>
     <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a39f81c072ca65efd260d02fc7d5c5458" kind="property"><name>HasQueries</name></member>
     <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a31dff9b14126dc47bfafe65e3c976c2f" kind="variable"><name>pipeClient</name></member>
     <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a08bf6cb803ea32dd416afcc12ee866f5" kind="variable"><name>queryProcessor</name></member>
-    <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1aaccd1f86aa1a894f8e0b2bbb00923413" kind="variable"><name>lastQuery</name></member>
-    <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a81bbc79b91919db1098335cd547377ff" kind="variable"><name>queries</name></member>
+    <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1affdde0eafb483f2bf6f874679b4ab6f8" kind="variable"><name>lastQuery</name></member>
+    <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1ad866033fcbb1d9f783df8ff71e7fc21a" kind="variable"><name>queries</name></member>
     <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a20398f48516f0fc5fe0700b01b7fc6d7" kind="function"><name>TransmissionLine</name></member>
     <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1ac27fedfbe0edfdcb4fbf4509c76f858f" kind="function"><name>EnqueueQuery</name></member>
-    <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a9ab008a66866d2bdb29f4a33e563e3d1" kind="function"><name>TryDequeQuery</name></member>
+    <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a59eceb9280548e1c9e662543ee5c96c7" kind="function"><name>EnqueueQuery</name></member>
+    <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1acc672e0d0c921f60a9a5920e3f76d28b" kind="function"><name>TryDequeQuery</name></member>
     <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a4aa28b1d29a2b0b6fb2af6f046fdf56a" kind="function"><name>Close</name></member>
     <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a954265d9816b253b75caf7b6b7e1ba86" kind="function"><name>DropMeta</name></member>
     <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1ab56219b10bad03085b5d23e48ad59ec3" kind="function"><name>ThreadLoop</name></member>
@@ -593,11 +667,6 @@
     <member refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1_1ad58ace768113ee37aa177bfbf97bf7cf" kind="variable"><name>_contentLoaded</name></member>
     <member refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1_1a6b157c1dad624766c5da2c984c9b1368" kind="function"><name>InitializeComponent</name></member>
     <member refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1_1a052591678edd4a1701981778548968cf" kind="function"><name>Connect</name></member>
-  </compound>
-  <compound refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1" kind="class"><name>TeacherHandbook::Controls::UserControl1</name>
-    <member refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1a57070769f7910e144693661a022177be" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1afbcb7046a6000b1f69c161bb9e5c69b2" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1ae5076c67f52166ebffbcdd33f5270a6c" kind="function"><name>Connect</name></member>
   </compound>
   <compound refid="d1/d79/class_t_h_b___plugin___social_1_1_user_control1" kind="class"><name>THB_Plugin_Social::UserControl1</name>
     <member refid="d1/d79/class_t_h_b___plugin___social_1_1_user_control1_1a3f1b09bbced6d4b895eff4b6a376601e" kind="variable"><name>_contentLoaded</name></member>
@@ -609,15 +678,20 @@
     <member refid="dd/d5d/class_wpf_handler_1_1_user_control1_1a4be9da09a92a3fd301a67bf224d2f3d5" kind="function"><name>InitializeComponent</name></member>
     <member refid="dd/d5d/class_wpf_handler_1_1_user_control1_1aa7f1658efb648be3e096fdb65e9d9573" kind="function"><name>Connect</name></member>
   </compound>
+  <compound refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1" kind="class"><name>THB_Plugin_Exams::UserControl1</name>
+    <member refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1_1a0af4bcadce35594e7decef2aca6ae954" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1_1a00b30a8b0179c27805d9f9565070adba" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1_1adcd9edc13c61ced201761f6b90e32ab4" kind="function"><name>Connect</name></member>
+  </compound>
   <compound refid="d2/dc6/class_t_h_b___plugin___orders_1_1_user_control1" kind="class"><name>THB_Plugin_Orders::UserControl1</name>
     <member refid="d2/dc6/class_t_h_b___plugin___orders_1_1_user_control1_1a7d0a1a76f48fc70682dd70cdbfdcf690" kind="variable"><name>_contentLoaded</name></member>
     <member refid="d2/dc6/class_t_h_b___plugin___orders_1_1_user_control1_1ab6bf9301231de03e2f7bad2f7d436c3f" kind="function"><name>InitializeComponent</name></member>
     <member refid="d2/dc6/class_t_h_b___plugin___orders_1_1_user_control1_1a96d56e40e84ca08b117dea6b74b5545a" kind="function"><name>Connect</name></member>
   </compound>
-  <compound refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1" kind="class"><name>THB_Plugin_Exams::UserControl1</name>
-    <member refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1_1a0af4bcadce35594e7decef2aca6ae954" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1_1a00b30a8b0179c27805d9f9565070adba" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1_1adcd9edc13c61ced201761f6b90e32ab4" kind="function"><name>Connect</name></member>
+  <compound refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1" kind="class"><name>TeacherHandbook::Controls::UserControl1</name>
+    <member refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1a57070769f7910e144693661a022177be" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1afbcb7046a6000b1f69c161bb9e5c69b2" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1ae5076c67f52166ebffbcdd33f5270a6c" kind="function"><name>Connect</name></member>
   </compound>
   <compound refid="de/d25/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_week" kind="class"><name>TeacherHandbook::Core::Containers::Schedule::Week</name>
   </compound>
@@ -660,6 +734,8 @@
   <compound refid="da/d54/namespace_system_1_1_runtime_1_1_compiler_services" kind="namespace"><name>System::Runtime::CompilerServices</name>
   </compound>
   <compound refid="d1/dee/namespace_system_1_1_runtime_1_1_interop_services" kind="namespace"><name>System::Runtime::InteropServices</name>
+  </compound>
+  <compound refid="d5/df8/namespace_system_1_1_security_1_1_cryptography" kind="namespace"><name>System::Security::Cryptography</name>
   </compound>
   <compound refid="d8/d71/namespace_system_1_1_text" kind="namespace"><name>System::Text</name>
   </compound>
@@ -776,6 +852,8 @@
   </compound>
   <compound refid="d8/d5b/namespace_uniform_server" kind="namespace"><name>UniformServer</name>
   </compound>
+  <compound refid="d2/d3e/namespace_uniform_server_1_1_queries" kind="namespace"><name>UniformServer::Queries</name>
+  </compound>
   <compound refid="da/d93/namespace_wpf_handler" kind="namespace"><name>WpfHandler</name>
   </compound>
   <compound refid="d3/dfd/namespace_wpf_handler_1_1_plugins" kind="namespace"><name>WpfHandler::Plugins</name>
@@ -791,8 +869,6 @@
   <compound refid="d5/d2f/_primitives_8cs" kind="file"><name>Primitives.cs</name>
   </compound>
   <compound refid="d7/da0/_client_a_p_i_8cs" kind="file"><name>ClientAPI.cs</name>
-  </compound>
-  <compound refid="df/dd0/_line_processor_8cs" kind="file"><name>LineProcessor.cs</name>
   </compound>
   <compound refid="d0/dcb/_pipes_provider_2_properties_2_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
   </compound>
@@ -816,9 +892,13 @@
   </compound>
   <compound refid="db/d25/_wpf_handler_2_properties_2_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
   </compound>
+  <compound refid="d0/d20/_query_container_8cs" kind="file"><name>QueryContainer.cs</name>
+  </compound>
   <compound refid="d4/d60/_server_a_p_i_8cs" kind="file"><name>ServerAPI.cs</name>
   </compound>
   <compound refid="d6/d81/_server_transmission_meta_8cs" kind="file"><name>ServerTransmissionMeta.cs</name>
+  </compound>
+  <compound refid="d9/de2/_transmission_line_8cs" kind="file"><name>TransmissionLine.cs</name>
   </compound>
   <compound refid="df/d5d/_exam_planner_8xaml_8cs" kind="file"><name>ExamPlanner.xaml.cs</name>
   </compound>
@@ -1014,6 +1094,8 @@
   </compound>
   <compound refid="d7/d89/_t_h_b_01_data_01_server_2_server_8cs" kind="file"><name>Server.cs</name>
   </compound>
+  <compound refid="d9/dd6/_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
+  </compound>
   <compound refid="db/da1/_app_8xaml_8cs" kind="file"><name>App.xaml.cs</name>
   </compound>
   <compound refid="d2/d01/_teacher_handbook_2_client_8cs" kind="file"><name>Client.cs</name>
@@ -1118,6 +1200,12 @@
   </compound>
   <compound refid="d2/df4/_menu_item_meta_8cs" kind="file"><name>MenuItemMeta.cs</name>
   </compound>
+  <compound refid="da/d0e/_uniform_client_2_security_a_p_i_8cs" kind="file"><name>SecurityAPI.cs</name>
+  </compound>
+  <compound refid="d7/d40/_uniform_server_2_security_a_p_i_8cs" kind="file"><name>SecurityAPI.cs</name>
+  </compound>
+  <compound refid="d5/d8a/_simple_client_8cs" kind="file"><name>SimpleClient.cs</name>
+  </compound>
   <compound refid="da/df3/_i_query_8cs" kind="file"><name>IQuery.cs</name>
   </compound>
   <compound refid="d1/d91/_debug_2netstandard2_80_2_uniform_queries_8_assembly_info_8cs" kind="file"><name>UniformQueries.AssemblyInfo.cs</name>
@@ -1126,232 +1214,242 @@
   </compound>
   <compound refid="d0/db7/_queries_a_p_i_8cs" kind="file"><name>QueriesAPI.cs</name>
   </compound>
+  <compound refid="d9/dc7/_query_part_8cs" kind="file"><name>QueryPart.cs</name>
+  </compound>
   <compound refid="dd/d0c/_base_server_8cs" kind="file"><name>BaseServer.cs</name>
   </compound>
   <compound refid="d8/dad/_debug_2netstandard2_80_2_uniform_server_8_assembly_info_8cs" kind="file"><name>UniformServer.AssemblyInfo.cs</name>
   </compound>
   <compound refid="d7/da3/_release_2netstandard2_80_2_uniform_server_8_assembly_info_8cs" kind="file"><name>UniformServer.AssemblyInfo.cs</name>
   </compound>
-  <compound refid="dir_b916ef347058ae3fd5fd6c541d0a01e6" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/Achivments</name>
+  <compound refid="d9/d26/_g_e_t___p_u_b_l_i_c___k_e_y_8cs" kind="file"><name>GET_PUBLIC_KEY.cs</name>
   </compound>
-  <compound refid="dir_1a6327bbcac0a8b37e3c3b12f8e2d4c6" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/Achivments</name>
+  <compound refid="dc/d75/_simple_server_8cs" kind="file"><name>SimpleServer.cs</name>
   </compound>
-  <compound refid="dir_9a1dd7fde4ad72f2764281303b8f3543" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/obj/Release/Achivments</name>
+  <compound refid="d8/d9e/md__d_1__work__git_hub_datum-point__r_e_a_d_m_e" kind="page"><name>md_D:_Work_GitHub_datum-point_README</name>
   </compound>
-  <compound refid="dir_9ebcd86fc9be2514b467fe82ccae6c9a" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/Advices</name>
+  <compound refid="dir_b916ef347058ae3fd5fd6c541d0a01e6" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Achivments</name>
   </compound>
-  <compound refid="dir_16b48716d1e7b4a81b16d645efae4a28" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/Advices</name>
+  <compound refid="dir_1a6327bbcac0a8b37e3c3b12f8e2d4c6" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Achivments</name>
   </compound>
-  <compound refid="dir_88cbc80a45f57d0edf0c6bbfd5312489" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/obj/Release/Advices</name>
+  <compound refid="dir_9a1dd7fde4ad72f2764281303b8f3543" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Achivments</name>
   </compound>
-  <compound refid="dir_b7cea0329e97046639886844689ab55f" kind="dir"><name>D:/Work/Tools/ConsoleDraw</name>
+  <compound refid="dir_9ebcd86fc9be2514b467fe82ccae6c9a" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Advices</name>
   </compound>
-  <compound refid="dir_49033eab1d854dbe4f013da03c22bac7" kind="dir"><name>D:/Work/Tools/THB Data Types/Core/Containers</name>
+  <compound refid="dir_16b48716d1e7b4a81b16d645efae4a28" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Advices</name>
   </compound>
-  <compound refid="dir_51f4e2ff08982bf4d6d2f1c2ac526de3" kind="dir"><name>D:/Work/Tools/TeacherHandbook/obj/Release/Controls</name>
+  <compound refid="dir_88cbc80a45f57d0edf0c6bbfd5312489" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Advices</name>
   </compound>
-  <compound refid="dir_f951477965820d8ebc2c00a856505c51" kind="dir"><name>D:/Work/Tools/TeacherHandbook/Controls</name>
+  <compound refid="dir_b7cea0329e97046639886844689ab55f" kind="dir"><name>D:/Work/GitHub/datum-point/ConsoleDraw</name>
   </compound>
-  <compound refid="dir_2554cbb0596c5d39303ec6c2baa46fae" kind="dir"><name>D:/Work/Tools/TeacherHandbook/obj/Debug/Controls</name>
+  <compound refid="dir_49033eab1d854dbe4f013da03c22bac7" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/Core/Containers</name>
   </compound>
-  <compound refid="dir_5e931e21c5690ec0e7458972494e2d21" kind="dir"><name>D:/Work/Tools/THB Data Types/Core</name>
+  <compound refid="dir_51f4e2ff08982bf4d6d2f1c2ac526de3" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/Controls</name>
   </compound>
-  <compound refid="dir_a68815291f9af2046b63da902791e0bd" kind="dir"><name>D:/Work/Tools/THB Data Types/Core/Containers/CrossTypes</name>
+  <compound refid="dir_f951477965820d8ebc2c00a856505c51" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/Controls</name>
   </compound>
-  <compound refid="dir_f4e0a24d4a35143575af5af7accd3641" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Orders/obj/Debug</name>
+  <compound refid="dir_2554cbb0596c5d39303ec6c2baa46fae" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls</name>
   </compound>
-  <compound refid="dir_b31cc0ef005d498793b60a991675aa06" kind="dir"><name>D:/Work/Tools/THB Data Server Queries/obj/Debug</name>
+  <compound refid="dir_5e931e21c5690ec0e7458972494e2d21" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/Core</name>
   </compound>
-  <compound refid="dir_b38a4e81e137a245edc909d8475c33ae" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug</name>
+  <compound refid="dir_a68815291f9af2046b63da902791e0bd" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/CrossTypes</name>
   </compound>
-  <compound refid="dir_007c9a3ec5c2060f1503ab1708596658" kind="dir"><name>D:/Work/Tools/TeacherHandbook/obj/Debug</name>
+  <compound refid="dir_f4e0a24d4a35143575af5af7accd3641" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug</name>
   </compound>
-  <compound refid="dir_6cb68ed37af5e2b8bf6f2246a1561fdd" kind="dir"><name>D:/Work/Tools/WpfHandler/obj/Debug</name>
+  <compound refid="dir_b31cc0ef005d498793b60a991675aa06" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Server Queries/obj/Debug</name>
   </compound>
-  <compound refid="dir_a9b3c003ffd20a13c91d4a361d37380f" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Lesson/obj/Debug</name>
+  <compound refid="dir_b38a4e81e137a245edc909d8475c33ae" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug</name>
   </compound>
-  <compound refid="dir_60dd52520ab935105fefb935543e9aae" kind="dir"><name>D:/Work/Tools/THB Data Types/obj/Debug</name>
+  <compound refid="dir_007c9a3ec5c2060f1503ab1708596658" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug</name>
   </compound>
-  <compound refid="dir_6a728db3f56d6f2eec8fa058cb2acb7d" kind="dir"><name>D:/Work/Tools/UniformClient/obj/Debug</name>
+  <compound refid="dir_6cb68ed37af5e2b8bf6f2246a1561fdd" kind="dir"><name>D:/Work/GitHub/datum-point/WpfHandler/obj/Debug</name>
   </compound>
-  <compound refid="dir_e9d281b4c9eb33468802205d0039b07e" kind="dir"><name>D:/Work/Tools/ConsoleDraw/obj/Debug</name>
+  <compound refid="dir_a9b3c003ffd20a13c91d4a361d37380f" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug</name>
   </compound>
-  <compound refid="dir_e8819e716131d4a58fb46e3b89aff41d" kind="dir"><name>D:/Work/Tools/UniformQueries/obj/Debug</name>
+  <compound refid="dir_60dd52520ab935105fefb935543e9aae" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/obj/Debug</name>
   </compound>
-  <compound refid="dir_4207b18c95962da75919e0b504728ee7" kind="dir"><name>D:/Work/Tools/UniformServer/obj/Debug</name>
+  <compound refid="dir_6a728db3f56d6f2eec8fa058cb2acb7d" kind="dir"><name>D:/Work/GitHub/datum-point/UniformClient/obj/Debug</name>
   </compound>
-  <compound refid="dir_68d9366f8e75163ec947993eb03f7807" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Exams/obj/Debug</name>
+  <compound refid="dir_e9d281b4c9eb33468802205d0039b07e" kind="dir"><name>D:/Work/GitHub/datum-point/ConsoleDraw/obj/Debug</name>
   </compound>
-  <compound refid="dir_1d89606911edf520420600636428080f" kind="dir"><name>D:/Work/Tools/THB Data Types/Core/Containers/Entities</name>
+  <compound refid="dir_e8819e716131d4a58fb46e3b89aff41d" kind="dir"><name>D:/Work/GitHub/datum-point/UniformQueries/obj/Debug</name>
   </compound>
-  <compound refid="dir_cf5903973dc6be319295cba59620ac75" kind="dir"><name>D:/Work/Tools/THB Data Types/Core/Enums</name>
+  <compound refid="dir_4207b18c95962da75919e0b504728ee7" kind="dir"><name>D:/Work/GitHub/datum-point/UniformServer/obj/Debug</name>
   </compound>
-  <compound refid="dir_445d4e638072988fbfa0ad327fe0e9e3" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/Feed</name>
+  <compound refid="dir_68d9366f8e75163ec947993eb03f7807" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug</name>
   </compound>
-  <compound refid="dir_745eb98171660095f73dd48c48878016" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/Feed</name>
+  <compound refid="dir_1d89606911edf520420600636428080f" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities</name>
   </compound>
-  <compound refid="dir_d88bd695dcab445e581605c453f14e29" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/obj/Release/Feed</name>
+  <compound refid="dir_cf5903973dc6be319295cba59620ac75" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/Core/Enums</name>
   </compound>
-  <compound refid="dir_0f97e3059dc46b0ab0cd59ebc32d3e11" kind="dir"><name>D:/Work/Tools/TeacherHandbook/obj/Release/Plugins/Feed</name>
+  <compound refid="dir_445d4e638072988fbfa0ad327fe0e9e3" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Feed</name>
   </compound>
-  <compound refid="dir_0a0e6c4866f73fa4dcf5039e6dc71ac5" kind="dir"><name>D:/Work/Tools/TeacherHandbook/obj/Debug/Plugins/Feed</name>
+  <compound refid="dir_745eb98171660095f73dd48c48878016" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Feed</name>
   </compound>
-  <compound refid="dir_fc73e58113fef615b4ab163e500c9b22" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Lesson/obj/Debug/LessonBoard</name>
+  <compound refid="dir_d88bd695dcab445e581605c453f14e29" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Feed</name>
   </compound>
-  <compound refid="dir_0d6af4c17ae8c86f2c57a6f39b262849" kind="dir"><name>D:/Work/Tools/THB Data Types/Core/Localization</name>
+  <compound refid="dir_0f97e3059dc46b0ab0cd59ebc32d3e11" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/Plugins/Feed</name>
   </compound>
-  <compound refid="dir_98ff69c7a756d7ad8599f220f2da76f1" kind="dir"><name>D:/Work/Tools/THB Data Server Queries/obj/Debug/netstandard2.0</name>
+  <compound refid="dir_0a0e6c4866f73fa4dcf5039e6dc71ac5" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Plugins/Feed</name>
   </compound>
-  <compound refid="dir_fb139e6ed371f380190d331a7acae813" kind="dir"><name>D:/Work/Tools/THB Data Server Queries/obj/Release/netstandard2.0</name>
+  <compound refid="dir_fc73e58113fef615b4ab163e500c9b22" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/LessonBoard</name>
   </compound>
-  <compound refid="dir_2220a8a1b82bc3bc804226ff30739afa" kind="dir"><name>D:/Work/Tools/ConsoleDraw/obj/Debug/netstandard2.0</name>
+  <compound refid="dir_0d6af4c17ae8c86f2c57a6f39b262849" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/Core/Localization</name>
   </compound>
-  <compound refid="dir_44c0b9f2dc8d4dbf8eeda49598cf43e4" kind="dir"><name>D:/Work/Tools/THB Data Types/obj/Debug/netstandard2.0</name>
+  <compound refid="dir_98ff69c7a756d7ad8599f220f2da76f1" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Server Queries/obj/Debug/netstandard2.0</name>
   </compound>
-  <compound refid="dir_4b0ca53b55913bfff76b7cae2abf2618" kind="dir"><name>D:/Work/Tools/THB Data Types/obj/Release/netstandard2.0</name>
+  <compound refid="dir_fb139e6ed371f380190d331a7acae813" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Server Queries/obj/Release/netstandard2.0</name>
   </compound>
-  <compound refid="dir_c2a0efc6d82798c273f517c219da013d" kind="dir"><name>D:/Work/Tools/UniformClient/obj/Debug/netstandard2.0</name>
+  <compound refid="dir_2220a8a1b82bc3bc804226ff30739afa" kind="dir"><name>D:/Work/GitHub/datum-point/ConsoleDraw/obj/Debug/netstandard2.0</name>
   </compound>
-  <compound refid="dir_560ba5d7878ebdb4ddcd8a6c29ebd354" kind="dir"><name>D:/Work/Tools/ConsoleDraw/obj/Release/netstandard2.0</name>
+  <compound refid="dir_44c0b9f2dc8d4dbf8eeda49598cf43e4" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/obj/Debug/netstandard2.0</name>
   </compound>
-  <compound refid="dir_e2b8a507684ccb75c526fbded5cc8587" kind="dir"><name>D:/Work/Tools/UniformClient/obj/Release/netstandard2.0</name>
+  <compound refid="dir_4b0ca53b55913bfff76b7cae2abf2618" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/obj/Release/netstandard2.0</name>
   </compound>
-  <compound refid="dir_0b7328284d6067fb761078703093655b" kind="dir"><name>D:/Work/Tools/UniformQueries/obj/Debug/netstandard2.0</name>
+  <compound refid="dir_c2a0efc6d82798c273f517c219da013d" kind="dir"><name>D:/Work/GitHub/datum-point/UniformClient/obj/Debug/netstandard2.0</name>
   </compound>
-  <compound refid="dir_25486d77afc81367f7e6b94c0dce3a19" kind="dir"><name>D:/Work/Tools/UniformServer/obj/Release/netstandard2.0</name>
+  <compound refid="dir_560ba5d7878ebdb4ddcd8a6c29ebd354" kind="dir"><name>D:/Work/GitHub/datum-point/ConsoleDraw/obj/Release/netstandard2.0</name>
   </compound>
-  <compound refid="dir_7ace1c0a778109670c53c6179ab87cc6" kind="dir"><name>D:/Work/Tools/UniformQueries/obj/Release/netstandard2.0</name>
+  <compound refid="dir_e2b8a507684ccb75c526fbded5cc8587" kind="dir"><name>D:/Work/GitHub/datum-point/UniformClient/obj/Release/netstandard2.0</name>
   </compound>
-  <compound refid="dir_c20275e4829025982a3e5db1b6f98347" kind="dir"><name>D:/Work/Tools/UniformServer/obj/Debug/netstandard2.0</name>
+  <compound refid="dir_c20275e4829025982a3e5db1b6f98347" kind="dir"><name>D:/Work/GitHub/datum-point/UniformServer/obj/Debug/netstandard2.0</name>
   </compound>
-  <compound refid="dir_1c3ca9b4d75d703a8e054452029b21a2" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Lesson/obj</name>
+  <compound refid="dir_0b7328284d6067fb761078703093655b" kind="dir"><name>D:/Work/GitHub/datum-point/UniformQueries/obj/Debug/netstandard2.0</name>
   </compound>
-  <compound refid="dir_2c6b89ec3c6938a1ac1949828f11dc22" kind="dir"><name>D:/Work/Tools/ConsoleDraw/obj</name>
+  <compound refid="dir_7ace1c0a778109670c53c6179ab87cc6" kind="dir"><name>D:/Work/GitHub/datum-point/UniformQueries/obj/Release/netstandard2.0</name>
   </compound>
-  <compound refid="dir_570164c0c63956201764123ed7810bba" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Orders/obj</name>
+  <compound refid="dir_25486d77afc81367f7e6b94c0dce3a19" kind="dir"><name>D:/Work/GitHub/datum-point/UniformServer/obj/Release/netstandard2.0</name>
   </compound>
-  <compound refid="dir_a0c7591d2a05453cbcc29af46e0e6897" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/obj</name>
+  <compound refid="dir_a4e6924cd21bf02677f87cbc84f7743f" kind="dir"><name>D:/Work/GitHub/datum-point/UniformServer/obj</name>
   </compound>
-  <compound refid="dir_5840e1f4c5729ef220ab3ea45630876d" kind="dir"><name>D:/Work/Tools/THB Data Server Queries/obj</name>
+  <compound refid="dir_1c3ca9b4d75d703a8e054452029b21a2" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj</name>
   </compound>
-  <compound refid="dir_b1db848416afa29287c20bd37e2c3d2a" kind="dir"><name>D:/Work/Tools/TeacherHandbook/obj</name>
+  <compound refid="dir_2c6b89ec3c6938a1ac1949828f11dc22" kind="dir"><name>D:/Work/GitHub/datum-point/ConsoleDraw/obj</name>
   </compound>
-  <compound refid="dir_a6535da8d13e5c56b7f983d6c840ee7a" kind="dir"><name>D:/Work/Tools/WpfHandler/obj</name>
+  <compound refid="dir_570164c0c63956201764123ed7810bba" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj</name>
   </compound>
-  <compound refid="dir_8088bf23e9a3b1805263e477b59597ab" kind="dir"><name>D:/Work/Tools/THB Data Types/obj</name>
+  <compound refid="dir_a0c7591d2a05453cbcc29af46e0e6897" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj</name>
   </compound>
-  <compound refid="dir_9fbeb5beea3f6d8d7ea6ed31fd8281c7" kind="dir"><name>D:/Work/Tools/UniformClient/obj</name>
+  <compound refid="dir_5840e1f4c5729ef220ab3ea45630876d" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Server Queries/obj</name>
   </compound>
-  <compound refid="dir_e9d26fbe487b8b2ac249b0ede13cdf34" kind="dir"><name>D:/Work/Tools/UniformQueries/obj</name>
+  <compound refid="dir_b1db848416afa29287c20bd37e2c3d2a" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj</name>
   </compound>
-  <compound refid="dir_a4e6924cd21bf02677f87cbc84f7743f" kind="dir"><name>D:/Work/Tools/UniformServer/obj</name>
+  <compound refid="dir_a6535da8d13e5c56b7f983d6c840ee7a" kind="dir"><name>D:/Work/GitHub/datum-point/WpfHandler/obj</name>
   </compound>
-  <compound refid="dir_2648235bfabdf2cfbc482137b8bc8120" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Exams/obj</name>
+  <compound refid="dir_8088bf23e9a3b1805263e477b59597ab" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/obj</name>
   </compound>
-  <compound refid="dir_a1572d7f8f8e653d4dac362b7a4af60a" kind="dir"><name>D:/Work/Tools/THB Data Types/Core/Orders</name>
+  <compound refid="dir_9fbeb5beea3f6d8d7ea6ed31fd8281c7" kind="dir"><name>D:/Work/GitHub/datum-point/UniformClient/obj</name>
   </compound>
-  <compound refid="dir_9c4b3c310b9b5c8f662cd0213206d735" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/PersonalStatistic</name>
+  <compound refid="dir_e9d26fbe487b8b2ac249b0ede13cdf34" kind="dir"><name>D:/Work/GitHub/datum-point/UniformQueries/obj</name>
   </compound>
-  <compound refid="dir_010748947a0fa5f093ca1ae5d122ebb1" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic</name>
+  <compound refid="dir_2648235bfabdf2cfbc482137b8bc8120" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj</name>
   </compound>
-  <compound refid="dir_2d780dd0a71081273e3358dac60cc725" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/obj/Release/PersonalStatistic</name>
+  <compound refid="dir_a1572d7f8f8e653d4dac362b7a4af60a" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/Core/Orders</name>
   </compound>
-  <compound refid="dir_25f154603857eabf42ab83cc66088ad7" kind="dir"><name>D:/Work/Tools/PipesProvider</name>
+  <compound refid="dir_9c4b3c310b9b5c8f662cd0213206d735" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/PersonalStatistic</name>
   </compound>
-  <compound refid="dir_af5d15f8256a51d7807ca342b0319abd" kind="dir"><name>D:/Work/Tools/WpfHandler/Plugins</name>
+  <compound refid="dir_010748947a0fa5f093ca1ae5d122ebb1" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic</name>
   </compound>
-  <compound refid="dir_0b4eaef40a1fe20bedafe9e8e719ce66" kind="dir"><name>D:/Work/Tools/Plugins</name>
+  <compound refid="dir_2d780dd0a71081273e3358dac60cc725" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/PersonalStatistic</name>
   </compound>
-  <compound refid="dir_afd1537ae19fcc45c67a4230f68cbaa8" kind="dir"><name>D:/Work/Tools/UniformClient/Plugins</name>
+  <compound refid="dir_25f154603857eabf42ab83cc66088ad7" kind="dir"><name>D:/Work/GitHub/datum-point/PipesProvider</name>
   </compound>
-  <compound refid="dir_3ff5a4157ad6258f3edbc0f9942468b6" kind="dir"><name>D:/Work/Tools/TeacherHandbook/obj/Release/Plugins</name>
+  <compound refid="dir_0b4eaef40a1fe20bedafe9e8e719ce66" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins</name>
   </compound>
-  <compound refid="dir_bb3d1150db60f28eb1d87cfa9b731b9f" kind="dir"><name>D:/Work/Tools/TeacherHandbook/obj/Debug/Plugins</name>
+  <compound refid="dir_af5d15f8256a51d7807ca342b0319abd" kind="dir"><name>D:/Work/GitHub/datum-point/WpfHandler/Plugins</name>
   </compound>
-  <compound refid="dir_3f27bb01345470e3a88734532c7e3998" kind="dir"><name>D:/Work/Tools/PipesProvider/Properties</name>
+  <compound refid="dir_afd1537ae19fcc45c67a4230f68cbaa8" kind="dir"><name>D:/Work/GitHub/datum-point/UniformClient/Plugins</name>
   </compound>
-  <compound refid="dir_e438c529c8af60ade2ffa19ab80a589c" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/Properties</name>
+  <compound refid="dir_3ff5a4157ad6258f3edbc0f9942468b6" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/Plugins</name>
   </compound>
-  <compound refid="dir_8a771f3bf7186029b8fe86317b950f8b" kind="dir"><name>D:/Work/Tools/QueriesServer/Properties</name>
+  <compound refid="dir_bb3d1150db60f28eb1d87cfa9b731b9f" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Plugins</name>
   </compound>
-  <compound refid="dir_f4b8102414f518c88722cf7e80ff8428" kind="dir"><name>D:/Work/Tools/TestClient/Properties</name>
+  <compound refid="dir_3f27bb01345470e3a88734532c7e3998" kind="dir"><name>D:/Work/GitHub/datum-point/PipesProvider/Properties</name>
   </compound>
-  <compound refid="dir_55016a239489980b7527dcdcdfcbdd88" kind="dir"><name>D:/Work/Tools/THB Data Server/Properties</name>
+  <compound refid="dir_55016a239489980b7527dcdcdfcbdd88" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Server/Properties</name>
   </compound>
-  <compound refid="dir_e572bb0e7de612f3f80556ff74a409be" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Exams/Properties</name>
+  <compound refid="dir_f776110637899bdc82985f907ec52540" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Properties</name>
   </compound>
-  <compound refid="dir_1709cc0a52d85b12de7e67f9368aee5f" kind="dir"><name>D:/Work/Tools/SessionProvider/Properties</name>
+  <compound refid="dir_8a771f3bf7186029b8fe86317b950f8b" kind="dir"><name>D:/Work/GitHub/datum-point/QueriesServer/Properties</name>
   </compound>
-  <compound refid="dir_b83bf7ce3797d175ec08d61cf4776531" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Orders/Properties</name>
+  <compound refid="dir_f4b8102414f518c88722cf7e80ff8428" kind="dir"><name>D:/Work/GitHub/datum-point/TestClient/Properties</name>
   </compound>
-  <compound refid="dir_eca680429e4f7c39fe2dbe928f450aae" kind="dir"><name>D:/Work/Tools/TeacherHandbook/Properties</name>
+  <compound refid="dir_e572bb0e7de612f3f80556ff74a409be" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/Properties</name>
   </compound>
-  <compound refid="dir_f776110637899bdc82985f907ec52540" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Lesson/Properties</name>
+  <compound refid="dir_1709cc0a52d85b12de7e67f9368aee5f" kind="dir"><name>D:/Work/GitHub/datum-point/SessionProvider/Properties</name>
   </compound>
-  <compound refid="dir_4367517d618885f3174662ad1dff82c8" kind="dir"><name>D:/Work/Tools/WpfHandler/Properties</name>
+  <compound refid="dir_b83bf7ce3797d175ec08d61cf4776531" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/Properties</name>
   </compound>
-  <compound refid="dir_d56b4e28c050ade72c78c7acb13d7ba0" kind="dir"><name>D:/Work/Tools/QueriesServer</name>
+  <compound refid="dir_eca680429e4f7c39fe2dbe928f450aae" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/Properties</name>
   </compound>
-  <compound refid="dir_d84e5df8b75e15eeffd4f999e0f072d3" kind="dir"><name>D:/Work/Tools/UniformQueries/obj/Release</name>
+  <compound refid="dir_e438c529c8af60ade2ffa19ab80a589c" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Properties</name>
   </compound>
-  <compound refid="dir_b214a4dbce77070e45bdfa29dc2aae55" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/obj/Release</name>
+  <compound refid="dir_4367517d618885f3174662ad1dff82c8" kind="dir"><name>D:/Work/GitHub/datum-point/WpfHandler/Properties</name>
   </compound>
-  <compound refid="dir_cadc141954fb8b1069efca4d7dc05532" kind="dir"><name>D:/Work/Tools/UniformClient/obj/Release</name>
+  <compound refid="dir_bf24c37169ec25b14201e2511d0f03b2" kind="dir"><name>D:/Work/GitHub/datum-point/UniformServer/Queries</name>
   </compound>
-  <compound refid="dir_2e0bb01afeb32eefceb3003a6434a0b6" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Orders/obj/Release</name>
+  <compound refid="dir_d56b4e28c050ade72c78c7acb13d7ba0" kind="dir"><name>D:/Work/GitHub/datum-point/QueriesServer</name>
   </compound>
-  <compound refid="dir_e757db1869597a596721ea43a2f3ee6b" kind="dir"><name>D:/Work/Tools/THB Data Server Queries/obj/Release</name>
+  <compound refid="dir_e757db1869597a596721ea43a2f3ee6b" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Server Queries/obj/Release</name>
   </compound>
-  <compound refid="dir_6752f573bc751348b328be96d0493c0a" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Lesson/obj/Release</name>
+  <compound refid="dir_9203302e7592b96d9540f8cff99d7099" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release</name>
   </compound>
-  <compound refid="dir_8d5b170423417a867aca133a58ea720e" kind="dir"><name>D:/Work/Tools/THB Data Types/obj/Release</name>
+  <compound refid="dir_b214a4dbce77070e45bdfa29dc2aae55" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release</name>
   </compound>
-  <compound refid="dir_bedb1d38554d05f78369ecb94ef6de2a" kind="dir"><name>D:/Work/Tools/TeacherHandbook/obj/Release</name>
+  <compound refid="dir_3130f36ebf54e29e160941e224062da4" kind="dir"><name>D:/Work/GitHub/datum-point/ConsoleDraw/obj/Release</name>
   </compound>
-  <compound refid="dir_9203302e7592b96d9540f8cff99d7099" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Exams/obj/Release</name>
+  <compound refid="dir_6752f573bc751348b328be96d0493c0a" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release</name>
   </compound>
-  <compound refid="dir_3130f36ebf54e29e160941e224062da4" kind="dir"><name>D:/Work/Tools/ConsoleDraw/obj/Release</name>
+  <compound refid="dir_2e0bb01afeb32eefceb3003a6434a0b6" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release</name>
   </compound>
-  <compound refid="dir_93e5e15907216a73923e375df5d16d14" kind="dir"><name>D:/Work/Tools/UniformServer/obj/Release</name>
+  <compound refid="dir_d84e5df8b75e15eeffd4f999e0f072d3" kind="dir"><name>D:/Work/GitHub/datum-point/UniformQueries/obj/Release</name>
   </compound>
-  <compound refid="dir_0bd7077f9e9578b00f60b639e75569a6" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/Schedule</name>
+  <compound refid="dir_93e5e15907216a73923e375df5d16d14" kind="dir"><name>D:/Work/GitHub/datum-point/UniformServer/obj/Release</name>
   </compound>
-  <compound refid="dir_8a0840ed80b2a3f300c779ec3895e941" kind="dir"><name>D:/Work/Tools/TeacherHandbook/obj/Debug/Plugins/Schedule</name>
+  <compound refid="dir_cadc141954fb8b1069efca4d7dc05532" kind="dir"><name>D:/Work/GitHub/datum-point/UniformClient/obj/Release</name>
   </compound>
-  <compound refid="dir_88e4ba4784f94b7217c0dc6d41165979" kind="dir"><name>D:/Work/Tools/THB Data Types/Core/Containers/Schedule</name>
+  <compound refid="dir_8d5b170423417a867aca133a58ea720e" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/obj/Release</name>
   </compound>
-  <compound refid="dir_082c9ed610a0416a01316141fe5c2855" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/obj/Release/Schedule</name>
+  <compound refid="dir_bedb1d38554d05f78369ecb94ef6de2a" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release</name>
   </compound>
-  <compound refid="dir_2176c7245e6b03875bae5a747cc5625c" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social/Schedule</name>
+  <compound refid="dir_0bd7077f9e9578b00f60b639e75569a6" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Schedule</name>
   </compound>
-  <compound refid="dir_42c985aae5ef3d9718f48bf4886e47f0" kind="dir"><name>D:/Work/Tools/SessionProvider</name>
+  <compound refid="dir_8a0840ed80b2a3f300c779ec3895e941" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Plugins/Schedule</name>
   </compound>
-  <compound refid="dir_b22472b5468a6ee693d274a84faecfae" kind="dir"><name>D:/Work/Tools/TeacherHandbook</name>
+  <compound refid="dir_88e4ba4784f94b7217c0dc6d41165979" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Schedule</name>
   </compound>
-  <compound refid="dir_9c42ab6387923225329908d66b466c1f" kind="dir"><name>D:/Work/Tools/TestClient</name>
+  <compound refid="dir_082c9ed610a0416a01316141fe5c2855" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Schedule</name>
   </compound>
-  <compound refid="dir_d2c667ef8cce7ccf02fc7a545316468f" kind="dir"><name>D:/Work/Tools/THB Data Server</name>
+  <compound refid="dir_2176c7245e6b03875bae5a747cc5625c" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Schedule</name>
   </compound>
-  <compound refid="dir_520f8d04352df695945a4b0ffe7d0774" kind="dir"><name>D:/Work/Tools/THB Data Server Queries</name>
+  <compound refid="dir_42c985aae5ef3d9718f48bf4886e47f0" kind="dir"><name>D:/Work/GitHub/datum-point/SessionProvider</name>
   </compound>
-  <compound refid="dir_281fc228ffefa7f847b616ed25ebb668" kind="dir"><name>D:/Work/Tools/THB Data Types</name>
+  <compound refid="dir_b22472b5468a6ee693d274a84faecfae" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook</name>
   </compound>
-  <compound refid="dir_c3d622d94916962847bdf3eba2f4134f" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Exams</name>
+  <compound refid="dir_9c42ab6387923225329908d66b466c1f" kind="dir"><name>D:/Work/GitHub/datum-point/TestClient</name>
   </compound>
-  <compound refid="dir_a9c57ee03c54c9c1343455abd0932287" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Lesson</name>
+  <compound refid="dir_d2c667ef8cce7ccf02fc7a545316468f" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Server</name>
   </compound>
-  <compound refid="dir_2e11790e24bf4965e215f0b0ff9c65a8" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Orders</name>
+  <compound refid="dir_520f8d04352df695945a4b0ffe7d0774" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Server Queries</name>
   </compound>
-  <compound refid="dir_7ef839b0b5ed3e67f22654a309d1bf91" kind="dir"><name>D:/Work/Tools/Plugins/THB Plugin Social</name>
+  <compound refid="dir_281fc228ffefa7f847b616ed25ebb668" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types</name>
   </compound>
-  <compound refid="dir_3e853eace1f7b091a03bb1d7f3c8991d" kind="dir"><name>D:/Work/Tools/UniformClient</name>
+  <compound refid="dir_c3d622d94916962847bdf3eba2f4134f" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams</name>
   </compound>
-  <compound refid="dir_b104d100dce2315a2967f52658ebdce0" kind="dir"><name>D:/Work/Tools/UniformQueries</name>
+  <compound refid="dir_a9c57ee03c54c9c1343455abd0932287" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson</name>
   </compound>
-  <compound refid="dir_5e43d290189f322157deba26ee711a56" kind="dir"><name>D:/Work/Tools/UniformServer</name>
+  <compound refid="dir_2e11790e24bf4965e215f0b0ff9c65a8" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders</name>
   </compound>
-  <compound refid="dir_087eb35656684f3a07d83aae8bb98865" kind="dir"><name>D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users</name>
+  <compound refid="dir_7ef839b0b5ed3e67f22654a309d1bf91" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social</name>
   </compound>
-  <compound refid="dir_dda0f4bc268945ae8156392032bb1641" kind="dir"><name>D:/Work/Tools/WpfHandler</name>
+  <compound refid="dir_3e853eace1f7b091a03bb1d7f3c8991d" kind="dir"><name>D:/Work/GitHub/datum-point/UniformClient</name>
+  </compound>
+  <compound refid="dir_b104d100dce2315a2967f52658ebdce0" kind="dir"><name>D:/Work/GitHub/datum-point/UniformQueries</name>
+  </compound>
+  <compound refid="dir_5e43d290189f322157deba26ee711a56" kind="dir"><name>D:/Work/GitHub/datum-point/UniformServer</name>
+  </compound>
+  <compound refid="dir_087eb35656684f3a07d83aae8bb98865" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users</name>
+  </compound>
+  <compound refid="dir_dda0f4bc268945ae8156392032bb1641" kind="dir"><name>D:/Work/GitHub/datum-point/WpfHandler</name>
   </compound>
 </doxygenindex>

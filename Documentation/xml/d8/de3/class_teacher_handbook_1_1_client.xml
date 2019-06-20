@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Client.cs" line="26" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Client.cs" bodystart="27" bodyend="36"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" line="40" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" bodystart="41" bodyend="50"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-static-attrib">
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Client.cs" line="38" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Client.cs" bodystart="38" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" line="52" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" bodystart="52" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Client.cs" line="40" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Client.cs" bodystart="40" bodyend="53"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" line="54" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" bodystart="54" bodyend="67"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Client.cs" line="58" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Client.cs" bodystart="58" bodyend="61"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" line="72" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" bodystart="72" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="d8/de3/class_teacher_handbook_1_1_client_1a863d00fe6a0ac5b86583c0a8245e07e9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -97,7 +97,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Client.cs" line="72" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Client.cs" bodystart="72" bodyend="210"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" line="86" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" bodystart="86" bodyend="224"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -105,18 +105,6 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="101">
-        <label>UniformClient::BaseClient</label>
-        <link refid="d4/deb/class_uniform_client_1_1_base_client"/>
-      </node>
-      <node id="100">
-        <label>TeacherHandbook.Client</label>
-        <link refid="d8/de3/class_teacher_handbook_1_1_client"/>
-        <childnode refid="101" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="103">
         <label>UniformClient::BaseClient</label>
         <link refid="d4/deb/class_uniform_client_1_1_base_client"/>
@@ -126,12 +114,24 @@
         <link refid="d8/de3/class_teacher_handbook_1_1_client"/>
         <childnode refid="103" relation="public-inheritance">
         </childnode>
-        <childnode refid="102" relation="usage">
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="105">
+        <label>UniformClient::BaseClient</label>
+        <link refid="d4/deb/class_uniform_client_1_1_base_client"/>
+      </node>
+      <node id="104">
+        <label>TeacherHandbook.Client</label>
+        <link refid="d8/de3/class_teacher_handbook_1_1_client"/>
+        <childnode refid="105" relation="public-inheritance">
+        </childnode>
+        <childnode refid="104" relation="usage">
           <edgelabel>active</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/TeacherHandbook/Client.cs" line="21" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Client.cs" bodystart="20" bodyend="219"/>
+    <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" line="35" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" bodystart="34" bodyend="233"/>
     <listofallmembers>
       <member refid="d8/de3/class_teacher_handbook_1_1_client_1a403583a80a8d5040410c4f1f180aafad" prot="public" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>Active</name></member>
       <member refid="d8/de3/class_teacher_handbook_1_1_client_1aaa6bae79ce27b06ba243b4b87f1822a5" prot="protected" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>active</name></member>
@@ -144,13 +144,16 @@
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a99ae0bb1dd5bef374fcedb3f873bfe8b" prot="public" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>LoadPluginsCollection</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1aa60dbfa5bd8c46659aec7738193315f1" prot="public" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>LoadPluginsEnumerable</name></member>
       <member refid="d8/de3/class_teacher_handbook_1_1_client_1a863d00fe6a0ac5b86583c0a8245e07e9" prot="public" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>LoadXAML_LangDicts</name></member>
-      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a3b09387a94e46bf9365ee603202ba488" prot="public" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>OpenTransmissionLine</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a9c59b23626ff132aa96630654d7bc410" prot="public" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>OpenTransmissionLine</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a06d3340dd02ec4abfe9cf55bc1db0f03" prot="public" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>ReciveAnswer</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a47b6d88848854c59fafefeeae3956699" prot="protected" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>ShowWindow</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a194b46bb0e889d07cade81c0aeab7cea" prot="protected" virt="virtual"><scope>TeacherHandbook::Client</scope><name>StartClientThread</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a6060f2eb1d44ec518f2dfc99c8b4f7aa" prot="protected" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>SW_HIDE</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a7545b9c72eef6cb7594a7001d3f558e4" prot="protected" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>SW_SHOW</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a458271823ca5e21612c0947e1db695a0" prot="public" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>thread</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a2c4762c1be5eac42b8b5d189530d0952" prot="protected" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>threadSleepTime</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1acd2e71dcb27e97f900f887233e6b8f9c" prot="public" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>UniformQueryPostHandler</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1af7a3c613846c8595431272c4c9d531f3" prot="public" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>UniformServerAnswerHandler</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

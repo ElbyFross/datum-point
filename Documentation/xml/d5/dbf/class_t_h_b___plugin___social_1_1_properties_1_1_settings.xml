@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Social/Properties/Settings.Designer.cs" line="20" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Social/Properties/Settings.Designer.cs" bodystart="20" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Properties/Settings.Designer.cs" line="20" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Properties/Settings.Designer.cs" bodystart="20" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Social/Properties/Settings.Designer.cs" line="22" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Social/Properties/Settings.Designer.cs" bodystart="23" bodyend="28"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Properties/Settings.Designer.cs" line="22" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Properties/Settings.Designer.cs" bodystart="23" bodyend="28"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -39,31 +39,31 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="301">
+      <node id="325">
         <label>THB_Plugin_Social.Properties.Settings</label>
         <link refid="d5/dbf/class_t_h_b___plugin___social_1_1_properties_1_1_settings"/>
-        <childnode refid="302" relation="public-inheritance">
+        <childnode refid="326" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="302">
+      <node id="326">
         <label>global::SystemConfiguration::ApplicationSettingsBase</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="303">
+      <node id="327">
         <label>THB_Plugin_Social.Properties.Settings</label>
         <link refid="d5/dbf/class_t_h_b___plugin___social_1_1_properties_1_1_settings"/>
-        <childnode refid="304" relation="public-inheritance">
+        <childnode refid="328" relation="public-inheritance">
         </childnode>
-        <childnode refid="303" relation="usage">
+        <childnode refid="327" relation="usage">
           <edgelabel>defaultInstance</edgelabel>
         </childnode>
       </node>
-      <node id="304">
+      <node id="328">
         <label>global::SystemConfiguration::ApplicationSettingsBase</label>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/Plugins/THB Plugin Social/Properties/Settings.Designer.cs" line="18" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Social/Properties/Settings.Designer.cs" bodystart="17" bodyend="29"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Properties/Settings.Designer.cs" line="18" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Properties/Settings.Designer.cs" bodystart="17" bodyend="29"/>
     <listofallmembers>
       <member refid="d5/dbf/class_t_h_b___plugin___social_1_1_properties_1_1_settings_1a561f116fda9ea9e2cee13c36295a5a8a" prot="public" virt="non-virtual"><scope>THB_Plugin_Social::Properties::Settings</scope><name>Default</name></member>
       <member refid="d5/dbf/class_t_h_b___plugin___social_1_1_properties_1_1_settings_1ad13b332c3b0bb32f646f60e018fb93cd" prot="private" virt="non-virtual"><scope>THB_Plugin_Social::Properties::Settings</scope><name>defaultInstance</name></member>

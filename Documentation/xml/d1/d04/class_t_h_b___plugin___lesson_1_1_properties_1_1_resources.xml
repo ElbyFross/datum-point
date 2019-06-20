@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" line="26" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" bodystart="26" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" line="26" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d1/d04/class_t_h_b___plugin___lesson_1_1_properties_1_1_resources_1a29a2a9097a78f29d618c016e63457df7" prot="private" static="yes" mutable="no">
         <type>global::System.Globalization.CultureInfo</type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" line="28" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" bodystart="28" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" line="28" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" bodystart="28" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" line="38" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" bodystart="38" bodyend="46"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" line="38" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" bodystart="38" bodyend="46"/>
       </memberdef>
       <memberdef kind="property" id="d1/d04/class_t_h_b___plugin___lesson_1_1_properties_1_1_resources_1a4cbee6fc062dab9463a53238fa76b2d0" prot="package" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>global::System.Globalization.CultureInfo</type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" line="53" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" bodystart="53" bodyend="60"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" line="53" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" bodystart="53" bodyend="60"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="package-func">
@@ -70,7 +70,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" line="31" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" bodystart="31" bodyend="32"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" line="31" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" bodystart="31" bodyend="32"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -78,21 +78,21 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="247">
+      <node id="259">
         <label>THB_Plugin_Lesson.Properties.Resources</label>
         <link refid="d1/d04/class_t_h_b___plugin___lesson_1_1_properties_1_1_resources"/>
-        <childnode refid="247" relation="usage">
+        <childnode refid="259" relation="usage">
           <edgelabel>resourceMan</edgelabel>
         </childnode>
-        <childnode refid="248" relation="usage">
+        <childnode refid="260" relation="usage">
           <edgelabel>resourceCulture</edgelabel>
         </childnode>
       </node>
-      <node id="248">
+      <node id="260">
         <label>Globalization</label>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" line="24" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" bodystart="24" bodyend="61"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" line="24" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Properties/Resources.Designer.cs" bodystart="24" bodyend="61"/>
     <listofallmembers>
       <member refid="d1/d04/class_t_h_b___plugin___lesson_1_1_properties_1_1_resources_1a4cbee6fc062dab9463a53238fa76b2d0" prot="package" virt="non-virtual"><scope>THB_Plugin_Lesson::Properties::Resources</scope><name>Culture</name></member>
       <member refid="d1/d04/class_t_h_b___plugin___lesson_1_1_properties_1_1_resources_1a29a2a9097a78f29d618c016e63457df7" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::Properties::Resources</scope><name>resourceCulture</name></member>

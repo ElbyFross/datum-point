@@ -24,7 +24,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.cs" line="43" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.cs" bodystart="43" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.cs" bodystart="43" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Orders/OrdersBoard.xaml.cs" line="29" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Orders/OrdersBoard.xaml.cs" bodystart="29" bodyend="29"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/OrdersBoard.xaml.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/OrdersBoard.xaml.cs" bodystart="43" bodyend="43"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.cs" line="50" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.cs" bodystart="50" bodyend="62"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.cs" bodystart="50" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1a2ceb19fe78642e77f7e5ae462bc10e16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.i.cs" line="50" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.i.cs" bodystart="50" bodyend="62"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.i.cs" bodystart="50" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1a2ceb19fe78642e77f7e5ae462bc10e16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Release/OrdersBoard.g.cs" line="50" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Release/OrdersBoard.g.cs" bodystart="50" bodyend="62"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release/OrdersBoard.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release/OrdersBoard.g.cs" bodystart="50" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1a2ceb19fe78642e77f7e5ae462bc10e16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Release/OrdersBoard.g.i.cs" line="50" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Release/OrdersBoard.g.i.cs" bodystart="50" bodyend="62"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release/OrdersBoard.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release/OrdersBoard.g.i.cs" bodystart="50" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1aaf0e4c91f289783c67eb2979be15b817" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -112,7 +112,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Orders/OrdersBoard.xaml.cs" line="24" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Orders/OrdersBoard.xaml.cs" bodystart="24" bodyend="27"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/OrdersBoard.xaml.cs" line="38" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/OrdersBoard.xaml.cs" bodystart="38" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1a3e8397e5999faf2ed2850a8a7d485699" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -130,7 +130,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Orders/OrdersBoard.xaml.cs" line="36" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Orders/OrdersBoard.xaml.cs" bodystart="36" bodyend="40"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/OrdersBoard.xaml.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/OrdersBoard.xaml.cs" bodystart="50" bodyend="54"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -153,7 +153,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.cs" line="70" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.cs" bodystart="70" bodyend="72"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.cs" bodystart="70" bodyend="72"/>
       </memberdef>
       <memberdef kind="function" id="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1ada300d5554820e4bef6e5ef58e45e221" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void System.Windows.Markup.IComponentConnector.</type>
@@ -174,7 +174,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.i.cs" line="70" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.i.cs" bodystart="70" bodyend="72"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.i.cs" bodystart="70" bodyend="72"/>
       </memberdef>
       <memberdef kind="function" id="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1ada300d5554820e4bef6e5ef58e45e221" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void System.Windows.Markup.IComponentConnector.</type>
@@ -195,7 +195,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Release/OrdersBoard.g.cs" line="70" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Release/OrdersBoard.g.cs" bodystart="70" bodyend="72"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release/OrdersBoard.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release/OrdersBoard.g.cs" bodystart="70" bodyend="72"/>
       </memberdef>
       <memberdef kind="function" id="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1ada300d5554820e4bef6e5ef58e45e221" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void System.Windows.Markup.IComponentConnector.</type>
@@ -216,7 +216,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Release/OrdersBoard.g.i.cs" line="70" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Release/OrdersBoard.g.i.cs" bodystart="70" bodyend="72"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release/OrdersBoard.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release/OrdersBoard.g.i.cs" bodystart="70" bodyend="72"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -224,84 +224,84 @@
     <detaileddescription>
 <para>Interaction logic for OrdersBoard.xaml </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="214">
+      <node id="221">
         <label>THB_Plugin_Orders.OrdersBoard</label>
         <link refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board"/>
-        <childnode refid="215" relation="public-inheritance">
+        <childnode refid="222" relation="public-inheritance">
         </childnode>
-        <childnode refid="216" relation="public-inheritance">
+        <childnode refid="223" relation="public-inheritance">
         </childnode>
-        <childnode refid="217" relation="public-inheritance">
+        <childnode refid="224" relation="public-inheritance">
         </childnode>
-        <childnode refid="218" relation="public-inheritance">
+        <childnode refid="225" relation="public-inheritance">
         </childnode>
-        <childnode refid="217" relation="public-inheritance">
+        <childnode refid="224" relation="public-inheritance">
         </childnode>
-        <childnode refid="218" relation="public-inheritance">
+        <childnode refid="225" relation="public-inheritance">
         </childnode>
-        <childnode refid="217" relation="public-inheritance">
+        <childnode refid="224" relation="public-inheritance">
         </childnode>
-        <childnode refid="218" relation="public-inheritance">
+        <childnode refid="225" relation="public-inheritance">
         </childnode>
-        <childnode refid="217" relation="public-inheritance">
+        <childnode refid="224" relation="public-inheritance">
         </childnode>
-        <childnode refid="218" relation="public-inheritance">
+        <childnode refid="225" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="216">
+      <node id="223">
         <label>IPlugin</label>
         <link refid="d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin"/>
       </node>
-      <node id="217">
+      <node id="224">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="218">
+      <node id="225">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
-      <node id="215">
+      <node id="222">
         <label>UserControl</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="219">
+      <node id="226">
         <label>THB_Plugin_Orders.OrdersBoard</label>
         <link refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board"/>
-        <childnode refid="220" relation="public-inheritance">
+        <childnode refid="227" relation="public-inheritance">
         </childnode>
-        <childnode refid="221" relation="public-inheritance">
+        <childnode refid="228" relation="public-inheritance">
         </childnode>
-        <childnode refid="222" relation="public-inheritance">
+        <childnode refid="229" relation="public-inheritance">
         </childnode>
-        <childnode refid="223" relation="public-inheritance">
+        <childnode refid="230" relation="public-inheritance">
         </childnode>
-        <childnode refid="222" relation="public-inheritance">
+        <childnode refid="229" relation="public-inheritance">
         </childnode>
-        <childnode refid="223" relation="public-inheritance">
+        <childnode refid="230" relation="public-inheritance">
         </childnode>
-        <childnode refid="222" relation="public-inheritance">
+        <childnode refid="229" relation="public-inheritance">
         </childnode>
-        <childnode refid="223" relation="public-inheritance">
+        <childnode refid="230" relation="public-inheritance">
         </childnode>
-        <childnode refid="222" relation="public-inheritance">
+        <childnode refid="229" relation="public-inheritance">
         </childnode>
-        <childnode refid="223" relation="public-inheritance">
+        <childnode refid="230" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="221">
+      <node id="228">
         <label>IPlugin</label>
         <link refid="d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin"/>
       </node>
-      <node id="222">
+      <node id="229">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="223">
+      <node id="230">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
-      <node id="220">
+      <node id="227">
         <label>UserControl</label>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.cs" line="41" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.cs" bodystart="41" bodyend="73"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard.g.cs" bodystart="41" bodyend="73"/>
     <listofallmembers>
       <member refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1a5b500b10816d90a096341d0fd26f839e" prot="private" virt="non-virtual"><scope>THB_Plugin_Orders::OrdersBoard</scope><name>_contentLoaded</name></member>
       <member refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1ada300d5554820e4bef6e5ef58e45e221" prot="private" virt="non-virtual"><scope>THB_Plugin_Orders::OrdersBoard</scope><name>Connect</name></member>

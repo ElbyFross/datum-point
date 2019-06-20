@@ -12,7 +12,9 @@ Class that provide information about line between client and server. Provide \mb
 \begin{DoxyCompactList}\small\item\em Create new instance of Line\+Processor taht can be registread in static services. Contain information about transmission between client and server. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_ac27fedfbe0edfdcb4fbf4509c76f858f}{Enqueue\+Query}} (string query)
 \begin{DoxyCompactList}\small\item\em Enqueue query to order. Query will be posted to server as soon as will possible. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a9ab008a66866d2bdb29f4a33e563e3d1}{Try\+Deque\+Query}} (out string query)
+void \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a59eceb9280548e1c9e662543ee5c96c7}{Enqueue\+Query}} (\mbox{\hyperlink{struct_pipes_provider_1_1_query_container}{Query\+Container}} query)
+\begin{DoxyCompactList}\small\item\em Enqueue query to order. Query will be posted to server as soon as will possible. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_acc672e0d0c921f60a9a5920e3f76d28b}{Try\+Deque\+Query}} (out \mbox{\hyperlink{struct_pipes_provider_1_1_query_container}{Query\+Container}} query)
 \begin{DoxyCompactList}\small\item\em Try to get a new query in turn. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a4aa28b1d29a2b0b6fb2af6f046fdf56a}{Close}} ()
 \begin{DoxyCompactList}\small\item\em Mark line as closed. Thread will be terminated on the next client tick. \end{DoxyCompactList}\item 
@@ -33,9 +35,9 @@ System.\+Action$<$ \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-string \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_aaccd1f86aa1a894f8e0b2bbb00923413}{last\+Query}} = null
+\mbox{\hyperlink{struct_pipes_provider_1_1_query_container}{Query\+Container}} \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_affdde0eafb483f2bf6f874679b4ab6f8}{last\+Query}} = \mbox{\hyperlink{struct_pipes_provider_1_1_query_container_a3daff9827ee4f77286eb4385a64e2fe2}{Query\+Container.\+Empty}}
 \begin{DoxyCompactList}\small\item\em Field that contain last dequeued query. \end{DoxyCompactList}\item 
-Queue$<$ string $>$ \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a81bbc79b91919db1098335cd547377ff}{queries}} = new Queue$<$string$>$()
+Queue$<$ \mbox{\hyperlink{struct_pipes_provider_1_1_query_container}{Query\+Container}} $>$ \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_ad866033fcbb1d9f783df8ff71e7fc21a}{queries}} = new Queue$<$\mbox{\hyperlink{struct_pipes_provider_1_1_query_container}{Query\+Container}}$>$()
 \begin{DoxyCompactList}\small\item\em List of queries that will wait its order to access transmission via this line. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
@@ -48,9 +50,9 @@ string \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a549bd893bb66
 \begin{DoxyCompactList}\small\item\em Name of server pipe that will be using for transmission via current processor. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a4edc70c5ef641b2c600b69b65ff4ba00}{Closed}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em If true then this line will be closed on the next client tick. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_af5717e4ea0ba1bbca5685de995c1c88f}{Processing}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+bool \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_af5717e4ea0ba1bbca5685de995c1c88f}{Processing}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em True if async operation started and not finished. \end{DoxyCompactList}\item 
-string \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_ae74210ed172643f6e9bd23bc7913f9b1}{Last\+Query}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\mbox{\hyperlink{struct_pipes_provider_1_1_query_container}{Query\+Container}} \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a3cc3f03332be99b5f380772587ca2883}{Last\+Query}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Return tthe query that was dequeue at last. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a39f81c072ca65efd260d02fc7d5c5458}{Has\+Queries}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Return true if queue contain queries. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -109,8 +111,23 @@ Drop meta data relative only per one session.
 \mbox{\Hypertarget{class_pipes_provider_1_1_transmission_line_ac27fedfbe0edfdcb4fbf4509c76f858f}\label{class_pipes_provider_1_1_transmission_line_ac27fedfbe0edfdcb4fbf4509c76f858f}} 
 \index{Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}!Enqueue\+Query@{Enqueue\+Query}}
 \index{Enqueue\+Query@{Enqueue\+Query}!Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}}
-\subsubsection{\texorpdfstring{Enqueue\+Query()}{EnqueueQuery()}}
+\subsubsection{\texorpdfstring{Enqueue\+Query()}{EnqueueQuery()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void Pipes\+Provider.\+Transmission\+Line.\+Enqueue\+Query (\begin{DoxyParamCaption}\item[{string}]{query }\end{DoxyParamCaption})}
+
+
+
+Enqueue query to order. Query will be posted to server as soon as will possible. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pipes_provider_1_1_transmission_line_a59eceb9280548e1c9e662543ee5c96c7}\label{class_pipes_provider_1_1_transmission_line_a59eceb9280548e1c9e662543ee5c96c7}} 
+\index{Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}!Enqueue\+Query@{Enqueue\+Query}}
+\index{Enqueue\+Query@{Enqueue\+Query}!Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}}
+\subsubsection{\texorpdfstring{Enqueue\+Query()}{EnqueueQuery()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Pipes\+Provider.\+Transmission\+Line.\+Enqueue\+Query (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_pipes_provider_1_1_query_container}{Query\+Container}}}]{query }\end{DoxyParamCaption})}
 
 
 
@@ -136,11 +153,11 @@ Method that can be started as thread. Will start client loop.
 {\em line\+Processor} & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_pipes_provider_1_1_transmission_line_a9ab008a66866d2bdb29f4a33e563e3d1}\label{class_pipes_provider_1_1_transmission_line_a9ab008a66866d2bdb29f4a33e563e3d1}} 
+\mbox{\Hypertarget{class_pipes_provider_1_1_transmission_line_acc672e0d0c921f60a9a5920e3f76d28b}\label{class_pipes_provider_1_1_transmission_line_acc672e0d0c921f60a9a5920e3f76d28b}} 
 \index{Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}!Try\+Deque\+Query@{Try\+Deque\+Query}}
 \index{Try\+Deque\+Query@{Try\+Deque\+Query}!Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}}
 \subsubsection{\texorpdfstring{Try\+Deque\+Query()}{TryDequeQuery()}}
-{\footnotesize\ttfamily bool Pipes\+Provider.\+Transmission\+Line.\+Try\+Deque\+Query (\begin{DoxyParamCaption}\item[{out string}]{query }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily bool Pipes\+Provider.\+Transmission\+Line.\+Try\+Deque\+Query (\begin{DoxyParamCaption}\item[{out \mbox{\hyperlink{struct_pipes_provider_1_1_query_container}{Query\+Container}}}]{query }\end{DoxyParamCaption})}
 
 
 
@@ -159,11 +176,11 @@ Will return false if query not found. Will return false in case if Line\+Procces
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{class_pipes_provider_1_1_transmission_line_aaccd1f86aa1a894f8e0b2bbb00923413}\label{class_pipes_provider_1_1_transmission_line_aaccd1f86aa1a894f8e0b2bbb00923413}} 
+\mbox{\Hypertarget{class_pipes_provider_1_1_transmission_line_affdde0eafb483f2bf6f874679b4ab6f8}\label{class_pipes_provider_1_1_transmission_line_affdde0eafb483f2bf6f874679b4ab6f8}} 
 \index{Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}!last\+Query@{last\+Query}}
 \index{last\+Query@{last\+Query}!Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}}
 \subsubsection{\texorpdfstring{last\+Query}{lastQuery}}
-{\footnotesize\ttfamily string Pipes\+Provider.\+Transmission\+Line.\+last\+Query = null\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pipes_provider_1_1_query_container}{Query\+Container}} Pipes\+Provider.\+Transmission\+Line.\+last\+Query = \mbox{\hyperlink{struct_pipes_provider_1_1_query_container_a3daff9827ee4f77286eb4385a64e2fe2}{Query\+Container.\+Empty}}\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -179,11 +196,11 @@ Field that contain last dequeued query.
 
 Reference to the current oppened pipe. 
 
-\mbox{\Hypertarget{class_pipes_provider_1_1_transmission_line_a81bbc79b91919db1098335cd547377ff}\label{class_pipes_provider_1_1_transmission_line_a81bbc79b91919db1098335cd547377ff}} 
+\mbox{\Hypertarget{class_pipes_provider_1_1_transmission_line_ad866033fcbb1d9f783df8ff71e7fc21a}\label{class_pipes_provider_1_1_transmission_line_ad866033fcbb1d9f783df8ff71e7fc21a}} 
 \index{Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}!queries@{queries}}
 \index{queries@{queries}!Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}}
 \subsubsection{\texorpdfstring{queries}{queries}}
-{\footnotesize\ttfamily Queue$<$string$>$ Pipes\+Provider.\+Transmission\+Line.\+queries = new Queue$<$string$>$()\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily Queue$<$\mbox{\hyperlink{struct_pipes_provider_1_1_query_container}{Query\+Container}}$>$ Pipes\+Provider.\+Transmission\+Line.\+queries = new Queue$<$\mbox{\hyperlink{struct_pipes_provider_1_1_query_container}{Query\+Container}}$>$()\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -232,11 +249,11 @@ Unique ID of this proccesor that will be used for access to it cia static contro
 
 Return true if queue contain queries. 
 
-\mbox{\Hypertarget{class_pipes_provider_1_1_transmission_line_ae74210ed172643f6e9bd23bc7913f9b1}\label{class_pipes_provider_1_1_transmission_line_ae74210ed172643f6e9bd23bc7913f9b1}} 
+\mbox{\Hypertarget{class_pipes_provider_1_1_transmission_line_a3cc3f03332be99b5f380772587ca2883}\label{class_pipes_provider_1_1_transmission_line_a3cc3f03332be99b5f380772587ca2883}} 
 \index{Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}!Last\+Query@{Last\+Query}}
 \index{Last\+Query@{Last\+Query}!Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}}
 \subsubsection{\texorpdfstring{Last\+Query}{LastQuery}}
-{\footnotesize\ttfamily string Pipes\+Provider.\+Transmission\+Line.\+Last\+Query\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_pipes_provider_1_1_query_container}{Query\+Container}} Pipes\+Provider.\+Transmission\+Line.\+Last\+Query\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
 
 
 
@@ -246,7 +263,7 @@ Return tthe query that was dequeue at last.
 \index{Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}!Processing@{Processing}}
 \index{Processing@{Processing}!Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}}
 \subsubsection{\texorpdfstring{Processing}{Processing}}
-{\footnotesize\ttfamily bool Pipes\+Provider.\+Transmission\+Line.\+Processing\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+{\footnotesize\ttfamily bool Pipes\+Provider.\+Transmission\+Line.\+Processing\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
 
 
 
@@ -276,4 +293,4 @@ Name of server pipe that will be using for transmission via current processor.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Work/\+Tools/\+Pipes\+Provider/Line\+Processor.\+cs\end{DoxyCompactItemize}
+D\+:/\+Work/\+Git\+Hub/datum-\/point/\+Pipes\+Provider/Transmission\+Line.\+cs\end{DoxyCompactItemize}

@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_8d5b170423417a867aca133a58ea720e" kind="dir">
-    <compoundname>D:/Work/Tools/THB Data Types/obj/Release</compoundname>
-    <innerdir refid="dir_4b0ca53b55913bfff76b7cae2abf2618">D:/Work/Tools/THB Data Types/obj/Release/netstandard2.0</innerdir>
+    <compoundname>D:/Work/GitHub/datum-point/THB Data Types/obj/Release</compoundname>
+    <innerdir refid="dir_4b0ca53b55913bfff76b7cae2abf2618">D:/Work/GitHub/datum-point/THB Data Types/obj/Release/netstandard2.0</innerdir>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/Tools/THB Data Types/obj/Release/"/>
+    <location file="D:/Work/GitHub/datum-point/THB Data Types/obj/Release/"/>
   </compounddef>
 </doxygen>

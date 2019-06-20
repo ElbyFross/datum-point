@@ -40,11 +40,25 @@ namespace TestClient
                 new Client(),
                 "DataServer #0",
                 ".", "THB_DS_QM_MAIN_INOUT",
-                UniformQueryPOSTProcessor
+                UniformQueryPostHandler
                 );
 
             // Sent test message.
-            lineProcessor.EnqueueQuery("guid=WelomeGUID&token=InvelidToken&q=Get&sq=publickey");
+            lineProcessor.EnqueueQuery("guid=WelomeGUID&token=InvalidToken&q=Get&sq=publickey");
+
+            System.Action<PipesProvider.TransmissionLine, object> answerProcessor =
+                delegate (PipesProvider.TransmissionLine tl, object message)
+            {
+                string messageS = message as string;
+
+                Console.WriteLine("DELEGATE");
+                Console.WriteLine(messageS ?? "Message is null");
+            };
+
+            ReciveAnswer(
+                lineProcessor,
+                UniformQueries.API.DetectQueryParts("guid=WelomeGUID&token=InvalidToken&q=Get&sq=publickey"),
+                answerProcessor);
 
             Thread.Sleep(150);
 
@@ -88,44 +102,57 @@ namespace TestClient
         /// Query processor that send last dequeued query to server when connection will be established.
         /// </summary>
         /// <param name="lineProcessor"></param>
-        static void UniformQueryPOSTProcessor(object sharedObject)
-        {
-            // Drop as invalid in case of incorrect transmitted data.
-            if (!(sharedObject is PipesProvider.TransmissionLine lineProcessor))
-            {
-                Console.WriteLine("TRANSMISSION ERROR (UQPP0): INCORRECT TRANSFERD DATA TYPE. PERMITED ONLY \"LineProcessor\"");
-                return;
-            }
+        //static void UniformQueryPOSTProcessor(object sharedObject)
+        //{
+        //    // Drop as invalid in case of incorrect transmitted data.
+        //    if (!(sharedObject is PipesProvider.TransmissionLine lineProcessor))
+        //    {
+        //        Console.WriteLine("TRANSMISSION ERROR (UQPP0): INCORRECT TRANSFERD DATA TYPE. PERMITED ONLY \"LineProcessor\"");
+        //        return;
+        //    }
 
-            // Open stream reader.
-            StreamWriter sw = new StreamWriter(lineProcessor.pipeClient);
-            try
-            {
-                sw.WriteLine(lineProcessor.LastQuery);
-                sw.Flush();
-                Console.WriteLine("TRANSMITED: {0}", lineProcessor.LastQuery);
-                //sw.Close();
-            }
-            // Catch the Exception that is raised if the pipe is broken or disconnected.
-            catch (Exception e)
-            {
-                Console.WriteLine("DNS HANDLER ERROR ({1}): {0}", e.Message, lineProcessor.pipeClient.GetHashCode());
+        //    // Open stream reader.
+        //    StreamWriter sw = new StreamWriter(lineProcessor.pipeClient);
+        //    try
+        //    {
+        //        sw.WriteLine(lineProcessor.LastQuery);
+        //        sw.Flush();
+        //        Console.WriteLine("TRANSMITED: {0}", lineProcessor.LastQuery);
+        //        //sw.Close();
+        //    }
+        //    // Catch the Exception that is raised if the pipe is broken or disconnected.
+        //    catch (Exception e)
+        //    {
+        //        Console.WriteLine("DNS HANDLER ERROR ({1}): {0}", e.Message, lineProcessor.pipeClient.GetHashCode());
 
-                // Retry transmission.
-                lineProcessor.EnqueueQuery(lineProcessor.LastQuery);
-            }
+        //        // Retry transmission.
+        //        if (lineProcessor.LastQuery.Attempts < 10)
+        //        {
+        //            // Add to queue.
+        //            lineProcessor.EnqueueQuery(lineProcessor.LastQuery);
 
-            // If requested data in answer.
-            if(lineProcessor.LastQuery.StartsWith("GET", StringComparison.OrdinalIgnoreCase))
-            {
-                // Create answer reciving line.
-                PipesProvider.TransmissionLine reciveAnswer = OpenTransmissionLine(
-                    new Client(),
-                    "DataServer #0 a" + lineProcessor.LastQuery.Split(' '),
-                    ".", "THB_DS_QM_MAIN_INOUT",
-                    UniformQueryPOSTProcessor
-                    );
-            }
-        }
+        //            // Add attempt.
+        //            PipesProvider.QueryContainer qcl = lineProcessor.LastQuery;
+        //            qcl++;
+        //        }
+        //        else
+        //        {
+        //            // If transmission attempts over the max count.
+        //        }
+        //    }
+
+        //    // If requested data in answer.
+        //    if(lineProcessor.LastQuery.Query.StartsWith("GET", StringComparison.OrdinalIgnoreCase))
+        //    {
+        //        // Create answer reciving line.
+        //        PipesProvider.TransmissionLine reciveAnswer = OpenTransmissionLine(
+        //            new Client(),
+        //            "DataServer #0 a" + lineProcessor.LastQuery.Query.Split(' '),
+        //            ".", "THB_DS_QM_MAIN_INOUT",
+        //            UniformQueryPOSTProcessor
+        //            );
+        //    }
+        //}
+
     }
 }

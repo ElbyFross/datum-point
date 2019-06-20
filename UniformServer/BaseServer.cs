@@ -257,9 +257,9 @@ namespace UniformServer
 
             // Set fields.
             server.pipeName = domain;
-            
+
             // Create delegate that will set our answer message to processing whentransmission meta will available.
-            System.Action<PipesProvider.ServerTransmissionMeta> initationCallback = null;
+            Action<PipesProvider.ServerTransmissionMeta> initationCallback = null;
             initationCallback = delegate (PipesProvider.ServerTransmissionMeta tm)
             {
                 // Target callback.

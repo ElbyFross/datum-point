@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Client.cs" line="214" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Client.cs" bodystart="214" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" line="228" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" bodystart="228" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/de2/class_teacher_handbook_1_1_client_1_1_domain_container_1a369aa498ee2cf929f7b93dd02d70e2d2" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Client.cs" line="215" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Client.cs" bodystart="215" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" line="229" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" bodystart="229" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/de2/class_teacher_handbook_1_1_client_1_1_domain_container_1ac7941ee0cc4a0a462939c719e2b21c4d" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -40,14 +40,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Client.cs" line="216" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Client.cs" bodystart="216" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" line="230" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" bodystart="230" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/Tools/TeacherHandbook/Client.cs" line="213" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Client.cs" bodystart="212" bodyend="217"/>
+    <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" line="227" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" bodystart="226" bodyend="231"/>
     <listofallmembers>
       <member refid="db/de2/class_teacher_handbook_1_1_client_1_1_domain_container_1ae72edd58099a7ac8a146367a71b75d3e" prot="public" virt="non-virtual"><scope>TeacherHandbook::Client::DomainContainer</scope><name>cultureKey</name></member>
       <member refid="db/de2/class_teacher_handbook_1_1_client_1_1_domain_container_1ac7941ee0cc4a0a462939c719e2b21c4d" prot="public" virt="non-virtual"><scope>TeacherHandbook::Client::DomainContainer</scope><name>path</name></member>

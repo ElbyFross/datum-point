@@ -25,7 +25,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="23" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="23" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="23" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a48a13c6e4e68649b1c02cf245cfde154" prot="public" static="yes" mutable="no">
         <type>readonly DependencyProperty</type>
@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="29" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="29" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a555f299fdcd37b102cd33cbeb665ccfb" prot="public" static="yes" mutable="no">
         <type>readonly DependencyProperty</type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="32" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="32" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="32" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="32" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1ae0b1bee3798235e00cbd25f1a82dbc71" prot="public" static="yes" mutable="no">
         <type>readonly DependencyProperty</type>
@@ -70,7 +70,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="35" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="35" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="35" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a27c150a9724cca421ef98c7445360674" prot="public" static="yes" mutable="no">
         <type>readonly DependencyProperty</type>
@@ -85,7 +85,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="38" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="38" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="38" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="38" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
@@ -100,7 +100,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="46" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="47" bodyend="50"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="46" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="47" bodyend="50"/>
       </memberdef>
       <memberdef kind="property" id="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a9dbed6d9494449cc23129322ff646556" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>int</type>
@@ -114,7 +114,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="55" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="55" bodyend="55"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="55" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="55" bodyend="55"/>
       </memberdef>
       <memberdef kind="property" id="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a4b27c513e1e4c2d0f3e0dab6bfeb2715" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
         <type>System.Windows.Thickness</type>
@@ -127,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="60" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="61" bodyend="66"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="60" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="61" bodyend="66"/>
       </memberdef>
       <memberdef kind="property" id="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1ae7b4076398961a53d064acc431f071b3" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>Brush</type>
@@ -141,7 +141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="71" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="71" bodyend="71"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="71" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="71" bodyend="71"/>
       </memberdef>
       <memberdef kind="property" id="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a5c4261e5d872e61b281085dc29971203" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>Brush</type>
@@ -155,7 +155,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="76" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="76" bodyend="76"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="76" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="76" bodyend="76"/>
       </memberdef>
       <memberdef kind="property" id="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1ad9f4d0665c824c892cfcdb5c71031328" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>Brush</type>
@@ -169,7 +169,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="81" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="81" bodyend="81"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="81" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="81" bodyend="81"/>
       </memberdef>
       <memberdef kind="property" id="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1afeb6f1ef9c37714972b7678d76e2f45a" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>System.Action&lt; object &gt;</type>
@@ -182,7 +182,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="86" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="86" bodyend="86"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="86" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="86" bodyend="86"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="package-attrib">
@@ -197,7 +197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.cs" line="46" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.cs" bodystart="46" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.cs" line="46" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.cs" bodystart="46" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-attrib">
@@ -212,7 +212,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.cs" line="51" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.cs" bodystart="51" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.cs" line="51" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.cs" bodystart="51" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -227,7 +227,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="89" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="89" bodyend="97"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="89" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="89" bodyend="97"/>
       </memberdef>
       <memberdef kind="function" id="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a930173b42b66bb6370c3ac8cf0e1882b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -240,7 +240,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.cs" line="58" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.cs" bodystart="58" bodyend="70"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.cs" line="58" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.cs" bodystart="58" bodyend="70"/>
       </memberdef>
       <memberdef kind="function" id="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a930173b42b66bb6370c3ac8cf0e1882b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -253,7 +253,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.i.cs" line="58" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.i.cs" bodystart="58" bodyend="70"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.i.cs" line="58" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.i.cs" bodystart="58" bodyend="70"/>
       </memberdef>
       <memberdef kind="function" id="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a930173b42b66bb6370c3ac8cf0e1882b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -266,7 +266,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Release/Controls/CatalogButton.g.cs" line="58" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Release/Controls/CatalogButton.g.cs" bodystart="58" bodyend="70"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/Controls/CatalogButton.g.cs" line="58" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/Controls/CatalogButton.g.cs" bodystart="58" bodyend="70"/>
       </memberdef>
       <memberdef kind="function" id="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a930173b42b66bb6370c3ac8cf0e1882b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -279,7 +279,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Release/Controls/CatalogButton.g.i.cs" line="58" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Release/Controls/CatalogButton.g.i.cs" bodystart="58" bodyend="70"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/Controls/CatalogButton.g.i.cs" line="58" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/Controls/CatalogButton.g.i.cs" bodystart="58" bodyend="70"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -317,7 +317,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="104" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="104" bodyend="108"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="104" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="104" bodyend="108"/>
       </memberdef>
       <memberdef kind="function" id="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1aee1606053e8ffdb900fd8cb3f1d71bd4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void System.Windows.Markup.IComponentConnector.</type>
@@ -338,7 +338,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.cs" line="78" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.cs" bodystart="78" bodyend="92"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.cs" line="78" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.cs" bodystart="78" bodyend="92"/>
       </memberdef>
       <memberdef kind="function" id="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1aee1606053e8ffdb900fd8cb3f1d71bd4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void System.Windows.Markup.IComponentConnector.</type>
@@ -359,7 +359,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.i.cs" line="78" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.i.cs" bodystart="78" bodyend="92"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.i.cs" line="78" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls/CatalogButton.g.i.cs" bodystart="78" bodyend="92"/>
       </memberdef>
       <memberdef kind="function" id="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1aee1606053e8ffdb900fd8cb3f1d71bd4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void System.Windows.Markup.IComponentConnector.</type>
@@ -380,7 +380,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Release/Controls/CatalogButton.g.cs" line="78" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Release/Controls/CatalogButton.g.cs" bodystart="78" bodyend="92"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/Controls/CatalogButton.g.cs" line="78" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/Controls/CatalogButton.g.cs" bodystart="78" bodyend="92"/>
       </memberdef>
       <memberdef kind="function" id="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1aee1606053e8ffdb900fd8cb3f1d71bd4" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void System.Windows.Markup.IComponentConnector.</type>
@@ -401,7 +401,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Release/Controls/CatalogButton.g.i.cs" line="78" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Release/Controls/CatalogButton.g.i.cs" bodystart="78" bodyend="92"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/Controls/CatalogButton.g.i.cs" line="78" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/Controls/CatalogButton.g.i.cs" bodystart="78" bodyend="92"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -409,78 +409,78 @@
     <detaileddescription>
 <para><ref refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button" kindref="compound">CatalogButton</ref> </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="84">
+      <node id="86">
         <label>TeacherHandbook.Controls.CatalogButton</label>
         <link refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button"/>
-        <childnode refid="85" relation="public-inheritance">
+        <childnode refid="87" relation="public-inheritance">
         </childnode>
-        <childnode refid="86" relation="public-inheritance">
-        </childnode>
-        <childnode refid="85" relation="public-inheritance">
-        </childnode>
-        <childnode refid="86" relation="public-inheritance">
-        </childnode>
-        <childnode refid="85" relation="public-inheritance">
-        </childnode>
-        <childnode refid="86" relation="public-inheritance">
-        </childnode>
-        <childnode refid="85" relation="public-inheritance">
-        </childnode>
-        <childnode refid="86" relation="public-inheritance">
+        <childnode refid="88" relation="public-inheritance">
         </childnode>
         <childnode refid="87" relation="public-inheritance">
         </childnode>
-      </node>
-      <node id="85">
-        <label>System::Windows::Controls::UserControl</label>
-      </node>
-      <node id="86">
-        <label>System::Windows::Markup::IComponentConnector</label>
+        <childnode refid="88" relation="public-inheritance">
+        </childnode>
+        <childnode refid="87" relation="public-inheritance">
+        </childnode>
+        <childnode refid="88" relation="public-inheritance">
+        </childnode>
+        <childnode refid="87" relation="public-inheritance">
+        </childnode>
+        <childnode refid="88" relation="public-inheritance">
+        </childnode>
+        <childnode refid="89" relation="public-inheritance">
+        </childnode>
       </node>
       <node id="87">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="88">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+      <node id="89">
         <label>UserControl</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="88">
+      <node id="90">
         <label>TeacherHandbook.Controls.CatalogButton</label>
         <link refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button"/>
-        <childnode refid="89" relation="public-inheritance">
+        <childnode refid="91" relation="public-inheritance">
         </childnode>
-        <childnode refid="90" relation="public-inheritance">
-        </childnode>
-        <childnode refid="89" relation="public-inheritance">
-        </childnode>
-        <childnode refid="90" relation="public-inheritance">
-        </childnode>
-        <childnode refid="89" relation="public-inheritance">
-        </childnode>
-        <childnode refid="90" relation="public-inheritance">
-        </childnode>
-        <childnode refid="89" relation="public-inheritance">
-        </childnode>
-        <childnode refid="90" relation="public-inheritance">
+        <childnode refid="92" relation="public-inheritance">
         </childnode>
         <childnode refid="91" relation="public-inheritance">
         </childnode>
-        <childnode refid="92" relation="usage">
+        <childnode refid="92" relation="public-inheritance">
+        </childnode>
+        <childnode refid="91" relation="public-inheritance">
+        </childnode>
+        <childnode refid="92" relation="public-inheritance">
+        </childnode>
+        <childnode refid="91" relation="public-inheritance">
+        </childnode>
+        <childnode refid="92" relation="public-inheritance">
+        </childnode>
+        <childnode refid="93" relation="public-inheritance">
+        </childnode>
+        <childnode refid="94" relation="usage">
           <edgelabel>catalogButton</edgelabel>
         </childnode>
       </node>
-      <node id="92">
+      <node id="94">
         <label>System</label>
       </node>
-      <node id="89">
+      <node id="91">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="90">
+      <node id="92">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
-      <node id="91">
+      <node id="93">
         <label>UserControl</label>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="21" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="20" bodyend="109"/>
+    <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" line="21" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/CatalogButton.xaml.cs" bodystart="20" bodyend="109"/>
     <listofallmembers>
       <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a4d31da551e1ef4555ef13f04afd6342c" prot="private" virt="non-virtual"><scope>TeacherHandbook::Controls::CatalogButton</scope><name>_contentLoaded</name></member>
       <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a4b27c513e1e4c2d0f3e0dab6bfeb2715" prot="public" virt="non-virtual"><scope>TeacherHandbook::Controls::CatalogButton</scope><name>AutoMargin</name></member>

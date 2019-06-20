@@ -1,0 +1,237 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d6/d3d/class_uniform_server_1_1_security_a_p_i" kind="class" language="C#" prot="public">
+    <compoundname>UniformServer::SecurityAPI</compoundname>
+      <sectiondef kind="public-type">
+      <memberdef kind="enum" id="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a0013616bf69cff8555e697c0c4960240" prot="public" static="no" strong="yes">
+        <type></type>
+        <name>SHATypes</name>
+        <enumvalue id="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a0013616bf69cff8555e697c0c4960240a9a9f4eb6d0036a164588b6ee74390442" prot="public">
+          <name>SHA1</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a0013616bf69cff8555e697c0c4960240ab505df5aa812b4f320420b8a952f20e5" prot="public">
+          <name>SHA256</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a0013616bf69cff8555e697c0c4960240ae446c175009b980a004574cb795388ab" prot="public">
+          <name>SHA384</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a0013616bf69cff8555e697c0c4960240adb6c5a350bb792ef07a62a1750962737" prot="public">
+          <name>SHA512</name>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>Enum that describe type of SHA hash algorithm. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" line="33" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" bodystart="32" bodyend="38"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a382d85d8db483cd87e51ea8adfec2317" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>RSACryptoServiceProvider</type>
+        <definition>RSACryptoServiceProvider UniformServer.SecurityAPI.CryptoServiceProvider_RSA</definition>
+        <argsstring></argsstring>
+        <name>CryptoServiceProvider_RSA</name>
+        <briefdescription>
+<para>Current crypto service provider. Using RSA algortihm with 2048 bit key. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" line="46" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" bodystart="47" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="property" id="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a0760e6025414a7cb1e19528fe8c4697d" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>RSAParameters</type>
+        <definition>RSAParameters UniformServer.SecurityAPI.PublicKey</definition>
+        <argsstring></argsstring>
+        <name>PublicKey</name>
+        <briefdescription>
+<para>Public RSA key that must b used to encrypt of message befor send. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" line="61" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" bodystart="62" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="property" id="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a79bddf5d4d9a983f35629d2af14c1118" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string UniformServer.SecurityAPI.PublicKeyXML</definition>
+        <argsstring></argsstring>
+        <name>PublicKeyXML</name>
+        <briefdescription>
+<para>Return Public key in XML format. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" line="72" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" bodystart="73" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="property" id="d6/d3d/class_uniform_server_1_1_security_a_p_i_1ad2b3a776434e5529b4ed9b4d94ab122c" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>RSAParameters</type>
+        <definition>RSAParameters UniformServer.SecurityAPI.PrivateKey</definition>
+        <argsstring></argsstring>
+        <name>PrivateKey</name>
+        <briefdescription>
+<para>Return private RSA key that can be used to decode message. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" line="86" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" bodystart="87" bodyend="92"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a705f1d9f4a89186f64ccf451c34e4d53" prot="private" static="yes" mutable="no">
+        <type>RSACryptoServiceProvider</type>
+        <definition>RSACryptoServiceProvider UniformServer.SecurityAPI._CryptoServiceProvider_RSA</definition>
+        <argsstring></argsstring>
+        <name>_CryptoServiceProvider_RSA</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" line="56" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a46e3150c9c1024c0cc9a56b03f02624e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>byte []</type>
+        <definition>static byte [] UniformServer.SecurityAPI.RSADecrypt</definition>
+        <argsstring>(byte[] DataToDecrypt, bool DoOAEPPadding)</argsstring>
+        <name>RSADecrypt</name>
+        <param>
+          <type>byte []</type>
+          <declname>DataToDecrypt</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>DoOAEPPadding</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" line="94" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" bodystart="94" bodyend="121"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a45566f4aed87cbfabbcf00b7fca118db" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string UniformServer.SecurityAPI.StringToSHA</definition>
+        <argsstring>(string input)</argsstring>
+        <name>StringToSHA</name>
+        <param>
+          <type>string</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+<para>Return the hash of the string. Use SHA256 as default. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" line="132" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" bodystart="132" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a417561751e136d3c7d1fdeab5cbcd18d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string UniformServer.SecurityAPI.StringToSHA</definition>
+        <argsstring>(string input, SHATypes type)</argsstring>
+        <name>StringToSHA</name>
+        <param>
+          <type>string</type>
+          <declname>input</declname>
+        </param>
+        <param>
+          <type><ref refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a0013616bf69cff8555e697c0c4960240" kindref="member">SHATypes</ref></type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>Return hash of string. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>input</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" line="142" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" bodystart="142" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a47f4dbc862a92f24b030d52b2a79f92b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void UniformServer.SecurityAPI.GenerateUniqueKey256Bit</definition>
+        <argsstring>(string targetDirectory)</argsstring>
+        <name>GenerateUniqueKey256Bit</name>
+        <param>
+          <type>string</type>
+          <declname>targetDirectory</declname>
+        </param>
+        <briefdescription>
+<para>TODO Create binnary file with unique 256 bit key that can be used as seed to session providing. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>targetDirectory</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" line="194" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" bodystart="194" bodyend="199"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Class that provide metods for providing server transmission sequrity. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" line="27" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/SecurityAPI.cs" bodystart="26" bodyend="201"/>
+    <listofallmembers>
+      <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a705f1d9f4a89186f64ccf451c34e4d53" prot="private" virt="non-virtual"><scope>UniformServer::SecurityAPI</scope><name>_CryptoServiceProvider_RSA</name></member>
+      <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a382d85d8db483cd87e51ea8adfec2317" prot="public" virt="non-virtual"><scope>UniformServer::SecurityAPI</scope><name>CryptoServiceProvider_RSA</name></member>
+      <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a47f4dbc862a92f24b030d52b2a79f92b" prot="public" virt="non-virtual"><scope>UniformServer::SecurityAPI</scope><name>GenerateUniqueKey256Bit</name></member>
+      <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1ad2b3a776434e5529b4ed9b4d94ab122c" prot="public" virt="non-virtual"><scope>UniformServer::SecurityAPI</scope><name>PrivateKey</name></member>
+      <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a0760e6025414a7cb1e19528fe8c4697d" prot="public" virt="non-virtual"><scope>UniformServer::SecurityAPI</scope><name>PublicKey</name></member>
+      <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a79bddf5d4d9a983f35629d2af14c1118" prot="public" virt="non-virtual"><scope>UniformServer::SecurityAPI</scope><name>PublicKeyXML</name></member>
+      <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a46e3150c9c1024c0cc9a56b03f02624e" prot="public" virt="non-virtual"><scope>UniformServer::SecurityAPI</scope><name>RSADecrypt</name></member>
+      <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a0013616bf69cff8555e697c0c4960240" prot="public" virt="non-virtual"><scope>UniformServer::SecurityAPI</scope><name>SHATypes</name></member>
+      <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a45566f4aed87cbfabbcf00b7fca118db" prot="public" virt="non-virtual"><scope>UniformServer::SecurityAPI</scope><name>StringToSHA</name></member>
+      <member refid="d6/d3d/class_uniform_server_1_1_security_a_p_i_1a417561751e136d3c7d1fdeab5cbcd18d" prot="public" virt="non-virtual"><scope>UniformServer::SecurityAPI</scope><name>StringToSHA</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

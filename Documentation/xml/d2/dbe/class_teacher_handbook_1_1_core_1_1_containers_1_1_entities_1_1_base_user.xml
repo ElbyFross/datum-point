@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" line="21" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" bodystart="21" bodyend="21"/>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" line="35" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" bodystart="35" bodyend="35"/>
       </memberdef>
       <memberdef kind="property" id="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1a53a606a419de1741eb85a13062267be9" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>Hashtable</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" line="28" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" bodystart="28" bodyend="28"/>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" line="42" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" bodystart="42" bodyend="42"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" line="37" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" bodystart="37" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" line="51" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" bodystart="51" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1ad553bd1715f8aa5ab9253027533b8287" prot="protected" static="no" mutable="no">
         <type>UserRights</type>
@@ -58,7 +58,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" line="42" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" bodystart="42" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" line="56" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" bodystart="56" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -66,42 +66,42 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="78">
+      <node id="80">
         <label>TeacherHandbook.Core.Containers.Entities.BaseUser</label>
         <link refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user"/>
-        <childnode refid="79" relation="public-inheritance">
+        <childnode refid="81" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="79">
+      <node id="81">
         <label>IUser</label>
         <link refid="d1/dfc/interface_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_i_user"/>
       </node>
-      <node id="80">
+      <node id="82">
         <label>TeacherHandbook.Core.Containers.Entities.Teacher</label>
         <link refid="d5/d63/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_teacher"/>
-        <childnode refid="78" relation="public-inheritance">
+        <childnode refid="80" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="81">
+      <node id="83">
         <label>TeacherHandbook.Core.Containers.Entities.BaseUser</label>
         <link refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user"/>
-        <childnode refid="82" relation="public-inheritance">
+        <childnode refid="84" relation="public-inheritance">
         </childnode>
-        <childnode refid="83" relation="usage">
+        <childnode refid="85" relation="usage">
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="82">
+      <node id="84">
         <label>IUser</label>
         <link refid="d1/dfc/interface_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_i_user"/>
       </node>
-      <node id="83">
+      <node id="85">
         <label>System</label>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" line="16" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" bodystart="15" bodyend="44"/>
+    <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" line="30" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" bodystart="29" bodyend="58"/>
     <listofallmembers>
       <member refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1a53a606a419de1741eb85a13062267be9" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Entities::BaseUser</scope><name>Name</name></member>
       <member refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1ad8da6882147f62d42960e2a436b8dff1" prot="protected" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Entities::BaseUser</scope><name>name</name></member>

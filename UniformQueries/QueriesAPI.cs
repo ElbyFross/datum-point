@@ -58,13 +58,20 @@ namespace UniformQueries
                 // Get all types for assembly.
                 foreach (System.Type type in assembly.GetTypes())
                 {
-                    // Check if this type is subclass of query.
-                    if (type.GetInterface("UniformQueries.IQueryHandlerProcessor") != null)
+                    try
                     {
-                        // Instiniating querie processor.
-                        UniformQueries.IQueryHandlerProcessor instance = (UniformQueries.IQueryHandlerProcessor)Activator.CreateInstance(type);
-                        queryProcessors.Add(instance);
-                        Console.WriteLine("{0}", type.Name);
+                        // Check if this type is subclass of query.
+                        if (type.GetInterface("UniformQueries.IQueryHandlerProcessor") != null)
+                        {
+                            // Instiniating querie processor.
+                            UniformQueries.IQueryHandlerProcessor instance = (UniformQueries.IQueryHandlerProcessor)Activator.CreateInstance(type);
+                            queryProcessors.Add(instance);
+                            Console.WriteLine("{0}", type.Name);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Queries asseblies loading failed: {0}", ex.Message);
                     }
                 }
             }
@@ -73,8 +80,7 @@ namespace UniformQueries
             Console.WriteLine("\nRESUME:\nQueryMonitor established. Session started at {0}\nTotal query processors detected: {1}",
                 DateTime.Now.ToString("HH:mm:ss"), queryProcessors.Count);
         }
-
-
+        
         /// <summary>
         /// Handler that can be connected as callback to default PipesProvides DNS Handler.
         /// Will validate and decompose querie on parts and send it to target QueryProcessor.

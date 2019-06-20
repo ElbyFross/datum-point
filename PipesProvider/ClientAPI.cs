@@ -73,13 +73,6 @@ namespace PipesProvider
             // Loop will work until this proceesor line not closed.
             while (!lineProcessor.Closed)
             {
-                /// If queries not placed then wait.
-                if (!lineProcessor.HasQueries || !lineProcessor.TryDequeQuery(out string query))
-                {
-                    Thread.Sleep(50);
-                    continue;
-                }
-
                 // Open pipe.
                 using (NamedPipeClientStream pipeClient =
                     new NamedPipeClientStream(lineProcessor.ServerName, lineProcessor.ServerPipeName, pipeDirection, pipeOptions))
@@ -106,6 +99,14 @@ namespace PipesProvider
                     {
                         // Execute target query.
                         lineProcessor.queryProcessor?.Invoke(lineProcessor);
+
+                        // Wait until processing finish.
+                        Console.WriteLine("{0}/{1}: WAIT UNITL QUERY PROCESSOR FINISH HANDLER.", lineProcessor.ServerName, lineProcessor.ServerPipeName);
+                        while (lineProcessor.Processing)
+                        {
+                            Thread.Sleep(50);
+                        }
+                        Console.WriteLine("{0}/{1}: WAIT UNITL QUERY PROCESSOR HANDLER FINISHED.", lineProcessor.ServerName, lineProcessor.ServerPipeName);
                     }
                     catch (Exception ex)
                     {

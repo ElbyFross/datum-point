@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Exams/obj/Debug/UserControl1.g.i.cs" line="43" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Exams/obj/Debug/UserControl1.g.i.cs" bodystart="43" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/UserControl1.g.i.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/UserControl1.g.i.cs" bodystart="43" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Exams/obj/Debug/UserControl1.g.i.cs" line="50" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Exams/obj/Debug/UserControl1.g.i.cs" bodystart="50" bodyend="62"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/UserControl1.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/UserControl1.g.i.cs" bodystart="50" bodyend="62"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Exams/obj/Debug/UserControl1.g.i.cs" line="70" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Exams/obj/Debug/UserControl1.g.i.cs" bodystart="70" bodyend="72"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/UserControl1.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/UserControl1.g.i.cs" bodystart="70" bodyend="72"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -62,38 +62,38 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="373">
+      <node id="387">
         <label>THB_Plugin_Exams.UserControl1</label>
         <link refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1"/>
-        <childnode refid="374" relation="public-inheritance">
+        <childnode refid="388" relation="public-inheritance">
         </childnode>
-        <childnode refid="375" relation="public-inheritance">
+        <childnode refid="389" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="374">
+      <node id="388">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="375">
+      <node id="389">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="376">
+      <node id="390">
         <label>THB_Plugin_Exams.UserControl1</label>
         <link refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1"/>
-        <childnode refid="377" relation="public-inheritance">
+        <childnode refid="391" relation="public-inheritance">
         </childnode>
-        <childnode refid="378" relation="public-inheritance">
+        <childnode refid="392" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="377">
+      <node id="391">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="378">
+      <node id="392">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/Plugins/THB Plugin Exams/obj/Debug/UserControl1.g.i.cs" line="41" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Exams/obj/Debug/UserControl1.g.i.cs" bodystart="41" bodyend="73"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/UserControl1.g.i.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/UserControl1.g.i.cs" bodystart="41" bodyend="73"/>
     <listofallmembers>
       <member refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1_1a0af4bcadce35594e7decef2aca6ae954" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::UserControl1</scope><name>_contentLoaded</name></member>
       <member refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1_1adcd9edc13c61ced201761f6b90e32ab4" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::UserControl1</scope><name>Connect</name></member>

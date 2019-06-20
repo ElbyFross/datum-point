@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_b31cc0ef005d498793b60a991675aa06" kind="dir">
-    <compoundname>D:/Work/Tools/THB Data Server Queries/obj/Debug</compoundname>
-    <innerdir refid="dir_98ff69c7a756d7ad8599f220f2da76f1">D:/Work/Tools/THB Data Server Queries/obj/Debug/netstandard2.0</innerdir>
+    <compoundname>D:/Work/GitHub/datum-point/THB Data Server Queries/obj/Debug</compoundname>
+    <innerdir refid="dir_98ff69c7a756d7ad8599f220f2da76f1">D:/Work/GitHub/datum-point/THB Data Server Queries/obj/Debug/netstandard2.0</innerdir>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/Tools/THB Data Server Queries/obj/Debug/"/>
+    <location file="D:/Work/GitHub/datum-point/THB Data Server Queries/obj/Debug/"/>
   </compounddef>
 </doxygen>

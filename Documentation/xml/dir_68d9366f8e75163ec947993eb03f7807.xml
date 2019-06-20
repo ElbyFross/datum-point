@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_68d9366f8e75163ec947993eb03f7807" kind="dir">
-    <compoundname>D:/Work/Tools/Plugins/THB Plugin Exams/obj/Debug</compoundname>
+    <compoundname>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug</compoundname>
     <innerfile refid="d1/d66/_debug_2_exam_planner_8g_8cs">ExamPlanner.g.cs</innerfile>
     <innerfile refid="d1/dc3/_debug_2_exam_planner_8g_8i_8cs">ExamPlanner.g.i.cs</innerfile>
     <innerfile refid="d3/d7c/_debug_2_monitor_8g_8cs">Monitor.g.cs</innerfile>
@@ -13,6 +13,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/Tools/Plugins/THB Plugin Exams/obj/Debug/"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/"/>
   </compounddef>
 </doxygen>

@@ -69,17 +69,17 @@ namespace PipesProvider
         public bool Processing
         {
             get;
-            protected set;
+            set;
         }
 
         /// <summary>
         /// Return tthe query that was dequeue at last.
         /// </summary>
-        public string LastQuery
+        public QueryContainer LastQuery
         {
             get
             {
-                return lastQuery != null ? string.Copy(lastQuery) : null;
+                return lastQuery.IsEmpty ? QueryContainer.Empty : QueryContainer.Copy(lastQuery);
             }
             protected set
             {
@@ -104,12 +104,12 @@ namespace PipesProvider
         /// <summary>
         /// Field that contain last dequeued query.
         /// </summary>
-        protected string lastQuery = null;
+        protected QueryContainer lastQuery = QueryContainer.Empty;
 
         /// <summary>
         /// List of queries that will wait its order to access transmission via this line.
         /// </summary>
-        protected Queue<string> queries = new Queue<string>();
+        protected Queue<QueryContainer> queries = new Queue<QueryContainer>();
         #endregion
 
 
@@ -142,6 +142,15 @@ namespace PipesProvider
         /// <param name="query"></param>
         public void EnqueueQuery(string query)
         {
+            queries.Enqueue(new QueryContainer(query, null));
+        }
+
+        /// <summary>
+        /// Enqueue query to order. Query will be posted to server as soon as will possible.
+        /// </summary>
+        /// <param name="query"></param>
+        public void EnqueueQuery(QueryContainer query)
+        {
             queries.Enqueue(query);
         }
 
@@ -153,19 +162,19 @@ namespace PipesProvider
         /// </summary>
         /// <param name="query"></param>
         /// <returns></returns>
-        public bool TryDequeQuery(out string query)
+        public bool TryDequeQuery(out QueryContainer query)
         {
             // If some query already started then reject operation.
             if (Processing)
             {
-                query = string.Empty;
+                query = QueryContainer.Empty;
                 return false;
             }
 
             try
             {
                 // Dequeue query
-                string dequeuedQuery = queries.Dequeue();
+                QueryContainer dequeuedQuery = queries.Dequeue();
 
                 // Buferize at last.
                 LastQuery = dequeuedQuery;
@@ -188,8 +197,8 @@ namespace PipesProvider
                     ServerName, ServerPipeName, ex.Message, GUID);
 
                 // Drop relative data.
-                LastQuery = string.Empty;
-                query = string.Empty;
+                LastQuery = QueryContainer.Empty;
+                query = QueryContainer.Empty;
 
                 // Infor about failure.
                 return false;

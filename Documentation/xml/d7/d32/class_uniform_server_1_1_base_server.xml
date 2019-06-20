@@ -5,6 +5,7 @@
     <derivedcompoundref refid="d2/d9a/class_queries_server_1_1_server" prot="public" virt="non-virtual">QueriesServer.Server</derivedcompoundref>
     <derivedcompoundref refid="d8/d17/class_session_provider_1_1_server" prot="public" virt="non-virtual">SessionProvider.Server</derivedcompoundref>
     <derivedcompoundref refid="dc/d42/class_t_h_b___data___server_1_1_server" prot="public" virt="non-virtual">THB_Data_Server.Server</derivedcompoundref>
+    <derivedcompoundref refid="dc/d09/class_uniform_server_1_1_simple_server" prot="public" virt="non-virtual">UniformServer.SimpleServer</derivedcompoundref>
       <sectiondef kind="event">
       <memberdef kind="event" id="d7/d32/class_uniform_server_1_1_base_server_1a889c3aaa1cca7f4a9a4e32617516f4be" prot="public" static="yes" add="no" remove="no" raise="no">
         <type>System.Action&lt; int &gt;</type>
@@ -17,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="20" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="20" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="35" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="35" bodyend="-1"/>
       </memberdef>
       <memberdef kind="event" id="d7/d32/class_uniform_server_1_1_base_server_1a440a854a955ab7c5e563918c12e9b32c" prot="public" static="yes" add="no" remove="no" raise="no">
         <type>System.Action&lt; int &gt;</type>
@@ -30,7 +31,94 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="26" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="26" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1a632ed557976f4d7bd9b41502bb9a262b" prot="public" static="yes" mutable="no">
+        <type>bool</type>
+        <definition>bool UniformServer.BaseServer.appTerminated</definition>
+        <argsstring></argsstring>
+        <name>appTerminated</name>
+        <briefdescription>
+<para>If true then will stop main loop. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="66" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="d7/d32/class_uniform_server_1_1_base_server_1a31cc7d436bb2dd344ec275fd0fa0061e" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>int</type>
+        <definition>int UniformServer.BaseServer.ThreadsCount</definition>
+        <argsstring></argsstring>
+        <name>ThreadsCount</name>
+        <briefdescription>
+<para>Count of threads that will started on server. Changing during fly permited and safely. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="72" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="73" bodyend="114"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1a4dbe04636a763decfae22ddb2fe26c7a" prot="protected" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int UniformServer.BaseServer.threadSleepTime</definition>
+        <argsstring></argsstring>
+        <name>threadSleepTime</name>
+        <initializer>= 150</initializer>
+        <briefdescription>
+<para>How many milisseconds will sleep thread after tick. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="120" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="120" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1aa40c02a1eec7eda4c36a8ac08119b414" prot="protected" static="yes" mutable="no">
+        <type>int</type>
+        <definition>int UniformServer.BaseServer.threadsCount</definition>
+        <argsstring></argsstring>
+        <name>threadsCount</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Count of threads. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="125" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="125" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1a9c14e919da0c2b9b7f8e57a92c9b0742" prot="protected" static="yes" mutable="no">
+        <type><ref refid="d7/d32/class_uniform_server_1_1_base_server" kindref="compound">BaseServer</ref> []</type>
+        <definition>BaseServer [] UniformServer.BaseServer.longTermServerThreads</definition>
+        <argsstring></argsstring>
+        <name>longTermServerThreads</name>
+        <briefdescription>
+<para>Threads that contai servers. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="130" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="130" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1a051bdce3aec037df76d8efe3b9938198" prot="protected" static="yes" mutable="no">
+        <type>Mutex</type>
+        <definition>Mutex UniformServer.BaseServer.mutexObj</definition>
+        <argsstring></argsstring>
+        <name>mutexObj</name>
+        <initializer>= new Mutex()</initializer>
+        <briefdescription>
+<para>Object that allow to detect processes conflict. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="145" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="145" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -46,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="50" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="50" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="135" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="135" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1a494087cabc03c54c3dc0ac1cc1048860" prot="protected" static="no" mutable="no">
         <type>const int</type>
@@ -60,94 +148,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="55" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="55" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="protected-static-attrib">
-      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1a051bdce3aec037df76d8efe3b9938198" prot="protected" static="yes" mutable="no">
-        <type>Mutex</type>
-        <definition>Mutex UniformServer.BaseServer.mutexObj</definition>
-        <argsstring></argsstring>
-        <name>mutexObj</name>
-        <initializer>= new Mutex()</initializer>
-        <briefdescription>
-<para>Object that allow to detect processes conflict. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="60" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="60" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1a4dbe04636a763decfae22ddb2fe26c7a" prot="protected" static="yes" mutable="no">
-        <type>int</type>
-        <definition>int UniformServer.BaseServer.threadSleepTime</definition>
-        <argsstring></argsstring>
-        <name>threadSleepTime</name>
-        <initializer>= 150</initializer>
-        <briefdescription>
-<para>How many milisseconds will sleep thread after tick. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="118" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="118" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1aa40c02a1eec7eda4c36a8ac08119b414" prot="protected" static="yes" mutable="no">
-        <type>int</type>
-        <definition>int UniformServer.BaseServer.threadsCount</definition>
-        <argsstring></argsstring>
-        <name>threadsCount</name>
-        <initializer>= 1</initializer>
-        <briefdescription>
-<para>Count of threads. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="123" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="123" bodyend="-1"/>
-      </memberdef>
-      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1a3b4049daf3614587c02fb4f1fab870a6" prot="protected" static="yes" mutable="no">
-        <type><ref refid="d7/d32/class_uniform_server_1_1_base_server" kindref="compound">BaseServer</ref> []</type>
-        <definition>BaseServer [] UniformServer.BaseServer.serverThreads</definition>
-        <argsstring></argsstring>
-        <name>serverThreads</name>
-        <briefdescription>
-<para>Threads that contai servers. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="128" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="128" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-static-attrib">
-      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1a632ed557976f4d7bd9b41502bb9a262b" prot="public" static="yes" mutable="no">
-        <type>bool</type>
-        <definition>bool UniformServer.BaseServer.appTerminated</definition>
-        <argsstring></argsstring>
-        <name>appTerminated</name>
-        <briefdescription>
-<para>If true then will stop main loop. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="65" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="65" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="property">
-      <memberdef kind="property" id="d7/d32/class_uniform_server_1_1_base_server_1a31cc7d436bb2dd344ec275fd0fa0061e" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
-        <type>int</type>
-        <definition>int UniformServer.BaseServer.ThreadsCount</definition>
-        <argsstring></argsstring>
-        <name>ThreadsCount</name>
-        <briefdescription>
-<para>Count of threads that will started on server. Changing during fly permited and safely. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="71" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="72" bodyend="113"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="140" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="140" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -162,7 +163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="135" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="135" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="152" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="152" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1aaa318b3ed503dd8ccf381c9f3a81ecf2" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -175,7 +176,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="140" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="140" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="157" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="157" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -214,7 +215,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="38" column="1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="53" column="1"/>
       </memberdef>
       <memberdef kind="function" id="d7/d32/class_uniform_server_1_1_base_server_1a1b7d5587de4974fad2ec366a571791e0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>IntPtr</type>
@@ -228,11 +229,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="45" column="1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="60" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="d7/d32/class_uniform_server_1_1_base_server_1a27e52ba4c6bc40a47795085a7e3d03cd" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+      <memberdef kind="function" id="d7/d32/class_uniform_server_1_1_base_server_1aa4a1412b217944e7f8d6ccae6ac68289" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Thread</type>
-        <definition>virtual Thread UniformServer.BaseServer.StartServerThread</definition>
+        <definition>Thread UniformServer.BaseServer.StartServerThread</definition>
         <argsstring>(string threadName, object sharebleParam, ParameterizedThreadStart serverLoop)</argsstring>
         <name>StartServerThread</name>
         <param>
@@ -269,7 +270,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="221" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="221" bodyend="233"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="303" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="303" bodyend="315"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-static-func">
@@ -296,7 +297,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="147" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="147" bodyend="172"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="164" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="164" bodyend="189"/>
       </memberdef>
       <memberdef kind="function" id="d7/d32/class_uniform_server_1_1_base_server_1a992660752da60019c348e18226a87bf2" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -321,7 +322,87 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="178" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="178" bodyend="213"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="195" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="195" bodyend="230"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d32/class_uniform_server_1_1_base_server_1a6f6857c6f0644118294fa56c92f00e5c" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void UniformServer.BaseServer.ThreadingServerLoop_Answer</definition>
+        <argsstring>(object server)</argsstring>
+        <name>ThreadingServerLoop_Answer</name>
+        <param>
+          <type>object</type>
+          <declname>server</declname>
+        </param>
+        <briefdescription>
+<para>Main loop that control monitor thread. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="320" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="320" bodyend="337"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d32/class_uniform_server_1_1_base_server_1a9e42ffc373c7fa23f401957251b0943d" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void UniformServer.BaseServer.ThreadingServerLoop_OpenChanel</definition>
+        <argsstring>(object server)</argsstring>
+        <name>ThreadingServerLoop_OpenChanel</name>
+        <param>
+          <type>object</type>
+          <declname>server</declname>
+        </param>
+        <briefdescription>
+<para>Main loop that control pipe chanel that will recive clients. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="342" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="342" bodyend="360"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d7/d32/class_uniform_server_1_1_base_server_1aa85e82df10ecec8324e2ccf7611d8cbf" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool UniformServer.BaseServer.SendAnswer</definition>
+        <argsstring>(string answer, UniformQueries.QueryPart[] entryQueryParts)</argsstring>
+        <name>SendAnswer</name>
+        <param>
+          <type>string</type>
+          <declname>answer</declname>
+        </param>
+        <param>
+          <type><ref refid="d5/d61/struct_uniform_queries_1_1_query_part" kindref="compound">UniformQueries.QueryPart</ref> []</type>
+          <declname>entryQueryParts</declname>
+        </param>
+        <briefdescription>
+<para>Open server line that will send answer backward to cliend by dirrect line. Line will established relative to the data shared by client query. </para>        </briefdescription>
+        <detaileddescription>
+<para>Using this method you frovide uniform revers connection and not need to create a transmission line by yourself.</para><para>Recommended to use this methos by default dor duplex connection between sever and clients. </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>server</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Instance of server that will provide multithreading implementation.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>answer</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Message that will sent by server to target client.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>entryQueryParts</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Parts of query that was recived from client. Method will detect core part and establish backward connection.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="247" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="247" bodyend="293"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -329,52 +410,61 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="73">
+      <node id="74">
         <label>UniformServer.BaseServer</label>
         <link refid="d7/d32/class_uniform_server_1_1_base_server"/>
       </node>
-      <node id="76">
+      <node id="77">
         <label>THB_Data_Server.Server</label>
         <link refid="dc/d42/class_t_h_b___data___server_1_1_server"/>
-        <childnode refid="73" relation="public-inheritance">
+        <childnode refid="74" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>UniformServer.SimpleServer</label>
+        <link refid="dc/d09/class_uniform_server_1_1_simple_server"/>
+        <childnode refid="74" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="76">
+        <label>SessionProvider.Server</label>
+        <link refid="d8/d17/class_session_provider_1_1_server"/>
+        <childnode refid="74" relation="public-inheritance">
         </childnode>
       </node>
       <node id="75">
-        <label>SessionProvider.Server</label>
-        <link refid="d8/d17/class_session_provider_1_1_server"/>
-        <childnode refid="73" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="74">
         <label>QueriesServer.Server</label>
         <link refid="d2/d9a/class_queries_server_1_1_server"/>
-        <childnode refid="73" relation="public-inheritance">
+        <childnode refid="74" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="77">
+      <node id="79">
         <label>UniformServer.BaseServer</label>
         <link refid="d7/d32/class_uniform_server_1_1_base_server"/>
-        <childnode refid="77" relation="usage">
-          <edgelabel>serverThreads</edgelabel>
+        <childnode refid="79" relation="usage">
+          <edgelabel>longTermServerThreads</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/UniformServer/BaseServer.cs" line="14" column="1" bodyfile="D:/Work/Tools/UniformServer/BaseServer.cs" bodystart="13" bodyend="234"/>
+    <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="28" bodyend="362"/>
     <listofallmembers>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a632ed557976f4d7bd9b41502bb9a262b" prot="public" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>appTerminated</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a992660752da60019c348e18226a87bf2" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>ArgsReactor</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a1b7d5587de4974fad2ec366a571791e0" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>GetConsoleWindow</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a22b92ad517cd1003fe4fe3c86d857169" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>LoadAssemblies</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a9c14e919da0c2b9b7f8e57a92c9b0742" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>longTermServerThreads</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a051bdce3aec037df76d8efe3b9938198" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>mutexObj</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1aaa318b3ed503dd8ccf381c9f3a81ecf2" prot="public" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>pipeName</name></member>
-      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a3b4049daf3614587c02fb4f1fab870a6" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>serverThreads</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1aa85e82df10ecec8324e2ccf7611d8cbf" prot="public" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>SendAnswer</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a16cf4f4f9de9d6d6586631640d3d867b" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>ShowWindow</name></member>
-      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a27e52ba4c6bc40a47795085a7e3d03cd" prot="protected" virt="virtual"><scope>UniformServer::BaseServer</scope><name>StartServerThread</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1aa4a1412b217944e7f8d6ccae6ac68289" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>StartServerThread</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1aaff91507b262d2a1b9021caa2d01640f" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>SW_HIDE</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a494087cabc03c54c3dc0ac1cc1048860" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>SW_SHOW</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a52485a2d70e615a5cbf720c952a8d62f" prot="public" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>thread</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a6f6857c6f0644118294fa56c92f00e5c" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>ThreadingServerLoop_Answer</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a9e42ffc373c7fa23f401957251b0943d" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>ThreadingServerLoop_OpenChanel</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1aa40c02a1eec7eda4c36a8ac08119b414" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>threadsCount</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a31cc7d436bb2dd344ec275fd0fa0061e" prot="public" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>ThreadsCount</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a4dbe04636a763decfae22ddb2fe26c7a" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>threadSleepTime</name></member>

@@ -19,32 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TestClient/Client.cs" line="14" column="1" bodyfile="D:/Work/Tools/TestClient/Client.cs" bodystart="14" bodyend="71"/>
-      </memberdef>
-      <memberdef kind="function" id="d6/dac/class_test_client_1_1_client_1adae80a1bd43e9e383c52ebb6390f2507" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>static void TestClient.Client.UniformQueryPOSTProcessor</definition>
-        <argsstring>(object sharedObject)</argsstring>
-        <name>UniformQueryPOSTProcessor</name>
-        <param>
-          <type>object</type>
-          <declname>sharedObject</declname>
-        </param>
-        <briefdescription>
-<para>Query processor that send last dequeued query to server when connection will be established. </para>        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>lineProcessor</parametername>
-</parameternamelist>
-<parameterdescription>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/Tools/TestClient/Client.cs" line="77" column="1" bodyfile="D:/Work/Tools/TestClient/Client.cs" bodystart="77" bodyend="115"/>
+        <location file="D:/Work/GitHub/datum-point/TestClient/Client.cs" line="28" column="1" bodyfile="D:/Work/GitHub/datum-point/TestClient/Client.cs" bodystart="28" bodyend="99"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -52,18 +27,6 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="105">
-        <label>UniformClient::BaseClient</label>
-        <link refid="d4/deb/class_uniform_client_1_1_base_client"/>
-      </node>
-      <node id="104">
-        <label>TestClient.Client</label>
-        <link refid="d6/dac/class_test_client_1_1_client"/>
-        <childnode refid="105" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="107">
         <label>UniformClient::BaseClient</label>
         <link refid="d4/deb/class_uniform_client_1_1_base_client"/>
@@ -74,8 +37,20 @@
         <childnode refid="107" relation="public-inheritance">
         </childnode>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="109">
+        <label>UniformClient::BaseClient</label>
+        <link refid="d4/deb/class_uniform_client_1_1_base_client"/>
+      </node>
+      <node id="108">
+        <label>TestClient.Client</label>
+        <link refid="d6/dac/class_test_client_1_1_client"/>
+        <childnode refid="109" relation="public-inheritance">
+        </childnode>
+      </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/TestClient/Client.cs" line="13" column="1" bodyfile="D:/Work/Tools/TestClient/Client.cs" bodystart="12" bodyend="116"/>
+    <location file="D:/Work/GitHub/datum-point/TestClient/Client.cs" line="27" column="1" bodyfile="D:/Work/GitHub/datum-point/TestClient/Client.cs" bodystart="26" bodyend="157"/>
     <listofallmembers>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a1c02c6bb48c54e59c2581fe8097a4052" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>appTerminated</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a7ec48981cf3e7ec10d2cb7dff81f912a" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>ArgsReactor</name></member>
@@ -84,14 +59,16 @@
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a99ae0bb1dd5bef374fcedb3f873bfe8b" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>LoadPluginsCollection</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1aa60dbfa5bd8c46659aec7738193315f1" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>LoadPluginsEnumerable</name></member>
       <member refid="d6/dac/class_test_client_1_1_client_1a236c6c2776f2ec6851c36a8714ef6e03" prot="private" virt="non-virtual"><scope>TestClient::Client</scope><name>Main</name></member>
-      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a3b09387a94e46bf9365ee603202ba488" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>OpenTransmissionLine</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a9c59b23626ff132aa96630654d7bc410" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>OpenTransmissionLine</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a06d3340dd02ec4abfe9cf55bc1db0f03" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>ReciveAnswer</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a47b6d88848854c59fafefeeae3956699" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>ShowWindow</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a194b46bb0e889d07cade81c0aeab7cea" prot="protected" virt="virtual"><scope>TestClient::Client</scope><name>StartClientThread</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a6060f2eb1d44ec518f2dfc99c8b4f7aa" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>SW_HIDE</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a7545b9c72eef6cb7594a7001d3f558e4" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>SW_SHOW</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a458271823ca5e21612c0947e1db695a0" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>thread</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a2c4762c1be5eac42b8b5d189530d0952" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>threadSleepTime</name></member>
-      <member refid="d6/dac/class_test_client_1_1_client_1adae80a1bd43e9e383c52ebb6390f2507" prot="private" virt="non-virtual"><scope>TestClient::Client</scope><name>UniformQueryPOSTProcessor</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1acd2e71dcb27e97f900f887233e6b8f9c" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>UniformQueryPostHandler</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1af7a3c613846c8595431272c4c9d531f3" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>UniformServerAnswerHandler</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

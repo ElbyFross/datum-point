@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_9c42ab6387923225329908d66b466c1f" kind="dir">
-    <compoundname>D:/Work/Tools/TestClient</compoundname>
-    <innerdir refid="dir_f4b8102414f518c88722cf7e80ff8428">D:/Work/Tools/TestClient/Properties</innerdir>
+    <compoundname>D:/Work/GitHub/datum-point/TestClient</compoundname>
+    <innerdir refid="dir_f4b8102414f518c88722cf7e80ff8428">D:/Work/GitHub/datum-point/TestClient/Properties</innerdir>
     <innerfile refid="d1/db6/_test_client_2_client_8cs">Client.cs</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/Tools/TestClient/"/>
+    <location file="D:/Work/GitHub/datum-point/TestClient/"/>
   </compounddef>
 </doxygen>

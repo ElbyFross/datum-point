@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d4/d3e/class_uniform_client_1_1_simple_client" kind="class" language="C#" prot="public">
+    <compoundname>UniformClient::SimpleClient</compoundname>
+    <basecompoundref refid="d4/deb/class_uniform_client_1_1_base_client" prot="public" virt="non-virtual">UniformClient.BaseClient</basecompoundref>
+    <briefdescription>
+<para>Client that allow instiniate <ref refid="d4/deb/class_uniform_client_1_1_base_client" kindref="compound">BaseClient</ref>. Not contain any additive methods. </para>    </briefdescription>
+    <detaileddescription>
+<para>Case of using - simple transmition line that not require complex responce. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="338">
+        <label>BaseClient</label>
+        <link refid="d4/deb/class_uniform_client_1_1_base_client"/>
+      </node>
+      <node id="337">
+        <label>UniformClient.SimpleClient</label>
+        <link refid="d4/d3e/class_uniform_client_1_1_simple_client"/>
+        <childnode refid="338" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="340">
+        <label>BaseClient</label>
+        <link refid="d4/deb/class_uniform_client_1_1_base_client"/>
+      </node>
+      <node id="339">
+        <label>UniformClient.SimpleClient</label>
+        <link refid="d4/d3e/class_uniform_client_1_1_simple_client"/>
+        <childnode refid="340" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/GitHub/datum-point/UniformClient/SimpleClient.cs" line="28" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/SimpleClient.cs" bodystart="27" bodyend="29"/>
+    <listofallmembers>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a1c02c6bb48c54e59c2581fe8097a4052" prot="public" virt="non-virtual"><scope>UniformClient::SimpleClient</scope><name>appTerminated</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a7ec48981cf3e7ec10d2cb7dff81f912a" prot="protected" virt="non-virtual"><scope>UniformClient::SimpleClient</scope><name>ArgsReactor</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1aafcfed25b79baed0db4448f2e30f2aa2" prot="protected" virt="non-virtual"><scope>UniformClient::SimpleClient</scope><name>GetConsoleWindow</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a8abbd1d46cc50556eeae8bbd55ce680f" prot="protected" virt="non-virtual"><scope>UniformClient::SimpleClient</scope><name>LoadAssemblies</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a99ae0bb1dd5bef374fcedb3f873bfe8b" prot="public" virt="non-virtual"><scope>UniformClient::SimpleClient</scope><name>LoadPluginsCollection</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1aa60dbfa5bd8c46659aec7738193315f1" prot="public" virt="non-virtual"><scope>UniformClient::SimpleClient</scope><name>LoadPluginsEnumerable</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a9c59b23626ff132aa96630654d7bc410" prot="public" virt="non-virtual"><scope>UniformClient::SimpleClient</scope><name>OpenTransmissionLine</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a06d3340dd02ec4abfe9cf55bc1db0f03" prot="public" virt="non-virtual"><scope>UniformClient::SimpleClient</scope><name>ReciveAnswer</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a47b6d88848854c59fafefeeae3956699" prot="protected" virt="non-virtual"><scope>UniformClient::SimpleClient</scope><name>ShowWindow</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a194b46bb0e889d07cade81c0aeab7cea" prot="protected" virt="virtual"><scope>UniformClient::SimpleClient</scope><name>StartClientThread</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a6060f2eb1d44ec518f2dfc99c8b4f7aa" prot="protected" virt="non-virtual"><scope>UniformClient::SimpleClient</scope><name>SW_HIDE</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a7545b9c72eef6cb7594a7001d3f558e4" prot="protected" virt="non-virtual"><scope>UniformClient::SimpleClient</scope><name>SW_SHOW</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a458271823ca5e21612c0947e1db695a0" prot="public" virt="non-virtual"><scope>UniformClient::SimpleClient</scope><name>thread</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a2c4762c1be5eac42b8b5d189530d0952" prot="protected" virt="non-virtual"><scope>UniformClient::SimpleClient</scope><name>threadSleepTime</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1acd2e71dcb27e97f900f887233e6b8f9c" prot="public" virt="non-virtual"><scope>UniformClient::SimpleClient</scope><name>UniformQueryPostHandler</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1af7a3c613846c8595431272c4c9d531f3" prot="public" virt="non-virtual"><scope>UniformClient::SimpleClient</scope><name>UniformServerAnswerHandler</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_010748947a0fa5f093ca1ae5d122ebb1" kind="dir">
-    <compoundname>D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic</compoundname>
+    <compoundname>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic</compoundname>
     <innerfile refid="d3/d7b/_debug_2_personal_statistic_2_personal_statistic_8g_8cs">PersonalStatistic.g.cs</innerfile>
     <innerfile refid="d4/d36/_debug_2_personal_statistic_2_personal_statistic_8g_8i_8cs">PersonalStatistic.g.i.cs</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/Tools/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic/"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic/"/>
   </compounddef>
 </doxygen>

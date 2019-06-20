@@ -14,7 +14,7 @@ var namespaces_dup =
     [ "THB_Plugin_Social", "d3/d12/namespace_t_h_b___plugin___social.html", "d3/d12/namespace_t_h_b___plugin___social" ],
     [ "UniformClient", "d0/d51/namespace_uniform_client.html", "d0/d51/namespace_uniform_client" ],
     [ "UniformQueries", "d4/daa/namespace_uniform_queries.html", null ],
-    [ "UniformServer", "d8/d5b/namespace_uniform_server.html", null ],
+    [ "UniformServer", "d8/d5b/namespace_uniform_server.html", "d8/d5b/namespace_uniform_server" ],
     [ "WpfHandler", "da/d93/namespace_wpf_handler.html", "da/d93/namespace_wpf_handler" ],
     [ "XamlGeneratedNamespace", "d7/de3/namespace_xaml_generated_namespace.html", null ]
 ];

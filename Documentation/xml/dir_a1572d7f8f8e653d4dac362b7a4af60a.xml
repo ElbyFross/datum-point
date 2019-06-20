@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_a1572d7f8f8e653d4dac362b7a4af60a" kind="dir">
-    <compoundname>D:/Work/Tools/THB Data Types/Core/Orders</compoundname>
+    <compoundname>D:/Work/GitHub/datum-point/THB Data Types/Core/Orders</compoundname>
     <innerfile refid="df/dba/_base_order_8cs">BaseOrder.cs</innerfile>
     <innerfile refid="df/da4/_i_order_8cs">IOrder.cs</innerfile>
     <innerfile refid="d7/d66/_mentoring_order_8cs">MentoringOrder.cs</innerfile>
@@ -10,6 +10,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/Tools/THB Data Types/Core/Orders/"/>
+    <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/"/>
   </compounddef>
 </doxygen>

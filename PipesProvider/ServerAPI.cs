@@ -595,6 +595,7 @@ namespace PipesProvider
         {
             // Open stream reader.
             StreamWriter sw = new StreamWriter(meta.pipe);
+            //StreamWriter sw = new StreamWriter(meta.pipe, Encoding.UTF8, 128, true);
 
             // Buferise query before calling of async operations.
             string sharedQuery = meta.ProcessingQuery;
@@ -605,9 +606,7 @@ namespace PipesProvider
             {
                 // Write message to stream.
                 await sw.WriteAsync(sharedQuery);
-
-                // Log
-                Console.WriteLine("SERVER ANSWER SHARED (StC0): {0}", sharedQuery);
+                sw.Flush();
             }
             // Catch the Exception that is raised if the pipe is broken or disconnected.
             catch (Exception e)

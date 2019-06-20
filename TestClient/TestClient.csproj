@@ -66,6 +66,10 @@
       <Project>{36a2c9b2-15b0-429c-b5c2-489a80bd4926}</Project>
       <Name>UniformClient</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UniformQueries\UniformQueries.csproj">
+      <Project>{b68e2d79-1e9b-436e-899c-930bf945b003}</Project>
+      <Name>UniformQueries</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
