@@ -64,6 +64,6 @@
 <codeline lineno="54"><highlight class="normal">[assembly:<sp/>AssemblyVersion(</highlight><highlight class="stringliteral">&quot;1.0.0.0&quot;</highlight><highlight class="normal">)]</highlight></codeline>
 <codeline lineno="55"><highlight class="normal">[assembly:<sp/>AssemblyFileVersion(</highlight><highlight class="stringliteral">&quot;1.0.0.0&quot;</highlight><highlight class="normal">)]</highlight></codeline>
     </programlisting>
-    <location file="D:/Work/Tools/Plugins/THB Plugin Exams/Properties/AssemblyInfo.cs"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/Properties/AssemblyInfo.cs"/>
   </compounddef>
 </doxygen>

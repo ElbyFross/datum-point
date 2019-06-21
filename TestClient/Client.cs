@@ -23,10 +23,27 @@ using System.IO.Pipes;
 
 namespace TestClient
 {
+    /// <summary>
+    /// Provide example of client-server transmission.
+    /// Demostrate ways to use API.
+    /// Provide tools for simple tests of local server.
+    /// </summary>
     class Client : UniformClient.BaseClient
     {
+        /// <summary>
+        /// Server that will be used as target for this client.
+        /// </summary>
+        public static string SERVER_NAME = "."; // Dot queal to local.
+
+        /// <summary>
+        /// Pipe that will be used to queries of this client.
+        /// </summary>
+        public static string SERVER_PIPE_NAME = "THB_DS_QM_MAIN_INOUT"; // Pipe openned at server that will recive out queries.
+
+
         static void Main(string[] args)
         {
+            #region Init
             // React on uniform arguments.
             ArgsReactor(args);
 
@@ -34,21 +51,19 @@ namespace TestClient
             LoadAssemblies(AppDomain.CurrentDomain.BaseDirectory + "libs\\");
 
             Console.WriteLine("Preparetion finished. Client strated.");
+            #endregion
 
-            // Create transmission line.
-            PipesProvider.TransmissionLine lineProcessor = OpenTransmissionLine(
-                new Client(),
-                "DataServer #0",
-                ".", "THB_DS_QM_MAIN_INOUT",
-                UniformQueryPOSTProcessor
-                );
+            // Usew short wway to send one way query.
+            OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME).EnqueueQuery("ECHO");
 
-            // Sent test message.
-            lineProcessor.EnqueueQuery("guid=WelomeGUID&token=InvelidToken&q=Get&sq=publickey");
+            // Send sample one way query to server with every step description.
+            SendOneWayQuery("ECHO");
 
-            Thread.Sleep(150);
+            // Get public key for RSA encoding from target server.
+            RequestPublicRSAKey();
 
-            while(true)
+            #region Main loop
+            while (true)
             {
                 if (Console.KeyAvailable)
                 {
@@ -67,65 +82,65 @@ namespace TestClient
                         {
                             for (int i = 1; i < repeaterRequest + 1; i++)
                             {
-                                lineProcessor.EnqueueQuery("ECHO" + i + "/" + repeaterRequest);
+                                SendOneWayQuery("ECHO" + i + "/" + repeaterRequest);
                             }
                         }
                         // Share custom query.
-                        else lineProcessor.EnqueueQuery(tmp);
+                        else SendOneWayQuery(tmp);
                     }
                 }
             }
+            #endregion
 
-            // Close line. Withot this thread will be hanged.
-            lineProcessor.Close();
+            // Close all active lines. Without this operation thread will be hanged.
+            PipesProvider.API.CloseAllTransmissionLines();
 
             // Whait until close.
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
 
-        /// <summary>
-        /// Query processor that send last dequeued query to server when connection will be established.
-        /// </summary>
-        /// <param name="lineProcessor"></param>
-        static void UniformQueryPOSTProcessor(object sharedObject)
+
+        #region Queries
+        static void SendOneWayQuery(string query)
         {
-            // Drop as invalid in case of incorrect transmitted data.
-            if (!(sharedObject is PipesProvider.TransmissionLine lineProcessor))
-            {
-                Console.WriteLine("TRANSMISSION ERROR (UQPP0): INCORRECT TRANSFERD DATA TYPE. PERMITED ONLY \"LineProcessor\"");
-                return;
-            }
+            // Create transmission line.
+            PipesProvider.TransmissionLine lineProcessor = OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME);
 
-            // Open stream reader.
-            StreamWriter sw = new StreamWriter(lineProcessor.pipeClient);
-            try
-            {
-                sw.WriteLine(lineProcessor.LastQuery);
-                sw.Flush();
-                Console.WriteLine("TRANSMITED: {0}", lineProcessor.LastQuery);
-                //sw.Close();
-            }
-            // Catch the Exception that is raised if the pipe is broken or disconnected.
-            catch (Exception e)
-            {
-                Console.WriteLine("DNS HANDLER ERROR ({1}): {0}", e.Message, lineProcessor.pipeClient.GetHashCode());
-
-                // Retry transmission.
-                lineProcessor.EnqueueQuery(lineProcessor.LastQuery);
-            }
-
-            // If requested data in answer.
-            if(lineProcessor.LastQuery.StartsWith("GET", StringComparison.OrdinalIgnoreCase))
-            {
-                // Create answer reciving line.
-                PipesProvider.TransmissionLine reciveAnswer = OpenTransmissionLine(
-                    new Client(),
-                    "DataServer #0 a" + lineProcessor.LastQuery.Split(' '),
-                    ".", "THB_DS_QM_MAIN_INOUT",
-                    UniformQueryPOSTProcessor
-                    );
-            }
+            // Add sample query to queue. You can use this way if you not need answer from server.
+            lineProcessor.EnqueueQuery(query);
         }
+
+        static void RequestPublicRSAKey()
+        {
+            // Create query that request public RSA key of the server. 
+            //This will allow to us encrypt queries and shared data befor transmission in future.
+            //
+            // Format: param=value&param=value&...
+            // "guid", "token" and "q" (query) required.
+            //
+            // Param "pk" (public key (RSA)) will provide possibility to encrypt of answer on the server side.
+            //
+            // Using a UniformQueries.API.SPLITTING_SYMBOL to get a valid splitter between your query parts.
+            string GetPKQuery = string.Format("guid=WelomeGUID{0}token=InvalidToken{0}q=Get{0}sq=publickey", UniformQueries.API.SPLITTING_SYMBOL);
+
+            // Open duplex chanel. First line processor will send query to server and after that will listen to its andwer.
+            // When answer will recived it will redirected to callback.
+            EnqueueDuplexQuery(SERVER_NAME, SERVER_PIPE_NAME, GetPKQuery, ServerAnswerHandler_RSAPublicKey);
+
+            // Let the time to transmission line to qompleet the query.
+            Thread.Sleep(150);
+        }
+        #endregion
+
+
+        #region Server's answer callbacks
+        // Create delegate that will recive and procced the server's answer.
+        static void ServerAnswerHandler_RSAPublicKey(PipesProvider.TransmissionLine tl, object message)
+        {
+            string messageS = message as string;
+            Console.WriteLine("RSA Public Key recived:\n" + (messageS ?? "Message is null"));
+        }
+        #endregion
     }
 }

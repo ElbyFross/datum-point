@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_b1db848416afa29287c20bd37e2c3d2a" kind="dir">
-    <compoundname>D:/Work/Tools/TeacherHandbook/obj</compoundname>
-    <innerdir refid="dir_007c9a3ec5c2060f1503ab1708596658">D:/Work/Tools/TeacherHandbook/obj/Debug</innerdir>
-    <innerdir refid="dir_bedb1d38554d05f78369ecb94ef6de2a">D:/Work/Tools/TeacherHandbook/obj/Release</innerdir>
+    <compoundname>D:/Work/GitHub/datum-point/TeacherHandbook/obj</compoundname>
+    <innerdir refid="dir_007c9a3ec5c2060f1503ab1708596658">D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug</innerdir>
+    <innerdir refid="dir_bedb1d38554d05f78369ecb94ef6de2a">D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release</innerdir>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/Tools/TeacherHandbook/obj/"/>
+    <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/"/>
   </compounddef>
 </doxygen>

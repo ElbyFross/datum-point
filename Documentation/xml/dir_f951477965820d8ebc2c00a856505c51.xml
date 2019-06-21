@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_f951477965820d8ebc2c00a856505c51" kind="dir">
-    <compoundname>D:/Work/Tools/TeacherHandbook/Controls</compoundname>
+    <compoundname>D:/Work/GitHub/datum-point/TeacherHandbook/Controls</compoundname>
     <innerfile refid="dd/d6d/_catalog_button_8xaml_8cs">CatalogButton.xaml.cs</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/Tools/TeacherHandbook/Controls/"/>
+    <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Controls/"/>
   </compounddef>
 </doxygen>

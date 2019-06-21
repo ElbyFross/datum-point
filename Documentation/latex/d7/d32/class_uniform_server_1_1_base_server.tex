@@ -8,9 +8,14 @@ Class that provide base server features and envirounment static A\+PI.
 Inheritance diagram for Uniform\+Server.\+Base\+Server\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[height=2.000000cm]{d7/d32/class_uniform_server_1_1_base_server}
+\includegraphics[height=1.538461cm]{d7/d32/class_uniform_server_1_1_base_server}
 \end{center}
 \end{figure}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \mbox{\hyperlink{class_uniform_server_1_1_base_server_aa85e82df10ecec8324e2ccf7611d8cbf}{Send\+Answer}} (string answer, \mbox{\hyperlink{struct_uniform_queries_1_1_query_part}{Uniform\+Queries.\+Query\+Part}}\mbox{[}$\,$\mbox{]} entry\+Query\+Parts)
+\begin{DoxyCompactList}\small\item\em Open server line that will send answer backward to cliend by dirrect line. Line will established relative to the data shared by client query. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -30,7 +35,7 @@ static bool \mbox{\hyperlink{class_uniform_server_1_1_base_server_a16cf4f4f9de9d
 \begin{DoxyCompactList}\small\item\em Imported method that allo to controll console window state. \end{DoxyCompactList}\item 
 static Int\+Ptr \mbox{\hyperlink{class_uniform_server_1_1_base_server_a1b7d5587de4974fad2ec366a571791e0}{Get\+Console\+Window}} ()
 \begin{DoxyCompactList}\small\item\em Inported method that allow acces to console window. \end{DoxyCompactList}\item 
-virtual Thread \mbox{\hyperlink{class_uniform_server_1_1_base_server_a27e52ba4c6bc40a47795085a7e3d03cd}{Start\+Server\+Thread}} (string thread\+Name, object shareble\+Param, Parameterized\+Thread\+Start server\+Loop)
+Thread \mbox{\hyperlink{class_uniform_server_1_1_base_server_aa4a1412b217944e7f8d6ccae6ac68289}{Start\+Server\+Thread}} (string thread\+Name, object shareble\+Param, Parameterized\+Thread\+Start server\+Loop)
 \begin{DoxyCompactList}\small\item\em Method that starting server thread. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -38,7 +43,11 @@ virtual Thread \mbox{\hyperlink{class_uniform_server_1_1_base_server_a27e52ba4c6
 static void \mbox{\hyperlink{class_uniform_server_1_1_base_server_a22b92ad517cd1003fe4fe3c86d857169}{Load\+Assemblies}} (string path)
 \begin{DoxyCompactList}\small\item\em Loading assemblies from requested path. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_uniform_server_1_1_base_server_a992660752da60019c348e18226a87bf2}{Args\+Reactor}} (string\mbox{[}$\,$\mbox{]} args)
-\begin{DoxyCompactList}\small\item\em Method that will configurate application and server relative to the uniform arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Method that will configurate application and server relative to the uniform arguments. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_uniform_server_1_1_base_server_a6f6857c6f0644118294fa56c92f00e5c}{Threading\+Server\+Loop\+\_\+\+Answer}} (object server)
+\begin{DoxyCompactList}\small\item\em Main loop that control monitor thread. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_uniform_server_1_1_base_server_a9e42ffc373c7fa23f401957251b0943d}{Threading\+Server\+Loop\+\_\+\+Open\+Chanel}} (object server)
+\begin{DoxyCompactList}\small\item\em Main loop that control pipe chanel that will recive clients. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -49,14 +58,14 @@ const int \mbox{\hyperlink{class_uniform_server_1_1_base_server_a494087cabc03c54
 \subsection*{Static Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static Mutex \mbox{\hyperlink{class_uniform_server_1_1_base_server_a051bdce3aec037df76d8efe3b9938198}{mutex\+Obj}} = new Mutex()
-\begin{DoxyCompactList}\small\item\em Object that allow to detect processes conflict. \end{DoxyCompactList}\item 
 static int \mbox{\hyperlink{class_uniform_server_1_1_base_server_a4dbe04636a763decfae22ddb2fe26c7a}{thread\+Sleep\+Time}} = 150
 \begin{DoxyCompactList}\small\item\em How many milisseconds will sleep thread after tick. \end{DoxyCompactList}\item 
 static int \mbox{\hyperlink{class_uniform_server_1_1_base_server_aa40c02a1eec7eda4c36a8ac08119b414}{threads\+Count}} = 1
 \begin{DoxyCompactList}\small\item\em Count of threads. \end{DoxyCompactList}\item 
-static \mbox{\hyperlink{class_uniform_server_1_1_base_server}{Base\+Server}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_uniform_server_1_1_base_server_a3b4049daf3614587c02fb4f1fab870a6}{server\+Threads}}
-\begin{DoxyCompactList}\small\item\em Threads that contai servers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static \mbox{\hyperlink{class_uniform_server_1_1_base_server}{Base\+Server}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_uniform_server_1_1_base_server_a9c14e919da0c2b9b7f8e57a92c9b0742}{long\+Term\+Server\+Threads}}
+\begin{DoxyCompactList}\small\item\em Threads that contai servers. \end{DoxyCompactList}\item 
+static Mutex \mbox{\hyperlink{class_uniform_server_1_1_base_server_a051bdce3aec037df76d8efe3b9938198}{mutex\+Obj}} = new Mutex()
+\begin{DoxyCompactList}\small\item\em Object that allow to detect processes conflict. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
@@ -120,6 +129,32 @@ Loading assemblies from requested path.
 {\em path} & \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_aa85e82df10ecec8324e2ccf7611d8cbf}\label{class_uniform_server_1_1_base_server_aa85e82df10ecec8324e2ccf7611d8cbf}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!Send\+Answer@{Send\+Answer}}
+\index{Send\+Answer@{Send\+Answer}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{Send\+Answer()}{SendAnswer()}}
+{\footnotesize\ttfamily static bool Uniform\+Server.\+Base\+Server.\+Send\+Answer (\begin{DoxyParamCaption}\item[{string}]{answer,  }\item[{\mbox{\hyperlink{struct_uniform_queries_1_1_query_part}{Uniform\+Queries.\+Query\+Part}} \mbox{[}$\,$\mbox{]}}]{entry\+Query\+Parts }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Open server line that will send answer backward to cliend by dirrect line. Line will established relative to the data shared by client query. 
+
+Using this method you frovide uniform revers connection and not need to create a transmission line by yourself.
+
+Recommended to use this methos by default dor duplex connection between sever and clients. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server} & Instance of server that will provide multithreading implementation.\\
+\hline
+{\em answer} & Message that will sent by server to target client.\\
+\hline
+{\em entry\+Query\+Parts} & Parts of query that was recived from client. Method will detect core part and establish backward connection.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_uniform_server_1_1_base_server_a16cf4f4f9de9d6d6586631640d3d867b}\label{class_uniform_server_1_1_base_server_a16cf4f4f9de9d6d6586631640d3d867b}} 
 \index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!Show\+Window@{Show\+Window}}
 \index{Show\+Window@{Show\+Window}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
@@ -140,11 +175,11 @@ Imported method that allo to controll console window state.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a27e52ba4c6bc40a47795085a7e3d03cd}\label{class_uniform_server_1_1_base_server_a27e52ba4c6bc40a47795085a7e3d03cd}} 
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_aa4a1412b217944e7f8d6ccae6ac68289}\label{class_uniform_server_1_1_base_server_aa4a1412b217944e7f8d6ccae6ac68289}} 
 \index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!Start\+Server\+Thread@{Start\+Server\+Thread}}
 \index{Start\+Server\+Thread@{Start\+Server\+Thread}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
 \subsubsection{\texorpdfstring{Start\+Server\+Thread()}{StartServerThread()}}
-{\footnotesize\ttfamily virtual Thread Uniform\+Server.\+Base\+Server.\+Start\+Server\+Thread (\begin{DoxyParamCaption}\item[{string}]{thread\+Name,  }\item[{object}]{shareble\+Param,  }\item[{Parameterized\+Thread\+Start}]{server\+Loop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily Thread Uniform\+Server.\+Base\+Server.\+Start\+Server\+Thread (\begin{DoxyParamCaption}\item[{string}]{thread\+Name,  }\item[{object}]{shareble\+Param,  }\item[{Parameterized\+Thread\+Start}]{server\+Loop }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -160,6 +195,26 @@ Method that starting server thread.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a6f6857c6f0644118294fa56c92f00e5c}\label{class_uniform_server_1_1_base_server_a6f6857c6f0644118294fa56c92f00e5c}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!Threading\+Server\+Loop\+\_\+\+Answer@{Threading\+Server\+Loop\+\_\+\+Answer}}
+\index{Threading\+Server\+Loop\+\_\+\+Answer@{Threading\+Server\+Loop\+\_\+\+Answer}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{Threading\+Server\+Loop\+\_\+\+Answer()}{ThreadingServerLoop\_Answer()}}
+{\footnotesize\ttfamily static void Uniform\+Server.\+Base\+Server.\+Threading\+Server\+Loop\+\_\+\+Answer (\begin{DoxyParamCaption}\item[{object}]{server }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Main loop that control monitor thread. 
+
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a9e42ffc373c7fa23f401957251b0943d}\label{class_uniform_server_1_1_base_server_a9e42ffc373c7fa23f401957251b0943d}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!Threading\+Server\+Loop\+\_\+\+Open\+Chanel@{Threading\+Server\+Loop\+\_\+\+Open\+Chanel}}
+\index{Threading\+Server\+Loop\+\_\+\+Open\+Chanel@{Threading\+Server\+Loop\+\_\+\+Open\+Chanel}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{Threading\+Server\+Loop\+\_\+\+Open\+Chanel()}{ThreadingServerLoop\_OpenChanel()}}
+{\footnotesize\ttfamily static void Uniform\+Server.\+Base\+Server.\+Threading\+Server\+Loop\+\_\+\+Open\+Chanel (\begin{DoxyParamCaption}\item[{object}]{server }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Main loop that control pipe chanel that will recive clients. 
+
 
 
 \subsection{Member Data Documentation}
@@ -172,6 +227,16 @@ Method that starting server thread.
 
 
 If true then will stop main loop. 
+
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a9c14e919da0c2b9b7f8e57a92c9b0742}\label{class_uniform_server_1_1_base_server_a9c14e919da0c2b9b7f8e57a92c9b0742}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!long\+Term\+Server\+Threads@{long\+Term\+Server\+Threads}}
+\index{long\+Term\+Server\+Threads@{long\+Term\+Server\+Threads}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{long\+Term\+Server\+Threads}{longTermServerThreads}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_uniform_server_1_1_base_server}{Base\+Server}} \mbox{[}$\,$\mbox{]} Uniform\+Server.\+Base\+Server.\+long\+Term\+Server\+Threads\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+Threads that contai servers. 
 
 \mbox{\Hypertarget{class_uniform_server_1_1_base_server_a051bdce3aec037df76d8efe3b9938198}\label{class_uniform_server_1_1_base_server_a051bdce3aec037df76d8efe3b9938198}} 
 \index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!mutex\+Obj@{mutex\+Obj}}
@@ -192,16 +257,6 @@ Object that allow to detect processes conflict.
 
 
 Name that will be applied to the pipe. 
-
-\mbox{\Hypertarget{class_uniform_server_1_1_base_server_a3b4049daf3614587c02fb4f1fab870a6}\label{class_uniform_server_1_1_base_server_a3b4049daf3614587c02fb4f1fab870a6}} 
-\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!server\+Threads@{server\+Threads}}
-\index{server\+Threads@{server\+Threads}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
-\subsubsection{\texorpdfstring{server\+Threads}{serverThreads}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_uniform_server_1_1_base_server}{Base\+Server}} \mbox{[}$\,$\mbox{]} Uniform\+Server.\+Base\+Server.\+server\+Threads\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
-
-
-
-Threads that contai servers. 
 
 \mbox{\Hypertarget{class_uniform_server_1_1_base_server_aaff91507b262d2a1b9021caa2d01640f}\label{class_uniform_server_1_1_base_server_aaff91507b262d2a1b9021caa2d01640f}} 
 \index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!S\+W\+\_\+\+H\+I\+DE@{S\+W\+\_\+\+H\+I\+DE}}
@@ -293,4 +348,4 @@ Event will be called when system will request a thread termination. Argument -\/
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Work/\+Tools/\+Uniform\+Server/Base\+Server.\+cs\end{DoxyCompactItemize}
+D\+:/\+Work/\+Git\+Hub/datum-\/point/\+Uniform\+Server/Base\+Server.\+cs\end{DoxyCompactItemize}

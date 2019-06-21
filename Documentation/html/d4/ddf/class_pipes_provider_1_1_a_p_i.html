@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>THB+ | Network Platform: PipesProvider.API Class Reference</title>
+<title>Datum Point: PipesProvider.API Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -29,8 +29,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">THB+ | Network Platform
-   &#160;<span id="projectnumber">1.0</span>
+   <div id="projectname">Datum Point
+   &#160;<span id="projectnumber">0.1.4</span>
    </div>
   </td>
  </tr>
@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('d4/ddf/class_pipes_provider_1_1_a_p_i.
 <div class="header">
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#events">Events</a> &#124;
 <a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="../../d2/d7d/class_pipes_provider_1_1_a_p_i-members.html">List of all members</a>  </div>
@@ -104,22 +105,38 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aaccf777b3b489b550739dd8adcf4a1d3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#aaccf777b3b489b550739dd8adcf4a1d3">ClientLoop</a> (<a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">TransmissionLine</a> lineProcessor, PipeDirection pipeDirection, PipeOptions pipeOptions)</td></tr>
 <tr class="memdesc:aaccf777b3b489b550739dd8adcf4a1d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide stable client loop controlled by data of LineProcessor.  <a href="#aaccf777b3b489b550739dd8adcf4a1d3">More...</a><br /></td></tr>
 <tr class="separator:aaccf777b3b489b550739dd8adcf4a1d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad57a87e88181644685a947f951b9fe0f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#ad57a87e88181644685a947f951b9fe0f">TryGetLineProcessorByGUID</a> (string guid, out <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">TransmissionLine</a> lineProcessor)</td></tr>
-<tr class="memdesc:ad57a87e88181644685a947f951b9fe0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to find out registred LineProcessor by GUID. If client not strted then return false.  <a href="#ad57a87e88181644685a947f951b9fe0f">More...</a><br /></td></tr>
-<tr class="separator:ad57a87e88181644685a947f951b9fe0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af785a9d8707a831a6b84ac63ae96e755"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#af785a9d8707a831a6b84ac63ae96e755">TryToRegisterLineProcessor</a> (<a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">TransmissionLine</a> lineProcessor)</td></tr>
-<tr class="memdesc:af785a9d8707a831a6b84ac63ae96e755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trying to register line processor in common table by key: ServerName.PipeLine  <a href="#af785a9d8707a831a6b84ac63ae96e755">More...</a><br /></td></tr>
-<tr class="separator:af785a9d8707a831a6b84ac63ae96e755"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abea09e221bfe03713f46b7223c6dd62f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#abea09e221bfe03713f46b7223c6dd62f">ServerLoop</a> (System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>, string &gt; queryHandlerCallback, string pipeName, out string guid)</td></tr>
-<tr class="memdesc:abea09e221bfe03713f46b7223c6dd62f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automaticly create server's pipe.  <a href="#abea09e221bfe03713f46b7223c6dd62f">More...</a><br /></td></tr>
-<tr class="separator:abea09e221bfe03713f46b7223c6dd62f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef65cfb6e72f44adf25b3cf8bc0d8656"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#aef65cfb6e72f44adf25b3cf8bc0d8656">ServerLoop</a> (string guid, System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>, string &gt; queryHandlerCallback, string pipeName)</td></tr>
-<tr class="memdesc:aef65cfb6e72f44adf25b3cf8bc0d8656"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automaticly create server's pipe. Allow to customise GUID.  <a href="#aef65cfb6e72f44adf25b3cf8bc0d8656">More...</a><br /></td></tr>
-<tr class="separator:aef65cfb6e72f44adf25b3cf8bc0d8656"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf7202abca50566888c625b928d0cbaa"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#abf7202abca50566888c625b928d0cbaa">ServerLoop</a> (string guid, System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>, string &gt; queryHandlerCallback, string pipeName, PipeDirection pipeDirection, int allowedServerInstances, PipeTransmissionMode transmissionMode, PipeOptions pipeOptions)</td></tr>
-<tr class="separator:abf7202abca50566888c625b928d0cbaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1abc16273a4b459fdbf63e68c44d11f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#ae1abc16273a4b459fdbf63e68c44d11f">TryGetTransmissionLineByGUID</a> (string guid, out <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">TransmissionLine</a> lineProcessor)</td></tr>
+<tr class="memdesc:ae1abc16273a4b459fdbf63e68c44d11f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to find out registred transmission line by GUID. If client not strted then return false.  <a href="#ae1abc16273a4b459fdbf63e68c44d11f">More...</a><br /></td></tr>
+<tr class="separator:ae1abc16273a4b459fdbf63e68c44d11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39e17f30d2ee8c716efeb92f947fb72e"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#a39e17f30d2ee8c716efeb92f947fb72e">TryToRegisterTransmissionLine</a> (<a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">TransmissionLine</a> lineProcessor)</td></tr>
+<tr class="memdesc:a39e17f30d2ee8c716efeb92f947fb72e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trying to register transmission line in common table by key: ServerName.PipeLine  <a href="#a39e17f30d2ee8c716efeb92f947fb72e">More...</a><br /></td></tr>
+<tr class="separator:a39e17f30d2ee8c716efeb92f947fb72e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0578d8470c97267dd9c6e2126cb69f0"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#ab0578d8470c97267dd9c6e2126cb69f0">TryToUnregisterTransmissionLine</a> (string guid)</td></tr>
+<tr class="memdesc:ab0578d8470c97267dd9c6e2126cb69f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove line from table if this line closed. In other keys this operation not available due to security amd stability purposes.  <a href="#ab0578d8470c97267dd9c6e2126cb69f0">More...</a><br /></td></tr>
+<tr class="separator:ab0578d8470c97267dd9c6e2126cb69f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeca3d6eddfa3446b8e5601ee85461f63"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#aeca3d6eddfa3446b8e5601ee85461f63">CloseAllTransmissionLines</a> ()</td></tr>
+<tr class="memdesc:aeca3d6eddfa3446b8e5601ee85461f63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closing all lines registred in table.  <a href="#aeca3d6eddfa3446b8e5601ee85461f63">More...</a><br /></td></tr>
+<tr class="separator:aeca3d6eddfa3446b8e5601ee85461f63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99feebefadd9a40a3c1fa7175324d950"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#a99feebefadd9a40a3c1fa7175324d950">ClientToServerLoop</a> (System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>, string &gt; queryHandlerCallback, string pipeName, out string guid)</td></tr>
+<tr class="memdesc:a99feebefadd9a40a3c1fa7175324d950"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automaticly create server's pipe that will recive queries from clients.  <a href="#a99feebefadd9a40a3c1fa7175324d950">More...</a><br /></td></tr>
+<tr class="separator:a99feebefadd9a40a3c1fa7175324d950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06ee04a0e80238a176b7b2cac3f6bb4b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#a06ee04a0e80238a176b7b2cac3f6bb4b">ClientToServerLoop</a> (string guid, System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>, string &gt; queryHandlerCallback, string pipeName)</td></tr>
+<tr class="memdesc:a06ee04a0e80238a176b7b2cac3f6bb4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automaticly create server's pipe. Allow to customise GUID.  <a href="#a06ee04a0e80238a176b7b2cac3f6bb4b">More...</a><br /></td></tr>
+<tr class="separator:a06ee04a0e80238a176b7b2cac3f6bb4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a740e60d5cfd04fcc434e05b40910e493"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#a740e60d5cfd04fcc434e05b40910e493">ClientToServerLoop</a> (string guid, System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>, string &gt; queryHandlerCallback, string pipeName, int allowedServerInstances)</td></tr>
+<tr class="memdesc:a740e60d5cfd04fcc434e05b40910e493"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automaticly create server's pipe. Allow to customise GUID.  <a href="#a740e60d5cfd04fcc434e05b40910e493">More...</a><br /></td></tr>
+<tr class="separator:a740e60d5cfd04fcc434e05b40910e493"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eacd5177e24badabe5ac8a3fe30d5d3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#a9eacd5177e24badabe5ac8a3fe30d5d3">ClientToServerLoop</a> (string guid, System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>, string &gt; queryHandlerCallback, string pipeName, PipeDirection pipeDirection, int allowedServerInstances, PipeTransmissionMode transmissionMode, PipeOptions pipeOptions)</td></tr>
+<tr class="memdesc:a9eacd5177e24badabe5ac8a3fe30d5d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server loop  <a href="#a9eacd5177e24badabe5ac8a3fe30d5d3">More...</a><br /></td></tr>
+<tr class="separator:a9eacd5177e24badabe5ac8a3fe30d5d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a793d388ee138476bcea3256146851432"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#a793d388ee138476bcea3256146851432">ServerToClientLoop</a> (string pipeName, out string guid)</td></tr>
+<tr class="memdesc:a793d388ee138476bcea3256146851432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automaticly create server's pipe that will send message to client.  <a href="#a793d388ee138476bcea3256146851432">More...</a><br /></td></tr>
+<tr class="separator:a793d388ee138476bcea3256146851432"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae24aa9b5d3220b373d5689bddc22e924"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#ae24aa9b5d3220b373d5689bddc22e924">ServerToClientLoop</a> (string guid, string pipeName)</td></tr>
+<tr class="memdesc:ae24aa9b5d3220b373d5689bddc22e924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automaticly create server's pipe that will send message to client.  <a href="#ae24aa9b5d3220b373d5689bddc22e924">More...</a><br /></td></tr>
+<tr class="separator:ae24aa9b5d3220b373d5689bddc22e924"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab18891bb1d9c04a9c9144e0d8c89aebf"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#ab18891bb1d9c04a9c9144e0d8c89aebf">ServerLoop</a> (string guid, System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a> &gt; connectionCallback, System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>, string &gt; queryHandlerCallback, string pipeName, PipeDirection pipeDirection, int allowedServerInstances, PipeTransmissionMode transmissionMode, PipeOptions pipeOptions)</td></tr>
-<tr class="memdesc:ab18891bb1d9c04a9c9144e0d8c89aebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide base server loop that control pipe.  <a href="#ab18891bb1d9c04a9c9144e0d8c89aebf">More...</a><br /></td></tr>
+<tr class="memdesc:ab18891bb1d9c04a9c9144e0d8c89aebf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide base server loop that control pipe. Have ability to full controll all handlers.  <a href="#ab18891bb1d9c04a9c9144e0d8c89aebf">More...</a><br /></td></tr>
 <tr class="separator:ab18891bb1d9c04a9c9144e0d8c89aebf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab525aaa0c87f23cfbe4ad6d0ed1b1b4c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#ab525aaa0c87f23cfbe4ad6d0ed1b1b4c">SetExpired</a> (string pipeName)</td></tr>
 <tr class="memdesc:ab525aaa0c87f23cfbe4ad6d0ed1b1b4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marking pipe as expired. On the next loop tick connections will be disconnect and pipe will close.  <a href="#ab525aaa0c87f23cfbe4ad6d0ed1b1b4c">More...</a><br /></td></tr>
@@ -139,9 +156,21 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a5ec1b30c068984a8dbff3a5a4d41a8b7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#a5ec1b30c068984a8dbff3a5a4d41a8b7">StopAllServers</a> ()</td></tr>
 <tr class="memdesc:a5ec1b30c068984a8dbff3a5a4d41a8b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stoping all regirated servers.  <a href="#a5ec1b30c068984a8dbff3a5a4d41a8b7">More...</a><br /></td></tr>
 <tr class="separator:a5ec1b30c068984a8dbff3a5a4d41a8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90278e985fdf5488b1a60787fa1ff5ac"><td class="memItemLeft" align="right" valign="top">static async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#a90278e985fdf5488b1a60787fa1ff5ac">DNSHandler</a> (<a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">PipesProvider.ServerTransmissionMeta</a> meta)</td></tr>
-<tr class="memdesc:a90278e985fdf5488b1a60787fa1ff5ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Code that will work on server loop when connection will be established. Recoomended to using as default DNS Handler  <a href="#a90278e985fdf5488b1a60787fa1ff5ac">More...</a><br /></td></tr>
-<tr class="separator:a90278e985fdf5488b1a60787fa1ff5ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5eb987a8a4edfb2b26d861071aca70a2"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#a5eb987a8a4edfb2b26d861071aca70a2">TryGetServerTransmissionMeta</a> (string guid, out <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a> meta)</td></tr>
+<tr class="memdesc:a5eb987a8a4edfb2b26d861071aca70a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to find opened servert to client transmisssion meta data in common table.  <a href="#a5eb987a8a4edfb2b26d861071aca70a2">More...</a><br /></td></tr>
+<tr class="separator:a5eb987a8a4edfb2b26d861071aca70a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade8af5541a5787e55fe07bad71298132"><td class="memItemLeft" align="right" valign="top">static async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#ade8af5541a5787e55fe07bad71298132">DNSHandler_ClientToSerever_Async</a> (<a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">PipesProvider.ServerTransmissionMeta</a> meta)</td></tr>
+<tr class="memdesc:ade8af5541a5787e55fe07bad71298132"><td class="mdescLeft">&#160;</td><td class="mdescRight">Code that will work on server loop when connection will be established. Recoomended to using as default DNS Handler for queries reciving.  <a href="#ade8af5541a5787e55fe07bad71298132">More...</a><br /></td></tr>
+<tr class="separator:ade8af5541a5787e55fe07bad71298132"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1648503e83d5ecd72af553ea5d461f5"><td class="memItemLeft" align="right" valign="top">static async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#af1648503e83d5ecd72af553ea5d461f5">DNSHandler_ServerToClient_Async</a> (<a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">PipesProvider.ServerTransmissionMeta</a> meta)</td></tr>
+<tr class="memdesc:af1648503e83d5ecd72af553ea5d461f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Code that will work on server loop when connection will be established. Recoomended to using as default DNS Handler for message sending.  <a href="#af1648503e83d5ecd72af553ea5d461f5">More...</a><br /></td></tr>
+<tr class="separator:af1648503e83d5ecd72af553ea5d461f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="events"></a>
+Events</h2></td></tr>
+<tr class="memitem:a88d536e98d1ea1c34d4331fef67a7561"><td class="memItemLeft" align="right" valign="top">static System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html#a88d536e98d1ea1c34d4331fef67a7561">ServerTransmissionMeta_InProcessing</a></td></tr>
+<tr class="memdesc:a88d536e98d1ea1c34d4331fef67a7561"><td class="mdescLeft">&#160;</td><td class="mdescRight">Event that will be called when server transmission will be registred or updated.  <a href="#a88d536e98d1ea1c34d4331fef67a7561">More...</a><br /></td></tr>
+<tr class="separator:a88d536e98d1ea1c34d4331fef67a7561"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
@@ -213,7 +242,275 @@ Static Private Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>If queries not placed then wait. </p>
+
+</div>
+</div>
+<a id="a99feebefadd9a40a3c1fa7175324d950"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99feebefadd9a40a3c1fa7175324d950">&#9670;&nbsp;</a></span>ClientToServerLoop() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void PipesProvider.API.ClientToServerLoop </td>
+          <td>(</td>
+          <td class="paramtype">System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>, string &gt;&#160;</td>
+          <td class="paramname"><em>queryHandlerCallback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>pipeName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>guid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Automaticly create server's pipe that will recive queries from clients. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">queryHandlerCallback</td><td>Callback that will be called when server will recive query from clinet.</td></tr>
+    <tr><td class="paramname">pipeName</td><td>Name of pipe that will created. Client will access this server using that name.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a06ee04a0e80238a176b7b2cac3f6bb4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06ee04a0e80238a176b7b2cac3f6bb4b">&#9670;&nbsp;</a></span>ClientToServerLoop() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void PipesProvider.API.ClientToServerLoop </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>guid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>, string &gt;&#160;</td>
+          <td class="paramname"><em>queryHandlerCallback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>pipeName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Automaticly create server's pipe. Allow to customise GUID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">guid</td><td></td></tr>
+    <tr><td class="paramname">queryHandlerCallback</td><td></td></tr>
+    <tr><td class="paramname">pipeName</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a740e60d5cfd04fcc434e05b40910e493"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a740e60d5cfd04fcc434e05b40910e493">&#9670;&nbsp;</a></span>ClientToServerLoop() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void PipesProvider.API.ClientToServerLoop </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>guid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>, string &gt;&#160;</td>
+          <td class="paramname"><em>queryHandlerCallback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>pipeName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>allowedServerInstances</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Automaticly create server's pipe. Allow to customise GUID. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">guid</td><td></td></tr>
+    <tr><td class="paramname">queryHandlerCallback</td><td></td></tr>
+    <tr><td class="paramname">pipeName</td><td></td></tr>
+    <tr><td class="paramname">pipeName</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9eacd5177e24badabe5ac8a3fe30d5d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eacd5177e24badabe5ac8a3fe30d5d3">&#9670;&nbsp;</a></span>ClientToServerLoop() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void PipesProvider.API.ClientToServerLoop </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>guid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>, string &gt;&#160;</td>
+          <td class="paramname"><em>queryHandlerCallback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>pipeName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PipeDirection&#160;</td>
+          <td class="paramname"><em>pipeDirection</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>allowedServerInstances</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PipeTransmissionMode&#160;</td>
+          <td class="paramname"><em>transmissionMode</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">PipeOptions&#160;</td>
+          <td class="paramname"><em>pipeOptions</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Server loop </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">guid</td><td></td></tr>
+    <tr><td class="paramname">queryHandlerCallback</td><td></td></tr>
+    <tr><td class="paramname">pipeName</td><td></td></tr>
+    <tr><td class="paramname">pipeDirection</td><td></td></tr>
+    <tr><td class="paramname">allowedServerInstances</td><td></td></tr>
+    <tr><td class="paramname">transmissionMode</td><td></td></tr>
+    <tr><td class="paramname">pipeOptions</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aeca3d6eddfa3446b8e5601ee85461f63"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeca3d6eddfa3446b8e5601ee85461f63">&#9670;&nbsp;</a></span>CloseAllTransmissionLines()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void PipesProvider.API.CloseAllTransmissionLines </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Closing all lines registred in table. </p>
 
 </div>
 </div>
@@ -296,8 +593,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a90278e985fdf5488b1a60787fa1ff5ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90278e985fdf5488b1a60787fa1ff5ac">&#9670;&nbsp;</a></span>DNSHandler()</h2>
+<a id="ade8af5541a5787e55fe07bad71298132"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade8af5541a5787e55fe07bad71298132">&#9670;&nbsp;</a></span>DNSHandler_ClientToSerever_Async()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,7 +603,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static async void PipesProvider.API.DNSHandler </td>
+          <td class="memname">static async void PipesProvider.API.DNSHandler_ClientToSerever_Async </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">PipesProvider.ServerTransmissionMeta</a>&#160;</td>
           <td class="paramname"><em>meta</em></td><td>)</td>
@@ -320,13 +617,13 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Code that will work on server loop when connection will be established. Recoomended to using as default DNS Handler </p>
+<p>Code that will work on server loop when connection will be established. Recoomended to using as default DNS Handler for queries reciving. </p>
 <p>Avoid disconnectin error. </p>
 
 </div>
 </div>
-<a id="abea09e221bfe03713f46b7223c6dd62f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abea09e221bfe03713f46b7223c6dd62f">&#9670;&nbsp;</a></span>ServerLoop() <span class="overload">[1/4]</span></h2>
+<a id="af1648503e83d5ecd72af553ea5d461f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1648503e83d5ecd72af553ea5d461f5">&#9670;&nbsp;</a></span>DNSHandler_ServerToClient_Async()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -335,27 +632,11 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void PipesProvider.API.ServerLoop </td>
+          <td class="memname">static async void PipesProvider.API.DNSHandler_ServerToClient_Async </td>
           <td>(</td>
-          <td class="paramtype">System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>, string &gt;&#160;</td>
-          <td class="paramname"><em>queryHandlerCallback</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">PipesProvider.ServerTransmissionMeta</a>&#160;</td>
+          <td class="paramname"><em>meta</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>pipeName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">out string&#160;</td>
-          <td class="paramname"><em>guid</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -365,151 +646,12 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Automaticly create server's pipe. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">queryHandlerCallback</td><td></td></tr>
-    <tr><td class="paramname">pipeName</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aef65cfb6e72f44adf25b3cf8bc0d8656"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aef65cfb6e72f44adf25b3cf8bc0d8656">&#9670;&nbsp;</a></span>ServerLoop() <span class="overload">[2/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void PipesProvider.API.ServerLoop </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>guid</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>, string &gt;&#160;</td>
-          <td class="paramname"><em>queryHandlerCallback</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>pipeName</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Automaticly create server's pipe. Allow to customise GUID. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">guid</td><td></td></tr>
-    <tr><td class="paramname">queryHandlerCallback</td><td></td></tr>
-    <tr><td class="paramname">pipeName</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="abf7202abca50566888c625b928d0cbaa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf7202abca50566888c625b928d0cbaa">&#9670;&nbsp;</a></span>ServerLoop() <span class="overload">[3/4]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void PipesProvider.API.ServerLoop </td>
-          <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>guid</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">System.Action&lt; <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>, string &gt;&#160;</td>
-          <td class="paramname"><em>queryHandlerCallback</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>pipeName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">PipeDirection&#160;</td>
-          <td class="paramname"><em>pipeDirection</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>allowedServerInstances</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">PipeTransmissionMode&#160;</td>
-          <td class="paramname"><em>transmissionMode</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">PipeOptions&#160;</td>
-          <td class="paramname"><em>pipeOptions</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p></p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">guid</td><td></td></tr>
-    <tr><td class="paramname">queryHandlerCallback</td><td></td></tr>
-    <tr><td class="paramname">pipeName</td><td></td></tr>
-    <tr><td class="paramname">pipeDirection</td><td></td></tr>
-    <tr><td class="paramname">allowedServerInstances</td><td></td></tr>
-    <tr><td class="paramname">transmissionMode</td><td></td></tr>
-    <tr><td class="paramname">pipeOptions</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Code that will work on server loop when connection will be established. Recoomended to using as default DNS Handler for message sending. </p>
 
 </div>
 </div>
 <a id="ab18891bb1d9c04a9c9144e0d8c89aebf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab18891bb1d9c04a9c9144e0d8c89aebf">&#9670;&nbsp;</a></span>ServerLoop() <span class="overload">[4/4]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab18891bb1d9c04a9c9144e0d8c89aebf">&#9670;&nbsp;</a></span>ServerLoop()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -578,19 +720,110 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Provide base server loop that control pipe. </p>
+<p>Provide base server loop that control pipe. Have ability to full controll all handlers. </p>
+<p>Warrning: Use only if undersend how it work. Overwise use simplived ClientToServerLoop or ServerToClientLoop </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">connectionCallback</td><td>Delegate that will be called when connection will be established.</td></tr>
-    <tr><td class="paramname">pipeName</td><td></td></tr>
-    <tr><td class="paramname">pipeDirection</td><td></td></tr>
-    <tr><td class="paramname">allowedServerInstances</td><td></td></tr>
-    <tr><td class="paramname">transmissionMode</td><td></td></tr>
-    <tr><td class="paramname">pipeOptions</td><td></td></tr>
+    <tr><td class="paramname">pipeName</td><td>Name of pipe that will be used to acces by client.</td></tr>
+    <tr><td class="paramname">pipeDirection</td><td>Dirrection of the possible transmission.</td></tr>
+    <tr><td class="paramname">allowedServerInstances</td><td>How many server pipes can be started with the same name.</td></tr>
+    <tr><td class="paramname">transmissionMode</td><td>Type of transmission.</td></tr>
+    <tr><td class="paramname">pipeOptions</td><td>Configuration of the pipe.</td></tr>
   </table>
   </dd>
 </dl>
 <p>Update data. </p>
+
+</div>
+</div>
+<a id="a793d388ee138476bcea3256146851432"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a793d388ee138476bcea3256146851432">&#9670;&nbsp;</a></span>ServerToClientLoop() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void PipesProvider.API.ServerToClientLoop </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>pipeName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out string&#160;</td>
+          <td class="paramname"><em>guid</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Automaticly create server's pipe that will send message to client. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">queryHandlerCallback</td><td>Callback that will be called when server will recive query from clinet.</td></tr>
+    <tr><td class="paramname">pipeName</td><td>Name of pipe that will created. Client will access this server using that name.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ae24aa9b5d3220b373d5689bddc22e924"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae24aa9b5d3220b373d5689bddc22e924">&#9670;&nbsp;</a></span>ServerToClientLoop() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void PipesProvider.API.ServerToClientLoop </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>guid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>pipeName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Automaticly create server's pipe that will send message to client. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">queryHandlerCallback</td><td>Callback that will be called when server will recive query from clinet.</td></tr>
+    <tr><td class="paramname">pipeName</td><td>Name of pipe that will created. Client will access this server using that name.</td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -785,8 +1018,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="ad57a87e88181644685a947f951b9fe0f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad57a87e88181644685a947f951b9fe0f">&#9670;&nbsp;</a></span>TryGetLineProcessorByGUID()</h2>
+<a id="a5eb987a8a4edfb2b26d861071aca70a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5eb987a8a4edfb2b26d861071aca70a2">&#9670;&nbsp;</a></span>TryGetServerTransmissionMeta()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -795,7 +1028,53 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool PipesProvider.API.TryGetLineProcessorByGUID </td>
+          <td class="memname">static bool PipesProvider.API.TryGetServerTransmissionMeta </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>guid</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">out <a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>&#160;</td>
+          <td class="paramname"><em>meta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to find opened servert to client transmisssion meta data in common table. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">guid</td><td></td></tr>
+    <tr><td class="paramname">meta</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ae1abc16273a4b459fdbf63e68c44d11f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1abc16273a4b459fdbf63e68c44d11f">&#9670;&nbsp;</a></span>TryGetTransmissionLineByGUID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool PipesProvider.API.TryGetTransmissionLineByGUID </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>guid</em>, </td>
@@ -819,7 +1098,7 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Try to find out registred LineProcessor by GUID. If client not strted then return false. </p>
+<p>Try to find out registred transmission line by GUID. If client not strted then return false. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">guid</td><td></td></tr>
@@ -831,8 +1110,8 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="af785a9d8707a831a6b84ac63ae96e755"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af785a9d8707a831a6b84ac63ae96e755">&#9670;&nbsp;</a></span>TryToRegisterLineProcessor()</h2>
+<a id="a39e17f30d2ee8c716efeb92f947fb72e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39e17f30d2ee8c716efeb92f947fb72e">&#9670;&nbsp;</a></span>TryToRegisterTransmissionLine()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -841,7 +1120,7 @@ Static Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static bool PipesProvider.API.TryToRegisterLineProcessor </td>
+          <td class="memname">static bool PipesProvider.API.TryToRegisterTransmissionLine </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">TransmissionLine</a>&#160;</td>
           <td class="paramname"><em>lineProcessor</em></td><td>)</td>
@@ -855,11 +1134,46 @@ Static Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Trying to register line processor in common table by key: ServerName.PipeLine </p>
+<p>Trying to register transmission line in common table by key: ServerName.PipeLine </p>
 <p>If exist return false. Retrun sycces if added to table. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lineProcessor</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ab0578d8470c97267dd9c6e2126cb69f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0578d8470c97267dd9c6e2126cb69f0">&#9670;&nbsp;</a></span>TryToUnregisterTransmissionLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool PipesProvider.API.TryToUnregisterTransmissionLine </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>guid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remove line from table if this line closed. In other keys this operation not available due to security amd stability purposes. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">guid</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -916,9 +1230,34 @@ Static Private Attributes</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Event Documentation</h2>
+<a id="a88d536e98d1ea1c34d4331fef67a7561"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88d536e98d1ea1c34d4331fef67a7561">&#9670;&nbsp;</a></span>ServerTransmissionMeta_InProcessing</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">System.Action&lt;<a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">ServerTransmissionMeta</a>&gt; PipesProvider.API.ServerTransmissionMeta_InProcessing</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Event that will be called when server transmission will be registred or updated. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>D:/Work/Tools/PipesProvider/ClientAPI.cs</li>
-<li>D:/Work/Tools/PipesProvider/ServerAPI.cs</li>
+<li>D:/Work/GitHub/datum-point/PipesProvider/ClientAPI.cs</li>
+<li>D:/Work/GitHub/datum-point/PipesProvider/ServerAPI.cs</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

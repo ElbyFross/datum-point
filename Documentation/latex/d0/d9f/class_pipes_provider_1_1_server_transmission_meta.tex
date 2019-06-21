@@ -21,9 +21,9 @@ void \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_acf5d5cd
 I\+Async\+Result \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_a1d4a87ad9a66bd81bc68f48fa28dbf32}{connection\+Marker}}
 \begin{DoxyCompactList}\small\item\em Object that provide access to async connection. \end{DoxyCompactList}\item 
 System.\+Action$<$ \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}} $>$ \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_a6e9fa5426107e5d4265273e5be439a62}{connection\+Callback}}
-\begin{DoxyCompactList}\small\item\em Delegate that will be called when connection will be established. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Delegate that will be called when connection will be established. \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}} -\/ meta data of transmission. \end{DoxyCompactList}\item 
 System.\+Action$<$ \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}}, string $>$ \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_aa663870a4d61945bcedd85721ede42a5}{query\+Handler\+Callback}}
-\begin{DoxyCompactList}\small\item\em Delegate that will be called when server will recive query. \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}} -\/ meta data of transmission. string -\/ recived query. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Delegate that will be called when server will recive query. \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}} -\/ meta data of transmission. string -\/ shared query. \end{DoxyCompactList}\item 
 Named\+Pipe\+Server\+Stream \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_a8b2ff8796056a5a2fbe0dbb4c4fd5dab}{pipe}}
 \begin{DoxyCompactList}\small\item\em Reference to created pipe. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_abed6acbaaf01392151667fad217ec7c3}{name}}
@@ -35,6 +35,8 @@ bool \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_acdc3e40
 \begin{DoxyCompactList}\small\item\em Marker that show does current transmission is relevant. When it\textquotesingle{}ll become true this pipe connection will be desconected. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_a9b501faba9c2cb9ed8873f1935d95b7c}{Stoped}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Marker that show does this transmition stoped. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_abdf46c54f238645728488c757a53097e}{Processing\+Query}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Query that aqtualu in processing. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}} \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta_aad6b35f35e7976ae9ee3f386b65dd128}{None}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Return instance that not contain initialized fields. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -76,7 +78,7 @@ Marking transmission as expired and stoped for full exclusion from automatic ser
 
 
 
-Delegate that will be called when connection will be established. 
+Delegate that will be called when connection will be established. \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}} -\/ meta data of transmission. 
 
 \mbox{\Hypertarget{class_pipes_provider_1_1_server_transmission_meta_a1d4a87ad9a66bd81bc68f48fa28dbf32}\label{class_pipes_provider_1_1_server_transmission_meta_a1d4a87ad9a66bd81bc68f48fa28dbf32}} 
 \index{Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}!connection\+Marker@{connection\+Marker}}
@@ -116,7 +118,7 @@ Reference to created pipe.
 
 
 
-Delegate that will be called when server will recive query. \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}} -\/ meta data of transmission. string -\/ recived query. 
+Delegate that will be called when server will recive query. \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}} -\/ meta data of transmission. string -\/ shared query. 
 
 
 
@@ -141,7 +143,17 @@ Marker that show does current transmission is relevant. When it\textquotesingle{
 
 Return instance that not contain initialized fields. 
 
-\mbox{\Hypertarget{class_pipes_provider_1_1_server_transmission_meta_a9b501faba9c2cb9ed8873f1935d95b7c}\label{class_pipes_provider_1_1_server_transmission_meta_a9b501faba9c2cb9ed8873f1935d95b7c}} 
+\mbox{\Hypertarget{class_pipes_provider_1_1_server_transmission_meta_abdf46c54f238645728488c757a53097e}\label{class_pipes_provider_1_1_server_transmission_meta_abdf46c54f238645728488c757a53097e}} 
+\index{Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}!Processing\+Query@{Processing\+Query}}
+\index{Processing\+Query@{Processing\+Query}!Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}}
+\subsubsection{\texorpdfstring{Processing\+Query}{ProcessingQuery}}
+{\footnotesize\ttfamily string Pipes\+Provider.\+Server\+Transmission\+Meta.\+Processing\+Query\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Query that aqtualu in processing. 
+
+Attention\+: Value can be changed if some of handlers will call disconecction or transmission error. This situation will lead to establishing new connection that lead to changing of this value. \mbox{\Hypertarget{class_pipes_provider_1_1_server_transmission_meta_a9b501faba9c2cb9ed8873f1935d95b7c}\label{class_pipes_provider_1_1_server_transmission_meta_a9b501faba9c2cb9ed8873f1935d95b7c}} 
 \index{Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}!Stoped@{Stoped}}
 \index{Stoped@{Stoped}!Pipes\+Provider\+::\+Server\+Transmission\+Meta@{Pipes\+Provider\+::\+Server\+Transmission\+Meta}}
 \subsubsection{\texorpdfstring{Stoped}{Stoped}}
@@ -155,4 +167,4 @@ Marker that show does this transmition stoped.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-D\+:/\+Work/\+Tools/\+Pipes\+Provider/Server\+Transmission\+Meta.\+cs\end{DoxyCompactItemize}
+D\+:/\+Work/\+Git\+Hub/datum-\/point/\+Pipes\+Provider/Server\+Transmission\+Meta.\+cs\end{DoxyCompactItemize}

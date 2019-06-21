@@ -3,6 +3,36 @@
   <compounddef id="d6/dac/class_test_client_1_1_client" kind="class" language="C#" prot="public">
     <compoundname>TestClient::Client</compoundname>
     <basecompoundref refid="d4/deb/class_uniform_client_1_1_base_client" prot="public" virt="non-virtual">UniformClient.BaseClient</basecompoundref>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="d6/dac/class_test_client_1_1_client_1a7fdac87931c97ce7fde6c4fc622bcfa6" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string TestClient.Client.SERVER_NAME</definition>
+        <argsstring></argsstring>
+        <name>SERVER_NAME</name>
+        <initializer>= &quot;.&quot;</initializer>
+        <briefdescription>
+<para>Server that will be used as target for this client. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/TestClient/Client.cs" line="36" column="1" bodyfile="D:/Work/GitHub/datum-point/TestClient/Client.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/dac/class_test_client_1_1_client_1a58c70d565592caa15b99d9b145a133ea" prot="public" static="yes" mutable="no">
+        <type>string</type>
+        <definition>string TestClient.Client.SERVER_PIPE_NAME</definition>
+        <argsstring></argsstring>
+        <name>SERVER_PIPE_NAME</name>
+        <initializer>= &quot;THB_DS_QM_MAIN_INOUT&quot;</initializer>
+        <briefdescription>
+<para>Pipe that will be used to queries of this client. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/TestClient/Client.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/TestClient/Client.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="private-static-func">
       <memberdef kind="function" id="d6/dac/class_test_client_1_1_client_1a236c6c2776f2ec6851c36a8714ef6e03" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -19,51 +49,65 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TestClient/Client.cs" line="14" column="1" bodyfile="D:/Work/Tools/TestClient/Client.cs" bodystart="14" bodyend="71"/>
+        <location file="D:/Work/GitHub/datum-point/TestClient/Client.cs" line="44" column="1" bodyfile="D:/Work/GitHub/datum-point/TestClient/Client.cs" bodystart="44" bodyend="101"/>
       </memberdef>
-      <memberdef kind="function" id="d6/dac/class_test_client_1_1_client_1adae80a1bd43e9e383c52ebb6390f2507" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="d6/dac/class_test_client_1_1_client_1af74ca9833b73440828e078c9c25a8026" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
-        <definition>static void TestClient.Client.UniformQueryPOSTProcessor</definition>
-        <argsstring>(object sharedObject)</argsstring>
-        <name>UniformQueryPOSTProcessor</name>
+        <definition>static void TestClient.Client.SendOneWayQuery</definition>
+        <argsstring>(string query)</argsstring>
+        <name>SendOneWayQuery</name>
         <param>
-          <type>object</type>
-          <declname>sharedObject</declname>
+          <type>string</type>
+          <declname>query</declname>
         </param>
         <briefdescription>
-<para>Query processor that send last dequeued query to server when connection will be established. </para>        </briefdescription>
+        </briefdescription>
         <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>lineProcessor</parametername>
-</parameternamelist>
-<parameterdescription>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>        </detaileddescription>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TestClient/Client.cs" line="77" column="1" bodyfile="D:/Work/Tools/TestClient/Client.cs" bodystart="77" bodyend="115"/>
+        <location file="D:/Work/GitHub/datum-point/TestClient/Client.cs" line="105" column="1" bodyfile="D:/Work/GitHub/datum-point/TestClient/Client.cs" bodystart="105" bodyend="112"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/dac/class_test_client_1_1_client_1a0d6d95892249c5febdb5708995b7a987" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void TestClient.Client.RequestPublicRSAKey</definition>
+        <argsstring>()</argsstring>
+        <name>RequestPublicRSAKey</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/TestClient/Client.cs" line="114" column="1" bodyfile="D:/Work/GitHub/datum-point/TestClient/Client.cs" bodystart="114" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/dac/class_test_client_1_1_client_1a32396ed694c8942865f0c265a6232612" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void TestClient.Client.ServerAnswerHandler_RSAPublicKey</definition>
+        <argsstring>(PipesProvider.TransmissionLine tl, object message)</argsstring>
+        <name>ServerAnswerHandler_RSAPublicKey</name>
+        <param>
+          <type><ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">PipesProvider.TransmissionLine</ref></type>
+          <declname>tl</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/TestClient/Client.cs" line="139" column="1" bodyfile="D:/Work/GitHub/datum-point/TestClient/Client.cs" bodystart="139" bodyend="143"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>Provide example of client-server transmission. Demostrate ways to use API. Provide tools for simple tests of local server. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="105">
-        <label>UniformClient::BaseClient</label>
-        <link refid="d4/deb/class_uniform_client_1_1_base_client"/>
-      </node>
-      <node id="104">
-        <label>TestClient.Client</label>
-        <link refid="d6/dac/class_test_client_1_1_client"/>
-        <childnode refid="105" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="107">
         <label>UniformClient::BaseClient</label>
         <link refid="d4/deb/class_uniform_client_1_1_base_client"/>
@@ -74,24 +118,49 @@
         <childnode refid="107" relation="public-inheritance">
         </childnode>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="109">
+        <label>UniformClient::BaseClient</label>
+        <link refid="d4/deb/class_uniform_client_1_1_base_client"/>
+      </node>
+      <node id="108">
+        <label>TestClient.Client</label>
+        <link refid="d6/dac/class_test_client_1_1_client"/>
+        <childnode refid="109" relation="public-inheritance">
+        </childnode>
+      </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/TestClient/Client.cs" line="13" column="1" bodyfile="D:/Work/Tools/TestClient/Client.cs" bodystart="12" bodyend="116"/>
+    <location file="D:/Work/GitHub/datum-point/TestClient/Client.cs" line="32" column="1" bodyfile="D:/Work/GitHub/datum-point/TestClient/Client.cs" bodystart="31" bodyend="145"/>
     <listofallmembers>
-      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a1c02c6bb48c54e59c2581fe8097a4052" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>appTerminated</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a10f1c9dbb8d41719754b39344432497f" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>AppTerminated</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a7ec48981cf3e7ec10d2cb7dff81f912a" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>ArgsReactor</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a52dacc1af85cbab035a159e64e1417a0" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>DuplexBackwardCallbacks</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a09f3a6de4a33cd5f3eaba564544440e1" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>EnqueueDuplexQuery</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a98d1abc1fea84d7222291c462c4f9416" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>EnqueueDuplexQuery</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1aafcfed25b79baed0db4448f2e30f2aa2" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>GetConsoleWindow</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a8abbd1d46cc50556eeae8bbd55ce680f" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>LoadAssemblies</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a99ae0bb1dd5bef374fcedb3f873bfe8b" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>LoadPluginsCollection</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1aa60dbfa5bd8c46659aec7738193315f1" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>LoadPluginsEnumerable</name></member>
       <member refid="d6/dac/class_test_client_1_1_client_1a236c6c2776f2ec6851c36a8714ef6e03" prot="private" virt="non-virtual"><scope>TestClient::Client</scope><name>Main</name></member>
-      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a3b09387a94e46bf9365ee603202ba488" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>OpenTransmissionLine</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1aaeab527820b088ab3a84cd210e53a01f" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>OpenOutTransmissionLine</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a9044693efc8f4ccf259e954c5345236f" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>OpenTransmissionLine</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a80e2da33cf28945db058cd59f7ac5e58" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>OpenTransmissionLine</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a6525d87fd1df20689b0a01280e36c5c1" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>ReciveAnswer</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a06d3340dd02ec4abfe9cf55bc1db0f03" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>ReciveAnswer</name></member>
+      <member refid="d6/dac/class_test_client_1_1_client_1a0d6d95892249c5febdb5708995b7a987" prot="private" virt="non-virtual"><scope>TestClient::Client</scope><name>RequestPublicRSAKey</name></member>
+      <member refid="d6/dac/class_test_client_1_1_client_1af74ca9833b73440828e078c9c25a8026" prot="private" virt="non-virtual"><scope>TestClient::Client</scope><name>SendOneWayQuery</name></member>
+      <member refid="d6/dac/class_test_client_1_1_client_1a7fdac87931c97ce7fde6c4fc622bcfa6" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>SERVER_NAME</name></member>
+      <member refid="d6/dac/class_test_client_1_1_client_1a58c70d565592caa15b99d9b145a133ea" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>SERVER_PIPE_NAME</name></member>
+      <member refid="d6/dac/class_test_client_1_1_client_1a32396ed694c8942865f0c265a6232612" prot="private" virt="non-virtual"><scope>TestClient::Client</scope><name>ServerAnswerHandler_RSAPublicKey</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a47b6d88848854c59fafefeeae3956699" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>ShowWindow</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a194b46bb0e889d07cade81c0aeab7cea" prot="protected" virt="virtual"><scope>TestClient::Client</scope><name>StartClientThread</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a6060f2eb1d44ec518f2dfc99c8b4f7aa" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>SW_HIDE</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a7545b9c72eef6cb7594a7001d3f558e4" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>SW_SHOW</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a458271823ca5e21612c0947e1db695a0" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>thread</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a2c4762c1be5eac42b8b5d189530d0952" prot="protected" virt="non-virtual"><scope>TestClient::Client</scope><name>threadSleepTime</name></member>
-      <member refid="d6/dac/class_test_client_1_1_client_1adae80a1bd43e9e383c52ebb6390f2507" prot="private" virt="non-virtual"><scope>TestClient::Client</scope><name>UniformQueryPOSTProcessor</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a05120a32c8a00263c7e2fc8b9fa152d8" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>UniformQueryPostHandler</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1af7a3c613846c8595431272c4c9d531f3" prot="public" virt="non-virtual"><scope>TestClient::Client</scope><name>UniformServerAnswerHandler</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

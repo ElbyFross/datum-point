@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/THB Data Types/Core/Orders/BaseOrder.cs" line="10" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Orders/BaseOrder.cs" bodystart="10" bodyend="10"/>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/BaseOrder.cs" line="24" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/BaseOrder.cs" bodystart="24" bodyend="24"/>
       </memberdef>
       <memberdef kind="property" id="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order_1a4b671ac999b946ff76f2a689bd456463" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type><ref refid="dc/d14/struct_teacher_handbook_1_1_core_1_1_orders_1_1_order_date" kindref="compound">OrderDate</ref></type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/THB Data Types/Core/Orders/BaseOrder.cs" line="15" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Orders/BaseOrder.cs" bodystart="15" bodyend="15"/>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/BaseOrder.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/BaseOrder.cs" bodystart="29" bodyend="29"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/THB Data Types/Core/Orders/BaseOrder.cs" line="20" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Orders/BaseOrder.cs" bodystart="20" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/BaseOrder.cs" line="34" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/BaseOrder.cs" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order_1ac11e738e1d6b9e7ff3fe4b55e2bd50d5" prot="public" static="no" mutable="no">
         <type>DateTime</type>
@@ -59,7 +59,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/THB Data Types/Core/Orders/BaseOrder.cs" line="25" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Orders/BaseOrder.cs" bodystart="25" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/BaseOrder.cs" line="39" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/BaseOrder.cs" bodystart="39" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -67,36 +67,36 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="69">
+      <node id="70">
         <label>IOrder</label>
         <link refid="df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order"/>
       </node>
-      <node id="68">
+      <node id="69">
         <label>TeacherHandbook.Core.Orders.BaseOrder</label>
         <link refid="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order"/>
-        <childnode refid="69" relation="public-inheritance">
+        <childnode refid="70" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="70">
+      <node id="71">
         <label>TeacherHandbook.Core.Orders.MentoringOrder</label>
         <link refid="d8/d91/class_teacher_handbook_1_1_core_1_1_orders_1_1_mentoring_order"/>
-        <childnode refid="68" relation="public-inheritance">
+        <childnode refid="69" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="72">
+      <node id="73">
         <label>IOrder</label>
         <link refid="df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order"/>
       </node>
-      <node id="71">
+      <node id="72">
         <label>TeacherHandbook.Core.Orders.BaseOrder</label>
         <link refid="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order"/>
-        <childnode refid="72" relation="public-inheritance">
+        <childnode refid="73" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/THB Data Types/Core/Orders/BaseOrder.cs" line="6" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Orders/BaseOrder.cs" bodystart="5" bodyend="26"/>
+    <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/BaseOrder.cs" line="20" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/BaseOrder.cs" bodystart="19" bodyend="40"/>
     <listofallmembers>
       <member refid="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order_1a4b671ac999b946ff76f2a689bd456463" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Orders::BaseOrder</scope><name>ExpireDate</name></member>
       <member refid="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order_1a59ec952bde8892fe9c48d34c838be374" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Orders::BaseOrder</scope><name>OrderPublisher</name></member>

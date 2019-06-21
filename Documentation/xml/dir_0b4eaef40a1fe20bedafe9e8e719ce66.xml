@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_0b4eaef40a1fe20bedafe9e8e719ce66" kind="dir">
-    <compoundname>D:/Work/Tools/Plugins</compoundname>
-    <innerdir refid="dir_c3d622d94916962847bdf3eba2f4134f">D:/Work/Tools/Plugins/THB Plugin Exams</innerdir>
-    <innerdir refid="dir_a9c57ee03c54c9c1343455abd0932287">D:/Work/Tools/Plugins/THB Plugin Lesson</innerdir>
-    <innerdir refid="dir_2e11790e24bf4965e215f0b0ff9c65a8">D:/Work/Tools/Plugins/THB Plugin Orders</innerdir>
-    <innerdir refid="dir_7ef839b0b5ed3e67f22654a309d1bf91">D:/Work/Tools/Plugins/THB Plugin Social</innerdir>
+    <compoundname>D:/Work/GitHub/datum-point/Plugins</compoundname>
+    <innerdir refid="dir_c3d622d94916962847bdf3eba2f4134f">D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams</innerdir>
+    <innerdir refid="dir_a9c57ee03c54c9c1343455abd0932287">D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson</innerdir>
+    <innerdir refid="dir_2e11790e24bf4965e215f0b0ff9c65a8">D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders</innerdir>
+    <innerdir refid="dir_7ef839b0b5ed3e67f22654a309d1bf91">D:/Work/GitHub/datum-point/Plugins/THB Plugin Social</innerdir>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/Tools/Plugins/"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/"/>
   </compounddef>
 </doxygen>

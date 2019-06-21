@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>THB+ | Network Platform: PipesProvider.TransmissionLine Class Reference</title>
+<title>Datum Point: PipesProvider.TransmissionLine Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -29,8 +29,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">THB+ | Network Platform
-   &#160;<span id="projectnumber">1.0</span>
+   <div id="projectname">Datum Point
+   &#160;<span id="projectnumber">0.1.4</span>
    </div>
   </td>
  </tr>
@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('d1/d09/class_pipes_provider_1_1_transm
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="../../df/d41/class_pipes_provider_1_1_transmission_line-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">PipesProvider.TransmissionLine Class Reference</div>  </div>
@@ -103,15 +104,18 @@ $(document).ready(function(){initNavTree('d1/d09/class_pipes_provider_1_1_transm
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a20398f48516f0fc5fe0700b01b7fc6d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#a20398f48516f0fc5fe0700b01b7fc6d7">TransmissionLine</a> (string guid, string serverName, string serverPipeName, System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">TransmissionLine</a> &gt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#a08bf6cb803ea32dd416afcc12ee866f5">queryProcessor</a>)</td></tr>
-<tr class="memdesc:a20398f48516f0fc5fe0700b01b7fc6d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create new instance of LineProcessor taht can be registread in static services. Contain information about transmission between client and server.  <a href="#a20398f48516f0fc5fe0700b01b7fc6d7">More...</a><br /></td></tr>
-<tr class="separator:a20398f48516f0fc5fe0700b01b7fc6d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9002723c5fa3ec06f81470390b7ef685"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#a9002723c5fa3ec06f81470390b7ef685">TransmissionLine</a> (string serverName, string serverPipeName, System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">TransmissionLine</a> &gt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#a08bf6cb803ea32dd416afcc12ee866f5">queryProcessor</a>)</td></tr>
+<tr class="memdesc:a9002723c5fa3ec06f81470390b7ef685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create new instance of LineProcessor taht can be registread in static services. Contain information about transmission between client and server.  <a href="#a9002723c5fa3ec06f81470390b7ef685">More...</a><br /></td></tr>
+<tr class="separator:a9002723c5fa3ec06f81470390b7ef685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac27fedfbe0edfdcb4fbf4509c76f858f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#ac27fedfbe0edfdcb4fbf4509c76f858f">EnqueueQuery</a> (string query)</td></tr>
 <tr class="memdesc:ac27fedfbe0edfdcb4fbf4509c76f858f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enqueue query to order. Query will be posted to server as soon as will possible.  <a href="#ac27fedfbe0edfdcb4fbf4509c76f858f">More...</a><br /></td></tr>
 <tr class="separator:ac27fedfbe0edfdcb4fbf4509c76f858f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ab008a66866d2bdb29f4a33e563e3d1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#a9ab008a66866d2bdb29f4a33e563e3d1">TryDequeQuery</a> (out string query)</td></tr>
-<tr class="memdesc:a9ab008a66866d2bdb29f4a33e563e3d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get a new query in turn.  <a href="#a9ab008a66866d2bdb29f4a33e563e3d1">More...</a><br /></td></tr>
-<tr class="separator:a9ab008a66866d2bdb29f4a33e563e3d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59eceb9280548e1c9e662543ee5c96c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#a59eceb9280548e1c9e662543ee5c96c7">EnqueueQuery</a> (<a class="el" href="../../d2/d85/struct_pipes_provider_1_1_query_container.html">QueryContainer</a> query)</td></tr>
+<tr class="memdesc:a59eceb9280548e1c9e662543ee5c96c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enqueue query to order. Query will be posted to server as soon as will possible.  <a href="#a59eceb9280548e1c9e662543ee5c96c7">More...</a><br /></td></tr>
+<tr class="separator:a59eceb9280548e1c9e662543ee5c96c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc672e0d0c921f60a9a5920e3f76d28b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#acc672e0d0c921f60a9a5920e3f76d28b">TryDequeQuery</a> (out <a class="el" href="../../d2/d85/struct_pipes_provider_1_1_query_container.html">QueryContainer</a> query)</td></tr>
+<tr class="memdesc:acc672e0d0c921f60a9a5920e3f76d28b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to get a new query in turn.  <a href="#acc672e0d0c921f60a9a5920e3f76d28b">More...</a><br /></td></tr>
+<tr class="separator:acc672e0d0c921f60a9a5920e3f76d28b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4aa28b1d29a2b0b6fb2af6f046fdf56a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#a4aa28b1d29a2b0b6fb2af6f046fdf56a">Close</a> ()</td></tr>
 <tr class="memdesc:a4aa28b1d29a2b0b6fb2af6f046fdf56a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mark line as closed. Thread will be terminated on the next client tick.  <a href="#a4aa28b1d29a2b0b6fb2af6f046fdf56a">More...</a><br /></td></tr>
 <tr class="separator:a4aa28b1d29a2b0b6fb2af6f046fdf56a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,6 +128,12 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ab56219b10bad03085b5d23e48ad59ec3"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#ab56219b10bad03085b5d23e48ad59ec3">ThreadLoop</a> (object lineProcessor)</td></tr>
 <tr class="memdesc:ab56219b10bad03085b5d23e48ad59ec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that can be started as thread. Will start client loop.  <a href="#ab56219b10bad03085b5d23e48ad59ec3">More...</a><br /></td></tr>
 <tr class="separator:ab56219b10bad03085b5d23e48ad59ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d9e1c1ba799548f3723e31cf5eece6e"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#a1d9e1c1ba799548f3723e31cf5eece6e">GenerateGUID</a> (string serverName, string pipeName)</td></tr>
+<tr class="memdesc:a1d9e1c1ba799548f3723e31cf5eece6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate GUID of this transmission line relative to pipe params.  <a href="#a1d9e1c1ba799548f3723e31cf5eece6e">More...</a><br /></td></tr>
+<tr class="separator:a1d9e1c1ba799548f3723e31cf5eece6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3fe155028466c724c1efe9abb4b1c02"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">TransmissionLine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#ac3fe155028466c724c1efe9abb4b1c02">operator++</a> (<a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">TransmissionLine</a> line)</td></tr>
+<tr class="memdesc:ac3fe155028466c724c1efe9abb4b1c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">Incremet of attempts count.  <a href="#ac3fe155028466c724c1efe9abb4b1c02">More...</a><br /></td></tr>
+<tr class="separator:ac3fe155028466c724c1efe9abb4b1c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -136,17 +146,17 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:aaccd1f86aa1a894f8e0b2bbb00923413"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#aaccd1f86aa1a894f8e0b2bbb00923413">lastQuery</a> = null</td></tr>
-<tr class="memdesc:aaccd1f86aa1a894f8e0b2bbb00923413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Field that contain last dequeued query.  <a href="#aaccd1f86aa1a894f8e0b2bbb00923413">More...</a><br /></td></tr>
-<tr class="separator:aaccd1f86aa1a894f8e0b2bbb00923413"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a81bbc79b91919db1098335cd547377ff"><td class="memItemLeft" align="right" valign="top">Queue&lt; string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#a81bbc79b91919db1098335cd547377ff">queries</a> = new Queue&lt;string&gt;()</td></tr>
-<tr class="memdesc:a81bbc79b91919db1098335cd547377ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of queries that will wait its order to access transmission via this line.  <a href="#a81bbc79b91919db1098335cd547377ff">More...</a><br /></td></tr>
-<tr class="separator:a81bbc79b91919db1098335cd547377ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affdde0eafb483f2bf6f874679b4ab6f8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d85/struct_pipes_provider_1_1_query_container.html">QueryContainer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#affdde0eafb483f2bf6f874679b4ab6f8">lastQuery</a> = <a class="el" href="../../d2/d85/struct_pipes_provider_1_1_query_container.html#a3daff9827ee4f77286eb4385a64e2fe2">QueryContainer.Empty</a></td></tr>
+<tr class="memdesc:affdde0eafb483f2bf6f874679b4ab6f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Field that contain last dequeued query.  <a href="#affdde0eafb483f2bf6f874679b4ab6f8">More...</a><br /></td></tr>
+<tr class="separator:affdde0eafb483f2bf6f874679b4ab6f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad866033fcbb1d9f783df8ff71e7fc21a"><td class="memItemLeft" align="right" valign="top">Queue&lt; <a class="el" href="../../d2/d85/struct_pipes_provider_1_1_query_container.html">QueryContainer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#ad866033fcbb1d9f783df8ff71e7fc21a">queries</a> = new Queue&lt;<a class="el" href="../../d2/d85/struct_pipes_provider_1_1_query_container.html">QueryContainer</a>&gt;()</td></tr>
+<tr class="memdesc:ad866033fcbb1d9f783df8ff71e7fc21a"><td class="mdescLeft">&#160;</td><td class="mdescRight">List of queries that will wait its order to access transmission via this line.  <a href="#ad866033fcbb1d9f783df8ff71e7fc21a">More...</a><br /></td></tr>
+<tr class="separator:ad866033fcbb1d9f783df8ff71e7fc21a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a9227989e298eefad921d81d3098d5148"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#a9227989e298eefad921d81d3098d5148">GUID</a><code> [get, protected set]</code></td></tr>
-<tr class="memdesc:a9227989e298eefad921d81d3098d5148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique ID of this proccesor that will be used for access to it cia static control and autpmatic services.  <a href="#a9227989e298eefad921d81d3098d5148">More...</a><br /></td></tr>
+<tr class="memitem:a9227989e298eefad921d81d3098d5148"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#a9227989e298eefad921d81d3098d5148">GUID</a><code> [get]</code></td></tr>
+<tr class="memdesc:a9227989e298eefad921d81d3098d5148"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unique GUID for this pipe.  <a href="#a9227989e298eefad921d81d3098d5148">More...</a><br /></td></tr>
 <tr class="separator:a9227989e298eefad921d81d3098d5148"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6acb67e0969ca43a54c9895ab1cdaae8"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#a6acb67e0969ca43a54c9895ab1cdaae8">ServerPipeName</a><code> [get, protected set]</code></td></tr>
 <tr class="memdesc:a6acb67e0969ca43a54c9895ab1cdaae8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of server pipe that will be using for transmission via current processor.  <a href="#a6acb67e0969ca43a54c9895ab1cdaae8">More...</a><br /></td></tr>
@@ -157,21 +167,27 @@ Properties</h2></td></tr>
 <tr class="memitem:a4edc70c5ef641b2c600b69b65ff4ba00"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#a4edc70c5ef641b2c600b69b65ff4ba00">Closed</a><code> [get, protected set]</code></td></tr>
 <tr class="memdesc:a4edc70c5ef641b2c600b69b65ff4ba00"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true then this line will be closed on the next client tick.  <a href="#a4edc70c5ef641b2c600b69b65ff4ba00">More...</a><br /></td></tr>
 <tr class="separator:a4edc70c5ef641b2c600b69b65ff4ba00"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5717e4ea0ba1bbca5685de995c1c88f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#af5717e4ea0ba1bbca5685de995c1c88f">Processing</a><code> [get, protected set]</code></td></tr>
+<tr class="memitem:af5717e4ea0ba1bbca5685de995c1c88f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#af5717e4ea0ba1bbca5685de995c1c88f">Processing</a><code> [get, set]</code></td></tr>
 <tr class="memdesc:af5717e4ea0ba1bbca5685de995c1c88f"><td class="mdescLeft">&#160;</td><td class="mdescRight">True if async operation started and not finished.  <a href="#af5717e4ea0ba1bbca5685de995c1c88f">More...</a><br /></td></tr>
 <tr class="separator:af5717e4ea0ba1bbca5685de995c1c88f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae74210ed172643f6e9bd23bc7913f9b1"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#ae74210ed172643f6e9bd23bc7913f9b1">LastQuery</a><code> [get, protected set]</code></td></tr>
-<tr class="memdesc:ae74210ed172643f6e9bd23bc7913f9b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return tthe query that was dequeue at last.  <a href="#ae74210ed172643f6e9bd23bc7913f9b1">More...</a><br /></td></tr>
-<tr class="separator:ae74210ed172643f6e9bd23bc7913f9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cc3f03332be99b5f380772587ca2883"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d2/d85/struct_pipes_provider_1_1_query_container.html">QueryContainer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#a3cc3f03332be99b5f380772587ca2883">LastQuery</a><code> [get, protected set]</code></td></tr>
+<tr class="memdesc:a3cc3f03332be99b5f380772587ca2883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return tthe query that was dequeue at last.  <a href="#a3cc3f03332be99b5f380772587ca2883">More...</a><br /></td></tr>
+<tr class="separator:a3cc3f03332be99b5f380772587ca2883"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a39f81c072ca65efd260d02fc7d5c5458"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html#a39f81c072ca65efd260d02fc7d5c5458">HasQueries</a><code> [get]</code></td></tr>
 <tr class="memdesc:a39f81c072ca65efd260d02fc7d5c5458"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if queue contain queries.  <a href="#a39f81c072ca65efd260d02fc7d5c5458">More...</a><br /></td></tr>
 <tr class="separator:a39f81c072ca65efd260d02fc7d5c5458"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:acb5a54fae46da3287a364144e495a29d"><td class="memItemLeft" align="right" valign="top"><a id="acb5a54fae46da3287a364144e495a29d"></a>
+string&#160;</td><td class="memItemRight" valign="bottom"><b>guid</b> = null</td></tr>
+<tr class="separator:acb5a54fae46da3287a364144e495a29d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class that provide information about line between client and server. Provide <a class="el" href="../../d4/ddf/class_pipes_provider_1_1_a_p_i.html" title="Class that provide common methods for easy work with pipes&#39; tasks. ">API</a> to easy control. Provide automatic services. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a20398f48516f0fc5fe0700b01b7fc6d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20398f48516f0fc5fe0700b01b7fc6d7">&#9670;&nbsp;</a></span>TransmissionLine()</h2>
+<a id="a9002723c5fa3ec06f81470390b7ef685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9002723c5fa3ec06f81470390b7ef685">&#9670;&nbsp;</a></span>TransmissionLine()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -179,12 +195,6 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname">PipesProvider.TransmissionLine.TransmissionLine </td>
           <td>(</td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>guid</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>serverName</em>, </td>
         </tr>
@@ -261,7 +271,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <a id="ac27fedfbe0edfdcb4fbf4509c76f858f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac27fedfbe0edfdcb4fbf4509c76f858f">&#9670;&nbsp;</a></span>EnqueueQuery()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ac27fedfbe0edfdcb4fbf4509c76f858f">&#9670;&nbsp;</a></span>EnqueueQuery() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,6 +293,113 @@ Properties</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a59eceb9280548e1c9e662543ee5c96c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59eceb9280548e1c9e662543ee5c96c7">&#9670;&nbsp;</a></span>EnqueueQuery() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PipesProvider.TransmissionLine.EnqueueQuery </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d2/d85/struct_pipes_provider_1_1_query_container.html">QueryContainer</a>&#160;</td>
+          <td class="paramname"><em>query</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Enqueue query to order. Query will be posted to server as soon as will possible. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1d9e1c1ba799548f3723e31cf5eece6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d9e1c1ba799548f3723e31cf5eece6e">&#9670;&nbsp;</a></span>GenerateGUID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static string PipesProvider.TransmissionLine.GenerateGUID </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>serverName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>pipeName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generate GUID of this transmission line relative to pipe params. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">serverName</td><td></td></tr>
+    <tr><td class="paramname">pipeName</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ac3fe155028466c724c1efe9abb4b1c02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3fe155028466c724c1efe9abb4b1c02">&#9670;&nbsp;</a></span>operator++()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">TransmissionLine</a> PipesProvider.TransmissionLine.operator++ </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">TransmissionLine</a>&#160;</td>
+          <td class="paramname"><em>line</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Incremet of attempts count. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">contaier</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -320,8 +437,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a9ab008a66866d2bdb29f4a33e563e3d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ab008a66866d2bdb29f4a33e563e3d1">&#9670;&nbsp;</a></span>TryDequeQuery()</h2>
+<a id="acc672e0d0c921f60a9a5920e3f76d28b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc672e0d0c921f60a9a5920e3f76d28b">&#9670;&nbsp;</a></span>TryDequeQuery()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -329,7 +446,7 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname">bool PipesProvider.TransmissionLine.TryDequeQuery </td>
           <td>(</td>
-          <td class="paramtype">out string&#160;</td>
+          <td class="paramtype">out <a class="el" href="../../d2/d85/struct_pipes_provider_1_1_query_container.html">QueryContainer</a>&#160;</td>
           <td class="paramname"><em>query</em></td><td>)</td>
           <td></td>
         </tr>
@@ -349,8 +466,8 @@ Properties</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="aaccd1f86aa1a894f8e0b2bbb00923413"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaccd1f86aa1a894f8e0b2bbb00923413">&#9670;&nbsp;</a></span>lastQuery</h2>
+<a id="affdde0eafb483f2bf6f874679b4ab6f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affdde0eafb483f2bf6f874679b4ab6f8">&#9670;&nbsp;</a></span>lastQuery</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -359,7 +476,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string PipesProvider.TransmissionLine.lastQuery = null</td>
+          <td class="memname"><a class="el" href="../../d2/d85/struct_pipes_provider_1_1_query_container.html">QueryContainer</a> PipesProvider.TransmissionLine.lastQuery = <a class="el" href="../../d2/d85/struct_pipes_provider_1_1_query_container.html#a3daff9827ee4f77286eb4385a64e2fe2">QueryContainer.Empty</a></td>
         </tr>
       </table>
   </td>
@@ -389,8 +506,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="a81bbc79b91919db1098335cd547377ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a81bbc79b91919db1098335cd547377ff">&#9670;&nbsp;</a></span>queries</h2>
+<a id="ad866033fcbb1d9f783df8ff71e7fc21a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad866033fcbb1d9f783df8ff71e7fc21a">&#9670;&nbsp;</a></span>queries</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -399,7 +516,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">Queue&lt;string&gt; PipesProvider.TransmissionLine.queries = new Queue&lt;string&gt;()</td>
+          <td class="memname">Queue&lt;<a class="el" href="../../d2/d85/struct_pipes_provider_1_1_query_container.html">QueryContainer</a>&gt; PipesProvider.TransmissionLine.queries = new Queue&lt;<a class="el" href="../../d2/d85/struct_pipes_provider_1_1_query_container.html">QueryContainer</a>&gt;()</td>
         </tr>
       </table>
   </td>
@@ -469,12 +586,12 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>Unique ID of this proccesor that will be used for access to it cia static control and autpmatic services. </p>
+<p>Unique GUID for this pipe. </p>
 
 </div>
 </div>
@@ -502,8 +619,8 @@ Properties</h2></td></tr>
 
 </div>
 </div>
-<a id="ae74210ed172643f6e9bd23bc7913f9b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae74210ed172643f6e9bd23bc7913f9b1">&#9670;&nbsp;</a></span>LastQuery</h2>
+<a id="a3cc3f03332be99b5f380772587ca2883"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cc3f03332be99b5f380772587ca2883">&#9670;&nbsp;</a></span>LastQuery</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -512,7 +629,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">string PipesProvider.TransmissionLine.LastQuery</td>
+          <td class="memname"><a class="el" href="../../d2/d85/struct_pipes_provider_1_1_query_container.html">QueryContainer</a> PipesProvider.TransmissionLine.LastQuery</td>
         </tr>
       </table>
   </td>
@@ -541,7 +658,7 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">protected set</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -599,7 +716,7 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/Work/Tools/PipesProvider/LineProcessor.cs</li>
+<li>D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.14"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>THB+ | Network Platform: UniformServer.BaseServer Class Reference</title>
+<title>Datum Point: UniformServer.BaseServer Class Reference</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -29,8 +29,8 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">THB+ | Network Platform
-   &#160;<span id="projectnumber">1.0</span>
+   <div id="projectname">Datum Point
+   &#160;<span id="projectnumber">0.1.4</span>
    </div>
   </td>
  </tr>
@@ -87,6 +87,7 @@ $(document).ready(function(){initNavTree('d7/d32/class_uniform_server_1_1_base_s
 
 <div class="header">
   <div class="summary">
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
@@ -109,12 +110,19 @@ Inheritance diagram for UniformServer.BaseServer:</div>
  <div class="center">
   <img src="../../d7/d32/class_uniform_server_1_1_base_server.png" usemap="#UniformServer.BaseServer_map" alt=""/>
   <map id="UniformServer.BaseServer_map" name="UniformServer.BaseServer_map">
-<area href="../../d2/d9a/class_queries_server_1_1_server.html" alt="QueriesServer.Server" shape="rect" coords="0,56,165,80"/>
-<area href="../../d8/d17/class_session_provider_1_1_server.html" title="Server tasks: " alt="SessionProvider.Server" shape="rect" coords="175,56,340,80"/>
-<area href="../../dc/d42/class_t_h_b___data___server_1_1_server.html" title="Server that provide and manage data by queries. " alt="THB_Data_Server.Server" shape="rect" coords="350,56,515,80"/>
+<area href="../../d2/d9a/class_queries_server_1_1_server.html" alt="QueriesServer.Server" shape="rect" coords="0,56,174,80"/>
+<area href="../../d8/d17/class_session_provider_1_1_server.html" title="Server tasks: " alt="SessionProvider.Server" shape="rect" coords="184,56,358,80"/>
+<area href="../../dc/d42/class_t_h_b___data___server_1_1_server.html" title="Server that provide and manage data by queries. " alt="THB_Data_Server.Server" shape="rect" coords="368,56,542,80"/>
+<area href="../../dc/d09/class_uniform_server_1_1_simple_server.html" title="Server that allow instiniate BaseServer. Not contain any additive methods. " alt="UniformServer.SimpleServer" shape="rect" coords="552,56,726,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:aa85e82df10ecec8324e2ccf7611d8cbf"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#aa85e82df10ecec8324e2ccf7611d8cbf">SendAnswer</a> (string answer, <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">UniformQueries.QueryPart</a>[] entryQueryParts)</td></tr>
+<tr class="memdesc:aa85e82df10ecec8324e2ccf7611d8cbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Open server line that will send answer backward to cliend by dirrect line. Line will established relative to the data shared by client query.  <a href="#aa85e82df10ecec8324e2ccf7611d8cbf">More...</a><br /></td></tr>
+<tr class="separator:aa85e82df10ecec8324e2ccf7611d8cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a52485a2d70e615a5cbf720c952a8d62f"><td class="memItemLeft" align="right" valign="top">Thread&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#a52485a2d70e615a5cbf720c952a8d62f">thread</a></td></tr>
@@ -138,9 +146,9 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a1b7d5587de4974fad2ec366a571791e0"><td class="memItemLeft" align="right" valign="top">static IntPtr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#a1b7d5587de4974fad2ec366a571791e0">GetConsoleWindow</a> ()</td></tr>
 <tr class="memdesc:a1b7d5587de4974fad2ec366a571791e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inported method that allow acces to console window.  <a href="#a1b7d5587de4974fad2ec366a571791e0">More...</a><br /></td></tr>
 <tr class="separator:a1b7d5587de4974fad2ec366a571791e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27e52ba4c6bc40a47795085a7e3d03cd"><td class="memItemLeft" align="right" valign="top">virtual Thread&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#a27e52ba4c6bc40a47795085a7e3d03cd">StartServerThread</a> (string threadName, object sharebleParam, ParameterizedThreadStart serverLoop)</td></tr>
-<tr class="memdesc:a27e52ba4c6bc40a47795085a7e3d03cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that starting server thread.  <a href="#a27e52ba4c6bc40a47795085a7e3d03cd">More...</a><br /></td></tr>
-<tr class="separator:a27e52ba4c6bc40a47795085a7e3d03cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4a1412b217944e7f8d6ccae6ac68289"><td class="memItemLeft" align="right" valign="top">Thread&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#aa4a1412b217944e7f8d6ccae6ac68289">StartServerThread</a> (string threadName, object sharebleParam, ParameterizedThreadStart serverLoop)</td></tr>
+<tr class="memdesc:aa4a1412b217944e7f8d6ccae6ac68289"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that starting server thread.  <a href="#aa4a1412b217944e7f8d6ccae6ac68289">More...</a><br /></td></tr>
+<tr class="separator:aa4a1412b217944e7f8d6ccae6ac68289"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-methods"></a>
 Static Protected Member Functions</h2></td></tr>
@@ -150,6 +158,12 @@ Static Protected Member Functions</h2></td></tr>
 <tr class="memitem:a992660752da60019c348e18226a87bf2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#a992660752da60019c348e18226a87bf2">ArgsReactor</a> (string[] args)</td></tr>
 <tr class="memdesc:a992660752da60019c348e18226a87bf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method that will configurate application and server relative to the uniform arguments.  <a href="#a992660752da60019c348e18226a87bf2">More...</a><br /></td></tr>
 <tr class="separator:a992660752da60019c348e18226a87bf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f6857c6f0644118294fa56c92f00e5c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#a6f6857c6f0644118294fa56c92f00e5c">ThreadingServerLoop_Answer</a> (object server)</td></tr>
+<tr class="memdesc:a6f6857c6f0644118294fa56c92f00e5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main loop that control monitor thread.  <a href="#a6f6857c6f0644118294fa56c92f00e5c">More...</a><br /></td></tr>
+<tr class="separator:a6f6857c6f0644118294fa56c92f00e5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e42ffc373c7fa23f401957251b0943d"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#a9e42ffc373c7fa23f401957251b0943d">ThreadingServerLoop_OpenChanel</a> (object server)</td></tr>
+<tr class="memdesc:a9e42ffc373c7fa23f401957251b0943d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main loop that control pipe chanel that will recive clients.  <a href="#a9e42ffc373c7fa23f401957251b0943d">More...</a><br /></td></tr>
+<tr class="separator:a9e42ffc373c7fa23f401957251b0943d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -162,18 +176,18 @@ Protected Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
-<tr class="memitem:a051bdce3aec037df76d8efe3b9938198"><td class="memItemLeft" align="right" valign="top">static Mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#a051bdce3aec037df76d8efe3b9938198">mutexObj</a> = new Mutex()</td></tr>
-<tr class="memdesc:a051bdce3aec037df76d8efe3b9938198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object that allow to detect processes conflict.  <a href="#a051bdce3aec037df76d8efe3b9938198">More...</a><br /></td></tr>
-<tr class="separator:a051bdce3aec037df76d8efe3b9938198"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4dbe04636a763decfae22ddb2fe26c7a"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#a4dbe04636a763decfae22ddb2fe26c7a">threadSleepTime</a> = 150</td></tr>
 <tr class="memdesc:a4dbe04636a763decfae22ddb2fe26c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many milisseconds will sleep thread after tick.  <a href="#a4dbe04636a763decfae22ddb2fe26c7a">More...</a><br /></td></tr>
 <tr class="separator:a4dbe04636a763decfae22ddb2fe26c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa40c02a1eec7eda4c36a8ac08119b414"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#aa40c02a1eec7eda4c36a8ac08119b414">threadsCount</a> = 1</td></tr>
 <tr class="memdesc:aa40c02a1eec7eda4c36a8ac08119b414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Count of threads.  <a href="#aa40c02a1eec7eda4c36a8ac08119b414">More...</a><br /></td></tr>
 <tr class="separator:aa40c02a1eec7eda4c36a8ac08119b414"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b4049daf3614587c02fb4f1fab870a6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html">BaseServer</a> []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#a3b4049daf3614587c02fb4f1fab870a6">serverThreads</a></td></tr>
-<tr class="memdesc:a3b4049daf3614587c02fb4f1fab870a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Threads that contai servers.  <a href="#a3b4049daf3614587c02fb4f1fab870a6">More...</a><br /></td></tr>
-<tr class="separator:a3b4049daf3614587c02fb4f1fab870a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c14e919da0c2b9b7f8e57a92c9b0742"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html">BaseServer</a> []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#a9c14e919da0c2b9b7f8e57a92c9b0742">longTermServerThreads</a></td></tr>
+<tr class="memdesc:a9c14e919da0c2b9b7f8e57a92c9b0742"><td class="mdescLeft">&#160;</td><td class="mdescRight">Threads that contai servers.  <a href="#a9c14e919da0c2b9b7f8e57a92c9b0742">More...</a><br /></td></tr>
+<tr class="separator:a9c14e919da0c2b9b7f8e57a92c9b0742"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a051bdce3aec037df76d8efe3b9938198"><td class="memItemLeft" align="right" valign="top">static Mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#a051bdce3aec037df76d8efe3b9938198">mutexObj</a> = new Mutex()</td></tr>
+<tr class="memdesc:a051bdce3aec037df76d8efe3b9938198"><td class="mdescLeft">&#160;</td><td class="mdescRight">Object that allow to detect processes conflict.  <a href="#a051bdce3aec037df76d8efe3b9938198">More...</a><br /></td></tr>
+<tr class="separator:a051bdce3aec037df76d8efe3b9938198"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
@@ -289,6 +303,55 @@ Events</h2></td></tr>
 
 </div>
 </div>
+<a id="aa85e82df10ecec8324e2ccf7611d8cbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa85e82df10ecec8324e2ccf7611d8cbf">&#9670;&nbsp;</a></span>SendAnswer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool UniformServer.BaseServer.SendAnswer </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>answer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">UniformQueries.QueryPart</a> []&#160;</td>
+          <td class="paramname"><em>entryQueryParts</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Open server line that will send answer backward to cliend by dirrect line. Line will established relative to the data shared by client query. </p>
+<p>Using this method you frovide uniform revers connection and not need to create a transmission line by yourself.</p>
+<p>Recommended to use this methos by default dor duplex connection between sever and clients. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">server</td><td>Instance of server that will provide multithreading implementation.</td></tr>
+    <tr><td class="paramname">answer</td><td>Message that will sent by server to target client.</td></tr>
+    <tr><td class="paramname">entryQueryParts</td><td>Parts of query that was recived from client. Method will detect core part and establish backward connection.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="a16cf4f4f9de9d6d6586631640d3d867b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a16cf4f4f9de9d6d6586631640d3d867b">&#9670;&nbsp;</a></span>ShowWindow()</h2>
 
@@ -335,8 +398,8 @@ Events</h2></td></tr>
 
 </div>
 </div>
-<a id="a27e52ba4c6bc40a47795085a7e3d03cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27e52ba4c6bc40a47795085a7e3d03cd">&#9670;&nbsp;</a></span>StartServerThread()</h2>
+<a id="aa4a1412b217944e7f8d6ccae6ac68289"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4a1412b217944e7f8d6ccae6ac68289">&#9670;&nbsp;</a></span>StartServerThread()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -345,7 +408,7 @@ Events</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual Thread UniformServer.BaseServer.StartServerThread </td>
+          <td class="memname">Thread UniformServer.BaseServer.StartServerThread </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>threadName</em>, </td>
@@ -370,7 +433,7 @@ Events</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -384,6 +447,62 @@ Events</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a6f6857c6f0644118294fa56c92f00e5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f6857c6f0644118294fa56c92f00e5c">&#9670;&nbsp;</a></span>ThreadingServerLoop_Answer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void UniformServer.BaseServer.ThreadingServerLoop_Answer </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>server</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Main loop that control monitor thread. </p>
+
+</div>
+</div>
+<a id="a9e42ffc373c7fa23f401957251b0943d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e42ffc373c7fa23f401957251b0943d">&#9670;&nbsp;</a></span>ThreadingServerLoop_OpenChanel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void UniformServer.BaseServer.ThreadingServerLoop_OpenChanel </td>
+          <td>(</td>
+          <td class="paramtype">object&#160;</td>
+          <td class="paramname"><em>server</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Main loop that control pipe chanel that will recive clients. </p>
 
 </div>
 </div>
@@ -409,6 +528,30 @@ Events</h2></td></tr>
 </div><div class="memdoc">
 
 <p>If true then will stop main loop. </p>
+
+</div>
+</div>
+<a id="a9c14e919da0c2b9b7f8e57a92c9b0742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c14e919da0c2b9b7f8e57a92c9b0742">&#9670;&nbsp;</a></span>longTermServerThreads</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html">BaseServer</a> [] UniformServer.BaseServer.longTermServerThreads</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Threads that contai servers. </p>
 
 </div>
 </div>
@@ -449,30 +592,6 @@ Events</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Name that will be applied to the pipe. </p>
-
-</div>
-</div>
-<a id="a3b4049daf3614587c02fb4f1fab870a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b4049daf3614587c02fb4f1fab870a6">&#9670;&nbsp;</a></span>serverThreads</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html">BaseServer</a> [] UniformServer.BaseServer.serverThreads</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Threads that contai servers. </p>
 
 </div>
 </div>
@@ -663,7 +782,7 @@ Events</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>D:/Work/Tools/UniformServer/BaseServer.cs</li>
+<li>D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

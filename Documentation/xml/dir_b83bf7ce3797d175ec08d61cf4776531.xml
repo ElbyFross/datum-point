@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_b83bf7ce3797d175ec08d61cf4776531" kind="dir">
-    <compoundname>D:/Work/Tools/Plugins/THB Plugin Orders/Properties</compoundname>
+    <compoundname>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/Properties</compoundname>
     <innerfile refid="d0/d9b/_plugins_2_t_h_b_01_plugin_01_orders_2_properties_2_assembly_info_8cs">AssemblyInfo.cs</innerfile>
     <innerfile refid="de/d24/_plugins_2_t_h_b_01_plugin_01_orders_2_properties_2_resources_8_designer_8cs">Resources.Designer.cs</innerfile>
     <innerfile refid="d4/dfc/_plugins_2_t_h_b_01_plugin_01_orders_2_properties_2_settings_8_designer_8cs">Settings.Designer.cs</innerfile>
@@ -9,6 +9,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/Tools/Plugins/THB Plugin Orders/Properties/"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/Properties/"/>
   </compounddef>
 </doxygen>

@@ -27,26 +27,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
 <para>Draw line</para><para>Draw line</para><para>Show help. </para>        </inbodydescription>
-        <location file="D:/Work/Tools/THB Data Server/Server.cs" line="20" column="1" bodyfile="D:/Work/Tools/THB Data Server/Server.cs" bodystart="20" bodyend="142"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="dc/d42/class_t_h_b___data___server_1_1_server_1a7410e66cc0584f3d59d6b2c5892e9b12" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>static void THB_Data_Server.Server.MonitorLoop</definition>
-        <argsstring>(object server)</argsstring>
-        <name>MonitorLoop</name>
-        <param>
-          <type>object</type>
-          <declname>server</declname>
-        </param>
-        <briefdescription>
-<para>Main loop that control monitor thread. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/Tools/THB Data Server/Server.cs" line="147" column="1" bodyfile="D:/Work/Tools/THB Data Server/Server.cs" bodystart="147" bodyend="165"/>
+        <location file="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" line="34" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" bodystart="34" bodyend="156"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -54,57 +35,59 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="287">
+      <node id="293">
         <label>THB_Data_Server.Server</label>
         <link refid="dc/d42/class_t_h_b___data___server_1_1_server"/>
-        <childnode refid="288" relation="public-inheritance">
+        <childnode refid="294" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="288">
+      <node id="294">
         <label>UniformServer::BaseServer</label>
         <link refid="d7/d32/class_uniform_server_1_1_base_server"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="291">
+      <node id="297">
         <label>UniformServer.BaseServer</label>
         <link refid="d7/d32/class_uniform_server_1_1_base_server"/>
-        <childnode refid="291" relation="usage">
-          <edgelabel>serverThreads</edgelabel>
+        <childnode refid="297" relation="usage">
+          <edgelabel>longTermServerThreads</edgelabel>
         </childnode>
       </node>
-      <node id="289">
+      <node id="295">
         <label>THB_Data_Server.Server</label>
         <link refid="dc/d42/class_t_h_b___data___server_1_1_server"/>
-        <childnode refid="290" relation="public-inheritance">
+        <childnode refid="296" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="290">
+      <node id="296">
         <label>UniformServer::BaseServer</label>
         <link refid="d7/d32/class_uniform_server_1_1_base_server"/>
-        <childnode refid="291" relation="usage">
-          <edgelabel>serverThreads</edgelabel>
+        <childnode refid="297" relation="usage">
+          <edgelabel>longTermServerThreads</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/THB Data Server/Server.cs" line="14" column="1" bodyfile="D:/Work/Tools/THB Data Server/Server.cs" bodystart="13" bodyend="166"/>
+    <location file="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" line="28" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" bodystart="27" bodyend="157"/>
     <listofallmembers>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a632ed557976f4d7bd9b41502bb9a262b" prot="public" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>appTerminated</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a992660752da60019c348e18226a87bf2" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>ArgsReactor</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a1b7d5587de4974fad2ec366a571791e0" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>GetConsoleWindow</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a22b92ad517cd1003fe4fe3c86d857169" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>LoadAssemblies</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a9c14e919da0c2b9b7f8e57a92c9b0742" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>longTermServerThreads</name></member>
       <member refid="dc/d42/class_t_h_b___data___server_1_1_server_1a87515fb7b3422af002d33dd3fbe8f4e9" prot="private" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>Main</name></member>
-      <member refid="dc/d42/class_t_h_b___data___server_1_1_server_1a7410e66cc0584f3d59d6b2c5892e9b12" prot="public" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>MonitorLoop</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a051bdce3aec037df76d8efe3b9938198" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>mutexObj</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1aaa318b3ed503dd8ccf381c9f3a81ecf2" prot="public" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>pipeName</name></member>
-      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a3b4049daf3614587c02fb4f1fab870a6" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>serverThreads</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1aa85e82df10ecec8324e2ccf7611d8cbf" prot="public" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>SendAnswer</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a16cf4f4f9de9d6d6586631640d3d867b" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>ShowWindow</name></member>
-      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a27e52ba4c6bc40a47795085a7e3d03cd" prot="protected" virt="virtual"><scope>THB_Data_Server::Server</scope><name>StartServerThread</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1aa4a1412b217944e7f8d6ccae6ac68289" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>StartServerThread</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1aaff91507b262d2a1b9021caa2d01640f" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>SW_HIDE</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a494087cabc03c54c3dc0ac1cc1048860" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>SW_SHOW</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a52485a2d70e615a5cbf720c952a8d62f" prot="public" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>thread</name></member>
-      <member refid="d7/d32/class_uniform_server_1_1_base_server_1aa40c02a1eec7eda4c36a8ac08119b414" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>threadsCount</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a6f6857c6f0644118294fa56c92f00e5c" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>ThreadingServerLoop_Answer</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1a9e42ffc373c7fa23f401957251b0943d" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>ThreadingServerLoop_OpenChanel</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a31cc7d436bb2dd344ec275fd0fa0061e" prot="public" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>ThreadsCount</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1aa40c02a1eec7eda4c36a8ac08119b414" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>threadsCount</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a4dbe04636a763decfae22ddb2fe26c7a" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>threadSleepTime</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a440a854a955ab7c5e563918c12e9b32c" prot="public" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>ThreadStartRequest</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a889c3aaa1cca7f4a9a4e32617516f4be" prot="public" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>ThreadTerminateRequest</name></member>

@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" line="14" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" bodystart="14" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" line="28" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" bodystart="28" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1a6e9fa5426107e5d4265273e5be439a62" prot="public" static="no" mutable="no">
         <type>System.Action&lt; <ref refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" kindref="compound">ServerTransmissionMeta</ref> &gt;</type>
@@ -22,12 +22,12 @@
         <argsstring></argsstring>
         <name>connectionCallback</name>
         <briefdescription>
-<para>Delegate that will be called when connection will be established. </para>        </briefdescription>
+<para>Delegate that will be called when connection will be established. <ref refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" kindref="compound">ServerTransmissionMeta</ref> - meta data of transmission. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" line="19" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" bodystart="19" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" line="34" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1aa663870a4d61945bcedd85721ede42a5" prot="public" static="no" mutable="no">
         <type>System.Action&lt; <ref refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" kindref="compound">ServerTransmissionMeta</ref>, string &gt;</type>
@@ -35,12 +35,12 @@
         <argsstring></argsstring>
         <name>queryHandlerCallback</name>
         <briefdescription>
-<para>Delegate that will be called when server will recive query. <ref refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" kindref="compound">ServerTransmissionMeta</ref> - meta data of transmission. string - recived query. </para>        </briefdescription>
+<para>Delegate that will be called when server will recive query. <ref refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" kindref="compound">ServerTransmissionMeta</ref> - meta data of transmission. string - shared query. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" line="26" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" bodystart="26" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" bodystart="41" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1a8b2ff8796056a5a2fbe0dbb4c4fd5dab" prot="public" static="no" mutable="no">
         <type>NamedPipeServerStream</type>
@@ -53,7 +53,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" line="31" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" bodystart="31" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" line="46" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" bodystart="46" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1abed6acbaaf01392151667fad217ec7c3" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -66,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" line="36" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" bodystart="36" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" line="51" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" bodystart="51" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
@@ -81,7 +81,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" line="42" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" bodystart="42" bodyend="42"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" line="57" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" bodystart="57" bodyend="57"/>
       </memberdef>
       <memberdef kind="property" id="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1a9b501faba9c2cb9ed8873f1935d95b7c" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="yes">
         <type>bool</type>
@@ -94,7 +94,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" line="47" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" bodystart="47" bodyend="47"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" line="62" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="property" id="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1abdf46c54f238645728488c757a53097e" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string PipesProvider.ServerTransmissionMeta.ProcessingQuery</definition>
+        <argsstring></argsstring>
+        <name>ProcessingQuery</name>
+        <briefdescription>
+<para>Query that aqtualu in processing. </para>        </briefdescription>
+        <detaileddescription>
+<para>Attention: Value can be changed if some of handlers will call disconecction or transmission error. This situation will lead to establishing new connection that lead to changing of this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" bodystart="70" bodyend="70"/>
       </memberdef>
       <memberdef kind="property" id="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1aad6b35f35e7976ae9ee3f386b65dd128" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
         <type><ref refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" kindref="compound">ServerTransmissionMeta</ref></type>
@@ -107,7 +120,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" line="71" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" bodystart="72" bodyend="74"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" line="93" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" bodystart="94" bodyend="96"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -122,7 +135,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" line="51" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" bodystart="51" bodyend="51"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" line="73" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" bodystart="73" bodyend="73"/>
       </memberdef>
       <memberdef kind="function" id="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1a665969b5b071d7fdc931e9e9f223652b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -155,7 +168,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" line="53" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" bodystart="53" bodyend="66"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" line="75" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" bodystart="75" bodyend="88"/>
       </memberdef>
       <memberdef kind="function" id="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1a29b2b6d3e06632b362a2101b12f082f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -168,7 +181,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" line="80" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" bodystart="80" bodyend="83"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" line="102" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" bodystart="102" bodyend="107"/>
       </memberdef>
       <memberdef kind="function" id="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1acf5d5cd3ea8799d979a0208d8ae50ff1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -181,7 +194,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" line="89" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" bodystart="89" bodyend="93"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" line="113" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" bodystart="113" bodyend="119"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -189,19 +202,19 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="294">
+      <node id="310">
         <label>System</label>
       </node>
-      <node id="293">
+      <node id="309">
         <label>PipesProvider.ServerTransmissionMeta</label>
         <link refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta"/>
-        <childnode refid="294" relation="usage">
+        <childnode refid="310" relation="usage">
           <edgelabel>queryHandlerCallback</edgelabel>
           <edgelabel>connectionCallback</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" line="10" column="1" bodyfile="D:/Work/Tools/PipesProvider/ServerTransmissionMeta.cs" bodystart="9" bodyend="94"/>
+    <location file="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" line="24" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ServerTransmissionMeta.cs" bodystart="23" bodyend="120"/>
     <listofallmembers>
       <member refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1a6e9fa5426107e5d4265273e5be439a62" prot="public" virt="non-virtual"><scope>PipesProvider::ServerTransmissionMeta</scope><name>connectionCallback</name></member>
       <member refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1a1d4a87ad9a66bd81bc68f48fa28dbf32" prot="public" virt="non-virtual"><scope>PipesProvider::ServerTransmissionMeta</scope><name>connectionMarker</name></member>
@@ -209,6 +222,7 @@
       <member refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1abed6acbaaf01392151667fad217ec7c3" prot="public" virt="non-virtual"><scope>PipesProvider::ServerTransmissionMeta</scope><name>name</name></member>
       <member refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1aad6b35f35e7976ae9ee3f386b65dd128" prot="public" virt="non-virtual"><scope>PipesProvider::ServerTransmissionMeta</scope><name>None</name></member>
       <member refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1a8b2ff8796056a5a2fbe0dbb4c4fd5dab" prot="public" virt="non-virtual"><scope>PipesProvider::ServerTransmissionMeta</scope><name>pipe</name></member>
+      <member refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1abdf46c54f238645728488c757a53097e" prot="public" virt="non-virtual"><scope>PipesProvider::ServerTransmissionMeta</scope><name>ProcessingQuery</name></member>
       <member refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1aa663870a4d61945bcedd85721ede42a5" prot="public" virt="non-virtual"><scope>PipesProvider::ServerTransmissionMeta</scope><name>queryHandlerCallback</name></member>
       <member refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1abca2ef9b22e5cb29dac8f5c23da8c64f" prot="public" virt="non-virtual"><scope>PipesProvider::ServerTransmissionMeta</scope><name>ServerTransmissionMeta</name></member>
       <member refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta_1a665969b5b071d7fdc931e9e9f223652b" prot="public" virt="non-virtual"><scope>PipesProvider::ServerTransmissionMeta</scope><name>ServerTransmissionMeta</name></member>

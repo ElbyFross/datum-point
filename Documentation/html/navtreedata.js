@@ -23,7 +23,8 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "THB+ | Network Platform", "index.html", [
+  [ "Datum Point", "index.html", [
+    [ "Datum Point", "d8/d9e/md__d_1__work__git_hub_datum-point__r_e_a_d_m_e.html", null ],
     [ "Packages", "namespaces.html", [
       [ "Packages", "namespaces.html", "namespaces_dup" ]
     ] ],
@@ -33,8 +34,9 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
         [ "Properties", "functions_prop.html", null ],
         [ "Events", "functions_evnt.html", null ]
       ] ]
@@ -45,8 +47,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d5/d0e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_logbook.html#a563af1c666ffd5e11808ed38b7f2ed83",
-"dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board.html#ada300d5554820e4bef6e5ef58e45e221"
+"d4/ddf/class_pipes_provider_1_1_a_p_i.html#ab525aaa0c87f23cfbe4ad6d0ed1b1b4c",
+"dc/d14/struct_teacher_handbook_1_1_core_1_1_orders_1_1_order_date.html",
+"functions_q.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

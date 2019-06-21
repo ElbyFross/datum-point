@@ -29,16 +29,16 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/THB Data Server Queries/GET_DAYS_RANGE.cs" line="9" column="1" bodyfile="D:/Work/Tools/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="9" bodyend="19"/>
+        <location file="D:/Work/GitHub/datum-point/THB Data Server Queries/GET_DAYS_RANGE.cs" line="24" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="24" bodyend="37"/>
       </memberdef>
-      <memberdef kind="function" id="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1adb606b0ed5b0bceaa96ce14ba34158c9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1a6c1884577a045fad484de904dc0da636" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void THB_Data_Server_Queries.GET_DAYS_RANGE.Execute</definition>
-        <argsstring>(string[] queryParts)</argsstring>
+        <argsstring>(QueryPart[] queryParts)</argsstring>
         <name>Execute</name>
-        <reimplements refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1a60538b1b29c5d1d3bc67db28a265677a">Execute</reimplements>
+        <reimplements refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1a2cf42ac286a12dea98c703a86478d36b">Execute</reimplements>
         <param>
-          <type>string []</type>
+          <type><ref refid="d5/d61/struct_uniform_queries_1_1_query_part" kindref="compound">QueryPart</ref> []</type>
           <declname>queryParts</declname>
         </param>
         <briefdescription>
@@ -55,16 +55,16 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/THB Data Server Queries/GET_DAYS_RANGE.cs" line="21" column="1" bodyfile="D:/Work/Tools/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="21" bodyend="24"/>
+        <location file="D:/Work/GitHub/datum-point/THB Data Server Queries/GET_DAYS_RANGE.cs" line="39" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="39" bodyend="42"/>
       </memberdef>
-      <memberdef kind="function" id="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1a2b21ca7e9599161544424cd0f7e55ef4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1a1f27cee6dbc3ba3fdfad0590a75d239b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>bool THB_Data_Server_Queries.GET_DAYS_RANGE.IsTarget</definition>
-        <argsstring>(string[] queryParts)</argsstring>
+        <argsstring>(QueryPart[] queryParts)</argsstring>
         <name>IsTarget</name>
-        <reimplements refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1a435493887db64defdb6019c3c418a4d4">IsTarget</reimplements>
+        <reimplements refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor_1a0edbfe93aab9f1787e4dc0311f7695c7">IsTarget</reimplements>
         <param>
-          <type>string []</type>
+          <type><ref refid="d5/d61/struct_uniform_queries_1_1_query_part" kindref="compound">QueryPart</ref> []</type>
           <declname>queryParts</declname>
         </param>
         <briefdescription>
@@ -82,7 +82,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/THB Data Server Queries/GET_DAYS_RANGE.cs" line="26" column="1" bodyfile="D:/Work/Tools/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="26" bodyend="40"/>
+        <location file="D:/Work/GitHub/datum-point/THB Data Server Queries/GET_DAYS_RANGE.cs" line="44" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="44" bodyend="58"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -90,18 +90,6 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="141">
-        <label>THB_Data_Server_Queries.GET_DAYS_RANGE</label>
-        <link refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e"/>
-        <childnode refid="142" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="142">
-        <label>UniformQueries::IQueryHandlerProcessor</label>
-        <link refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor"/>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="143">
         <label>THB_Data_Server_Queries.GET_DAYS_RANGE</label>
         <link refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e"/>
@@ -109,15 +97,27 @@
         </childnode>
       </node>
       <node id="144">
-        <label>UniformQueries::IQueryHandlerProcessor</label>
+        <label>IQueryHandlerProcessor</label>
+        <link refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="145">
+        <label>THB_Data_Server_Queries.GET_DAYS_RANGE</label>
+        <link refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e"/>
+        <childnode refid="146" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="146">
+        <label>IQueryHandlerProcessor</label>
         <link refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor"/>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/THB Data Server Queries/GET_DAYS_RANGE.cs" line="8" column="1" bodyfile="D:/Work/Tools/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="7" bodyend="41"/>
+    <location file="D:/Work/GitHub/datum-point/THB Data Server Queries/GET_DAYS_RANGE.cs" line="23" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="22" bodyend="59"/>
     <listofallmembers>
       <member refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1aa91ce7c90a325c70aab9aaf112fe49f3" prot="public" virt="non-virtual"><scope>THB_Data_Server_Queries::GET_DAYS_RANGE</scope><name>Description</name></member>
-      <member refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1adb606b0ed5b0bceaa96ce14ba34158c9" prot="public" virt="non-virtual"><scope>THB_Data_Server_Queries::GET_DAYS_RANGE</scope><name>Execute</name></member>
-      <member refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1a2b21ca7e9599161544424cd0f7e55ef4" prot="public" virt="non-virtual"><scope>THB_Data_Server_Queries::GET_DAYS_RANGE</scope><name>IsTarget</name></member>
+      <member refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1a6c1884577a045fad484de904dc0da636" prot="public" virt="non-virtual"><scope>THB_Data_Server_Queries::GET_DAYS_RANGE</scope><name>Execute</name></member>
+      <member refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1a1f27cee6dbc3ba3fdfad0590a75d239b" prot="public" virt="non-virtual"><scope>THB_Data_Server_Queries::GET_DAYS_RANGE</scope><name>IsTarget</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

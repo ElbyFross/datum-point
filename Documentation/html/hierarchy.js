@@ -1,9 +1,9 @@
 var hierarchy =
 [
+    [ "PipesProvider.API", "d4/ddf/class_pipes_provider_1_1_a_p_i.html", null ],
     [ "UniformClient.Plugins.API", "d5/d12/class_uniform_client_1_1_plugins_1_1_a_p_i.html", null ],
     [ "UniformQueries.API", "df/d75/class_uniform_queries_1_1_a_p_i.html", null ],
     [ "WpfHandler.Plugins.API", "d2/d9a/class_wpf_handler_1_1_plugins_1_1_a_p_i.html", null ],
-    [ "PipesProvider.API", "d4/ddf/class_pipes_provider_1_1_a_p_i.html", null ],
     [ "Application", null, [
       [ "TeacherHandbook.App", "d2/d56/class_teacher_handbook_1_1_app.html", null ],
       [ "TeacherHandbook.App", "d2/d56/class_teacher_handbook_1_1_app.html", null ],
@@ -21,12 +21,14 @@ var hierarchy =
     ] ],
     [ "UniformClient.BaseClient", "d4/deb/class_uniform_client_1_1_base_client.html", [
       [ "TeacherHandbook.Client", "d8/de3/class_teacher_handbook_1_1_client.html", null ],
-      [ "TestClient.Client", "d6/dac/class_test_client_1_1_client.html", null ]
+      [ "TestClient.Client", "d6/dac/class_test_client_1_1_client.html", null ],
+      [ "UniformClient.SimpleClient", "d4/d3e/class_uniform_client_1_1_simple_client.html", null ]
     ] ],
     [ "UniformServer.BaseServer", "d7/d32/class_uniform_server_1_1_base_server.html", [
       [ "QueriesServer.Server", "d2/d9a/class_queries_server_1_1_server.html", null ],
       [ "SessionProvider.Server", "d8/d17/class_session_provider_1_1_server.html", null ],
-      [ "THB_Data_Server.Server", "dc/d42/class_t_h_b___data___server_1_1_server.html", null ]
+      [ "THB_Data_Server.Server", "dc/d42/class_t_h_b___data___server_1_1_server.html", null ],
+      [ "UniformServer.SimpleServer", "dc/d09/class_uniform_server_1_1_simple_server.html", null ]
     ] ],
     [ "THB_Data_Server.Commands", "d6/d8f/class_t_h_b___data___server_1_1_commands.html", null ],
     [ "UniformClient.Plugins.Constants", "d2/d62/class_uniform_client_1_1_plugins_1_1_constants.html", null ],
@@ -140,7 +142,8 @@ var hierarchy =
       [ "THB_Plugin_Social.Advices.Advices", "dc/d36/class_t_h_b___plugin___social_1_1_advices_1_1_advices.html", null ]
     ] ],
     [ "UniformQueries.IQueryHandlerProcessor", "d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor.html", [
-      [ "THB_Data_Server_Queries.GET_DAYS_RANGE", "de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e.html", null ]
+      [ "THB_Data_Server_Queries.GET_DAYS_RANGE", "de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e.html", null ],
+      [ "UniformServer.Queries.GET_PUBLIC_KEY", "da/d43/class_uniform_server_1_1_queries_1_1_g_e_t___p_u_b_l_i_c___k_e_y.html", null ]
     ] ],
     [ "TeacherHandbook.Core.Containers.Entities.IUser", "d1/dfc/interface_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_i_user.html", [
       [ "TeacherHandbook.Core.Containers.Entities.BaseUser", "d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user.html", [
@@ -153,13 +156,17 @@ var hierarchy =
     [ "TeacherHandbook.Core.Containers.CrossTypes.NameContainer", "d0/d8b/class_teacher_handbook_1_1_core_1_1_containers_1_1_cross_types_1_1_name_container.html", null ],
     [ "TeacherHandbook.Core.Orders.OrderDate", "dc/d14/struct_teacher_handbook_1_1_core_1_1_orders_1_1_order_date.html", null ],
     [ "ConsoleDraw.Primitives", "db/d7f/class_console_draw_1_1_primitives.html", null ],
+    [ "PipesProvider.QueryContainer", "d2/d85/struct_pipes_provider_1_1_query_container.html", null ],
+    [ "UniformQueries.QueryPart", "d5/d61/struct_uniform_queries_1_1_query_part.html", null ],
     [ "THB_Plugin_Lesson.Properties.Resources", "d1/d04/class_t_h_b___plugin___lesson_1_1_properties_1_1_resources.html", null ],
     [ "WpfHandler.Properties.Resources", "d2/d90/class_wpf_handler_1_1_properties_1_1_resources.html", null ],
     [ "THB_Plugin_Exams.Properties.Resources", "d8/d18/class_t_h_b___plugin___exams_1_1_properties_1_1_resources.html", null ],
-    [ "THB_Plugin_Social.Properties.Resources", "d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources.html", null ],
     [ "TeacherHandbook.Properties.Resources", "de/d69/class_teacher_handbook_1_1_properties_1_1_resources.html", null ],
-    [ "THB_Data_Server.Properties.Resources", "d1/d40/class_t_h_b___data___server_1_1_properties_1_1_resources.html", null ],
     [ "THB_Plugin_Orders.Properties.Resources", "d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources.html", null ],
+    [ "THB_Data_Server.Properties.Resources", "d1/d40/class_t_h_b___data___server_1_1_properties_1_1_resources.html", null ],
+    [ "THB_Plugin_Social.Properties.Resources", "d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources.html", null ],
+    [ "UniformClient.SecurityAPI", "d3/d16/class_uniform_client_1_1_security_a_p_i.html", null ],
+    [ "UniformServer.SecurityAPI", "d6/d3d/class_uniform_server_1_1_security_a_p_i.html", null ],
     [ "PipesProvider.ServerTransmissionMeta", "d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html", null ],
     [ "TeacherHandbook.Core.Containers.Schedule.Session", "d5/d8e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_session.html", null ],
     [ "TeacherHandbook.Core.Containers.Schedule.Subject", "db/dce/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_subject.html", null ],

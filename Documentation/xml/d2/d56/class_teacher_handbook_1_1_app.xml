@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/App.g.cs" line="43" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/App.g.cs" bodystart="43" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/App.g.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/App.g.cs" bodystart="43" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -34,7 +34,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/App.g.cs" line="50" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/App.g.cs" bodystart="50" bodyend="68"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/App.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/App.g.cs" bodystart="50" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="d2/d56/class_teacher_handbook_1_1_app_1afbffdf9e50df5c19ff2ea81241e322b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/App.g.i.cs" line="50" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/App.g.i.cs" bodystart="50" bodyend="68"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/App.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/App.g.i.cs" bodystart="50" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="d2/d56/class_teacher_handbook_1_1_app_1afbffdf9e50df5c19ff2ea81241e322b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Release/App.g.cs" line="50" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Release/App.g.cs" bodystart="50" bodyend="68"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/App.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/App.g.cs" bodystart="50" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="d2/d56/class_teacher_handbook_1_1_app_1afbffdf9e50df5c19ff2ea81241e322b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Release/App.g.i.cs" line="50" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Release/App.g.i.cs" bodystart="50" bodyend="68"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/App.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/App.g.i.cs" bodystart="50" bodyend="68"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -88,7 +88,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/App.g.cs" line="76" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/App.g.cs" bodystart="76" bodyend="80"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/App.g.cs" line="76" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/App.g.cs" bodystart="76" bodyend="80"/>
       </memberdef>
       <memberdef kind="function" id="d2/d56/class_teacher_handbook_1_1_app_1a023352bc757e3dc9fce26276dfdadd15" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -101,7 +101,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/App.g.i.cs" line="76" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/App.g.i.cs" bodystart="76" bodyend="80"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/App.g.i.cs" line="76" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/App.g.i.cs" bodystart="76" bodyend="80"/>
       </memberdef>
       <memberdef kind="function" id="d2/d56/class_teacher_handbook_1_1_app_1a023352bc757e3dc9fce26276dfdadd15" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -114,7 +114,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Release/App.g.cs" line="76" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Release/App.g.cs" bodystart="76" bodyend="80"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/App.g.cs" line="76" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/App.g.cs" bodystart="76" bodyend="80"/>
       </memberdef>
       <memberdef kind="function" id="d2/d56/class_teacher_handbook_1_1_app_1a023352bc757e3dc9fce26276dfdadd15" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -127,7 +127,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Release/App.g.i.cs" line="76" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Release/App.g.i.cs" bodystart="76" bodyend="80"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/App.g.i.cs" line="76" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/App.g.i.cs" bodystart="76" bodyend="80"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -178,7 +178,7 @@
         <label>Application</label>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/TeacherHandbook/App.xaml.cs" line="15" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/App.xaml.cs" bodystart="14" bodyend="16"/>
+    <location file="D:/Work/GitHub/datum-point/TeacherHandbook/App.xaml.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/App.xaml.cs" bodystart="28" bodyend="30"/>
     <listofallmembers>
       <member refid="d2/d56/class_teacher_handbook_1_1_app_1af85a80dcd07d73660fe52c78248265eb" prot="private" virt="non-virtual"><scope>TeacherHandbook::App</scope><name>_contentLoaded</name></member>
       <member refid="d2/d56/class_teacher_handbook_1_1_app_1afbffdf9e50df5c19ff2ea81241e322b2" prot="public" virt="non-virtual"><scope>TeacherHandbook::App</scope><name>InitializeComponent</name></member>

@@ -310,7 +310,7 @@ namespace PipesProvider
             }
 
             // Discharge existing in hashtable.
-            openedServers.Remove(meta.name);
+            openedServers.Remove(guid);
 
             // Finish stream.
             pipeServer.Close();
@@ -595,6 +595,7 @@ namespace PipesProvider
         {
             // Open stream reader.
             StreamWriter sw = new StreamWriter(meta.pipe);
+            //StreamWriter sw = new StreamWriter(meta.pipe, Encoding.UTF8, 128, true);
 
             // Buferise query before calling of async operations.
             string sharedQuery = meta.ProcessingQuery;
@@ -604,10 +605,9 @@ namespace PipesProvider
             try
             {
                 // Write message to stream.
+                Console.WriteLine("{0}: Start transmission to client.", meta.name);
                 await sw.WriteAsync(sharedQuery);
-
-                // Log
-                Console.WriteLine("SERVER ANSWER SHARED (StC0): {0}", sharedQuery);
+                await sw.FlushAsync();
             }
             // Catch the Exception that is raised if the pipe is broken or disconnected.
             catch (Exception e)

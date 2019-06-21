@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['plugins',['Plugins',['../df/d32/class_teacher_handbook_1_1_main_window.html#a86e1ee1d12e39fbbd0bc0d7f32e36ad0',1,'TeacherHandbook::MainWindow']]],
-  ['pooledtime',['PooledTime',['../df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order.html#afb608aeb72b8634be6d2a10a861356d2',1,'TeacherHandbook::Core::Orders::IOrder']]],
-  ['processing',['Processing',['../d1/d09/class_pipes_provider_1_1_transmission_line.html#af5717e4ea0ba1bbca5685de995c1c88f',1,'PipesProvider::TransmissionLine']]]
+  ['orderpublisher',['OrderPublisher',['../df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order.html#abc8bec467e3650f9db2ea0e383025bee',1,'TeacherHandbook::Core::Orders::IOrder']]]
 ];

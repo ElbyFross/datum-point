@@ -42,8 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientAPI.cs" />
-    <Compile Include="LineProcessor.cs" />
+    <Compile Include="TransmissionLine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryContainer.cs" />
     <Compile Include="ServerAPI.cs" />
     <Compile Include="ServerTransmissionMeta.cs" />
   </ItemGroup>

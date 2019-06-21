@@ -21,7 +21,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/UniformClient/Plugins/IPlugin.cs" line="15" column="1" bodyfile="D:/Work/Tools/UniformClient/Plugins/IPlugin.cs" bodystart="15" bodyend="15"/>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/Plugins/IPlugin.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/Plugins/IPlugin.cs" bodystart="29" bodyend="29"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -47,7 +47,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/UniformClient/Plugins/IPlugin.cs" line="21" column="1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/Plugins/IPlugin.cs" line="35" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -55,54 +55,54 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="152">
+      <node id="158">
         <label>TeacherHandbook.Plugins.Feed.Feed</label>
         <link refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed"/>
-        <childnode refid="151" relation="public-inheritance">
+        <childnode refid="157" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="156">
+      <node id="162">
         <label>THB_Plugin_Lesson.Repository</label>
         <link refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository"/>
-        <childnode refid="151" relation="public-inheritance">
+        <childnode refid="157" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="163">
+        <label>THB_Plugin_Orders.OrdersBoard</label>
+        <link refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board"/>
+        <childnode refid="157" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="159">
+        <label>TeacherHandbook.Plugins.Schedule.Schedule</label>
+        <link refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule"/>
+        <childnode refid="157" relation="public-inheritance">
         </childnode>
       </node>
       <node id="157">
-        <label>THB_Plugin_Orders.OrdersBoard</label>
-        <link refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board"/>
-        <childnode refid="151" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="153">
-        <label>TeacherHandbook.Plugins.Schedule.Schedule</label>
-        <link refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule"/>
-        <childnode refid="151" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="151">
         <label>UniformClient.Plugins.IPlugin</label>
         <link refid="d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin"/>
       </node>
-      <node id="158">
+      <node id="164">
         <label>THB_Plugin_Social.PersonalStatistic.PersonalStatistic</label>
         <link refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic"/>
-        <childnode refid="151" relation="public-inheritance">
+        <childnode refid="157" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="154">
+      <node id="160">
         <label>THB_Plugin_Exams.Monitor</label>
         <link refid="d9/d79/class_t_h_b___plugin___exams_1_1_monitor"/>
-        <childnode refid="151" relation="public-inheritance">
+        <childnode refid="157" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="155">
+      <node id="161">
         <label>THB_Plugin_Exams.TestConstructor</label>
         <link refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor"/>
-        <childnode refid="151" relation="public-inheritance">
+        <childnode refid="157" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
-    <location file="D:/Work/Tools/UniformClient/Plugins/IPlugin.cs" line="11" column="1" bodyfile="D:/Work/Tools/UniformClient/Plugins/IPlugin.cs" bodystart="10" bodyend="22"/>
+    <location file="D:/Work/GitHub/datum-point/UniformClient/Plugins/IPlugin.cs" line="25" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/Plugins/IPlugin.cs" bodystart="24" bodyend="36"/>
     <listofallmembers>
       <member refid="d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin_1aa49e267e66a3d697ded460d9281dcc3a" prot="public" virt="non-virtual"><scope>UniformClient::Plugins::IPlugin</scope><name>Meta</name></member>
       <member refid="d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin_1a1ca2220c7ce4a23f8f41af10efccf328" prot="public" virt="non-virtual"><scope>UniformClient::Plugins::IPlugin</scope><name>OnStart</name></member>

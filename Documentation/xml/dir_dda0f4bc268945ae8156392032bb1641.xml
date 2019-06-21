@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_dda0f4bc268945ae8156392032bb1641" kind="dir">
-    <compoundname>D:/Work/Tools/WpfHandler</compoundname>
-    <innerdir refid="dir_a6535da8d13e5c56b7f983d6c840ee7a">D:/Work/Tools/WpfHandler/obj</innerdir>
-    <innerdir refid="dir_af5d15f8256a51d7807ca342b0319abd">D:/Work/Tools/WpfHandler/Plugins</innerdir>
-    <innerdir refid="dir_4367517d618885f3174662ad1dff82c8">D:/Work/Tools/WpfHandler/Properties</innerdir>
+    <compoundname>D:/Work/GitHub/datum-point/WpfHandler</compoundname>
+    <innerdir refid="dir_a6535da8d13e5c56b7f983d6c840ee7a">D:/Work/GitHub/datum-point/WpfHandler/obj</innerdir>
+    <innerdir refid="dir_af5d15f8256a51d7807ca342b0319abd">D:/Work/GitHub/datum-point/WpfHandler/Plugins</innerdir>
+    <innerdir refid="dir_4367517d618885f3174662ad1dff82c8">D:/Work/GitHub/datum-point/WpfHandler/Properties</innerdir>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/Tools/WpfHandler/"/>
+    <location file="D:/Work/GitHub/datum-point/WpfHandler/"/>
   </compounddef>
 </doxygen>

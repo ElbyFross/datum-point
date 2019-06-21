@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_c3d622d94916962847bdf3eba2f4134f" kind="dir">
-    <compoundname>D:/Work/Tools/Plugins/THB Plugin Exams</compoundname>
-    <innerdir refid="dir_2648235bfabdf2cfbc482137b8bc8120">D:/Work/Tools/Plugins/THB Plugin Exams/obj</innerdir>
-    <innerdir refid="dir_e572bb0e7de612f3f80556ff74a409be">D:/Work/Tools/Plugins/THB Plugin Exams/Properties</innerdir>
+    <compoundname>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams</compoundname>
+    <innerdir refid="dir_2648235bfabdf2cfbc482137b8bc8120">D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj</innerdir>
+    <innerdir refid="dir_e572bb0e7de612f3f80556ff74a409be">D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/Properties</innerdir>
     <innerfile refid="df/d5d/_exam_planner_8xaml_8cs">ExamPlanner.xaml.cs</innerfile>
     <innerfile refid="df/d51/_monitor_8xaml_8cs">Monitor.xaml.cs</innerfile>
     <innerfile refid="db/d46/_test_constructor_8xaml_8cs">TestConstructor.xaml.cs</innerfile>
@@ -11,6 +11,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/Tools/Plugins/THB Plugin Exams/"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/"/>
   </compounddef>
 </doxygen>

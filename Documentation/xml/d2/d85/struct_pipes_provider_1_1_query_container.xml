@@ -1,0 +1,212 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d2/d85/struct_pipes_provider_1_1_query_container" kind="struct" language="C#" prot="public">
+    <compoundname>PipesProvider::QueryContainer</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="d2/d85/struct_pipes_provider_1_1_query_container_1a6d66f084a62271934e708750d4c4dafa" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string PipesProvider.QueryContainer.Query</definition>
+        <argsstring></argsstring>
+        <name>Query</name>
+        <briefdescription>
+<para>Query that will be shared. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" line="31" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" bodystart="31" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="property" id="d2/d85/struct_pipes_provider_1_1_query_container_1a3daff9827ee4f77286eb4385a64e2fe2" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type><ref refid="d2/d85/struct_pipes_provider_1_1_query_container" kindref="compound">QueryContainer</ref></type>
+        <definition>QueryContainer PipesProvider.QueryContainer.Empty</definition>
+        <argsstring></argsstring>
+        <name>Empty</name>
+        <initializer>= new <ref refid="d2/d85/struct_pipes_provider_1_1_query_container" kindref="compound">QueryContainer</ref>()</initializer>
+        <briefdescription>
+<para>Return empty contaier. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" bodystart="41" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="property" id="d2/d85/struct_pipes_provider_1_1_query_container_1a3449e3e35c97dd80bd2f8076160633fa" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool PipesProvider.QueryContainer.IsEmpty</definition>
+        <argsstring></argsstring>
+        <name>IsEmpty</name>
+        <briefdescription>
+<para>Validate container. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" line="53" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" bodystart="54" bodyend="61"/>
+      </memberdef>
+      <memberdef kind="property" id="d2/d85/struct_pipes_provider_1_1_query_container_1aaeb530fcd4fde620a6f32343dcecfc4b" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="yes" protectedsettable="no">
+        <type>int</type>
+        <definition>int PipesProvider.QueryContainer.Attempts</definition>
+        <argsstring></argsstring>
+        <name>Attempts</name>
+        <briefdescription>
+<para>How many attemts was applied to this query processing. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" line="79" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" bodystart="79" bodyend="79"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d2/d85/struct_pipes_provider_1_1_query_container_1aa04364ca7f1fc51a91671d1d74b8d810" prot="public" static="no" mutable="no">
+        <type>System.Action&lt; <ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">TransmissionLine</ref>, string &gt;</type>
+        <definition>System.Action&lt;TransmissionLine, string&gt; PipesProvider.QueryContainer.AnswerHandler</definition>
+        <argsstring></argsstring>
+        <name>AnswerHandler</name>
+        <briefdescription>
+<para>Delegate that will be called when anser transmition will be recived. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" line="36" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d2/d85/struct_pipes_provider_1_1_query_container_1aa607957de2e6f04d20cadfa30f0ddfbd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>PipesProvider.QueryContainer.QueryContainer</definition>
+        <argsstring>(string query, System.Action&lt; TransmissionLine, string &gt; AnswerHandler)</argsstring>
+        <name>QueryContainer</name>
+        <param>
+          <type>string</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type>System.Action&lt; <ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">TransmissionLine</ref>, string &gt;</type>
+          <declname>AnswerHandler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" bodystart="43" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d85/struct_pipes_provider_1_1_query_container_1ae1f22042b19452f4037480d531f8ea86" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>override string</type>
+        <definition>override string PipesProvider.QueryContainer.ToString</definition>
+        <argsstring>()</argsstring>
+        <name>ToString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" line="97" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" bodystart="97" bodyend="100"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d2/d85/struct_pipes_provider_1_1_query_container_1a4b91c3b8947613c8326451df7a1ff2a0" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d2/d85/struct_pipes_provider_1_1_query_container" kindref="compound">QueryContainer</ref></type>
+        <definition>static QueryContainer PipesProvider.QueryContainer.Copy</definition>
+        <argsstring>(QueryContainer source)</argsstring>
+        <name>Copy</name>
+        <param>
+          <type><ref refid="d2/d85/struct_pipes_provider_1_1_query_container" kindref="compound">QueryContainer</ref></type>
+          <declname>source</declname>
+        </param>
+        <briefdescription>
+<para>Return copy of source container. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>source</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" line="68" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" bodystart="68" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d85/struct_pipes_provider_1_1_query_container_1abebe8bf09a00209626a0e13c0db64b27" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d2/d85/struct_pipes_provider_1_1_query_container" kindref="compound">QueryContainer</ref></type>
+        <definition>static QueryContainer PipesProvider.QueryContainer.operator++</definition>
+        <argsstring>(QueryContainer contaier)</argsstring>
+        <name>operator++</name>
+        <param>
+          <type><ref refid="d2/d85/struct_pipes_provider_1_1_query_container" kindref="compound">QueryContainer</ref></type>
+          <declname>contaier</declname>
+        </param>
+        <briefdescription>
+<para>Incremet of attempts count. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>contaier</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" line="86" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" bodystart="86" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="d2/d85/struct_pipes_provider_1_1_query_container_1a5eb5c53a2438e58e2f284c1b4a049d24" prot="public" static="yes" const="no" explicit="yes" inline="yes" virt="non-virtual">
+        <type>static</type>
+        <definition>static PipesProvider.QueryContainer.operator string</definition>
+        <argsstring>(QueryContainer container)</argsstring>
+        <name>operator string</name>
+        <param>
+          <type><ref refid="d2/d85/struct_pipes_provider_1_1_query_container" kindref="compound">QueryContainer</ref></type>
+          <declname>container</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" line="92" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" bodystart="92" bodyend="95"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Privide unvormation about query. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="244">
+        <label>PipesProvider.QueryContainer</label>
+        <link refid="d2/d85/struct_pipes_provider_1_1_query_container"/>
+        <childnode refid="245" relation="usage">
+          <edgelabel>AnswerHandler</edgelabel>
+        </childnode>
+      </node>
+      <node id="245">
+        <label>System</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" line="27" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/QueryContainer.cs" bodystart="26" bodyend="101"/>
+    <listofallmembers>
+      <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1aa04364ca7f1fc51a91671d1d74b8d810" prot="public" virt="non-virtual"><scope>PipesProvider::QueryContainer</scope><name>AnswerHandler</name></member>
+      <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1aaeb530fcd4fde620a6f32343dcecfc4b" prot="public" virt="non-virtual"><scope>PipesProvider::QueryContainer</scope><name>Attempts</name></member>
+      <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1a4b91c3b8947613c8326451df7a1ff2a0" prot="public" virt="non-virtual"><scope>PipesProvider::QueryContainer</scope><name>Copy</name></member>
+      <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1a3daff9827ee4f77286eb4385a64e2fe2" prot="public" virt="non-virtual"><scope>PipesProvider::QueryContainer</scope><name>Empty</name></member>
+      <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1a3449e3e35c97dd80bd2f8076160633fa" prot="public" virt="non-virtual"><scope>PipesProvider::QueryContainer</scope><name>IsEmpty</name></member>
+      <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1a5eb5c53a2438e58e2f284c1b4a049d24" prot="public" virt="non-virtual"><scope>PipesProvider::QueryContainer</scope><name>operator string</name></member>
+      <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1abebe8bf09a00209626a0e13c0db64b27" prot="public" virt="non-virtual"><scope>PipesProvider::QueryContainer</scope><name>operator++</name></member>
+      <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1a6d66f084a62271934e708750d4c4dafa" prot="public" virt="non-virtual"><scope>PipesProvider::QueryContainer</scope><name>Query</name></member>
+      <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1aa607957de2e6f04d20cadfa30f0ddfbd" prot="public" virt="non-virtual"><scope>PipesProvider::QueryContainer</scope><name>QueryContainer</name></member>
+      <member refid="d2/d85/struct_pipes_provider_1_1_query_container_1ae1f22042b19452f4037480d531f8ea86" prot="public" virt="non-virtual"><scope>PipesProvider::QueryContainer</scope><name>ToString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

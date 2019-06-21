@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" line="43" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" bodystart="43" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" bodystart="43" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" line="50" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" bodystart="50" bodyend="62"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" bodystart="50" bodyend="62"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" line="70" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" bodystart="70" bodyend="72"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" bodystart="70" bodyend="72"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -62,38 +62,38 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="343">
+      <node id="369">
         <label>THB_Plugin_Lesson.UserControl1</label>
         <link refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1"/>
-        <childnode refid="344" relation="public-inheritance">
+        <childnode refid="370" relation="public-inheritance">
         </childnode>
-        <childnode refid="345" relation="public-inheritance">
+        <childnode refid="371" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="344">
+      <node id="370">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="345">
+      <node id="371">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="346">
+      <node id="372">
         <label>THB_Plugin_Lesson.UserControl1</label>
         <link refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1"/>
-        <childnode refid="347" relation="public-inheritance">
+        <childnode refid="373" relation="public-inheritance">
         </childnode>
-        <childnode refid="348" relation="public-inheritance">
+        <childnode refid="374" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="347">
+      <node id="373">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="348">
+      <node id="374">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" line="41" column="1" bodyfile="D:/Work/Tools/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" bodystart="41" bodyend="73"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" bodystart="41" bodyend="73"/>
     <listofallmembers>
       <member refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1_1ad58ace768113ee37aa177bfbf97bf7cf" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::UserControl1</scope><name>_contentLoaded</name></member>
       <member refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1_1a052591678edd4a1701981778548968cf" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::UserControl1</scope><name>Connect</name></member>

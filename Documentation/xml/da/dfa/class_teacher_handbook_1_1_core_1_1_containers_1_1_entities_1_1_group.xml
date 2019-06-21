@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Group.cs" line="15" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Group.cs" bodystart="15" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Group.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Group.cs" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="da/dfa/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_group_1a230fa40688f7bed7e0e6d2fada98665f" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Group.cs" line="20" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Group.cs" bodystart="20" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Group.cs" line="34" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Group.cs" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="da/dfa/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_group_1a7332027f3ea328914b304a88aa28b07f" prot="public" static="no" mutable="no">
         <type>Hashtable</type>
@@ -43,14 +43,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Group.cs" line="27" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Group.cs" bodystart="27" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Group.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Group.cs" bodystart="41" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para><ref refid="da/dfa/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_group" kindref="compound">Group</ref> of students. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Group.cs" line="11" column="1" bodyfile="D:/Work/Tools/THB Data Types/Core/Containers/Entities/Group.cs" bodystart="10" bodyend="28"/>
+    <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Group.cs" line="25" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Group.cs" bodystart="24" bodyend="42"/>
     <listofallmembers>
       <member refid="da/dfa/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_group_1a7332027f3ea328914b304a88aa28b07f" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Entities::Group</scope><name>descriptions</name></member>
       <member refid="da/dfa/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_group_1a310647f18ded4bc06e52f6840b11d7ea" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Entities::Group</scope><name>key</name></member>

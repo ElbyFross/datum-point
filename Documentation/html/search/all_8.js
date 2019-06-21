@@ -5,6 +5,8 @@ var searchData=
   ['iorder',['IOrder',['../df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order.html',1,'TeacherHandbook::Core::Orders']]],
   ['iplugin',['IPlugin',['../d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin.html',1,'UniformClient::Plugins']]],
   ['iqueryhandlerprocessor',['IQueryHandlerProcessor',['../d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor.html',1,'UniformQueries']]],
-  ['istarget',['IsTarget',['../de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e.html#a2b21ca7e9599161544424cd0f7e55ef4',1,'THB_Data_Server_Queries.GET_DAYS_RANGE.IsTarget()'],['../d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor.html#a435493887db64defdb6019c3c418a4d4',1,'UniformQueries.IQueryHandlerProcessor.IsTarget()']]],
+  ['isempty',['IsEmpty',['../d2/d85/struct_pipes_provider_1_1_query_container.html#a3449e3e35c97dd80bd2f8076160633fa',1,'PipesProvider::QueryContainer']]],
+  ['isnone',['IsNone',['../d5/d61/struct_uniform_queries_1_1_query_part.html#af380375ca82e9dc2eecf899b5933fe2b',1,'UniformQueries::QueryPart']]],
+  ['istarget',['IsTarget',['../de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e.html#a1f27cee6dbc3ba3fdfad0590a75d239b',1,'THB_Data_Server_Queries.GET_DAYS_RANGE.IsTarget()'],['../d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor.html#a0edbfe93aab9f1787e4dc0311f7695c7',1,'UniformQueries.IQueryHandlerProcessor.IsTarget()'],['../da/d43/class_uniform_server_1_1_queries_1_1_g_e_t___p_u_b_l_i_c___k_e_y.html#ae27d462fe9ccbbf22ac03c9ead9cbe8f',1,'UniformServer.Queries.GET_PUBLIC_KEY.IsTarget()']]],
   ['iuser',['IUser',['../d1/dfc/interface_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_i_user.html',1,'TeacherHandbook::Core::Containers::Entities']]]
 ];

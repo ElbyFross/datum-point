@@ -25,7 +25,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" line="25" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" bodystart="25" bodyend="28"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" line="25" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" bodystart="25" bodyend="28"/>
       </memberdef>
       <memberdef kind="function" id="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper_1afdc9fe15b56607d02082908d934480c6" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override object</type>
@@ -50,7 +50,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" line="33" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" bodystart="33" bodyend="35"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" line="33" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" bodystart="33" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper_1ade0f04c0f7b18dd5b170e071d5534d38" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override void</type>
@@ -79,7 +79,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" line="40" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" bodystart="40" bodyend="42"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" line="40" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" bodystart="40" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper_1a8ec4c37e82d9f4e867e9655f4eac3a78" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override System.Delegate</type>
@@ -104,7 +104,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" line="47" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" bodystart="47" bodyend="52"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" line="47" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" bodystart="47" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper_1a73471f4a6d1ca4c4fceec9ad8610f0c8" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override void</type>
@@ -129,7 +129,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" line="57" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" bodystart="57" bodyend="59"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" line="57" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" bodystart="57" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper_1aefb7a98fceb9c287cef4756942f441d1" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override object</type>
@@ -150,7 +150,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" line="25" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" bodystart="25" bodyend="28"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" line="25" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" bodystart="25" bodyend="28"/>
       </memberdef>
       <memberdef kind="function" id="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper_1afdc9fe15b56607d02082908d934480c6" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override object</type>
@@ -175,7 +175,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" line="33" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" bodystart="33" bodyend="35"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" line="33" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" bodystart="33" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper_1ade0f04c0f7b18dd5b170e071d5534d38" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override void</type>
@@ -204,7 +204,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" line="40" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" bodystart="40" bodyend="42"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" line="40" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" bodystart="40" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper_1a8ec4c37e82d9f4e867e9655f4eac3a78" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override System.Delegate</type>
@@ -229,7 +229,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" line="47" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" bodystart="47" bodyend="52"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" line="47" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" bodystart="47" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper_1a73471f4a6d1ca4c4fceec9ad8610f0c8" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override void</type>
@@ -254,7 +254,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" line="57" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" bodystart="57" bodyend="59"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" line="57" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.cs" bodystart="57" bodyend="59"/>
       </memberdef>
       <memberdef kind="function" id="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper_1aefb7a98fceb9c287cef4756942f441d1" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override object</type>
@@ -275,7 +275,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" line="25" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" bodystart="25" bodyend="28"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" line="25" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" bodystart="25" bodyend="28"/>
       </memberdef>
       <memberdef kind="function" id="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper_1afdc9fe15b56607d02082908d934480c6" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override object</type>
@@ -300,7 +300,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" line="33" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" bodystart="33" bodyend="35"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" line="33" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" bodystart="33" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper_1ade0f04c0f7b18dd5b170e071d5534d38" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override void</type>
@@ -329,7 +329,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" line="40" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" bodystart="40" bodyend="42"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" line="40" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" bodystart="40" bodyend="42"/>
       </memberdef>
       <memberdef kind="function" id="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper_1a8ec4c37e82d9f4e867e9655f4eac3a78" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override System.Delegate</type>
@@ -354,7 +354,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" line="47" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" bodystart="47" bodyend="52"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" line="47" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" bodystart="47" bodyend="52"/>
       </memberdef>
       <memberdef kind="function" id="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper_1a73471f4a6d1ca4c4fceec9ad8610f0c8" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>override void</type>
@@ -379,7 +379,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" line="57" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" bodystart="57" bodyend="59"/>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" line="57" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/GeneratedInternalTypeHelper.g.i.cs" bodystart="57" bodyend="59"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -387,21 +387,6 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="137">
-        <label>XamlGeneratedNamespace.GeneratedInternalTypeHelper</label>
-        <link refid="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper"/>
-        <childnode refid="138" relation="public-inheritance">
-        </childnode>
-        <childnode refid="138" relation="public-inheritance">
-        </childnode>
-        <childnode refid="138" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="138">
-        <label>System::Windows::Markup::InternalTypeHelper</label>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
       <node id="139">
         <label>XamlGeneratedNamespace.GeneratedInternalTypeHelper</label>
         <link refid="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper"/>
@@ -415,8 +400,23 @@
       <node id="140">
         <label>System::Windows::Markup::InternalTypeHelper</label>
       </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="141">
+        <label>XamlGeneratedNamespace.GeneratedInternalTypeHelper</label>
+        <link refid="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper"/>
+        <childnode refid="142" relation="public-inheritance">
+        </childnode>
+        <childnode refid="142" relation="public-inheritance">
+        </childnode>
+        <childnode refid="142" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="142">
+        <label>System::Windows::Markup::InternalTypeHelper</label>
+      </node>
     </collaborationgraph>
-    <location file="D:/Work/Tools/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" line="20" column="1" bodyfile="D:/Work/Tools/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" bodystart="20" bodyend="60"/>
+    <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" line="20" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/GeneratedInternalTypeHelper.g.i.cs" bodystart="20" bodyend="60"/>
     <listofallmembers>
       <member refid="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper_1a73471f4a6d1ca4c4fceec9ad8610f0c8" prot="protected" virt="non-virtual"><scope>XamlGeneratedNamespace::GeneratedInternalTypeHelper</scope><name>AddEventHandler</name></member>
       <member refid="dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper_1a73471f4a6d1ca4c4fceec9ad8610f0c8" prot="protected" virt="non-virtual"><scope>XamlGeneratedNamespace::GeneratedInternalTypeHelper</scope><name>AddEventHandler</name></member>

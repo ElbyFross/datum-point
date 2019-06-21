@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_2648235bfabdf2cfbc482137b8bc8120" kind="dir">
-    <compoundname>D:/Work/Tools/Plugins/THB Plugin Exams/obj</compoundname>
-    <innerdir refid="dir_68d9366f8e75163ec947993eb03f7807">D:/Work/Tools/Plugins/THB Plugin Exams/obj/Debug</innerdir>
-    <innerdir refid="dir_9203302e7592b96d9540f8cff99d7099">D:/Work/Tools/Plugins/THB Plugin Exams/obj/Release</innerdir>
+    <compoundname>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj</compoundname>
+    <innerdir refid="dir_68d9366f8e75163ec947993eb03f7807">D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug</innerdir>
+    <innerdir refid="dir_9203302e7592b96d9540f8cff99d7099">D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release</innerdir>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/Tools/Plugins/THB Plugin Exams/obj/"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/"/>
   </compounddef>
 </doxygen>

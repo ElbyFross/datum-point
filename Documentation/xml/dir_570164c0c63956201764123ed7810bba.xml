@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_570164c0c63956201764123ed7810bba" kind="dir">
-    <compoundname>D:/Work/Tools/Plugins/THB Plugin Orders/obj</compoundname>
-    <innerdir refid="dir_f4e0a24d4a35143575af5af7accd3641">D:/Work/Tools/Plugins/THB Plugin Orders/obj/Debug</innerdir>
-    <innerdir refid="dir_2e0bb01afeb32eefceb3003a6434a0b6">D:/Work/Tools/Plugins/THB Plugin Orders/obj/Release</innerdir>
+    <compoundname>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj</compoundname>
+    <innerdir refid="dir_f4e0a24d4a35143575af5af7accd3641">D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug</innerdir>
+    <innerdir refid="dir_2e0bb01afeb32eefceb3003a6434a0b6">D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release</innerdir>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/Tools/Plugins/THB Plugin Orders/obj/"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/"/>
   </compounddef>
 </doxygen>
