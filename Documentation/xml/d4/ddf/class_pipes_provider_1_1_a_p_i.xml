@@ -221,6 +221,45 @@
         </inbodydescription>
         <location file="D:/Work/GitHub/datum-point/PipesProvider/ClientAPI.cs" line="155" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ClientAPI.cs" bodystart="155" bodyend="170"/>
       </memberdef>
+      <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1ab0578d8470c97267dd9c6e2126cb69f0" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool PipesProvider.API.TryToUnregisterTransmissionLine</definition>
+        <argsstring>(string guid)</argsstring>
+        <name>TryToUnregisterTransmissionLine</name>
+        <param>
+          <type>string</type>
+          <declname>guid</declname>
+        </param>
+        <briefdescription>
+<para>Remove line from table if this line closed. In other keys this operation not available due to security amd stability purposes. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>guid</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/ClientAPI.cs" line="178" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ClientAPI.cs" bodystart="178" bodyend="191"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1aeca3d6eddfa3446b8e5601ee85461f63" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void PipesProvider.API.CloseAllTransmissionLines</definition>
+        <argsstring>()</argsstring>
+        <name>CloseAllTransmissionLines</name>
+        <briefdescription>
+<para>Closing all lines registred in table. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/ClientAPI.cs" line="196" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ClientAPI.cs" bodystart="196" bodyend="206"/>
+      </memberdef>
       <memberdef kind="function" id="d4/ddf/class_pipes_provider_1_1_a_p_i_1a99feebefadd9a40a3c1fa7175324d950" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>static void PipesProvider.API.ClientToServerLoop</definition>
@@ -812,20 +851,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/ServerAPI.cs" line="594" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ServerAPI.cs" bodystart="594" bodyend="632"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/ServerAPI.cs" line="594" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ServerAPI.cs" bodystart="594" bodyend="633"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Class that provide common methods for easy work with pipes&apos; tasks. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/GitHub/datum-point/PipesProvider/ClientAPI.cs" line="31" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ClientAPI.cs" bodystart="30" bodyend="172"/>
+    <location file="D:/Work/GitHub/datum-point/PipesProvider/ClientAPI.cs" line="31" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/ClientAPI.cs" bodystart="30" bodyend="208"/>
     <listofallmembers>
       <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1aaccf777b3b489b550739dd8adcf4a1d3" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>ClientLoop</name></member>
       <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a99feebefadd9a40a3c1fa7175324d950" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>ClientToServerLoop</name></member>
       <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a06ee04a0e80238a176b7b2cac3f6bb4b" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>ClientToServerLoop</name></member>
       <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a740e60d5cfd04fcc434e05b40910e493" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>ClientToServerLoop</name></member>
       <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a9eacd5177e24badabe5ac8a3fe30d5d3" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>ClientToServerLoop</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1aeca3d6eddfa3446b8e5601ee85461f63" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>CloseAllTransmissionLines</name></member>
       <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a0feeed2f76dc4292c3b85fdd054bd77e" prot="private" virt="non-virtual"><scope>PipesProvider::API</scope><name>ConnectionEstablishedCallbackRetranslator</name></member>
       <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a5314727d43f5fafc8630dbc814cebeac" prot="private" virt="non-virtual"><scope>PipesProvider::API</scope><name>ConnectToServerAsync</name></member>
       <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1ade8af5541a5787e55fe07bad71298132" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>DNSHandler_ClientToSerever_Async</name></member>
@@ -845,6 +885,7 @@
       <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a5eb987a8a4edfb2b26d861071aca70a2" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>TryGetServerTransmissionMeta</name></member>
       <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1ae1abc16273a4b459fdbf63e68c44d11f" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>TryGetTransmissionLineByGUID</name></member>
       <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1a39e17f30d2ee8c716efeb92f947fb72e" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>TryToRegisterTransmissionLine</name></member>
+      <member refid="d4/ddf/class_pipes_provider_1_1_a_p_i_1ab0578d8470c97267dd9c6e2126cb69f0" prot="public" virt="non-virtual"><scope>PipesProvider::API</scope><name>TryToUnregisterTransmissionLine</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

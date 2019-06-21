@@ -1,12 +1,15 @@
 var class_pipes_provider_1_1_transmission_line =
 [
-    [ "TransmissionLine", "d1/d09/class_pipes_provider_1_1_transmission_line.html#a20398f48516f0fc5fe0700b01b7fc6d7", null ],
+    [ "TransmissionLine", "d1/d09/class_pipes_provider_1_1_transmission_line.html#a9002723c5fa3ec06f81470390b7ef685", null ],
     [ "Close", "d1/d09/class_pipes_provider_1_1_transmission_line.html#a4aa28b1d29a2b0b6fb2af6f046fdf56a", null ],
     [ "DropMeta", "d1/d09/class_pipes_provider_1_1_transmission_line.html#a954265d9816b253b75caf7b6b7e1ba86", null ],
     [ "EnqueueQuery", "d1/d09/class_pipes_provider_1_1_transmission_line.html#ac27fedfbe0edfdcb4fbf4509c76f858f", null ],
     [ "EnqueueQuery", "d1/d09/class_pipes_provider_1_1_transmission_line.html#a59eceb9280548e1c9e662543ee5c96c7", null ],
+    [ "GenerateGUID", "d1/d09/class_pipes_provider_1_1_transmission_line.html#a1d9e1c1ba799548f3723e31cf5eece6e", null ],
+    [ "operator++", "d1/d09/class_pipes_provider_1_1_transmission_line.html#ac3fe155028466c724c1efe9abb4b1c02", null ],
     [ "ThreadLoop", "d1/d09/class_pipes_provider_1_1_transmission_line.html#ab56219b10bad03085b5d23e48ad59ec3", null ],
     [ "TryDequeQuery", "d1/d09/class_pipes_provider_1_1_transmission_line.html#acc672e0d0c921f60a9a5920e3f76d28b", null ],
+    [ "guid", "d1/d09/class_pipes_provider_1_1_transmission_line.html#acb5a54fae46da3287a364144e495a29d", null ],
     [ "lastQuery", "d1/d09/class_pipes_provider_1_1_transmission_line.html#affdde0eafb483f2bf6f874679b4ab6f8", null ],
     [ "pipeClient", "d1/d09/class_pipes_provider_1_1_transmission_line.html#a31dff9b14126dc47bfafe65e3c976c2f", null ],
     [ "queries", "d1/d09/class_pipes_provider_1_1_transmission_line.html#ad866033fcbb1d9f783df8ff71e7fc21a", null ],

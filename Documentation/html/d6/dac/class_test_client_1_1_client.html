@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Datum Point
-   &#160;<span id="projectnumber">0.1.3</span>
+   &#160;<span id="projectnumber">0.1.4</span>
    </div>
   </td>
  </tr>
@@ -87,12 +87,16 @@ $(document).ready(function(){initNavTree('d6/dac/class_test_client_1_1_client.ht
 
 <div class="header">
   <div class="summary">
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="../../d0/dcc/class_test_client_1_1_client-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">TestClient.Client Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Provide example of client-server transmission. Demostrate ways to use API. Provide tools for simple tests of local server.  
+ <a href="../../d6/dac/class_test_client_1_1_client.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for TestClient.Client:</div>
 <div class="dyncontent">
@@ -103,11 +107,29 @@ Inheritance diagram for TestClient.Client:</div>
 </map>
  </div></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a7fdac87931c97ce7fde6c4fc622bcfa6"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dac/class_test_client_1_1_client.html#a7fdac87931c97ce7fde6c4fc622bcfa6">SERVER_NAME</a> = &quot;.&quot;</td></tr>
+<tr class="memdesc:a7fdac87931c97ce7fde6c4fc622bcfa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Server that will be used as target for this client.  <a href="#a7fdac87931c97ce7fde6c4fc622bcfa6">More...</a><br /></td></tr>
+<tr class="separator:a7fdac87931c97ce7fde6c4fc622bcfa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58c70d565592caa15b99d9b145a133ea"><td class="memItemLeft" align="right" valign="top">static string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/dac/class_test_client_1_1_client.html#a58c70d565592caa15b99d9b145a133ea">SERVER_PIPE_NAME</a> = &quot;THB_DS_QM_MAIN_INOUT&quot;</td></tr>
+<tr class="memdesc:a58c70d565592caa15b99d9b145a133ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pipe that will be used to queries of this client.  <a href="#a58c70d565592caa15b99d9b145a133ea">More...</a><br /></td></tr>
+<tr class="separator:a58c70d565592caa15b99d9b145a133ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
 Static Private Member Functions</h2></td></tr>
 <tr class="memitem:a236c6c2776f2ec6851c36a8714ef6e03"><td class="memItemLeft" align="right" valign="top"><a id="a236c6c2776f2ec6851c36a8714ef6e03"></a>
 static void&#160;</td><td class="memItemRight" valign="bottom"><b>Main</b> (string[] args)</td></tr>
 <tr class="separator:a236c6c2776f2ec6851c36a8714ef6e03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af74ca9833b73440828e078c9c25a8026"><td class="memItemLeft" align="right" valign="top"><a id="af74ca9833b73440828e078c9c25a8026"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>SendOneWayQuery</b> (string query)</td></tr>
+<tr class="separator:af74ca9833b73440828e078c9c25a8026"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d6d95892249c5febdb5708995b7a987"><td class="memItemLeft" align="right" valign="top"><a id="a0d6d95892249c5febdb5708995b7a987"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>RequestPublicRSAKey</b> ()</td></tr>
+<tr class="separator:a0d6d95892249c5febdb5708995b7a987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32396ed694c8942865f0c265a6232612"><td class="memItemLeft" align="right" valign="top"><a id="a32396ed694c8942865f0c265a6232612"></a>
+static void&#160;</td><td class="memItemRight" valign="bottom"><b>ServerAnswerHandler_RSAPublicKey</b> (<a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a> tl, object message)</td></tr>
+<tr class="separator:a32396ed694c8942865f0c265a6232612"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -118,25 +140,35 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a99ae0bb1dd5bef374fcedb3f873bfe8b inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memItemLeft" align="right" valign="top">static System.Collections.ObjectModel.ObservableCollection&lt; <a class="el" href="../../d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin.html">Plugins.IPlugin</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a99ae0bb1dd5bef374fcedb3f873bfe8b">LoadPluginsCollection</a> ()</td></tr>
 <tr class="memdesc:a99ae0bb1dd5bef374fcedb3f873bfe8b inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load plugins from assembly and instiniate them to list.  <a href="../../d4/deb/class_uniform_client_1_1_base_client.html#a99ae0bb1dd5bef374fcedb3f873bfe8b">More...</a><br /></td></tr>
 <tr class="separator:a99ae0bb1dd5bef374fcedb3f873bfe8b inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c59b23626ff132aa96630654d7bc410 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a9c59b23626ff132aa96630654d7bc410">OpenTransmissionLine</a> (<a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html">BaseClient</a> client, string guid, string serverName, string pipeName, System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a> &gt; callback)</td></tr>
-<tr class="memdesc:a9c59b23626ff132aa96630654d7bc410 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide complex initalization of all relative systems. Build meta data, regitrate line in common table. Start new thread to avoid freezes.  <a href="../../d4/deb/class_uniform_client_1_1_base_client.html#a9c59b23626ff132aa96630654d7bc410">More...</a><br /></td></tr>
-<tr class="separator:a9c59b23626ff132aa96630654d7bc410 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd2e71dcb27e97f900f887233e6b8f9c inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#acd2e71dcb27e97f900f887233e6b8f9c">UniformQueryPostHandler</a> (object sharedObject)</td></tr>
-<tr class="memdesc:acd2e71dcb27e97f900f887233e6b8f9c inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler that send last dequeued query to server when connection will be established.  <a href="../../d4/deb/class_uniform_client_1_1_base_client.html#acd2e71dcb27e97f900f887233e6b8f9c">More...</a><br /></td></tr>
-<tr class="separator:acd2e71dcb27e97f900f887233e6b8f9c inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeab527820b088ab3a84cd210e53a01f inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#aaeab527820b088ab3a84cd210e53a01f">OpenOutTransmissionLine</a> (string serverName, string pipeName)</td></tr>
+<tr class="memdesc:aaeab527820b088ab3a84cd210e53a01f inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oppening transmition line that will able to send querie to described server's pipe.  <a href="../../d4/deb/class_uniform_client_1_1_base_client.html#aaeab527820b088ab3a84cd210e53a01f">More...</a><br /></td></tr>
+<tr class="separator:aaeab527820b088ab3a84cd210e53a01f inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9044693efc8f4ccf259e954c5345236f inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a9044693efc8f4ccf259e954c5345236f">OpenTransmissionLine</a> (string serverName, string pipeName, System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a> &gt; callback)</td></tr>
+<tr class="memdesc:a9044693efc8f4ccf259e954c5345236f inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automaticly create Transmission line or lokking for previos one.  <a href="../../d4/deb/class_uniform_client_1_1_base_client.html#a9044693efc8f4ccf259e954c5345236f">More...</a><br /></td></tr>
+<tr class="separator:a9044693efc8f4ccf259e954c5345236f inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80e2da33cf28945db058cd59f7ac5e58 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a80e2da33cf28945db058cd59f7ac5e58">OpenTransmissionLine</a> (<a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html">BaseClient</a> client, string serverName, string pipeName, System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a> &gt; callback)</td></tr>
+<tr class="memdesc:a80e2da33cf28945db058cd59f7ac5e58 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide complex initalization of all relative systems. Build meta data, regitrate line in common table. Start new thread to avoid freezes.  <a href="../../d4/deb/class_uniform_client_1_1_base_client.html#a80e2da33cf28945db058cd59f7ac5e58">More...</a><br /></td></tr>
+<tr class="separator:a80e2da33cf28945db058cd59f7ac5e58 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05120a32c8a00263c7e2fc8b9fa152d8 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memItemLeft" align="right" valign="top">static async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a05120a32c8a00263c7e2fc8b9fa152d8">UniformQueryPostHandler</a> (object sharedObject)</td></tr>
+<tr class="memdesc:a05120a32c8a00263c7e2fc8b9fa152d8 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler that send last dequeued query to server when connection will be established.  <a href="../../d4/deb/class_uniform_client_1_1_base_client.html#a05120a32c8a00263c7e2fc8b9fa152d8">More...</a><br /></td></tr>
+<tr class="separator:a05120a32c8a00263c7e2fc8b9fa152d8 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7a3c613846c8595431272c4c9d531f3 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memItemLeft" align="right" valign="top">static async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#af7a3c613846c8595431272c4c9d531f3">UniformServerAnswerHandler</a> (object sharedObject)</td></tr>
 <tr class="memdesc:af7a3c613846c8595431272c4c9d531f3 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler that will recive message from the server.  <a href="../../d4/deb/class_uniform_client_1_1_base_client.html#af7a3c613846c8595431272c4c9d531f3">More...</a><br /></td></tr>
 <tr class="separator:af7a3c613846c8595431272c4c9d531f3 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6525d87fd1df20689b0a01280e36c5c1 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a6525d87fd1df20689b0a01280e36c5c1">ReciveAnswer</a> (<a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a> line, string decodedQuery, System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>, object &gt; answerHandler)</td></tr>
+<tr class="separator:a6525d87fd1df20689b0a01280e36c5c1 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06d3340dd02ec4abfe9cf55bc1db0f03 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a06d3340dd02ec4abfe9cf55bc1db0f03">ReciveAnswer</a> (<a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a> line, <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">UniformQueries.QueryPart</a>[] entryQueryParts, System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>, object &gt; answerHandler)</td></tr>
 <tr class="separator:a06d3340dd02ec4abfe9cf55bc1db0f03 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09f3a6de4a33cd5f3eaba564544440e1 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a09f3a6de4a33cd5f3eaba564544440e1">EnqueueDuplexQuery</a> (<a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a> line, string query, System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>, object &gt; answerHandler)</td></tr>
+<tr class="memdesc:a09f3a6de4a33cd5f3eaba564544440e1 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add query to queue. Open backward line that will call answer handler.  <a href="../../d4/deb/class_uniform_client_1_1_base_client.html#a09f3a6de4a33cd5f3eaba564544440e1">More...</a><br /></td></tr>
+<tr class="separator:a09f3a6de4a33cd5f3eaba564544440e1 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98d1abc1fea84d7222291c462c4f9416 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a98d1abc1fea84d7222291c462c4f9416">EnqueueDuplexQuery</a> (string serverName, string serverPipeName, string query, System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>, object &gt; answerHandler)</td></tr>
+<tr class="memdesc:a98d1abc1fea84d7222291c462c4f9416 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add query to queue. Open backward line that will call answer handler.  <a href="../../d4/deb/class_uniform_client_1_1_base_client.html#a98d1abc1fea84d7222291c462c4f9416">More...</a><br /></td></tr>
+<tr class="separator:a98d1abc1fea84d7222291c462c4f9416 inherit pub_static_methods_class_uniform_client_1_1_base_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_class_uniform_client_1_1_base_client"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_class_uniform_client_1_1_base_client')"><img src="../../closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html">UniformClient.BaseClient</a></td></tr>
 <tr class="memitem:a458271823ca5e21612c0947e1db695a0 inherit pub_attribs_class_uniform_client_1_1_base_client"><td class="memItemLeft" align="right" valign="top">Thread&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a458271823ca5e21612c0947e1db695a0">thread</a></td></tr>
 <tr class="memdesc:a458271823ca5e21612c0947e1db695a0 inherit pub_attribs_class_uniform_client_1_1_base_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to thread that host this server.  <a href="../../d4/deb/class_uniform_client_1_1_base_client.html#a458271823ca5e21612c0947e1db695a0">More...</a><br /></td></tr>
 <tr class="separator:a458271823ca5e21612c0947e1db695a0 inherit pub_attribs_class_uniform_client_1_1_base_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_static_attribs_class_uniform_client_1_1_base_client"><td colspan="2" onclick="javascript:toggleInherit('pub_static_attribs_class_uniform_client_1_1_base_client')"><img src="../../closed.png" alt="-"/>&#160;Static Public Attributes inherited from <a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html">UniformClient.BaseClient</a></td></tr>
-<tr class="memitem:a1c02c6bb48c54e59c2581fe8097a4052 inherit pub_static_attribs_class_uniform_client_1_1_base_client"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a1c02c6bb48c54e59c2581fe8097a4052">appTerminated</a></td></tr>
-<tr class="memdesc:a1c02c6bb48c54e59c2581fe8097a4052 inherit pub_static_attribs_class_uniform_client_1_1_base_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true then will stop main loop.  <a href="../../d4/deb/class_uniform_client_1_1_base_client.html#a1c02c6bb48c54e59c2581fe8097a4052">More...</a><br /></td></tr>
-<tr class="separator:a1c02c6bb48c54e59c2581fe8097a4052 inherit pub_static_attribs_class_uniform_client_1_1_base_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_class_uniform_client_1_1_base_client"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_uniform_client_1_1_base_client')"><img src="../../closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html">UniformClient.BaseClient</a></td></tr>
 <tr class="memitem:a47b6d88848854c59fafefeeae3956699 inherit pro_methods_class_uniform_client_1_1_base_client"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a47b6d88848854c59fafefeeae3956699">ShowWindow</a> (IntPtr hWnd, int nCmdShow)</td></tr>
 <tr class="memdesc:a47b6d88848854c59fafefeeae3956699 inherit pro_methods_class_uniform_client_1_1_base_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imported method that allo to controll console window state.  <a href="../../d4/deb/class_uniform_client_1_1_base_client.html#a47b6d88848854c59fafefeeae3956699">More...</a><br /></td></tr>
@@ -165,7 +197,65 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a2c4762c1be5eac42b8b5d189530d0952 inherit pro_static_attribs_class_uniform_client_1_1_base_client"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a2c4762c1be5eac42b8b5d189530d0952">threadSleepTime</a> = 150</td></tr>
 <tr class="memdesc:a2c4762c1be5eac42b8b5d189530d0952 inherit pro_static_attribs_class_uniform_client_1_1_base_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many milisseconds will sleep thread after tick.  <a href="../../d4/deb/class_uniform_client_1_1_base_client.html#a2c4762c1be5eac42b8b5d189530d0952">More...</a><br /></td></tr>
 <tr class="separator:a2c4762c1be5eac42b8b5d189530d0952 inherit pro_static_attribs_class_uniform_client_1_1_base_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52dacc1af85cbab035a159e64e1417a0 inherit pro_static_attribs_class_uniform_client_1_1_base_client"><td class="memItemLeft" align="right" valign="top">static Hashtable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a52dacc1af85cbab035a159e64e1417a0">DuplexBackwardCallbacks</a> = new Hashtable()</td></tr>
+<tr class="memdesc:a52dacc1af85cbab035a159e64e1417a0 inherit pro_static_attribs_class_uniform_client_1_1_base_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">Table that contain delegatds subscribed to beckward lines in duplex queries.  <a href="../../d4/deb/class_uniform_client_1_1_base_client.html#a52dacc1af85cbab035a159e64e1417a0">More...</a><br /></td></tr>
+<tr class="separator:a52dacc1af85cbab035a159e64e1417a0 inherit pro_static_attribs_class_uniform_client_1_1_base_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header properties_class_uniform_client_1_1_base_client"><td colspan="2" onclick="javascript:toggleInherit('properties_class_uniform_client_1_1_base_client')"><img src="../../closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html">UniformClient.BaseClient</a></td></tr>
+<tr class="memitem:a10f1c9dbb8d41719754b39344432497f inherit properties_class_uniform_client_1_1_base_client"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a10f1c9dbb8d41719754b39344432497f">AppTerminated</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a10f1c9dbb8d41719754b39344432497f inherit properties_class_uniform_client_1_1_base_client"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true then will stop main loop.  <a href="../../d4/deb/class_uniform_client_1_1_base_client.html#a10f1c9dbb8d41719754b39344432497f">More...</a><br /></td></tr>
+<tr class="separator:a10f1c9dbb8d41719754b39344432497f inherit properties_class_uniform_client_1_1_base_client"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Provide example of client-server transmission. Demostrate ways to use API. Provide tools for simple tests of local server. </p>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a7fdac87931c97ce7fde6c4fc622bcfa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fdac87931c97ce7fde6c4fc622bcfa6">&#9670;&nbsp;</a></span>SERVER_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string TestClient.Client.SERVER_NAME = &quot;.&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Server that will be used as target for this client. </p>
+
+</div>
+</div>
+<a id="a58c70d565592caa15b99d9b145a133ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58c70d565592caa15b99d9b145a133ea">&#9670;&nbsp;</a></span>SERVER_PIPE_NAME</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string TestClient.Client.SERVER_PIPE_NAME = &quot;THB_DS_QM_MAIN_INOUT&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pipe that will be used to queries of this client. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>D:/Work/GitHub/datum-point/TestClient/Client.cs</li>
 </ul>

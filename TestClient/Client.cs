@@ -53,7 +53,10 @@ namespace TestClient
             Console.WriteLine("Preparetion finished. Client strated.");
             #endregion
 
-            // Send sample one way query to server.
+            // Usew short wway to send one way query.
+            OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME).EnqueueQuery("ECHO");
+
+            // Send sample one way query to server with every step description.
             SendOneWayQuery("ECHO");
 
             // Get public key for RSA encoding from target server.
@@ -105,7 +108,7 @@ namespace TestClient
             PipesProvider.TransmissionLine lineProcessor = OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME);
 
             // Add sample query to queue. You can use this way if you not need answer from server.
-            lineProcessor.EnqueueQuery("ECHO");
+            lineProcessor.EnqueueQuery(query);
         }
 
         static void RequestPublicRSAKey()
@@ -121,12 +124,9 @@ namespace TestClient
             // Using a UniformQueries.API.SPLITTING_SYMBOL to get a valid splitter between your query parts.
             string GetPKQuery = string.Format("guid=WelomeGUID{0}token=InvalidToken{0}q=Get{0}sq=publickey", UniformQueries.API.SPLITTING_SYMBOL);
 
-            // Create transmission line.
-            PipesProvider.TransmissionLine lineProcessor = OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME);
-            
             // Open duplex chanel. First line processor will send query to server and after that will listen to its andwer.
             // When answer will recived it will redirected to callback.
-            EnqueueDuplexQuery(lineProcessor, GetPKQuery, ServerAnswerHandler_RSAPublicKey);
+            EnqueueDuplexQuery(SERVER_NAME, SERVER_PIPE_NAME, GetPKQuery, ServerAnswerHandler_RSAPublicKey);
 
             // Let the time to transmission line to qompleet the query.
             Thread.Sleep(150);
@@ -139,7 +139,7 @@ namespace TestClient
         static void ServerAnswerHandler_RSAPublicKey(PipesProvider.TransmissionLine tl, object message)
         {
             string messageS = message as string;
-            Console.WriteLine(messageS ?? "Message is null");
+            Console.WriteLine("RSA Public Key recived:\n" + (messageS ?? "Message is null"));
         }
         #endregion
     }

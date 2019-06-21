@@ -4,6 +4,8 @@ var searchData=
   ['securityapi',['SecurityAPI',['../d3/d16/class_uniform_client_1_1_security_a_p_i.html',1,'UniformClient.SecurityAPI'],['../d6/d3d/class_uniform_server_1_1_security_a_p_i.html',1,'UniformServer.SecurityAPI']]],
   ['sendanswer',['SendAnswer',['../d7/d32/class_uniform_server_1_1_base_server.html#aa85e82df10ecec8324e2ccf7611d8cbf',1,'UniformServer::BaseServer']]],
   ['server',['Server',['../dc/d42/class_t_h_b___data___server_1_1_server.html',1,'THB_Data_Server.Server'],['../d8/d17/class_session_provider_1_1_server.html',1,'SessionProvider.Server'],['../d2/d9a/class_queries_server_1_1_server.html',1,'QueriesServer.Server']]],
+  ['server_5fname',['SERVER_NAME',['../d6/dac/class_test_client_1_1_client.html#a7fdac87931c97ce7fde6c4fc622bcfa6',1,'TestClient::Client']]],
+  ['server_5fpipe_5fname',['SERVER_PIPE_NAME',['../d6/dac/class_test_client_1_1_client.html#a58c70d565592caa15b99d9b145a133ea',1,'TestClient::Client']]],
   ['serverloop',['ServerLoop',['../d4/ddf/class_pipes_provider_1_1_a_p_i.html#ab18891bb1d9c04a9c9144e0d8c89aebf',1,'PipesProvider::API']]],
   ['servername',['ServerName',['../d1/d09/class_pipes_provider_1_1_transmission_line.html#a549bd893bb66b3f56e87209d3e776227',1,'PipesProvider::TransmissionLine']]],
   ['serverpipename',['ServerPipeName',['../d1/d09/class_pipes_provider_1_1_transmission_line.html#a6acb67e0969ca43a54c9895ab1cdaae8',1,'PipesProvider::TransmissionLine']]],

@@ -272,7 +272,7 @@ namespace UniformServer
                     tm.ProcessingQuery = answer;
 
                     // Log.
-                    Console.WriteLine("{0}: Processing query changed on:\n{1}\n", tm.pipe, answer);
+                    Console.WriteLine("{0}: Processing query changed on:\n{1}\n", tm.name, answer);
                 }
             };            
             // Subscribe or waiting delegate on server loop event.

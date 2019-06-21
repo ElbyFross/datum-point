@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['generateguid',['GenerateGUID',['../d1/d09/class_pipes_provider_1_1_transmission_line.html#a1d9e1c1ba799548f3723e31cf5eece6e',1,'PipesProvider::TransmissionLine']]],
   ['generateuniquekey256bit',['GenerateUniqueKey256Bit',['../d6/d3d/class_uniform_server_1_1_security_a_p_i.html#a47f4dbc862a92f24b030d52b2a79f92b',1,'UniformServer::SecurityAPI']]],
   ['getconsolewindow',['GetConsoleWindow',['../d4/deb/class_uniform_client_1_1_base_client.html#aafcfed25b79baed0db4448f2e30f2aa2',1,'UniformClient.BaseClient.GetConsoleWindow()'],['../d7/d32/class_uniform_server_1_1_base_server.html#a1b7d5587de4974fad2ec366a571791e0',1,'UniformServer.BaseServer.GetConsoleWindow()']]],
   ['getparamvalues',['GetParamValues',['../df/d75/class_uniform_queries_1_1_a_p_i.html#aa8a8215bbad2752c291803011dc49ff4',1,'UniformQueries.API.GetParamValues(string param, params string[] queryParts)'],['../df/d75/class_uniform_queries_1_1_a_p_i.html#ae481c9b7a800886a2b461a7456043494',1,'UniformQueries.API.GetParamValues(string param, params QueryPart[] queryParts)']]],

@@ -62,13 +62,23 @@ namespace UniformClient
         /// <summary>
         /// If true then will stop main loop.
         /// </summary>
-        public static bool appTerminated;
+        public static bool AppTerminated { get; set; }
+
+        /// <summary>
+        /// Table that contain delegatds subscribed to beckward lines in duplex queries.
+        /// 
+        /// Key string - backward domain
+        /// Value System.Action<PipesProvider.TransmissionLine, object> - answer processing delegat.
+        /// </summary>
+        protected static Hashtable DuplexBackwardCallbacks = new Hashtable();
         #endregion
 
+        #region Public fields
         /// <summary>
         /// Reference to thread that host this server.
         /// </summary>
         public Thread thread;
+        #endregion
 
 
         /// <summary>
@@ -294,6 +304,7 @@ namespace UniformClient
                 // If not obsolterd transmission line then drop operation.
                 if (!trnsLine.Closed)
                 {
+                    //Console.WriteLine("OTL {0} | FOUND", guid);
                     return trnsLine;
                 }
                 else
@@ -301,11 +312,13 @@ namespace UniformClient
                     // Unregister line and recall method.
                     PipesProvider.API.TryToUnregisterTransmissionLine(guid);
 
+                    //Console.WriteLine("OTL {0} | RETRY", guid);
+
                     // Retry.
                     return OpenTransmissionLine(client, serverName, pipeName, callback); 
                 }
             }
-            // If fulll new pipe.
+            // If full new pipe.
             else
             {
                 // Create new if not registred.
@@ -320,6 +333,9 @@ namespace UniformClient
                     guid,
                     trnsLine,
                     PipesProvider.TransmissionLine.ThreadLoop);
+
+
+                //Console.WriteLine("OTL {0} | CREATED", guid);
             }
 
             // Return oppened line.
@@ -394,16 +410,17 @@ namespace UniformClient
                 return;
             }
 
+            // Mark line as busy to avoid calling of next query, cause this handler is async.
             lineProcessor.Processing = true;
 
-            //Console.WriteLine("{0}/{1}: ANSWER READING STARTED.",
-            //     lineProcessor.ServerName, lineProcessor.ServerPipeName);
-            
             // Open stream reader.
             StreamReader sr = new StreamReader(lineProcessor.pipeClient);
-            //StreamReader sr = new StreamReader(lineProcessor.pipeClient, System.Text.Encoding.UTF8, true, 128, true);
             try
             {
+                #region Reciving message
+                Console.WriteLine("{0}/{1}: WAITING FOR MESSAGE",
+                        lineProcessor.ServerName, lineProcessor.ServerPipeName);
+
                 string message = null;
                 while (string.IsNullOrEmpty(message))
                 {
@@ -429,8 +446,37 @@ namespace UniformClient
                     }
                 }
 
-                //Console.WriteLine("{0}/{1}: ANSWER READING FINISH.\nMESSAGE: {2}", 
+                Console.WriteLine("{0}/{1}: MESSAGE RECIVED",
+                        lineProcessor.ServerName, lineProcessor.ServerPipeName);
+                #endregion
+
+                #region Processing message
+                // Try to call answer handler.
+                string tableGUID = lineProcessor.ServerName + "\\" + lineProcessor.ServerPipeName;
+                // Look for delegate in table.
+                if (DuplexBackwardCallbacks[tableGUID] is
+                    System.Action<PipesProvider.TransmissionLine, object> registredCallback)
+                {
+                    if (registredCallback != null)
+                    {
+                        // Invoke delegate if found and has dubscribers.
+                        registredCallback.Invoke(lineProcessor, message);
+                    }
+                    else
+                    {
+                        Console.WriteLine("{0}/{1}: ANSWER CALLBACK HAS NO SUBSCRIBERS",
+                            lineProcessor.ServerName, lineProcessor.ServerPipeName);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("{0}/{1}: ANSWER HANDLER NOT FOUND BY {2}",
+                        lineProcessor.ServerName, lineProcessor.ServerPipeName, tableGUID);
+                }
+
+                //Console.WriteLine("{0}/{1}: ANSWER READING FINISH.\nMESSAGE: {2}",
                 //    lineProcessor.ServerName, lineProcessor.ServerPipeName, message);
+                #endregion
             }
             // Catch the Exception that is raised if the pipe is broken or disconnected.
             catch (Exception e)
@@ -481,25 +527,44 @@ namespace UniformClient
             UniformQueries.QueryPart[] entryQueryParts, 
             System.Action<PipesProvider.TransmissionLine, object> answerHandler)
         {
+            #region Create backward domain
             // Try to compute bacward domaint to contact with client.
             if (!UniformQueries.QueryPart.TryGetBackwardDomain(entryQueryParts, out string domain))
             {
-                Console.WriteLine("Unable to buid backward domain. QUERY: {0}", 
+                Console.WriteLine("ERROR (BCRA0): Unable to buid backward domain. QUERY: {0}", 
                     UniformQueries.QueryPart.QueryPartsArrayToString(entryQueryParts));
                 return false;
             }
+            #endregion
 
+            #region Addind answer handler to backward table.
+            // Try to load registred callback to overriding.
+            if (DuplexBackwardCallbacks[domain] is
+                System.Action<PipesProvider.TransmissionLine, object> registredCallback)
+            {
+                DuplexBackwardCallbacks[domain] = answerHandler;
+            }
+            else
+            {
+                // Add colback to table as new.
+                DuplexBackwardCallbacks.Add(line.ServerName + "\\" + domain, answerHandler);
+            }
+            #endregion
+
+            #region Opening transmition line
             // Create transmission line.
             PipesProvider.TransmissionLine lineProcessor = OpenTransmissionLine(
                 new SimpleClient(),
                 line.ServerName, domain,
                 UniformServerAnswerHandler
                 );
+            #endregion
 
             // Skip line
             Console.WriteLine();
             return true;
         }
+
 
         /// <summary>
         /// Add query to queue. 
@@ -518,6 +583,27 @@ namespace UniformClient
 
             // Open backward chanel to recive answer from server.
             ReciveAnswer(line, query, answerHandler);
+        }
+
+        /// <summary>
+        /// Add query to queue. 
+        /// Open backward line that will call answer handler.
+        /// </summary>
+        /// <param name="serverName">Name of the server. "." if local.</param>
+        /// <param name="serverPipeName">Name of pipe provided by server.</param>
+        /// <param name="query">Query that will sent to server.</param>
+        /// <param name="answerHandler">Callback that will recive answer.</param>
+        public static void EnqueueDuplexQuery(
+            string serverName,
+            string serverPipeName,
+            string query,
+            System.Action<PipesProvider.TransmissionLine, object> answerHandler)
+        {
+            // Open transmission line.
+            PipesProvider.TransmissionLine line = OpenOutTransmissionLine(serverName, serverPipeName);
+
+            // Equeue query to line.
+            EnqueueDuplexQuery(line, query, answerHandler);
         }
         #endregion
     }

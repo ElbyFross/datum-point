@@ -8,7 +8,7 @@ Class that provide information about line between client and server. Provide \mb
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a20398f48516f0fc5fe0700b01b7fc6d7}{Transmission\+Line}} (string guid, string server\+Name, string server\+Pipe\+Name, System.\+Action$<$ \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Transmission\+Line}} $>$ \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a08bf6cb803ea32dd416afcc12ee866f5}{query\+Processor}})
+\mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a9002723c5fa3ec06f81470390b7ef685}{Transmission\+Line}} (string server\+Name, string server\+Pipe\+Name, System.\+Action$<$ \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Transmission\+Line}} $>$ \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a08bf6cb803ea32dd416afcc12ee866f5}{query\+Processor}})
 \begin{DoxyCompactList}\small\item\em Create new instance of Line\+Processor taht can be registread in static services. Contain information about transmission between client and server. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_ac27fedfbe0edfdcb4fbf4509c76f858f}{Enqueue\+Query}} (string query)
 \begin{DoxyCompactList}\small\item\em Enqueue query to order. Query will be posted to server as soon as will possible. \end{DoxyCompactList}\item 
@@ -24,7 +24,11 @@ void \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a954265d9816b25
 \begin{DoxyCompactItemize}
 \item 
 static void \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_ab56219b10bad03085b5d23e48ad59ec3}{Thread\+Loop}} (object line\+Processor)
-\begin{DoxyCompactList}\small\item\em Method that can be started as thread. Will start client loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Method that can be started as thread. Will start client loop. \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a1d9e1c1ba799548f3723e31cf5eece6e}{Generate\+G\+U\+ID}} (string server\+Name, string pipe\+Name)
+\begin{DoxyCompactList}\small\item\em Generate G\+U\+ID of this transmission line relative to pipe params. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Transmission\+Line}} \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_ac3fe155028466c724c1efe9abb4b1c02}{operator++}} (\mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Transmission\+Line}} line)
+\begin{DoxyCompactList}\small\item\em Incremet of attempts count. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -42,8 +46,8 @@ Queue$<$ \mbox{\hyperlink{struct_pipes_provider_1_1_query_container}{Query\+Cont
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-string \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a9227989e298eefad921d81d3098d5148}{G\+U\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
-\begin{DoxyCompactList}\small\item\em Unique ID of this proccesor that will be used for access to it cia static control and autpmatic services. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a9227989e298eefad921d81d3098d5148}{G\+U\+ID}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Unique G\+U\+ID for this pipe. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a6acb67e0969ca43a54c9895ab1cdaae8}{Server\+Pipe\+Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Name of server pipe that will be using for transmission via current processor. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a549bd893bb66b3f56e87209d3e776227}{Server\+Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
@@ -56,6 +60,12 @@ bool \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_af5717e4ea0ba1b
 \begin{DoxyCompactList}\small\item\em Return tthe query that was dequeue at last. \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line_a39f81c072ca65efd260d02fc7d5c5458}{Has\+Queries}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \begin{DoxyCompactList}\small\item\em Return true if queue contain queries. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_pipes_provider_1_1_transmission_line_acb5a54fae46da3287a364144e495a29d}\label{class_pipes_provider_1_1_transmission_line_acb5a54fae46da3287a364144e495a29d}} 
+string {\bfseries guid} = null
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -64,11 +74,11 @@ Class that provide information about line between client and server. Provide \mb
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_pipes_provider_1_1_transmission_line_a20398f48516f0fc5fe0700b01b7fc6d7}\label{class_pipes_provider_1_1_transmission_line_a20398f48516f0fc5fe0700b01b7fc6d7}} 
+\mbox{\Hypertarget{class_pipes_provider_1_1_transmission_line_a9002723c5fa3ec06f81470390b7ef685}\label{class_pipes_provider_1_1_transmission_line_a9002723c5fa3ec06f81470390b7ef685}} 
 \index{Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}!Transmission\+Line@{Transmission\+Line}}
 \index{Transmission\+Line@{Transmission\+Line}!Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}}
 \subsubsection{\texorpdfstring{Transmission\+Line()}{TransmissionLine()}}
-{\footnotesize\ttfamily Pipes\+Provider.\+Transmission\+Line.\+Transmission\+Line (\begin{DoxyParamCaption}\item[{string}]{guid,  }\item[{string}]{server\+Name,  }\item[{string}]{server\+Pipe\+Name,  }\item[{System.\+Action$<$ \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Transmission\+Line}} $>$}]{query\+Processor }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily Pipes\+Provider.\+Transmission\+Line.\+Transmission\+Line (\begin{DoxyParamCaption}\item[{string}]{server\+Name,  }\item[{string}]{server\+Pipe\+Name,  }\item[{System.\+Action$<$ \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Transmission\+Line}} $>$}]{query\+Processor }\end{DoxyParamCaption})}
 
 
 
@@ -138,6 +148,44 @@ Enqueue query to order. Query will be posted to server as soon as will possible.
 {\em query} & \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_pipes_provider_1_1_transmission_line_a1d9e1c1ba799548f3723e31cf5eece6e}\label{class_pipes_provider_1_1_transmission_line_a1d9e1c1ba799548f3723e31cf5eece6e}} 
+\index{Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}!Generate\+G\+U\+ID@{Generate\+G\+U\+ID}}
+\index{Generate\+G\+U\+ID@{Generate\+G\+U\+ID}!Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}}
+\subsubsection{\texorpdfstring{Generate\+G\+U\+I\+D()}{GenerateGUID()}}
+{\footnotesize\ttfamily static string Pipes\+Provider.\+Transmission\+Line.\+Generate\+G\+U\+ID (\begin{DoxyParamCaption}\item[{string}]{server\+Name,  }\item[{string}]{pipe\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Generate G\+U\+ID of this transmission line relative to pipe params. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\+Name} & \\
+\hline
+{\em pipe\+Name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_pipes_provider_1_1_transmission_line_ac3fe155028466c724c1efe9abb4b1c02}\label{class_pipes_provider_1_1_transmission_line_ac3fe155028466c724c1efe9abb4b1c02}} 
+\index{Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}!operator++@{operator++}}
+\index{operator++@{operator++}!Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}}
+\subsubsection{\texorpdfstring{operator++()}{operator++()}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Transmission\+Line}} Pipes\+Provider.\+Transmission\+Line.\+operator++ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Transmission\+Line}}}]{line }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Incremet of attempts count. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contaier} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_pipes_provider_1_1_transmission_line_ab56219b10bad03085b5d23e48ad59ec3}\label{class_pipes_provider_1_1_transmission_line_ab56219b10bad03085b5d23e48ad59ec3}} 
 \index{Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}!Thread\+Loop@{Thread\+Loop}}
 \index{Thread\+Loop@{Thread\+Loop}!Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}}
@@ -233,11 +281,11 @@ If true then this line will be closed on the next client tick.
 \index{Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}!G\+U\+ID@{G\+U\+ID}}
 \index{G\+U\+ID@{G\+U\+ID}!Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}}
 \subsubsection{\texorpdfstring{G\+U\+ID}{GUID}}
-{\footnotesize\ttfamily string Pipes\+Provider.\+Transmission\+Line.\+G\+U\+ID\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [protected set]}}
+{\footnotesize\ttfamily string Pipes\+Provider.\+Transmission\+Line.\+G\+U\+ID\hspace{0.3cm}{\ttfamily [get]}}
 
 
 
-Unique ID of this proccesor that will be used for access to it cia static control and autpmatic services. 
+Unique G\+U\+ID for this pipe. 
 
 \mbox{\Hypertarget{class_pipes_provider_1_1_transmission_line_a39f81c072ca65efd260d02fc7d5c5458}\label{class_pipes_provider_1_1_transmission_line_a39f81c072ca65efd260d02fc7d5c5458}} 
 \index{Pipes\+Provider\+::\+Transmission\+Line@{Pipes\+Provider\+::\+Transmission\+Line}!Has\+Queries@{Has\+Queries}}

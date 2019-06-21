@@ -14,6 +14,10 @@ static bool \mbox{\hyperlink{class_pipes_provider_1_1_a_p_i_ae1abc16273a4b459fdb
 \begin{DoxyCompactList}\small\item\em Try to find out registred transmission line by G\+U\+ID. If client not strted then return false. \end{DoxyCompactList}\item 
 static bool \mbox{\hyperlink{class_pipes_provider_1_1_a_p_i_a39e17f30d2ee8c716efeb92f947fb72e}{Try\+To\+Register\+Transmission\+Line}} (\mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Transmission\+Line}} line\+Processor)
 \begin{DoxyCompactList}\small\item\em Trying to register transmission line in common table by key\+: Server\+Name.\+Pipe\+Line \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_pipes_provider_1_1_a_p_i_ab0578d8470c97267dd9c6e2126cb69f0}{Try\+To\+Unregister\+Transmission\+Line}} (string guid)
+\begin{DoxyCompactList}\small\item\em Remove line from table if this line closed. In other keys this operation not available due to security amd stability purposes. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_pipes_provider_1_1_a_p_i_aeca3d6eddfa3446b8e5601ee85461f63}{Close\+All\+Transmission\+Lines}} ()
+\begin{DoxyCompactList}\small\item\em Closing all lines registred in table. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_pipes_provider_1_1_a_p_i_a99feebefadd9a40a3c1fa7175324d950}{Client\+To\+Server\+Loop}} (System.\+Action$<$ \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}}, string $>$ query\+Handler\+Callback, string pipe\+Name, out string guid)
 \begin{DoxyCompactList}\small\item\em Automaticly create server\textquotesingle{}s pipe that will recive queries from clients. \end{DoxyCompactList}\item 
 static void \mbox{\hyperlink{class_pipes_provider_1_1_a_p_i_a06ee04a0e80238a176b7b2cac3f6bb4b}{Client\+To\+Server\+Loop}} (string guid, System.\+Action$<$ \mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Server\+Transmission\+Meta}}, string $>$ query\+Handler\+Callback, string pipe\+Name)
@@ -176,6 +180,16 @@ Server loop
 {\em pipe\+Options} & \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{class_pipes_provider_1_1_a_p_i_aeca3d6eddfa3446b8e5601ee85461f63}\label{class_pipes_provider_1_1_a_p_i_aeca3d6eddfa3446b8e5601ee85461f63}} 
+\index{Pipes\+Provider\+::\+A\+PI@{Pipes\+Provider\+::\+A\+PI}!Close\+All\+Transmission\+Lines@{Close\+All\+Transmission\+Lines}}
+\index{Close\+All\+Transmission\+Lines@{Close\+All\+Transmission\+Lines}!Pipes\+Provider\+::\+A\+PI@{Pipes\+Provider\+::\+A\+PI}}
+\subsubsection{\texorpdfstring{Close\+All\+Transmission\+Lines()}{CloseAllTransmissionLines()}}
+{\footnotesize\ttfamily static void Pipes\+Provider.\+A\+P\+I.\+Close\+All\+Transmission\+Lines (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Closing all lines registred in table. 
+
 \mbox{\Hypertarget{class_pipes_provider_1_1_a_p_i_a0feeed2f76dc4292c3b85fdd054bd77e}\label{class_pipes_provider_1_1_a_p_i_a0feeed2f76dc4292c3b85fdd054bd77e}} 
 \index{Pipes\+Provider\+::\+A\+PI@{Pipes\+Provider\+::\+A\+PI}!Connection\+Established\+Callback\+Retranslator@{Connection\+Established\+Callback\+Retranslator}}
 \index{Connection\+Established\+Callback\+Retranslator@{Connection\+Established\+Callback\+Retranslator}!Pipes\+Provider\+::\+A\+PI@{Pipes\+Provider\+::\+A\+PI}}
@@ -424,6 +438,24 @@ If exist return false. Retrun sycces if added to table.
 
 \begin{DoxyParams}{Parameters}
 {\em line\+Processor} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_pipes_provider_1_1_a_p_i_ab0578d8470c97267dd9c6e2126cb69f0}\label{class_pipes_provider_1_1_a_p_i_ab0578d8470c97267dd9c6e2126cb69f0}} 
+\index{Pipes\+Provider\+::\+A\+PI@{Pipes\+Provider\+::\+A\+PI}!Try\+To\+Unregister\+Transmission\+Line@{Try\+To\+Unregister\+Transmission\+Line}}
+\index{Try\+To\+Unregister\+Transmission\+Line@{Try\+To\+Unregister\+Transmission\+Line}!Pipes\+Provider\+::\+A\+PI@{Pipes\+Provider\+::\+A\+PI}}
+\subsubsection{\texorpdfstring{Try\+To\+Unregister\+Transmission\+Line()}{TryToUnregisterTransmissionLine()}}
+{\footnotesize\ttfamily static bool Pipes\+Provider.\+A\+P\+I.\+Try\+To\+Unregister\+Transmission\+Line (\begin{DoxyParamCaption}\item[{string}]{guid }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remove line from table if this line closed. In other keys this operation not available due to security amd stability purposes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em guid} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

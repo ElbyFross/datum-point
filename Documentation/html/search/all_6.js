@@ -1,6 +1,7 @@
 var searchData=
 [
   ['generatedinternaltypehelper',['GeneratedInternalTypeHelper',['../dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper.html',1,'XamlGeneratedNamespace']]],
+  ['generateguid',['GenerateGUID',['../d1/d09/class_pipes_provider_1_1_transmission_line.html#a1d9e1c1ba799548f3723e31cf5eece6e',1,'PipesProvider::TransmissionLine']]],
   ['generateuniquekey256bit',['GenerateUniqueKey256Bit',['../d6/d3d/class_uniform_server_1_1_security_a_p_i.html#a47f4dbc862a92f24b030d52b2a79f92b',1,'UniformServer::SecurityAPI']]],
   ['get_5fdays_5frange',['GET_DAYS_RANGE',['../de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e.html',1,'THB_Data_Server_Queries']]],
   ['get_5fpublic_5fkey',['GET_PUBLIC_KEY',['../da/d43/class_uniform_server_1_1_queries_1_1_g_e_t___p_u_b_l_i_c___k_e_y.html',1,'UniformServer::Queries']]],

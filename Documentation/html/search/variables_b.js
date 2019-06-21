@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['server_5fname',['SERVER_NAME',['../d6/dac/class_test_client_1_1_client.html#a7fdac87931c97ce7fde6c4fc622bcfa6',1,'TestClient::Client']]],
+  ['server_5fpipe_5fname',['SERVER_PIPE_NAME',['../d6/dac/class_test_client_1_1_client.html#a58c70d565592caa15b99d9b145a133ea',1,'TestClient::Client']]],
   ['session',['session',['../dc/d14/struct_teacher_handbook_1_1_core_1_1_orders_1_1_order_date.html#a8ffd98cdee8fc98d2eb79af227084dd1',1,'TeacherHandbook::Core::Orders::OrderDate']]],
   ['sessions',['sessions',['../d5/d0b/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_day.html#ab7130291674ea826085d0090d6acdddb',1,'TeacherHandbook::Core::Containers::Schedule::Day']]],
   ['splitting_5fsymbol',['SPLITTING_SYMBOL',['../df/d75/class_uniform_queries_1_1_a_p_i.html#aa906970223172f9f2068baa410b621d8',1,'UniformQueries::API']]],

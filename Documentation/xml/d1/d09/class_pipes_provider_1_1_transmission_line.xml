@@ -3,18 +3,18 @@
   <compounddef id="d1/d09/class_pipes_provider_1_1_transmission_line" kind="class" language="C#" prot="public">
     <compoundname>PipesProvider::TransmissionLine</compoundname>
       <sectiondef kind="property">
-      <memberdef kind="property" id="d1/d09/class_pipes_provider_1_1_transmission_line_1a9227989e298eefad921d81d3098d5148" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="yes">
+      <memberdef kind="property" id="d1/d09/class_pipes_provider_1_1_transmission_line_1a9227989e298eefad921d81d3098d5148" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
         <type>string</type>
         <definition>string PipesProvider.TransmissionLine.GUID</definition>
         <argsstring></argsstring>
         <name>GUID</name>
         <briefdescription>
-<para>Unique ID of this proccesor that will be used for access to it cia static control and autpmatic services. </para>        </briefdescription>
+<para>Unique GUID for this pipe. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="33" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="34" bodyend="37"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="33" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="34" bodyend="42"/>
       </memberdef>
       <memberdef kind="property" id="d1/d09/class_pipes_provider_1_1_transmission_line_1a6acb67e0969ca43a54c9895ab1cdaae8" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="yes">
         <type>string</type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="42" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="43" bodyend="46"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="48" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="49" bodyend="52"/>
       </memberdef>
       <memberdef kind="property" id="d1/d09/class_pipes_provider_1_1_transmission_line_1a549bd893bb66b3f56e87209d3e776227" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="yes">
         <type>string</type>
@@ -40,7 +40,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="51" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="52" bodyend="55"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="57" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="58" bodyend="61"/>
       </memberdef>
       <memberdef kind="property" id="d1/d09/class_pipes_provider_1_1_transmission_line_1a4edc70c5ef641b2c600b69b65ff4ba00" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="yes">
         <type>bool</type>
@@ -53,7 +53,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="60" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="61" bodyend="64"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="66" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="67" bodyend="70"/>
       </memberdef>
       <memberdef kind="property" id="d1/d09/class_pipes_provider_1_1_transmission_line_1af5717e4ea0ba1bbca5685de995c1c88f" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>bool</type>
@@ -66,7 +66,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="69" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="70" bodyend="73"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="75" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="76" bodyend="79"/>
       </memberdef>
       <memberdef kind="property" id="d1/d09/class_pipes_provider_1_1_transmission_line_1a3cc3f03332be99b5f380772587ca2883" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="yes">
         <type><ref refid="d2/d85/struct_pipes_provider_1_1_query_container" kindref="compound">QueryContainer</ref></type>
@@ -79,7 +79,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="78" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="79" bodyend="88"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="84" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="85" bodyend="94"/>
       </memberdef>
       <memberdef kind="property" id="d1/d09/class_pipes_provider_1_1_transmission_line_1a39f81c072ca65efd260d02fc7d5c5458" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
         <type>bool</type>
@@ -92,7 +92,23 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="230" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="231" bodyend="231"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="241" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="242" bodyend="242"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d1/d09/class_pipes_provider_1_1_transmission_line_1acb5a54fae46da3287a364144e495a29d" prot="private" static="no" mutable="no">
+        <type>string</type>
+        <definition>string PipesProvider.TransmissionLine.guid</definition>
+        <argsstring></argsstring>
+        <name>guid</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="43" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -107,7 +123,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="95" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="95" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="101" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="101" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d1/d09/class_pipes_provider_1_1_transmission_line_1a08bf6cb803ea32dd416afcc12ee866f5" prot="public" static="no" mutable="no">
         <type>System.Action&lt; <ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">TransmissionLine</ref> &gt;</type>
@@ -120,7 +136,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="100" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="100" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="106" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="106" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -136,7 +152,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="107" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="107" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="113" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="113" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d1/d09/class_pipes_provider_1_1_transmission_line_1ad866033fcbb1d9f783df8ff71e7fc21a" prot="protected" static="no" mutable="no">
         <type>Queue&lt; <ref refid="d2/d85/struct_pipes_provider_1_1_query_container" kindref="compound">QueryContainer</ref> &gt;</type>
@@ -150,19 +166,15 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="112" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="112" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="118" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="118" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="d1/d09/class_pipes_provider_1_1_transmission_line_1a20398f48516f0fc5fe0700b01b7fc6d7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="d1/d09/class_pipes_provider_1_1_transmission_line_1a9002723c5fa3ec06f81470390b7ef685" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
         <definition>PipesProvider.TransmissionLine.TransmissionLine</definition>
-        <argsstring>(string guid, string serverName, string serverPipeName, System.Action&lt; TransmissionLine &gt; queryProcessor)</argsstring>
+        <argsstring>(string serverName, string serverPipeName, System.Action&lt; TransmissionLine &gt; queryProcessor)</argsstring>
         <name>TransmissionLine</name>
-        <param>
-          <type>string</type>
-          <declname>guid</declname>
-        </param>
         <param>
           <type>string</type>
           <declname>serverName</declname>
@@ -210,7 +222,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="125" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="125" bodyend="135"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="131" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="131" bodyend="140"/>
       </memberdef>
       <memberdef kind="function" id="d1/d09/class_pipes_provider_1_1_transmission_line_1ac27fedfbe0edfdcb4fbf4509c76f858f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -235,7 +247,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="143" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="143" bodyend="146"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="148" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="148" bodyend="151"/>
       </memberdef>
       <memberdef kind="function" id="d1/d09/class_pipes_provider_1_1_transmission_line_1a59eceb9280548e1c9e662543ee5c96c7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -260,7 +272,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="152" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="152" bodyend="155"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="157" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="157" bodyend="160"/>
       </memberdef>
       <memberdef kind="function" id="d1/d09/class_pipes_provider_1_1_transmission_line_1acc672e0d0c921f60a9a5920e3f76d28b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -286,7 +298,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="165" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="165" bodyend="207"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="170" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="170" bodyend="212"/>
       </memberdef>
       <memberdef kind="function" id="d1/d09/class_pipes_provider_1_1_transmission_line_1a4aa28b1d29a2b0b6fb2af6f046fdf56a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -299,7 +311,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="212" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="212" bodyend="216"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="217" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="217" bodyend="227"/>
       </memberdef>
       <memberdef kind="function" id="d1/d09/class_pipes_provider_1_1_transmission_line_1a954265d9816b253b75caf7b6b7e1ba86" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -312,7 +324,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="221" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="221" bodyend="225"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="232" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="232" bodyend="236"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -339,7 +351,70 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="238" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="238" bodyend="256"/>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="249" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="249" bodyend="267"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d09/class_pipes_provider_1_1_transmission_line_1a1d9e1c1ba799548f3723e31cf5eece6e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>static string PipesProvider.TransmissionLine.GenerateGUID</definition>
+        <argsstring>(string serverName, string pipeName)</argsstring>
+        <name>GenerateGUID</name>
+        <param>
+          <type>string</type>
+          <declname>serverName</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>pipeName</declname>
+        </param>
+        <briefdescription>
+<para>Generate GUID of this transmission line relative to pipe params. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>serverName</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pipeName</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="275" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="275" bodyend="290"/>
+      </memberdef>
+      <memberdef kind="function" id="d1/d09/class_pipes_provider_1_1_transmission_line_1ac3fe155028466c724c1efe9abb4b1c02" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">TransmissionLine</ref></type>
+        <definition>static TransmissionLine PipesProvider.TransmissionLine.operator++</definition>
+        <argsstring>(TransmissionLine line)</argsstring>
+        <name>operator++</name>
+        <param>
+          <type><ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">TransmissionLine</ref></type>
+          <declname>line</declname>
+        </param>
+        <briefdescription>
+<para>Incremet of attempts count. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>contaier</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="298" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="298" bodyend="302"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -368,17 +443,20 @@
         <label>System</label>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="28" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="27" bodyend="257"/>
+    <location file="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" line="28" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/TransmissionLine.cs" bodystart="27" bodyend="303"/>
     <listofallmembers>
       <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a4aa28b1d29a2b0b6fb2af6f046fdf56a" prot="public" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>Close</name></member>
       <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a4edc70c5ef641b2c600b69b65ff4ba00" prot="public" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>Closed</name></member>
       <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a954265d9816b253b75caf7b6b7e1ba86" prot="public" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>DropMeta</name></member>
       <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1ac27fedfbe0edfdcb4fbf4509c76f858f" prot="public" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>EnqueueQuery</name></member>
       <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a59eceb9280548e1c9e662543ee5c96c7" prot="public" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>EnqueueQuery</name></member>
+      <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a1d9e1c1ba799548f3723e31cf5eece6e" prot="public" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>GenerateGUID</name></member>
       <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a9227989e298eefad921d81d3098d5148" prot="public" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>GUID</name></member>
+      <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1acb5a54fae46da3287a364144e495a29d" prot="private" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>guid</name></member>
       <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a39f81c072ca65efd260d02fc7d5c5458" prot="public" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>HasQueries</name></member>
       <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1affdde0eafb483f2bf6f874679b4ab6f8" prot="protected" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>lastQuery</name></member>
       <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a3cc3f03332be99b5f380772587ca2883" prot="public" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>LastQuery</name></member>
+      <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1ac3fe155028466c724c1efe9abb4b1c02" prot="public" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>operator++</name></member>
       <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a31dff9b14126dc47bfafe65e3c976c2f" prot="public" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>pipeClient</name></member>
       <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1af5717e4ea0ba1bbca5685de995c1c88f" prot="public" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>Processing</name></member>
       <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1ad866033fcbb1d9f783df8ff71e7fc21a" prot="protected" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>queries</name></member>
@@ -386,7 +464,7 @@
       <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a549bd893bb66b3f56e87209d3e776227" prot="public" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>ServerName</name></member>
       <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a6acb67e0969ca43a54c9895ab1cdaae8" prot="public" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>ServerPipeName</name></member>
       <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1ab56219b10bad03085b5d23e48ad59ec3" prot="public" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>ThreadLoop</name></member>
-      <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a20398f48516f0fc5fe0700b01b7fc6d7" prot="public" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>TransmissionLine</name></member>
+      <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1a9002723c5fa3ec06f81470390b7ef685" prot="public" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>TransmissionLine</name></member>
       <member refid="d1/d09/class_pipes_provider_1_1_transmission_line_1acc672e0d0c921f60a9a5920e3f76d28b" prot="public" virt="non-virtual"><scope>PipesProvider::TransmissionLine</scope><name>TryDequeQuery</name></member>
     </listofallmembers>
   </compounddef>

@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Datum Point
-   &#160;<span id="projectnumber">0.1.3</span>
+   &#160;<span id="projectnumber">0.1.4</span>
    </div>
   </td>
  </tr>
@@ -89,11 +89,11 @@ $(document).ready(function(){initNavTree('d4/deb/class_uniform_client_1_1_base_c
   <div class="summary">
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-static-methods">Static Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#pro-static-attribs">Static Protected Attributes</a> &#124;
+<a href="#properties">Properties</a> &#124;
 <a href="../../d6/d50/class_uniform_client_1_1_base_client-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">UniformClient.BaseClient Class Reference</div>  </div>
@@ -109,7 +109,7 @@ Inheritance diagram for UniformClient.BaseClient:</div>
   <img src="../../d4/deb/class_uniform_client_1_1_base_client.png" usemap="#UniformClient.BaseClient_map" alt=""/>
   <map id="UniformClient.BaseClient_map" name="UniformClient.BaseClient_map">
 <area href="../../d8/de3/class_teacher_handbook_1_1_client.html" title="Instance of this class will provide client features. " alt="TeacherHandbook.Client" shape="rect" coords="0,56,160,80"/>
-<area href="../../d6/dac/class_test_client_1_1_client.html" alt="TestClient.Client" shape="rect" coords="170,56,330,80"/>
+<area href="../../d6/dac/class_test_client_1_1_client.html" title="Provide example of client-server transmission. Demostrate ways to use API. Provide tools for simple t..." alt="TestClient.Client" shape="rect" coords="170,56,330,80"/>
 <area href="../../d4/d3e/class_uniform_client_1_1_simple_client.html" title="Client that allow instiniate BaseClient. Not contain any additive methods. " alt="UniformClient.SimpleClient" shape="rect" coords="340,56,500,80"/>
 </map>
  </div></div>
@@ -122,29 +122,37 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a99ae0bb1dd5bef374fcedb3f873bfe8b"><td class="memItemLeft" align="right" valign="top">static System.Collections.ObjectModel.ObservableCollection&lt; <a class="el" href="../../d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin.html">Plugins.IPlugin</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a99ae0bb1dd5bef374fcedb3f873bfe8b">LoadPluginsCollection</a> ()</td></tr>
 <tr class="memdesc:a99ae0bb1dd5bef374fcedb3f873bfe8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load plugins from assembly and instiniate them to list.  <a href="#a99ae0bb1dd5bef374fcedb3f873bfe8b">More...</a><br /></td></tr>
 <tr class="separator:a99ae0bb1dd5bef374fcedb3f873bfe8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c59b23626ff132aa96630654d7bc410"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a9c59b23626ff132aa96630654d7bc410">OpenTransmissionLine</a> (<a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html">BaseClient</a> client, string guid, string serverName, string pipeName, System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a> &gt; callback)</td></tr>
-<tr class="memdesc:a9c59b23626ff132aa96630654d7bc410"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide complex initalization of all relative systems. Build meta data, regitrate line in common table. Start new thread to avoid freezes.  <a href="#a9c59b23626ff132aa96630654d7bc410">More...</a><br /></td></tr>
-<tr class="separator:a9c59b23626ff132aa96630654d7bc410"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd2e71dcb27e97f900f887233e6b8f9c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#acd2e71dcb27e97f900f887233e6b8f9c">UniformQueryPostHandler</a> (object sharedObject)</td></tr>
-<tr class="memdesc:acd2e71dcb27e97f900f887233e6b8f9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler that send last dequeued query to server when connection will be established.  <a href="#acd2e71dcb27e97f900f887233e6b8f9c">More...</a><br /></td></tr>
-<tr class="separator:acd2e71dcb27e97f900f887233e6b8f9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaeab527820b088ab3a84cd210e53a01f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#aaeab527820b088ab3a84cd210e53a01f">OpenOutTransmissionLine</a> (string serverName, string pipeName)</td></tr>
+<tr class="memdesc:aaeab527820b088ab3a84cd210e53a01f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Oppening transmition line that will able to send querie to described server's pipe.  <a href="#aaeab527820b088ab3a84cd210e53a01f">More...</a><br /></td></tr>
+<tr class="separator:aaeab527820b088ab3a84cd210e53a01f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9044693efc8f4ccf259e954c5345236f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a9044693efc8f4ccf259e954c5345236f">OpenTransmissionLine</a> (string serverName, string pipeName, System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a> &gt; callback)</td></tr>
+<tr class="memdesc:a9044693efc8f4ccf259e954c5345236f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Automaticly create Transmission line or lokking for previos one.  <a href="#a9044693efc8f4ccf259e954c5345236f">More...</a><br /></td></tr>
+<tr class="separator:a9044693efc8f4ccf259e954c5345236f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80e2da33cf28945db058cd59f7ac5e58"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a80e2da33cf28945db058cd59f7ac5e58">OpenTransmissionLine</a> (<a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html">BaseClient</a> client, string serverName, string pipeName, System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a> &gt; callback)</td></tr>
+<tr class="memdesc:a80e2da33cf28945db058cd59f7ac5e58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provide complex initalization of all relative systems. Build meta data, regitrate line in common table. Start new thread to avoid freezes.  <a href="#a80e2da33cf28945db058cd59f7ac5e58">More...</a><br /></td></tr>
+<tr class="separator:a80e2da33cf28945db058cd59f7ac5e58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05120a32c8a00263c7e2fc8b9fa152d8"><td class="memItemLeft" align="right" valign="top">static async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a05120a32c8a00263c7e2fc8b9fa152d8">UniformQueryPostHandler</a> (object sharedObject)</td></tr>
+<tr class="memdesc:a05120a32c8a00263c7e2fc8b9fa152d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler that send last dequeued query to server when connection will be established.  <a href="#a05120a32c8a00263c7e2fc8b9fa152d8">More...</a><br /></td></tr>
+<tr class="separator:a05120a32c8a00263c7e2fc8b9fa152d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af7a3c613846c8595431272c4c9d531f3"><td class="memItemLeft" align="right" valign="top">static async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#af7a3c613846c8595431272c4c9d531f3">UniformServerAnswerHandler</a> (object sharedObject)</td></tr>
 <tr class="memdesc:af7a3c613846c8595431272c4c9d531f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler that will recive message from the server.  <a href="#af7a3c613846c8595431272c4c9d531f3">More...</a><br /></td></tr>
 <tr class="separator:af7a3c613846c8595431272c4c9d531f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6525d87fd1df20689b0a01280e36c5c1"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a6525d87fd1df20689b0a01280e36c5c1">ReciveAnswer</a> (<a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a> line, string decodedQuery, System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>, object &gt; answerHandler)</td></tr>
+<tr class="separator:a6525d87fd1df20689b0a01280e36c5c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06d3340dd02ec4abfe9cf55bc1db0f03"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a06d3340dd02ec4abfe9cf55bc1db0f03">ReciveAnswer</a> (<a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a> line, <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">UniformQueries.QueryPart</a>[] entryQueryParts, System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>, object &gt; answerHandler)</td></tr>
 <tr class="separator:a06d3340dd02ec4abfe9cf55bc1db0f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09f3a6de4a33cd5f3eaba564544440e1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a09f3a6de4a33cd5f3eaba564544440e1">EnqueueDuplexQuery</a> (<a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a> line, string query, System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>, object &gt; answerHandler)</td></tr>
+<tr class="memdesc:a09f3a6de4a33cd5f3eaba564544440e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add query to queue. Open backward line that will call answer handler.  <a href="#a09f3a6de4a33cd5f3eaba564544440e1">More...</a><br /></td></tr>
+<tr class="separator:a09f3a6de4a33cd5f3eaba564544440e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98d1abc1fea84d7222291c462c4f9416"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a98d1abc1fea84d7222291c462c4f9416">EnqueueDuplexQuery</a> (string serverName, string serverPipeName, string query, System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>, object &gt; answerHandler)</td></tr>
+<tr class="memdesc:a98d1abc1fea84d7222291c462c4f9416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add query to queue. Open backward line that will call answer handler.  <a href="#a98d1abc1fea84d7222291c462c4f9416">More...</a><br /></td></tr>
+<tr class="separator:a98d1abc1fea84d7222291c462c4f9416"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a458271823ca5e21612c0947e1db695a0"><td class="memItemLeft" align="right" valign="top">Thread&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a458271823ca5e21612c0947e1db695a0">thread</a></td></tr>
 <tr class="memdesc:a458271823ca5e21612c0947e1db695a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference to thread that host this server.  <a href="#a458271823ca5e21612c0947e1db695a0">More...</a><br /></td></tr>
 <tr class="separator:a458271823ca5e21612c0947e1db695a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr class="memitem:a1c02c6bb48c54e59c2581fe8097a4052"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a1c02c6bb48c54e59c2581fe8097a4052">appTerminated</a></td></tr>
-<tr class="memdesc:a1c02c6bb48c54e59c2581fe8097a4052"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true then will stop main loop.  <a href="#a1c02c6bb48c54e59c2581fe8097a4052">More...</a><br /></td></tr>
-<tr class="separator:a1c02c6bb48c54e59c2581fe8097a4052"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -181,6 +189,15 @@ Static Protected Attributes</h2></td></tr>
 <tr class="memitem:a2c4762c1be5eac42b8b5d189530d0952"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a2c4762c1be5eac42b8b5d189530d0952">threadSleepTime</a> = 150</td></tr>
 <tr class="memdesc:a2c4762c1be5eac42b8b5d189530d0952"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many milisseconds will sleep thread after tick.  <a href="#a2c4762c1be5eac42b8b5d189530d0952">More...</a><br /></td></tr>
 <tr class="separator:a2c4762c1be5eac42b8b5d189530d0952"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52dacc1af85cbab035a159e64e1417a0"><td class="memItemLeft" align="right" valign="top">static Hashtable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a52dacc1af85cbab035a159e64e1417a0">DuplexBackwardCallbacks</a> = new Hashtable()</td></tr>
+<tr class="memdesc:a52dacc1af85cbab035a159e64e1417a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Table that contain delegatds subscribed to beckward lines in duplex queries.  <a href="#a52dacc1af85cbab035a159e64e1417a0">More...</a><br /></td></tr>
+<tr class="separator:a52dacc1af85cbab035a159e64e1417a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
+Properties</h2></td></tr>
+<tr class="memitem:a10f1c9dbb8d41719754b39344432497f"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html#a10f1c9dbb8d41719754b39344432497f">AppTerminated</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a10f1c9dbb8d41719754b39344432497f"><td class="mdescLeft">&#160;</td><td class="mdescRight">If true then will stop main loop.  <a href="#a10f1c9dbb8d41719754b39344432497f">More...</a><br /></td></tr>
+<tr class="separator:a10f1c9dbb8d41719754b39344432497f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class that provide base client features and envirounment static API. </p>
@@ -213,6 +230,117 @@ Static Protected Attributes</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">args</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a09f3a6de4a33cd5f3eaba564544440e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09f3a6de4a33cd5f3eaba564544440e1">&#9670;&nbsp;</a></span>EnqueueDuplexQuery() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void UniformClient.BaseClient.EnqueueDuplexQuery </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>query</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>, object &gt;&#160;</td>
+          <td class="paramname"><em>answerHandler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add query to queue. Open backward line that will call answer handler. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>Line proccessor that control queries posting to target server.</td></tr>
+    <tr><td class="paramname">query</td><td>Query that will sent to server.</td></tr>
+    <tr><td class="paramname">answerHandler</td><td>Callback that will recive answer.</td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a98d1abc1fea84d7222291c462c4f9416"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98d1abc1fea84d7222291c462c4f9416">&#9670;&nbsp;</a></span>EnqueueDuplexQuery() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void UniformClient.BaseClient.EnqueueDuplexQuery </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>serverName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>serverPipeName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>query</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>, object &gt;&#160;</td>
+          <td class="paramname"><em>answerHandler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add query to queue. Open backward line that will call answer handler. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">serverName</td><td>Name of the server. "." if local.</td></tr>
+    <tr><td class="paramname">serverPipeName</td><td>Name of pipe provided by server.</td></tr>
+    <tr><td class="paramname">query</td><td>Query that will sent to server.</td></tr>
+    <tr><td class="paramname">answerHandler</td><td>Callback that will recive answer.</td></tr>
   </table>
   </dd>
 </dl>
@@ -342,8 +470,107 @@ Static Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="a9c59b23626ff132aa96630654d7bc410"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c59b23626ff132aa96630654d7bc410">&#9670;&nbsp;</a></span>OpenTransmissionLine()</h2>
+<a id="aaeab527820b088ab3a84cd210e53a01f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaeab527820b088ab3a84cd210e53a01f">&#9670;&nbsp;</a></span>OpenOutTransmissionLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a> UniformClient.BaseClient.OpenOutTransmissionLine </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>serverName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>pipeName</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Oppening transmition line that will able to send querie to described server's pipe. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">serverName</td><td></td></tr>
+    <tr><td class="paramname">pipeName</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a9044693efc8f4ccf259e954c5345236f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9044693efc8f4ccf259e954c5345236f">&#9670;&nbsp;</a></span>OpenTransmissionLine() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a> UniformClient.BaseClient.OpenTransmissionLine </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>serverName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>pipeName</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a> &gt;&#160;</td>
+          <td class="paramname"><em>callback</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Automaticly create Transmission line or lokking for previos one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">serverName</td><td></td></tr>
+    <tr><td class="paramname">pipeName</td><td></td></tr>
+    <tr><td class="paramname">callback</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a80e2da33cf28945db058cd59f7ac5e58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80e2da33cf28945db058cd59f7ac5e58">&#9670;&nbsp;</a></span>OpenTransmissionLine() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -356,12 +583,6 @@ Static Protected Attributes</h2></td></tr>
           <td>(</td>
           <td class="paramtype"><a class="el" href="../../d4/deb/class_uniform_client_1_1_base_client.html">BaseClient</a>&#160;</td>
           <td class="paramname"><em>client</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>guid</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -409,8 +630,61 @@ Static Protected Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a6525d87fd1df20689b0a01280e36c5c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6525d87fd1df20689b0a01280e36c5c1">&#9670;&nbsp;</a></span>ReciveAnswer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool UniformClient.BaseClient.ReciveAnswer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>decodedQuery</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">System.Action&lt; <a class="el" href="../../d1/d09/class_pipes_provider_1_1_transmission_line.html">PipesProvider.TransmissionLine</a>, object &gt;&#160;</td>
+          <td class="paramname"><em>answerHandler</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p></p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">line</td><td>Line that was used to transmition</td></tr>
+    <tr><td class="paramname">answerHandler</td><td>Delegate that will be called as handler for answer processing. TransmissionLine contain data about actual transmission. object contain recived query (usualy string or byte[]).</td></tr>
+    <tr><td class="paramname">decodedQuery</td><td>Query that sent to server and must recive answer. Must be not encoded.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="a06d3340dd02ec4abfe9cf55bc1db0f03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a06d3340dd02ec4abfe9cf55bc1db0f03">&#9670;&nbsp;</a></span>ReciveAnswer()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a06d3340dd02ec4abfe9cf55bc1db0f03">&#9670;&nbsp;</a></span>ReciveAnswer() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -561,8 +835,8 @@ Static Protected Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="acd2e71dcb27e97f900f887233e6b8f9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd2e71dcb27e97f900f887233e6b8f9c">&#9670;&nbsp;</a></span>UniformQueryPostHandler()</h2>
+<a id="a05120a32c8a00263c7e2fc8b9fa152d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05120a32c8a00263c7e2fc8b9fa152d8">&#9670;&nbsp;</a></span>UniformQueryPostHandler()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -571,7 +845,7 @@ Static Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void UniformClient.BaseClient.UniformQueryPostHandler </td>
+          <td class="memname">static async void UniformClient.BaseClient.UniformQueryPostHandler </td>
           <td>(</td>
           <td class="paramtype">object&#160;</td>
           <td class="paramname"><em>sharedObject</em></td><td>)</td>
@@ -631,8 +905,8 @@ Static Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a1c02c6bb48c54e59c2581fe8097a4052"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c02c6bb48c54e59c2581fe8097a4052">&#9670;&nbsp;</a></span>appTerminated</h2>
+<a id="a52dacc1af85cbab035a159e64e1417a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52dacc1af85cbab035a159e64e1417a0">&#9670;&nbsp;</a></span>DuplexBackwardCallbacks</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -641,17 +915,18 @@ Static Protected Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool UniformClient.BaseClient.appTerminated</td>
+          <td class="memname">Hashtable UniformClient.BaseClient.DuplexBackwardCallbacks = new Hashtable()</td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>If true then will stop main loop. </p>
+<p>Table that contain delegatds subscribed to beckward lines in duplex queries. </p>
+<p>Key string - backward domain Value System.Action&lt;PipesProvider.TransmissionLine, object&gt; - answer processing delegat. </p>
 
 </div>
 </div>
@@ -740,6 +1015,31 @@ Static Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>How many milisseconds will sleep thread after tick. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Property Documentation</h2>
+<a id="a10f1c9dbb8d41719754b39344432497f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10f1c9dbb8d41719754b39344432497f">&#9670;&nbsp;</a></span>AppTerminated</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UniformClient.BaseClient.AppTerminated</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">get</span><span class="mlabel">set</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If true then will stop main loop. </p>
 
 </div>
 </div>

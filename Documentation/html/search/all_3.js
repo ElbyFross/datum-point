@@ -13,5 +13,6 @@ var searchData=
   ['drawline',['DrawLine',['../db/d7f/class_console_draw_1_1_primitives.html#ad4b6aaed88ef18e2926febca63abf667',1,'ConsoleDraw::Primitives']]],
   ['drawspacedline',['DrawSpacedLine',['../db/d7f/class_console_draw_1_1_primitives.html#a56f4fc0b28e3e0182208dccaf6944fdb',1,'ConsoleDraw::Primitives']]],
   ['dropmeta',['DropMeta',['../d1/d09/class_pipes_provider_1_1_transmission_line.html#a954265d9816b253b75caf7b6b7e1ba86',1,'PipesProvider::TransmissionLine']]],
+  ['duplexbackwardcallbacks',['DuplexBackwardCallbacks',['../d4/deb/class_uniform_client_1_1_base_client.html#a52dacc1af85cbab035a159e64e1417a0',1,'UniformClient::BaseClient']]],
   ['datum_20point',['Datum Point',['../d8/d9e/md__d_1__work__git_hub_datum-point__r_e_a_d_m_e.html',1,'']]]
 ];

@@ -5,6 +5,7 @@ var class_pipes_provider_1_1_a_p_i =
     [ "ClientToServerLoop", "d4/ddf/class_pipes_provider_1_1_a_p_i.html#a06ee04a0e80238a176b7b2cac3f6bb4b", null ],
     [ "ClientToServerLoop", "d4/ddf/class_pipes_provider_1_1_a_p_i.html#a740e60d5cfd04fcc434e05b40910e493", null ],
     [ "ClientToServerLoop", "d4/ddf/class_pipes_provider_1_1_a_p_i.html#a9eacd5177e24badabe5ac8a3fe30d5d3", null ],
+    [ "CloseAllTransmissionLines", "d4/ddf/class_pipes_provider_1_1_a_p_i.html#aeca3d6eddfa3446b8e5601ee85461f63", null ],
     [ "ConnectionEstablishedCallbackRetranslator", "d4/ddf/class_pipes_provider_1_1_a_p_i.html#a0feeed2f76dc4292c3b85fdd054bd77e", null ],
     [ "ConnectToServerAsync", "d4/ddf/class_pipes_provider_1_1_a_p_i.html#a5314727d43f5fafc8630dbc814cebeac", null ],
     [ "DNSHandler_ClientToSerever_Async", "d4/ddf/class_pipes_provider_1_1_a_p_i.html#ade8af5541a5787e55fe07bad71298132", null ],
@@ -21,6 +22,7 @@ var class_pipes_provider_1_1_a_p_i =
     [ "TryGetServerTransmissionMeta", "d4/ddf/class_pipes_provider_1_1_a_p_i.html#a5eb987a8a4edfb2b26d861071aca70a2", null ],
     [ "TryGetTransmissionLineByGUID", "d4/ddf/class_pipes_provider_1_1_a_p_i.html#ae1abc16273a4b459fdbf63e68c44d11f", null ],
     [ "TryToRegisterTransmissionLine", "d4/ddf/class_pipes_provider_1_1_a_p_i.html#a39e17f30d2ee8c716efeb92f947fb72e", null ],
+    [ "TryToUnregisterTransmissionLine", "d4/ddf/class_pipes_provider_1_1_a_p_i.html#ab0578d8470c97267dd9c6e2126cb69f0", null ],
     [ "openedClients", "d4/ddf/class_pipes_provider_1_1_a_p_i.html#a8efe588e9c6f7bf610310d9f6223a0f8", null ],
     [ "openedServers", "d4/ddf/class_pipes_provider_1_1_a_p_i.html#ae5d6ee8740cc704d7ac5fc619349b603", null ],
     [ "ServerTransmissionMeta_InProcessing", "d4/ddf/class_pipes_provider_1_1_a_p_i.html#a88d536e98d1ea1c34d4331fef67a7561", null ]

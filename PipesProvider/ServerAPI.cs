@@ -310,7 +310,7 @@ namespace PipesProvider
             }
 
             // Discharge existing in hashtable.
-            openedServers.Remove(meta.name);
+            openedServers.Remove(guid);
 
             // Finish stream.
             pipeServer.Close();
@@ -605,8 +605,9 @@ namespace PipesProvider
             try
             {
                 // Write message to stream.
+                Console.WriteLine("{0}: Start transmission to client.", meta.name);
                 await sw.WriteAsync(sharedQuery);
-                sw.Flush();
+                await sw.FlushAsync();
             }
             // Catch the Exception that is raised if the pipe is broken or disconnected.
             catch (Exception e)

@@ -50,20 +50,34 @@
         </inbodydescription>
         <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="60" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="60" bodyend="-1"/>
       </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-static-attrib">
-      <memberdef kind="variable" id="d4/deb/class_uniform_client_1_1_base_client_1a1c02c6bb48c54e59c2581fe8097a4052" prot="public" static="yes" mutable="no">
-        <type>bool</type>
-        <definition>bool UniformClient.BaseClient.appTerminated</definition>
+      <memberdef kind="variable" id="d4/deb/class_uniform_client_1_1_base_client_1a52dacc1af85cbab035a159e64e1417a0" prot="protected" static="yes" mutable="no">
+        <type>Hashtable</type>
+        <definition>Hashtable UniformClient.BaseClient.DuplexBackwardCallbacks</definition>
         <argsstring></argsstring>
-        <name>appTerminated</name>
+        <name>DuplexBackwardCallbacks</name>
+        <initializer>= new Hashtable()</initializer>
+        <briefdescription>
+<para>Table that contain delegatds subscribed to beckward lines in duplex queries. </para>        </briefdescription>
+        <detaileddescription>
+<para>Key string - backward domain Value System.Action&lt;PipesProvider.TransmissionLine, object&gt; - answer processing delegat. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="73" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="d4/deb/class_uniform_client_1_1_base_client_1a10f1c9dbb8d41719754b39344432497f" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>bool</type>
+        <definition>bool UniformClient.BaseClient.AppTerminated</definition>
+        <argsstring></argsstring>
+        <name>AppTerminated</name>
         <briefdescription>
 <para>If true then will stop main loop. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="65" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="65" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="65" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="65" bodyend="65"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -78,7 +92,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="71" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="71" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="80" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="80" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -179,7 +193,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="149" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="149" bodyend="174"/>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="159" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="159" bodyend="184"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-static-func">
@@ -206,7 +220,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="78" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="78" bodyend="116"/>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="88" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="88" bodyend="126"/>
       </memberdef>
       <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1a7ec48981cf3e7ec10d2cb7dff81f912a" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -231,7 +245,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="122" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="122" bodyend="140"/>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="132" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="132" bodyend="150"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -247,7 +261,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="180" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="180" bodyend="201"/>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="190" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="190" bodyend="211"/>
       </memberdef>
       <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1a99ae0bb1dd5bef374fcedb3f873bfe8b" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>System.Collections.ObjectModel.ObservableCollection&lt; <ref refid="d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin" kindref="compound">Plugins.IPlugin</ref> &gt;</type>
@@ -268,20 +282,101 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="207" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="207" bodyend="231"/>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="217" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="217" bodyend="241"/>
       </memberdef>
-      <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1a9c59b23626ff132aa96630654d7bc410" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1aaeab527820b088ab3a84cd210e53a01f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">PipesProvider.TransmissionLine</ref></type>
+        <definition>static PipesProvider.TransmissionLine UniformClient.BaseClient.OpenOutTransmissionLine</definition>
+        <argsstring>(string serverName, string pipeName)</argsstring>
+        <name>OpenOutTransmissionLine</name>
+        <param>
+          <type>string</type>
+          <declname>serverName</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>pipeName</declname>
+        </param>
+        <briefdescription>
+<para>Oppening transmition line that will able to send querie to described server&apos;s pipe. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>serverName</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pipeName</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="251" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="251" bodyend="256"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1a9044693efc8f4ccf259e954c5345236f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">PipesProvider.TransmissionLine</ref></type>
         <definition>static PipesProvider.TransmissionLine UniformClient.BaseClient.OpenTransmissionLine</definition>
-        <argsstring>(BaseClient client, string guid, string serverName, string pipeName, System.Action&lt; PipesProvider.TransmissionLine &gt; callback)</argsstring>
+        <argsstring>(string serverName, string pipeName, System.Action&lt; PipesProvider.TransmissionLine &gt; callback)</argsstring>
+        <name>OpenTransmissionLine</name>
+        <param>
+          <type>string</type>
+          <declname>serverName</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>pipeName</declname>
+        </param>
+        <param>
+          <type>System.Action&lt; <ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">PipesProvider.TransmissionLine</ref> &gt;</type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Automaticly create Transmission line or lokking for previos one. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>serverName</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pipeName</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="265" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="265" bodyend="272"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1a80e2da33cf28945db058cd59f7ac5e58" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">PipesProvider.TransmissionLine</ref></type>
+        <definition>static PipesProvider.TransmissionLine UniformClient.BaseClient.OpenTransmissionLine</definition>
+        <argsstring>(BaseClient client, string serverName, string pipeName, System.Action&lt; PipesProvider.TransmissionLine &gt; callback)</argsstring>
         <name>OpenTransmissionLine</name>
         <param>
           <type><ref refid="d4/deb/class_uniform_client_1_1_base_client" kindref="compound">BaseClient</ref></type>
           <declname>client</declname>
-        </param>
-        <param>
-          <type>string</type>
-          <declname>guid</declname>
         </param>
         <param>
           <type>string</type>
@@ -338,11 +433,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="247" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="247" bodyend="277"/>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="285" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="285" bodyend="343"/>
       </memberdef>
-      <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1acd2e71dcb27e97f900f887233e6b8f9c" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>static void UniformClient.BaseClient.UniformQueryPostHandler</definition>
+      <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1a05120a32c8a00263c7e2fc8b9fa152d8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async void</type>
+        <definition>static async void UniformClient.BaseClient.UniformQueryPostHandler</definition>
         <argsstring>(object sharedObject)</argsstring>
         <name>UniformQueryPostHandler</name>
         <param>
@@ -363,7 +458,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
 <para>If queries not placed then wait. </para>        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="285" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="285" bodyend="332"/>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="351" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="351" bodyend="397"/>
       </memberdef>
       <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1af7a3c613846c8595431272c4c9d531f3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>async void</type>
@@ -388,7 +483,55 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="340" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="340" bodyend="388"/>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="404" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="404" bodyend="492"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1a6525d87fd1df20689b0a01280e36c5c1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool UniformClient.BaseClient.ReciveAnswer</definition>
+        <argsstring>(PipesProvider.TransmissionLine line, string decodedQuery, System.Action&lt; PipesProvider.TransmissionLine, object &gt; answerHandler)</argsstring>
+        <name>ReciveAnswer</name>
+        <param>
+          <type><ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">PipesProvider.TransmissionLine</ref></type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>decodedQuery</declname>
+        </param>
+        <param>
+          <type>System.Action&lt; <ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">PipesProvider.TransmissionLine</ref>, object &gt;</type>
+          <declname>answerHandler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Line that was used to transmition</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>answerHandler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Delegate that will be called as handler for answer processing. TransmissionLine contain data about actual transmission. object contain recived query (usualy string or byte[]).</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>decodedQuery</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Query that sent to server and must recive answer. Must be not encoded.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="504" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="504" bodyend="513"/>
       </memberdef>
       <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1a06d3340dd02ec4abfe9cf55bc1db0f03" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -436,7 +579,112 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="400" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="400" bodyend="424"/>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="525" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="525" bodyend="566"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1a09f3a6de4a33cd5f3eaba564544440e1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void UniformClient.BaseClient.EnqueueDuplexQuery</definition>
+        <argsstring>(PipesProvider.TransmissionLine line, string query, System.Action&lt; PipesProvider.TransmissionLine, object &gt; answerHandler)</argsstring>
+        <name>EnqueueDuplexQuery</name>
+        <param>
+          <type><ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">PipesProvider.TransmissionLine</ref></type>
+          <declname>line</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type>System.Action&lt; <ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">PipesProvider.TransmissionLine</ref>, object &gt;</type>
+          <declname>answerHandler</declname>
+        </param>
+        <briefdescription>
+<para>Add query to queue. Open backward line that will call answer handler. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>line</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Line proccessor that control queries posting to target server.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>query</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Query that will sent to server.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>answerHandler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Callback that will recive answer.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="576" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="576" bodyend="586"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/deb/class_uniform_client_1_1_base_client_1a98d1abc1fea84d7222291c462c4f9416" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void UniformClient.BaseClient.EnqueueDuplexQuery</definition>
+        <argsstring>(string serverName, string serverPipeName, string query, System.Action&lt; PipesProvider.TransmissionLine, object &gt; answerHandler)</argsstring>
+        <name>EnqueueDuplexQuery</name>
+        <param>
+          <type>string</type>
+          <declname>serverName</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>serverPipeName</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type>System.Action&lt; <ref refid="d1/d09/class_pipes_provider_1_1_transmission_line" kindref="compound">PipesProvider.TransmissionLine</ref>, object &gt;</type>
+          <declname>answerHandler</declname>
+        </param>
+        <briefdescription>
+<para>Add query to queue. Open backward line that will call answer handler. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>serverName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of the server. &quot;.&quot; if local.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>serverPipeName</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Name of pipe provided by server.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>query</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Query that will sent to server.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>answerHandler</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Callback that will recive answer.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="596" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="596" bodyend="607"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -467,15 +715,21 @@
         <link refid="d4/deb/class_uniform_client_1_1_base_client"/>
       </node>
     </inheritancegraph>
-    <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="28" bodyend="426"/>
+    <location file="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformClient/BaseClient.cs" bodystart="28" bodyend="609"/>
     <listofallmembers>
-      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a1c02c6bb48c54e59c2581fe8097a4052" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>appTerminated</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a10f1c9dbb8d41719754b39344432497f" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>AppTerminated</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a7ec48981cf3e7ec10d2cb7dff81f912a" prot="protected" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>ArgsReactor</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a52dacc1af85cbab035a159e64e1417a0" prot="protected" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>DuplexBackwardCallbacks</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a09f3a6de4a33cd5f3eaba564544440e1" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>EnqueueDuplexQuery</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a98d1abc1fea84d7222291c462c4f9416" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>EnqueueDuplexQuery</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1aafcfed25b79baed0db4448f2e30f2aa2" prot="protected" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>GetConsoleWindow</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a8abbd1d46cc50556eeae8bbd55ce680f" prot="protected" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>LoadAssemblies</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a99ae0bb1dd5bef374fcedb3f873bfe8b" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>LoadPluginsCollection</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1aa60dbfa5bd8c46659aec7738193315f1" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>LoadPluginsEnumerable</name></member>
-      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a9c59b23626ff132aa96630654d7bc410" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>OpenTransmissionLine</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1aaeab527820b088ab3a84cd210e53a01f" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>OpenOutTransmissionLine</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a9044693efc8f4ccf259e954c5345236f" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>OpenTransmissionLine</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a80e2da33cf28945db058cd59f7ac5e58" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>OpenTransmissionLine</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a6525d87fd1df20689b0a01280e36c5c1" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>ReciveAnswer</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a06d3340dd02ec4abfe9cf55bc1db0f03" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>ReciveAnswer</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a47b6d88848854c59fafefeeae3956699" prot="protected" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>ShowWindow</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a194b46bb0e889d07cade81c0aeab7cea" prot="protected" virt="virtual"><scope>UniformClient::BaseClient</scope><name>StartClientThread</name></member>
@@ -483,7 +737,7 @@
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a7545b9c72eef6cb7594a7001d3f558e4" prot="protected" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>SW_SHOW</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a458271823ca5e21612c0947e1db695a0" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>thread</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1a2c4762c1be5eac42b8b5d189530d0952" prot="protected" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>threadSleepTime</name></member>
-      <member refid="d4/deb/class_uniform_client_1_1_base_client_1acd2e71dcb27e97f900f887233e6b8f9c" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>UniformQueryPostHandler</name></member>
+      <member refid="d4/deb/class_uniform_client_1_1_base_client_1a05120a32c8a00263c7e2fc8b9fa152d8" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>UniformQueryPostHandler</name></member>
       <member refid="d4/deb/class_uniform_client_1_1_base_client_1af7a3c613846c8595431272c4c9d531f3" prot="public" virt="non-virtual"><scope>UniformClient::BaseClient</scope><name>UniformServerAnswerHandler</name></member>
     </listofallmembers>
   </compounddef>
