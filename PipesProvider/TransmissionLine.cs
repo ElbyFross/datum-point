@@ -28,13 +28,19 @@ namespace PipesProvider
     {
         #region Public properties
         /// <summary>
-        /// Unique ID of this proccesor that will be used for access to it cia static control and autpmatic services.
+        /// Unique GUID for this pipe.
         /// </summary>
         public string GUID
         {
-            get;
-            protected set;
+            get
+            {
+                // Generate GUID if not found.
+                if (string.IsNullOrEmpty(guid))
+                    guid = GenerateGUID(ServerName, ServerPipeName);
+                return guid;
+            }
         }
+        private string guid = null;
 
         /// <summary>
         /// Name of server pipe that will be using for transmission via current processor.
@@ -122,10 +128,9 @@ namespace PipesProvider
         /// <param name="serverName">Name of server into the network. If local than place "."</param>
         /// <param name="serverPipeName">Name of the pipe that will be used for transmitiong.</param>
         /// <param name="queryProcessor">Delegat that will be called when connection will be established.</param>
-        public TransmissionLine(string guid, string serverName, string serverPipeName, System.Action<TransmissionLine> queryProcessor)
+        public TransmissionLine(string serverName, string serverPipeName, System.Action<TransmissionLine> queryProcessor)
         {
             // Set fields.
-            GUID = guid;
             ServerName = serverName;
             ServerPipeName = serverPipeName;
             this.queryProcessor = queryProcessor;
@@ -253,6 +258,41 @@ namespace PipesProvider
                 lp,
                 System.IO.Pipes.PipeDirection.InOut,
                 PipeOptions.Asynchronous | PipeOptions.WriteThrough);
+        }
+
+        /// <summary>
+        /// Generate GUID of this transmission line relative to pipe params.
+        /// </summary>
+        /// <param name="serverName"></param>
+        /// <param name="pipeName"></param>
+        /// <returns></returns>
+        public static string GenerateGUID(string serverName, string pipeName)
+        {
+            if(string.IsNullOrEmpty(serverName))
+            {
+                Console.WriteLine("EROOR (TL GUID): Server name can't be null or empty.");
+                return null;
+            }
+
+            if (string.IsNullOrEmpty(pipeName))
+            {
+                Console.WriteLine("EROOR (TL GUID): Pipe name can't be null or empty.");
+                return null;
+            }
+            //return serverName.GetHashCode() + "_" + pipeName.GetHashCode();
+            return serverName + "." + pipeName;
+        }
+
+
+        /// <summary>
+        /// Incremet of attempts count.
+        /// </summary>
+        /// <param name="contaier"></param>
+        /// <returns></returns>
+        public static TransmissionLine operator ++(TransmissionLine line)
+        {
+            line.lastQuery++;
+            return line;
         }
     }
 }

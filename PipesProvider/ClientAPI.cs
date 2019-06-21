@@ -168,6 +168,27 @@ namespace PipesProvider
             openedClients.Add(lineDomain, lineProcessor);
             return true;
         }
+
+        /// <summary>
+        /// Remove line from table if this line closed.
+        /// In other keys this operation not available due to security amd stability purposes.
+        /// </summary>
+        /// <param name="guid"></param>
+        /// <returns></returns>
+        public static bool TryToUnregisterTransmissionLine(string guid)
+        {
+            // Reject if already registred.
+            if (openedClients[guid] is TransmissionLine transmissionLine)
+            {
+                // if not closed.
+                if (!transmissionLine.Closed)
+                    return false;
+
+                // Remove from table.
+                openedClients.Remove(guid);
+            }
+            return true;
+        }
         #endregion
     }
 }

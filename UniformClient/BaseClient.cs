@@ -229,10 +229,25 @@ namespace UniformClient
             }
             return collection;
         }
-
-
+        
 
         #region Transmission API
+        /// <summary>
+        /// Automaticly create Transmission line or lokking for previos one.
+        /// </summary>
+        /// <param name="serverName"></param>
+        /// <param name="pipeName"></param>
+        /// <param name="callback"></param>
+        /// <returns></returns>
+        public static PipesProvider.TransmissionLine OpenTransmissionLine(
+           string serverName,
+           string pipeName,
+           System.Action<PipesProvider.TransmissionLine> callback)
+        {
+            string guid = serverName.GetHashCode() + "_" + pipeName.GetHashCode();
+            return OpenTransmissionLine(new SimpleClient(), serverName, pipeName, callback);
+        }
+        
         /// <summary>
         /// Provide complex initalization of all relative systems. 
         /// Build meta data, regitrate line in common table.
@@ -246,7 +261,6 @@ namespace UniformClient
         /// <returns>Opened transmission line. Use line.Enqueue to add your query.</returns>
         public static PipesProvider.TransmissionLine OpenTransmissionLine(
             BaseClient client,
-            string guid,
             string serverName,
             string pipeName,
             System.Action<PipesProvider.TransmissionLine> callback)
@@ -258,19 +272,43 @@ namespace UniformClient
                 return null;
             }
 
-            // Create new line processor.
-            PipesProvider.TransmissionLine trnsLine = new PipesProvider.TransmissionLine(
-                guid,
-                serverName,
-                pipeName,
-                callback
-                );
+            // Get target GUID.
+            string guid = PipesProvider.TransmissionLine.GenerateGUID(serverName, pipeName);
 
-            // Put line proccesor to the new client loop.
-            client.StartClientThread(
-                guid,
-                trnsLine,
-                PipesProvider.TransmissionLine.ThreadLoop);
+            // Try to load  trans line by GUID.
+            if (PipesProvider.API.TryGetTransmissionLineByGUID(guid, out PipesProvider.TransmissionLine trnsLine))
+            {
+                // If not obsolterd transmission line then drop operation.
+                if (!trnsLine.Closed)
+                {
+                    Console.WriteLine("ERROR: Pipe with GUID \"{0}\" already oppened and has the differed pipe adress. Close previous one before start new.", guid);
+                    return null;
+                }
+                else
+                {
+                    // Unregister line and recall method.
+                    PipesProvider.API.TryToUnregisterTransmissionLine(guid);
+
+                    // Retry.
+                    return OpenTransmissionLine(client, serverName, pipeName, callback); 
+                }
+            }
+            // If fulll new pipe.
+            else
+            {
+                // Create new if not registred.
+                trnsLine = new PipesProvider.TransmissionLine(
+                    serverName,
+                    pipeName,
+                    callback
+                    );
+
+                // Put line proccesor to the new client loop.
+                client.StartClientThread(
+                    guid,
+                    trnsLine,
+                    PipesProvider.TransmissionLine.ThreadLoop);
+            }
 
             // Return oppened line.
             return trnsLine;
@@ -282,7 +320,7 @@ namespace UniformClient
         /// </summary>
         /// <param name="sharedObject">
         /// Normaly is a PipesProvider.TransmissionLine that contain information about actual transmission.</param>
-        public static void UniformQueryPostHandler(object sharedObject)
+        public async static void UniformQueryPostHandler(object sharedObject)
         { 
             // Drop as invalid in case of incorrect transmitted data.
             if (!(sharedObject is PipesProvider.TransmissionLine lineProcessor))
@@ -302,8 +340,8 @@ namespace UniformClient
             StreamWriter sw = new StreamWriter(lineProcessor.pipeClient);
             try
             {
-                sw.Write(lineProcessor.LastQuery);
-                sw.Flush();
+                await sw.WriteAsync(lineProcessor.LastQuery.Query);
+                await sw.FlushAsync();
                 Console.WriteLine("TRANSMITED: {0}", lineProcessor.LastQuery);
                 //sw.Close();
             }
@@ -319,8 +357,7 @@ namespace UniformClient
                     lineProcessor.EnqueueQuery(lineProcessor.LastQuery);
 
                     // Add attempt.
-                    PipesProvider.QueryContainer qcl = lineProcessor.LastQuery;
-                    qcl++;
+                    lineProcessor++;
                 }
                 else
                 {
@@ -330,7 +367,6 @@ namespace UniformClient
 
             lineProcessor.Processing = false;
         }
-
 
         /// <summary>
         /// Handler that will recive message from the server.
@@ -369,8 +405,14 @@ namespace UniformClient
                     // Catch the Exception that is raised if the pipe is broken or disconnected.
                     catch (Exception e)
                     {
+                        // Log error.
                         Console.WriteLine("DNS HANDLER ERROR (USAH0): {0}", e.Message);
+
+                        // Stop processing merker to pass async block.
                         lineProcessor.Processing = false;
+
+                        // Close processor case this line already deprecated on the server side as single time task.
+                        lineProcessor.Close();
                         return;
                     }
                 }
@@ -384,8 +426,13 @@ namespace UniformClient
                 Console.WriteLine("DNS HANDLER ERROR ({1}): {0}", e.Message, lineProcessor.pipeClient.GetHashCode());
             }
 
+            // Stop processing merker to pass async block.
             lineProcessor.Processing = false;
+
+            // Close processor case this line already deprecated on the server side as single time task.
+            lineProcessor.Close();
         }
+
 
         /// <summary>
         /// 
@@ -413,7 +460,6 @@ namespace UniformClient
             // Create transmission line.
             PipesProvider.TransmissionLine lineProcessor = OpenTransmissionLine(
                 new SimpleClient(),
-                domain,
                 line.ServerName, domain,
                 UniformServerAnswerHandler
                 );

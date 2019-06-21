@@ -35,17 +35,25 @@ namespace TestClient
 
             Console.WriteLine("Preparetion finished. Client strated.");
 
+            #region Create sample duplex query
             // Create transmission line.
             PipesProvider.TransmissionLine lineProcessor = OpenTransmissionLine(
-                new Client(),
-                "DataServer #0",
                 ".", "THB_DS_QM_MAIN_INOUT",
                 UniformQueryPostHandler
                 );
 
-            // Sent test message.
-            lineProcessor.EnqueueQuery("guid=WelomeGUID&token=InvalidToken&q=Get&sq=publickey");
+            // Create query that request public RSA key of the server. 
+            //This will allow to us encrypt queries and shared data befor transmission in future.
+            //
+            // Format: param=value&param=value&...
+            // "guid", "token" and "q" (query) required.
+            // param "pk" (public key (RSA)) will provide possibility to encrypt of answeron the server side.
+            string THB_DS_QM_MAIN_INOUT_Query = "guid=WelomeGUID&token=InvalidToken&q=Get&sq=publickey";
 
+            // Add our query to line processor queue.
+            lineProcessor.EnqueueQuery(THB_DS_QM_MAIN_INOUT_Query);
+
+            // Create delegate that will recive and procced the server's answer.
             System.Action<PipesProvider.TransmissionLine, object> answerProcessor =
                 delegate (PipesProvider.TransmissionLine tl, object message)
             {
@@ -55,14 +63,18 @@ namespace TestClient
                 Console.WriteLine(messageS ?? "Message is null");
             };
 
+            // Open backward chanel to recive answer from server.
             ReciveAnswer(
                 lineProcessor,
-                UniformQueries.API.DetectQueryParts("guid=WelomeGUID&token=InvalidToken&q=Get&sq=publickey"),
+                UniformQueries.API.DetectQueryParts(THB_DS_QM_MAIN_INOUT_Query),
                 answerProcessor);
 
+            // Let the time to transmission line to qompleet the query.
             Thread.Sleep(150);
+            #endregion
 
-            while(true)
+            #region Main loop
+            while (true)
             {
                 if (Console.KeyAvailable)
                 {
@@ -89,6 +101,7 @@ namespace TestClient
                     }
                 }
             }
+            #endregion
 
             // Close line. Withot this thread will be hanged.
             lineProcessor.Close();
