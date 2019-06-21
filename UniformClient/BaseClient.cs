@@ -229,9 +229,22 @@ namespace UniformClient
             }
             return collection;
         }
-        
+
 
         #region Transmission API
+        /// <summary>
+        /// Oppening transmition line that will able to send querie to described server's pipe.
+        /// </summary>
+        /// <param name="serverName"></param>
+        /// <param name="pipeName"></param>
+        /// <returns></returns>
+        public static PipesProvider.TransmissionLine OpenOutTransmissionLine(
+           string serverName,
+           string pipeName)
+        {
+            return OpenTransmissionLine(serverName, pipeName, UniformQueryPostHandler);
+        }
+
         /// <summary>
         /// Automaticly create Transmission line or lokking for previos one.
         /// </summary>
@@ -281,8 +294,7 @@ namespace UniformClient
                 // If not obsolterd transmission line then drop operation.
                 if (!trnsLine.Closed)
                 {
-                    Console.WriteLine("ERROR: Pipe with GUID \"{0}\" already oppened and has the differed pipe adress. Close previous one before start new.", guid);
-                    return null;
+                    return trnsLine;
                 }
                 else
                 {
@@ -433,6 +445,7 @@ namespace UniformClient
             lineProcessor.Close();
         }
 
+
         /// <summary>
         /// 
         /// </summary>
@@ -486,6 +499,25 @@ namespace UniformClient
             // Skip line
             Console.WriteLine();
             return true;
+        }
+
+        /// <summary>
+        /// Add query to queue. 
+        /// Open backward line that will call answer handler.
+        /// </summary>
+        /// <param name="line">Line proccessor that control queries posting to target server.</param>
+        /// <param name="query">Query that will sent to server.</param>
+        /// <param name="answerHandler">Callback that will recive answer.</param>
+        public static void EnqueueDuplexQuery(
+            PipesProvider.TransmissionLine line,
+            string query,
+            System.Action<PipesProvider.TransmissionLine, object> answerHandler)
+        {
+            // Add our query to line processor queue.
+            line.EnqueueQuery(query);
+
+            // Open backward chanel to recive answer from server.
+            ReciveAnswer(line, query, answerHandler);
         }
         #endregion
     }
