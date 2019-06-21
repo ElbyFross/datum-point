@@ -433,6 +433,25 @@ namespace UniformClient
             lineProcessor.Close();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="line">Line that was used to transmition</param>
+        /// <param name="answerHandler">Delegate that will be called as handler for answer processing. 
+        /// TransmissionLine contain data about actual transmission.
+        /// object contain recived query (usualy string or byte[]).</param>
+        /// <param name="decodedQuery">Query that sent to server and must recive answer. Must be not encoded.</param>
+        /// <returns></returns>
+        public static bool ReciveAnswer(
+            PipesProvider.TransmissionLine line,
+            string decodedQuery,
+            System.Action<PipesProvider.TransmissionLine, object> answerHandler)
+        {
+            return ReciveAnswer(
+                line, 
+                UniformQueries.API.DetectQueryParts(decodedQuery),
+                answerHandler);
+        }
 
         /// <summary>
         /// 

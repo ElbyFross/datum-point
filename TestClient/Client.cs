@@ -27,6 +27,7 @@ namespace TestClient
     {
         static void Main(string[] args)
         {
+            #region Init
             // React on uniform arguments.
             ArgsReactor(args);
 
@@ -34,40 +35,28 @@ namespace TestClient
             LoadAssemblies(AppDomain.CurrentDomain.BaseDirectory + "libs\\");
 
             Console.WriteLine("Preparetion finished. Client strated.");
+            #endregion
 
             #region Create sample duplex query
             // Create transmission line.
             PipesProvider.TransmissionLine lineProcessor = OpenTransmissionLine(
-                ".", "THB_DS_QM_MAIN_INOUT",
-                UniformQueryPostHandler
-                );
+                ".", "THB_DS_QM_MAIN_INOUT", UniformQueryPostHandler);
 
+            #region Query tip & description
             // Create query that request public RSA key of the server. 
             //This will allow to us encrypt queries and shared data befor transmission in future.
             //
             // Format: param=value&param=value&...
             // "guid", "token" and "q" (query) required.
             // param "pk" (public key (RSA)) will provide possibility to encrypt of answeron the server side.
+            #endregion
             string THB_DS_QM_MAIN_INOUT_Query = "guid=WelomeGUID&token=InvalidToken&q=Get&sq=publickey";
 
             // Add our query to line processor queue.
             lineProcessor.EnqueueQuery(THB_DS_QM_MAIN_INOUT_Query);
-
-            // Create delegate that will recive and procced the server's answer.
-            System.Action<PipesProvider.TransmissionLine, object> answerProcessor =
-                delegate (PipesProvider.TransmissionLine tl, object message)
-            {
-                string messageS = message as string;
-
-                Console.WriteLine("DELEGATE");
-                Console.WriteLine(messageS ?? "Message is null");
-            };
-
+            
             // Open backward chanel to recive answer from server.
-            ReciveAnswer(
-                lineProcessor,
-                UniformQueries.API.DetectQueryParts(THB_DS_QM_MAIN_INOUT_Query),
-                answerProcessor);
+            ReciveAnswer( lineProcessor, THB_DS_QM_MAIN_INOUT_Query, ServerPKProcessor);
 
             // Let the time to transmission line to qompleet the query.
             Thread.Sleep(150);
@@ -103,69 +92,20 @@ namespace TestClient
             }
             #endregion
 
-            // Close line. Withot this thread will be hanged.
-            lineProcessor.Close();
+            // Close all active lines. Without this operation thread will be hanged.
+            PipesProvider.API.CloseAllTransmissionLines();
 
             // Whait until close.
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
 
-        /// <summary>
-        /// Query processor that send last dequeued query to server when connection will be established.
-        /// </summary>
-        /// <param name="lineProcessor"></param>
-        //static void UniformQueryPOSTProcessor(object sharedObject)
-        //{
-        //    // Drop as invalid in case of incorrect transmitted data.
-        //    if (!(sharedObject is PipesProvider.TransmissionLine lineProcessor))
-        //    {
-        //        Console.WriteLine("TRANSMISSION ERROR (UQPP0): INCORRECT TRANSFERD DATA TYPE. PERMITED ONLY \"LineProcessor\"");
-        //        return;
-        //    }
 
-        //    // Open stream reader.
-        //    StreamWriter sw = new StreamWriter(lineProcessor.pipeClient);
-        //    try
-        //    {
-        //        sw.WriteLine(lineProcessor.LastQuery);
-        //        sw.Flush();
-        //        Console.WriteLine("TRANSMITED: {0}", lineProcessor.LastQuery);
-        //        //sw.Close();
-        //    }
-        //    // Catch the Exception that is raised if the pipe is broken or disconnected.
-        //    catch (Exception e)
-        //    {
-        //        Console.WriteLine("DNS HANDLER ERROR ({1}): {0}", e.Message, lineProcessor.pipeClient.GetHashCode());
-
-        //        // Retry transmission.
-        //        if (lineProcessor.LastQuery.Attempts < 10)
-        //        {
-        //            // Add to queue.
-        //            lineProcessor.EnqueueQuery(lineProcessor.LastQuery);
-
-        //            // Add attempt.
-        //            PipesProvider.QueryContainer qcl = lineProcessor.LastQuery;
-        //            qcl++;
-        //        }
-        //        else
-        //        {
-        //            // If transmission attempts over the max count.
-        //        }
-        //    }
-
-        //    // If requested data in answer.
-        //    if(lineProcessor.LastQuery.Query.StartsWith("GET", StringComparison.OrdinalIgnoreCase))
-        //    {
-        //        // Create answer reciving line.
-        //        PipesProvider.TransmissionLine reciveAnswer = OpenTransmissionLine(
-        //            new Client(),
-        //            "DataServer #0 a" + lineProcessor.LastQuery.Query.Split(' '),
-        //            ".", "THB_DS_QM_MAIN_INOUT",
-        //            UniformQueryPOSTProcessor
-        //            );
-        //    }
-        //}
-
+        // Delegate that will recive and procced the server's answer.
+        void ServerPKProcessor(PipesProvider.TransmissionLine tl, object message)
+        {
+            string messageS = message as string;
+            Console.WriteLine(messageS ?? "Message is null");
+        }
     }
 }

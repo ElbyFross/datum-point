@@ -216,8 +216,14 @@ namespace PipesProvider
         /// </summary>
         public void Close()
         {
+            // Mark as closed.
             Closed = true;
+
+            // Drop processing marker to allow loop drop waiting to async operrations.
             Processing = false;
+
+            // Remove from table.
+            API.TryToUnregisterTransmissionLine(GUID);
         }
 
         /// <summary>

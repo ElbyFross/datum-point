@@ -189,6 +189,21 @@ namespace PipesProvider
             }
             return true;
         }
+
+        /// <summary>
+        /// Closing all lines registred in table.
+        /// </summary>
+        public static void CloseAllTransmissionLines()
+        {
+            // Closing every line.
+            foreach(TransmissionLine line in openedClients.Values)
+            {
+                line.Close();
+            }
+
+            // Clear garbage.
+            openedClients.Clear();
+        }
         #endregion
     }
 }
