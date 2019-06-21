@@ -56,7 +56,7 @@ namespace TestClient
             lineProcessor.EnqueueQuery(THB_DS_QM_MAIN_INOUT_Query);
             
             // Open backward chanel to recive answer from server.
-            ReciveAnswer( lineProcessor, THB_DS_QM_MAIN_INOUT_Query, ServerPKProcessor);
+            ReciveAnswer(lineProcessor, THB_DS_QM_MAIN_INOUT_Query, ServerPKProcessor);
 
             // Let the time to transmission line to qompleet the query.
             Thread.Sleep(150);
@@ -99,10 +99,9 @@ namespace TestClient
             Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
         }
-
-
-        // Delegate that will recive and procced the server's answer.
-        void ServerPKProcessor(PipesProvider.TransmissionLine tl, object message)
+        
+        // Create delegate that will recive and procced the server's answer.
+        static void ServerPKProcessor(PipesProvider.TransmissionLine tl, object message)
         {
             string messageS = message as string;
             Console.WriteLine(messageS ?? "Message is null");
