@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClientAPI.cs" />
+    <Compile Include="Networking.cs" />
+    <Compile Include="Security.cs" />
     <Compile Include="TransmissionLine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryContainer.cs" />

@@ -21,6 +21,8 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.IO;
 using System.IO.Pipes;
+using System.Security.AccessControl;
+using System.Security.Principal;
 
 namespace PipesProvider
 {
@@ -52,7 +54,10 @@ namespace PipesProvider
             }
             catch (Exception ex)
             {
-                Console.WriteLine("{0}/{1}: Connection not possible. {2}", lineProcessor.ServerPipeName, lineProcessor.ServerPipeName, ex.Message);
+                Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
+                Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+                Console.WriteLine("{0}/{1}: ERROR Connection not possible (CtSAsync0).\nFAILURE REASON: \n{2}",
+                    lineProcessor.ServerName, lineProcessor.ServerPipeName, ex.Message + "\n" + ex.StackTrace);
             }
         }
 
@@ -75,13 +80,18 @@ namespace PipesProvider
             {
                 // Open pipe.
                 using (NamedPipeClientStream pipeClient =
-                    new NamedPipeClientStream(lineProcessor.ServerName, lineProcessor.ServerPipeName, pipeDirection, pipeOptions))
+                    new NamedPipeClientStream(
+                        lineProcessor.ServerName,
+                        lineProcessor.ServerPipeName,
+                        pipeDirection, pipeOptions,
+                        System.Security.Principal.TokenImpersonationLevel.Impersonation,
+                        HandleInheritability.None))
                 {
                     // Update meta data.
                     lineProcessor.pipeClient = pipeClient;
 
                     // Log.
-                    Console.WriteLine("{0}/{1}: Connection to server.", lineProcessor.ServerName, lineProcessor.ServerPipeName);
+                    Console.WriteLine("{0}/{1} (CL0): Connection to server.", lineProcessor.ServerName, lineProcessor.ServerPipeName);
 
                     // Request connection.
                     ConnectToServerAsync(pipeClient, lineProcessor);

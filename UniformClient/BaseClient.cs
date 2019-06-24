@@ -18,7 +18,6 @@ using System.Runtime.InteropServices;
 using System.Reflection;
 using System.Threading;
 using System.IO;
-using System.Diagnostics;
 
 namespace UniformClient
 {

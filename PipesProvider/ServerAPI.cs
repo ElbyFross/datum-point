@@ -21,6 +21,8 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.IO;
 using System.IO.Pipes;
+using System.Security.AccessControl;
+using System.Security.Principal;
 
 namespace PipesProvider
 {
@@ -52,7 +54,8 @@ namespace PipesProvider
         public static void ClientToServerLoop(
             System.Action<ServerTransmissionMeta, string> queryHandlerCallback,
             string pipeName, 
-            out string guid)
+            out string guid,
+            Security.SecurityLevel securityLevel)
         {
             // Generate GUID.
             guid = pipeName.GetHashCode().ToString();
@@ -66,7 +69,8 @@ namespace PipesProvider
                 PipeDirection.InOut,
                 System.IO.Pipes.NamedPipeServerStream.MaxAllowedServerInstances,
                 PipeTransmissionMode.Message,
-                PipeOptions.Asynchronous | PipeOptions.WriteThrough);
+                PipeOptions.Asynchronous | PipeOptions.WriteThrough,
+                securityLevel);
         }
 
         /// <summary>
@@ -79,7 +83,8 @@ namespace PipesProvider
         public static void ClientToServerLoop(
             string guid,
             System.Action<ServerTransmissionMeta, string> queryHandlerCallback,
-            string pipeName)
+            string pipeName,
+            Security.SecurityLevel securityLevel)
         {
             ServerLoop(
                 guid,
@@ -89,7 +94,8 @@ namespace PipesProvider
                 PipeDirection.InOut,
                 System.IO.Pipes.NamedPipeServerStream.MaxAllowedServerInstances,
                 PipeTransmissionMode.Message,
-                PipeOptions.Asynchronous | PipeOptions.WriteThrough);
+                PipeOptions.Asynchronous | PipeOptions.WriteThrough,
+                securityLevel);
         }
 
         /// <summary>
@@ -104,7 +110,8 @@ namespace PipesProvider
             string guid,
             System.Action<ServerTransmissionMeta, string> queryHandlerCallback,
             string pipeName,
-            int allowedServerInstances)
+            int allowedServerInstances,
+            Security.SecurityLevel securityLevel)
         {
             ServerLoop(
                 guid,
@@ -114,7 +121,8 @@ namespace PipesProvider
                 PipeDirection.InOut,
                 allowedServerInstances,
                 PipeTransmissionMode.Message,
-                PipeOptions.Asynchronous | PipeOptions.WriteThrough);
+                PipeOptions.Asynchronous | PipeOptions.WriteThrough,
+                securityLevel);
         }
 
         /// <summary>
@@ -134,7 +142,8 @@ namespace PipesProvider
             PipeDirection pipeDirection,
             int allowedServerInstances,
             PipeTransmissionMode transmissionMode,
-            PipeOptions pipeOptions)
+            PipeOptions pipeOptions,
+            Security.SecurityLevel securityLevel)
         {
             ServerLoop(
                 guid,
@@ -144,7 +153,8 @@ namespace PipesProvider
                 pipeDirection,
                 allowedServerInstances,
                 transmissionMode,
-                pipeOptions);
+                pipeOptions,
+                securityLevel);
         }
         #endregion
 
@@ -156,7 +166,8 @@ namespace PipesProvider
         /// <param name="pipeName">Name of pipe that will created. Client will access this server using that name.</param>
         public static void ServerToClientLoop(
             string pipeName,
-            out string guid)
+            out string guid,
+            Security.SecurityLevel securityLevel)
         {
             // Generate GUID.
             guid = pipeName.GetHashCode().ToString();
@@ -170,7 +181,8 @@ namespace PipesProvider
                 PipeDirection.InOut,
                 1,
                 PipeTransmissionMode.Message,
-                PipeOptions.Asynchronous | PipeOptions.WriteThrough);
+                PipeOptions.Asynchronous | PipeOptions.WriteThrough,
+                securityLevel);
         }
 
         /// <summary>
@@ -180,7 +192,8 @@ namespace PipesProvider
         /// <param name="pipeName">Name of pipe that will created. Client will access this server using that name.</param>
         public static void ServerToClientLoop(
             string guid,
-            string pipeName)
+            string pipeName,
+            Security.SecurityLevel securityLevel)
         {
             // Start loop.
             ServerLoop(
@@ -191,7 +204,8 @@ namespace PipesProvider
                 PipeDirection.InOut,
                 1,
                 PipeTransmissionMode.Message,
-                PipeOptions.Asynchronous | PipeOptions.WriteThrough);
+                PipeOptions.Asynchronous | PipeOptions.WriteThrough,
+                securityLevel);
         }
         #endregion
 
@@ -217,15 +231,19 @@ namespace PipesProvider
             PipeDirection pipeDirection,
             int allowedServerInstances,
             PipeTransmissionMode transmissionMode,
-            PipeOptions pipeOptions)
+            PipeOptions pipeOptions,
+            Security.SecurityLevel securityLevel)
         {
-            // Try to oppen pipe server.
+            // Create PipeSecurity relative to requesteed level.
+            PipeSecurity pipeSecurity = Security.GetRulesForLevels(securityLevel);
+
+            // Try to open pipe server.
             NamedPipeServerStream pipeServer = null;
             try
             {
                 pipeServer =
                     new NamedPipeServerStream(pipeName, pipeDirection, allowedServerInstances,
-                        transmissionMode, pipeOptions, 0, 0);
+                        transmissionMode, pipeOptions, 0, 0, pipeSecurity);
             }
             catch (Exception ex)
             {
@@ -290,7 +308,7 @@ namespace PipesProvider
 
                         // Establish new server.
                         pipeServer = new NamedPipeServerStream(pipeName, pipeDirection, allowedServerInstances,
-                        transmissionMode, pipeOptions, 0, 0);
+                        transmissionMode, pipeOptions, 0, 0, pipeSecurity);
 
                         // Update meta data.
                         meta.pipe = pipeServer;
@@ -513,7 +531,7 @@ namespace PipesProvider
             meta = openedServers[guid] as ServerTransmissionMeta;
             return meta != null;
         }
-
+        
 
         #region Handlers
         /// <summary>

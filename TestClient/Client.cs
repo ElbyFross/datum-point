@@ -21,6 +21,15 @@ using System.Threading;
 using System.IO;
 using System.IO.Pipes;
 
+using System.Diagnostics;
+using System.Security.Principal;
+using System.Security.Permissions;
+using Microsoft.Win32.SafeHandles;
+using System.Runtime.ConstrainedExecution;
+using System.Security;
+using System.Net;
+using System.Runtime.InteropServices;
+
 namespace TestClient
 {
     /// <summary>
@@ -30,74 +39,126 @@ namespace TestClient
     /// </summary>
     class Client : UniformClient.BaseClient
     {
+        [DllImport("advapi32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        public static extern bool LogonUser(String lpszUsername, String lpszDomain, String lpszPassword,
+        int dwLogonType, int dwLogonProvider, out SafeAccessTokenHandle phToken);
+
         /// <summary>
         /// Server that will be used as target for this client.
         /// </summary>
-        public static string SERVER_NAME = "."; // Dot queal to local.
+        public static string SERVER_NAME = "192.168.1.74"; // Dot queal to local.
 
         /// <summary>
         /// Pipe that will be used to queries of this client.
         /// </summary>
         public static string SERVER_PIPE_NAME = "THB_DS_QM_MAIN_INOUT"; // Pipe openned at server that will recive out queries.
 
-
         static void Main(string[] args)
         {
-            #region Init
-            // React on uniform arguments.
-            ArgsReactor(args);
+            if (!SERVER_NAME.Equals("."))
+                SERVER_NAME = PipesProvider.Networking.GetHostName(SERVER_NAME);
+                       
+            PipesProvider.Networking.PingHost(
+                SERVER_NAME, 445,
+                delegate(string uri, int port) 
+                { Console.WriteLine("PING COMPLITED | HOST AVAILABLE | {0}:{1}", uri, port); });
 
-            // Check direcroties
-            LoadAssemblies(AppDomain.CurrentDomain.BaseDirectory + "libs\\");
 
-            Console.WriteLine("Preparetion finished. Client strated.");
+            #region Impersonated remote user
+            SafeAccessTokenHandle safeTokenHandle;
+            string userName, domainName;
+            // Get the user token for the specified user, domain, and password using the
+            // unmanaged LogonUser method.
+            // The local machine name can be used for the domain name to impersonate a user on this machine.
+            Console.Write("Enter the name of the domain on which to log on: ");
+            domainName = "workgroup";// SERVER_NAME;
+
+            Console.Write("Enter the login of a user on {0} that you wish to impersonate: ", domainName);
+            userName = "remoteUserName";// Console.ReadLine();
+
+            Console.Write("Enter the password for {0}: ", userName);
+
+            const int LOGON32_PROVIDER_WINNT50 = 3;
+            //This parameter causes LogonUser to create a primary token.
+            const int LOGON_TYPE_NEW_CREDENTIALS = 9;
+
+
+            // Call LogonUser to obtain a handle to an access token.
+            bool returnValue = LogonUser(userName, domainName, "remoteUserPassword",//Console.ReadLine(),
+                LOGON_TYPE_NEW_CREDENTIALS, LOGON32_PROVIDER_WINNT50,
+                out safeTokenHandle);
+            if (false == returnValue)
+            {
+                int ret = Marshal.GetLastWin32Error();
+                Console.WriteLine("LogonUser failed with error code : {0}", ret);
+                throw new System.ComponentModel.Win32Exception(ret);
+            }
+            Console.WriteLine("Did LogonUser Succeed? " + (returnValue ? "Yes" : "No"));
+            // Check the identity.  
+            Console.WriteLine("Before impersonation: " + WindowsIdentity.GetCurrent().Name);
             #endregion
 
-            // Usew short wway to send one way query.
-            OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME).EnqueueQuery("ECHO");
+            // Make anonimys user.
+            safeTokenHandle = WindowsIdentity.GetAnonymous().AccessToken;
 
-            // Send sample one way query to server with every step description.
-            SendOneWayQuery("ECHO");
-
-            // Get public key for RSA encoding from target server.
-            RequestPublicRSAKey();
-
-            #region Main loop
-            while (true)
+            WindowsIdentity.RunImpersonated(safeTokenHandle, () =>
             {
-                if (Console.KeyAvailable)
+                #region Init
+                // React on uniform arguments.
+                ArgsReactor(args);
+
+                // Check direcroties
+                LoadAssemblies(AppDomain.CurrentDomain.BaseDirectory + "libs\\");
+
+                Console.WriteLine("Preparetion finished. Client strated.");
+                #endregion
+
+                // Usew short wway to send one way query.
+                OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME).EnqueueQuery("ECHO");
+
+                // Send sample one way query to server with every step description.
+                SendOneWayQuery("ECHO");
+
+                // Get public key for RSA encoding from target server.
+                RequestPublicRSAKey();
+
+                #region Main loop
+                while (true)
                 {
-                    Console.Write("Enter command: ");
-                    string tmp = Console.ReadLine();
-
-                    // Skip empty requests.
-                    if (string.IsNullOrEmpty(tmp)) continue;
-
-                    // Close application by command.
-                    if (tmp == "close") break;
-                    else
+                    if (Console.KeyAvailable)
                     {
-                        // If included counter then spawn a echo in loop.
-                        if (Int32.TryParse(tmp, out int repeaterRequest))
+                        Console.Write("Enter command: ");
+                        string tmp = Console.ReadLine();
+
+                        // Skip empty requests.
+                        if (string.IsNullOrEmpty(tmp)) continue;
+
+                        // Close application by command.
+                        if (tmp == "close") break;
+                        else
                         {
-                            for (int i = 1; i < repeaterRequest + 1; i++)
+                            // If included counter then spawn a echo in loop.
+                            if (Int32.TryParse(tmp, out int repeaterRequest))
                             {
-                                SendOneWayQuery("ECHO" + i + "/" + repeaterRequest);
+                                for (int i = 1; i < repeaterRequest + 1; i++)
+                                {
+                                    SendOneWayQuery("ECHO" + i + "/" + repeaterRequest);
+                                }
                             }
+                            // Share custom query.
+                            else SendOneWayQuery(tmp);
                         }
-                        // Share custom query.
-                        else SendOneWayQuery(tmp);
                     }
                 }
-            }
-            #endregion
+                #endregion
 
-            // Close all active lines. Without this operation thread will be hanged.
-            PipesProvider.API.CloseAllTransmissionLines();
+                // Close all active lines. Without this operation thread will be hanged.
+                PipesProvider.API.CloseAllTransmissionLines();
 
-            // Whait until close.
-            Console.WriteLine("Press any key to exit...");
-            Console.ReadKey();
+                // Whait until close.
+                Console.WriteLine("Press any key to exit...");
+                Console.ReadKey();
+            });
         }
 
 
