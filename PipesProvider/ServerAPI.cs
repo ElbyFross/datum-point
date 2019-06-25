@@ -235,7 +235,7 @@ namespace PipesProvider
             Security.SecurityLevel securityLevel)
         {
             // Create PipeSecurity relative to requesteed level.
-            PipeSecurity pipeSecurity = Security.GetRulesForLevels(securityLevel);
+            PipeSecurity pipeSecurity = Security.General.GetRulesForLevels(securityLevel);
 
             // Try to open pipe server.
             NamedPipeServerStream pipeServer = null;

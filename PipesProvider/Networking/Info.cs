@@ -21,34 +21,43 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
 
-namespace PipesProvider
+namespace PipesProvider.Networking
 {
     /// <summary>
-    /// Class that provide API for networking.
+    /// Class that provide API for network information.
     /// </summary>
-    public static class Networking
+    public static class Info
     {
         /// <summary>
         /// Conver ip adress of server to host name.
         /// </summary>
         /// <param name="ipAddress"></param>
         /// <returns></returns>
-        public static string GetHostName(string ipAddress)
+        public static void TryGetHostName(string ipAddress, ref string output)
         {
+            // Set request as output for case of fail.
+            output = ipAddress;
+
+            // Change pipe local domain to valid.
+            if (ipAddress.Equals("."))
+            {
+                ipAddress = "localhost";
+            }
+
             try
             {
+                // Try to get entry.
+                // Can be failed if host name not available.
                 IPHostEntry entry = Dns.GetHostEntry(ipAddress);
                 if (entry != null)
                 {
-                    return entry.HostName;
+                    output = entry.HostName;
                 }
             }
             catch (SocketException ex)
             {
                 Console.WriteLine("HOST NAME NOT FOUND: {0}", ex.Message);
             }
-
-            return null;
         }
 
         /// <summary>
@@ -62,6 +71,12 @@ namespace PipesProvider
         /// int: port</param>
         public async static void PingHost(string hostUri, int portNumber, System.Action<string, int> callback)
         {
+            // Change pipe local domain to valid.
+            if (hostUri.Equals("."))
+            {
+                hostUri = "localhost";
+            }
+
             try
             {
                 using (var client = new TcpClient())

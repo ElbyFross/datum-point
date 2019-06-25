@@ -18,6 +18,8 @@ using System.Runtime.InteropServices;
 using System.Reflection;
 using System.Threading;
 using System.IO;
+using Microsoft.Win32.SafeHandles;
+using PipesProvider.Networking;
 
 namespace UniformClient
 {
@@ -67,7 +69,7 @@ namespace UniformClient
         /// Table that contain delegatds subscribed to beckward lines in duplex queries.
         /// 
         /// Key string - backward domain
-        /// Value System.Action<PipesProvider.TransmissionLine, object> - answer processing delegat.
+        /// Value System.Action<TransmissionLine, object> - answer processing delegat.
         /// </summary>
         protected static Hashtable DuplexBackwardCallbacks = new Hashtable();
         #endregion
@@ -77,6 +79,13 @@ namespace UniformClient
         /// Reference to thread that host this server.
         /// </summary>
         public Thread thread;
+
+        /// <summary>
+        /// Token that will used to autorizing on the server.
+        /// By default setted up to anonymous.
+        /// </summary>
+        public SafeAccessTokenHandle AccessToken
+        { get; set; } = System.Security.Principal.WindowsIdentity.GetAnonymous().AccessToken;
         #endregion
 
 
@@ -247,7 +256,7 @@ namespace UniformClient
         /// <param name="serverName"></param>
         /// <param name="pipeName"></param>
         /// <returns></returns>
-        public static PipesProvider.TransmissionLine OpenOutTransmissionLine(
+        public static TransmissionLine OpenOutTransmissionLine(
            string serverName,
            string pipeName)
         {
@@ -261,10 +270,10 @@ namespace UniformClient
         /// <param name="pipeName"></param>
         /// <param name="callback"></param>
         /// <returns></returns>
-        public static PipesProvider.TransmissionLine OpenTransmissionLine(
+        public static TransmissionLine OpenTransmissionLine(
            string serverName,
            string pipeName,
-           System.Action<PipesProvider.TransmissionLine> callback)
+           System.Action<TransmissionLine> callback)
         {
             string guid = serverName.GetHashCode() + "_" + pipeName.GetHashCode();
             return OpenTransmissionLine(new SimpleClient(), serverName, pipeName, callback);
@@ -281,11 +290,11 @@ namespace UniformClient
         /// <param name="pipeName"></param>
         /// <param name="callback"></param>
         /// <returns>Opened transmission line. Use line.Enqueue to add your query.</returns>
-        public static PipesProvider.TransmissionLine OpenTransmissionLine(
+        public static TransmissionLine OpenTransmissionLine(
             BaseClient client,
             string serverName,
             string pipeName,
-            System.Action<PipesProvider.TransmissionLine> callback)
+            System.Action<TransmissionLine> callback)
         {
             // Validate client.
             if (client == null)
@@ -295,10 +304,10 @@ namespace UniformClient
             }
 
             // Get target GUID.
-            string guid = PipesProvider.TransmissionLine.GenerateGUID(serverName, pipeName);
+            string guid = TransmissionLine.GenerateGUID(serverName, pipeName);
 
             // Try to load  trans line by GUID.
-            if (PipesProvider.API.TryGetTransmissionLineByGUID(guid, out PipesProvider.TransmissionLine trnsLine))
+            if (PipesProvider.API.TryGetTransmissionLineByGUID(guid, out TransmissionLine trnsLine))
             {
                 // If not obsolterd transmission line then drop operation.
                 if (!trnsLine.Closed)
@@ -321,17 +330,17 @@ namespace UniformClient
             else
             {
                 // Create new if not registred.
-                trnsLine = new PipesProvider.TransmissionLine(
+                trnsLine = new TransmissionLine(
                     serverName,
                     pipeName,
-                    callback
-                    );
+                    callback,
+                    client.AccessToken);
 
                 // Put line proccesor to the new client loop.
                 client.StartClientThread(
                     guid,
                     trnsLine,
-                    PipesProvider.TransmissionLine.ThreadLoop);
+                    TransmissionLine.ThreadLoop);
 
 
                 //Console.WriteLine("OTL {0} | CREATED", guid);
@@ -346,18 +355,17 @@ namespace UniformClient
         /// Handler that send last dequeued query to server when connection will be established.
         /// </summary>
         /// <param name="sharedObject">
-        /// Normaly is a PipesProvider.TransmissionLine that contain information about actual transmission.</param>
+        /// Normaly is a TransmissionLine that contain information about actual transmission.</param>
         public async static void UniformQueryPostHandler(object sharedObject)
         { 
             // Drop as invalid in case of incorrect transmitted data.
-            if (!(sharedObject is PipesProvider.TransmissionLine lineProcessor))
+            if (!(sharedObject is TransmissionLine lineProcessor))
             {
                 Console.WriteLine("TRANSMISSION ERROR (UQPP0): INCORRECT TRANSFERD DATA TYPE. PERMITED ONLY \"LineProcessor\"");
                 return;
             }
-            
             /// If queries not placed then wait.
-            while (!lineProcessor.HasQueries || !lineProcessor.TryDequeQuery(out PipesProvider.QueryContainer query))
+            while (!lineProcessor.HasQueries || !lineProcessor.TryDequeQuery(out _))
             {
                 Thread.Sleep(50);
                 continue;
@@ -399,11 +407,11 @@ namespace UniformClient
         /// Handler that will recive message from the server.
         /// </summary>
         /// <param name="sharedObject">
-        /// Normaly is a PipesProvider.TransmissionLine that contain information about actual transmission.</param>
+        /// Normaly is a TransmissionLine that contain information about actual transmission.</param>
         public static async void UniformServerAnswerHandler(object sharedObject)
         {
             // Drop as invalid in case of incorrect transmitted data.
-            if (!(sharedObject is PipesProvider.TransmissionLine lineProcessor))
+            if (!(sharedObject is TransmissionLine lineProcessor))
             {
                 Console.WriteLine("TRANSMISSION ERROR (UQPP0): INCORRECT TRANSFERD DATA TYPE. PERMITED ONLY \"LineProcessor\"");
                 return;
@@ -454,7 +462,7 @@ namespace UniformClient
                 string tableGUID = lineProcessor.ServerName + "\\" + lineProcessor.ServerPipeName;
                 // Look for delegate in table.
                 if (DuplexBackwardCallbacks[tableGUID] is
-                    System.Action<PipesProvider.TransmissionLine, object> registredCallback)
+                    System.Action<TransmissionLine, object> registredCallback)
                 {
                     if (registredCallback != null)
                     {
@@ -501,9 +509,9 @@ namespace UniformClient
         /// <param name="decodedQuery">Query that sent to server and must recive answer. Must be not encoded.</param>
         /// <returns></returns>
         public static bool ReciveAnswer(
-            PipesProvider.TransmissionLine line,
+            TransmissionLine line,
             string decodedQuery,
-            System.Action<PipesProvider.TransmissionLine, object> answerHandler)
+            System.Action<TransmissionLine, object> answerHandler)
         {
             return ReciveAnswer(
                 line, 
@@ -522,9 +530,9 @@ namespace UniformClient
         /// Method will detect core part and establish backward connection.</param>
         /// <returns></returns>
         public static bool ReciveAnswer(
-            PipesProvider.TransmissionLine line,
+            TransmissionLine line,
             UniformQueries.QueryPart[] entryQueryParts, 
-            System.Action<PipesProvider.TransmissionLine, object> answerHandler)
+            System.Action<TransmissionLine, object> answerHandler)
         {
             #region Create backward domain
             // Try to compute bacward domaint to contact with client.
@@ -539,7 +547,7 @@ namespace UniformClient
             #region Addind answer handler to backward table.
             // Try to load registred callback to overriding.
             if (DuplexBackwardCallbacks[domain] is
-                System.Action<PipesProvider.TransmissionLine, object> registredCallback)
+                System.Action<TransmissionLine, object> registredCallback)
             {
                 DuplexBackwardCallbacks[domain] = answerHandler;
             }
@@ -552,7 +560,7 @@ namespace UniformClient
 
             #region Opening transmition line
             // Create transmission line.
-            PipesProvider.TransmissionLine lineProcessor = OpenTransmissionLine(
+            TransmissionLine lineProcessor = OpenTransmissionLine(
                 new SimpleClient(),
                 line.ServerName, domain,
                 UniformServerAnswerHandler
@@ -573,9 +581,9 @@ namespace UniformClient
         /// <param name="query">Query that will sent to server.</param>
         /// <param name="answerHandler">Callback that will recive answer.</param>
         public static void EnqueueDuplexQuery(
-            PipesProvider.TransmissionLine line,
+            TransmissionLine line,
             string query,
-            System.Action<PipesProvider.TransmissionLine, object> answerHandler)
+            System.Action<TransmissionLine, object> answerHandler)
         {
             // Add our query to line processor queue.
             line.EnqueueQuery(query);
@@ -596,10 +604,10 @@ namespace UniformClient
             string serverName,
             string serverPipeName,
             string query,
-            System.Action<PipesProvider.TransmissionLine, object> answerHandler)
+            System.Action<TransmissionLine, object> answerHandler)
         {
             // Open transmission line.
-            PipesProvider.TransmissionLine line = OpenOutTransmissionLine(serverName, serverPipeName);
+            TransmissionLine line = OpenOutTransmissionLine(serverName, serverPipeName);
 
             // Equeue query to line.
             EnqueueDuplexQuery(line, query, answerHandler);

@@ -22,37 +22,18 @@ using System.IO;
 using System.IO.Pipes;
 using System.Security.AccessControl;
 using System.Security.Principal;
+using System.Security.Permissions;
+using Microsoft.Win32.SafeHandles;
+using System.Runtime.InteropServices;
 
-namespace PipesProvider
+namespace PipesProvider.Security
 {
     /// <summary>
     /// Class that contain methods for working with sequrity systems.
     /// </summary>
-    public static class Security
+    public static class General
     {
-        /// <summary>
-        /// Anonymous - not require logon. 
-        /// Require Guest user on server.
-        /// Require allownce to network access via Guest accounts.
-        /// 
-        /// RemoteLogon - Require authentication via one of the profile on server.
-        /// 
-        /// Local - Pipe will be accessed only on the local machine.
-        /// 
-        /// Administrator - access to pipe will provided only for administrators. By default allowed via remote authentication.
-        /// 
-        /// Internal - pipe will controlled only be server application and system.
-        /// Any external coonection will be blocked.
-        /// </summary>
-        public enum SecurityLevel
-        {
-            Anonymous = 2,
-            RemoteLogon = 4,
-            Local = 8,
-            Administrator = 16,
-            Internal = 32
-        }
-
+        #region Named pipes
         /// <summary>
         /// Configurate pipe squrity relative to requested level.
         ///
@@ -149,5 +130,67 @@ namespace PipesProvider
                 return pipeSecurity;
             }
         }
+        #endregion
+
+        #region Windows
+        /// <summary>
+        /// Change local security authority of machine to allow requested security level.
+        /// Require admin rights.
+        /// </summary>
+        /// <param name="level"></param>
+        public static void SetLocalSecurityAuthority(SecurityLevel level)
+        {
+            throw new NotImplementedException();
+
+            //TODO
+        }
+
+        [DllImport("advapi32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
+        public static extern bool LogonUser(String lpszUsername, String lpszDomain, String lpszPassword,
+        int dwLogonType, int dwLogonProvider, out SafeAccessTokenHandle phToken);
+        
+        /// <summary>
+        /// Trying to get access token for remote user.
+        /// In case if requested anonymous connection then return anonymous token without permission check.
+        /// </summary>
+        /// <param name="config">Fields required for remote logon with impersonation.</param>
+        /// <returns></returns>
+        public static bool TryLogon(LogonConfig config, out SafeAccessTokenHandle token)
+        {
+            #region Anonymous token
+            // Return anonimus token.
+            if (config.IsAnonymous)
+            {
+                token = WindowsIdentity.GetAnonymous().AccessToken;
+                return true;
+            }
+            #endregion
+
+            #region Remote user logon
+            // Win NT version.
+            const int LOGON32_PROVIDER_WINNT50 = 3;
+            // This parameter causes LogonUser to create a primary token.
+            const int LOGON_TYPE_NEW_CREDENTIALS = 9;
+
+
+            // Call LogonUser to obtain a handle to an access token.
+            bool returnValue = LogonUser(config.userName, config.domain, config.password,
+                LOGON_TYPE_NEW_CREDENTIALS, LOGON32_PROVIDER_WINNT50,
+                out token);
+
+            // Validate result.
+            if (false == returnValue)
+            {
+                // Log fail resone.
+                int ret = Marshal.GetLastWin32Error();
+                Console.WriteLine("LogonUser failed with error code : {0}", ret);
+                //throw new System.ComponentModel.Win32Exception(ret);
+
+                return false;
+            }
+            return true;
+            #endregion
+        }
+        #endregion
     }
 }

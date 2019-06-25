@@ -16,8 +16,11 @@ using System;
 using System.Collections.Generic;
 using System.IO.Pipes;
 using System.Threading;
+using System.Security.Principal;
+using System.Runtime.InteropServices;
+using Microsoft.Win32.SafeHandles;
 
-namespace PipesProvider
+namespace PipesProvider.Networking
 {
     /// <summary>
     /// Class that provide information about line between client and server.
@@ -92,6 +95,12 @@ namespace PipesProvider
                 lastQuery = value;
             }
         }
+
+        /// <summary>
+        /// Token that will used to autorizing on the server.
+        /// </summary>
+        public SafeAccessTokenHandle AccessToken
+        { get; set; }
         #endregion
 
         #region Public fields
@@ -128,15 +137,16 @@ namespace PipesProvider
         /// <param name="serverName">Name of server into the network. If local than place "."</param>
         /// <param name="serverPipeName">Name of the pipe that will be used for transmitiong.</param>
         /// <param name="queryProcessor">Delegat that will be called when connection will be established.</param>
-        public TransmissionLine(string serverName, string serverPipeName, System.Action<TransmissionLine> queryProcessor)
+        public TransmissionLine(string serverName, string serverPipeName, System.Action<TransmissionLine> queryProcessor, SafeAccessTokenHandle token)
         {
             // Set fields.
             ServerName = serverName;
             ServerPipeName = serverPipeName;
             this.queryProcessor = queryProcessor;
+            this.AccessToken = token;
 
             // Registrate at hashtable.
-            API.TryToRegisterTransmissionLine(this);
+            PipesProvider.API.TryToRegisterTransmissionLine(this);
         }
         #endregion
 
@@ -223,7 +233,7 @@ namespace PipesProvider
             Processing = false;
 
             // Remove from table.
-            API.TryToUnregisterTransmissionLine(GUID);
+            PipesProvider.API.TryToUnregisterTransmissionLine(GUID);
         }
 
         /// <summary>
@@ -249,7 +259,7 @@ namespace PipesProvider
         public static void ThreadLoop(object lineProcessor)
         {
             // Drop if incorrect argument.
-            if (!(lineProcessor is TransmissionLine lp))
+            if (!(lineProcessor is TransmissionLine line))
             {
                 Console.WriteLine("THREAD NOT STARTED. INVALID ARGUMENT.");
                 return;
@@ -259,11 +269,15 @@ namespace PipesProvider
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");
             Console.WriteLine("THREAD STARTED: {0}", Thread.CurrentThread.Name);
 
-            // Start client loop.
-            PipesProvider.API.ClientLoop(
-                lp,
-                System.IO.Pipes.PipeDirection.InOut,
-                PipeOptions.Asynchronous | PipeOptions.WriteThrough);
+            // Apply rights for connection.
+            WindowsIdentity.RunImpersonated(line.AccessToken, () =>
+            {
+                // Start client loop.
+                PipesProvider.API.ClientLoop(
+                    line,
+                    System.IO.Pipes.PipeDirection.InOut,
+                    PipeOptions.Asynchronous | PipeOptions.WriteThrough);
+            });
         }
 
         /// <summary>
