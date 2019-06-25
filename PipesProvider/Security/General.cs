@@ -25,6 +25,7 @@ using System.Security.Principal;
 using System.Security.Permissions;
 using Microsoft.Win32.SafeHandles;
 using System.Runtime.InteropServices;
+using System.Management;
 
 namespace PipesProvider.Security
 {
@@ -140,9 +141,69 @@ namespace PipesProvider.Security
         /// <param name="level"></param>
         public static void SetLocalSecurityAuthority(SecurityLevel level)
         {
-            throw new NotImplementedException();
+            using (WindowsIdentity identity = WindowsIdentity.GetCurrent())
+            {
+                #region Check rights
+                // Check rights.
+                WindowsPrincipal principal = new WindowsPrincipal(identity);
+                bool isElevated = principal.IsInRole(WindowsBuiltInRole.Administrator);
 
-            //TODO
+                if(!isElevated)
+                {
+                    Console.WriteLine(
+                        "SECURITY ERROR: LSA update require admin rights."+
+                        "Close application and start it as Admin.");
+                    return;
+                }
+                #endregion
+
+                // If require anonymus connection.
+                if (level.HasFlag(SecurityLevel.Anonymous))
+                {
+                    #region Activate guest user
+                    // Start command line.
+                    System.Diagnostics.Process cmd = new System.Diagnostics.Process();
+                    cmd.StartInfo.FileName = "cmd.exe";
+                    cmd.StartInfo.RedirectStandardInput = true;
+                    cmd.StartInfo.RedirectStandardOutput = true;
+                    cmd.StartInfo.CreateNoWindow = true;
+                    cmd.StartInfo.UseShellExecute = false;
+                    cmd.Start();
+
+                    // Create system query.
+                    SelectQuery query = new SelectQuery("Win32_UserAccount");
+                    ManagementObjectSearcher searcher = new ManagementObjectSearcher(query);
+                    foreach (ManagementObject envVar in searcher.Get())
+                    {
+                        // Get name of account.
+                        var account = new NTAccount(envVar["Name"].ToString());
+                        // Get SID of account.
+                        var sid = (SecurityIdentifier)account.Translate(typeof(SecurityIdentifier));
+
+                        // Check is account is Guest.
+                        if (sid.IsWellKnown(WellKnownSidType.AccountGuestSid))
+                        {
+                            // Send order to activate.
+                            cmd.StandardInput.WriteLine("net user {0} /active:yes", envVar["Name"].ToString());
+
+                            // Log result.
+                            Console.WriteLine("\"{0}\" user activated to allow anonymous access to this machine.", envVar["Name"]);
+                            break;
+                        }
+                    }
+
+                    // Send command.
+                    cmd.StandardInput.Flush();
+                    cmd.StandardInput.Close();
+                    //cmd.WaitForExit();
+                    //Console.WriteLine(cmd.StandardOutput.ReadToEnd());
+                    #endregion
+
+                    #region Remove guest from network access deny
+                    //TODO
+                    #endregion
+                }
+            }
         }
 
         [DllImport("advapi32.dll", SetLastError = true, CharSet = CharSet.Unicode)]
@@ -171,7 +232,6 @@ namespace PipesProvider.Security
             const int LOGON32_PROVIDER_WINNT50 = 3;
             // This parameter causes LogonUser to create a primary token.
             const int LOGON_TYPE_NEW_CREDENTIALS = 9;
-
 
             // Call LogonUser to obtain a handle to an access token.
             bool returnValue = LogonUser(config.userName, config.domain, config.password,
