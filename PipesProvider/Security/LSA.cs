@@ -100,50 +100,7 @@ namespace PipesProvider.Security.LSA
         /// <param name="rights"></param>        
         public static void AddAccountRights(SecurityIdentifier sid, string rights)
         {
-            LSA_UNICODE_STRING[] system = null;
-            LSA_OBJECT_ATTRIBUTES lsaAttr;
-            lsaAttr.RootDirectory = IntPtr.Zero;
-            lsaAttr.ObjectName = IntPtr.Zero;
-            lsaAttr.Attributes = 0;
-            lsaAttr.SecurityDescriptor = IntPtr.Zero;
-            lsaAttr.SecurityQualityOfService = IntPtr.Zero;
-            lsaAttr.Length = Marshal.SizeOf(typeof(LSA_OBJECT_ATTRIBUTES));
-
-            uint ret = LsaOpenPolicy(system, ref lsaAttr, (int)Access.POLICY_ALL_ACCESS, out IntPtr lsaHandle);
-            if (ret == 0)
-            {
-                Byte[] buffer = new Byte[sid.BinaryLength];
-                sid.GetBinaryForm(buffer, 0);
-
-                IntPtr pSid = Marshal.AllocHGlobal(sid.BinaryLength);
-                Marshal.Copy(buffer, 0, pSid, sid.BinaryLength);
-
-                LSA_UNICODE_STRING[] privileges = new LSA_UNICODE_STRING[1];
-
-                LSA_UNICODE_STRING lsaRights = new LSA_UNICODE_STRING
-                {
-                    Buffer = rights,
-                    Length = (ushort)(rights.Length * sizeof(char))
-                };
-                lsaRights.MaximumLength = (ushort)(lsaRights.Length + sizeof(char));
-
-                privileges[0] = lsaRights;
-
-                ret = LsaAddAccountRights(lsaHandle, pSid, privileges, 1);
-
-                LsaClose(lsaHandle);
-
-                Marshal.FreeHGlobal(pSid);
-
-                if (ret != 0)
-                {
-                    throw new Win32Exception("LsaAddAccountRights failed with error code: " + ret);
-                }
-            }
-            else
-            {
-                throw new Win32Exception("LsaOpenPolicy failed with error code: " + ret);
-            }
+            AccountRightsController(sid, rights, true);
         }
 
         /// <summary>
@@ -155,25 +112,43 @@ namespace PipesProvider.Security.LSA
         // https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/user-rights-assignment
         public static void RemoveAccountRights(SecurityIdentifier sid, string rights)
         {
-            LSA_UNICODE_STRING[] system = null;
-            LSA_OBJECT_ATTRIBUTES lsaAttr;
-            lsaAttr.RootDirectory = IntPtr.Zero;
-            lsaAttr.ObjectName = IntPtr.Zero;
-            lsaAttr.Attributes = 0;
-            lsaAttr.SecurityDescriptor = IntPtr.Zero;
-            lsaAttr.SecurityQualityOfService = IntPtr.Zero;
-            lsaAttr.Length = Marshal.SizeOf(typeof(LSA_OBJECT_ATTRIBUTES));
+            AccountRightsController(sid, rights, false);
+        }
 
+        /// <summary>
+        /// Provide access and overriding of accaunt rights in LSA.
+        /// </summary>
+        /// <param name="sid"></param>
+        /// <param name="rights"></param>
+        /// <param name="allow"></param>
+        private static void AccountRightsController(SecurityIdentifier sid, string rights, bool allow)
+        {
+            LSA_UNICODE_STRING[] system = null;
+
+            // A pointer to an LSA_OBJECT_ATTRIBUTES structure that specifies the connection attributes. 
+            // The structure members are not used; initialize them to NULL or zero.
+            LSA_OBJECT_ATTRIBUTES lsaAttr = new LSA_OBJECT_ATTRIBUTES()
+            {
+                RootDirectory = IntPtr.Zero,
+                ObjectName = IntPtr.Zero,
+                Attributes = 0,
+                SecurityDescriptor = IntPtr.Zero,
+                SecurityQualityOfService = IntPtr.Zero,
+                Length = Marshal.SizeOf(typeof(LSA_OBJECT_ATTRIBUTES))
+            };
+
+            // Open access to LSA with access to policy.
             uint ret = LsaOpenPolicy(system, ref lsaAttr, (int)Access.POLICY_ALL_ACCESS, out IntPtr lsaHandle);
             if (ret == 0)
             {
+                // Get SID.
                 Byte[] buffer = new Byte[sid.BinaryLength];
                 sid.GetBinaryForm(buffer, 0);
 
+                // Allocate memory.
                 IntPtr pSid = Marshal.AllocHGlobal(sid.BinaryLength);
                 Marshal.Copy(buffer, 0, pSid, sid.BinaryLength);
 
-                LSA_UNICODE_STRING[] privileges = new LSA_UNICODE_STRING[1];
 
                 LSA_UNICODE_STRING lsaRights = new LSA_UNICODE_STRING
                 {
@@ -182,12 +157,24 @@ namespace PipesProvider.Security.LSA
                 };
                 lsaRights.MaximumLength = (ushort)(lsaRights.Length + sizeof(char));
 
+                LSA_UNICODE_STRING[] privileges = new LSA_UNICODE_STRING[1];
                 privileges[0] = lsaRights;
 
-                ret = LsaRemoveAccountRights(lsaHandle, pSid, false, privileges, 1);
+                if (allow)
+                {
+                    // Add rights.
+                    ret = LsaAddAccountRights(lsaHandle, pSid, privileges, 1);
+                }
+                else
+                {
+                    // Remove rights.
+                    ret = LsaRemoveAccountRights(lsaHandle, pSid, false, privileges, 1);
+                }
 
+                // Close access to LSA.
                 LsaClose(lsaHandle);
 
+                // Free unmanged memory.
                 Marshal.FreeHGlobal(pSid);
 
                 if (ret != 0)
