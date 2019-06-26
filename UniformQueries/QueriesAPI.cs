@@ -77,7 +77,7 @@ namespace UniformQueries
             }
 
             // Log
-            Console.WriteLine("\nRESUME:\nQueryMonitor established. Session started at {0}\nTotal query processors detected: {1}",
+            Console.WriteLine("\nRESUME:\nQueriesMonitor established. Session started at {0}\nTotal query processors detected: {1}",
                 DateTime.Now.ToString("HH:mm:ss"), queryProcessors.Count);
         }
         
@@ -87,7 +87,7 @@ namespace UniformQueries
         /// </summary>
         /// <param name="meta"></param>
         /// <param name="query"></param>
-        public static async void PPReceivedQueryHandlerAsync(PipesProvider.ServerTransmissionMeta meta, string query)
+        public static async void PPReceivedQueryHandlerAsync(PipesProvider.ServerTransmissionMeta _, string query)
         {
             // Detect query parts.
             QueryPart[] queryParts = API.DetectQueryParts(query);

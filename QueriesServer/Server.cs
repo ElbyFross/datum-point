@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PipesProvider.Security;
 
 namespace QueriesServer
 {
@@ -24,6 +25,11 @@ namespace QueriesServer
     {
         static void Main(string[] args)
         {
+            // Request anonymous configuration for system.
+            General.SetLocalSecurityAuthority(SecurityLevel.Anonymous);
+
+            Console.WriteLine("Press any key...");
+            Console.ReadKey();
         }
     }
 }

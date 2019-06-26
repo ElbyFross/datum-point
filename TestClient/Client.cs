@@ -13,13 +13,10 @@
 //limitations under the License.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Threading;
-using System.IO;
-using System.IO.Pipes;
+using Microsoft.Win32.SafeHandles;
+using PipesProvider.Networking;
+using PipesProvider.Security;
 
 namespace TestClient
 {
@@ -33,7 +30,7 @@ namespace TestClient
         /// <summary>
         /// Server that will be used as target for this client.
         /// </summary>
-        public static string SERVER_NAME = "."; // Dot queal to local.
+        public static string SERVER_NAME = ".";//"192.168.1.74"; // Dot equal to local.
 
         /// <summary>
         /// Pipe that will be used to queries of this client.
@@ -53,15 +50,24 @@ namespace TestClient
             Console.WriteLine("Preparetion finished. Client strated.");
             #endregion
 
-            // Usew short wway to send one way query.
-            OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME).EnqueueQuery("ECHO");
 
-            // Send sample one way query to server with every step description.
-            SendOneWayQuery("ECHO");
+            // Try to make human clear naming of server. In case of local network we will get the machine name.
+            // This is optional and not required for stable work, just little helper for admins.
+            PipesProvider.Networking.Info.TryGetHostName(SERVER_NAME, ref SERVER_NAME);
 
-            // Get public key for RSA encoding from target server.
-            RequestPublicRSAKey();
 
+            // Check server exist. When connection will be established will be called shared delegate.
+            // Port 445 required for named pipes work.
+            PipesProvider.Networking.Info.PingHost(
+                SERVER_NAME, 445,
+                delegate (string uri, int port)
+                {
+                    Console.WriteLine("PING COMPLITED | HOST AVAILABLE | {0}:{1}\n", uri, port);
+
+                    // Send few example queries to server.
+                    TransmissionsBlock();
+                });
+            
             #region Main loop
             while (true)
             {
@@ -100,12 +106,47 @@ namespace TestClient
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Method that will send few sample to remote server.
+        /// </summary>
+        static void TransmissionsBlock()
+        {
+            // Usew short way to send one way query.
+            OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME).EnqueueQuery("ECHO");
+
+            // Send sample one way query to server with every step description.
+            SendOneWayQuery("ECHO");
+
+            // Get public key for RSA encoding from target server.
+            RequestPublicRSAKey();
+        }
 
         #region Queries
         static void SendOneWayQuery(string query)
         {
+            #region Authorizing on remote machine
+            // Get right to access remote machine.
+            //
+            // If you use anonymous conection than you need to apply server's LSA (LocalSecurityAuthority) rules:
+            // - permit Guest connection over network.
+            // - activate Guest user.
+            // Without this coonection will terminated by server.
+            //
+            // Relative to setting of pipes also could be required:
+            // - anonymous access to named pipes
+            bool logonResult = General.TryLogon(LogonConfig.Anonymous, out SafeAccessTokenHandle safeTokenHandle);
+            if (!logonResult)
+            {
+                Console.WriteLine("Logon failed. Connection not possible.\nPress any key...");
+                Console.ReadKey();
+                return;
+            }
+            #endregion
+
             // Create transmission line.
-            PipesProvider.TransmissionLine lineProcessor = OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME);
+            TransmissionLine lineProcessor = OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME);
+            // Set impersonate token.
+            lineProcessor.AccessToken = safeTokenHandle;
 
             // Add sample query to queue. You can use this way if you not need answer from server.
             lineProcessor.EnqueueQuery(query);
@@ -136,7 +177,7 @@ namespace TestClient
 
         #region Server's answer callbacks
         // Create delegate that will recive and procced the server's answer.
-        static void ServerAnswerHandler_RSAPublicKey(PipesProvider.TransmissionLine tl, object message)
+        static void ServerAnswerHandler_RSAPublicKey(TransmissionLine tl, object message)
         {
             string messageS = message as string;
             Console.WriteLine("RSA Public Key recived:\n" + (messageS ?? "Message is null"));

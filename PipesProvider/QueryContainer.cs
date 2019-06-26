@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PipesProvider.Networking;
 
 namespace PipesProvider
 {
@@ -25,27 +26,11 @@ namespace PipesProvider
     /// </summary>
     public struct QueryContainer
     {
+        #region Public properties
         /// <summary>
         /// Query that will be shared.
         /// </summary>
         public string Query { get; set; }
-
-        /// <summary>
-        /// Delegate that will be called when anser transmition will be recived.
-        /// </summary>
-        public System.Action<TransmissionLine, string> AnswerHandler;
-
-        /// <summary>
-        /// Return empty contaier.
-        /// </summary>
-        public static QueryContainer Empty { get; } = new QueryContainer();
-
-        public QueryContainer(string query, System.Action<TransmissionLine, string> AnswerHandler)
-        {
-            this.Query = query;
-            this.AnswerHandler = AnswerHandler;
-            this.Attempts = 0;
-        }
 
         /// <summary>
         /// Validate container.
@@ -61,6 +46,50 @@ namespace PipesProvider
         }
 
         /// <summary>
+        /// How many attemts was applied to this query processing.
+        /// </summary>
+        public int Attempts { get; private set; }        
+
+        /// <summary>
+        /// Delegate that will be called when anser transmition will be recived.
+        /// </summary>
+        public System.Action<TransmissionLine, string> AnswerHandler;
+        #endregion
+
+
+        #region Constructors
+        /// <summary>
+        /// Return empty contaier.
+        /// </summary>
+        public static QueryContainer Empty { get; } = new QueryContainer();
+
+        /// <summary>
+        /// Constructor that provide single way query.
+        /// </summary>
+        /// <param name="query"></param>
+        public QueryContainer(string query)
+        {
+            this.Query = query;
+            this.AnswerHandler = null;
+            this.Attempts = 0;
+        }
+
+        /// <summary>
+        /// Constructor of contaier that provide ability to create duplex query.
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="AnswerHandler"></param>
+        public QueryContainer(string query, System.Action<TransmissionLine, string> AnswerHandler)
+        {
+            this.Query = query;
+            this.AnswerHandler = AnswerHandler;
+            this.Attempts = 0;
+        }
+        #endregion
+
+
+        #region API
+        /// <summary>
         /// Return copy of source container.
         /// </summary>
         /// <param name="source"></param>
@@ -72,12 +101,15 @@ namespace PipesProvider
                 source.AnswerHandler != null ? source.AnswerHandler.Clone() as System.Action<TransmissionLine, string> : null);
 
         }
+        
+        public override string ToString()
+        {
+            return Query;
+        }
+        #endregion
 
-        /// <summary>
-        /// How many attemts was applied to this query processing.
-        /// </summary>
-        public int Attempts { get; private set; }
 
+        #region Operators
         /// <summary>
         /// Incremet of attempts count.
         /// </summary>
@@ -89,14 +121,14 @@ namespace PipesProvider
             return contaier;
         }
 
+        /// <summary>
+        /// Convert container to string.
+        /// </summary>
+        /// <param name="container"></param>
         public static explicit operator string(QueryContainer container)
         {
             return container.Query;
         }
-
-        public override string ToString()
-        {
-            return Query;
-        }
+        #endregion
     }
 }

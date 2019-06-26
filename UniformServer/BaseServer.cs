@@ -156,6 +156,10 @@ namespace UniformServer
         /// </summary>
         public string pipeName;
 
+        /// <summary>
+        /// Squrity level that will applied to pipe.
+        /// </summary>
+        public PipesProvider.Security.SecurityLevel securityLevel = PipesProvider.Security.SecurityLevel.Anonymous;
 
         /// <summary>
         /// Loading assemblies from requested path.
@@ -332,7 +336,8 @@ namespace UniformServer
             // Start server loop.
             PipesProvider.API.ServerToClientLoop(
                 serverName,
-                ((BaseServer)server).pipeName);
+                ((BaseServer)server).pipeName,
+                ((BaseServer)server).securityLevel);
             #endregion
         }
 
@@ -355,7 +360,8 @@ namespace UniformServer
             PipesProvider.API.ClientToServerLoop(
                 serverName,
                 UniformQueries.API.PPReceivedQueryHandlerAsync,
-                ((BaseServer)server).pipeName);
+                ((BaseServer)server).pipeName,
+                ((BaseServer)server).securityLevel);
             #endregion
         }
         #endregion
