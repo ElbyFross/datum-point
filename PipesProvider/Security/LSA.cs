@@ -100,8 +100,6 @@ namespace PipesProvider.Security.LSA
         /// <param name="rights"></param>        
         public static void AddAccountRights(SecurityIdentifier sid, string rights)
         {
-            IntPtr lsaHandle;
-
             LSA_UNICODE_STRING[] system = null;
             LSA_OBJECT_ATTRIBUTES lsaAttr;
             lsaAttr.RootDirectory = IntPtr.Zero;
@@ -110,9 +108,8 @@ namespace PipesProvider.Security.LSA
             lsaAttr.SecurityDescriptor = IntPtr.Zero;
             lsaAttr.SecurityQualityOfService = IntPtr.Zero;
             lsaAttr.Length = Marshal.SizeOf(typeof(LSA_OBJECT_ATTRIBUTES));
-            lsaHandle = IntPtr.Zero;
 
-            uint ret = LsaOpenPolicy(system, ref lsaAttr, (int)Access.POLICY_ALL_ACCESS, out lsaHandle);
+            uint ret = LsaOpenPolicy(system, ref lsaAttr, (int)Access.POLICY_ALL_ACCESS, out IntPtr lsaHandle);
             if (ret == 0)
             {
                 Byte[] buffer = new Byte[sid.BinaryLength];
@@ -123,9 +120,11 @@ namespace PipesProvider.Security.LSA
 
                 LSA_UNICODE_STRING[] privileges = new LSA_UNICODE_STRING[1];
 
-                LSA_UNICODE_STRING lsaRights = new LSA_UNICODE_STRING();
-                lsaRights.Buffer = rights;
-                lsaRights.Length = (ushort)(rights.Length * sizeof(char));
+                LSA_UNICODE_STRING lsaRights = new LSA_UNICODE_STRING
+                {
+                    Buffer = rights,
+                    Length = (ushort)(rights.Length * sizeof(char))
+                };
                 lsaRights.MaximumLength = (ushort)(lsaRights.Length + sizeof(char));
 
                 privileges[0] = lsaRights;
@@ -156,8 +155,6 @@ namespace PipesProvider.Security.LSA
         // https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/user-rights-assignment
         public static void RemoveAccountRights(SecurityIdentifier sid, string rights)
         {
-            IntPtr lsaHandle;
-
             LSA_UNICODE_STRING[] system = null;
             LSA_OBJECT_ATTRIBUTES lsaAttr;
             lsaAttr.RootDirectory = IntPtr.Zero;
@@ -166,9 +163,8 @@ namespace PipesProvider.Security.LSA
             lsaAttr.SecurityDescriptor = IntPtr.Zero;
             lsaAttr.SecurityQualityOfService = IntPtr.Zero;
             lsaAttr.Length = Marshal.SizeOf(typeof(LSA_OBJECT_ATTRIBUTES));
-            lsaHandle = IntPtr.Zero;
 
-            uint ret = LsaOpenPolicy(system, ref lsaAttr, (int)Access.POLICY_ALL_ACCESS, out lsaHandle);
+            uint ret = LsaOpenPolicy(system, ref lsaAttr, (int)Access.POLICY_ALL_ACCESS, out IntPtr lsaHandle);
             if (ret == 0)
             {
                 Byte[] buffer = new Byte[sid.BinaryLength];
@@ -179,9 +175,11 @@ namespace PipesProvider.Security.LSA
 
                 LSA_UNICODE_STRING[] privileges = new LSA_UNICODE_STRING[1];
 
-                LSA_UNICODE_STRING lsaRights = new LSA_UNICODE_STRING();
-                lsaRights.Buffer = rights;
-                lsaRights.Length = (ushort)(rights.Length * sizeof(char));
+                LSA_UNICODE_STRING lsaRights = new LSA_UNICODE_STRING
+                {
+                    Buffer = rights,
+                    Length = (ushort)(rights.Length * sizeof(char))
+                };
                 lsaRights.MaximumLength = (ushort)(lsaRights.Length + sizeof(char));
 
                 privileges[0] = lsaRights;
