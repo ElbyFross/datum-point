@@ -46,6 +46,7 @@
     <Compile Include="Networking\Info.cs" />
     <Compile Include="Security\General.cs" />
     <Compile Include="Security\LogonConfig.cs" />
+    <Compile Include="Security\LSA.cs" />
     <Compile Include="Security\SecurityLevel.cs" />
     <Compile Include="Networking\TransmissionLine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

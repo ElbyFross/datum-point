@@ -160,6 +160,9 @@ namespace PipesProvider.Security
                 // If require anonymus connection.
                 if (level.HasFlag(SecurityLevel.Anonymous))
                 {
+                    SecurityIdentifier guestDomainSID = new SecurityIdentifier(WellKnownSidType.BuiltinGuestsSid, null);
+                    SecurityIdentifier guestSID = null;
+
                     #region Activate guest user
                     // Start command line.
                     System.Diagnostics.Process cmd = new System.Diagnostics.Process();
@@ -183,11 +186,14 @@ namespace PipesProvider.Security
                         // Check is account is Guest.
                         if (sid.IsWellKnown(WellKnownSidType.AccountGuestSid))
                         {
+                            guestSID = sid;
+
                             // Send order to activate.
                             cmd.StandardInput.WriteLine("net user {0} /active:yes", envVar["Name"].ToString());
 
                             // Log result.
-                            Console.WriteLine("\"{0}\" user activated to allow anonymous access to this machine.", envVar["Name"]);
+                            Console.WriteLine("\"{0}\" user activated to allow anonymous access to this machine.", 
+                                envVar["Name"]);
                             break;
                         }
                     }
@@ -199,8 +205,19 @@ namespace PipesProvider.Security
                     //Console.WriteLine(cmd.StandardOutput.ReadToEnd());
                     #endregion
 
-                    #region Remove guest from network access deny
-                    //TODO
+                    #region Remove Guests from "deny access to this computer from the network".
+
+                    Console.WriteLine("LSA: Network logon for Guests allowed.");
+                    LSA.LsaSecurityWrapper.AddAccountRights(guestDomainSID, "SeNetworkLogonRight");
+
+                    Console.WriteLine("LSA: Deny network logon right for Guests domain removed.");
+                    LSA.LsaSecurityWrapper.RemoveAccountRights(guestDomainSID, "SeDenyNetworkLogonRight");
+
+                    if (guestSID != null)
+                    {
+                        Console.WriteLine("LSA: Deny network logon right for Guest user removed.");
+                        LSA.LsaSecurityWrapper.RemoveAccountRights(guestSID, "SeDenyNetworkLogonRight");
+                    }
                     #endregion
                 }
             }
