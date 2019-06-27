@@ -230,9 +230,7 @@ namespace PipesProvider.Networking
                 Directory.CreateDirectory(directory);
             }
 
-            // Init encoder.
-            XmlSerializer xmlSer = new XmlSerializer(typeof(RoutingTable));
-
+            // Convert table to XML file.
             try
             {
                 XmlDocument xmlDocument = new XmlDocument();

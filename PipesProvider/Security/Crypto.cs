@@ -39,7 +39,7 @@ namespace PipesProvider.Security
         #endregion
 
 
-        #region RSA
+        #region RSA KEYS
         /// <summary>
         /// Current crypto service provider. Using RSA algortihm with 2048 bit key.
         /// </summary>
@@ -90,7 +90,9 @@ namespace PipesProvider.Security
                 return CryptoServiceProvider_RSA.ExportParameters(true);
             }
         }
+        #endregion
 
+        #region RSA Decryption
         public static byte[] RSADecrypt(byte[] DataToDecrypt, bool DoOAEPPadding)
         {
             try
@@ -115,6 +117,63 @@ namespace PipesProvider.Security
             catch (CryptographicException e)
             {
                 Console.WriteLine(e.ToString());
+
+                return null;
+            }
+        }
+        #endregion
+
+        #region RSA Encryption
+        /// <summary>
+        /// Encrypt string message and make it ready to trasmition to the server.
+        /// </summary>
+        /// <param name="message">Message that will be encrypted.</param>
+        /// <param name="serverPublicKey">Public encrypt key that was shered by target server.</param>
+        /// <returns></returns>
+        public static string EncryptString(string message, RSAParameters serverPublicKey)
+        {
+            // Conver message to byte array.
+            byte[] bytedMessage = Encoding.UTF8.GetBytes(message);
+
+            // Encrypt byte array.
+            byte[] encryptedMessage = RSAEncrypt(bytedMessage, serverPublicKey, false);
+
+            // Create encrypted string.
+            return Encoding.UTF8.GetString(encryptedMessage);
+        }
+
+        /// <summary>
+        /// Encrypt byte array by public server RSA key.
+        /// </summary>
+        /// <param name="DataToEncrypt">Data that will be encrypted.</param>
+        /// <param name="serverPublicKey">Public encrypt key of target server.</param>
+        /// <param name="DoOAEPPadding"></param>
+        /// <returns></returns>
+        public static byte[] RSAEncrypt(byte[] DataToEncrypt, RSAParameters serverPublicKey, bool DoOAEPPadding)
+        {
+            try
+            {
+                byte[] encryptedData;
+                //Create a new instance of RSACryptoServiceProvider.
+                using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
+                {
+
+                    //Import the RSA Key information. This only needs
+                    //toinclude the public key information.
+                    RSA.ImportParameters(serverPublicKey);
+
+                    //Encrypt the passed byte array and specify OAEP padding.  
+                    //OAEP padding is only available on Microsoft Windows XP or
+                    //later.  
+                    encryptedData = RSA.Encrypt(DataToEncrypt, DoOAEPPadding);
+                }
+                return encryptedData;
+            }
+            //Catch and display a CryptographicException  
+            //to the console.
+            catch (CryptographicException e)
+            {
+                Console.WriteLine(e.Message);
 
                 return null;
             }

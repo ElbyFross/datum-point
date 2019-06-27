@@ -20,6 +20,7 @@ using System.Threading;
 using System.IO;
 using Microsoft.Win32.SafeHandles;
 using PipesProvider.Networking;
+using PipesProvider.Client;
 
 namespace UniformClient
 {
@@ -307,7 +308,7 @@ namespace UniformClient
             string guid = TransmissionLine.GenerateGUID(serverName, pipeName);
 
             // Try to load  trans line by GUID.
-            if (PipesProvider.ClientAPI.TryGetTransmissionLineByGUID(guid, out TransmissionLine trnsLine))
+            if (ClientAPI.TryGetTransmissionLineByGUID(guid, out TransmissionLine trnsLine))
             {
                 // If not obsolterd transmission line then drop operation.
                 if (!trnsLine.Closed)
@@ -318,7 +319,7 @@ namespace UniformClient
                 else
                 {
                     // Unregister line and recall method.
-                    PipesProvider.ClientAPI.TryToUnregisterTransmissionLine(guid);
+                    ClientAPI.TryToUnregisterTransmissionLine(guid);
 
                     //Console.WriteLine("OTL {0} | RETRY", guid);
 
