@@ -18,12 +18,12 @@ using System.Text;
 using System.Security.Cryptography;
 using System.IO;
 
-namespace UniformServer
+namespace PipesProvider.Security
 {
     /// <summary>
     /// Class that provide metods for providing server transmission sequrity.
     /// </summary>
-    public static class SecurityAPI
+    public static class Crypto
     {
         #region Enums
         /// <summary>
@@ -167,7 +167,7 @@ namespace UniformServer
             {
                 hashValue = hashAlgorithm.ComputeHash(Encoding.UTF8.GetBytes(input));
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine("HASH COMPUTING ERROR: {0}", ex.Message);
             }
