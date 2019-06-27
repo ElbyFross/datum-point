@@ -19,6 +19,7 @@ using System.Threading;
 using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
+using PipesProvider.Server;
 
 namespace UniformServer
 {
@@ -265,14 +266,14 @@ namespace UniformServer
             server.pipeName = domain;
 
             // Create delegate that will set our answer message to processing whentransmission meta will available.
-            Action<PipesProvider.ServerTransmissionMeta> initationCallback = null;
-            initationCallback = delegate (PipesProvider.ServerTransmissionMeta tm)
+            Action<PipesProvider.Server.ServerTransmissionController> initationCallback = null;
+            initationCallback = delegate (PipesProvider.Server.ServerTransmissionController tm)
             {
                 // Target callback.
                 if (tm.name == server.pipeName)
                 {
                     // Unsubscribe.
-                    PipesProvider.API.ServerTransmissionMeta_InProcessing -= initationCallback;
+                    ServerAPI.ServerTransmissionMeta_InProcessing -= initationCallback;
 
                     // Set answer query as target for processing,
                     tm.ProcessingQuery = answer;
@@ -282,7 +283,7 @@ namespace UniformServer
                 }
             };            
             // Subscribe or waiting delegate on server loop event.
-            PipesProvider.API.ServerTransmissionMeta_InProcessing += initationCallback;
+            ServerAPI.ServerTransmissionMeta_InProcessing += initationCallback;
 
 
             // Starting server loop.
@@ -336,7 +337,7 @@ namespace UniformServer
 
             #region Server establishing
             // Start server loop.
-            PipesProvider.API.ServerToClientLoop(
+            ServerAPI.ServerToClientLoop(
                 serverName,
                 ((BaseServer)server).pipeName,
                 ((BaseServer)server).securityLevel);
@@ -359,9 +360,33 @@ namespace UniformServer
 
             #region Server establishing
             // Start server loop.
-            PipesProvider.API.ClientToServerLoop(
+            ServerAPI.ClientToServerLoop(
                 serverName,
-                PipesProvider.API.PPReceivedQueryHandlerAsync,
+                PipesProvider.Handlers.Query.ProcessingAsync,
+                ((BaseServer)server).pipeName,
+                ((BaseServer)server).securityLevel);
+            #endregion
+        }
+
+        /// <summary>
+        ///  Main loop that control pipe chanel that will recive clients.
+        /// </summary>
+        protected static void ThreadingServerLoop_Relay(object server)
+        {
+            #region Init
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");
+            Console.WriteLine("THREAD STARTED: {0}", Thread.CurrentThread.Name);
+
+            // Name of pipe server that will established.
+            // Access to this pipe by clients will be available by this name.
+            string serverName = ((BaseServer)server).thread.Name;
+            #endregion
+
+            #region Server establishing
+            // Start server loop.
+            ServerAPI.ClientToServerLoop(
+                serverName,
+                PipesProvider.Handlers.Query.ProcessingAsync,
                 ((BaseServer)server).pipeName,
                 ((BaseServer)server).securityLevel);
             #endregion

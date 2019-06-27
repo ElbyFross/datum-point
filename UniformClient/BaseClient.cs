@@ -307,7 +307,7 @@ namespace UniformClient
             string guid = TransmissionLine.GenerateGUID(serverName, pipeName);
 
             // Try to load  trans line by GUID.
-            if (PipesProvider.API.TryGetTransmissionLineByGUID(guid, out TransmissionLine trnsLine))
+            if (PipesProvider.ClientAPI.TryGetTransmissionLineByGUID(guid, out TransmissionLine trnsLine))
             {
                 // If not obsolterd transmission line then drop operation.
                 if (!trnsLine.Closed)
@@ -318,7 +318,7 @@ namespace UniformClient
                 else
                 {
                     // Unregister line and recall method.
-                    PipesProvider.API.TryToUnregisterTransmissionLine(guid);
+                    PipesProvider.ClientAPI.TryToUnregisterTransmissionLine(guid);
 
                     //Console.WriteLine("OTL {0} | RETRY", guid);
 

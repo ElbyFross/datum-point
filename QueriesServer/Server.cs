@@ -51,6 +51,9 @@ namespace QueriesServer
             }
             #endregion
 
+            // Request anonymous configuration for system.
+            General.SetLocalSecurityAuthority(SecurityLevel.Anonymous);
+
             #region Set default data \ load DLLs \ appling arguments
             // Set default thread count. Can be changed via args or command.
             threadsCount = Environment.ProcessorCount;
@@ -61,7 +64,10 @@ namespace QueriesServer
 
             // Check direcroties
             LoadAssemblies(AppDomain.CurrentDomain.BaseDirectory + "libs\\");
+            #endregion
 
+
+            #region Load routing tables
             // Load routing tables
             PipesProvider.Networking.RoutingTable routingTable = null;
             // From system folders.
@@ -93,10 +99,47 @@ namespace QueriesServer
             }
             #endregion
 
+            #region Loaded query handler processors
+            /// Draw line
+            ConsoleDraw.Primitives.DrawSpacedLine();
+            // Initialize Queue monitor.
+            try
+            {
+                var _qp_loader = UniformQueries.API.QueryProcessors;
+            }
+            catch (Exception ex)
+            {
+                Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
+                Console.WriteLine("QUERY HANDLER PROCESSORS LOADINT TERMINATED:\n{0}", ex.Message);
+            }
+            ConsoleDraw.Primitives.DrawSpacedLine();
+            Console.WriteLine();
+            #endregion
 
-            // Request anonymous configuration for system.
-            General.SetLocalSecurityAuthority(SecurityLevel.Anonymous);
+            #region Start queries monitor threads
+            for (int i = 0; i < threadsCount; i++)
+            {
+                // Instiniate server.
+                Server serverBufer = new Server();
+                longTermServerThreads[i] = serverBufer;
 
+                // Set fields.
+                serverBufer.pipeName = "THB_QUERY_SEREVER";
+
+                // Starting server loop.
+                serverBufer.StartServerThread(
+                    "Queries chanel #" + i, serverBufer,
+                    ThreadingServerLoop_OpenChanel);
+
+                // Change thread culture.
+                serverBufer.thread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");
+
+                // Skip line
+                Console.WriteLine();
+            }
+            #endregion
+
+            
             Console.WriteLine("Press any key...");
             Console.ReadKey();
         }

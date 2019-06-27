@@ -20,7 +20,7 @@ using System.Security.Principal;
 using System.Runtime.InteropServices;
 using Microsoft.Win32.SafeHandles;
 
-namespace PipesProvider.Networking
+namespace PipesProvider.Client
 {
     /// <summary>
     /// Class that provide information about line between client and server.
@@ -146,7 +146,7 @@ namespace PipesProvider.Networking
             this.AccessToken = token;
 
             // Registrate at hashtable.
-            PipesProvider.API.TryToRegisterTransmissionLine(this);
+            ClientAPI.TryToRegisterTransmissionLine(this);
         }
         #endregion
 
@@ -233,7 +233,7 @@ namespace PipesProvider.Networking
             Processing = false;
 
             // Remove from table.
-            PipesProvider.API.TryToUnregisterTransmissionLine(GUID);
+            ClientAPI.TryToUnregisterTransmissionLine(GUID);
         }
 
         /// <summary>
@@ -273,7 +273,7 @@ namespace PipesProvider.Networking
             WindowsIdentity.RunImpersonated(line.AccessToken, () =>
             {
                 // Start client loop.
-                PipesProvider.API.ClientLoop(
+                ClientAPI.ClientLoop(
                     line,
                     System.IO.Pipes.PipeDirection.InOut,
                     PipeOptions.Asynchronous | PipeOptions.WriteThrough);
@@ -290,13 +290,13 @@ namespace PipesProvider.Networking
         {
             if(string.IsNullOrEmpty(serverName))
             {
-                Console.WriteLine("EROOR (TL GUID): Server name can't be null or empty.");
+                Console.WriteLine("ERROR (TL GUID): Server name can't be null or empty.");
                 return null;
             }
 
             if (string.IsNullOrEmpty(pipeName))
             {
-                Console.WriteLine("EROOR (TL GUID): Pipe name can't be null or empty.");
+                Console.WriteLine("ERROR (TL GUID): Pipe name can't be null or empty.");
                 return null;
             }
             //return serverName.GetHashCode() + "_" + pipeName.GetHashCode();

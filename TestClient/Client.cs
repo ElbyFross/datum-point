@@ -99,7 +99,7 @@ namespace TestClient
             #endregion
 
             // Close all active lines. Without this operation thread will be hanged.
-            PipesProvider.API.CloseAllTransmissionLines();
+            PipesProvider.ClientAPI.CloseAllTransmissionLines();
 
             // Whait until close.
             Console.WriteLine("Press any key to exit...");
