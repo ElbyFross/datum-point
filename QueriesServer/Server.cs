@@ -17,10 +17,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PipesProvider.Security;
 using System.Runtime.InteropServices;
 using System.Reflection;
 using System.Threading;
+using PipesProvider.Security;
+using PipesProvider.Server;
+using PipesProvider.Client;
+using PipesProvider.Networking;
 
 namespace QueriesServer
 {
@@ -31,6 +34,11 @@ namespace QueriesServer
     /// </summary>
     class Server : UniformServer.BaseServer
     {
+        /// <summary>
+        /// Thable that contain instruction that allow to determine the server which is a target for recived query.
+        /// </summary>
+        public static RoutingTable RoutingTable { get; set; }
+
         static void Main(string[] args)
         {
             #region Detect processes conflicts
@@ -50,10 +58,7 @@ namespace QueriesServer
                 return;
             }
             #endregion
-
-            // Request anonymous configuration for system.
-            General.SetLocalSecurityAuthority(SecurityLevel.Anonymous);
-
+                        
             #region Set default data \ load DLLs \ appling arguments
             // Set default thread count. Can be changed via args or command.
             threadsCount = Environment.ProcessorCount;
@@ -67,35 +72,34 @@ namespace QueriesServer
             #endregion
 
 
+            // Request anonymous configuration for system.
+            General.SetLocalSecurityAuthority(SecurityLevel.Anonymous);
+
+
             #region Load routing tables
             // Load routing tables
-            PipesProvider.Networking.RoutingTable routingTable = null;
+            RoutingTable = null;
             // From system folders.
-            routingTable += PipesProvider.Networking.RoutingTable.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\");
+            RoutingTable += RoutingTable.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\");
             // From plugins.
-            routingTable += PipesProvider.Networking.RoutingTable.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "plugins\\");
+            RoutingTable += RoutingTable.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "plugins\\");
 
             // If routing table not found.
-            if(routingTable.intructions.Count == 0)
+            if(RoutingTable.intructions.Count == 0)
             {
                 // Log error.
                 Console.WriteLine("ROUTING TABLE NOT FOUND: Create default table by directory \\resources\\routing\\ROUTING.xml");
 
                 // Set default intruction.
-                routingTable.intructions.Add(new PipesProvider.Networking.RoutingTable.RoutingInstruction()
-                {
-                    logonConfig = PipesProvider.Security.LogonConfig.Anonymous,
-                    queryPatterns = new string[] { "$q&$guid&$token" },
-                    routingIP = "localhost"
-                });
+                RoutingTable.intructions.Add(RoutingTable.RoutingInstruction.Default);
 
                 // Save sample routing table to application files.
-                PipesProvider.Networking.RoutingTable.SaveRoutingTable(routingTable, AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\", "ROUTING");
+                RoutingTable.SaveRoutingTable(RoutingTable, AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\", "ROUTING");
             }
             else
             {
                 // Log error.
-                Console.WriteLine("ROUTING TABLE: Detected {0} instructions.", routingTable.intructions.Count);
+                Console.WriteLine("ROUTING TABLE: Detected {0} instructions.", RoutingTable.intructions.Count);
             }
             #endregion
 
@@ -129,7 +133,7 @@ namespace QueriesServer
                 // Starting server loop.
                 serverBufer.StartServerThread(
                     "Queries chanel #" + i, serverBufer,
-                    ThreadingServerLoop_OpenChanel);
+                    ThreadingServerLoop_Relay);
 
                 // Change thread culture.
                 serverBufer.thread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");
@@ -142,6 +146,75 @@ namespace QueriesServer
             
             Console.WriteLine("Press any key...");
             Console.ReadKey();
+        }
+
+        /// <summary>
+        ///  Start the server loop that will condtol relay query handler.
+        /// </summary>
+        protected static void ThreadingServerLoop_Relay(object server)
+        {
+            #region Init
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");
+            Console.WriteLine("THREAD STARTED: {0}", Thread.CurrentThread.Name);
+
+            // Name of pipe server that will established.
+            // Access to this pipe by clients will be available by this name.
+            string serverName = ((Server)server).thread.Name;
+            #endregion
+
+            #region Server establishing
+            // Start server loop.
+            ServerAPI.ClientToServerLoop(
+                serverName,
+                QueryHandler_Relay,
+                ((Server)server).pipeName,
+                ((Server)server).securityLevel);
+            #endregion
+        }
+
+        /// <summary>
+        /// Redirect recived query from current server to other.
+        /// </summary>
+        /// <param name="_"></param>
+        /// <param name="query"></param>
+        public static void QueryHandler_Relay(ServerTransmissionController _, string query)
+        {
+            // Detect routing target.
+            bool relayTargetFound = RoutingTable.TryGetRoutingInstruction(query, out RoutingTable.RoutingInstruction instruction);
+
+            // If instruction not found.
+            if (!relayTargetFound)
+            {
+                // DO BACKWARED ERROR INFORMATION.
+                SendAnswer("error=404", UniformQueries.API.DetectQueryParts(query));
+            }
+
+
+            // Open connection.
+            TransmissionLine tl = UniformClient.BaseClient.EnqueueDuplexQuery(
+                instruction.routingIP,
+                instruction.pipeName,
+                query,
+                // Delegate that will called when relayed server send answer.
+                // Redirect this answer to client.
+                delegate (PipesProvider.Client.TransmissionLine answerTL, object answer)
+                {
+                    // Try to get answer in string format.
+                    string answerAsString = answer as string;
+                    if (!string.IsNullOrEmpty(answerAsString))
+                    {
+                        SendAnswer(answerAsString, UniformQueries.API.DetectQueryParts(query));
+                        return;
+                    }
+
+                    // Try to get answer as byte array.
+                    byte[] answerAsByteArray = answer as byte[];
+                    if(answerAsByteArray != null)
+                    {
+                        // TODO Send answer as byte array.
+                        throw new NotImplementedException();
+                    }
+                });
         }
     }
 }

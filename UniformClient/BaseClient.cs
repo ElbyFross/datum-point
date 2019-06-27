@@ -601,7 +601,8 @@ namespace UniformClient
         /// <param name="serverPipeName">Name of pipe provided by server.</param>
         /// <param name="query">Query that will sent to server.</param>
         /// <param name="answerHandler">Callback that will recive answer.</param>
-        public static void EnqueueDuplexQuery(
+        /// <returns>Established transmission line.</returns>
+        public static TransmissionLine EnqueueDuplexQuery(
             string serverName,
             string serverPipeName,
             string query,
@@ -612,6 +613,8 @@ namespace UniformClient
 
             // Equeue query to line.
             EnqueueDuplexQuery(line, query, answerHandler);
+
+            return line;
         }
         #endregion
     }

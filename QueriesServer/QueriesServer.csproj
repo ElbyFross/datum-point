@@ -67,7 +67,7 @@
       <Name>UniformQueries</Name>
     </ProjectReference>
     <ProjectReference Include="..\UniformServer\UniformServer.csproj">
-      <Project>{e3156133-0296-4670-a961-726174860e1a}</Project>
+      <Project>{fa54f91c-5e34-47a6-af34-2cf0b9f90c32}</Project>
       <Name>UniformServer</Name>
     </ProjectReference>
   </ItemGroup>

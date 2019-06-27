@@ -366,31 +366,7 @@ namespace UniformServer
                 ((BaseServer)server).pipeName,
                 ((BaseServer)server).securityLevel);
             #endregion
-        }
-
-        /// <summary>
-        ///  Main loop that control pipe chanel that will recive clients.
-        /// </summary>
-        protected static void ThreadingServerLoop_Relay(object server)
-        {
-            #region Init
-            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");
-            Console.WriteLine("THREAD STARTED: {0}", Thread.CurrentThread.Name);
-
-            // Name of pipe server that will established.
-            // Access to this pipe by clients will be available by this name.
-            string serverName = ((BaseServer)server).thread.Name;
-            #endregion
-
-            #region Server establishing
-            // Start server loop.
-            ServerAPI.ClientToServerLoop(
-                serverName,
-                PipesProvider.Handlers.Query.ProcessingAsync,
-                ((BaseServer)server).pipeName,
-                ((BaseServer)server).securityLevel);
-            #endregion
-        }
+        }        
         #endregion
     }
 }

@@ -82,10 +82,5 @@ namespace PipesProvider.Handlers
                 Console.WriteLine("POST ERROR: Token: {1} | Handler for query \"{0}\" not implemented.", query, token);
             }
         }
-
-        //public static async void QueryHandler_Relay_Async(PipesProvider.ServerTransmissionMeta _, string query)
-        //{
-
-        //}
     }
 }

@@ -43,10 +43,16 @@ namespace PipesProvider.Networking
         [System.Serializable]
         public struct RoutingInstruction
         {
+            #region Fields
             /// <summary>
             /// Address that will be ised for routing
             /// </summary>
             public string routingIP;
+
+            /// <summary>
+            /// neme of the named pipe for server access.
+            /// </summary>
+            public string pipeName;
 
             /// <summary>
             /// Logon config recuired to server connection.
@@ -67,6 +73,38 @@ namespace PipesProvider.Networking
             /// targetQueries[1] = "$customProp";           // All queries that have "customProp" property in query will be routed.
             /// </summary>
             public string[] queryPatterns;
+            #endregion
+
+            #region Static properties
+            /// <summary>
+            /// Return default instruction.
+            /// </summary>
+            public static RoutingInstruction Default
+            {
+                get
+                {
+                    return new PipesProvider.Networking.RoutingTable.RoutingInstruction()
+                    {
+                        logonConfig = PipesProvider.Security.LogonConfig.Anonymous,
+                        queryPatterns = new string[] { "$q&$guid&$token" },
+                        routingIP = "localhost",
+                        pipeName = "PS_INOUT"
+                    };
+                }
+            }
+
+            /// <summary>
+            /// Return empty instruction.
+            /// </summary>
+            public static RoutingInstruction Empty
+            {
+                get
+                {
+                    return new PipesProvider.Networking.RoutingTable.RoutingInstruction();
+                }
+            }
+            #endregion
+
 
             public bool IsRoutingTarget(string recivedQuery)
             {
@@ -157,6 +195,7 @@ namespace PipesProvider.Networking
         #endregion
 
 
+        #region Fields & properties
         /// <summary>
         /// List that contain routing instructions.
         /// </summary>
@@ -166,7 +205,42 @@ namespace PipesProvider.Networking
         /// Path from was loaded tis table.
         /// </summary>
         public string SourcePath { get; set; }
+        #endregion
 
+
+        #region API
+        /// <summary>
+        /// Trying to find target routing instruction.
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="instruction"></param>
+        /// <returns></returns>
+        public bool TryGetRoutingInstruction(string query, out RoutingInstruction instruction)
+        {
+            // Allocate memory.
+            bool ckeckResult;
+            foreach(RoutingInstruction instBufer in intructions)
+            {
+                // Check if the target.
+                ckeckResult = instBufer.IsRoutingTarget(query);
+
+                // if target.
+                if(ckeckResult)
+                {
+                    // Send to output.
+                    instruction = instBufer;
+                    return true;
+                }
+            }
+
+            // Inform about fail.
+            instruction = RoutingInstruction.Empty;
+            return false;
+        }
+        #endregion
+
+
+        #region Serialization
         /// <summary>
         /// Trying to load all routing tables from durectory.
         /// You could have several XML serialized routing tables. This way allow to share it via plugins.
@@ -248,7 +322,10 @@ namespace PipesProvider.Networking
                 Console.WriteLine("ROUTING TABLE ERROR: Not serialized. Reason:\n{0}", ex.Message);
             }
         }
+        #endregion
 
+
+        #region Operators
         /// <summary>
         /// Adding instruction from second table to first one.
         /// </summary>
@@ -280,5 +357,6 @@ namespace PipesProvider.Networking
 
             return table0;
         }
+        #endregion
     }
 }

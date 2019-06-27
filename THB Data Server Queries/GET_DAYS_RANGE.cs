@@ -51,7 +51,7 @@ namespace THB_Data_Server_Queries
             // Comare q and sq with target.
             bool comparison =
                 query.ParamNameEqual("GET") &&
-                query.ParamNameEqual("DAYSRANGE");
+                subQuery.ParamNameEqual("DAYSRANGE");
 
             // Return result of compression.
             return comparison;

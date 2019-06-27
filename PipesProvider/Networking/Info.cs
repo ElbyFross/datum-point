@@ -90,7 +90,7 @@ namespace PipesProvider.Networking
             }
             catch (SocketException ex)
             {
-                Console.WriteLine("Error pinging host:'" + hostUri + ":" + portNumber.ToString() + "'");
+                Console.WriteLine("Error pinging host:'" + hostUri + ":" + portNumber.ToString() + "' Reasons:\n" + ex.Message);
             }
         }
 
@@ -129,7 +129,6 @@ namespace PipesProvider.Networking
         /// <returns></returns>
         public static string[] DisplayIPAddresses()
         {
-            StringBuilder sb = new StringBuilder();
             // Get a list of all network interfaces (usually one per network card, dialup, and VPN connection)     
             NetworkInterface[] networkInterfaces = NetworkInterface.GetAllNetworkInterfaces();
 
