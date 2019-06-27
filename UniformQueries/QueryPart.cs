@@ -23,12 +23,12 @@ namespace UniformQueries
         /// <summary>
         /// Key for access
         /// </summary>
-        public string key;
+        public string propertyName;
 
         /// <summary>
         /// Property that will be shared via query.
         /// </summary>
-        public string property;
+        public string propertyValue;
 
         /// <summary>
         /// If this struct not initialized.
@@ -37,10 +37,10 @@ namespace UniformQueries
         {
             get
             {
-                if (string.IsNullOrEmpty(key))
+                if (string.IsNullOrEmpty(propertyName))
                     return true;
 
-                if (string.IsNullOrEmpty(property))
+                if (string.IsNullOrEmpty(propertyValue))
                     return true;
 
                 return false;
@@ -59,8 +59,8 @@ namespace UniformQueries
         /// <param name="property">String property that will be available to  find by key.</param>
         public QueryPart(string key, string property)
         {
-            this.key = key;
-            this.property = property;
+            this.propertyName = key;
+            this.propertyValue = property;
         }
 
         /// <summary>
@@ -69,7 +69,7 @@ namespace UniformQueries
         /// <returns></returns>
         public override string ToString()
         {
-            return key + "=" + property;
+            return propertyName + "=" + propertyValue;
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace UniformQueries
         /// <param name="qp"></param>
         public static implicit operator string(QueryPart qp)
         {
-            return qp.key + "=" + qp.property;
+            return qp.propertyName + "=" + qp.propertyValue;
         }
 
         /// <summary>
@@ -104,8 +104,9 @@ namespace UniformQueries
             }
             else
             {
-                Console.WriteLine("QueryPart converting error: Need string format key=property | Requested: {0}", buildedPart);
-                return new QueryPart("error", buildedPart);
+                // Create marker query part that can be used by external parsers like instruction.
+                // Examples: !prop, $prop, etc.
+                return new QueryPart(buildedPart, null);
             }
         }
 
@@ -137,9 +138,9 @@ namespace UniformQueries
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public bool ParamKeyEqual(string key)
+        public bool ParamNameEqual(string key)
         {
-            return this.key.Equals(key, StringComparison.OrdinalIgnoreCase);
+            return this.propertyName.Equals(key, StringComparison.OrdinalIgnoreCase);
         }
 
         /// <summary>
@@ -147,9 +148,9 @@ namespace UniformQueries
         /// </summary>
         /// <param name="param"></param>
         /// <returns></returns>
-        public bool ParamEqual(string param)
+        public bool ParamValueEqual(string param)
         {
-            return this.property.Equals(param, StringComparison.OrdinalIgnoreCase);
+            return this.propertyValue.Equals(param, StringComparison.OrdinalIgnoreCase);
         }       
 
         /// <summary>
@@ -169,7 +170,7 @@ namespace UniformQueries
             if (!API.TryGetParamValue("token", out QueryPart token, queryParts)) return false;
 
             // Build domain.
-            domain = guid.property.GetHashCode() + "_" + token.property.GetHashCode();
+            domain = guid.propertyValue.GetHashCode() + "_" + token.propertyValue.GetHashCode();
 
             return true;
         }

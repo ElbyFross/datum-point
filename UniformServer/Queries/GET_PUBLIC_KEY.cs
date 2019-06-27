@@ -61,11 +61,11 @@ namespace UniformServer.Queries
                 return false;
 
             // Check query.
-            if (!query.ParamEqual("GET"))
+            if (!query.ParamValueEqual("GET"))
                 return false;
 
             // Check sub query.
-            if (!subQuery.ParamEqual("PUBLICKEY"))
+            if (!subQuery.ParamValueEqual("PUBLICKEY"))
                 return false;
 
             return true;

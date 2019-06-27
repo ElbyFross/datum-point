@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ClientAPI.cs" />
     <Compile Include="Networking\Info.cs" />
+    <Compile Include="Networking\RoutingInstruction.cs" />
     <Compile Include="Security\General.cs" />
     <Compile Include="Security\LogonConfig.cs" />
     <Compile Include="Security\LSA.cs" />
@@ -53,6 +54,12 @@
     <Compile Include="QueryContainer.cs" />
     <Compile Include="ServerAPI.cs" />
     <Compile Include="Networking\ServerTransmissionMeta.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UniformQueries\UniformQueries.csproj">
+      <Project>{b68e2d79-1e9b-436e-899c-930bf945b003}</Project>
+      <Name>UniformQueries</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

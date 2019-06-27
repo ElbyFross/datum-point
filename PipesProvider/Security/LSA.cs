@@ -109,7 +109,6 @@ namespace PipesProvider.Security.LSA
         /// </summary>
         /// <param name="sid"></param>
         /// <param name="rights"></param>
-        // https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/user-rights-assignment
         public static void RemoveAccountRights(SecurityIdentifier sid, string rights)
         {
             AccountRightsController(sid, rights, false);
