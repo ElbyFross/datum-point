@@ -162,20 +162,34 @@ namespace PipesProvider.Networking
                         #region Query part processing
                         else
                         {
+                            // Get last chat in name. If it's "!" then this request operation NOT EQUAL.
+                            char nonInstruction = pp.propertyName[pp.propertyName.Length - 1];
+                            bool notEqualRequested = nonInstruction.Equals('!');
+
                             // Try to get requested value.
                             if (UniformQueries.API.TryGetParamValue(pp.propertyName, out UniformQueries.QueryPart propertyBufer, splitedQuery))
                             {
+
+                                Console.WriteLine(pp.propertyName + "= : " + notEqualRequested + " " + pp.propertyValue);
+
                                 // Check param value.
-                                if (!propertyBufer.ParamValueEqual(pp.propertyValue))
+                                if(notEqualRequested)
                                 {
-                                    // Mark as invalide.
-                                    valid = false;
+                                    valid = !propertyBufer.ParamValueEqual(pp.propertyValue);
+                                }
+                                else
+                                {
+                                    valid = propertyBufer.ParamValueEqual(pp.propertyValue);
                                 }
                             }
                             else
                             {
-                                // Mark as invalide if param not found.
-                                valid = false;
+                                // Only if not requested instruction NON. In this case not exist will equal non.
+                                if (!notEqualRequested)
+                                {
+                                    // Mark as invalide if param not found.
+                                    valid = false;
+                                }
                             }
                         }
                         #endregion

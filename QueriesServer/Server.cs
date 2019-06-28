@@ -109,7 +109,7 @@ namespace QueriesServer
             // Initialize Queue monitor.
             try
             {
-                var _qp_loader = UniformQueries.API.QueryProcessors;
+                _ = UniformQueries.API.QueryProcessors;
             }
             catch (Exception ex)
             {
@@ -142,10 +142,48 @@ namespace QueriesServer
                 Console.WriteLine();
             }
             #endregion
+            
+            /// Show help.
+            UniformServer.Commands.BaseCommands("help");
 
+            #region Main loop
+            // Main loop that will provide server services until application close.
+            while (!appTerminated)
+            {
+                // Check input
+                if (Console.KeyAvailable)
+                {
+                    // Log responce.
+                    Console.Write("\nEnter command: ");
+                    
+                    // Read command.
+                    string command = Console.ReadLine();
+                 
+                    // Processing of entered command.
+                    UniformServer.Commands.BaseCommands(command);
+                }
+                Thread.Sleep(threadSleepTime);
+            }
+            #endregion
 
-            Console.WriteLine("Press any key...");
+            #region Finalize
+            Console.WriteLine();
+
+            // Stop started servers.
+            ServerAPI.StopAllServers();
+
+            // Aborting threads.
+            foreach (Server st in longTermServerThreads)
+            {
+                st.thread.Abort();
+                Console.WriteLine("THREAD ABORTED: {0}", st.thread.Name);
+            }
+            Console.WriteLine();
+
+            // Whait until close.
+            Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
+            #endregion
         }
 
         /// <summary>

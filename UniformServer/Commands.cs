@@ -18,15 +18,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace THB_Data_Server
+namespace UniformServer
 {
-    public static class Commands
+    public static partial class Commands
     {
         /// <summary>
-        /// React to the command.
+        /// React to the base commands that can be applied to every server.
         /// </summary>
         /// <param name="command"></param>
-        public static bool CommandResponseProcessor(string command)
+        public static bool BaseCommands(string command)
         {
             // Skip if command is empty.
             if (string.IsNullOrEmpty(command))
@@ -57,7 +57,7 @@ namespace THB_Data_Server
 
                 // Close application.
                 case "stop":
-                    Server.appTerminated = true;
+                    BaseServer.appTerminated = true;
                     break;
 
                 case "qhelp":
@@ -84,7 +84,7 @@ namespace THB_Data_Server
                     {
                         if (Int32.TryParse(commandParts[1], out requestedThreads))
                         {
-                            Server.ThreadsCount = requestedThreads;
+                            BaseServer.ThreadsCount = requestedThreads;
                         }
                         else
                         {
@@ -94,7 +94,7 @@ namespace THB_Data_Server
                     else
                     {
                         Console.WriteLine("ACTUAL COUNT OF THREADS: {0}/{1}",
-                            Server.ThreadsCount, Environment.ProcessorCount);
+                            BaseServer.ThreadsCount, Environment.ProcessorCount);
                     }
                     break;
 

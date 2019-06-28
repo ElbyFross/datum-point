@@ -78,7 +78,7 @@ namespace UniformQueries
         /// <param name="qp"></param>
         public static implicit operator string(QueryPart qp)
         {
-            return qp.propertyName + "=" + qp.propertyValue;
+            return qp.ToString();
         }
 
         /// <summary>

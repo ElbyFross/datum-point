@@ -258,7 +258,8 @@ namespace UniformServer
             // Try to compute bacward domaint to contact with client.
             if (!UniformQueries.QueryPart.TryGetBackwardDomain(entryQueryParts, out string domain))
             {
-                Console.WriteLine("Unable to buid backward domain. QUERY: {0}", UniformQueries.QueryPart.QueryPartsArrayToString(entryQueryParts));
+                Console.WriteLine("ERROR (BSSA0): Unable to buid backward domain. QUERY: {0}", 
+                    UniformQueries.QueryPart.QueryPartsArrayToString(entryQueryParts));
                 return false;
             }
 
