@@ -155,18 +155,20 @@ namespace PipesProvider.Client
         /// Enqueue query to order. Query will be posted to server as soon as will possible.
         /// </summary>
         /// <param name="query"></param>
-        public void EnqueueQuery(string query)
+        public TransmissionLine EnqueueQuery(string query)
         {
             queries.Enqueue(new QueryContainer(query, null));
+            return this;
         }
 
         /// <summary>
         /// Enqueue query to order. Query will be posted to server as soon as will possible.
         /// </summary>
         /// <param name="query"></param>
-        public void EnqueueQuery(QueryContainer query)
+        public TransmissionLine EnqueueQuery(QueryContainer query)
         {
             queries.Enqueue(query);
+            return this;
         }
 
         /// <summary>
@@ -222,6 +224,13 @@ namespace PipesProvider.Client
         }
 
         /// <summary>
+        /// Return true if queue contain queries.
+        /// </summary>
+        public bool HasQueries
+        { get {  return queries.Count > 0; } }
+        
+
+        /// <summary>
         /// Mark line as closed. Thread will be terminated on the next client tick.
         /// </summary>
         public void Close()
@@ -245,11 +254,60 @@ namespace PipesProvider.Client
             Processing = false;
         }
 
+
         /// <summary>
-        /// Return true if queue contain queries.
+        /// Trying to logon using provided information.
+        /// In case failed - close line.
         /// </summary>
-        public bool HasQueries
-        { get {  return queries.Count > 0; } }
+        /// <param name="logonMeta"></param>
+        /// <returns>Result of logon.</returns>
+        public bool TryLogonAs(Security.LogonConfig logonMeta)
+        {
+            // Try to logon using provided config.
+            bool logonResult = Security.General.TryLogon(logonMeta, out SafeAccessTokenHandle safeTokenHandle);
+            if (!logonResult)
+            {
+                // Log about error.
+                Console.WriteLine("Logon failed. Connection not possible.");
+
+                // Close line.
+                Close();
+
+                // inform about fail.
+                return false;
+            }
+            else
+            {
+                // Save token as actual.
+                AccessToken = safeTokenHandle;
+
+                // inform about success.
+                return true;
+            }
+        }
+
+        /// <summary>
+        /// Logon using provided information.
+        /// </summary>
+        /// <param name="logonMeta"></param>
+        /// <returns></returns>
+        public TransmissionLine LogonAs(Security.LogonConfig logonMeta)
+        {
+            // Try to logon using provided config.
+            bool logonResult = Security.General.TryLogon(logonMeta, out SafeAccessTokenHandle safeTokenHandle);
+            if (!logonResult)
+            {
+                // Log about error.
+                Console.WriteLine("Logon failed. Connection not possible.");
+            }
+            else
+            {
+                // Save token as actual.
+                AccessToken = safeTokenHandle;
+            }
+
+            return this;
+        }
         #endregion
 
         /// <summary>

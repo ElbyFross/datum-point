@@ -267,15 +267,28 @@ namespace UniformQueries
             return query;
         }
 
+
         /// <summary>
         /// Convert query's string to array of query parts.
+        /// User SPLITTING_SYMBOL as spliter for detect query parts.
         /// </summary>
         /// <param name="query"></param>
         /// <returns></returns>
         public static QueryPart[] DetectQueryParts(string query)
         {
+            return DetectQueryParts(query, SPLITTING_SYMBOL);
+        }
+
+        /// <summary>
+        /// Convert query's string to array of query parts.
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="spliter">Char that will be used as query part spliter.</param>
+        /// <returns></returns>
+        public static QueryPart[] DetectQueryParts(string query, char spliter)
+        {
             // Get query parts in string format.
-            string[] splitedQuery = query.Split(SPLITTING_SYMBOL);
+            string[] splitedQuery = query.Split(spliter);
 
             // Init list.
             QueryPart[] parts = new QueryPart[splitedQuery.Length];

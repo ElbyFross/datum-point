@@ -546,16 +546,17 @@ namespace UniformClient
             #endregion
 
             #region Addind answer handler to backward table.
+            string hashKey = line.ServerName + "\\" + domain;
             // Try to load registred callback to overriding.
-            if (DuplexBackwardCallbacks[domain] is
+            if (DuplexBackwardCallbacks[hashKey] is
                 System.Action<TransmissionLine, object> registredCallback)
             {
-                DuplexBackwardCallbacks[domain] = answerHandler;
+                DuplexBackwardCallbacks[hashKey] = answerHandler;
             }
             else
             {
                 // Add colback to table as new.
-                DuplexBackwardCallbacks.Add(line.ServerName + "\\" + domain, answerHandler);
+                DuplexBackwardCallbacks.Add(hashKey, answerHandler);
             }
             #endregion
 
@@ -588,7 +589,7 @@ namespace UniformClient
         {
             // Add our query to line processor queue.
             line.EnqueueQuery(query);
-
+            
             // Open backward chanel to recive answer from server.
             ReciveAnswer(line, query, answerHandler);
         }

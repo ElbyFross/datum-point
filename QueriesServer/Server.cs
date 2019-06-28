@@ -35,9 +35,9 @@ namespace QueriesServer
     class Server : UniformServer.BaseServer
     {
         /// <summary>
-        /// Thable that contain instruction that allow to determine the server which is a target for recived query.
+        /// Table that contain instruction that allow to determine the server which is a target for recived query.
         /// </summary>
-        public static RoutingTable RoutingTable { get; set; }
+        public static RoutingTable routingTable = null;
 
         static void Main(string[] args)
         {
@@ -78,28 +78,28 @@ namespace QueriesServer
 
             #region Load routing tables
             // Load routing tables
-            RoutingTable = null;
+            routingTable = null;
             // From system folders.
-            RoutingTable += RoutingTable.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\");
+            routingTable += RoutingTable.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\");
             // From plugins.
-            RoutingTable += RoutingTable.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "plugins\\");
+            routingTable += RoutingTable.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "plugins\\");
 
             // If routing table not found.
-            if(RoutingTable.intructions.Count == 0)
+            if(routingTable.intructions.Count == 0)
             {
                 // Log error.
                 Console.WriteLine("ROUTING TABLE NOT FOUND: Create default table by directory \\resources\\routing\\ROUTING.xml");
 
                 // Set default intruction.
-                RoutingTable.intructions.Add(RoutingTable.RoutingInstruction.Default);
+                routingTable.intructions.Add(RoutingTable.RoutingInstruction.Default);
 
                 // Save sample routing table to application files.
-                RoutingTable.SaveRoutingTable(RoutingTable, AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\", "ROUTING");
+                RoutingTable.SaveRoutingTable(routingTable, AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\", "ROUTING");
             }
             else
             {
                 // Log error.
-                Console.WriteLine("ROUTING TABLE: Detected {0} instructions.", RoutingTable.intructions.Count);
+                Console.WriteLine("ROUTING TABLE: Detected {0} instructions.", routingTable.intructions.Count);
             }
             #endregion
 
@@ -114,7 +114,7 @@ namespace QueriesServer
             catch (Exception ex)
             {
                 Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en-US");
-                Console.WriteLine("QUERY HANDLER PROCESSORS LOADINT TERMINATED:\n{0}", ex.Message);
+                Console.WriteLine("QUERY HANDLER PROCESSORS LOADING TERMINATED:\n{0}", ex.Message);
             }
             ConsoleDraw.Primitives.DrawSpacedLine();
             Console.WriteLine();
@@ -143,7 +143,7 @@ namespace QueriesServer
             }
             #endregion
 
-            
+
             Console.WriteLine("Press any key...");
             Console.ReadKey();
         }
@@ -180,13 +180,14 @@ namespace QueriesServer
         public static void QueryHandler_Relay(ServerTransmissionController _, string query)
         {
             // Detect routing target.
-            bool relayTargetFound = RoutingTable.TryGetRoutingInstruction(query, out RoutingTable.RoutingInstruction instruction);
+            bool relayTargetFound = routingTable.TryGetRoutingInstruction(query, out RoutingTable.RoutingInstruction instruction);
 
             // If instruction not found.
             if (!relayTargetFound)
             {
                 // DO BACKWARED ERROR INFORMATION.
                 SendAnswer("error=404", UniformQueries.API.DetectQueryParts(query));
+                return;
             }
 
 
@@ -208,8 +209,7 @@ namespace QueriesServer
                     }
 
                     // Try to get answer as byte array.
-                    byte[] answerAsByteArray = answer as byte[];
-                    if(answerAsByteArray != null)
+                    if (answer is byte[] answerAsByteArray)
                     {
                         // TODO Send answer as byte array.
                         throw new NotImplementedException();

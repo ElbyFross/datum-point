@@ -69,7 +69,7 @@ namespace UniformQueries
         /// <returns></returns>
         public override string ToString()
         {
-            return propertyName + "=" + propertyValue;
+            return propertyName + (propertyValue != null ? "=" + propertyValue : "");
         }
 
         /// <summary>

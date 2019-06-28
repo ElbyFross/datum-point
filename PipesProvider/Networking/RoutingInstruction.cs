@@ -86,9 +86,9 @@ namespace PipesProvider.Networking
                     return new PipesProvider.Networking.RoutingTable.RoutingInstruction()
                     {
                         logonConfig = PipesProvider.Security.LogonConfig.Anonymous,
-                        queryPatterns = new string[] { "$q&$guid&$token" },
+                        queryPatterns = new string[] { "$q,$guid,$token" },
                         routingIP = "localhost",
-                        pipeName = "PS_INOUT"
+                        pipeName = "THB_DS_QM_MAIN_INOUT"
                     };
                 }
             }
@@ -122,7 +122,7 @@ namespace PipesProvider.Networking
                     valid = true;
 
                     // Split pattern to instructions.
-                    UniformQueries.QueryPart[] patternParts = UniformQueries.API.DetectQueryParts(pattern);
+                    UniformQueries.QueryPart[] patternParts = UniformQueries.API.DetectQueryParts(pattern, ',');
 
                     // Compare every instruction.
                     foreach (UniformQueries.QueryPart pp in patternParts)
@@ -131,14 +131,14 @@ namespace PipesProvider.Networking
                         #region Instuction processing
                         if (string.IsNullOrEmpty(pp.propertyValue))
                         {
-                            instructionOperator = pp.propertyValue[0];
+                            instructionOperator = pp.propertyName[0];
 
                             switch (instructionOperator)
                             {
                                 // Not contain instruction.
                                 case '!':
                                     // Check parameter existing.
-                                    if (UniformQueries.API.QueryParamExist(pp.propertyValue.Substring(1), splitedQuery))
+                                    if (UniformQueries.API.QueryParamExist(pp.propertyName.Substring(1), splitedQuery))
                                     {
                                         // Mark as invalid if found.
                                         valid = false;
@@ -149,7 +149,7 @@ namespace PipesProvider.Networking
                                 case '$':
                                 default:
                                     // Check parameter existing.
-                                    if (!UniformQueries.API.QueryParamExist(pp.propertyValue.Substring(1), splitedQuery))
+                                    if (!UniformQueries.API.QueryParamExist(pp.propertyName.Substring(1), splitedQuery))
                                     {
                                         // Mark as invalid if not found.
                                         valid = false;

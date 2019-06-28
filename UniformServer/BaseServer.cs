@@ -118,7 +118,7 @@ namespace UniformServer
         /// <summary>
         /// How many milisseconds will sleep thread after tick.
         /// </summary>
-        protected static int threadSleepTime = 150;
+        protected static int threadSleepTime = 15;
 
         /// <summary>
         /// Count of threads.
