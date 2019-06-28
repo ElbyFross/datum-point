@@ -14,36 +14,36 @@
 
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.IO;
 using System.IO.Pipes;
-using System.Security.AccessControl;
-using System.Security.Principal;
+using UniformQueries;
+using UQAPI = UniformQueries.API;
 
-namespace PipesProvider
+namespace PipesProvider.Server
 {
     /// <summary>
     /// Class that provide common methods for easy work with pipes' tasks.
     /// </summary>
-    public static partial class API
+    public static class ServerAPI
     {
         #region Events
         /// <summary>
         /// Event that will be called when server transmission will be registred or updated.
         /// </summary>
-        public static event System.Action<ServerTransmissionMeta> ServerTransmissionMeta_InProcessing;
+        public static event System.Action<ServerTransmissionController> ServerTransmissionMeta_InProcessing;
         #endregion
 
+        #region Fields
         /// <summary>
         /// Hashtable thast contain references to oppened pipes.
         /// Key (string) pipe_name;
         /// Value (ServerTransmissionMeta) meta data about transmition.
         /// </summary>
         private static readonly Hashtable openedServers = new Hashtable();
+        #endregion
+
 
         #region Client-Server loops
         /// <summary>
@@ -52,7 +52,7 @@ namespace PipesProvider
         /// <param name="queryHandlerCallback">Callback that will be called when server will recive query from clinet.</param>
         /// <param name="pipeName">Name of pipe that will created. Client will access this server using that name.</param>
         public static void ClientToServerLoop(
-            System.Action<ServerTransmissionMeta, string> queryHandlerCallback,
+            System.Action<ServerTransmissionController, string> queryHandlerCallback,
             string pipeName, 
             out string guid,
             Security.SecurityLevel securityLevel)
@@ -63,7 +63,7 @@ namespace PipesProvider
             // Start loop.
             ServerLoop(
                 guid,
-                DNSHandler_ClientToSerever_Async,
+                Handlers.DNS.ClientToSereverAsync,
                 queryHandlerCallback,
                 pipeName,
                 PipeDirection.InOut,
@@ -82,13 +82,13 @@ namespace PipesProvider
         /// <param name="pipeName"></param>
         public static void ClientToServerLoop(
             string guid,
-            System.Action<ServerTransmissionMeta, string> queryHandlerCallback,
+            System.Action<ServerTransmissionController, string> queryHandlerCallback,
             string pipeName,
             Security.SecurityLevel securityLevel)
         {
             ServerLoop(
                 guid,
-                DNSHandler_ClientToSerever_Async,
+                Handlers.DNS.ClientToSereverAsync,
                 queryHandlerCallback,
                 pipeName,
                 PipeDirection.InOut,
@@ -108,14 +108,14 @@ namespace PipesProvider
         /// <param name="pipeName"></param>
         public static void ClientToServerLoop(
             string guid,
-            System.Action<ServerTransmissionMeta, string> queryHandlerCallback,
+            System.Action<ServerTransmissionController, string> queryHandlerCallback,
             string pipeName,
             int allowedServerInstances,
             Security.SecurityLevel securityLevel)
         {
             ServerLoop(
                 guid,
-                DNSHandler_ClientToSerever_Async,
+                Handlers.DNS.ClientToSereverAsync,
                 queryHandlerCallback,
                 pipeName,
                 PipeDirection.InOut,
@@ -137,7 +137,7 @@ namespace PipesProvider
         /// <param name="pipeOptions"></param>
         public static void ClientToServerLoop(
             string guid,
-            System.Action<ServerTransmissionMeta, string> queryHandlerCallback,
+            System.Action<ServerTransmissionController, string> queryHandlerCallback,
             string pipeName,
             PipeDirection pipeDirection,
             int allowedServerInstances,
@@ -147,7 +147,7 @@ namespace PipesProvider
         {
             ServerLoop(
                 guid,
-                DNSHandler_ClientToSerever_Async,
+                Handlers.DNS.ClientToSereverAsync,
                 queryHandlerCallback,
                 pipeName,
                 pipeDirection,
@@ -175,7 +175,7 @@ namespace PipesProvider
             // Start loop.
             ServerLoop(
                 guid,
-                DNSHandler_ServerToClient_Async,
+                Handlers.DNS.ServerToClientAsync,
                 null,
                 pipeName,
                 PipeDirection.InOut,
@@ -198,7 +198,7 @@ namespace PipesProvider
             // Start loop.
             ServerLoop(
                 guid,
-                DNSHandler_ServerToClient_Async,
+                Handlers.DNS.ServerToClientAsync,
                 null,
                 pipeName,
                 PipeDirection.InOut,
@@ -225,8 +225,8 @@ namespace PipesProvider
         /// <param name="pipeOptions">Configuration of the pipe.</param>
         public static void ServerLoop(
             string guid,
-            System.Action<ServerTransmissionMeta> connectionCallback,
-            System.Action<ServerTransmissionMeta, string> queryHandlerCallback,
+            System.Action<ServerTransmissionController> connectionCallback,
+            System.Action<ServerTransmissionController, string> queryHandlerCallback,
             string pipeName,
             PipeDirection pipeDirection,
             int allowedServerInstances,
@@ -255,19 +255,19 @@ namespace PipesProvider
 
             #region Meta data
             // Meta data about curent transmition.
-            ServerTransmissionMeta meta = ServerTransmissionMeta.None;
+            ServerTransmissionController meta = ServerTransmissionController.None;
             IAsyncResult connectionMarker = null;
 
             // Registration or update meta data of oppened transmission.
             if (openedServers.ContainsKey(guid))
             {
                 // Load previous meta.
-                meta = (ServerTransmissionMeta)openedServers[guid];
+                meta = (ServerTransmissionController)openedServers[guid];
             }
             else
             {
                 // Create new meta.
-                meta = new ServerTransmissionMeta(null, connectionCallback, queryHandlerCallback, pipeServer, pipeName);
+                meta = new ServerTransmissionController(null, connectionCallback, queryHandlerCallback, pipeServer, pipeName);
                 openedServers.Add(guid, meta);
             }
 
@@ -293,7 +293,7 @@ namespace PipesProvider
                     {
                         // Start async waiting of connection.
                         connectionMarker = pipeServer.BeginWaitForConnection(
-                            ConnectionEstablishedCallbackRetranslator, meta);
+                            Handlers.Service.ConnectionEstablishedCallbackRetranslator, meta);
                         /// Update data.
                         meta.connectionMarker = connectionMarker;
 
@@ -340,64 +340,6 @@ namespace PipesProvider
 
         #region Controls
         /// <summary>
-        /// Callback that will react on connection esstablishing.
-        /// Will close waiting async operation and call shared delegate with server loop's code.
-        /// </summary>
-        /// <param name="result"></param>
-        private static async void ConnectionEstablishedCallbackRetranslator(IAsyncResult result)
-        {
-            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");
-            // Load transmission meta data.
-            ServerTransmissionMeta meta = (ServerTransmissionMeta)result.AsyncState;
-            
-            // Stop connection waiting.
-            try
-            {
-                // Close connection if not conplited.
-                //if (!meta.connectionMarker.IsCompleted)
-                {
-                    meta.pipe.EndWaitForConnection(meta.connectionMarker);
-                }
-            }
-            catch (Exception ex)
-            {
-                // Log if error caused not just by closed pipe.
-                if (!(ex is ObjectDisposedException))
-                {
-                    Console.WriteLine("CONNECTION ERROR (CECR EWFC): {0} ", ex.Message);
-                }
-                // Connection failed. Drop.
-                return;
-            }
-
-            try
-            {
-                if(!meta.pipe.IsConnected)
-                    await meta.pipe.WaitForConnectionAsync();
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine("CONNECTION ERROR (CECR EWFC 2): {0} {1}", meta.name, ex.Message);
-            }
-
-            //Console.WriteLine("\nAsync compleated:{0} {1}\nPipe connected:{2}\n", result.IsCompleted, result.CompletedSynchronously, meta.pipe.IsConnected);
-
-            // Log about success.
-            if (meta.pipe.IsConnected)
-            {
-                Console.WriteLine("\n{0}: Client connected.", meta.name);
-            }
-            else
-            {
-                Console.WriteLine("\n{0}: Connection waiting was terminated", meta.name);
-            }
-
-            // Call handler.
-            //Console.WriteLine("Connected: {0}\tCallback valid: {1}", meta.pipe.IsConnected, meta.connectionCallback != null);
-            if (meta.pipe.IsConnected)  meta.connectionCallback?.Invoke(meta);
-        }
-
-        /// <summary>
         /// Marking pipe as expired. 
         /// On the next loop tick connections will be disconnect and pipe will close.
         /// </summary>
@@ -408,7 +350,7 @@ namespace PipesProvider
             if (openedServers.ContainsKey(pipeName))
             {
                 // Load meta data.
-                ServerTransmissionMeta meta = (ServerTransmissionMeta)openedServers[pipeName];
+                ServerTransmissionController meta = (ServerTransmissionController)openedServers[pipeName];
 
                 // Mark it as expired.
                 meta.SetExpired();
@@ -420,7 +362,7 @@ namespace PipesProvider
         /// On the next loop tick connections will be disconnect and pipe will close.
         /// </summary>
         /// <param name="pipeName"></param>
-        public static void SetExpired(ServerTransmissionMeta meta)
+        public static void SetExpired(ServerTransmissionController meta)
         {
             // Mark it as expired.
             meta.SetExpired();
@@ -432,7 +374,7 @@ namespace PipesProvider
         /// </summary>
         public static void SetExpiredAll()
         {
-            foreach(ServerTransmissionMeta meta in openedServers.Values)
+            foreach(ServerTransmissionController meta in openedServers.Values)
             {
                 meta.SetExpired();
             }
@@ -448,7 +390,7 @@ namespace PipesProvider
             if (openedServers.ContainsKey(pipeName))
             {
                 // Load meta data.
-                ServerTransmissionMeta meta = (ServerTransmissionMeta)openedServers[pipeName];
+                ServerTransmissionController meta = (ServerTransmissionController)openedServers[pipeName];
 
                 // Stop server relative to meta data.
                 StopServer(meta);
@@ -462,7 +404,7 @@ namespace PipesProvider
         /// Stop server by relative meta data.
         /// </summary>
         /// <param name="meta"></param>
-        public static void StopServer(ServerTransmissionMeta meta)
+        public static void StopServer(ServerTransmissionController meta)
         {
             // If transmission has been opening.
             if (meta != null)
@@ -501,7 +443,7 @@ namespace PipesProvider
             Console.WriteLine("TRANSMISSIONS TO CLOSE: {0}", openedServers.Count);
 
             // Stop every registred server.
-            foreach (ServerTransmissionMeta meta in openedServers.Values)
+            foreach (ServerTransmissionController meta in openedServers.Values)
             {
                 // Log about target to close.
                 //Console.WriteLine("STOPING SERVER: {0}", meta.name);
@@ -526,129 +468,10 @@ namespace PipesProvider
         /// <param name="guid"></param>
         /// <param name="meta"></param>
         /// <returns></returns>
-        public static bool TryGetServerTransmissionMeta(string guid, out ServerTransmissionMeta meta)
+        public static bool TryGetServerTransmissionMeta(string guid, out ServerTransmissionController meta)
         {
-            meta = openedServers[guid] as ServerTransmissionMeta;
+            meta = openedServers[guid] as ServerTransmissionController;
             return meta != null;
         }
-        
-
-        #region Handlers
-        /// <summary>
-        /// Code that will work on server loop when connection will be established.
-        /// Recoomended to using as default DNS Handler for queries reciving.
-        /// </summary>
-        public static async void DNSHandler_ClientToSerever_Async(PipesProvider.ServerTransmissionMeta meta)
-        {
-            // Open stream reader.
-            StreamReader sr = new StreamReader(meta.pipe);
-            string queryBufer;
-            DateTime sessionTime = DateTime.Now.AddSeconds(5000);
-
-            // Read until trasmition exits not finished.
-            while (meta.pipe.IsConnected)
-            {
-                queryBufer = null;
-                // Read line from stream.
-                while (queryBufer == null)
-                {
-                    // Avoid an error caused to disconection of client.
-                    try
-                    {
-                        queryBufer = await sr.ReadLineAsync();
-                    }
-                    // Catch the Exception that is raised if the pipe is broken or disconnected.
-                    catch (Exception e)
-                    {
-                        Console.WriteLine("DNS HANDLER ERROR: {0}", e.Message);
-                        return;
-                    }
-
-                    if (DateTime.Compare(sessionTime, DateTime.Now) < 0)
-                    {
-                        Console.WriteLine("Connection terminated cause allowed time has expired.");
-                        /// Avoid disconnectin error.
-                        try
-                        {
-                            meta.pipe.Disconnect();
-                        }
-                        catch { throw; }
-
-                        return;
-                    }
-                }
-
-                // Disconnect user if query recived.
-                if (meta.pipe.IsConnected)
-                {
-                    meta.pipe.Disconnect();
-                }
-
-                // Remove temporal data.
-                meta.pipe.Dispose();
-
-                // Drop if stream is over.
-                if (queryBufer == null)
-                {
-                    //Console.WriteLine("NULL REQUEST AVOIDED. CONNECTION TERMINATED.");
-                    break;
-                }
-
-                // Log query.
-                Console.WriteLine("RECIVED QUERY: {0}", queryBufer);
-
-                // Redirect handler.
-                meta.queryHandlerCallback?.Invoke(meta, queryBufer);
-            }
-
-            // Log about transmission finish.
-            Console.WriteLine("TRANSMISSION FINISHED AT {0}", DateTime.Now.ToString("HH:mm:ss.fff"));
-        }
-
-        /// <summary>
-        /// Code that will work on server loop when connection will be established.
-        /// Recoomended to using as default DNS Handler for message sending.
-        /// </summary>
-        public static async void DNSHandler_ServerToClient_Async(PipesProvider.ServerTransmissionMeta meta)
-        {
-            // Open stream reader.
-            StreamWriter sw = new StreamWriter(meta.pipe);
-            //StreamWriter sw = new StreamWriter(meta.pipe, Encoding.UTF8, 128, true);
-
-            // Buferise query before calling of async operations.
-            string sharedQuery = meta.ProcessingQuery;
-
-            // Read until trasmition exits not finished.
-            // Avoid an error caused to disconection of client.
-            try
-            {
-                // Write message to stream.
-                Console.WriteLine("{0}: Start transmission to client.", meta.name);
-                await sw.WriteAsync(sharedQuery);
-                await sw.FlushAsync();
-            }
-            // Catch the Exception that is raised if the pipe is broken or disconnected.
-            catch (Exception e)
-            {
-                Console.WriteLine("DNS HANDLER ERROR (StC0): {0}", e.Message);
-                return;
-            }
-
-            // Disconnect user if query recived.
-            if (meta.pipe.IsConnected)
-            {
-                meta.pipe.Disconnect();
-            }
-
-            // Remove temporal data.
-            meta.pipe.Dispose();
-
-            // Stop this transmission line.
-            meta.SetStoped();
-
-            // Log about transmission finish.
-            Console.WriteLine("TRANSMISSION FINISHED AT {0}", DateTime.Now.ToString("HH:mm:ss.fff"));
-        }
-        #endregion
     }
 }

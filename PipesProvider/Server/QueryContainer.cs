@@ -19,10 +19,10 @@ using System.Text;
 using System.Threading.Tasks;
 using PipesProvider.Networking;
 
-namespace PipesProvider
+namespace PipesProvider.Client
 {
     /// <summary>
-    /// Privide unvormation about query.
+    /// Privide invormation about query.
     /// </summary>
     public struct QueryContainer
     {

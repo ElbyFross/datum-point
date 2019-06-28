@@ -192,7 +192,7 @@ namespace PipesProvider.Security
                             cmd.StandardInput.WriteLine("net user {0} /active:yes", envVar["Name"].ToString());
 
                             // Log result.
-                            Console.WriteLine("\"{0}\" user activated to allow anonymous access to this machine.", 
+                            Console.WriteLine("LSA: \"{0}\" user activated to allow anonymous access to this machine.", 
                                 envVar["Name"]);
                             break;
                         }

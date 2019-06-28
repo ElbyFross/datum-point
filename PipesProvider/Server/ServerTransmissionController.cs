@@ -15,12 +15,12 @@
 using System;
 using System.IO.Pipes;
 
-namespace PipesProvider
+namespace PipesProvider.Server
 {
     /// <summary>
     /// Container that contain meta data about server instance.
     /// </summary>
-    public class ServerTransmissionMeta
+    public class ServerTransmissionController
     {
         /// <summary>
         /// Object that provide access to async connection.
@@ -31,14 +31,14 @@ namespace PipesProvider
         /// Delegate that will be called when connection will be established.
         /// ServerTransmissionMeta - meta data of transmission.
         /// </summary>
-        public System.Action<ServerTransmissionMeta> connectionCallback;
+        public System.Action<ServerTransmissionController> connectionCallback;
 
         /// <summary>
         /// Delegate that will be called when server will recive query.
         /// ServerTransmissionMeta - meta data of transmission.
         /// string - shared query.
         /// </summary>
-        public System.Action<ServerTransmissionMeta, string> queryHandlerCallback;
+        public System.Action<ServerTransmissionController, string> queryHandlerCallback;
 
         /// <summary>
         /// Reference to created pipe.
@@ -70,12 +70,12 @@ namespace PipesProvider
         public string ProcessingQuery { get; set; }
 
         #region Constructors
-        public ServerTransmissionMeta() { }
+        public ServerTransmissionController() { }
 
-        public ServerTransmissionMeta(
+        public ServerTransmissionController(
             IAsyncResult connectionMarker, 
-            System.Action<ServerTransmissionMeta> connectionCallback,
-            System.Action<ServerTransmissionMeta, string> queryHandlerCallback,
+            System.Action<ServerTransmissionController> connectionCallback,
+            System.Action<ServerTransmissionController, string> queryHandlerCallback,
             NamedPipeServerStream pipe, string pipeName)
         {
             this.connectionMarker = connectionMarker;
@@ -90,9 +90,9 @@ namespace PipesProvider
         /// <summary>
         /// Return instance that not contain initialized fields.
         /// </summary>
-        public static ServerTransmissionMeta None
+        public static ServerTransmissionController None
         {
-            get { return new ServerTransmissionMeta(); }
+            get { return new ServerTransmissionController(); }
         }
         #endregion
 

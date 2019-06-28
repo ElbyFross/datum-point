@@ -40,11 +40,8 @@ namespace UniformServer.Queries
 
         public void Execute(QueryPart[] queryParts)
         {
-            // Look for token.
-            API.TryGetParamValue("token", out QueryPart token, queryParts);
-
             // Create public key as answer.
-            string answer = SecurityAPI.PublicKeyXML;
+            string answer = PipesProvider.Security.Crypto.PublicKeyXML;
 
             // Open answer chanel on server and send message.
             BaseServer.SendAnswer(answer, queryParts);
@@ -61,11 +58,11 @@ namespace UniformServer.Queries
                 return false;
 
             // Check query.
-            if (!query.ParamEqual("GET"))
+            if (!query.ParamValueEqual("GET"))
                 return false;
 
             // Check sub query.
-            if (!subQuery.ParamEqual("PUBLICKEY"))
+            if (!subQuery.ParamValueEqual("PUBLICKEY"))
                 return false;
 
             return true;

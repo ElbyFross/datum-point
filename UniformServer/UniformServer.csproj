@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\ConsoleDraw\ConsoleDraw.csproj" />
     <ProjectReference Include="..\PipesProvider\PipesProvider.csproj" />
+    <ProjectReference Include="..\UniformClient\UniformClient.csproj" />
     <ProjectReference Include="..\UniformQueries\UniformQueries.csproj" />
   </ItemGroup>
 

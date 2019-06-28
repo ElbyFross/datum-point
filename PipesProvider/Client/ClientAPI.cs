@@ -25,12 +25,12 @@ using System.Security.AccessControl;
 using System.Security.Principal;
 using PipesProvider.Networking;
 
-namespace PipesProvider
+namespace PipesProvider.Client
 {
     /// <summary>
     /// Class that provide common methods for easy work with pipes' tasks.
     /// </summary>
-    public static partial class API
+    public static class ClientAPI
     {
         /// <summary>
         /// Hashtable thast contain references to oppened pipes.

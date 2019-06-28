@@ -19,6 +19,7 @@ using System.Threading;
 using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
+using PipesProvider.Server;
 
 namespace UniformServer
 {
@@ -117,7 +118,7 @@ namespace UniformServer
         /// <summary>
         /// How many milisseconds will sleep thread after tick.
         /// </summary>
-        protected static int threadSleepTime = 150;
+        protected static int threadSleepTime = 15;
 
         /// <summary>
         /// Count of threads.
@@ -161,6 +162,7 @@ namespace UniformServer
         /// </summary>
         public PipesProvider.Security.SecurityLevel securityLevel = PipesProvider.Security.SecurityLevel.Anonymous;
 
+        #region Application configuration
         /// <summary>
         /// Loading assemblies from requested path.
         /// </summary>
@@ -232,6 +234,7 @@ namespace UniformServer
                 }
             }
         }
+        #endregion
 
         #region Transmission API
         /// <summary>
@@ -263,14 +266,14 @@ namespace UniformServer
             server.pipeName = domain;
 
             // Create delegate that will set our answer message to processing whentransmission meta will available.
-            Action<PipesProvider.ServerTransmissionMeta> initationCallback = null;
-            initationCallback = delegate (PipesProvider.ServerTransmissionMeta tm)
+            Action<PipesProvider.Server.ServerTransmissionController> initationCallback = null;
+            initationCallback = delegate (PipesProvider.Server.ServerTransmissionController tm)
             {
                 // Target callback.
                 if (tm.name == server.pipeName)
                 {
                     // Unsubscribe.
-                    PipesProvider.API.ServerTransmissionMeta_InProcessing -= initationCallback;
+                    ServerAPI.ServerTransmissionMeta_InProcessing -= initationCallback;
 
                     // Set answer query as target for processing,
                     tm.ProcessingQuery = answer;
@@ -280,7 +283,7 @@ namespace UniformServer
                 }
             };            
             // Subscribe or waiting delegate on server loop event.
-            PipesProvider.API.ServerTransmissionMeta_InProcessing += initationCallback;
+            ServerAPI.ServerTransmissionMeta_InProcessing += initationCallback;
 
 
             // Starting server loop.
@@ -334,7 +337,7 @@ namespace UniformServer
 
             #region Server establishing
             // Start server loop.
-            PipesProvider.API.ServerToClientLoop(
+            ServerAPI.ServerToClientLoop(
                 serverName,
                 ((BaseServer)server).pipeName,
                 ((BaseServer)server).securityLevel);
@@ -357,13 +360,13 @@ namespace UniformServer
 
             #region Server establishing
             // Start server loop.
-            PipesProvider.API.ClientToServerLoop(
+            ServerAPI.ClientToServerLoop(
                 serverName,
-                UniformQueries.API.PPReceivedQueryHandlerAsync,
+                PipesProvider.Handlers.Query.ProcessingAsync,
                 ((BaseServer)server).pipeName,
                 ((BaseServer)server).securityLevel);
             #endregion
-        }
+        }        
         #endregion
     }
 }

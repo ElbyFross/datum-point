@@ -79,66 +79,7 @@ namespace UniformQueries
             // Log
             Console.WriteLine("\nRESUME:\nQueriesMonitor established. Session started at {0}\nTotal query processors detected: {1}",
                 DateTime.Now.ToString("HH:mm:ss"), queryProcessors.Count);
-        }
-        
-        /// <summary>
-        /// Handler that can be connected as callback to default PipesProvides DNS Handler.
-        /// Will validate and decompose querie on parts and send it to target QueryProcessor.
-        /// </summary>
-        /// <param name="meta"></param>
-        /// <param name="query"></param>
-        public static async void PPReceivedQueryHandlerAsync(PipesProvider.ServerTransmissionMeta _, string query)
-        {
-            // Detect query parts.
-            QueryPart[] queryParts = API.DetectQueryParts(query);
-            QueryPart token = QueryPart.None;
-
-            // Check query format.
-            bool queryFormatIsValid =
-                QueryParamExist("q", queryParts)     &&
-                QueryParamExist("guid", queryParts)  &&
-                TryGetParamValue("token", out token, queryParts);
-
-            // Ignore if requiest not valid.
-            if (!queryFormatIsValid)
-            {
-                Console.WriteLine("INVALID QUERY. LOSED ONE OR MORE PARTS BY SCHEME:{0}\nExample:{1}",
-                    "guid=GUID" + SPLITTING_SYMBOL + "token=TOKEN" + SPLITTING_SYMBOL + "q=QUERY",
-                    "guid=sharedGUID" + SPLITTING_SYMBOL + "token=clientToken" + SPLITTING_SYMBOL +
-                    "q=GET" + SPLITTING_SYMBOL + "sq=DAYSRANGE" + SPLITTING_SYMBOL + 
-                    "f=07.11.2019" + SPLITTING_SYMBOL + "t=08.11.2019");
-                return;
-            }
-
-            // Try to detect target query processor.
-            bool processorFound = false;
-            foreach (UniformQueries.IQueryHandlerProcessor processor in UniformQueries.API.QueryProcessors)
-            {
-                // Check header
-                if (processor.IsTarget(queryParts))
-                {
-                    // Log.
-                    Console.WriteLine("Start execution: [{0}]\n for token: [{1}]",
-                        query, token.IsNone ? "token not found" : token.property);
-
-                    // Execute query as async.
-                    await Task.Run(() => processor.Execute(queryParts));
-
-                    // Mark detection as succeed.
-                    processorFound = true;
-
-                    // Leave search.
-                    break;
-                }
-            }
-
-            // If not found.
-            if (!processorFound)
-            {
-                Console.WriteLine("POST ERROR: Token: {1} | Handler for query \"{0}\" not implemented.", query, token);
-            }
-        }
-
+        }        
 
         /// <summary>
         /// Check existing of param in query parts.
@@ -182,7 +123,7 @@ namespace UniformQueries
             foreach (QueryPart part in queryParts)
             {
                 // If target param
-                if (part.ParamKeyEqual(param))
+                if (part.ParamNameEqual(param))
                     return true;
             }
             return false;
@@ -241,7 +182,7 @@ namespace UniformQueries
             foreach (QueryPart part in queryParts)
             {
                 // If target param
-                if (part.ParamKeyEqual(param))
+                if (part.ParamNameEqual(param))
                 {
                     // Get value.
                     value = part;
@@ -293,7 +234,7 @@ namespace UniformQueries
             foreach (QueryPart part in queryParts)
             {
                 // If target param
-                if (part.ParamKeyEqual(param))
+                if (part.ParamNameEqual(param))
                 {
                     // Get value.
                     value.Add(part);
@@ -326,15 +267,28 @@ namespace UniformQueries
             return query;
         }
 
+
         /// <summary>
         /// Convert query's string to array of query parts.
+        /// User SPLITTING_SYMBOL as spliter for detect query parts.
         /// </summary>
         /// <param name="query"></param>
         /// <returns></returns>
         public static QueryPart[] DetectQueryParts(string query)
         {
+            return DetectQueryParts(query, SPLITTING_SYMBOL);
+        }
+
+        /// <summary>
+        /// Convert query's string to array of query parts.
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="spliter">Char that will be used as query part spliter.</param>
+        /// <returns></returns>
+        public static QueryPart[] DetectQueryParts(string query, char spliter)
+        {
             // Get query parts in string format.
-            string[] splitedQuery = query.Split(SPLITTING_SYMBOL);
+            string[] splitedQuery = query.Split(spliter);
 
             // Init list.
             QueryPart[] parts = new QueryPart[splitedQuery.Length];

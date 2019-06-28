@@ -23,6 +23,7 @@ namespace PipesProvider.Security
     /// <summary>
     /// Contaier that contain logon data for remote machine.
     /// </summary>
+    [System.Serializable]
     public struct LogonConfig
     {
         /// <summary>
@@ -68,7 +69,12 @@ namespace PipesProvider.Security
         {
             get
             {
-                return new LogonConfig(); 
+                return new LogonConfig()
+                {
+                    domain = System.Environment.MachineName,
+                    userName = "",
+                    password = ""
+                }; 
             }
         }
 

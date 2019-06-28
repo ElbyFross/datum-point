@@ -18,6 +18,7 @@ using System.Reflection;
 using System.Threading;
 using System.IO;
 using System.Diagnostics;
+using PipesProvider.Server;
 
 namespace THB_Data_Server
 {
@@ -139,7 +140,7 @@ namespace THB_Data_Server
             Console.WriteLine();
 
             // Stop started servers.
-            PipesProvider.API.StopAllServers();
+            ServerAPI.StopAllServers();
 
             // Aborting threads.
             foreach (Server st in longTermServerThreads)

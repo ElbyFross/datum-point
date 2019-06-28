@@ -20,6 +20,7 @@ using System.Threading;
 using System.IO;
 using Microsoft.Win32.SafeHandles;
 using PipesProvider.Networking;
+using PipesProvider.Client;
 
 namespace UniformClient
 {
@@ -307,7 +308,7 @@ namespace UniformClient
             string guid = TransmissionLine.GenerateGUID(serverName, pipeName);
 
             // Try to load  trans line by GUID.
-            if (PipesProvider.API.TryGetTransmissionLineByGUID(guid, out TransmissionLine trnsLine))
+            if (ClientAPI.TryGetTransmissionLineByGUID(guid, out TransmissionLine trnsLine))
             {
                 // If not obsolterd transmission line then drop operation.
                 if (!trnsLine.Closed)
@@ -318,7 +319,7 @@ namespace UniformClient
                 else
                 {
                     // Unregister line and recall method.
-                    PipesProvider.API.TryToUnregisterTransmissionLine(guid);
+                    ClientAPI.TryToUnregisterTransmissionLine(guid);
 
                     //Console.WriteLine("OTL {0} | RETRY", guid);
 
@@ -545,16 +546,17 @@ namespace UniformClient
             #endregion
 
             #region Addind answer handler to backward table.
+            string hashKey = line.ServerName + "\\" + domain;
             // Try to load registred callback to overriding.
-            if (DuplexBackwardCallbacks[domain] is
+            if (DuplexBackwardCallbacks[hashKey] is
                 System.Action<TransmissionLine, object> registredCallback)
             {
-                DuplexBackwardCallbacks[domain] = answerHandler;
+                DuplexBackwardCallbacks[hashKey] = answerHandler;
             }
             else
             {
                 // Add colback to table as new.
-                DuplexBackwardCallbacks.Add(line.ServerName + "\\" + domain, answerHandler);
+                DuplexBackwardCallbacks.Add(hashKey, answerHandler);
             }
             #endregion
 
@@ -587,7 +589,7 @@ namespace UniformClient
         {
             // Add our query to line processor queue.
             line.EnqueueQuery(query);
-
+            
             // Open backward chanel to recive answer from server.
             ReciveAnswer(line, query, answerHandler);
         }
@@ -600,7 +602,8 @@ namespace UniformClient
         /// <param name="serverPipeName">Name of pipe provided by server.</param>
         /// <param name="query">Query that will sent to server.</param>
         /// <param name="answerHandler">Callback that will recive answer.</param>
-        public static void EnqueueDuplexQuery(
+        /// <returns>Established transmission line.</returns>
+        public static TransmissionLine EnqueueDuplexQuery(
             string serverName,
             string serverPipeName,
             string query,
@@ -611,6 +614,8 @@ namespace UniformClient
 
             // Equeue query to line.
             EnqueueDuplexQuery(line, query, answerHandler);
+
+            return line;
         }
         #endregion
     }
