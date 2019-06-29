@@ -99,8 +99,7 @@ namespace PipesProvider.Client
         /// <summary>
         /// Token that will used to autorizing on the server.
         /// </summary>
-        public SafeAccessTokenHandle AccessToken
-        { get; set; }
+        public SafeAccessTokenHandle accessToken;
         #endregion
 
         #region Public fields
@@ -143,7 +142,7 @@ namespace PipesProvider.Client
             ServerName = serverName;
             ServerPipeName = serverPipeName;
             this.queryProcessor = queryProcessor;
-            this.AccessToken = token;
+            this.accessToken = token;
 
             // Registrate at hashtable.
             ClientAPI.TryToRegisterTransmissionLine(this);
@@ -279,7 +278,7 @@ namespace PipesProvider.Client
             else
             {
                 // Save token as actual.
-                AccessToken = safeTokenHandle;
+                accessToken = safeTokenHandle;
 
                 // inform about success.
                 return true;
@@ -303,7 +302,7 @@ namespace PipesProvider.Client
             else
             {
                 // Save token as actual.
-                AccessToken = safeTokenHandle;
+                accessToken = safeTokenHandle;
             }
 
             return this;
@@ -328,7 +327,7 @@ namespace PipesProvider.Client
             Console.WriteLine("THREAD STARTED: {0}", Thread.CurrentThread.Name);
 
             // Apply rights for connection.
-            WindowsIdentity.RunImpersonated(line.AccessToken, () =>
+            WindowsIdentity.RunImpersonated(line.accessToken, () =>
             {
                 // Start client loop.
                 ClientAPI.ClientLoop(

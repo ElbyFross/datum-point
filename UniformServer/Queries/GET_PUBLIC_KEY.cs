@@ -41,7 +41,13 @@ namespace UniformServer.Queries
         public void Execute(QueryPart[] queryParts)
         {
             // Create public key as answer.
-            string answer = PipesProvider.Security.Crypto.PublicKeyXML;
+            string publicKey = "pk=" + PipesProvider.Security.Crypto.PublicKeyXML;
+
+            // Set time when this key will expired.
+            string expireTime = "expire=" + PipesProvider.Security.Crypto.RSAKeyExpireTime.ToBinary().ToString();
+
+            // Compine answer.
+            string answer = publicKey + API.SPLITTING_SYMBOL + expireTime;
 
             // Open answer chanel on server and send message.
             BaseServer.SendAnswer(answer, queryParts);

@@ -49,7 +49,13 @@ namespace PipesProvider.Security
             {
                 // Create new provider if not found.
                 if (_CryptoServiceProvider_RSA == null)
+                {
+                    // Create provider.
                     _CryptoServiceProvider_RSA = new RSACryptoServiceProvider(2048);
+
+                    // Set expire time after 24 hours.
+                    RSAKeyExpireTime = DateTime.Now.AddDays(1);
+                }
                 return _CryptoServiceProvider_RSA;
             }
         }
@@ -90,9 +96,37 @@ namespace PipesProvider.Security
                 return CryptoServiceProvider_RSA.ExportParameters(true);
             }
         }
+
+        /// <summary>
+        /// Time when rsa keys will expired.
+        /// </summary>
+        public static DateTime RSAKeyExpireTime { get; private set; }
         #endregion
 
         #region RSA Decryption
+        /// <summary>
+        /// Decrypt string message that was recived from other source and was encrypted by local public key.
+        /// </summary>
+        /// <param name="message">Message that will be decrypted.</param>
+        /// <returns></returns>
+        public static string DecryptString(string message)
+        {
+            // Conver message to byte array.
+            byte[] bytedMessage = Encoding.UTF8.GetBytes(message);
+
+            // Encrypt byte array.
+            byte[] encryptedMessage = RSADecrypt(bytedMessage, false);
+
+            // Create encrypted string.
+            return Encoding.UTF8.GetString(encryptedMessage);
+        }
+
+        /// <summary>
+        /// Decrypt byte array using private key.
+        /// </summary>
+        /// <param name="DataToDecrypt"></param>
+        /// <param name="DoOAEPPadding"></param>
+        /// <returns></returns>
         public static byte[] RSADecrypt(byte[] DataToDecrypt, bool DoOAEPPadding)
         {
             try

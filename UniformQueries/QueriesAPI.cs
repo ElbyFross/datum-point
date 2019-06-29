@@ -301,5 +301,21 @@ namespace UniformQueries
 
             return parts;
         }
+
+
+        /// <summary>
+        /// Try to detect core query parts.
+        /// Example case of using: is decryption required.
+        /// </summary>
+        /// <param name="query"></param>
+        /// <returns></returns>
+        public static bool IsSeemsValid(string query)
+        {
+            // Check does contain query.
+            if (query.Contains("q="))
+                return true;
+
+            return false;
+        }
     }
 }

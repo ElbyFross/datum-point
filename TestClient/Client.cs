@@ -29,11 +29,6 @@ namespace TestClient
     class Client : UniformClient.BaseClient
     {
         /// <summary>
-        /// Table that contain instruction that allow to determine the server which is a target for recived query.
-        /// </summary>
-        public static RoutingTable routingTable;
-
-        /// <summary>
         /// Data about target server loaded from routing table.
         /// </summary>
         public static RoutingTable.RoutingInstruction ServerMeta { get; set; }
@@ -59,7 +54,7 @@ namespace TestClient
             LoadAssemblies(AppDomain.CurrentDomain.BaseDirectory + "libs\\");
 
             // Loading roting tables to detect servers.
-            LoadRoutingTables();
+            LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "plugins\\");
 
             Console.WriteLine("Preparetion finished. Client strated.");
             #endregion
@@ -144,36 +139,6 @@ namespace TestClient
             Console.ReadKey();
         }
 
-        static void LoadRoutingTables()
-        {
-            #region Load routing tables
-            // Load routing tables
-            routingTable = null;
-            // From system folders.
-            routingTable += RoutingTable.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\");
-            // From plugins.
-            routingTable += RoutingTable.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "plugins\\");
-
-            // If routing table not found.
-            if (routingTable.intructions.Count == 0)
-            {
-                // Log error.
-                Console.WriteLine("ROUTING TABLE NOT FOUND: Create default table by directory \\resources\\routing\\ROUTING.xml");
-
-                // Set default intruction.
-                routingTable.intructions.Add(RoutingTable.RoutingInstruction.Default);
-
-                // Save sample routing table to application files.
-                RoutingTable.SaveRoutingTable(routingTable, AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\", "ROUTING");
-            }
-            else
-            {
-                // Log error.
-                Console.WriteLine("ROUTING TABLE: Detected {0} instructions.", routingTable.intructions.Count);
-            }
-            #endregion
-        }
-
         /// <summary>
         /// Method that will send few sample to remote server.
         /// </summary>
@@ -216,7 +181,7 @@ namespace TestClient
             // Create transmission line.
             TransmissionLine lineProcessor = OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME);
             // Set impersonate token.
-            lineProcessor.AccessToken = safeTokenHandle;
+            lineProcessor.accessToken = safeTokenHandle;
 
             // Add sample query to queue. You can use this way if you not need answer from server.
             lineProcessor.EnqueueQuery(query);

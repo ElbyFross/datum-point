@@ -276,6 +276,8 @@ namespace UniformServer
                     // Unsubscribe.
                     ServerAPI.ServerTransmissionMeta_InProcessing -= initationCallback;
 
+                    // TODO Encrypt query if requested by "pk" query's param.
+
                     // Set answer query as target for processing,
                     tm.ProcessingQuery = answer;
 

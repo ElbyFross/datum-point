@@ -73,6 +73,12 @@ namespace PipesProvider.Networking
             /// targetQueries[1] = "$customProp";           // All queries that have "customProp" property in query will be routed.
             /// </summary>
             public string[] queryPatterns;
+
+            /// <summary>
+            /// Does this chanel has RSA encryption?
+            /// If true then client can ask for server's Public Key and encrypt message before send.
+            /// </summary>
+            public bool RSAEncryption;
             #endregion
 
             #region Static properties
@@ -88,7 +94,8 @@ namespace PipesProvider.Networking
                         logonConfig = PipesProvider.Security.LogonConfig.Anonymous,
                         queryPatterns = new string[] { "$q,$guid,$token" },
                         routingIP = "localhost",
-                        pipeName = "THB_DS_QM_MAIN_INOUT"
+                        pipeName = "THB_DS_QM_MAIN_INOUT",
+                        RSAEncryption = false
                     };
                 }
             }
@@ -104,7 +111,6 @@ namespace PipesProvider.Networking
                 }
             }
             #endregion
-
 
             public bool IsRoutingTarget(string recivedQuery)
             {

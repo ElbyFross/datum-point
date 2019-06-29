@@ -217,6 +217,10 @@ namespace QueriesServer
         /// <param name="query"></param>
         public static void QueryHandler_Relay(ServerTransmissionController _, string query)
         {
+            // Decrypt query if required.
+            if (!UniformQueries.API.IsSeemsValid(query))
+                query = PipesProvider.Security.Crypto.DecryptString(query);
+
             // Detect routing target.
             bool relayTargetFound = routingTable.TryGetRoutingInstruction(query, out RoutingTable.RoutingInstruction instruction);
 
@@ -228,6 +232,8 @@ namespace QueriesServer
                 return;
             }
 
+            // TODO Encrypt query by public key of target server.
+            //query = PipesProvider.Security.Crypto.EncryptString(query, );
 
             // Open connection.
             TransmissionLine tl = UniformClient.BaseClient.EnqueueDuplexQuery(

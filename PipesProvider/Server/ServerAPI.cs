@@ -459,6 +459,9 @@ namespace PipesProvider.Server
             openedServers.Clear();
 
             Console.WriteLine();
+
+            // Let servers time to finish up transmissions.
+            Thread.Sleep(1000);
         }
         #endregion
 
