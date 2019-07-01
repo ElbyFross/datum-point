@@ -44,12 +44,13 @@ namespace UniformServer
                 case "help":
                     Console.WriteLine();
                     ConsoleDraw.Primitives.DrawLine();
-                    Console.WriteLine("\nCOMMANDS LIST:\n{0}\n{1}\n{2}\n{3}\n{4}",
+                    Console.WriteLine("\nCOMMANDS LIST:\n{0}\n{1}\n{2}\n{3}\n{4}\n{5}",
                         "help - List of available commands.",
                         "qhelp - List of available queries with description for each.",
                         "stop - Stoping server and threads. Finishing main loop.",
                         "threads - Return information about started threads.",
-                        "threads <int> - Change the count of started server threads.");
+                        "threads <int> - Change the count of started server threads.",
+                        "clear - Clearing console.");
                     ConsoleDraw.Primitives.DrawLine();
                     Console.WriteLine();
 
@@ -96,6 +97,10 @@ namespace UniformServer
                         Console.WriteLine("ACTUAL COUNT OF THREADS: {0}/{1}",
                             BaseServer.ThreadsCount, Environment.ProcessorCount);
                     }
+                    break;
+
+                case "clear":
+                    Console.Clear();
                     break;
 
                 // Inform about inccorect command.

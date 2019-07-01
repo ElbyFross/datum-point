@@ -95,12 +95,14 @@ namespace UniformQueries
             }
 
             // Split string by spliter.
-            string[] parts = buildedPart.Split('=');
+            int valueIndex = buildedPart.IndexOf('=');
 
             // If splided as require.
-            if (parts.Length == 2)
+            if (valueIndex != -1)
             {
-                return new QueryPart(parts[0], parts[1]);
+                return new QueryPart(
+                    buildedPart.Substring(0, valueIndex), // Param part
+                    buildedPart.Substring(valueIndex+1)); // Value part
             }
             else
             {

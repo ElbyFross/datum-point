@@ -276,7 +276,20 @@ namespace UniformServer
                     // Unsubscribe.
                     ServerAPI.ServerTransmissionMeta_InProcessing -= initationCallback;
 
-                    // TODO Encrypt query if requested by "pk" query's param.
+                    // Encrypt query if requested by "pk" query's param.
+                    if(UniformQueries.API.TryGetParamValue(
+                        "pk", 
+                        out UniformQueries.QueryPart publicKeyProp, 
+                        entryQueryParts))
+                    {
+                        // Try to get publick key from entry query.
+                        if (PipesProvider.Security.Crypto.TryDeserializeRSAKey(publicKeyProp.propertyValue, 
+                            out System.Security.Cryptography.RSAParameters publicKey))
+                        {
+                            // Encrypt query.
+                            answer = PipesProvider.Security.Crypto.EncryptString(answer, publicKey);
+                        }
+                    }
 
                     // Set answer query as target for processing,
                     tm.ProcessingQuery = answer;

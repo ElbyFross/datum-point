@@ -41,7 +41,7 @@ namespace UniformServer.Queries
         public void Execute(QueryPart[] queryParts)
         {
             // Create public key as answer.
-            string publicKey = "pk=" + PipesProvider.Security.Crypto.PublicKeyXML;
+            string publicKey = "pk=" + PipesProvider.Security.Crypto.SerializePublicKey();
 
             // Set time when this key will expired.
             string expireTime = "expire=" + PipesProvider.Security.Crypto.RSAKeyExpireTime.ToBinary().ToString();

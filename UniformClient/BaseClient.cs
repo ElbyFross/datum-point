@@ -18,8 +18,11 @@ using System.Runtime.InteropServices;
 using System.Reflection;
 using System.Threading;
 using System.IO;
+using System.Security.Cryptography;
+
 using Microsoft.Win32.SafeHandles;
-using PipesProvider.Networking;
+
+using PipesProvider.Networking.Routing;
 using PipesProvider.Client;
 
 namespace UniformClient
@@ -85,6 +88,11 @@ namespace UniformClient
         /// Table that contain instruction that allow to determine the server which is a target for recived query.
         /// </summary>
         public static RoutingTable routingTable;
+
+        /// <summary>
+        /// Token that authorize client to data and commands access.
+        /// </summary>
+        public static string token;
         #endregion
 
 
@@ -198,7 +206,7 @@ namespace UniformClient
         /// In case if tables not found then create new one to provide example.
         /// </summary>
         /// <param name="directories"></param>
-        protected static void LoadRoutingTables(params string[] directories)
+        public static void LoadRoutingTables(params string[] directories)
         {
             #region Load routing tables
             // Load routing tables
@@ -212,39 +220,16 @@ namespace UniformClient
             }
             #endregion
 
-            #region Load public keys
-            foreach(RoutingTable.RoutingInstruction instruction in routingTable.intructions)
+            #region Request public keys
+            foreach(Instruction instruction in routingTable.intructions)
             {
-                // Create base part of query for reciving of public RSA key.
-                string query = "q=GET" + UniformQueries.API.SPLITTING_SYMBOL + "sq=PUBLIC_KEY";
-
                 // If encryption requested.
                 if (instruction.RSAEncryption)
                 {
-                    // Request public key from server.
-                    EnqueueDuplexQuery(
-                        instruction.routingIP,
-                        instruction.pipeName,
-                        // Add guid base on instruction hash to this query.
-                        query + UniformQueries.API.SPLITTING_SYMBOL + "guid=" + instruction.GetHashCode(),
-                        // Create callback delegate that will set recived value to routing table.
-                        delegate (TransmissionLine answerLine, object answer)
-                        {
-                            // Conver answer to string
-                            string answerAsString = answer as string;
+                    Console.WriteLine("INSTRUCTION ROUTING RSA", instruction.routingIP, instruction.pipeName);
 
-                            // Validate.
-                            if(answerAsString == null)
-                            {
-                                Console.WriteLine("ERROR (BCRT0): Incorrect answer format. Require string.");
-                                return;
-                            }
-
-                            // TODO Decompose query and set to table.
-                            
-                            // Close line.
-                            answerLine.Close();
-                        });
+                    // Request publick key reciving.
+                    GetValidPublicKey(instruction);
                 }
             }
             #endregion
@@ -257,7 +242,7 @@ namespace UniformClient
                 Console.WriteLine("ROUTING TABLE NOT FOUND: Create default table by directory \\resources\\routing\\ROUTING.xml");
 
                 // Set default intruction.
-                routingTable.intructions.Add(RoutingTable.RoutingInstruction.Default);
+                routingTable.intructions.Add(Instruction.Default);
 
                 // Save sample routing table to application files.
                 RoutingTable.SaveRoutingTable(routingTable, AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\", "ROUTING");
@@ -268,6 +253,44 @@ namespace UniformClient
                 Console.WriteLine("ROUTING TABLE: Detected {0} instructions.", routingTable.intructions.Count);
             }
             #endregion
+        }
+        #endregion
+
+        #region Security
+        /// <summary>
+        /// Provide valid public key for target server encryption.
+        /// Auto update key if was expired.
+        /// </summary>
+        /// <param name="instruction"></param>
+        /// <returns></returns>
+        public static RSAParameters GetValidPublicKey(PipesProvider.Networking.Routing.Instruction instruction)
+        {
+            // Validate key.
+            if (!instruction.IsValid)
+            {
+                // Create base part of query for reciving of public RSA key.
+                string query = string.Format("token={1}{0}q=GET{0}sq=PUBLICKEY", 
+                    UniformQueries.API.SPLITTING_SYMBOL, token);
+
+                // Request public key from server.
+                EnqueueDuplexQuery(
+                    instruction.routingIP,
+                    instruction.pipeName,
+                    // Add guid base on instruction hash to this query.
+                    query + UniformQueries.API.SPLITTING_SYMBOL + "guid=" + instruction.GetHashCode(),
+                    // Create callback delegate that will set recived value to routing table.
+                    delegate (TransmissionLine answerLine, object answer)
+                    {
+                        // Log about success.
+                        //Console.WriteLine("{0}/{1}: PUBLIC KEY RECIVED",
+                        //    instruction.routingIP, instruction.pipeName);
+
+                        // Try to apply recived answer.
+                        instruction.TryUpdatePublicKey(answer);
+                    });
+            }
+
+            return instruction.PublicKey;
         }
         #endregion
 
@@ -343,7 +366,7 @@ namespace UniformClient
            string pipeName)
         {
             return OpenTransmissionLine(serverName, pipeName, 
-                PipesProvider.Handlers.Query.PostAsync);
+                HandlerQueryPostAsync);
         }
 
         /// <summary>
@@ -420,7 +443,7 @@ namespace UniformClient
                     serverName,
                     pipeName,
                     callback,
-                    token);
+                    ref token);
 
                 // Put line proccesor to the new client loop.
                 client.StartClientThread(
@@ -437,7 +460,7 @@ namespace UniformClient
         }
         #endregion
 
-        #region Answer recivers
+        #region Answer receivers
         /// <summary>
         /// 
         /// </summary>
@@ -447,12 +470,12 @@ namespace UniformClient
         /// object contain recived query (usualy string or byte[]).</param>
         /// <param name="decodedQuery">Query that sent to server and must recive answer. Must be not encoded.</param>
         /// <returns></returns>
-        public static bool ReciveAnswer(
+        public static bool ReceiveAnswer(
             TransmissionLine line,
             string decodedQuery,
             System.Action<TransmissionLine, object> answerHandler)
         {
-            return ReciveAnswer(
+            return ReceiveAnswer(
                 line, 
                 UniformQueries.API.DetectQueryParts(decodedQuery),
                 answerHandler);
@@ -468,7 +491,7 @@ namespace UniformClient
         /// <param name="entryQueryParts">Parts of query that was recived from client. 
         /// Method will detect core part and establish backward connection.</param>
         /// <returns></returns>
-        public static bool ReciveAnswer(
+        public static bool ReceiveAnswer(
             TransmissionLine line,
             UniformQueries.QueryPart[] entryQueryParts, 
             System.Action<TransmissionLine, object> answerHandler)
@@ -504,7 +527,7 @@ namespace UniformClient
                 new SimpleClient(),
                 line.ServerName, domain,
                 ref line.accessToken,
-                UniformServerAnswer_HandlerAsync
+                HandlerServerAnswerAsync
                 );
             #endregion
 
@@ -514,7 +537,7 @@ namespace UniformClient
         }
         #endregion
 
-        #region Duplex quries
+        #region Duplex quries API
         /// <summary>
         /// Add query to queue. 
         /// Open backward line that will call answer handler.
@@ -531,7 +554,7 @@ namespace UniformClient
             line.EnqueueQuery(query);
             
             // Open backward chanel to recive answer from server.
-            ReciveAnswer(line, query, answerHandler);
+            ReceiveAnswer(line, query, answerHandler);
         }
 
         /// <summary>
@@ -565,7 +588,7 @@ namespace UniformClient
         /// </summary>
         /// <param name="sharedObject">
         /// Normaly is a TransmissionLine that contain information about actual transmission.</param>
-        public static async void UniformServerAnswer_HandlerAsync(object sharedObject)
+        public static async void HandlerServerAnswerAsync(object sharedObject)
         {
             // Drop as invalid in case of incorrect transmitted data.
             if (!(sharedObject is TransmissionLine lineProcessor))
@@ -652,6 +675,87 @@ namespace UniformClient
 
             // Close processor case this line already deprecated on the server side as single time task.
             lineProcessor.Close();
+        }
+
+        /// <summary>
+        /// Handler that send last dequeued query to server when connection will be established.
+        /// </summary>
+        /// <param name="sharedObject">Normaly is a TransmissionLine that contain information about actual transmission.</param>
+        public static async void HandlerQueryPostAsync(object sharedObject)
+        {
+            // Drop as invalid in case of incorrect transmitted data.
+            if (!(sharedObject is PipesProvider.Client.TransmissionLine lineProcessor))
+            {
+                Console.WriteLine("TRANSMISSION ERROR (UQPP0): INCORRECT TRANSFERED DATA TYPE. PERMITED ONLY \"LineProcessor\"");
+                return;
+            }
+            /// If queries not placed then wait.
+            while (!lineProcessor.HasQueries || !lineProcessor.TryDequeQuery(out _))
+            {
+                Thread.Sleep(50);
+                continue;
+            }
+
+            string sharableQuery = lineProcessor.LastQuery.Query;
+
+            // If requested encryption.
+            if (lineProcessor.RoutingInstruction != null &&
+                lineProcessor.RoutingInstruction.RSAEncryption)
+            {
+                // Check if instruction key is valid.
+                // If key expired or invalid then will be requested new.
+                if (!lineProcessor.RoutingInstruction.IsValid)
+                {
+                    // Request new key.
+                    UniformClient.BaseClient.GetValidPublicKey(lineProcessor.RoutingInstruction);
+
+                    // Log.
+                    Console.WriteLine("WAITING FOR PUBLIC RSA KEY FROM {0}/{1}", 
+                        lineProcessor.ServerName, lineProcessor.ServerPipeName);
+
+                    // Wait until validation time.
+                    // Operation will work in another threads, so we just need to take a time.
+                    while (!lineProcessor.RoutingInstruction.IsValid)
+                    {
+                        Thread.Sleep(50);
+                    }
+                }
+
+                // Encrypt query by public key of target server.
+                sharableQuery = PipesProvider.Security.Crypto.EncryptString(sharableQuery, lineProcessor.RoutingInstruction.PublicKey);
+            }
+
+            // Open stream writer.
+            StreamWriter sw = new StreamWriter(lineProcessor.pipeClient);
+            try
+            {
+                await sw.WriteAsync(sharableQuery);
+                await sw.FlushAsync();
+                Console.WriteLine("TRANSMITED: {0}", lineProcessor.LastQuery);
+                //sw.Close();
+            }
+            // Catch the Exception that is raised if the pipe is broken or disconnected.
+            catch (Exception e)
+            {
+                Console.WriteLine("DNS HANDLER ERROR ({1}): {0}", e.Message, lineProcessor.pipeClient.GetHashCode());
+
+                // Retry transmission.
+                if (lineProcessor.LastQuery.Attempts < 10)
+                {
+                    // Add to queue.
+                    lineProcessor.EnqueueQuery(lineProcessor.LastQuery);
+
+                    // Add attempt.
+                    lineProcessor++;
+                }
+                else
+                {
+                    // If transmission attempts over the max count.
+                }
+            }
+
+            // Unlock loop.
+            lineProcessor.Processing = false;
         }
         #endregion
     }

@@ -33,10 +33,6 @@ namespace PipesProvider.Handlers
         /// <param name="query"></param>
         public static async void ProcessingAsync(PipesProvider.Server.ServerTransmissionController _, string query)
         {
-            // Decrypt query if required.
-            if (!UniformQueries.API.IsSeemsValid(query))
-                query = PipesProvider.Security.Crypto.DecryptString(query);
-
             // Detect query parts.
             QueryPart[] queryParts = UQAPI.DetectQueryParts(query);
             QueryPart token = QueryPart.None;
@@ -85,59 +81,6 @@ namespace PipesProvider.Handlers
             {
                 Console.WriteLine("POST ERROR: Token: {1} | Handler for query \"{0}\" not implemented.", query, token);
             }
-        }
-
-        /// <summary>
-        /// Handler that send last dequeued query to server when connection will be established.
-        /// </summary>
-        /// <param name="sharedObject">
-        /// Normaly is a TransmissionLine that contain information about actual transmission.</param>
-        public static async void PostAsync(object sharedObject)
-        {
-            // Drop as invalid in case of incorrect transmitted data.
-            if (!(sharedObject is Client.TransmissionLine lineProcessor))
-            {
-                Console.WriteLine("TRANSMISSION ERROR (UQPP0): INCORRECT TRANSFERD DATA TYPE. PERMITED ONLY \"LineProcessor\"");
-                return;
-            }
-            /// If queries not placed then wait.
-            while (!lineProcessor.HasQueries || !lineProcessor.TryDequeQuery(out _))
-            {
-                Thread.Sleep(50);
-                continue;
-            }
-
-            // Open stream writer.
-            StreamWriter sw = new StreamWriter(lineProcessor.pipeClient);
-            try
-            {
-                await sw.WriteAsync(lineProcessor.LastQuery.Query);
-                await sw.FlushAsync();
-                Console.WriteLine("TRANSMITED: {0}", lineProcessor.LastQuery);
-                //sw.Close();
-            }
-            // Catch the Exception that is raised if the pipe is broken or disconnected.
-            catch (Exception e)
-            {
-                Console.WriteLine("DNS HANDLER ERROR ({1}): {0}", e.Message, lineProcessor.pipeClient.GetHashCode());
-
-                // Retry transmission.
-                if (lineProcessor.LastQuery.Attempts < 10)
-                {
-                    // Add to queue.
-                    lineProcessor.EnqueueQuery(lineProcessor.LastQuery);
-
-                    // Add attempt.
-                    lineProcessor++;
-                }
-                else
-                {
-                    // If transmission attempts over the max count.
-                }
-            }
-
-            // Unlock loop.
-            lineProcessor.Processing = false;
         }
     }
 }

@@ -50,7 +50,7 @@ namespace PipesProvider.Handlers
                     // Avoid an error caused to disconection of client.
                     try
                     {
-                        queryBufer = await sr.ReadLineAsync();
+                        queryBufer = await sr.ReadToEndAsync();
                     }
                     // Catch the Exception that is raised if the pipe is broken or disconnected.
                     catch (Exception e)
@@ -89,8 +89,14 @@ namespace PipesProvider.Handlers
                     break;
                 }
 
+                // Log query before decryption.
+                //Console.WriteLine("RECIVED QUERY (DNS01): {0}", queryBufer);
+
+                // Try to decrypt. In case of fail decryptor return entry message.
+                queryBufer = Security.Crypto.DecryptString(queryBufer);
+
                 // Log query.
-                Console.WriteLine("RECIVED QUERY: {0}", queryBufer);
+                Console.WriteLine("RECIVED QUERY (DNS0): {0}", queryBufer);
 
                 // Redirect handler.
                 meta.queryHandlerCallback?.Invoke(meta, queryBufer);
