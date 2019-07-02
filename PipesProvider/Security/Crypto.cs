@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Security.Cryptography;
 using System.IO;
+using System.Timers;
 
 namespace PipesProvider.Security
 {
@@ -25,6 +26,7 @@ namespace PipesProvider.Security
     /// </summary>
     public static class Crypto
     {
+        #region Configs
         /// <summary>
         /// Encoder that provide  concertation query from string to byte array.
         /// </summary>
@@ -34,6 +36,7 @@ namespace PipesProvider.Security
         /// Padding messages.
         /// </summary>
         public static bool DoOAEPPadding;
+        #endregion
 
         #region Enums
         /// <summary>
@@ -60,16 +63,41 @@ namespace PipesProvider.Security
                 // Create new provider if not found.
                 if (_CryptoServiceProvider_RSA == null)
                 {
+                    #region Init
                     // Create provider.
                     _CryptoServiceProvider_RSA = new RSACryptoServiceProvider();
 
                     // Set expire time after 24 hours.
                     RSAKeyExpireTime = DateTime.Now.AddDays(1);
+                    #endregion
+
+                    #region Auto expire
+                    // Compute miliseconds between corent moment and expire date.
+                    double timerPeriod = RSAKeyExpireTime.Subtract(DateTime.Now).TotalMilliseconds;
+                    RSAProviderExpireTimer = new Timer(timerPeriod);
+
+                    // Create delegate that will be called when timer will be passed.
+                    ElapsedEventHandler expireCallback = null;
+                    expireCallback = delegate (object sender, ElapsedEventArgs arg)
+                    {
+                        // unsubscribe.
+                        RSAProviderExpireTimer.Elapsed -= expireCallback;
+
+                        // Drop current provider.
+                        _CryptoServiceProvider_RSA = null;
+                    };
+                    // Subscribe exipire handler to timer event.
+                    RSAProviderExpireTimer.Elapsed += expireCallback;
+                    #endregion
                 }
+
+                // Return valid crypto provider.
                 return _CryptoServiceProvider_RSA;
             }
         }
         private static RSACryptoServiceProvider _CryptoServiceProvider_RSA;
+
+        private static Timer RSAProviderExpireTimer;
 
         /// <summary>
         /// Public RSA key that must b used to encrypt of message befor send.
@@ -238,7 +266,7 @@ namespace PipesProvider.Security
             string encryptedMessageString = encoder.GetString(encryptedMessage);
             //string encryptedMessageString = Convert.ToBase64String(encryptedMessage);
 
-            Console.WriteLine("ENCRYPTED TO:\n{0}", encryptedMessageString);
+            //Console.WriteLine("ENCRYPTED TO:\n{0}", encryptedMessageString);
             return encryptedMessageString;
         }
 

@@ -33,7 +33,7 @@ namespace PipesProvider.Handlers
         /// Code that will work on server loop when connection will be established.
         /// Recoomended to using as default DNS Handler for queries reciving.
         /// </summary>
-        public static async void ClientToSereverAsync(ServerTransmissionController meta)
+        public static async void ClientToServerAsync(ServerTransmissionController meta)
         {
             // Open stream reader.
             StreamReader sr = new StreamReader(meta.pipe);
@@ -83,20 +83,20 @@ namespace PipesProvider.Handlers
                 meta.pipe.Dispose();
 
                 // Drop if stream is over.
-                if (queryBufer == null)
+                if (string.IsNullOrEmpty(queryBufer))
                 {
                     //Console.WriteLine("NULL REQUEST AVOIDED. CONNECTION TERMINATED.");
                     break;
                 }
 
                 // Log query before decryption.
-                //Console.WriteLine("RECIVED QUERY (DNS01): {0}", queryBufer);
+                //Console.WriteLine(@"RECIVED QUERY (DNS01): {0}", queryBufer);
 
                 // Try to decrypt. In case of fail decryptor return entry message.
                 queryBufer = Security.Crypto.DecryptString(queryBufer);
 
                 // Log query.
-                Console.WriteLine("RECIVED QUERY (DNS0): {0}", queryBufer);
+                Console.WriteLine(@"RECIVED QUERY (DNS0): {0}", queryBufer);
 
                 // Redirect handler.
                 meta.queryHandlerCallback?.Invoke(meta, queryBufer);

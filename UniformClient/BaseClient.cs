@@ -17,6 +17,7 @@ using System.Collections;
 using System.Runtime.InteropServices;
 using System.Reflection;
 using System.Threading;
+using System.Threading.Tasks;
 using System.IO;
 using System.Security.Cryptography;
 
@@ -165,6 +166,24 @@ namespace UniformClient
             }
         }
 
+
+        /// <summary>
+        /// Allow to start thread but previous return turn to current thread.
+        /// Allow to use single line queries.
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="guid"></param>
+        /// <param name="trnsLine"></param>
+        protected static async void ThreadStartedAsync(BaseClient client, string guid, TransmissionLine trnsLine)
+        {
+            await Task.Run(() => {
+                client.StartClientThread(
+                guid,
+                trnsLine,
+                TransmissionLine.ThreadLoop);
+            });
+        }
+
         /// <summary>
         /// Method that starting client thread.
         /// </summary>
@@ -187,7 +206,8 @@ namespace UniformClient
             // Initialize queries monitor thread.
             thread = new Thread(clientLoop)
             {
-                Name = threadName
+                Name = threadName,
+                Priority = ThreadPriority.BelowNormal
             };
 
             // Start thread
@@ -366,7 +386,7 @@ namespace UniformClient
            string pipeName)
         {
             return OpenTransmissionLine(serverName, pipeName, 
-                HandlerQueryPostAsync);
+                HandlerOutputTransmisssionAsync);
         }
 
         /// <summary>
@@ -432,7 +452,7 @@ namespace UniformClient
                     //Console.WriteLine("OTL {0} | RETRY", guid);
 
                     // Retry.
-                    return OpenTransmissionLine(client, serverName, pipeName, ref token, callback); 
+                    return OpenTransmissionLine(client, serverName, pipeName, ref token, callback);
                 }
             }
             // If full new pipe.
@@ -445,18 +465,12 @@ namespace UniformClient
                     callback,
                     ref token);
 
-                // Put line proccesor to the new client loop.
-                client.StartClientThread(
-                    guid,
-                    trnsLine,
-                    TransmissionLine.ThreadLoop);
-
-
-                //Console.WriteLine("OTL {0} | CREATED", guid);
+                // Request thread start but let a time quantum only when this thread will pass order.
+                ThreadStartedAsync(client, guid, trnsLine);
             }
 
             // Return oppened line.
-            return trnsLine;
+                return trnsLine;
         }
         #endregion
 
@@ -527,8 +541,11 @@ namespace UniformClient
                 new SimpleClient(),
                 line.ServerName, domain,
                 ref line.accessToken,
-                HandlerServerAnswerAsync
+                HandlerInputTransmissionAsync
                 );
+
+            // Set input direction.
+            lineProcessor.Direction = TransmissionLine.TransmissionDirection.In;
             #endregion
 
             // Skip line
@@ -588,7 +605,7 @@ namespace UniformClient
         /// </summary>
         /// <param name="sharedObject">
         /// Normaly is a TransmissionLine that contain information about actual transmission.</param>
-        public static async void HandlerServerAnswerAsync(object sharedObject)
+        public static async void HandlerInputTransmissionAsync(object sharedObject)
         {
             // Drop as invalid in case of incorrect transmitted data.
             if (!(sharedObject is TransmissionLine lineProcessor))
@@ -681,19 +698,13 @@ namespace UniformClient
         /// Handler that send last dequeued query to server when connection will be established.
         /// </summary>
         /// <param name="sharedObject">Normaly is a TransmissionLine that contain information about actual transmission.</param>
-        public static async void HandlerQueryPostAsync(object sharedObject)
+        public static async void HandlerOutputTransmisssionAsync(object sharedObject)
         {
             // Drop as invalid in case of incorrect transmitted data.
             if (!(sharedObject is PipesProvider.Client.TransmissionLine lineProcessor))
             {
                 Console.WriteLine("TRANSMISSION ERROR (UQPP0): INCORRECT TRANSFERED DATA TYPE. PERMITED ONLY \"LineProcessor\"");
                 return;
-            }
-            /// If queries not placed then wait.
-            while (!lineProcessor.HasQueries || !lineProcessor.TryDequeQuery(out _))
-            {
-                Thread.Sleep(50);
-                continue;
             }
 
             string sharableQuery = lineProcessor.LastQuery.Query;

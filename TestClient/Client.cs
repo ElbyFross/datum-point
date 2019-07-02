@@ -155,26 +155,49 @@ namespace TestClient
         /// </summary>
         static void TransmissionsBlock()
         {
+            // If requested line encryption.
             if (routingInstruction.RSAEncryption)
             {
-                Console.WriteLine("Wait fo public key....");
+                Console.WriteLine("Wait for public key....");
                 while (!routingInstruction.IsValid)
                 {
                     Thread.Sleep(50);
                 }
             }
 
+            // Pause between queries to more clear console logging.
+            // In normal state this not required. Queries included DNS system auto controling stability.
+            // Your queries in safe and not require manual control.
+            int pauseBetweenQueries = 5000;
+
+            #region First query
+            ConsoleDraw.Primitives.DrawSpacedLine();
+            Console.WriteLine("ONE WAY query.\nTransmisssion to {0}/{1}", SERVER_NAME, SERVER_PIPE_NAME);
+
             // Short way to send one way query.
-            OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME).
-                EnqueueQuery(string.Format("token={1}{0}guid=echo{0}q=ECHO", UniformQueries.API.SPLITTING_SYMBOL, token)).
-                SetInstructionAsKey(ref routingInstruction).    // Connect instruction to provide auto-encryption via RSA.
-                TryLogonAs(routingInstruction.logonConfig);     // Request remote logon. By default LogonConfig equal Anonymous (Guest) user.
+            OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME). // Opern transmission line via starndard DNS handler.
+                EnqueueQuery(string.Format("token={1}{0}guid=echo{0}q=ECHO", UniformQueries.API.SPLITTING_SYMBOL, token)). // Adding query to line's queue.
+                SetInstructionAsKey(ref routingInstruction).        // Connect instruction to provide auto-encryption via RSA.
+                TryLogonAs(routingInstruction.logonConfig);         // Request remote logon. By default LogonConfig equal Anonymous (Guest) user.
+            #endregion
+
+            #region Second query
+            Thread.Sleep(pauseBetweenQueries);
+            ConsoleDraw.Primitives.DrawSpacedLine();
+            Console.WriteLine("ONE WAY (SHORT FORMAT) query.\nTransmisssion to {0}/{1}", SERVER_NAME, SERVER_PIPE_NAME);
 
             // Send sample one way query to server with every step description.
             SendOneWayQuery(string.Format("token={1}{0}guid=datesRange{0}q=GET{0}sq=DAYSRANGE", UniformQueries.API.SPLITTING_SYMBOL, token));
+            #endregion
+
+            #region Third query
+            Thread.Sleep(pauseBetweenQueries);
+            ConsoleDraw.Primitives.DrawSpacedLine();
+            Console.WriteLine("DUPLEX query.\nTransmisssion to {0}/{1}", SERVER_NAME, SERVER_PIPE_NAME);
 
             // Get public key for RSA encoding from target server.
             RequestPublicRSAKey();
+            #endregion
         }
 
         #region Queries

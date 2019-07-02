@@ -31,6 +31,14 @@ namespace PipesProvider.Client
     /// </summary>
     public class TransmissionLine
     {
+        #region Enums
+        public enum TransmissionDirection
+        {
+            In,
+            Out
+        }
+        #endregion
+
         #region Public properties
         /// <summary>
         /// Unique GUID for this pipe.
@@ -111,6 +119,24 @@ namespace PipesProvider.Client
         {
             get; protected set;
         }
+
+        /// <summary>
+        /// Marker that show does logon already finished.
+        /// By default is true, cause default logon is anonymous.
+        /// </summary>
+        public bool LogonFinished
+        { get; protected set; } = true;
+
+        /// <summary>
+        /// Define bihavior of the client loop.
+        /// 
+        /// In - will connect to target pipe as soon as possible.
+        /// Out - will wait for query in queue.
+        /// </summary>
+        public TransmissionDirection Direction
+        {
+            get; set;
+        } = TransmissionDirection.Out;
         #endregion
 
         #region Public fields
@@ -309,6 +335,11 @@ namespace PipesProvider.Client
         /// <returns>Result of logon.</returns>
         public bool TryLogonAs(Security.LogonConfig logonMeta)
         {
+            // Disable prmition to start.
+            LogonFinished = false;
+
+            //Console.WriteLine("{0}/{1}: LOGON STARTED", ServerName, ServerPipeName);
+
             // Try to logon using provided config.
             bool logonResult = Security.General.TryLogon(logonMeta, out SafeAccessTokenHandle safeTokenHandle);
             if (!logonResult)
@@ -326,33 +357,16 @@ namespace PipesProvider.Client
             {
                 // Save token as actual.
                 accessToken = safeTokenHandle;
+                
+                // Change marker.
+                LogonFinished = true;
 
-                // inform about success.
+                // Log about success.
+                //Console.WriteLine("{0}/{1}: LOGON FINISHED {2}", ServerName, ServerPipeName, accessToken.GetHashCode());
+
+                // Inform about success.
                 return true;
             }
-        }
-
-        /// <summary>
-        /// Logon using provided information.
-        /// </summary>
-        /// <param name="logonMeta"></param>
-        /// <returns></returns>
-        public TransmissionLine LogonAs(Security.LogonConfig logonMeta)
-        {
-            // Try to logon using provided config.
-            bool logonResult = Security.General.TryLogon(logonMeta, out SafeAccessTokenHandle safeTokenHandle);
-            if (!logonResult)
-            {
-                // Log about error.
-                Console.WriteLine("Logon failed. Connection not possible.");
-            }
-            else
-            {
-                // Save token as actual.
-                accessToken = safeTokenHandle;
-            }
-
-            return this;
         }
         #endregion
 
@@ -368,14 +382,11 @@ namespace PipesProvider.Client
         /// <returns></returns>
         public TransmissionLine SetInstructionAsKey(ref Instruction instruction)
         {
-
-            Console.WriteLine("INSTURCTION CONNECTED");
-
             // Update data.
             RoutingInstruction = instruction;
             
             // Try to logon as requested to recive token.
-            TryLogonAs(instruction.logonConfig);
+            //TryLogonAs(instruction.logonConfig);
             return this;
         }
         #endregion
@@ -394,14 +405,22 @@ namespace PipesProvider.Client
                 Console.WriteLine("THREAD NOT STARTED. INVALID ARGUMENT.");
                 return;
             }
-
+                
             // Change thread cuture.
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");
             Console.WriteLine("THREAD STARTED: {0}", Thread.CurrentThread.Name);
 
-            // Give a time for continue line initizliation.
-            // This required to one single line queries format.
-            Thread.Sleep(50);
+            // Wait until logon will finished.
+            while(!line.LogonFinished)
+            {
+                Thread.Sleep(5);
+            }
+
+            // Drop if logon was failed.
+            if(line.Closed)
+            {
+                return;
+            }
 
             // Apply rights for connection.
             WindowsIdentity.RunImpersonated(line.accessToken, () =>

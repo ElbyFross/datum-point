@@ -63,7 +63,7 @@ namespace PipesProvider.Server
             // Start loop.
             ServerLoop(
                 guid,
-                Handlers.DNS.ClientToSereverAsync,
+                Handlers.DNS.ClientToServerAsync,
                 queryHandlerCallback,
                 pipeName,
                 PipeDirection.InOut,
@@ -88,7 +88,7 @@ namespace PipesProvider.Server
         {
             ServerLoop(
                 guid,
-                Handlers.DNS.ClientToSereverAsync,
+                Handlers.DNS.ClientToServerAsync,
                 queryHandlerCallback,
                 pipeName,
                 PipeDirection.InOut,
@@ -115,7 +115,7 @@ namespace PipesProvider.Server
         {
             ServerLoop(
                 guid,
-                Handlers.DNS.ClientToSereverAsync,
+                Handlers.DNS.ClientToServerAsync,
                 queryHandlerCallback,
                 pipeName,
                 PipeDirection.InOut,
@@ -147,7 +147,7 @@ namespace PipesProvider.Server
         {
             ServerLoop(
                 guid,
-                Handlers.DNS.ClientToSereverAsync,
+                Handlers.DNS.ClientToServerAsync,
                 queryHandlerCallback,
                 pipeName,
                 pipeDirection,

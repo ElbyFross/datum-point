@@ -326,7 +326,11 @@ namespace UniformServer
         protected Thread StartServerThread(string threadName, object sharebleParam, ParameterizedThreadStart serverLoop)
         {
             // Initialize queries monitor thread.
-            thread = new Thread(serverLoop) { Name = threadName };
+            thread = new Thread(serverLoop)
+            {
+                Name = threadName,
+                Priority = ThreadPriority.BelowNormal
+            };
 
             // Start thread
             thread.Start(sharebleParam);
