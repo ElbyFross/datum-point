@@ -80,14 +80,15 @@ namespace PipesProvider.Client
             while (!lineProcessor.Closed)
             {
                 // In case if line in out transmission mode.
-                if (lineProcessor.Direction == TransmissionLine.TransmissionDirection.Out)
+                // If queries not placed then wait.
+                while 
+                    (
+                    lineProcessor.Direction == TransmissionLine.TransmissionDirection.Out &&
+                    (!lineProcessor.HasQueries || !lineProcessor.TryDequeQuery(out _))
+                    )
                 {
-                    // If queries not placed then wait.
-                    while (!lineProcessor.HasQueries || !lineProcessor.TryDequeQuery(out _))
-                    {
-                        Thread.Sleep(50);
-                        continue;
-                    }
+                    Thread.Sleep(50);
+                    continue;
                 }
 
                 // Open pipe.

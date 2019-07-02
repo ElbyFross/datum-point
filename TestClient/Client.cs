@@ -168,7 +168,7 @@ namespace TestClient
             // Pause between queries to more clear console logging.
             // In normal state this not required. Queries included DNS system auto controling stability.
             // Your queries in safe and not require manual control.
-            int pauseBetweenQueries = 5000;
+            int pauseBetweenQueries = 2000;
 
             #region First query
             ConsoleDraw.Primitives.DrawSpacedLine();
