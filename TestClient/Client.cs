@@ -204,12 +204,12 @@ namespace TestClient
         static void SendOneWayQuery(string query)
         {
             #region Authorizing on remote machine
-            // Get right to access remote machine.
+            // Get rights to access remote machine.
             //
             // If you use anonymous conection than you need to apply server's LSA (LocalSecurityAuthority) rules:
             // - permit Guest connection over network.
             // - activate Guest user.
-            // Without this coonection will terminated by server.
+            // Without this conection will terminated by server.
             //
             // Relative to setting of pipes also could be required:
             // - anonymous access to named pipes
