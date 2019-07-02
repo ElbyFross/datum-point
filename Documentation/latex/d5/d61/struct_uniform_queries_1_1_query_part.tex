@@ -3,13 +3,13 @@
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{struct_uniform_queries_1_1_query_part_adabbcaa15ccf653f686d4f2bcd39ce09}{Query\+Part}} (string \mbox{\hyperlink{struct_uniform_queries_1_1_query_part_a24186fc4f67752331342e84554f806ff}{key}}, string \mbox{\hyperlink{struct_uniform_queries_1_1_query_part_aa8167f347217469ed47b298f2bc16381}{property}})
+\mbox{\hyperlink{struct_uniform_queries_1_1_query_part_adabbcaa15ccf653f686d4f2bcd39ce09}{Query\+Part}} (string key, string property)
 \begin{DoxyCompactList}\small\item\em Base constructor. \end{DoxyCompactList}\item 
 override string \mbox{\hyperlink{struct_uniform_queries_1_1_query_part_acf5597530f693df3804fc2e638805245}{To\+String}} ()
 \begin{DoxyCompactList}\small\item\em Return part in query format. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{struct_uniform_queries_1_1_query_part_a5252d13a0a8c211c47cba54f3749aad1}{Param\+Key\+Equal}} (string \mbox{\hyperlink{struct_uniform_queries_1_1_query_part_a24186fc4f67752331342e84554f806ff}{key}})
+bool \mbox{\hyperlink{struct_uniform_queries_1_1_query_part_af032469107805c1c71083666bb8548a9}{Param\+Name\+Equal}} (string key)
 \begin{DoxyCompactList}\small\item\em Check does this query\textquotesingle{}s key equals to target. \end{DoxyCompactList}\item 
-bool \mbox{\hyperlink{struct_uniform_queries_1_1_query_part_abda3bf2ddc04c911364a09655e8fc4f2}{Param\+Equal}} (string param)
+bool \mbox{\hyperlink{struct_uniform_queries_1_1_query_part_a5fb4475a72dcb6882fc860f7c0fcc50e}{Param\+Value\+Equal}} (string param)
 \begin{DoxyCompactList}\small\item\em Check does this query\textquotesingle{}s parameter equals to target. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -25,9 +25,9 @@ static bool \mbox{\hyperlink{struct_uniform_queries_1_1_query_part_accd3b435809c
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-string \mbox{\hyperlink{struct_uniform_queries_1_1_query_part_a24186fc4f67752331342e84554f806ff}{key}}
+string \mbox{\hyperlink{struct_uniform_queries_1_1_query_part_a941540a3d1489c7f32cb5e21910ba7ac}{property\+Name}}
 \begin{DoxyCompactList}\small\item\em Key for access \end{DoxyCompactList}\item 
-string \mbox{\hyperlink{struct_uniform_queries_1_1_query_part_aa8167f347217469ed47b298f2bc16381}{property}}
+string \mbox{\hyperlink{struct_uniform_queries_1_1_query_part_adb297c368ab4900f751d60ceffda0a99}{property\+Value}}
 \begin{DoxyCompactList}\small\item\em Property that will be shared via query. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Properties}
 \begin{DoxyCompactItemize}
@@ -90,15 +90,15 @@ Convert \mbox{\hyperlink{struct_uniform_queries_1_1_query_part}{Query\+Part}} to
 {\em qp} & \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{struct_uniform_queries_1_1_query_part_abda3bf2ddc04c911364a09655e8fc4f2}\label{struct_uniform_queries_1_1_query_part_abda3bf2ddc04c911364a09655e8fc4f2}} 
-\index{Uniform\+Queries\+::\+Query\+Part@{Uniform\+Queries\+::\+Query\+Part}!Param\+Equal@{Param\+Equal}}
-\index{Param\+Equal@{Param\+Equal}!Uniform\+Queries\+::\+Query\+Part@{Uniform\+Queries\+::\+Query\+Part}}
-\subsubsection{\texorpdfstring{Param\+Equal()}{ParamEqual()}}
-{\footnotesize\ttfamily bool Uniform\+Queries.\+Query\+Part.\+Param\+Equal (\begin{DoxyParamCaption}\item[{string}]{param }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{struct_uniform_queries_1_1_query_part_af032469107805c1c71083666bb8548a9}\label{struct_uniform_queries_1_1_query_part_af032469107805c1c71083666bb8548a9}} 
+\index{Uniform\+Queries\+::\+Query\+Part@{Uniform\+Queries\+::\+Query\+Part}!Param\+Name\+Equal@{Param\+Name\+Equal}}
+\index{Param\+Name\+Equal@{Param\+Name\+Equal}!Uniform\+Queries\+::\+Query\+Part@{Uniform\+Queries\+::\+Query\+Part}}
+\subsubsection{\texorpdfstring{Param\+Name\+Equal()}{ParamNameEqual()}}
+{\footnotesize\ttfamily bool Uniform\+Queries.\+Query\+Part.\+Param\+Name\+Equal (\begin{DoxyParamCaption}\item[{string}]{key }\end{DoxyParamCaption})}
 
 
 
-Check does this query\textquotesingle{}s parameter equals to target. 
+Check does this query\textquotesingle{}s key equals to target. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -108,15 +108,15 @@ Check does this query\textquotesingle{}s parameter equals to target.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{struct_uniform_queries_1_1_query_part_a5252d13a0a8c211c47cba54f3749aad1}\label{struct_uniform_queries_1_1_query_part_a5252d13a0a8c211c47cba54f3749aad1}} 
-\index{Uniform\+Queries\+::\+Query\+Part@{Uniform\+Queries\+::\+Query\+Part}!Param\+Key\+Equal@{Param\+Key\+Equal}}
-\index{Param\+Key\+Equal@{Param\+Key\+Equal}!Uniform\+Queries\+::\+Query\+Part@{Uniform\+Queries\+::\+Query\+Part}}
-\subsubsection{\texorpdfstring{Param\+Key\+Equal()}{ParamKeyEqual()}}
-{\footnotesize\ttfamily bool Uniform\+Queries.\+Query\+Part.\+Param\+Key\+Equal (\begin{DoxyParamCaption}\item[{string}]{key }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{struct_uniform_queries_1_1_query_part_a5fb4475a72dcb6882fc860f7c0fcc50e}\label{struct_uniform_queries_1_1_query_part_a5fb4475a72dcb6882fc860f7c0fcc50e}} 
+\index{Uniform\+Queries\+::\+Query\+Part@{Uniform\+Queries\+::\+Query\+Part}!Param\+Value\+Equal@{Param\+Value\+Equal}}
+\index{Param\+Value\+Equal@{Param\+Value\+Equal}!Uniform\+Queries\+::\+Query\+Part@{Uniform\+Queries\+::\+Query\+Part}}
+\subsubsection{\texorpdfstring{Param\+Value\+Equal()}{ParamValueEqual()}}
+{\footnotesize\ttfamily bool Uniform\+Queries.\+Query\+Part.\+Param\+Value\+Equal (\begin{DoxyParamCaption}\item[{string}]{param }\end{DoxyParamCaption})}
 
 
 
-Check does this query\textquotesingle{}s key equals to target. 
+Check does this query\textquotesingle{}s parameter equals to target. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -180,21 +180,21 @@ Try to get domain to backward connection by entry query.
 
 
 \subsection{Member Data Documentation}
-\mbox{\Hypertarget{struct_uniform_queries_1_1_query_part_a24186fc4f67752331342e84554f806ff}\label{struct_uniform_queries_1_1_query_part_a24186fc4f67752331342e84554f806ff}} 
-\index{Uniform\+Queries\+::\+Query\+Part@{Uniform\+Queries\+::\+Query\+Part}!key@{key}}
-\index{key@{key}!Uniform\+Queries\+::\+Query\+Part@{Uniform\+Queries\+::\+Query\+Part}}
-\subsubsection{\texorpdfstring{key}{key}}
-{\footnotesize\ttfamily string Uniform\+Queries.\+Query\+Part.\+key}
+\mbox{\Hypertarget{struct_uniform_queries_1_1_query_part_a941540a3d1489c7f32cb5e21910ba7ac}\label{struct_uniform_queries_1_1_query_part_a941540a3d1489c7f32cb5e21910ba7ac}} 
+\index{Uniform\+Queries\+::\+Query\+Part@{Uniform\+Queries\+::\+Query\+Part}!property\+Name@{property\+Name}}
+\index{property\+Name@{property\+Name}!Uniform\+Queries\+::\+Query\+Part@{Uniform\+Queries\+::\+Query\+Part}}
+\subsubsection{\texorpdfstring{property\+Name}{propertyName}}
+{\footnotesize\ttfamily string Uniform\+Queries.\+Query\+Part.\+property\+Name}
 
 
 
 Key for access 
 
-\mbox{\Hypertarget{struct_uniform_queries_1_1_query_part_aa8167f347217469ed47b298f2bc16381}\label{struct_uniform_queries_1_1_query_part_aa8167f347217469ed47b298f2bc16381}} 
-\index{Uniform\+Queries\+::\+Query\+Part@{Uniform\+Queries\+::\+Query\+Part}!property@{property}}
-\index{property@{property}!Uniform\+Queries\+::\+Query\+Part@{Uniform\+Queries\+::\+Query\+Part}}
-\subsubsection{\texorpdfstring{property}{property}}
-{\footnotesize\ttfamily string Uniform\+Queries.\+Query\+Part.\+property}
+\mbox{\Hypertarget{struct_uniform_queries_1_1_query_part_adb297c368ab4900f751d60ceffda0a99}\label{struct_uniform_queries_1_1_query_part_adb297c368ab4900f751d60ceffda0a99}} 
+\index{Uniform\+Queries\+::\+Query\+Part@{Uniform\+Queries\+::\+Query\+Part}!property\+Value@{property\+Value}}
+\index{property\+Value@{property\+Value}!Uniform\+Queries\+::\+Query\+Part@{Uniform\+Queries\+::\+Query\+Part}}
+\subsubsection{\texorpdfstring{property\+Value}{propertyValue}}
+{\footnotesize\ttfamily string Uniform\+Queries.\+Query\+Part.\+property\+Value}
 
 
 

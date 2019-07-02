@@ -78,17 +78,17 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="268">
+      <node id="286">
         <label>TeacherHandbook.Properties.Resources</label>
         <link refid="de/d69/class_teacher_handbook_1_1_properties_1_1_resources"/>
-        <childnode refid="268" relation="usage">
+        <childnode refid="286" relation="usage">
           <edgelabel>resourceMan</edgelabel>
         </childnode>
-        <childnode refid="269" relation="usage">
+        <childnode refid="287" relation="usage">
           <edgelabel>resourceCulture</edgelabel>
         </childnode>
       </node>
-      <node id="269">
+      <node id="287">
         <label>Globalization</label>
       </node>
     </collaborationgraph>

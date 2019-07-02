@@ -62,34 +62,34 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="399">
+      <node id="427">
         <label>TeacherHandbook.Controls.UserControl1</label>
         <link refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1"/>
-        <childnode refid="400" relation="public-inheritance">
+        <childnode refid="428" relation="public-inheritance">
         </childnode>
-        <childnode refid="401" relation="public-inheritance">
+        <childnode refid="429" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="400">
+      <node id="428">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="401">
+      <node id="429">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="402">
+      <node id="430">
         <label>TeacherHandbook.Controls.UserControl1</label>
         <link refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1"/>
-        <childnode refid="403" relation="public-inheritance">
+        <childnode refid="431" relation="public-inheritance">
         </childnode>
-        <childnode refid="404" relation="public-inheritance">
+        <childnode refid="432" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="403">
+      <node id="431">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="404">
+      <node id="432">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
     </collaborationgraph>

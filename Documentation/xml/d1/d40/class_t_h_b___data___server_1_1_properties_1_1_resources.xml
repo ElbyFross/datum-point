@@ -78,17 +78,17 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="274">
+      <node id="304">
         <label>THB_Data_Server.Properties.Resources</label>
         <link refid="d1/d40/class_t_h_b___data___server_1_1_properties_1_1_resources"/>
-        <childnode refid="274" relation="usage">
+        <childnode refid="304" relation="usage">
           <edgelabel>resourceMan</edgelabel>
         </childnode>
-        <childnode refid="275" relation="usage">
+        <childnode refid="305" relation="usage">
           <edgelabel>resourceCulture</edgelabel>
         </childnode>
       </node>
-      <node id="275">
+      <node id="305">
         <label>Globalization</label>
       </node>
     </collaborationgraph>

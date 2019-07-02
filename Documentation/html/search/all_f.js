@@ -1,13 +1,15 @@
 var searchData=
 [
-  ['queries',['queries',['../d1/d09/class_pipes_provider_1_1_transmission_line.html#ad866033fcbb1d9f783df8ff71e7fc21a',1,'PipesProvider::TransmissionLine']]],
+  ['queries',['queries',['../da/d0e/class_pipes_provider_1_1_client_1_1_transmission_line.html#af110134a03e1e046911970fff4774600',1,'PipesProvider::Client::TransmissionLine']]],
   ['queriesserver',['QueriesServer',['../db/d5f/namespace_queries_server.html',1,'']]],
-  ['query',['Query',['../d2/d85/struct_pipes_provider_1_1_query_container.html#a6d66f084a62271934e708750d4c4dafa',1,'PipesProvider::QueryContainer']]],
-  ['querycontainer',['QueryContainer',['../d2/d85/struct_pipes_provider_1_1_query_container.html',1,'PipesProvider']]],
-  ['queryhandlercallback',['queryHandlerCallback',['../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html#aa663870a4d61945bcedd85721ede42a5',1,'PipesProvider::ServerTransmissionMeta']]],
+  ['query',['Query',['../d2/db8/class_pipes_provider_1_1_handlers_1_1_query.html',1,'PipesProvider.Handlers.Query'],['../d0/dc9/struct_pipes_provider_1_1_client_1_1_query_container.html#ada0fa04c68e6aee41d3d811d699d01aa',1,'PipesProvider.Client.QueryContainer.Query()']]],
+  ['querycontainer',['QueryContainer',['../d0/dc9/struct_pipes_provider_1_1_client_1_1_query_container.html',1,'PipesProvider.Client.QueryContainer'],['../d0/dc9/struct_pipes_provider_1_1_client_1_1_query_container.html#a35009271933f6aebf60be2415b651067',1,'PipesProvider.Client.QueryContainer.QueryContainer(string query)'],['../d0/dc9/struct_pipes_provider_1_1_client_1_1_query_container.html#a0e78a9dc3d3fc971f9a1abb06dc836b4',1,'PipesProvider.Client.QueryContainer.QueryContainer(string query, System.Action&lt; TransmissionLine, string &gt; AnswerHandler)']]],
+  ['queryhandler_5frelay',['QueryHandler_Relay',['../d2/d9a/class_queries_server_1_1_server.html#ac288a3c122f127e67894b255edd823af',1,'QueriesServer::Server']]],
+  ['queryhandlercallback',['queryHandlerCallback',['../d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller.html#a05c4175dad51cde531703ba9ed4fc8ea',1,'PipesProvider::Server::ServerTransmissionController']]],
   ['queryparamexist',['QueryParamExist',['../df/d75/class_uniform_queries_1_1_a_p_i.html#a1a0ad73e1dad7f7ec61398cb33ec18a4',1,'UniformQueries.API.QueryParamExist(string param, string query)'],['../df/d75/class_uniform_queries_1_1_a_p_i.html#a0f6c53ca64000015c8bf7bed30d9c57a',1,'UniformQueries.API.QueryParamExist(string param, params string[] queryParts)'],['../df/d75/class_uniform_queries_1_1_a_p_i.html#ac0f8c9faebdc4a69f2072c0bb9e955e1',1,'UniformQueries.API.QueryParamExist(string param, params QueryPart[] queryParts)']]],
   ['querypart',['QueryPart',['../d5/d61/struct_uniform_queries_1_1_query_part.html',1,'UniformQueries.QueryPart'],['../d5/d61/struct_uniform_queries_1_1_query_part.html#adabbcaa15ccf653f686d4f2bcd39ce09',1,'UniformQueries.QueryPart.QueryPart()']]],
   ['querypartsarraytostring',['QueryPartsArrayToString',['../d5/d61/struct_uniform_queries_1_1_query_part.html#a053c8ba08ddd1a20d5b50128a524da09',1,'UniformQueries::QueryPart']]],
-  ['queryprocessor',['queryProcessor',['../d1/d09/class_pipes_provider_1_1_transmission_line.html#a08bf6cb803ea32dd416afcc12ee866f5',1,'PipesProvider::TransmissionLine']]],
+  ['querypatterns',['queryPatterns',['../d5/d2e/class_pipes_provider_1_1_networking_1_1_routing_1_1_instruction.html#aa98823848a42831095f92b639121cc67',1,'PipesProvider::Networking::Routing::Instruction']]],
+  ['queryprocessor',['queryProcessor',['../da/d0e/class_pipes_provider_1_1_client_1_1_transmission_line.html#a86f49118056ad8cb6fe383abb2a350e8',1,'PipesProvider::Client::TransmissionLine']]],
   ['queryprocessors',['QueryProcessors',['../df/d75/class_uniform_queries_1_1_a_p_i.html#a8fe90206df6a1ae2b052b82c30a32037',1,'UniformQueries::API']]]
 ];

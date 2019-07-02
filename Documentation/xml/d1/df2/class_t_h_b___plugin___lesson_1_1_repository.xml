@@ -224,80 +224,80 @@
     <detaileddescription>
 <para>Interaction logic for Repository.xaml </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="248">
+      <node id="275">
         <label>THB_Plugin_Lesson.Repository</label>
         <link refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository"/>
-        <childnode refid="249" relation="public-inheritance">
+        <childnode refid="276" relation="public-inheritance">
         </childnode>
-        <childnode refid="250" relation="public-inheritance">
+        <childnode refid="277" relation="public-inheritance">
         </childnode>
-        <childnode refid="251" relation="public-inheritance">
+        <childnode refid="278" relation="public-inheritance">
         </childnode>
-        <childnode refid="252" relation="public-inheritance">
+        <childnode refid="279" relation="public-inheritance">
         </childnode>
-        <childnode refid="251" relation="public-inheritance">
+        <childnode refid="278" relation="public-inheritance">
         </childnode>
-        <childnode refid="252" relation="public-inheritance">
+        <childnode refid="279" relation="public-inheritance">
         </childnode>
-        <childnode refid="251" relation="public-inheritance">
+        <childnode refid="278" relation="public-inheritance">
         </childnode>
-        <childnode refid="252" relation="public-inheritance">
+        <childnode refid="279" relation="public-inheritance">
         </childnode>
-        <childnode refid="251" relation="public-inheritance">
+        <childnode refid="278" relation="public-inheritance">
         </childnode>
-        <childnode refid="252" relation="public-inheritance">
+        <childnode refid="279" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="250">
+      <node id="277">
         <label>IPlugin</label>
         <link refid="d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin"/>
       </node>
-      <node id="251">
+      <node id="278">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="252">
+      <node id="279">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
-      <node id="249">
+      <node id="276">
         <label>UserControl</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="253">
+      <node id="280">
         <label>THB_Plugin_Lesson.Repository</label>
         <link refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository"/>
-        <childnode refid="254" relation="public-inheritance">
+        <childnode refid="281" relation="public-inheritance">
         </childnode>
-        <childnode refid="255" relation="public-inheritance">
+        <childnode refid="282" relation="public-inheritance">
         </childnode>
-        <childnode refid="256" relation="public-inheritance">
+        <childnode refid="283" relation="public-inheritance">
         </childnode>
-        <childnode refid="257" relation="public-inheritance">
+        <childnode refid="284" relation="public-inheritance">
         </childnode>
-        <childnode refid="256" relation="public-inheritance">
+        <childnode refid="283" relation="public-inheritance">
         </childnode>
-        <childnode refid="257" relation="public-inheritance">
+        <childnode refid="284" relation="public-inheritance">
         </childnode>
-        <childnode refid="256" relation="public-inheritance">
+        <childnode refid="283" relation="public-inheritance">
         </childnode>
-        <childnode refid="257" relation="public-inheritance">
+        <childnode refid="284" relation="public-inheritance">
         </childnode>
-        <childnode refid="256" relation="public-inheritance">
+        <childnode refid="283" relation="public-inheritance">
         </childnode>
-        <childnode refid="257" relation="public-inheritance">
+        <childnode refid="284" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="255">
+      <node id="282">
         <label>IPlugin</label>
         <link refid="d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin"/>
       </node>
-      <node id="256">
+      <node id="283">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="257">
+      <node id="284">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
-      <node id="254">
+      <node id="281">
         <label>UserControl</label>
       </node>
     </collaborationgraph>

@@ -8,8 +8,6 @@ Class that provide methods for handling of queries.
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static async void \mbox{\hyperlink{class_uniform_queries_1_1_a_p_i_ae1b8242cd1055572d996ff97b5653345}{P\+P\+Received\+Query\+Handler\+Async}} (\mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Pipes\+Provider.\+Server\+Transmission\+Meta}} meta, string query)
-\begin{DoxyCompactList}\small\item\em Handler that can be connected as callback to default Pipes\+Provides D\+NS Handler. Will validate and decompose querie on parts and send it to target Query\+Processor. \end{DoxyCompactList}\item 
 static bool \mbox{\hyperlink{class_uniform_queries_1_1_a_p_i_a1a0ad73e1dad7f7ec61398cb33ec18a4}{Query\+Param\+Exist}} (string param, string query)
 \begin{DoxyCompactList}\small\item\em Check existing of param in query parts. Example entry query part\+: \char`\"{}q=\+Get\char`\"{}, where target param is \char`\"{}q\char`\"{}. \end{DoxyCompactList}\item 
 static bool \mbox{\hyperlink{class_uniform_queries_1_1_a_p_i_a0f6c53ca64000015c8bf7bed30d9c57a}{Query\+Param\+Exist}} (string param, params string\mbox{[}$\,$\mbox{]} query\+Parts)
@@ -29,7 +27,11 @@ static List$<$ \mbox{\hyperlink{struct_uniform_queries_1_1_query_part}{Query\+Pa
 static string \mbox{\hyperlink{class_uniform_queries_1_1_a_p_i_a132ca74ba34302f216b61668dd32a207}{Make\+Query}} (string guid, string token, params \mbox{\hyperlink{struct_uniform_queries_1_1_query_part}{Query\+Part}}\mbox{[}$\,$\mbox{]} query\+Params)
 \begin{DoxyCompactList}\small\item\em Build query string with requested parts and core data. \end{DoxyCompactList}\item 
 static \mbox{\hyperlink{struct_uniform_queries_1_1_query_part}{Query\+Part}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_uniform_queries_1_1_a_p_i_a013ca0eff0e67d7f30a6be289312b859}{Detect\+Query\+Parts}} (string query)
-\begin{DoxyCompactList}\small\item\em Convert query\textquotesingle{}s string to array of query parts. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Convert query\textquotesingle{}s string to array of query parts. User S\+P\+L\+I\+T\+T\+I\+N\+G\+\_\+\+S\+Y\+M\+B\+OL as spliter for detect query parts. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{struct_uniform_queries_1_1_query_part}{Query\+Part}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_uniform_queries_1_1_a_p_i_ab5875a3346878ba21ab331ba07889e92}{Detect\+Query\+Parts}} (string query, char spliter)
+\begin{DoxyCompactList}\small\item\em Convert query\textquotesingle{}s string to array of query parts. \end{DoxyCompactList}\item 
+static bool \mbox{\hyperlink{class_uniform_queries_1_1_a_p_i_a76acc6d6941a7a30d0ed87f69eab3434}{Is\+Seems\+Valid}} (string query)
+\begin{DoxyCompactList}\small\item\em Try to detect core query parts. Example case of using\+: is decryption required. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -75,8 +77,26 @@ Load query handlers during first call.
 \mbox{\Hypertarget{class_uniform_queries_1_1_a_p_i_a013ca0eff0e67d7f30a6be289312b859}\label{class_uniform_queries_1_1_a_p_i_a013ca0eff0e67d7f30a6be289312b859}} 
 \index{Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}!Detect\+Query\+Parts@{Detect\+Query\+Parts}}
 \index{Detect\+Query\+Parts@{Detect\+Query\+Parts}!Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}}
-\subsubsection{\texorpdfstring{Detect\+Query\+Parts()}{DetectQueryParts()}}
+\subsubsection{\texorpdfstring{Detect\+Query\+Parts()}{DetectQueryParts()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily static \mbox{\hyperlink{struct_uniform_queries_1_1_query_part}{Query\+Part}} \mbox{[}$\,$\mbox{]} Uniform\+Queries.\+A\+P\+I.\+Detect\+Query\+Parts (\begin{DoxyParamCaption}\item[{string}]{query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Convert query\textquotesingle{}s string to array of query parts. User S\+P\+L\+I\+T\+T\+I\+N\+G\+\_\+\+S\+Y\+M\+B\+OL as spliter for detect query parts. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_uniform_queries_1_1_a_p_i_ab5875a3346878ba21ab331ba07889e92}\label{class_uniform_queries_1_1_a_p_i_ab5875a3346878ba21ab331ba07889e92}} 
+\index{Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}!Detect\+Query\+Parts@{Detect\+Query\+Parts}}
+\index{Detect\+Query\+Parts@{Detect\+Query\+Parts}!Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}}
+\subsubsection{\texorpdfstring{Detect\+Query\+Parts()}{DetectQueryParts()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static \mbox{\hyperlink{struct_uniform_queries_1_1_query_part}{Query\+Part}} \mbox{[}$\,$\mbox{]} Uniform\+Queries.\+A\+P\+I.\+Detect\+Query\+Parts (\begin{DoxyParamCaption}\item[{string}]{query,  }\item[{char}]{spliter }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -85,6 +105,8 @@ Convert query\textquotesingle{}s string to array of query parts.
 
 \begin{DoxyParams}{Parameters}
 {\em query} & \\
+\hline
+{\em spliter} & Char that will be used as query part spliter.\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
@@ -134,6 +156,24 @@ Try to find requested all param\textquotesingle{}s value among query parts by re
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+\mbox{\Hypertarget{class_uniform_queries_1_1_a_p_i_a76acc6d6941a7a30d0ed87f69eab3434}\label{class_uniform_queries_1_1_a_p_i_a76acc6d6941a7a30d0ed87f69eab3434}} 
+\index{Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}!Is\+Seems\+Valid@{Is\+Seems\+Valid}}
+\index{Is\+Seems\+Valid@{Is\+Seems\+Valid}!Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}}
+\subsubsection{\texorpdfstring{Is\+Seems\+Valid()}{IsSeemsValid()}}
+{\footnotesize\ttfamily static bool Uniform\+Queries.\+A\+P\+I.\+Is\+Seems\+Valid (\begin{DoxyParamCaption}\item[{string}]{query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Try to detect core query parts. Example case of using\+: is decryption required. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em query} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
 \mbox{\Hypertarget{class_uniform_queries_1_1_a_p_i_a132ca74ba34302f216b61668dd32a207}\label{class_uniform_queries_1_1_a_p_i_a132ca74ba34302f216b61668dd32a207}} 
 \index{Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}!Make\+Query@{Make\+Query}}
 \index{Make\+Query@{Make\+Query}!Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}}
@@ -156,23 +196,6 @@ Build query string with requested parts and core data.
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_uniform_queries_1_1_a_p_i_ae1b8242cd1055572d996ff97b5653345}\label{class_uniform_queries_1_1_a_p_i_ae1b8242cd1055572d996ff97b5653345}} 
-\index{Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}!P\+P\+Received\+Query\+Handler\+Async@{P\+P\+Received\+Query\+Handler\+Async}}
-\index{P\+P\+Received\+Query\+Handler\+Async@{P\+P\+Received\+Query\+Handler\+Async}!Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}}
-\subsubsection{\texorpdfstring{P\+P\+Received\+Query\+Handler\+Async()}{PPReceivedQueryHandlerAsync()}}
-{\footnotesize\ttfamily static async void Uniform\+Queries.\+A\+P\+I.\+P\+P\+Received\+Query\+Handler\+Async (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_pipes_provider_1_1_server_transmission_meta}{Pipes\+Provider.\+Server\+Transmission\+Meta}}}]{meta,  }\item[{string}]{query }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-Handler that can be connected as callback to default Pipes\+Provides D\+NS Handler. Will validate and decompose querie on parts and send it to target Query\+Processor. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em meta} & \\
-\hline
-{\em query} & \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{class_uniform_queries_1_1_a_p_i_a1a0ad73e1dad7f7ec61398cb33ec18a4}\label{class_uniform_queries_1_1_a_p_i_a1a0ad73e1dad7f7ec61398cb33ec18a4}} 
 \index{Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}!Query\+Param\+Exist@{Query\+Param\+Exist}}
 \index{Query\+Param\+Exist@{Query\+Param\+Exist}!Uniform\+Queries\+::\+A\+PI@{Uniform\+Queries\+::\+A\+PI}}

@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller" kind="class" language="C#" prot="public">
+    <compoundname>PipesProvider::Server::ServerTransmissionController</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1a6b9961d3fbf62a102b63de402aed5516" prot="public" static="no" mutable="no">
+        <type>IAsyncResult</type>
+        <definition>IAsyncResult PipesProvider.Server.ServerTransmissionController.connectionMarker</definition>
+        <argsstring></argsstring>
+        <name>connectionMarker</name>
+        <briefdescription>
+<para>Object that provide access to async connection. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" line="28" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1a618854b229e8b0c8f98ce02985e576c7" prot="public" static="no" mutable="no">
+        <type>System.Action&lt; <ref refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller" kindref="compound">ServerTransmissionController</ref> &gt;</type>
+        <definition>System.Action&lt;ServerTransmissionController&gt; PipesProvider.Server.ServerTransmissionController.connectionCallback</definition>
+        <argsstring></argsstring>
+        <name>connectionCallback</name>
+        <briefdescription>
+<para>Delegate that will be called when connection will be established. ServerTransmissionMeta - meta data of transmission. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" line="34" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1a05c4175dad51cde531703ba9ed4fc8ea" prot="public" static="no" mutable="no">
+        <type>System.Action&lt; <ref refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller" kindref="compound">ServerTransmissionController</ref>, string &gt;</type>
+        <definition>System.Action&lt;ServerTransmissionController, string&gt; PipesProvider.Server.ServerTransmissionController.queryHandlerCallback</definition>
+        <argsstring></argsstring>
+        <name>queryHandlerCallback</name>
+        <briefdescription>
+<para>Delegate that will be called when server will recive query. ServerTransmissionMeta - meta data of transmission. string - shared query. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1a221ea11d175f2ecde78419322df272de" prot="public" static="no" mutable="no">
+        <type>NamedPipeServerStream</type>
+        <definition>NamedPipeServerStream PipesProvider.Server.ServerTransmissionController.pipe</definition>
+        <argsstring></argsstring>
+        <name>pipe</name>
+        <briefdescription>
+<para>Reference to created pipe. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" line="46" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" bodystart="46" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1a3bdd20927be4076f3236d22333d858e6" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string PipesProvider.Server.ServerTransmissionController.name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+<para>Name of this connection. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" line="51" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1adafb92b6d6b1cae42003ba0239ef9acb" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="yes">
+        <type>bool</type>
+        <definition>bool PipesProvider.Server.ServerTransmissionController.Expired</definition>
+        <argsstring></argsstring>
+        <name>Expired</name>
+        <briefdescription>
+<para>Marker that show does current transmission is relevant. When it&apos;ll become true this pipe connection will be desconected. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" line="57" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" bodystart="57" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="property" id="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1a321db56f4e6ca117c077d9622dec8d91" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="yes">
+        <type>bool</type>
+        <definition>bool PipesProvider.Server.ServerTransmissionController.Stoped</definition>
+        <argsstring></argsstring>
+        <name>Stoped</name>
+        <briefdescription>
+<para>Marker that show does this transmition stoped. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" line="62" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" bodystart="62" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="property" id="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1aabd5537440acabe98c49c7bbb00408a0" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string PipesProvider.Server.ServerTransmissionController.ProcessingQuery</definition>
+        <argsstring></argsstring>
+        <name>ProcessingQuery</name>
+        <briefdescription>
+<para>Query that aqtualu in processing. </para>        </briefdescription>
+        <detaileddescription>
+<para>Attention: Value can be changed if some of handlers will call disconecction or transmission error. This situation will lead to establishing new connection that lead to changing of this value. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" bodystart="70" bodyend="70"/>
+      </memberdef>
+      <memberdef kind="property" id="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1ad8b5ce1e6f928400a384354a0c9502a2" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type><ref refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller" kindref="compound">ServerTransmissionController</ref></type>
+        <definition>ServerTransmissionController PipesProvider.Server.ServerTransmissionController.None</definition>
+        <argsstring></argsstring>
+        <name>None</name>
+        <briefdescription>
+<para>Return instance that not contain initialized fields. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" line="93" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" bodystart="94" bodyend="96"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1a0461a4ec90371a2f6015a4d90115d523" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>PipesProvider.Server.ServerTransmissionController.ServerTransmissionController</definition>
+        <argsstring>()</argsstring>
+        <name>ServerTransmissionController</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" line="73" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" bodystart="73" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1ac17320ff6c6ff4cbea5c1a2337b70cc4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>PipesProvider.Server.ServerTransmissionController.ServerTransmissionController</definition>
+        <argsstring>(IAsyncResult connectionMarker, System.Action&lt; ServerTransmissionController &gt; connectionCallback, System.Action&lt; ServerTransmissionController, string &gt; queryHandlerCallback, NamedPipeServerStream pipe, string pipeName)</argsstring>
+        <name>ServerTransmissionController</name>
+        <param>
+          <type>IAsyncResult</type>
+          <declname>connectionMarker</declname>
+        </param>
+        <param>
+          <type>System.Action&lt; <ref refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller" kindref="compound">ServerTransmissionController</ref> &gt;</type>
+          <declname>connectionCallback</declname>
+        </param>
+        <param>
+          <type>System.Action&lt; <ref refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller" kindref="compound">ServerTransmissionController</ref>, string &gt;</type>
+          <declname>queryHandlerCallback</declname>
+        </param>
+        <param>
+          <type>NamedPipeServerStream</type>
+          <declname>pipe</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>pipeName</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" line="75" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" bodystart="75" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1a4460b8f1647a38d120416cb5e216feba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PipesProvider.Server.ServerTransmissionController.SetExpired</definition>
+        <argsstring>()</argsstring>
+        <name>SetExpired</name>
+        <briefdescription>
+<para>Maeking transmission as expired. Line will be remaked. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" line="102" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" bodystart="102" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1aa15fc867654c48ab79d44bfb1616e6a5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void PipesProvider.Server.ServerTransmissionController.SetStoped</definition>
+        <argsstring>()</argsstring>
+        <name>SetStoped</name>
+        <briefdescription>
+<para>Marking transmission as expired and stoped for full exclusion from automatic server operations. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" line="113" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" bodystart="113" bodyend="119"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Container that contain meta data about server instance. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="340">
+        <label>System</label>
+      </node>
+      <node id="339">
+        <label>PipesProvider.Server.ServerTransmissionController</label>
+        <link refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller"/>
+        <childnode refid="340" relation="usage">
+          <edgelabel>queryHandlerCallback</edgelabel>
+          <edgelabel>connectionCallback</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" line="24" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/Server/ServerTransmissionController.cs" bodystart="23" bodyend="120"/>
+    <listofallmembers>
+      <member refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1a618854b229e8b0c8f98ce02985e576c7" prot="public" virt="non-virtual"><scope>PipesProvider::Server::ServerTransmissionController</scope><name>connectionCallback</name></member>
+      <member refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1a6b9961d3fbf62a102b63de402aed5516" prot="public" virt="non-virtual"><scope>PipesProvider::Server::ServerTransmissionController</scope><name>connectionMarker</name></member>
+      <member refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1adafb92b6d6b1cae42003ba0239ef9acb" prot="public" virt="non-virtual"><scope>PipesProvider::Server::ServerTransmissionController</scope><name>Expired</name></member>
+      <member refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1a3bdd20927be4076f3236d22333d858e6" prot="public" virt="non-virtual"><scope>PipesProvider::Server::ServerTransmissionController</scope><name>name</name></member>
+      <member refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1ad8b5ce1e6f928400a384354a0c9502a2" prot="public" virt="non-virtual"><scope>PipesProvider::Server::ServerTransmissionController</scope><name>None</name></member>
+      <member refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1a221ea11d175f2ecde78419322df272de" prot="public" virt="non-virtual"><scope>PipesProvider::Server::ServerTransmissionController</scope><name>pipe</name></member>
+      <member refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1aabd5537440acabe98c49c7bbb00408a0" prot="public" virt="non-virtual"><scope>PipesProvider::Server::ServerTransmissionController</scope><name>ProcessingQuery</name></member>
+      <member refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1a05c4175dad51cde531703ba9ed4fc8ea" prot="public" virt="non-virtual"><scope>PipesProvider::Server::ServerTransmissionController</scope><name>queryHandlerCallback</name></member>
+      <member refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1a0461a4ec90371a2f6015a4d90115d523" prot="public" virt="non-virtual"><scope>PipesProvider::Server::ServerTransmissionController</scope><name>ServerTransmissionController</name></member>
+      <member refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1ac17320ff6c6ff4cbea5c1a2337b70cc4" prot="public" virt="non-virtual"><scope>PipesProvider::Server::ServerTransmissionController</scope><name>ServerTransmissionController</name></member>
+      <member refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1a4460b8f1647a38d120416cb5e216feba" prot="public" virt="non-virtual"><scope>PipesProvider::Server::ServerTransmissionController</scope><name>SetExpired</name></member>
+      <member refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1aa15fc867654c48ab79d44bfb1616e6a5" prot="public" virt="non-virtual"><scope>PipesProvider::Server::ServerTransmissionController</scope><name>SetStoped</name></member>
+      <member refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller_1a321db56f4e6ca117c077d9622dec8d91" prot="public" virt="non-virtual"><scope>PipesProvider::Server::ServerTransmissionController</scope><name>Stoped</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

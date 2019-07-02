@@ -55,50 +55,50 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="158">
+      <node id="175">
         <label>TeacherHandbook.Plugins.Feed.Feed</label>
         <link refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed"/>
-        <childnode refid="157" relation="public-inheritance">
+        <childnode refid="174" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="162">
+      <node id="179">
         <label>THB_Plugin_Lesson.Repository</label>
         <link refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository"/>
-        <childnode refid="157" relation="public-inheritance">
+        <childnode refid="174" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="163">
+      <node id="180">
         <label>THB_Plugin_Orders.OrdersBoard</label>
         <link refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board"/>
-        <childnode refid="157" relation="public-inheritance">
+        <childnode refid="174" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="159">
+      <node id="176">
         <label>TeacherHandbook.Plugins.Schedule.Schedule</label>
         <link refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule"/>
-        <childnode refid="157" relation="public-inheritance">
+        <childnode refid="174" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="157">
+      <node id="174">
         <label>UniformClient.Plugins.IPlugin</label>
         <link refid="d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin"/>
       </node>
-      <node id="164">
+      <node id="181">
         <label>THB_Plugin_Social.PersonalStatistic.PersonalStatistic</label>
         <link refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic"/>
-        <childnode refid="157" relation="public-inheritance">
+        <childnode refid="174" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="160">
+      <node id="177">
         <label>THB_Plugin_Exams.Monitor</label>
         <link refid="d9/d79/class_t_h_b___plugin___exams_1_1_monitor"/>
-        <childnode refid="157" relation="public-inheritance">
+        <childnode refid="174" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="161">
+      <node id="178">
         <label>THB_Plugin_Exams.TestConstructor</label>
         <link refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor"/>
-        <childnode refid="157" relation="public-inheritance">
+        <childnode refid="174" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>

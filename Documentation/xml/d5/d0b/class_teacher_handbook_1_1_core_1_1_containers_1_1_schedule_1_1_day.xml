@@ -37,14 +37,14 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="115">
+      <node id="123">
         <label>TeacherHandbook.Core.Containers.Schedule.Day</label>
         <link refid="d5/d0b/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_day"/>
-        <childnode refid="116" relation="usage">
+        <childnode refid="124" relation="usage">
           <edgelabel>sessions</edgelabel>
         </childnode>
       </node>
-      <node id="116">
+      <node id="124">
         <label>TeacherHandbook.Core.Containers.Schedule.Session</label>
         <link refid="d5/d8e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_session"/>
       </node>

@@ -327,104 +327,104 @@
     <detaileddescription>
 <para><ref refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed" kindref="compound">Feed</ref> </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="129">
+      <node id="139">
         <label>TeacherHandbook.Plugins.Feed.Feed</label>
         <link refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed"/>
-        <childnode refid="130" relation="public-inheritance">
+        <childnode refid="140" relation="public-inheritance">
         </childnode>
-        <childnode refid="131" relation="public-inheritance">
+        <childnode refid="141" relation="public-inheritance">
         </childnode>
-        <childnode refid="130" relation="public-inheritance">
+        <childnode refid="140" relation="public-inheritance">
         </childnode>
-        <childnode refid="131" relation="public-inheritance">
+        <childnode refid="141" relation="public-inheritance">
         </childnode>
-        <childnode refid="130" relation="public-inheritance">
+        <childnode refid="140" relation="public-inheritance">
         </childnode>
-        <childnode refid="131" relation="public-inheritance">
+        <childnode refid="141" relation="public-inheritance">
         </childnode>
-        <childnode refid="130" relation="public-inheritance">
+        <childnode refid="140" relation="public-inheritance">
         </childnode>
-        <childnode refid="131" relation="public-inheritance">
+        <childnode refid="141" relation="public-inheritance">
         </childnode>
-        <childnode refid="130" relation="public-inheritance">
+        <childnode refid="140" relation="public-inheritance">
         </childnode>
-        <childnode refid="131" relation="public-inheritance">
+        <childnode refid="141" relation="public-inheritance">
         </childnode>
-        <childnode refid="130" relation="public-inheritance">
+        <childnode refid="140" relation="public-inheritance">
         </childnode>
-        <childnode refid="131" relation="public-inheritance">
+        <childnode refid="141" relation="public-inheritance">
         </childnode>
-        <childnode refid="130" relation="public-inheritance">
+        <childnode refid="140" relation="public-inheritance">
         </childnode>
-        <childnode refid="131" relation="public-inheritance">
+        <childnode refid="141" relation="public-inheritance">
         </childnode>
-        <childnode refid="132" relation="public-inheritance">
+        <childnode refid="142" relation="public-inheritance">
         </childnode>
-        <childnode refid="133" relation="public-inheritance">
+        <childnode refid="143" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="133">
+      <node id="143">
         <label>UniformClient::Plugins::IPlugin</label>
         <link refid="d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin"/>
       </node>
-      <node id="130">
+      <node id="140">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="131">
+      <node id="141">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
-      <node id="132">
+      <node id="142">
         <label>UserControl</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="134">
+      <node id="144">
         <label>TeacherHandbook.Plugins.Feed.Feed</label>
         <link refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed"/>
-        <childnode refid="135" relation="public-inheritance">
+        <childnode refid="145" relation="public-inheritance">
         </childnode>
-        <childnode refid="136" relation="public-inheritance">
+        <childnode refid="146" relation="public-inheritance">
         </childnode>
-        <childnode refid="135" relation="public-inheritance">
+        <childnode refid="145" relation="public-inheritance">
         </childnode>
-        <childnode refid="136" relation="public-inheritance">
+        <childnode refid="146" relation="public-inheritance">
         </childnode>
-        <childnode refid="135" relation="public-inheritance">
+        <childnode refid="145" relation="public-inheritance">
         </childnode>
-        <childnode refid="136" relation="public-inheritance">
+        <childnode refid="146" relation="public-inheritance">
         </childnode>
-        <childnode refid="135" relation="public-inheritance">
+        <childnode refid="145" relation="public-inheritance">
         </childnode>
-        <childnode refid="136" relation="public-inheritance">
+        <childnode refid="146" relation="public-inheritance">
         </childnode>
-        <childnode refid="135" relation="public-inheritance">
+        <childnode refid="145" relation="public-inheritance">
         </childnode>
-        <childnode refid="136" relation="public-inheritance">
+        <childnode refid="146" relation="public-inheritance">
         </childnode>
-        <childnode refid="135" relation="public-inheritance">
+        <childnode refid="145" relation="public-inheritance">
         </childnode>
-        <childnode refid="136" relation="public-inheritance">
+        <childnode refid="146" relation="public-inheritance">
         </childnode>
-        <childnode refid="135" relation="public-inheritance">
+        <childnode refid="145" relation="public-inheritance">
         </childnode>
-        <childnode refid="136" relation="public-inheritance">
+        <childnode refid="146" relation="public-inheritance">
         </childnode>
-        <childnode refid="137" relation="public-inheritance">
+        <childnode refid="147" relation="public-inheritance">
         </childnode>
-        <childnode refid="138" relation="public-inheritance">
+        <childnode refid="148" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="138">
+      <node id="148">
         <label>UniformClient::Plugins::IPlugin</label>
         <link refid="d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin"/>
       </node>
-      <node id="135">
+      <node id="145">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="136">
+      <node id="146">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
-      <node id="137">
+      <node id="147">
         <label>UserControl</label>
       </node>
     </collaborationgraph>

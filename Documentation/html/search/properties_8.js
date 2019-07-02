@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['menubuttons',['MenuButtons',['../df/d32/class_teacher_handbook_1_1_main_window.html#ada9d7a71ad01c470b09f6c62bf2afb7c',1,'TeacherHandbook::MainWindow']]],
-  ['meta',['Meta',['../d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin.html#aa49e267e66a3d697ded460d9281dcc3a',1,'UniformClient::Plugins::IPlugin']]]
+  ['lastquery',['LastQuery',['../da/d0e/class_pipes_provider_1_1_client_1_1_transmission_line.html#ac4b9855c5d9aa2a9f6289c2eb43f6996',1,'PipesProvider::Client::TransmissionLine']]],
+  ['logonfinished',['LogonFinished',['../da/d0e/class_pipes_provider_1_1_client_1_1_transmission_line.html#a02c3eec4a1041d7b57ee5df00559d251',1,'PipesProvider::Client::TransmissionLine']]]
 ];

@@ -22,7 +22,9 @@ static bool \mbox{\hyperlink{class_uniform_server_1_1_base_server_aa85e82df10ece
 Thread \mbox{\hyperlink{class_uniform_server_1_1_base_server_a52485a2d70e615a5cbf720c952a8d62f}{thread}}
 \begin{DoxyCompactList}\small\item\em Reference to thread that host this server. \end{DoxyCompactList}\item 
 string \mbox{\hyperlink{class_uniform_server_1_1_base_server_aaa318b3ed503dd8ccf381c9f3a81ecf2}{pipe\+Name}}
-\begin{DoxyCompactList}\small\item\em Name that will be applied to the pipe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Name that will be applied to the pipe. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_pipes_provider_1_1_security_a1a6020eca1c661a6f7140e8260502d7e}{Pipes\+Provider.\+Security.\+Security\+Level}} \mbox{\hyperlink{class_uniform_server_1_1_base_server_ac6297faa957fd1005fc61054bdd1cdb1}{security\+Level}} = Pipes\+Provider.\+Security.\+Security\+Level.\+Anonymous
+\begin{DoxyCompactList}\small\item\em Squrity level that will applied to pipe. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -58,7 +60,7 @@ const int \mbox{\hyperlink{class_uniform_server_1_1_base_server_a494087cabc03c54
 \subsection*{Static Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static int \mbox{\hyperlink{class_uniform_server_1_1_base_server_a4dbe04636a763decfae22ddb2fe26c7a}{thread\+Sleep\+Time}} = 150
+static int \mbox{\hyperlink{class_uniform_server_1_1_base_server_a4dbe04636a763decfae22ddb2fe26c7a}{thread\+Sleep\+Time}} = 15
 \begin{DoxyCompactList}\small\item\em How many milisseconds will sleep thread after tick. \end{DoxyCompactList}\item 
 static int \mbox{\hyperlink{class_uniform_server_1_1_base_server_aa40c02a1eec7eda4c36a8ac08119b414}{threads\+Count}} = 1
 \begin{DoxyCompactList}\small\item\em Count of threads. \end{DoxyCompactList}\item 
@@ -258,6 +260,16 @@ Object that allow to detect processes conflict.
 
 Name that will be applied to the pipe. 
 
+\mbox{\Hypertarget{class_uniform_server_1_1_base_server_ac6297faa957fd1005fc61054bdd1cdb1}\label{class_uniform_server_1_1_base_server_ac6297faa957fd1005fc61054bdd1cdb1}} 
+\index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!security\+Level@{security\+Level}}
+\index{security\+Level@{security\+Level}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
+\subsubsection{\texorpdfstring{security\+Level}{securityLevel}}
+{\footnotesize\ttfamily \mbox{\hyperlink{namespace_pipes_provider_1_1_security_a1a6020eca1c661a6f7140e8260502d7e}{Pipes\+Provider.\+Security.\+Security\+Level}} Uniform\+Server.\+Base\+Server.\+security\+Level = Pipes\+Provider.\+Security.\+Security\+Level.\+Anonymous}
+
+
+
+Squrity level that will applied to pipe. 
+
 \mbox{\Hypertarget{class_uniform_server_1_1_base_server_aaff91507b262d2a1b9021caa2d01640f}\label{class_uniform_server_1_1_base_server_aaff91507b262d2a1b9021caa2d01640f}} 
 \index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!S\+W\+\_\+\+H\+I\+DE@{S\+W\+\_\+\+H\+I\+DE}}
 \index{S\+W\+\_\+\+H\+I\+DE@{S\+W\+\_\+\+H\+I\+DE}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
@@ -302,7 +314,7 @@ Count of threads.
 \index{Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}!thread\+Sleep\+Time@{thread\+Sleep\+Time}}
 \index{thread\+Sleep\+Time@{thread\+Sleep\+Time}!Uniform\+Server\+::\+Base\+Server@{Uniform\+Server\+::\+Base\+Server}}
 \subsubsection{\texorpdfstring{thread\+Sleep\+Time}{threadSleepTime}}
-{\footnotesize\ttfamily int Uniform\+Server.\+Base\+Server.\+thread\+Sleep\+Time = 150\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+{\footnotesize\ttfamily int Uniform\+Server.\+Base\+Server.\+thread\+Sleep\+Time = 15\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
 
 
 

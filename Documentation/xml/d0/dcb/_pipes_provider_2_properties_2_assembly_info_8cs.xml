@@ -3,7 +3,6 @@
   <compounddef id="d0/dcb/_pipes_provider_2_properties_2_assembly_info_8cs" kind="file" language="C#">
     <compoundname>AssemblyInfo.cs</compoundname>
     <innernamespace refid="da/d54/namespace_system_1_1_runtime_1_1_compiler_services">System::Runtime::CompilerServices</innernamespace>
-    <innernamespace refid="d1/dee/namespace_system_1_1_runtime_1_1_interop_services">System::Runtime::InteropServices</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

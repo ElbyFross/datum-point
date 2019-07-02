@@ -39,26 +39,26 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="322">
+      <node id="366">
         <label>global::SystemConfiguration::ApplicationSettingsBase</label>
       </node>
-      <node id="321">
+      <node id="365">
         <label>WpfHandler.Properties.Settings</label>
         <link refid="d7/d4f/class_wpf_handler_1_1_properties_1_1_settings"/>
-        <childnode refid="322" relation="public-inheritance">
+        <childnode refid="366" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="324">
+      <node id="368">
         <label>global::SystemConfiguration::ApplicationSettingsBase</label>
       </node>
-      <node id="323">
+      <node id="367">
         <label>WpfHandler.Properties.Settings</label>
         <link refid="d7/d4f/class_wpf_handler_1_1_properties_1_1_settings"/>
-        <childnode refid="324" relation="public-inheritance">
+        <childnode refid="368" relation="public-inheritance">
         </childnode>
-        <childnode refid="323" relation="usage">
+        <childnode refid="367" relation="usage">
           <edgelabel>defaultInstance</edgelabel>
         </childnode>
       </node>

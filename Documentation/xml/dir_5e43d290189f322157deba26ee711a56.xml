@@ -5,7 +5,7 @@
     <innerdir refid="dir_a4e6924cd21bf02677f87cbc84f7743f">D:/Work/GitHub/datum-point/UniformServer/obj</innerdir>
     <innerdir refid="dir_bf24c37169ec25b14201e2511d0f03b2">D:/Work/GitHub/datum-point/UniformServer/Queries</innerdir>
     <innerfile refid="dd/d0c/_base_server_8cs">BaseServer.cs</innerfile>
-    <innerfile refid="d7/d40/_uniform_server_2_security_a_p_i_8cs">SecurityAPI.cs</innerfile>
+    <innerfile refid="db/d2f/_commands_8cs">Commands.cs</innerfile>
     <innerfile refid="dc/d75/_simple_server_8cs">SimpleServer.cs</innerfile>
     <briefdescription>
     </briefdescription>

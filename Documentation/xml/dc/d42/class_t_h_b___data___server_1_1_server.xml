@@ -27,7 +27,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
 <para>Draw line</para><para>Draw line</para><para>Show help. </para>        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" line="34" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" bodystart="34" bodyend="156"/>
+        <location file="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" line="35" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" bodystart="35" bodyend="155"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -35,40 +35,49 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="293">
+      <node id="318">
         <label>THB_Data_Server.Server</label>
         <link refid="dc/d42/class_t_h_b___data___server_1_1_server"/>
-        <childnode refid="294" relation="public-inheritance">
+        <childnode refid="319" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="294">
+      <node id="319">
         <label>UniformServer::BaseServer</label>
         <link refid="d7/d32/class_uniform_server_1_1_base_server"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="297">
+      <node id="323">
         <label>UniformServer.BaseServer</label>
         <link refid="d7/d32/class_uniform_server_1_1_base_server"/>
-        <childnode refid="297" relation="usage">
+        <childnode refid="322" relation="usage">
+          <edgelabel>securityLevel</edgelabel>
+        </childnode>
+        <childnode refid="323" relation="usage">
           <edgelabel>longTermServerThreads</edgelabel>
         </childnode>
       </node>
-      <node id="295">
+      <node id="320">
         <label>THB_Data_Server.Server</label>
         <link refid="dc/d42/class_t_h_b___data___server_1_1_server"/>
-        <childnode refid="296" relation="public-inheritance">
+        <childnode refid="321" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="296">
+      <node id="321">
         <label>UniformServer::BaseServer</label>
         <link refid="d7/d32/class_uniform_server_1_1_base_server"/>
-        <childnode refid="297" relation="usage">
+        <childnode refid="322" relation="usage">
+          <edgelabel>securityLevel</edgelabel>
+        </childnode>
+        <childnode refid="323" relation="usage">
           <edgelabel>longTermServerThreads</edgelabel>
         </childnode>
       </node>
+      <node id="322">
+        <label>Security</label>
+      </node>
     </collaborationgraph>
-    <location file="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" line="28" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" bodystart="27" bodyend="157"/>
+    <location file="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" bodystart="28" bodyend="156"/>
     <listofallmembers>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a632ed557976f4d7bd9b41502bb9a262b" prot="public" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>appTerminated</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a992660752da60019c348e18226a87bf2" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>ArgsReactor</name></member>
@@ -78,6 +87,7 @@
       <member refid="dc/d42/class_t_h_b___data___server_1_1_server_1a87515fb7b3422af002d33dd3fbe8f4e9" prot="private" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>Main</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a051bdce3aec037df76d8efe3b9938198" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>mutexObj</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1aaa318b3ed503dd8ccf381c9f3a81ecf2" prot="public" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>pipeName</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1ac6297faa957fd1005fc61054bdd1cdb1" prot="public" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>securityLevel</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1aa85e82df10ecec8324e2ccf7611d8cbf" prot="public" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>SendAnswer</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a16cf4f4f9de9d6d6586631640d3d867b" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>ShowWindow</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1aa4a1412b217944e7f8d6ccae6ac68289" prot="protected" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>StartServerThread</name></member>

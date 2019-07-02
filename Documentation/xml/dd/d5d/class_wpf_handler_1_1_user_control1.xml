@@ -62,34 +62,34 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="381">
+      <node id="433">
         <label>WpfHandler.UserControl1</label>
         <link refid="dd/d5d/class_wpf_handler_1_1_user_control1"/>
-        <childnode refid="382" relation="public-inheritance">
+        <childnode refid="434" relation="public-inheritance">
         </childnode>
-        <childnode refid="383" relation="public-inheritance">
+        <childnode refid="435" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="382">
+      <node id="434">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="383">
+      <node id="435">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="384">
+      <node id="436">
         <label>WpfHandler.UserControl1</label>
         <link refid="dd/d5d/class_wpf_handler_1_1_user_control1"/>
-        <childnode refid="385" relation="public-inheritance">
+        <childnode refid="437" relation="public-inheritance">
         </childnode>
-        <childnode refid="386" relation="public-inheritance">
+        <childnode refid="438" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="385">
+      <node id="437">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="386">
+      <node id="438">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
     </collaborationgraph>

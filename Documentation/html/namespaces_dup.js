@@ -1,7 +1,7 @@
 var namespaces_dup =
 [
     [ "ConsoleDraw", "d3/d29/namespace_console_draw.html", null ],
-    [ "PipesProvider", "d6/daa/namespace_pipes_provider.html", null ],
+    [ "PipesProvider", "d6/daa/namespace_pipes_provider.html", "d6/daa/namespace_pipes_provider" ],
     [ "QueriesServer", "db/d5f/namespace_queries_server.html", null ],
     [ "SessionProvider", "dc/d85/namespace_session_provider.html", null ],
     [ "TeacherHandbook", "dc/da6/namespace_teacher_handbook.html", "dc/da6/namespace_teacher_handbook" ],

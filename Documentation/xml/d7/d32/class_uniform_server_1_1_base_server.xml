@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="35" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="35" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="36" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="36" bodyend="-1"/>
       </memberdef>
       <memberdef kind="event" id="d7/d32/class_uniform_server_1_1_base_server_1a440a854a955ab7c5e563918c12e9b32c" prot="public" static="yes" add="no" remove="no" raise="no">
         <type>System.Action&lt; int &gt;</type>
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="41" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="42" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="42" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-attrib">
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="66" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="66" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="67" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="67" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
@@ -61,7 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="72" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="73" bodyend="114"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="73" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="74" bodyend="115"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-static-attrib">
@@ -70,14 +70,14 @@
         <definition>int UniformServer.BaseServer.threadSleepTime</definition>
         <argsstring></argsstring>
         <name>threadSleepTime</name>
-        <initializer>= 150</initializer>
+        <initializer>= 15</initializer>
         <briefdescription>
 <para>How many milisseconds will sleep thread after tick. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="120" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="120" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="121" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="121" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1aa40c02a1eec7eda4c36a8ac08119b414" prot="protected" static="yes" mutable="no">
         <type>int</type>
@@ -91,7 +91,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="125" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="125" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="126" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="126" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1a9c14e919da0c2b9b7f8e57a92c9b0742" prot="protected" static="yes" mutable="no">
         <type><ref refid="d7/d32/class_uniform_server_1_1_base_server" kindref="compound">BaseServer</ref> []</type>
@@ -104,7 +104,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="130" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="130" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="131" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="131" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1a051bdce3aec037df76d8efe3b9938198" prot="protected" static="yes" mutable="no">
         <type>Mutex</type>
@@ -118,7 +118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="145" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="145" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="146" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="146" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -134,7 +134,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="135" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="135" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="136" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="136" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1a494087cabc03c54c3dc0ac1cc1048860" prot="protected" static="no" mutable="no">
         <type>const int</type>
@@ -148,7 +148,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="140" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="140" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="141" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="141" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-attrib">
@@ -163,7 +163,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="152" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="152" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="153" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="153" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1aaa318b3ed503dd8ccf381c9f3a81ecf2" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -176,7 +176,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="157" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="157" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="158" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="158" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d7/d32/class_uniform_server_1_1_base_server_1ac6297faa957fd1005fc61054bdd1cdb1" prot="public" static="no" mutable="no">
+        <type><ref refid="da/d2f/namespace_pipes_provider_1_1_security_1a1a6020eca1c661a6f7140e8260502d7e" kindref="member">PipesProvider.Security.SecurityLevel</ref></type>
+        <definition>PipesProvider.Security.SecurityLevel UniformServer.BaseServer.securityLevel</definition>
+        <argsstring></argsstring>
+        <name>securityLevel</name>
+        <initializer>= PipesProvider.Security.SecurityLevel.Anonymous</initializer>
+        <briefdescription>
+<para>Squrity level that will applied to pipe. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="163" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="163" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -215,7 +229,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="53" column="1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="54" column="1"/>
       </memberdef>
       <memberdef kind="function" id="d7/d32/class_uniform_server_1_1_base_server_1a1b7d5587de4974fad2ec366a571791e0" prot="protected" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>IntPtr</type>
@@ -229,7 +243,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="60" column="1"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="61" column="1"/>
       </memberdef>
       <memberdef kind="function" id="d7/d32/class_uniform_server_1_1_base_server_1aa4a1412b217944e7f8d6ccae6ac68289" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Thread</type>
@@ -270,7 +284,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="303" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="303" bodyend="315"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="326" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="326" bodyend="342"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-static-func">
@@ -297,7 +311,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="164" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="164" bodyend="189"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="170" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="170" bodyend="195"/>
       </memberdef>
       <memberdef kind="function" id="d7/d32/class_uniform_server_1_1_base_server_1a992660752da60019c348e18226a87bf2" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -322,7 +336,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="195" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="195" bodyend="230"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="201" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="201" bodyend="236"/>
       </memberdef>
       <memberdef kind="function" id="d7/d32/class_uniform_server_1_1_base_server_1a6f6857c6f0644118294fa56c92f00e5c" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -339,7 +353,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="320" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="320" bodyend="337"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="347" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="347" bodyend="365"/>
       </memberdef>
       <memberdef kind="function" id="d7/d32/class_uniform_server_1_1_base_server_1a9e42ffc373c7fa23f401957251b0943d" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -356,7 +370,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="342" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="342" bodyend="360"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="370" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="370" bodyend="389"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -402,7 +416,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="247" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="247" bodyend="293"/>
+        <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="254" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="254" bodyend="316"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -410,45 +424,51 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="74">
+      <node id="73">
         <label>UniformServer.BaseServer</label>
         <link refid="d7/d32/class_uniform_server_1_1_base_server"/>
       </node>
-      <node id="77">
+      <node id="76">
         <label>THB_Data_Server.Server</label>
         <link refid="dc/d42/class_t_h_b___data___server_1_1_server"/>
-        <childnode refid="74" relation="public-inheritance">
+        <childnode refid="73" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="78">
+      <node id="77">
         <label>UniformServer.SimpleServer</label>
         <link refid="dc/d09/class_uniform_server_1_1_simple_server"/>
-        <childnode refid="74" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="76">
-        <label>SessionProvider.Server</label>
-        <link refid="d8/d17/class_session_provider_1_1_server"/>
-        <childnode refid="74" relation="public-inheritance">
+        <childnode refid="73" relation="public-inheritance">
         </childnode>
       </node>
       <node id="75">
+        <label>SessionProvider.Server</label>
+        <link refid="d8/d17/class_session_provider_1_1_server"/>
+        <childnode refid="73" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="74">
         <label>QueriesServer.Server</label>
         <link refid="d2/d9a/class_queries_server_1_1_server"/>
-        <childnode refid="74" relation="public-inheritance">
+        <childnode refid="73" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="79">
+      <node id="78">
         <label>UniformServer.BaseServer</label>
         <link refid="d7/d32/class_uniform_server_1_1_base_server"/>
         <childnode refid="79" relation="usage">
+          <edgelabel>securityLevel</edgelabel>
+        </childnode>
+        <childnode refid="78" relation="usage">
           <edgelabel>longTermServerThreads</edgelabel>
         </childnode>
       </node>
+      <node id="79">
+        <label>Security</label>
+      </node>
     </collaborationgraph>
-    <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="28" bodyend="362"/>
+    <location file="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" line="30" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformServer/BaseServer.cs" bodystart="29" bodyend="391"/>
     <listofallmembers>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a632ed557976f4d7bd9b41502bb9a262b" prot="public" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>appTerminated</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a992660752da60019c348e18226a87bf2" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>ArgsReactor</name></member>
@@ -457,6 +477,7 @@
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a9c14e919da0c2b9b7f8e57a92c9b0742" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>longTermServerThreads</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a051bdce3aec037df76d8efe3b9938198" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>mutexObj</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1aaa318b3ed503dd8ccf381c9f3a81ecf2" prot="public" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>pipeName</name></member>
+      <member refid="d7/d32/class_uniform_server_1_1_base_server_1ac6297faa957fd1005fc61054bdd1cdb1" prot="public" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>securityLevel</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1aa85e82df10ecec8324e2ccf7611d8cbf" prot="public" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>SendAnswer</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1a16cf4f4f9de9d6d6586631640d3d867b" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>ShowWindow</name></member>
       <member refid="d7/d32/class_uniform_server_1_1_base_server_1aa4a1412b217944e7f8d6ccae6ac68289" prot="protected" virt="non-virtual"><scope>UniformServer::BaseServer</scope><name>StartServerThread</name></member>

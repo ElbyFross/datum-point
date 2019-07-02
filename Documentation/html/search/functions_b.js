@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['reciveanswer',['ReciveAnswer',['../d4/deb/class_uniform_client_1_1_base_client.html#a6525d87fd1df20689b0a01280e36c5c1',1,'UniformClient.BaseClient.ReciveAnswer(PipesProvider.TransmissionLine line, string decodedQuery, System.Action&lt; PipesProvider.TransmissionLine, object &gt; answerHandler)'],['../d4/deb/class_uniform_client_1_1_base_client.html#a06d3340dd02ec4abfe9cf55bc1db0f03',1,'UniformClient.BaseClient.ReciveAnswer(PipesProvider.TransmissionLine line, UniformQueries.QueryPart[] entryQueryParts, System.Action&lt; PipesProvider.TransmissionLine, object &gt; answerHandler)']]],
-  ['rsaencrypt',['RSAEncrypt',['../d3/d16/class_uniform_client_1_1_security_a_p_i.html#ae6f06f76d98654dd1362e09ca36039c6',1,'UniformClient::SecurityAPI']]]
+  ['paramnameequal',['ParamNameEqual',['../d5/d61/struct_uniform_queries_1_1_query_part.html#af032469107805c1c71083666bb8548a9',1,'UniformQueries::QueryPart']]],
+  ['paramvalueequal',['ParamValueEqual',['../d5/d61/struct_uniform_queries_1_1_query_part.html#a5fb4475a72dcb6882fc860f7c0fcc50e',1,'UniformQueries::QueryPart']]],
+  ['pinghost',['PingHost',['../d7/d6e/class_pipes_provider_1_1_networking_1_1_info.html#aa609196312941e05536dcb3526b9a2ce',1,'PipesProvider::Networking::Info']]],
+  ['processingasync',['ProcessingAsync',['../d2/db8/class_pipes_provider_1_1_handlers_1_1_query.html#ad81bd890e7fd1560db907c9f7c5297cb',1,'PipesProvider::Handlers::Query']]]
 ];

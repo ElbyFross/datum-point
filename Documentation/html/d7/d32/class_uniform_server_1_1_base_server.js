@@ -12,6 +12,7 @@ var class_uniform_server_1_1_base_server =
     [ "longTermServerThreads", "d7/d32/class_uniform_server_1_1_base_server.html#a9c14e919da0c2b9b7f8e57a92c9b0742", null ],
     [ "mutexObj", "d7/d32/class_uniform_server_1_1_base_server.html#a051bdce3aec037df76d8efe3b9938198", null ],
     [ "pipeName", "d7/d32/class_uniform_server_1_1_base_server.html#aaa318b3ed503dd8ccf381c9f3a81ecf2", null ],
+    [ "securityLevel", "d7/d32/class_uniform_server_1_1_base_server.html#ac6297faa957fd1005fc61054bdd1cdb1", null ],
     [ "SW_HIDE", "d7/d32/class_uniform_server_1_1_base_server.html#aaff91507b262d2a1b9021caa2d01640f", null ],
     [ "SW_SHOW", "d7/d32/class_uniform_server_1_1_base_server.html#a494087cabc03c54c3dc0ac1cc1048860", null ],
     [ "thread", "d7/d32/class_uniform_server_1_1_base_server.html#a52485a2d70e615a5cbf720c952a8d62f", null ],

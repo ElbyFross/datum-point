@@ -14,9 +14,11 @@ Inheritance diagram for Test\+Client.\+Client\+:\begin{figure}[H]
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static string \mbox{\hyperlink{class_test_client_1_1_client_a7fdac87931c97ce7fde6c4fc622bcfa6}{S\+E\+R\+V\+E\+R\+\_\+\+N\+A\+ME}} = \char`\"{}.\char`\"{}
+static \mbox{\hyperlink{class_pipes_provider_1_1_networking_1_1_routing_1_1_instruction}{Instruction}} \mbox{\hyperlink{class_test_client_1_1_client_ac5365a862c09065db31123126239a7ee}{routing\+Instruction}}
+\begin{DoxyCompactList}\small\item\em Data about target server loaded from routing table. \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_test_client_1_1_client_a7fdac87931c97ce7fde6c4fc622bcfa6}{S\+E\+R\+V\+E\+R\+\_\+\+N\+A\+ME}} = null
 \begin{DoxyCompactList}\small\item\em Server that will be used as target for this client. \end{DoxyCompactList}\item 
-static string \mbox{\hyperlink{class_test_client_1_1_client_a58c70d565592caa15b99d9b145a133ea}{S\+E\+R\+V\+E\+R\+\_\+\+P\+I\+P\+E\+\_\+\+N\+A\+ME}} = \char`\"{}T\+H\+B\+\_\+\+D\+S\+\_\+\+Q\+M\+\_\+\+M\+A\+I\+N\+\_\+\+I\+N\+O\+UT\char`\"{}
+static string \mbox{\hyperlink{class_test_client_1_1_client_a58c70d565592caa15b99d9b145a133ea}{S\+E\+R\+V\+E\+R\+\_\+\+P\+I\+P\+E\+\_\+\+N\+A\+ME}} = null
 \begin{DoxyCompactList}\small\item\em Pipe that will be used to queries of this client. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -24,14 +26,16 @@ static string \mbox{\hyperlink{class_test_client_1_1_client_a58c70d565592caa15b9
 \mbox{\Hypertarget{class_test_client_1_1_client_a236c6c2776f2ec6851c36a8714ef6e03}\label{class_test_client_1_1_client_a236c6c2776f2ec6851c36a8714ef6e03}} 
 static void {\bfseries Main} (string\mbox{[}$\,$\mbox{]} args)
 \item 
+static void \mbox{\hyperlink{class_test_client_1_1_client_a7096d201835f0f2c3049fef72e89637c}{Transmissions\+Block}} ()
+\begin{DoxyCompactList}\small\item\em Method that will send few sample to remote server. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{class_test_client_1_1_client_af74ca9833b73440828e078c9c25a8026}\label{class_test_client_1_1_client_af74ca9833b73440828e078c9c25a8026}} 
 static void {\bfseries Send\+One\+Way\+Query} (string query)
 \item 
 \mbox{\Hypertarget{class_test_client_1_1_client_a0d6d95892249c5febdb5708995b7a987}\label{class_test_client_1_1_client_a0d6d95892249c5febdb5708995b7a987}} 
 static void {\bfseries Request\+Public\+R\+S\+A\+Key} ()
 \item 
-\mbox{\Hypertarget{class_test_client_1_1_client_a32396ed694c8942865f0c265a6232612}\label{class_test_client_1_1_client_a32396ed694c8942865f0c265a6232612}} 
-static void {\bfseries Server\+Answer\+Handler\+\_\+\+R\+S\+A\+Public\+Key} (\mbox{\hyperlink{class_pipes_provider_1_1_transmission_line}{Pipes\+Provider.\+Transmission\+Line}} tl, object message)
+\mbox{\Hypertarget{class_test_client_1_1_client_a727dec85daa92923e35fc5ae6fcb70ed}\label{class_test_client_1_1_client_a727dec85daa92923e35fc5ae6fcb70ed}} 
+static void {\bfseries Server\+Answer\+Handler\+\_\+\+R\+S\+A\+Public\+Key} (\mbox{\hyperlink{class_pipes_provider_1_1_client_1_1_transmission_line}{Transmission\+Line}} tl, object message)
 \end{DoxyCompactItemize}
 \subsection*{Additional Inherited Members}
 
@@ -41,12 +45,35 @@ Provide example of client-\/server transmission. Demostrate ways to use A\+PI. P
 
 
 
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_test_client_1_1_client_a7096d201835f0f2c3049fef72e89637c}\label{class_test_client_1_1_client_a7096d201835f0f2c3049fef72e89637c}} 
+\index{Test\+Client\+::\+Client@{Test\+Client\+::\+Client}!Transmissions\+Block@{Transmissions\+Block}}
+\index{Transmissions\+Block@{Transmissions\+Block}!Test\+Client\+::\+Client@{Test\+Client\+::\+Client}}
+\subsubsection{\texorpdfstring{Transmissions\+Block()}{TransmissionsBlock()}}
+{\footnotesize\ttfamily static void Test\+Client.\+Client.\+Transmissions\+Block (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Method that will send few sample to remote server. 
+
+
+
 \subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_test_client_1_1_client_ac5365a862c09065db31123126239a7ee}\label{class_test_client_1_1_client_ac5365a862c09065db31123126239a7ee}} 
+\index{Test\+Client\+::\+Client@{Test\+Client\+::\+Client}!routing\+Instruction@{routing\+Instruction}}
+\index{routing\+Instruction@{routing\+Instruction}!Test\+Client\+::\+Client@{Test\+Client\+::\+Client}}
+\subsubsection{\texorpdfstring{routing\+Instruction}{routingInstruction}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pipes_provider_1_1_networking_1_1_routing_1_1_instruction}{Instruction}} Test\+Client.\+Client.\+routing\+Instruction\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Data about target server loaded from routing table. 
+
 \mbox{\Hypertarget{class_test_client_1_1_client_a7fdac87931c97ce7fde6c4fc622bcfa6}\label{class_test_client_1_1_client_a7fdac87931c97ce7fde6c4fc622bcfa6}} 
 \index{Test\+Client\+::\+Client@{Test\+Client\+::\+Client}!S\+E\+R\+V\+E\+R\+\_\+\+N\+A\+ME@{S\+E\+R\+V\+E\+R\+\_\+\+N\+A\+ME}}
 \index{S\+E\+R\+V\+E\+R\+\_\+\+N\+A\+ME@{S\+E\+R\+V\+E\+R\+\_\+\+N\+A\+ME}!Test\+Client\+::\+Client@{Test\+Client\+::\+Client}}
 \subsubsection{\texorpdfstring{S\+E\+R\+V\+E\+R\+\_\+\+N\+A\+ME}{SERVER\_NAME}}
-{\footnotesize\ttfamily string Test\+Client.\+Client.\+S\+E\+R\+V\+E\+R\+\_\+\+N\+A\+ME = \char`\"{}.\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily string Test\+Client.\+Client.\+S\+E\+R\+V\+E\+R\+\_\+\+N\+A\+ME = null\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -56,7 +83,7 @@ Server that will be used as target for this client.
 \index{Test\+Client\+::\+Client@{Test\+Client\+::\+Client}!S\+E\+R\+V\+E\+R\+\_\+\+P\+I\+P\+E\+\_\+\+N\+A\+ME@{S\+E\+R\+V\+E\+R\+\_\+\+P\+I\+P\+E\+\_\+\+N\+A\+ME}}
 \index{S\+E\+R\+V\+E\+R\+\_\+\+P\+I\+P\+E\+\_\+\+N\+A\+ME@{S\+E\+R\+V\+E\+R\+\_\+\+P\+I\+P\+E\+\_\+\+N\+A\+ME}!Test\+Client\+::\+Client@{Test\+Client\+::\+Client}}
 \subsubsection{\texorpdfstring{S\+E\+R\+V\+E\+R\+\_\+\+P\+I\+P\+E\+\_\+\+N\+A\+ME}{SERVER\_PIPE\_NAME}}
-{\footnotesize\ttfamily string Test\+Client.\+Client.\+S\+E\+R\+V\+E\+R\+\_\+\+P\+I\+P\+E\+\_\+\+N\+A\+ME = \char`\"{}T\+H\+B\+\_\+\+D\+S\+\_\+\+Q\+M\+\_\+\+M\+A\+I\+N\+\_\+\+I\+N\+O\+UT\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily string Test\+Client.\+Client.\+S\+E\+R\+V\+E\+R\+\_\+\+P\+I\+P\+E\+\_\+\+N\+A\+ME = null\hspace{0.3cm}{\ttfamily [static]}}
 
 
 

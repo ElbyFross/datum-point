@@ -90,25 +90,25 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="143">
+      <node id="155">
         <label>THB_Data_Server_Queries.GET_DAYS_RANGE</label>
         <link refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e"/>
-        <childnode refid="144" relation="public-inheritance">
+        <childnode refid="156" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="144">
+      <node id="156">
         <label>IQueryHandlerProcessor</label>
         <link refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="145">
+      <node id="157">
         <label>THB_Data_Server_Queries.GET_DAYS_RANGE</label>
         <link refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e"/>
-        <childnode refid="146" relation="public-inheritance">
+        <childnode refid="158" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="146">
+      <node id="158">
         <label>IQueryHandlerProcessor</label>
         <link refid="d4/dc9/interface_uniform_queries_1_1_i_query_handler_processor"/>
       </node>

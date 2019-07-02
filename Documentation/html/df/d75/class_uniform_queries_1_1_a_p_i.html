@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Datum Point
-   &#160;<span id="projectnumber">0.1.4</span>
+   &#160;<span id="projectnumber">0.2.0</span>
    </div>
   </td>
  </tr>
@@ -103,9 +103,6 @@ $(document).ready(function(){initNavTree('df/d75/class_uniform_queries_1_1_a_p_i
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ae1b8242cd1055572d996ff97b5653345"><td class="memItemLeft" align="right" valign="top">static async void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d75/class_uniform_queries_1_1_a_p_i.html#ae1b8242cd1055572d996ff97b5653345">PPReceivedQueryHandlerAsync</a> (<a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">PipesProvider.ServerTransmissionMeta</a> meta, string query)</td></tr>
-<tr class="memdesc:ae1b8242cd1055572d996ff97b5653345"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler that can be connected as callback to default PipesProvides DNS Handler. Will validate and decompose querie on parts and send it to target QueryProcessor.  <a href="#ae1b8242cd1055572d996ff97b5653345">More...</a><br /></td></tr>
-<tr class="separator:ae1b8242cd1055572d996ff97b5653345"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a0ad73e1dad7f7ec61398cb33ec18a4"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d75/class_uniform_queries_1_1_a_p_i.html#a1a0ad73e1dad7f7ec61398cb33ec18a4">QueryParamExist</a> (string param, string query)</td></tr>
 <tr class="memdesc:a1a0ad73e1dad7f7ec61398cb33ec18a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check existing of param in query parts. Example entry query part: "q=Get", where target param is "q".  <a href="#a1a0ad73e1dad7f7ec61398cb33ec18a4">More...</a><br /></td></tr>
 <tr class="separator:a1a0ad73e1dad7f7ec61398cb33ec18a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,8 +131,14 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a132ca74ba34302f216b61668dd32a207"><td class="mdescLeft">&#160;</td><td class="mdescRight">Build query string with requested parts and core data.  <a href="#a132ca74ba34302f216b61668dd32a207">More...</a><br /></td></tr>
 <tr class="separator:a132ca74ba34302f216b61668dd32a207"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a013ca0eff0e67d7f30a6be289312b859"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">QueryPart</a> []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d75/class_uniform_queries_1_1_a_p_i.html#a013ca0eff0e67d7f30a6be289312b859">DetectQueryParts</a> (string query)</td></tr>
-<tr class="memdesc:a013ca0eff0e67d7f30a6be289312b859"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert query's string to array of query parts.  <a href="#a013ca0eff0e67d7f30a6be289312b859">More...</a><br /></td></tr>
+<tr class="memdesc:a013ca0eff0e67d7f30a6be289312b859"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert query's string to array of query parts. User SPLITTING_SYMBOL as spliter for detect query parts.  <a href="#a013ca0eff0e67d7f30a6be289312b859">More...</a><br /></td></tr>
 <tr class="separator:a013ca0eff0e67d7f30a6be289312b859"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5875a3346878ba21ab331ba07889e92"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">QueryPart</a> []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d75/class_uniform_queries_1_1_a_p_i.html#ab5875a3346878ba21ab331ba07889e92">DetectQueryParts</a> (string query, char spliter)</td></tr>
+<tr class="memdesc:ab5875a3346878ba21ab331ba07889e92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert query's string to array of query parts.  <a href="#ab5875a3346878ba21ab331ba07889e92">More...</a><br /></td></tr>
+<tr class="separator:ab5875a3346878ba21ab331ba07889e92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76acc6d6941a7a30d0ed87f69eab3434"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d75/class_uniform_queries_1_1_a_p_i.html#a76acc6d6941a7a30d0ed87f69eab3434">IsSeemsValid</a> (string query)</td></tr>
+<tr class="memdesc:a76acc6d6941a7a30d0ed87f69eab3434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Try to detect core query parts. Example case of using: is decryption required.  <a href="#a76acc6d6941a7a30d0ed87f69eab3434">More...</a><br /></td></tr>
+<tr class="separator:a76acc6d6941a7a30d0ed87f69eab3434"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -193,7 +196,7 @@ static readonly List&lt; <a class="el" href="../../d4/dc9/interface_uniform_quer
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a013ca0eff0e67d7f30a6be289312b859"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a013ca0eff0e67d7f30a6be289312b859">&#9670;&nbsp;</a></span>DetectQueryParts()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a013ca0eff0e67d7f30a6be289312b859">&#9670;&nbsp;</a></span>DetectQueryParts() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -216,10 +219,56 @@ static readonly List&lt; <a class="el" href="../../d4/dc9/interface_uniform_quer
 </table>
 </div><div class="memdoc">
 
+<p>Convert query's string to array of query parts. User SPLITTING_SYMBOL as spliter for detect query parts. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ab5875a3346878ba21ab331ba07889e92"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5875a3346878ba21ab331ba07889e92">&#9670;&nbsp;</a></span>DetectQueryParts() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="../../d5/d61/struct_uniform_queries_1_1_query_part.html">QueryPart</a> [] UniformQueries.API.DetectQueryParts </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>query</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>spliter</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
 <p>Convert query's string to array of query parts. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">query</td><td></td></tr>
+    <tr><td class="paramname">spliter</td><td>Char that will be used as query part spliter.</td></tr>
   </table>
   </dd>
 </dl>
@@ -321,6 +370,41 @@ static readonly List&lt; <a class="el" href="../../d4/dc9/interface_uniform_quer
 
 </div>
 </div>
+<a id="a76acc6d6941a7a30d0ed87f69eab3434"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76acc6d6941a7a30d0ed87f69eab3434">&#9670;&nbsp;</a></span>IsSeemsValid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static bool UniformQueries.API.IsSeemsValid </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>query</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Try to detect core query parts. Example case of using: is decryption required. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">query</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="a132ca74ba34302f216b61668dd32a207"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a132ca74ba34302f216b61668dd32a207">&#9670;&nbsp;</a></span>MakeQuery()</h2>
 
@@ -371,51 +455,6 @@ static readonly List&lt; <a class="el" href="../../d4/dc9/interface_uniform_quer
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="ae1b8242cd1055572d996ff97b5653345"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae1b8242cd1055572d996ff97b5653345">&#9670;&nbsp;</a></span>PPReceivedQueryHandlerAsync()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static async void UniformQueries.API.PPReceivedQueryHandlerAsync </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html">PipesProvider.ServerTransmissionMeta</a>&#160;</td>
-          <td class="paramname"><em>meta</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">string&#160;</td>
-          <td class="paramname"><em>query</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Handler that can be connected as callback to default PipesProvides DNS Handler. Will validate and decompose querie on parts and send it to target QueryProcessor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">meta</td><td></td></tr>
-    <tr><td class="paramname">query</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>

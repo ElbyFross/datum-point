@@ -39,26 +39,26 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="314">
+      <node id="362">
         <label>global::SystemConfiguration::ApplicationSettingsBase</label>
       </node>
-      <node id="313">
+      <node id="361">
         <label>TeacherHandbook.Properties.Settings</label>
         <link refid="d0/d4b/class_teacher_handbook_1_1_properties_1_1_settings"/>
-        <childnode refid="314" relation="public-inheritance">
+        <childnode refid="362" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="316">
+      <node id="364">
         <label>global::SystemConfiguration::ApplicationSettingsBase</label>
       </node>
-      <node id="315">
+      <node id="363">
         <label>TeacherHandbook.Properties.Settings</label>
         <link refid="d0/d4b/class_teacher_handbook_1_1_properties_1_1_settings"/>
-        <childnode refid="316" relation="public-inheritance">
+        <childnode refid="364" relation="public-inheritance">
         </childnode>
-        <childnode refid="315" relation="usage">
+        <childnode refid="363" relation="usage">
           <edgelabel>defaultInstance</edgelabel>
         </childnode>
       </node>

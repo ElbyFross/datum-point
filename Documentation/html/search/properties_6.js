@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['isempty',['IsEmpty',['../d2/d85/struct_pipes_provider_1_1_query_container.html#a3449e3e35c97dd80bd2f8076160633fa',1,'PipesProvider::QueryContainer']]],
-  ['isnone',['IsNone',['../d5/d61/struct_uniform_queries_1_1_query_part.html#af380375ca82e9dc2eecf899b5933fe2b',1,'UniformQueries::QueryPart']]]
+  ['hasqueries',['HasQueries',['../da/d0e/class_pipes_provider_1_1_client_1_1_transmission_line.html#a3f5625beace2f8ea5ec3cc46000b8cc3',1,'PipesProvider::Client::TransmissionLine']]],
+  ['hierarchylevel',['HierarchyLevel',['../df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button.html#a9dbed6d9494449cc23129322ff646556',1,'TeacherHandbook::Controls::CatalogButton']]]
 ];

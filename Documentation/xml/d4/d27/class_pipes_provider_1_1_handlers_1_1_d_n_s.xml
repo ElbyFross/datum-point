@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d4/d27/class_pipes_provider_1_1_handlers_1_1_d_n_s" kind="class" language="C#" prot="public">
+    <compoundname>PipesProvider::Handlers::DNS</compoundname>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d4/d27/class_pipes_provider_1_1_handlers_1_1_d_n_s_1a367bb1e465456ed8d76a85157ce80cb6" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async void</type>
+        <definition>static async void PipesProvider.Handlers.DNS.ClientToServerAsync</definition>
+        <argsstring>(ServerTransmissionController meta)</argsstring>
+        <name>ClientToServerAsync</name>
+        <param>
+          <type><ref refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller" kindref="compound">ServerTransmissionController</ref></type>
+          <declname>meta</declname>
+        </param>
+        <briefdescription>
+<para>Code that will work on server loop when connection will be established. Recoomended to using as default <ref refid="d4/d27/class_pipes_provider_1_1_handlers_1_1_d_n_s" kindref="compound">DNS</ref> Handler for queries reciving. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+<para>Avoid disconnectin error. </para>        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/Handlers/DNS.cs" line="36" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/Handlers/DNS.cs" bodystart="36" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="d4/d27/class_pipes_provider_1_1_handlers_1_1_d_n_s_1af67546f286d7bbd49cdf2cf36836298a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>async void</type>
+        <definition>static async void PipesProvider.Handlers.DNS.ServerToClientAsync</definition>
+        <argsstring>(ServerTransmissionController meta)</argsstring>
+        <name>ServerToClientAsync</name>
+        <param>
+          <type><ref refid="d6/d8d/class_pipes_provider_1_1_server_1_1_server_transmission_controller" kindref="compound">ServerTransmissionController</ref></type>
+          <declname>meta</declname>
+        </param>
+        <briefdescription>
+<para>Code that will work on server loop when connection will be established. Recoomended to using as default <ref refid="d4/d27/class_pipes_provider_1_1_handlers_1_1_d_n_s" kindref="compound">DNS</ref> Handler for message sending. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/PipesProvider/Handlers/DNS.cs" line="113" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/Handlers/DNS.cs" bodystart="113" bodyend="152"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="db/d52/namespace_pipes_provider_1_1_handlers" kindref="compound">Handlers</ref> that provide transmission between serve and clients. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/PipesProvider/Handlers/DNS.cs" line="31" column="1" bodyfile="D:/Work/GitHub/datum-point/PipesProvider/Handlers/DNS.cs" bodystart="30" bodyend="153"/>
+    <listofallmembers>
+      <member refid="d4/d27/class_pipes_provider_1_1_handlers_1_1_d_n_s_1a367bb1e465456ed8d76a85157ce80cb6" prot="public" virt="non-virtual"><scope>PipesProvider::Handlers::DNS</scope><name>ClientToServerAsync</name></member>
+      <member refid="d4/d27/class_pipes_provider_1_1_handlers_1_1_d_n_s_1af67546f286d7bbd49cdf2cf36836298a" prot="public" virt="non-virtual"><scope>PipesProvider::Handlers::DNS</scope><name>ServerToClientAsync</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

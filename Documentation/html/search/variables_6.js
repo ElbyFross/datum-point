@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['name',['name',['../d0/d9f/class_pipes_provider_1_1_server_transmission_meta.html#abed6acbaaf01392151667fad217ec7c3',1,'PipesProvider.ServerTransmissionMeta.name()'],['../d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user.html#ad8da6882147f62d42960e2a436b8dff1',1,'TeacherHandbook.Core.Containers.Entities.BaseUser.name()']]]
+  ['lastquery',['lastQuery',['../da/d0e/class_pipes_provider_1_1_client_1_1_transmission_line.html#ac58ee721ec6876da25190b15d52530a3',1,'PipesProvider::Client::TransmissionLine']]],
+  ['logonconfig',['logonConfig',['../d5/d2e/class_pipes_provider_1_1_networking_1_1_routing_1_1_instruction.html#a2a3325abd7537b7a961626272634e038',1,'PipesProvider::Networking::Routing::Instruction']]],
+  ['longtermserverthreads',['longTermServerThreads',['../d7/d32/class_uniform_server_1_1_base_server.html#a9c14e919da0c2b9b7f8e57a92c9b0742',1,'UniformServer::BaseServer']]]
 ];

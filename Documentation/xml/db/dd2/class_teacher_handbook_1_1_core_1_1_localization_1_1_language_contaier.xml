@@ -51,14 +51,14 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="175">
+      <node id="192">
         <label>TeacherHandbook.Core.Localization.LanguageContaier</label>
         <link refid="db/dd2/class_teacher_handbook_1_1_core_1_1_localization_1_1_language_contaier"/>
-        <childnode refid="176" relation="usage">
+        <childnode refid="193" relation="usage">
           <edgelabel>map</edgelabel>
         </childnode>
       </node>
-      <node id="176">
+      <node id="193">
         <label>System</label>
       </node>
     </collaborationgraph>

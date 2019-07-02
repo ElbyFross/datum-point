@@ -65,42 +65,6 @@
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
-      <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1ae1b8242cd1055572d996ff97b5653345" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>async void</type>
-        <definition>static async void UniformQueries.API.PPReceivedQueryHandlerAsync</definition>
-        <argsstring>(PipesProvider.ServerTransmissionMeta meta, string query)</argsstring>
-        <name>PPReceivedQueryHandlerAsync</name>
-        <param>
-          <type><ref refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" kindref="compound">PipesProvider.ServerTransmissionMeta</ref></type>
-          <declname>meta</declname>
-        </param>
-        <param>
-          <type>string</type>
-          <declname>query</declname>
-        </param>
-        <briefdescription>
-<para>Handler that can be connected as callback to default PipesProvides DNS Handler. Will validate and decompose querie on parts and send it to target QueryProcessor. </para>        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>meta</parametername>
-</parameternamelist>
-<parameterdescription>
-</parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>query</parametername>
-</parameternamelist>
-<parameterdescription>
-</parameterdescription>
-</parameteritem>
-</parameterlist>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="90" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="90" bodyend="140"/>
-      </memberdef>
       <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1a1a0ad73e1dad7f7ec61398cb33ec18a4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
         <definition>static bool UniformQueries.API.QueryParamExist</definition>
@@ -136,7 +100,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="150" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="150" bodyend="153"/>
+        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="91" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="91" bodyend="94"/>
       </memberdef>
       <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1a0f6c53ca64000015c8bf7bed30d9c57a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -173,7 +137,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="162" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="162" bodyend="171"/>
+        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="103" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="103" bodyend="112"/>
       </memberdef>
       <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1ac0f8c9faebdc4a69f2072c0bb9e955e1" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -210,7 +174,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="179" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="179" bodyend="189"/>
+        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="120" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="120" bodyend="130"/>
       </memberdef>
       <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1a987eb23a48b90e542001cc12fcbc1ddc" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -258,7 +222,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="199" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="199" bodyend="202"/>
+        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="140" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="140" bodyend="143"/>
       </memberdef>
       <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1a5747ff73a111b583fa01c442ca2a2d78" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -306,7 +270,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="211" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="211" bodyend="229"/>
+        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="152" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="152" bodyend="170"/>
       </memberdef>
       <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1a57f11d169fede8dc343e8fcce0af1c6a" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -354,7 +318,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="238" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="238" bodyend="256"/>
+        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="179" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="179" bodyend="197"/>
       </memberdef>
       <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1aa8a8215bbad2752c291803011dc49ff4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>List&lt; string &gt;</type>
@@ -398,7 +362,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="266" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="266" bodyend="280"/>
+        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="207" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="207" bodyend="221"/>
       </memberdef>
       <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1ae481c9b7a800886a2b461a7456043494" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>List&lt; <ref refid="d5/d61/struct_uniform_queries_1_1_query_part" kindref="compound">QueryPart</ref> &gt;</type>
@@ -442,7 +406,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="289" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="289" bodyend="303"/>
+        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="230" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="230" bodyend="244"/>
       </memberdef>
       <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1a132ca74ba34302f216b61668dd32a207" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>string</type>
@@ -490,7 +454,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="313" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="313" bodyend="327"/>
+        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="254" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="254" bodyend="268"/>
       </memberdef>
       <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1a013ca0eff0e67d7f30a6be289312b859" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="d5/d61/struct_uniform_queries_1_1_query_part" kindref="compound">QueryPart</ref> []</type>
@@ -502,7 +466,7 @@
           <declname>query</declname>
         </param>
         <briefdescription>
-<para>Convert query&apos;s string to array of query parts. </para>        </briefdescription>
+<para>Convert query&apos;s string to array of query parts. User SPLITTING_SYMBOL as spliter for detect query parts. </para>        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -516,21 +480,85 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="334" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="334" bodyend="349"/>
+        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="277" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="277" bodyend="280"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1ab5875a3346878ba21ab331ba07889e92" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="d5/d61/struct_uniform_queries_1_1_query_part" kindref="compound">QueryPart</ref> []</type>
+        <definition>static QueryPart [] UniformQueries.API.DetectQueryParts</definition>
+        <argsstring>(string query, char spliter)</argsstring>
+        <name>DetectQueryParts</name>
+        <param>
+          <type>string</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type>char</type>
+          <declname>spliter</declname>
+        </param>
+        <briefdescription>
+<para>Convert query&apos;s string to array of query parts. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>query</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>spliter</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Char that will be used as query part spliter.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="288" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="288" bodyend="303"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d75/class_uniform_queries_1_1_a_p_i_1a76acc6d6941a7a30d0ed87f69eab3434" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool UniformQueries.API.IsSeemsValid</definition>
+        <argsstring>(string query)</argsstring>
+        <name>IsSeemsValid</name>
+        <param>
+          <type>string</type>
+          <declname>query</declname>
+        </param>
+        <briefdescription>
+<para>Try to detect core query parts. Example case of using: is decryption required. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>query</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para></para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="312" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="312" bodyend="319"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Class that provide methods for handling of queries. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="26" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="25" bodyend="350"/>
+    <location file="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" line="26" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueriesAPI.cs" bodystart="25" bodyend="320"/>
     <listofallmembers>
       <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a8dbe3d00dcf507ab3cea1dc58e1e154f" prot="private" virt="non-virtual"><scope>UniformQueries::API</scope><name>API</name></member>
       <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a013ca0eff0e67d7f30a6be289312b859" prot="public" virt="non-virtual"><scope>UniformQueries::API</scope><name>DetectQueryParts</name></member>
+      <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1ab5875a3346878ba21ab331ba07889e92" prot="public" virt="non-virtual"><scope>UniformQueries::API</scope><name>DetectQueryParts</name></member>
       <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1aa8a8215bbad2752c291803011dc49ff4" prot="public" virt="non-virtual"><scope>UniformQueries::API</scope><name>GetParamValues</name></member>
       <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1ae481c9b7a800886a2b461a7456043494" prot="public" virt="non-virtual"><scope>UniformQueries::API</scope><name>GetParamValues</name></member>
+      <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a76acc6d6941a7a30d0ed87f69eab3434" prot="public" virt="non-virtual"><scope>UniformQueries::API</scope><name>IsSeemsValid</name></member>
       <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a132ca74ba34302f216b61668dd32a207" prot="public" virt="non-virtual"><scope>UniformQueries::API</scope><name>MakeQuery</name></member>
-      <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1ae1b8242cd1055572d996ff97b5653345" prot="public" virt="non-virtual"><scope>UniformQueries::API</scope><name>PPReceivedQueryHandlerAsync</name></member>
       <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a1a0ad73e1dad7f7ec61398cb33ec18a4" prot="public" virt="non-virtual"><scope>UniformQueries::API</scope><name>QueryParamExist</name></member>
       <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1a0f6c53ca64000015c8bf7bed30d9c57a" prot="public" virt="non-virtual"><scope>UniformQueries::API</scope><name>QueryParamExist</name></member>
       <member refid="df/d75/class_uniform_queries_1_1_a_p_i_1ac0f8c9faebdc4a69f2072c0bb9e955e1" prot="public" virt="non-virtual"><scope>UniformQueries::API</scope><name>QueryParamExist</name></member>

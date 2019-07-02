@@ -26,7 +26,11 @@ var NAVTREE =
   [ "Datum Point", "index.html", [
     [ "Datum Point", "d8/d9e/md__d_1__work__git_hub_datum-point__r_e_a_d_m_e.html", null ],
     [ "Packages", "namespaces.html", [
-      [ "Packages", "namespaces.html", "namespaces_dup" ]
+      [ "Packages", "namespaces.html", "namespaces_dup" ],
+      [ "Package Functions", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ]
+      ] ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
@@ -47,9 +51,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d4/ddf/class_pipes_provider_1_1_a_p_i.html#ab525aaa0c87f23cfbe4ad6d0ed1b1b4c",
-"dc/d14/struct_teacher_handbook_1_1_core_1_1_orders_1_1_order_date.html",
-"functions_q.html"
+"d5/d0b/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_day.html",
+"d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources.html#a480b09e333fe9a3de46ecf95895fdde8",
+"df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

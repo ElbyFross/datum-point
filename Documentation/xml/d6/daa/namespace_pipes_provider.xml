@@ -2,14 +2,15 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="d6/daa/namespace_pipes_provider" kind="namespace" language="C#">
     <compoundname>PipesProvider</compoundname>
-    <innerclass refid="d4/ddf/class_pipes_provider_1_1_a_p_i" prot="public">PipesProvider::API</innerclass>
-    <innerclass refid="d2/d85/struct_pipes_provider_1_1_query_container" prot="public">PipesProvider::QueryContainer</innerclass>
-    <innerclass refid="d0/d9f/class_pipes_provider_1_1_server_transmission_meta" prot="public">PipesProvider::ServerTransmissionMeta</innerclass>
-    <innerclass refid="d1/d09/class_pipes_provider_1_1_transmission_line" prot="public">PipesProvider::TransmissionLine</innerclass>
+    <innernamespace refid="d1/dc6/namespace_pipes_provider_1_1_client">PipesProvider::Client</innernamespace>
+    <innernamespace refid="db/d52/namespace_pipes_provider_1_1_handlers">PipesProvider::Handlers</innernamespace>
+    <innernamespace refid="d1/d4b/namespace_pipes_provider_1_1_networking">PipesProvider::Networking</innernamespace>
+    <innernamespace refid="da/d2f/namespace_pipes_provider_1_1_security">PipesProvider::Security</innernamespace>
+    <innernamespace refid="d2/d6a/namespace_pipes_provider_1_1_server">PipesProvider::Server</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/GitHub/datum-point/PipesProvider/ClientAPI.cs" line="26" column="1"/>
+    <location file="[generated]" line="1" column="1"/>
   </compounddef>
 </doxygen>

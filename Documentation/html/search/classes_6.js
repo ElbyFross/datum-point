@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['general',['General',['../d6/d6b/class_pipes_provider_1_1_security_1_1_general.html',1,'PipesProvider::Security']]],
   ['generatedinternaltypehelper',['GeneratedInternalTypeHelper',['../dc/db0/class_xaml_generated_namespace_1_1_generated_internal_type_helper.html',1,'XamlGeneratedNamespace']]],
   ['get_5fdays_5frange',['GET_DAYS_RANGE',['../de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e.html',1,'THB_Data_Server_Queries']]],
   ['get_5fpublic_5fkey',['GET_PUBLIC_KEY',['../da/d43/class_uniform_server_1_1_queries_1_1_g_e_t___p_u_b_l_i_c___k_e_y.html',1,'UniformServer::Queries']]],

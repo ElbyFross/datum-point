@@ -62,20 +62,20 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="154">
+      <node id="171">
         <label>TeacherHandbook.Core.Orders.BaseOrder</label>
         <link refid="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order"/>
-        <childnode refid="153" relation="public-inheritance">
+        <childnode refid="170" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="153">
+      <node id="170">
         <label>TeacherHandbook.Core.Orders.IOrder</label>
         <link refid="df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order"/>
       </node>
-      <node id="155">
+      <node id="172">
         <label>TeacherHandbook.Core.Orders.MentoringOrder</label>
         <link refid="d8/d91/class_teacher_handbook_1_1_core_1_1_orders_1_1_mentoring_order"/>
-        <childnode refid="154" relation="public-inheritance">
+        <childnode refid="171" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>

@@ -3,11 +3,11 @@
   <compounddef id="d5/d61/struct_uniform_queries_1_1_query_part" kind="struct" language="C#" prot="public">
     <compoundname>UniformQueries::QueryPart</compoundname>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="d5/d61/struct_uniform_queries_1_1_query_part_1a24186fc4f67752331342e84554f806ff" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="d5/d61/struct_uniform_queries_1_1_query_part_1a941540a3d1489c7f32cb5e21910ba7ac" prot="public" static="no" mutable="no">
         <type>string</type>
-        <definition>string UniformQueries.QueryPart.key</definition>
+        <definition>string UniformQueries.QueryPart.propertyName</definition>
         <argsstring></argsstring>
-        <name>key</name>
+        <name>propertyName</name>
         <briefdescription>
 <para>Key for access </para>        </briefdescription>
         <detaileddescription>
@@ -16,11 +16,11 @@
         </inbodydescription>
         <location file="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" line="26" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" bodystart="26" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="d5/d61/struct_uniform_queries_1_1_query_part_1aa8167f347217469ed47b298f2bc16381" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="d5/d61/struct_uniform_queries_1_1_query_part_1adb297c368ab4900f751d60ceffda0a99" prot="public" static="no" mutable="no">
         <type>string</type>
-        <definition>string UniformQueries.QueryPart.property</definition>
+        <definition>string UniformQueries.QueryPart.propertyValue</definition>
         <argsstring></argsstring>
-        <name>property</name>
+        <name>propertyValue</name>
         <briefdescription>
 <para>Property that will be shared via query. </para>        </briefdescription>
         <detaileddescription>
@@ -109,11 +109,11 @@
         </inbodydescription>
         <location file="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" bodystart="70" bodyend="73"/>
       </memberdef>
-      <memberdef kind="function" id="d5/d61/struct_uniform_queries_1_1_query_part_1a5252d13a0a8c211c47cba54f3749aad1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="d5/d61/struct_uniform_queries_1_1_query_part_1af032469107805c1c71083666bb8548a9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
-        <definition>bool UniformQueries.QueryPart.ParamKeyEqual</definition>
+        <definition>bool UniformQueries.QueryPart.ParamNameEqual</definition>
         <argsstring>(string key)</argsstring>
-        <name>ParamKeyEqual</name>
+        <name>ParamNameEqual</name>
         <param>
           <type>string</type>
           <declname>key</declname>
@@ -133,13 +133,13 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" line="140" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" bodystart="140" bodyend="143"/>
+        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" line="143" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" bodystart="143" bodyend="146"/>
       </memberdef>
-      <memberdef kind="function" id="d5/d61/struct_uniform_queries_1_1_query_part_1abda3bf2ddc04c911364a09655e8fc4f2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="d5/d61/struct_uniform_queries_1_1_query_part_1a5fb4475a72dcb6882fc860f7c0fcc50e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
-        <definition>bool UniformQueries.QueryPart.ParamEqual</definition>
+        <definition>bool UniformQueries.QueryPart.ParamValueEqual</definition>
         <argsstring>(string param)</argsstring>
-        <name>ParamEqual</name>
+        <name>ParamValueEqual</name>
         <param>
           <type>string</type>
           <declname>param</declname>
@@ -159,7 +159,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" line="150" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" bodystart="150" bodyend="153"/>
+        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" line="153" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" bodystart="153" bodyend="156"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -211,7 +211,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" line="88" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" bodystart="88" bodyend="110"/>
+        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" line="88" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" bodystart="88" bodyend="113"/>
       </memberdef>
       <memberdef kind="function" id="d5/d61/struct_uniform_queries_1_1_query_part_1a053c8ba08ddd1a20d5b50128a524da09" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>string</type>
@@ -237,7 +237,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" line="117" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" bodystart="117" bodyend="133"/>
+        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" line="120" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" bodystart="120" bodyend="136"/>
       </memberdef>
       <memberdef kind="function" id="d5/d61/struct_uniform_queries_1_1_query_part_1accd3b435809c426dd92456ffee0a996d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -274,23 +274,23 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" line="161" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" bodystart="161" bodyend="175"/>
+        <location file="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" line="164" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" bodystart="164" bodyend="178"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" line="22" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" bodystart="21" bodyend="176"/>
+    <location file="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" line="22" column="1" bodyfile="D:/Work/GitHub/datum-point/UniformQueries/QueryPart.cs" bodystart="21" bodyend="179"/>
     <listofallmembers>
       <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1af380375ca82e9dc2eecf899b5933fe2b" prot="public" virt="non-virtual"><scope>UniformQueries::QueryPart</scope><name>IsNone</name></member>
-      <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1a24186fc4f67752331342e84554f806ff" prot="public" virt="non-virtual"><scope>UniformQueries::QueryPart</scope><name>key</name></member>
       <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1a5be54faa8b7723167257e930a71457a4" prot="public" virt="non-virtual"><scope>UniformQueries::QueryPart</scope><name>None</name></member>
       <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1ab0c6ca9b91045a64286bf730ad97dc43" prot="public" virt="non-virtual"><scope>UniformQueries::QueryPart</scope><name>operator QueryPart</name></member>
       <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1a274b321f91ecbda08f01c23536a568b6" prot="public" virt="non-virtual"><scope>UniformQueries::QueryPart</scope><name>operator string</name></member>
-      <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1abda3bf2ddc04c911364a09655e8fc4f2" prot="public" virt="non-virtual"><scope>UniformQueries::QueryPart</scope><name>ParamEqual</name></member>
-      <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1a5252d13a0a8c211c47cba54f3749aad1" prot="public" virt="non-virtual"><scope>UniformQueries::QueryPart</scope><name>ParamKeyEqual</name></member>
-      <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1aa8167f347217469ed47b298f2bc16381" prot="public" virt="non-virtual"><scope>UniformQueries::QueryPart</scope><name>property</name></member>
+      <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1af032469107805c1c71083666bb8548a9" prot="public" virt="non-virtual"><scope>UniformQueries::QueryPart</scope><name>ParamNameEqual</name></member>
+      <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1a5fb4475a72dcb6882fc860f7c0fcc50e" prot="public" virt="non-virtual"><scope>UniformQueries::QueryPart</scope><name>ParamValueEqual</name></member>
+      <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1a941540a3d1489c7f32cb5e21910ba7ac" prot="public" virt="non-virtual"><scope>UniformQueries::QueryPart</scope><name>propertyName</name></member>
+      <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1adb297c368ab4900f751d60ceffda0a99" prot="public" virt="non-virtual"><scope>UniformQueries::QueryPart</scope><name>propertyValue</name></member>
       <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1adabbcaa15ccf653f686d4f2bcd39ce09" prot="public" virt="non-virtual"><scope>UniformQueries::QueryPart</scope><name>QueryPart</name></member>
       <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1a053c8ba08ddd1a20d5b50128a524da09" prot="public" virt="non-virtual"><scope>UniformQueries::QueryPart</scope><name>QueryPartsArrayToString</name></member>
       <member refid="d5/d61/struct_uniform_queries_1_1_query_part_1acf5597530f693df3804fc2e638805245" prot="public" virt="non-virtual"><scope>UniformQueries::QueryPart</scope><name>ToString</name></member>

@@ -23,44 +23,44 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="349">
+      <node id="383">
         <label>BaseUser</label>
         <link refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user"/>
-        <childnode refid="350" relation="public-inheritance">
+        <childnode refid="384" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="350">
+      <node id="384">
         <label>IUser</label>
         <link refid="d1/dfc/interface_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_i_user"/>
       </node>
-      <node id="348">
+      <node id="382">
         <label>TeacherHandbook.Core.Containers.Entities.Teacher</label>
         <link refid="d5/d63/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_teacher"/>
-        <childnode refid="349" relation="public-inheritance">
+        <childnode refid="383" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="352">
+      <node id="386">
         <label>BaseUser</label>
         <link refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user"/>
-        <childnode refid="353" relation="public-inheritance">
+        <childnode refid="387" relation="public-inheritance">
         </childnode>
-        <childnode refid="354" relation="usage">
+        <childnode refid="388" relation="usage">
           <edgelabel>name</edgelabel>
         </childnode>
       </node>
-      <node id="353">
+      <node id="387">
         <label>IUser</label>
         <link refid="d1/dfc/interface_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_i_user"/>
       </node>
-      <node id="354">
+      <node id="388">
         <label>System</label>
       </node>
-      <node id="351">
+      <node id="385">
         <label>TeacherHandbook.Core.Containers.Entities.Teacher</label>
         <link refid="d5/d63/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_teacher"/>
-        <childnode refid="352" relation="public-inheritance">
+        <childnode refid="386" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

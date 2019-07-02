@@ -2,12 +2,13 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_25f154603857eabf42ab83cc66088ad7" kind="dir">
     <compoundname>D:/Work/GitHub/datum-point/PipesProvider</compoundname>
+    <innerdir refid="dir_6f54db4cf2ac548062d0b015c078a9a3">D:/Work/GitHub/datum-point/PipesProvider/Client</innerdir>
+    <innerdir refid="dir_8cd4b37242ad156ddb4adaa26b277c9b">D:/Work/GitHub/datum-point/PipesProvider/Handlers</innerdir>
+    <innerdir refid="dir_6e83d03416a865b7217fd6f990452494">D:/Work/GitHub/datum-point/PipesProvider/Networking</innerdir>
+    <innerdir refid="dir_e062684232e3cbed82fcc0c39122c72c">D:/Work/GitHub/datum-point/PipesProvider/obj</innerdir>
     <innerdir refid="dir_3f27bb01345470e3a88734532c7e3998">D:/Work/GitHub/datum-point/PipesProvider/Properties</innerdir>
-    <innerfile refid="d7/da0/_client_a_p_i_8cs">ClientAPI.cs</innerfile>
-    <innerfile refid="d0/d20/_query_container_8cs">QueryContainer.cs</innerfile>
-    <innerfile refid="d4/d60/_server_a_p_i_8cs">ServerAPI.cs</innerfile>
-    <innerfile refid="d6/d81/_server_transmission_meta_8cs">ServerTransmissionMeta.cs</innerfile>
-    <innerfile refid="d9/de2/_transmission_line_8cs">TransmissionLine.cs</innerfile>
+    <innerdir refid="dir_adba3dd3234b123cdfa91c20fda1f001">D:/Work/GitHub/datum-point/PipesProvider/Security</innerdir>
+    <innerdir refid="dir_ffb027e3e9b300ae3517eeea82f42dc8">D:/Work/GitHub/datum-point/PipesProvider/Server</innerdir>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

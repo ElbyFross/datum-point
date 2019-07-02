@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Datum Point
-   &#160;<span id="projectnumber">0.1.4</span>
+   &#160;<span id="projectnumber">0.2.0</span>
    </div>
   </td>
  </tr>
@@ -110,7 +110,7 @@ Inheritance diagram for UniformServer.BaseServer:</div>
  <div class="center">
   <img src="../../d7/d32/class_uniform_server_1_1_base_server.png" usemap="#UniformServer.BaseServer_map" alt=""/>
   <map id="UniformServer.BaseServer_map" name="UniformServer.BaseServer_map">
-<area href="../../d2/d9a/class_queries_server_1_1_server.html" alt="QueriesServer.Server" shape="rect" coords="0,56,174,80"/>
+<area href="../../d2/d9a/class_queries_server_1_1_server.html" title="Public servers that allow anonimous connection. Reciving clients&#39; queries and redirect in to target i..." alt="QueriesServer.Server" shape="rect" coords="0,56,174,80"/>
 <area href="../../d8/d17/class_session_provider_1_1_server.html" title="Server tasks: " alt="SessionProvider.Server" shape="rect" coords="184,56,358,80"/>
 <area href="../../dc/d42/class_t_h_b___data___server_1_1_server.html" title="Server that provide and manage data by queries. " alt="THB_Data_Server.Server" shape="rect" coords="368,56,542,80"/>
 <area href="../../dc/d09/class_uniform_server_1_1_simple_server.html" title="Server that allow instiniate BaseServer. Not contain any additive methods. " alt="UniformServer.SimpleServer" shape="rect" coords="552,56,726,80"/>
@@ -131,6 +131,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:aaa318b3ed503dd8ccf381c9f3a81ecf2"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#aaa318b3ed503dd8ccf381c9f3a81ecf2">pipeName</a></td></tr>
 <tr class="memdesc:aaa318b3ed503dd8ccf381c9f3a81ecf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name that will be applied to the pipe.  <a href="#aaa318b3ed503dd8ccf381c9f3a81ecf2">More...</a><br /></td></tr>
 <tr class="separator:aaa318b3ed503dd8ccf381c9f3a81ecf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6297faa957fd1005fc61054bdd1cdb1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../da/d2f/namespace_pipes_provider_1_1_security.html#a1a6020eca1c661a6f7140e8260502d7e">PipesProvider.Security.SecurityLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#ac6297faa957fd1005fc61054bdd1cdb1">securityLevel</a> = PipesProvider.Security.SecurityLevel.Anonymous</td></tr>
+<tr class="memdesc:ac6297faa957fd1005fc61054bdd1cdb1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Squrity level that will applied to pipe.  <a href="#ac6297faa957fd1005fc61054bdd1cdb1">More...</a><br /></td></tr>
+<tr class="separator:ac6297faa957fd1005fc61054bdd1cdb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -176,7 +179,7 @@ Protected Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-static-attribs"></a>
 Static Protected Attributes</h2></td></tr>
-<tr class="memitem:a4dbe04636a763decfae22ddb2fe26c7a"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#a4dbe04636a763decfae22ddb2fe26c7a">threadSleepTime</a> = 150</td></tr>
+<tr class="memitem:a4dbe04636a763decfae22ddb2fe26c7a"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#a4dbe04636a763decfae22ddb2fe26c7a">threadSleepTime</a> = 15</td></tr>
 <tr class="memdesc:a4dbe04636a763decfae22ddb2fe26c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">How many milisseconds will sleep thread after tick.  <a href="#a4dbe04636a763decfae22ddb2fe26c7a">More...</a><br /></td></tr>
 <tr class="separator:a4dbe04636a763decfae22ddb2fe26c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa40c02a1eec7eda4c36a8ac08119b414"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d32/class_uniform_server_1_1_base_server.html#aa40c02a1eec7eda4c36a8ac08119b414">threadsCount</a> = 1</td></tr>
@@ -595,6 +598,22 @@ Events</h2></td></tr>
 
 </div>
 </div>
+<a id="ac6297faa957fd1005fc61054bdd1cdb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6297faa957fd1005fc61054bdd1cdb1">&#9670;&nbsp;</a></span>securityLevel</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="../../da/d2f/namespace_pipes_provider_1_1_security.html#a1a6020eca1c661a6f7140e8260502d7e">PipesProvider.Security.SecurityLevel</a> UniformServer.BaseServer.securityLevel = PipesProvider.Security.SecurityLevel.Anonymous</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Squrity level that will applied to pipe. </p>
+
+</div>
+</div>
 <a id="aaff91507b262d2a1b9021caa2d01640f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaff91507b262d2a1b9021caa2d01640f">&#9670;&nbsp;</a></span>SW_HIDE</h2>
 
@@ -693,7 +712,7 @@ Events</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int UniformServer.BaseServer.threadSleepTime = 150</td>
+          <td class="memname">int UniformServer.BaseServer.threadSleepTime = 15</td>
         </tr>
       </table>
   </td>

@@ -78,17 +78,17 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="262">
+      <node id="298">
         <label>WpfHandler.Properties.Resources</label>
         <link refid="d2/d90/class_wpf_handler_1_1_properties_1_1_resources"/>
-        <childnode refid="262" relation="usage">
+        <childnode refid="298" relation="usage">
           <edgelabel>resourceMan</edgelabel>
         </childnode>
-        <childnode refid="263" relation="usage">
+        <childnode refid="299" relation="usage">
           <edgelabel>resourceCulture</edgelabel>
         </childnode>
       </node>
-      <node id="263">
+      <node id="299">
         <label>Globalization</label>
       </node>
     </collaborationgraph>

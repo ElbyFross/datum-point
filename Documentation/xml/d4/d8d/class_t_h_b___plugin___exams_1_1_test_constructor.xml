@@ -222,80 +222,80 @@
     <detaileddescription>
 <para>Interaction logic for TestConstructor.xaml </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="357">
+      <node id="391">
         <label>UniformClient::Plugins::IPlugin</label>
         <link refid="d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin"/>
       </node>
-      <node id="358">
+      <node id="392">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="359">
+      <node id="393">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
-      <node id="356">
+      <node id="390">
         <label>UserControl</label>
       </node>
-      <node id="355">
+      <node id="389">
         <label>THB_Plugin_Exams.TestConstructor</label>
         <link refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor"/>
-        <childnode refid="356" relation="public-inheritance">
+        <childnode refid="390" relation="public-inheritance">
         </childnode>
-        <childnode refid="357" relation="public-inheritance">
+        <childnode refid="391" relation="public-inheritance">
         </childnode>
-        <childnode refid="358" relation="public-inheritance">
+        <childnode refid="392" relation="public-inheritance">
         </childnode>
-        <childnode refid="359" relation="public-inheritance">
+        <childnode refid="393" relation="public-inheritance">
         </childnode>
-        <childnode refid="358" relation="public-inheritance">
+        <childnode refid="392" relation="public-inheritance">
         </childnode>
-        <childnode refid="359" relation="public-inheritance">
+        <childnode refid="393" relation="public-inheritance">
         </childnode>
-        <childnode refid="358" relation="public-inheritance">
+        <childnode refid="392" relation="public-inheritance">
         </childnode>
-        <childnode refid="359" relation="public-inheritance">
+        <childnode refid="393" relation="public-inheritance">
         </childnode>
-        <childnode refid="358" relation="public-inheritance">
+        <childnode refid="392" relation="public-inheritance">
         </childnode>
-        <childnode refid="359" relation="public-inheritance">
+        <childnode refid="393" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="362">
+      <node id="396">
         <label>UniformClient::Plugins::IPlugin</label>
         <link refid="d4/d25/interface_uniform_client_1_1_plugins_1_1_i_plugin"/>
       </node>
-      <node id="363">
+      <node id="397">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="364">
+      <node id="398">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
-      <node id="361">
+      <node id="395">
         <label>UserControl</label>
       </node>
-      <node id="360">
+      <node id="394">
         <label>THB_Plugin_Exams.TestConstructor</label>
         <link refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor"/>
-        <childnode refid="361" relation="public-inheritance">
+        <childnode refid="395" relation="public-inheritance">
         </childnode>
-        <childnode refid="362" relation="public-inheritance">
+        <childnode refid="396" relation="public-inheritance">
         </childnode>
-        <childnode refid="363" relation="public-inheritance">
+        <childnode refid="397" relation="public-inheritance">
         </childnode>
-        <childnode refid="364" relation="public-inheritance">
+        <childnode refid="398" relation="public-inheritance">
         </childnode>
-        <childnode refid="363" relation="public-inheritance">
+        <childnode refid="397" relation="public-inheritance">
         </childnode>
-        <childnode refid="364" relation="public-inheritance">
+        <childnode refid="398" relation="public-inheritance">
         </childnode>
-        <childnode refid="363" relation="public-inheritance">
+        <childnode refid="397" relation="public-inheritance">
         </childnode>
-        <childnode refid="364" relation="public-inheritance">
+        <childnode refid="398" relation="public-inheritance">
         </childnode>
-        <childnode refid="363" relation="public-inheritance">
+        <childnode refid="397" relation="public-inheritance">
         </childnode>
-        <childnode refid="364" relation="public-inheritance">
+        <childnode refid="398" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

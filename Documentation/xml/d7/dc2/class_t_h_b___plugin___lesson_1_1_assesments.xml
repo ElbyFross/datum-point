@@ -223,78 +223,78 @@
     <detaileddescription>
 <para><ref refid="d7/dc2/class_t_h_b___plugin___lesson_1_1_assesments" kindref="compound">Assesments</ref> </para>    </detaileddescription>
     <inheritancegraph>
-      <node id="44">
+      <node id="42">
         <label>THB_Plugin_Lesson.Assesments</label>
         <link refid="d7/dc2/class_t_h_b___plugin___lesson_1_1_assesments"/>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+        <childnode refid="44" relation="public-inheritance">
+        </childnode>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+        <childnode refid="44" relation="public-inheritance">
+        </childnode>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+        <childnode refid="44" relation="public-inheritance">
+        </childnode>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+        <childnode refid="44" relation="public-inheritance">
+        </childnode>
         <childnode refid="45" relation="public-inheritance">
         </childnode>
         <childnode refid="46" relation="public-inheritance">
         </childnode>
-        <childnode refid="45" relation="public-inheritance">
-        </childnode>
-        <childnode refid="46" relation="public-inheritance">
-        </childnode>
-        <childnode refid="45" relation="public-inheritance">
-        </childnode>
-        <childnode refid="46" relation="public-inheritance">
-        </childnode>
-        <childnode refid="45" relation="public-inheritance">
-        </childnode>
-        <childnode refid="46" relation="public-inheritance">
-        </childnode>
-        <childnode refid="47" relation="public-inheritance">
-        </childnode>
-        <childnode refid="48" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="48">
-        <label>IPlugin</label>
-      </node>
-      <node id="45">
-        <label>System::Windows::Controls::UserControl</label>
       </node>
       <node id="46">
+        <label>IPlugin</label>
+      </node>
+      <node id="43">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="44">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
-      <node id="47">
+      <node id="45">
         <label>UserControl</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="49">
+      <node id="47">
         <label>THB_Plugin_Lesson.Assesments</label>
         <link refid="d7/dc2/class_t_h_b___plugin___lesson_1_1_assesments"/>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+        <childnode refid="49" relation="public-inheritance">
+        </childnode>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+        <childnode refid="49" relation="public-inheritance">
+        </childnode>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+        <childnode refid="49" relation="public-inheritance">
+        </childnode>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+        <childnode refid="49" relation="public-inheritance">
+        </childnode>
         <childnode refid="50" relation="public-inheritance">
         </childnode>
         <childnode refid="51" relation="public-inheritance">
         </childnode>
-        <childnode refid="50" relation="public-inheritance">
-        </childnode>
-        <childnode refid="51" relation="public-inheritance">
-        </childnode>
-        <childnode refid="50" relation="public-inheritance">
-        </childnode>
-        <childnode refid="51" relation="public-inheritance">
-        </childnode>
-        <childnode refid="50" relation="public-inheritance">
-        </childnode>
-        <childnode refid="51" relation="public-inheritance">
-        </childnode>
-        <childnode refid="52" relation="public-inheritance">
-        </childnode>
-        <childnode refid="53" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="53">
-        <label>IPlugin</label>
-      </node>
-      <node id="50">
-        <label>System::Windows::Controls::UserControl</label>
       </node>
       <node id="51">
+        <label>IPlugin</label>
+      </node>
+      <node id="48">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="49">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
-      <node id="52">
+      <node id="50">
         <label>UserControl</label>
       </node>
     </collaborationgraph>
