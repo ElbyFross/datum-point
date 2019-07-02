@@ -17,9 +17,13 @@ using System.Collections;
 using System.Runtime.InteropServices;
 using System.Reflection;
 using System.Threading;
+using System.Threading.Tasks;
 using System.IO;
+using System.Security.Cryptography;
+
 using Microsoft.Win32.SafeHandles;
-using PipesProvider.Networking;
+
+using PipesProvider.Networking.Routing;
 using PipesProvider.Client;
 
 namespace UniformClient
@@ -82,14 +86,18 @@ namespace UniformClient
         public Thread thread;
 
         /// <summary>
-        /// Token that will used to autorizing on the server.
-        /// By default setted up to anonymous.
+        /// Table that contain instruction that allow to determine the server which is a target for recived query.
         /// </summary>
-        public SafeAccessTokenHandle AccessToken
-        { get; set; } = System.Security.Principal.WindowsIdentity.GetAnonymous().AccessToken;
+        public static RoutingTable routingTable;
+
+        /// <summary>
+        /// Token that authorize client to data and commands access.
+        /// </summary>
+        public static string token;
         #endregion
 
 
+        #region Core | Application | Assembly
         /// <summary>
         /// Loading assemblies from requested path.
         /// </summary>
@@ -158,6 +166,24 @@ namespace UniformClient
             }
         }
 
+
+        /// <summary>
+        /// Allow to start thread but previous return turn to current thread.
+        /// Allow to use single line queries.
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="guid"></param>
+        /// <param name="trnsLine"></param>
+        protected static async void ThreadStartedAsync(BaseClient client, string guid, TransmissionLine trnsLine)
+        {
+            await Task.Run(() => {
+                client.StartClientThread(
+                guid,
+                trnsLine,
+                TransmissionLine.ThreadLoop);
+            });
+        }
+
         /// <summary>
         /// Method that starting client thread.
         /// </summary>
@@ -180,7 +206,8 @@ namespace UniformClient
             // Initialize queries monitor thread.
             thread = new Thread(clientLoop)
             {
-                Name = threadName
+                Name = threadName,
+                Priority = ThreadPriority.BelowNormal
             };
 
             // Start thread
@@ -192,6 +219,102 @@ namespace UniformClient
             return thread;
         }
 
+        /// <summary>
+        /// Update routing table by the files that will found be requested directory.
+        /// Also auto loking for core routing  table by "resources\routing\".
+        /// 
+        /// In case if tables not found then create new one to provide example.
+        /// </summary>
+        /// <param name="directories"></param>
+        public static void LoadRoutingTables(params string[] directories)
+        {
+            #region Load routing tables
+            // Load routing tables
+            routingTable = null;
+            // From system folders.
+            routingTable += RoutingTable.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\");
+            // From custrom directories.
+            foreach (string dir in directories)
+            {
+                routingTable += RoutingTable.LoadRoutingTables(dir);
+            }
+            #endregion
+
+            #region Request public keys
+            foreach(Instruction instruction in routingTable.intructions)
+            {
+                // If encryption requested.
+                if (instruction.RSAEncryption)
+                {
+                    Console.WriteLine("INSTRUCTION ROUTING RSA", instruction.routingIP, instruction.pipeName);
+
+                    // Request publick key reciving.
+                    GetValidPublicKey(instruction);
+                }
+            }
+            #endregion
+
+            #region Validate
+            // If routing table not found.
+            if (routingTable.intructions.Count == 0)
+            {
+                // Log error.
+                Console.WriteLine("ROUTING TABLE NOT FOUND: Create default table by directory \\resources\\routing\\ROUTING.xml");
+
+                // Set default intruction.
+                routingTable.intructions.Add(Instruction.Default);
+
+                // Save sample routing table to application files.
+                RoutingTable.SaveRoutingTable(routingTable, AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\", "ROUTING");
+            }
+            else
+            {
+                // Log error.
+                Console.WriteLine("ROUTING TABLE: Detected {0} instructions.", routingTable.intructions.Count);
+            }
+            #endregion
+        }
+        #endregion
+
+        #region Security
+        /// <summary>
+        /// Provide valid public key for target server encryption.
+        /// Auto update key if was expired.
+        /// </summary>
+        /// <param name="instruction"></param>
+        /// <returns></returns>
+        public static RSAParameters GetValidPublicKey(PipesProvider.Networking.Routing.Instruction instruction)
+        {
+            // Validate key.
+            if (!instruction.IsValid)
+            {
+                // Create base part of query for reciving of public RSA key.
+                string query = string.Format("token={1}{0}q=GET{0}sq=PUBLICKEY", 
+                    UniformQueries.API.SPLITTING_SYMBOL, token);
+
+                // Request public key from server.
+                EnqueueDuplexQuery(
+                    instruction.routingIP,
+                    instruction.pipeName,
+                    // Add guid base on instruction hash to this query.
+                    query + UniformQueries.API.SPLITTING_SYMBOL + "guid=" + instruction.GetHashCode(),
+                    // Create callback delegate that will set recived value to routing table.
+                    delegate (TransmissionLine answerLine, object answer)
+                    {
+                        // Log about success.
+                        //Console.WriteLine("{0}/{1}: PUBLIC KEY RECIVED",
+                        //    instruction.routingIP, instruction.pipeName);
+
+                        // Try to apply recived answer.
+                        instruction.TryUpdatePublicKey(answer);
+                    });
+            }
+
+            return instruction.PublicKey;
+        }
+        #endregion
+
+        #region Plugins
         /// <summary>
         /// Load plugins from assembly and instiniate them to list.
         /// </summary>
@@ -248,6 +371,7 @@ namespace UniformClient
             }
             return collection;
         }
+        #endregion
 
 
         #region Transmission API
@@ -261,7 +385,8 @@ namespace UniformClient
            string serverName,
            string pipeName)
         {
-            return OpenTransmissionLine(serverName, pipeName, UniformQueryPostHandler);
+            return OpenTransmissionLine(serverName, pipeName, 
+                HandlerOutputTransmisssionAsync);
         }
 
         /// <summary>
@@ -276,8 +401,9 @@ namespace UniformClient
            string pipeName,
            System.Action<TransmissionLine> callback)
         {
+            SafeAccessTokenHandle token = System.Security.Principal.WindowsIdentity.GetAnonymous().AccessToken;
             string guid = serverName.GetHashCode() + "_" + pipeName.GetHashCode();
-            return OpenTransmissionLine(new SimpleClient(), serverName, pipeName, callback);
+            return OpenTransmissionLine(new SimpleClient(), serverName, pipeName, ref token, callback);
         }
         
         /// <summary>
@@ -286,15 +412,17 @@ namespace UniformClient
         /// Start new thread to avoid freezes.
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="guid"></param>
-        /// <param name="serverName"></param>
-        /// <param name="pipeName"></param>
-        /// <param name="callback"></param>
+        /// <param name="token">Token that will be used for logon. on remote machine LSA. 
+        /// Sharing by ref to allow update in internal lines.</param>
+        /// <param name="serverName">Name of IP adress of remote or local server.</param>
+        /// <param name="pipeName">Name of the pipe started on the server.</param>
+        /// <param name="callback">Method that will be called when connection will be established.</param>
         /// <returns>Opened transmission line. Use line.Enqueue to add your query.</returns>
         public static TransmissionLine OpenTransmissionLine(
             BaseClient client,
             string serverName,
             string pipeName,
+            ref SafeAccessTokenHandle token,
             System.Action<TransmissionLine> callback)
         {
             // Validate client.
@@ -324,7 +452,7 @@ namespace UniformClient
                     //Console.WriteLine("OTL {0} | RETRY", guid);
 
                     // Retry.
-                    return OpenTransmissionLine(client, serverName, pipeName, callback); 
+                    return OpenTransmissionLine(client, serverName, pipeName, ref token, callback);
                 }
             }
             // If full new pipe.
@@ -335,81 +463,149 @@ namespace UniformClient
                     serverName,
                     pipeName,
                     callback,
-                    client.AccessToken);
+                    ref token);
 
-                // Put line proccesor to the new client loop.
-                client.StartClientThread(
-                    guid,
-                    trnsLine,
-                    TransmissionLine.ThreadLoop);
-
-
-                //Console.WriteLine("OTL {0} | CREATED", guid);
+                // Request thread start but let a time quantum only when this thread will pass order.
+                ThreadStartedAsync(client, guid, trnsLine);
             }
 
             // Return oppened line.
-            return trnsLine;
+                return trnsLine;
         }
+        #endregion
 
+        #region Answer receivers
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="line">Line that was used to transmition</param>
+        /// <param name="answerHandler">Delegate that will be called as handler for answer processing. 
+        /// TransmissionLine contain data about actual transmission.
+        /// object contain recived query (usualy string or byte[]).</param>
+        /// <param name="decodedQuery">Query that sent to server and must recive answer. Must be not encoded.</param>
+        /// <returns></returns>
+        public static bool ReceiveAnswer(
+            TransmissionLine line,
+            string decodedQuery,
+            System.Action<TransmissionLine, object> answerHandler)
+        {
+            return ReceiveAnswer(
+                line, 
+                UniformQueries.API.DetectQueryParts(decodedQuery),
+                answerHandler);
+        }
 
         /// <summary>
-        /// Handler that send last dequeued query to server when connection will be established.
+        /// 
         /// </summary>
-        /// <param name="sharedObject">
-        /// Normaly is a TransmissionLine that contain information about actual transmission.</param>
-        public async static void UniformQueryPostHandler(object sharedObject)
-        { 
-            // Drop as invalid in case of incorrect transmitted data.
-            if (!(sharedObject is TransmissionLine lineProcessor))
+        /// <param name="line">Line that was used to transmition</param>
+        /// <param name="answerHandler">Delegate that will be called as handler for answer processing. 
+        /// TransmissionLine contain data about actual transmission.
+        /// object contain recived query (usualy string or byte[]).</param>
+        /// <param name="entryQueryParts">Parts of query that was recived from client. 
+        /// Method will detect core part and establish backward connection.</param>
+        /// <returns></returns>
+        public static bool ReceiveAnswer(
+            TransmissionLine line,
+            UniformQueries.QueryPart[] entryQueryParts, 
+            System.Action<TransmissionLine, object> answerHandler)
+        {
+            #region Create backward domain
+            // Try to compute bacward domaint to contact with client.
+            if (!UniformQueries.QueryPart.TryGetBackwardDomain(entryQueryParts, out string domain))
             {
-                Console.WriteLine("TRANSMISSION ERROR (UQPP0): INCORRECT TRANSFERD DATA TYPE. PERMITED ONLY \"LineProcessor\"");
-                return;
+                Console.WriteLine("ERROR (BCRA0): Unable to buid backward domain. QUERY: {0}", 
+                    UniformQueries.QueryPart.QueryPartsArrayToString(entryQueryParts));
+                return false;
             }
-            /// If queries not placed then wait.
-            while (!lineProcessor.HasQueries || !lineProcessor.TryDequeQuery(out _))
+            #endregion
+
+            #region Addind answer handler to backward table.
+            string hashKey = line.ServerName + "\\" + domain;
+            // Try to load registred callback to overriding.
+            if (DuplexBackwardCallbacks[hashKey] is
+                System.Action<TransmissionLine, object> registredCallback)
             {
-                Thread.Sleep(50);
-                continue;
+                DuplexBackwardCallbacks[hashKey] = answerHandler;
             }
-
-            // Open stream writer.
-            StreamWriter sw = new StreamWriter(lineProcessor.pipeClient);
-            try
+            else
             {
-                await sw.WriteAsync(lineProcessor.LastQuery.Query);
-                await sw.FlushAsync();
-                Console.WriteLine("TRANSMITED: {0}", lineProcessor.LastQuery);
-                //sw.Close();
+                // Add colback to table as new.
+                DuplexBackwardCallbacks.Add(hashKey, answerHandler);
             }
-            // Catch the Exception that is raised if the pipe is broken or disconnected.
-            catch (Exception e)
-            {
-                Console.WriteLine("DNS HANDLER ERROR ({1}): {0}", e.Message, lineProcessor.pipeClient.GetHashCode());
+            #endregion
 
-                // Retry transmission.
-                if (lineProcessor.LastQuery.Attempts < 10)
-                {
-                    // Add to queue.
-                    lineProcessor.EnqueueQuery(lineProcessor.LastQuery);
+            #region Opening transmition line
+            // Create transmission line.
+            TransmissionLine lineProcessor = OpenTransmissionLine(
+                new SimpleClient(),
+                line.ServerName, domain,
+                ref line.accessToken,
+                HandlerInputTransmissionAsync
+                );
 
-                    // Add attempt.
-                    lineProcessor++;
-                }
-                else
-                {
-                    // If transmission attempts over the max count.
-                }
-            }
+            // Set input direction.
+            lineProcessor.Direction = TransmissionLine.TransmissionDirection.In;
+            #endregion
 
-            lineProcessor.Processing = false;
+            // Skip line
+            Console.WriteLine();
+            return true;
+        }
+        #endregion
+
+        #region Duplex quries API
+        /// <summary>
+        /// Add query to queue. 
+        /// Open backward line that will call answer handler.
+        /// </summary>
+        /// <param name="line">Line proccessor that control queries posting to target server.</param>
+        /// <param name="query">Query that will sent to server.</param>
+        /// <param name="answerHandler">Callback that will recive answer.</param>
+        public static void EnqueueDuplexQuery(
+            TransmissionLine line,
+            string query,
+            System.Action<TransmissionLine, object> answerHandler)
+        {
+            // Add our query to line processor queue.
+            line.EnqueueQuery(query);
+            
+            // Open backward chanel to recive answer from server.
+            ReceiveAnswer(line, query, answerHandler);
         }
 
+        /// <summary>
+        /// Add query to queue. 
+        /// Open backward line that will call answer handler.
+        /// </summary>
+        /// <param name="serverName">Name of the server. "." if local.</param>
+        /// <param name="serverPipeName">Name of pipe provided by server.</param>
+        /// <param name="query">Query that will sent to server.</param>
+        /// <param name="answerHandler">Callback that will recive answer.</param>
+        /// <returns>Established transmission line.</returns>
+        public static TransmissionLine EnqueueDuplexQuery(
+            string serverName,
+            string serverPipeName,
+            string query,
+            System.Action<TransmissionLine, object> answerHandler)
+        {
+            // Open transmission line.
+            TransmissionLine line = OpenOutTransmissionLine(serverName, serverPipeName);
+
+            // Equeue query to line.
+            EnqueueDuplexQuery(line, query, answerHandler);
+
+            return line;
+        }
+        #endregion
+
+        #region Service handlers
         /// <summary>
         /// Handler that will recive message from the server.
         /// </summary>
         /// <param name="sharedObject">
         /// Normaly is a TransmissionLine that contain information about actual transmission.</param>
-        public static async void UniformServerAnswerHandler(object sharedObject)
+        public static async void HandlerInputTransmissionAsync(object sharedObject)
         {
             // Drop as invalid in case of incorrect transmitted data.
             if (!(sharedObject is TransmissionLine lineProcessor))
@@ -435,9 +631,7 @@ namespace UniformClient
                     // Avoid an error caused to disconection of client.
                     try
                     {
-                        //Console.WriteLine("{0}/{1}: READ Started: {2}", lineProcessor.ServerName, lineProcessor.ServerPipeName, DateTime.Now.ToString("HH:mm:ss.fff"));
                         message = await sr.ReadToEndAsync();
-                        //Console.WriteLine("{0}/{1}: READ Finished: {2}", lineProcessor.ServerName, lineProcessor.ServerPipeName, DateTime.Now.ToString("HH:mm:ss.fff"));
                     }
                     // Catch the Exception that is raised if the pipe is broken or disconnected.
                     catch (Exception e)
@@ -454,8 +648,9 @@ namespace UniformClient
                     }
                 }
 
-                Console.WriteLine("{0}/{1}: MESSAGE RECIVED",
-                        lineProcessor.ServerName, lineProcessor.ServerPipeName);
+                // Log state.
+                Console.WriteLine("{0}/{1}: MESSAGE RECIVED", 
+                    lineProcessor.ServerName, lineProcessor.ServerPipeName);
                 #endregion
 
                 #region Processing message
@@ -499,123 +694,79 @@ namespace UniformClient
             lineProcessor.Close();
         }
 
-
         /// <summary>
-        /// 
+        /// Handler that send last dequeued query to server when connection will be established.
         /// </summary>
-        /// <param name="line">Line that was used to transmition</param>
-        /// <param name="answerHandler">Delegate that will be called as handler for answer processing. 
-        /// TransmissionLine contain data about actual transmission.
-        /// object contain recived query (usualy string or byte[]).</param>
-        /// <param name="decodedQuery">Query that sent to server and must recive answer. Must be not encoded.</param>
-        /// <returns></returns>
-        public static bool ReciveAnswer(
-            TransmissionLine line,
-            string decodedQuery,
-            System.Action<TransmissionLine, object> answerHandler)
+        /// <param name="sharedObject">Normaly is a TransmissionLine that contain information about actual transmission.</param>
+        public static async void HandlerOutputTransmisssionAsync(object sharedObject)
         {
-            return ReciveAnswer(
-                line, 
-                UniformQueries.API.DetectQueryParts(decodedQuery),
-                answerHandler);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="line">Line that was used to transmition</param>
-        /// <param name="answerHandler">Delegate that will be called as handler for answer processing. 
-        /// TransmissionLine contain data about actual transmission.
-        /// object contain recived query (usualy string or byte[]).</param>
-        /// <param name="entryQueryParts">Parts of query that was recived from client. 
-        /// Method will detect core part and establish backward connection.</param>
-        /// <returns></returns>
-        public static bool ReciveAnswer(
-            TransmissionLine line,
-            UniformQueries.QueryPart[] entryQueryParts, 
-            System.Action<TransmissionLine, object> answerHandler)
-        {
-            #region Create backward domain
-            // Try to compute bacward domaint to contact with client.
-            if (!UniformQueries.QueryPart.TryGetBackwardDomain(entryQueryParts, out string domain))
+            // Drop as invalid in case of incorrect transmitted data.
+            if (!(sharedObject is PipesProvider.Client.TransmissionLine lineProcessor))
             {
-                Console.WriteLine("ERROR (BCRA0): Unable to buid backward domain. QUERY: {0}", 
-                    UniformQueries.QueryPart.QueryPartsArrayToString(entryQueryParts));
-                return false;
+                Console.WriteLine("TRANSMISSION ERROR (UQPP0): INCORRECT TRANSFERED DATA TYPE. PERMITED ONLY \"LineProcessor\"");
+                return;
             }
-            #endregion
 
-            #region Addind answer handler to backward table.
-            string hashKey = line.ServerName + "\\" + domain;
-            // Try to load registred callback to overriding.
-            if (DuplexBackwardCallbacks[hashKey] is
-                System.Action<TransmissionLine, object> registredCallback)
+            string sharableQuery = lineProcessor.LastQuery.Query;
+
+            // If requested encryption.
+            if (lineProcessor.RoutingInstruction != null &&
+                lineProcessor.RoutingInstruction.RSAEncryption)
             {
-                DuplexBackwardCallbacks[hashKey] = answerHandler;
+                // Check if instruction key is valid.
+                // If key expired or invalid then will be requested new.
+                if (!lineProcessor.RoutingInstruction.IsValid)
+                {
+                    // Request new key.
+                    UniformClient.BaseClient.GetValidPublicKey(lineProcessor.RoutingInstruction);
+
+                    // Log.
+                    Console.WriteLine("WAITING FOR PUBLIC RSA KEY FROM {0}/{1}", 
+                        lineProcessor.ServerName, lineProcessor.ServerPipeName);
+
+                    // Wait until validation time.
+                    // Operation will work in another threads, so we just need to take a time.
+                    while (!lineProcessor.RoutingInstruction.IsValid)
+                    {
+                        Thread.Sleep(50);
+                    }
+                }
+
+                // Encrypt query by public key of target server.
+                sharableQuery = PipesProvider.Security.Crypto.EncryptString(sharableQuery, lineProcessor.RoutingInstruction.PublicKey);
             }
-            else
+
+            // Open stream writer.
+            StreamWriter sw = new StreamWriter(lineProcessor.pipeClient);
+            try
             {
-                // Add colback to table as new.
-                DuplexBackwardCallbacks.Add(hashKey, answerHandler);
+                await sw.WriteAsync(sharableQuery);
+                await sw.FlushAsync();
+                Console.WriteLine("TRANSMITED: {0}", lineProcessor.LastQuery);
+                //sw.Close();
             }
-            #endregion
+            // Catch the Exception that is raised if the pipe is broken or disconnected.
+            catch (Exception e)
+            {
+                Console.WriteLine("DNS HANDLER ERROR ({1}): {0}", e.Message, lineProcessor.pipeClient.GetHashCode());
 
-            #region Opening transmition line
-            // Create transmission line.
-            TransmissionLine lineProcessor = OpenTransmissionLine(
-                new SimpleClient(),
-                line.ServerName, domain,
-                UniformServerAnswerHandler
-                );
-            #endregion
+                // Retry transmission.
+                if (lineProcessor.LastQuery.Attempts < 10)
+                {
+                    // Add to queue.
+                    lineProcessor.EnqueueQuery(lineProcessor.LastQuery);
 
-            // Skip line
-            Console.WriteLine();
-            return true;
-        }
+                    // Add attempt.
+                    lineProcessor++;
+                }
+                else
+                {
+                    // If transmission attempts over the max count.
+                }
+            }
 
-
-        /// <summary>
-        /// Add query to queue. 
-        /// Open backward line that will call answer handler.
-        /// </summary>
-        /// <param name="line">Line proccessor that control queries posting to target server.</param>
-        /// <param name="query">Query that will sent to server.</param>
-        /// <param name="answerHandler">Callback that will recive answer.</param>
-        public static void EnqueueDuplexQuery(
-            TransmissionLine line,
-            string query,
-            System.Action<TransmissionLine, object> answerHandler)
-        {
-            // Add our query to line processor queue.
-            line.EnqueueQuery(query);
-            
-            // Open backward chanel to recive answer from server.
-            ReciveAnswer(line, query, answerHandler);
-        }
-
-        /// <summary>
-        /// Add query to queue. 
-        /// Open backward line that will call answer handler.
-        /// </summary>
-        /// <param name="serverName">Name of the server. "." if local.</param>
-        /// <param name="serverPipeName">Name of pipe provided by server.</param>
-        /// <param name="query">Query that will sent to server.</param>
-        /// <param name="answerHandler">Callback that will recive answer.</param>
-        /// <returns>Established transmission line.</returns>
-        public static TransmissionLine EnqueueDuplexQuery(
-            string serverName,
-            string serverPipeName,
-            string query,
-            System.Action<TransmissionLine, object> answerHandler)
-        {
-            // Open transmission line.
-            TransmissionLine line = OpenOutTransmissionLine(serverName, serverPipeName);
-
-            // Equeue query to line.
-            EnqueueDuplexQuery(line, query, answerHandler);
-
-            return line;
+            // Unlock loop.
+            lineProcessor.Processing = false;
         }
         #endregion
     }

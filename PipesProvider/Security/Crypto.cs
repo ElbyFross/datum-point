@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Security.Cryptography;
 using System.IO;
+using System.Timers;
 
 namespace PipesProvider.Security
 {
@@ -25,6 +26,18 @@ namespace PipesProvider.Security
     /// </summary>
     public static class Crypto
     {
+        #region Configs
+        /// <summary>
+        /// Encoder that provide  concertation query from string to byte array.
+        /// </summary>
+        public static Encoding encoder = Encoding.Default;
+
+        /// <summary>
+        /// Padding messages.
+        /// </summary>
+        public static bool DoOAEPPadding;
+        #endregion
+
         #region Enums
         /// <summary>
         /// Enum  that describe type of SHA hash algorithm.
@@ -49,11 +62,42 @@ namespace PipesProvider.Security
             {
                 // Create new provider if not found.
                 if (_CryptoServiceProvider_RSA == null)
-                    _CryptoServiceProvider_RSA = new RSACryptoServiceProvider(2048);
+                {
+                    #region Init
+                    // Create provider.
+                    _CryptoServiceProvider_RSA = new RSACryptoServiceProvider();
+
+                    // Set expire time after 24 hours.
+                    RSAKeyExpireTime = DateTime.Now.AddDays(1);
+                    #endregion
+
+                    #region Auto expire
+                    // Compute miliseconds between corent moment and expire date.
+                    double timerPeriod = RSAKeyExpireTime.Subtract(DateTime.Now).TotalMilliseconds;
+                    RSAProviderExpireTimer = new Timer(timerPeriod);
+
+                    // Create delegate that will be called when timer will be passed.
+                    ElapsedEventHandler expireCallback = null;
+                    expireCallback = delegate (object sender, ElapsedEventArgs arg)
+                    {
+                        // unsubscribe.
+                        RSAProviderExpireTimer.Elapsed -= expireCallback;
+
+                        // Drop current provider.
+                        _CryptoServiceProvider_RSA = null;
+                    };
+                    // Subscribe exipire handler to timer event.
+                    RSAProviderExpireTimer.Elapsed += expireCallback;
+                    #endregion
+                }
+
+                // Return valid crypto provider.
                 return _CryptoServiceProvider_RSA;
             }
         }
         private static RSACryptoServiceProvider _CryptoServiceProvider_RSA;
+
+        private static Timer RSAProviderExpireTimer;
 
         /// <summary>
         /// Public RSA key that must b used to encrypt of message befor send.
@@ -65,18 +109,53 @@ namespace PipesProvider.Security
                 return CryptoServiceProvider_RSA.ExportParameters(false);
             }
         }
-
+        
         /// <summary>
-        /// Return Public key in XML format.
+        /// Serialize public key to XML.
         /// </summary>
-        public static string PublicKeyXML
+        /// <returns></returns>
+        public static string SerializePublicKey()
         {
-            get
+            var sw = new StringWriter();
+            var xs = new System.Xml.Serialization.XmlSerializer(typeof(RSAParameters));
+
+            try
             {
-                var sw = new StringWriter();
-                var xs = new System.Xml.Serialization.XmlSerializer(typeof(RSAParameters));
                 xs.Serialize(sw, PublicKey);
                 return sw.ToString();
+            }
+            catch (Exception ex)
+            {
+                throw new IOException(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Trying to deserialize xml to RSAParameters.
+        /// </summary>
+        /// <param name="xml"></param>
+        /// <param name="result"></param>
+        /// <returns>Result of operation. Return false if was failed.</returns>
+        public static bool TryDeserializeRSAKey(string xml, out RSAParameters result)
+        {
+            var sr = new StringReader(xml);
+            var xs = new System.Xml.Serialization.XmlSerializer(typeof(RSAParameters));
+
+            try
+            {
+                // Convert xml to object.
+                object bufer = xs.Deserialize(sr);
+                result = (RSAParameters)bufer;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                //Log error
+                Console.WriteLine("ERROR (PPCr_RSADeser0): {0}", ex.Message);
+
+                // Return fail
+                result = new RSAParameters();
+                return false;
             }
         }
 
@@ -90,9 +169,54 @@ namespace PipesProvider.Security
                 return CryptoServiceProvider_RSA.ExportParameters(true);
             }
         }
+
+        /// <summary>
+        /// Time when rsa keys will expired.
+        /// </summary>
+        public static DateTime RSAKeyExpireTime { get; private set; }
         #endregion
 
         #region RSA Decryption
+        /// <summary>
+        /// Decrypt string message that was recived from other source and was encrypted by local public key.
+        /// In case of fail will return entry message.
+        /// </summary>
+        /// <param name="message">Message that will be decrypted.</param>
+        /// <returns></returns>
+        public static string DecryptString(string message)
+        {
+            // Conver message to byte array.
+            byte[] bytedMessage = encoder.GetBytes(message);
+            //byte[] bytedMessage = Convert.FromBase64String(message);
+
+            // Encrypt byte array.
+            byte[] encryptedMessage = RSADecrypt(bytedMessage, DoOAEPPadding);
+
+            // Create decrypted string.
+            if (encryptedMessage != null)
+            {
+                // Convert bytes array to string
+                string decryptedMessageString = encoder.GetString(encryptedMessage);
+                //string decryptedMessageString = Convert.ToBase64String(encryptedMessage);
+
+                // Log
+                Console.WriteLine("DECRYPTED: {0}\n", decryptedMessageString);
+
+                return decryptedMessageString;
+            }
+            else
+            {
+                // Return entry message cause decryotion failed.
+                return message;
+            }
+        }
+
+        /// <summary>
+        /// Decrypt byte array using private key.
+        /// </summary>
+        /// <param name="DataToDecrypt"></param>
+        /// <param name="DoOAEPPadding"></param>
+        /// <returns></returns>
         public static byte[] RSADecrypt(byte[] DataToDecrypt, bool DoOAEPPadding)
         {
             try
@@ -114,10 +238,9 @@ namespace PipesProvider.Security
             }
             //Catch and display a CryptographicException  
             //to the console.
-            catch (CryptographicException e)
+            catch //(CryptographicException e)
             {
-                Console.WriteLine(e.ToString());
-
+                //Console.WriteLine("RSA DECRYPTION ERROR:\n{0}", e.ToString());
                 return null;
             }
         }
@@ -133,13 +256,18 @@ namespace PipesProvider.Security
         public static string EncryptString(string message, RSAParameters serverPublicKey)
         {
             // Conver message to byte array.
-            byte[] bytedMessage = Encoding.UTF8.GetBytes(message);
+            byte[] bytedMessage = encoder.GetBytes(message);
+            //byte[] bytedMessage = Convert.FromBase64String(message);
 
             // Encrypt byte array.
-            byte[] encryptedMessage = RSAEncrypt(bytedMessage, serverPublicKey, false);
+            byte[] encryptedMessage = RSAEncrypt(bytedMessage, serverPublicKey, DoOAEPPadding);
 
             // Create encrypted string.
-            return Encoding.UTF8.GetString(encryptedMessage);
+            string encryptedMessageString = encoder.GetString(encryptedMessage);
+            //string encryptedMessageString = Convert.ToBase64String(encryptedMessage);
+
+            //Console.WriteLine("ENCRYPTED TO:\n{0}", encryptedMessageString);
+            return encryptedMessageString;
         }
 
         /// <summary>

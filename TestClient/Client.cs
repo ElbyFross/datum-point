@@ -15,7 +15,7 @@
 using System;
 using System.Threading;
 using Microsoft.Win32.SafeHandles;
-using PipesProvider.Networking;
+using PipesProvider.Networking.Routing;
 using PipesProvider.Security;
 using PipesProvider.Client;
 
@@ -29,14 +29,9 @@ namespace TestClient
     class Client : UniformClient.BaseClient
     {
         /// <summary>
-        /// Table that contain instruction that allow to determine the server which is a target for recived query.
-        /// </summary>
-        public static RoutingTable routingTable;
-
-        /// <summary>
         /// Data about target server loaded from routing table.
         /// </summary>
-        public static RoutingTable.RoutingInstruction ServerMeta { get; set; }
+        public static Instruction routingInstruction;
 
         /// <summary>
         /// Server that will be used as target for this client.
@@ -51,6 +46,16 @@ namespace TestClient
 
         static void Main(string[] args)
         {
+            #region Encryption test.
+            //string enc = PipesProvider.Security.Crypto.EncryptString("Encryption Test", PipesProvider.Security.Crypto.PublicKey);
+            //string dec = PipesProvider.Security.Crypto.DecryptString(enc);
+
+            //Console.WriteLine("Result: {0}",dec);
+            //Console.ReadLine();
+            #endregion
+
+            token = "invalid";
+
             #region Init
             // React on uniform arguments.
             ArgsReactor(args);
@@ -59,20 +64,20 @@ namespace TestClient
             LoadAssemblies(AppDomain.CurrentDomain.BaseDirectory + "libs\\");
 
             // Loading roting tables to detect servers.
-            LoadRoutingTables();
+            LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "plugins\\");
 
             Console.WriteLine("Preparetion finished. Client strated.");
             #endregion
 
             // This client has only one server so we just looks on first included instruction in routing table,
             // to detect the target params.
-            ServerMeta = routingTable.intructions[0];
+            routingInstruction = routingTable.intructions[0];
 
             // Set loaded config to firlds.
             // Provided only for code simplifying and showing example of hard coded data using.
             // In normal way I recommend to use direct call of ServerMeta's fields and properties.
-            SERVER_NAME = ServerMeta.routingIP;
-            SERVER_PIPE_NAME = ServerMeta.pipeName;
+            SERVER_NAME = routingInstruction.routingIP;
+            SERVER_PIPE_NAME = routingInstruction.pipeName;
 
 
             // Try to make human clear naming of server. In case of local network we will get the machine name.
@@ -86,6 +91,7 @@ namespace TestClient
                 SERVER_NAME, 445,
                 delegate (string uri, int port)
                 {
+                    // Log about success ping operation.
                     Console.WriteLine("PING COMPLITED | HOST AVAILABLE | {0}:{1}\n", uri, port);
 
                     // Send few example queries to server.
@@ -123,7 +129,7 @@ namespace TestClient
                             {
                                 EnqueueDuplexQuery(SERVER_NAME, SERVER_PIPE_NAME,
                                     tmp.Substring(4), ServerAnswerHandler_RSAPublicKey).
-                                    TryLogonAs(ServerMeta.logonConfig);
+                                    TryLogonAs(routingInstruction.logonConfig);
                             }
                             // Send as one way
                             else
@@ -144,51 +150,54 @@ namespace TestClient
             Console.ReadKey();
         }
 
-        static void LoadRoutingTables()
-        {
-            #region Load routing tables
-            // Load routing tables
-            routingTable = null;
-            // From system folders.
-            routingTable += RoutingTable.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\");
-            // From plugins.
-            routingTable += RoutingTable.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "plugins\\");
-
-            // If routing table not found.
-            if (routingTable.intructions.Count == 0)
-            {
-                // Log error.
-                Console.WriteLine("ROUTING TABLE NOT FOUND: Create default table by directory \\resources\\routing\\ROUTING.xml");
-
-                // Set default intruction.
-                routingTable.intructions.Add(RoutingTable.RoutingInstruction.Default);
-
-                // Save sample routing table to application files.
-                RoutingTable.SaveRoutingTable(routingTable, AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\", "ROUTING");
-            }
-            else
-            {
-                // Log error.
-                Console.WriteLine("ROUTING TABLE: Detected {0} instructions.", routingTable.intructions.Count);
-            }
-            #endregion
-        }
-
         /// <summary>
         /// Method that will send few sample to remote server.
         /// </summary>
         static void TransmissionsBlock()
         {
+            // If requested line encryption.
+            if (routingInstruction.RSAEncryption)
+            {
+                Console.WriteLine("Wait for public key....");
+                while (!routingInstruction.IsValid)
+                {
+                    Thread.Sleep(50);
+                }
+            }
+
+            // Pause between queries to more clear console logging.
+            // In normal state this not required. Queries included DNS system auto controling stability.
+            // Your queries in safe and not require manual control.
+            int pauseBetweenQueries = 2000;
+
+            #region First query
+            ConsoleDraw.Primitives.DrawSpacedLine();
+            Console.WriteLine("ONE WAY query.\nTransmisssion to {0}/{1}", SERVER_NAME, SERVER_PIPE_NAME);
+
             // Short way to send one way query.
-            OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME).EnqueueQuery("ECHO").
-            // Request remote logon. By default LogonConfig equal Anonymous (Guest) user.
-                TryLogonAs(ServerMeta.logonConfig);
+            OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME). // Opern transmission line via starndard DNS handler.
+                EnqueueQuery(string.Format("token={1}{0}guid=echo{0}q=ECHO", UniformQueries.API.SPLITTING_SYMBOL, token)). // Adding query to line's queue.
+                SetInstructionAsKey(ref routingInstruction).        // Connect instruction to provide auto-encryption via RSA.
+                TryLogonAs(routingInstruction.logonConfig);         // Request remote logon. By default LogonConfig equal Anonymous (Guest) user.
+            #endregion
+
+            #region Second query
+            Thread.Sleep(pauseBetweenQueries);
+            ConsoleDraw.Primitives.DrawSpacedLine();
+            Console.WriteLine("ONE WAY (SHORT FORMAT) query.\nTransmisssion to {0}/{1}", SERVER_NAME, SERVER_PIPE_NAME);
 
             // Send sample one way query to server with every step description.
-            SendOneWayQuery("ECHO");
+            SendOneWayQuery(string.Format("token={1}{0}guid=datesRange{0}q=GET{0}sq=DAYSRANGE", UniformQueries.API.SPLITTING_SYMBOL, token));
+            #endregion
+
+            #region Third query
+            Thread.Sleep(pauseBetweenQueries);
+            ConsoleDraw.Primitives.DrawSpacedLine();
+            Console.WriteLine("DUPLEX query.\nTransmisssion to {0}/{1}", SERVER_NAME, SERVER_PIPE_NAME);
 
             // Get public key for RSA encoding from target server.
             RequestPublicRSAKey();
+            #endregion
         }
 
         #region Queries
@@ -204,7 +213,10 @@ namespace TestClient
             //
             // Relative to setting of pipes also could be required:
             // - anonymous access to named pipes
-            bool logonResult = General.TryLogon(ServerMeta.logonConfig, out SafeAccessTokenHandle safeTokenHandle);
+            //
+            // ATTENTION: Message will not be encrypted before post. 
+            // User SetRoutingInstruction (whrer instruction has RSAEncryption fields as true) instead TryLogon.
+            bool logonResult = General.TryLogon(routingInstruction.logonConfig, out SafeAccessTokenHandle safeTokenHandle);
             if (!logonResult)
             {
                 Console.WriteLine("Logon failed. Connection not possible.\nPress any key...");
@@ -216,7 +228,7 @@ namespace TestClient
             // Create transmission line.
             TransmissionLine lineProcessor = OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME);
             // Set impersonate token.
-            lineProcessor.AccessToken = safeTokenHandle;
+            lineProcessor.accessToken = safeTokenHandle;
 
             // Add sample query to queue. You can use this way if you not need answer from server.
             lineProcessor.EnqueueQuery(query);
@@ -239,7 +251,7 @@ namespace TestClient
             // When answer will recived it will redirected to callback.
             EnqueueDuplexQuery(SERVER_NAME, SERVER_PIPE_NAME, 
                 GetPKQuery, ServerAnswerHandler_RSAPublicKey).
-                TryLogonAs(ServerMeta.logonConfig); // Share logon cofig to allow connectio for not public servers.
+                TryLogonAs(routingInstruction.logonConfig); // Share logon cofig to allow connectio for not public servers.
 
             // Let the time to transmission line to qompleet the query.
             Thread.Sleep(150);

@@ -79,6 +79,18 @@ namespace PipesProvider.Client
             // Loop will work until this proceesor line not closed.
             while (!lineProcessor.Closed)
             {
+                // In case if line in out transmission mode.
+                // If queries not placed then wait.
+                while 
+                    (
+                    lineProcessor.Direction == TransmissionLine.TransmissionDirection.Out &&
+                    (!lineProcessor.HasQueries || !lineProcessor.TryDequeQuery(out _))
+                    )
+                {
+                    Thread.Sleep(50);
+                    continue;
+                }
+
                 // Open pipe.
                 using (NamedPipeClientStream pipeClient =
                     new NamedPipeClientStream(

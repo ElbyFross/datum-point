@@ -258,7 +258,8 @@ namespace UniformServer
             // Try to compute bacward domaint to contact with client.
             if (!UniformQueries.QueryPart.TryGetBackwardDomain(entryQueryParts, out string domain))
             {
-                Console.WriteLine("Unable to buid backward domain. QUERY: {0}", UniformQueries.QueryPart.QueryPartsArrayToString(entryQueryParts));
+                Console.WriteLine("ERROR (BSSA0): Unable to buid backward domain. QUERY: {0}", 
+                    UniformQueries.QueryPart.QueryPartsArrayToString(entryQueryParts));
                 return false;
             }
 
@@ -274,6 +275,21 @@ namespace UniformServer
                 {
                     // Unsubscribe.
                     ServerAPI.ServerTransmissionMeta_InProcessing -= initationCallback;
+
+                    // Encrypt query if requested by "pk" query's param.
+                    if(UniformQueries.API.TryGetParamValue(
+                        "pk", 
+                        out UniformQueries.QueryPart publicKeyProp, 
+                        entryQueryParts))
+                    {
+                        // Try to get publick key from entry query.
+                        if (PipesProvider.Security.Crypto.TryDeserializeRSAKey(publicKeyProp.propertyValue, 
+                            out System.Security.Cryptography.RSAParameters publicKey))
+                        {
+                            // Encrypt query.
+                            answer = PipesProvider.Security.Crypto.EncryptString(answer, publicKey);
+                        }
+                    }
 
                     // Set answer query as target for processing,
                     tm.ProcessingQuery = answer;
@@ -310,7 +326,11 @@ namespace UniformServer
         protected Thread StartServerThread(string threadName, object sharebleParam, ParameterizedThreadStart serverLoop)
         {
             // Initialize queries monitor thread.
-            thread = new Thread(serverLoop) { Name = threadName };
+            thread = new Thread(serverLoop)
+            {
+                Name = threadName,
+                Priority = ThreadPriority.BelowNormal
+            };
 
             // Start thread
             thread.Start(sharebleParam);

@@ -23,7 +23,7 @@ using System.Threading;
 using PipesProvider.Security;
 using PipesProvider.Server;
 using PipesProvider.Client;
-using PipesProvider.Networking;
+using PipesProvider.Networking.Routing;
 
 namespace QueriesServer
 {
@@ -35,9 +35,9 @@ namespace QueriesServer
     class Server : UniformServer.BaseServer
     {
         /// <summary>
-        /// Table that contain instruction that allow to determine the server which is a target for recived query.
+        /// Main public pipe that will listen queries.
         /// </summary>
-        public static RoutingTable routingTable = null;
+        public static string OPEN_CHANEL = "THB_QUERY_SERVER";
 
         static void Main(string[] args)
         {
@@ -77,30 +77,7 @@ namespace QueriesServer
 
 
             #region Load routing tables
-            // Load routing tables
-            routingTable = null;
-            // From system folders.
-            routingTable += RoutingTable.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\");
-            // From plugins.
-            routingTable += RoutingTable.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "plugins\\");
-
-            // If routing table not found.
-            if(routingTable.intructions.Count == 0)
-            {
-                // Log error.
-                Console.WriteLine("ROUTING TABLE NOT FOUND: Create default table by directory \\resources\\routing\\ROUTING.xml");
-
-                // Set default intruction.
-                routingTable.intructions.Add(RoutingTable.RoutingInstruction.Default);
-
-                // Save sample routing table to application files.
-                RoutingTable.SaveRoutingTable(routingTable, AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\", "ROUTING");
-            }
-            else
-            {
-                // Log error.
-                Console.WriteLine("ROUTING TABLE: Detected {0} instructions.", routingTable.intructions.Count);
-            }
+            UniformClient.BaseClient.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "plugins\\");
             #endregion
 
             #region Loaded query handler processors
@@ -109,7 +86,7 @@ namespace QueriesServer
             // Initialize Queue monitor.
             try
             {
-                var _qp_loader = UniformQueries.API.QueryProcessors;
+                _ = UniformQueries.API.QueryProcessors;
             }
             catch (Exception ex)
             {
@@ -128,7 +105,7 @@ namespace QueriesServer
                 longTermServerThreads[i] = serverBufer;
 
                 // Set fields.
-                serverBufer.pipeName = "THB_QUERY_SEREVER";
+                serverBufer.pipeName = OPEN_CHANEL;
 
                 // Starting server loop.
                 serverBufer.StartServerThread(
@@ -142,10 +119,48 @@ namespace QueriesServer
                 Console.WriteLine();
             }
             #endregion
+            
+            /// Show help.
+            UniformServer.Commands.BaseCommands("help");
 
+            #region Main loop
+            // Main loop that will provide server services until application close.
+            while (!appTerminated)
+            {
+                // Check input
+                if (Console.KeyAvailable)
+                {
+                    // Log responce.
+                    Console.Write("\nEnter command: ");
+                    
+                    // Read command.
+                    string command = Console.ReadLine();
+                 
+                    // Processing of entered command.
+                    UniformServer.Commands.BaseCommands(command);
+                }
+                Thread.Sleep(threadSleepTime);
+            }
+            #endregion
 
-            Console.WriteLine("Press any key...");
+            #region Finalize
+            Console.WriteLine();
+
+            // Stop started servers.
+            ServerAPI.StopAllServers();
+
+            // Aborting threads.
+            foreach (Server st in longTermServerThreads)
+            {
+                st.thread.Abort();
+                Console.WriteLine("THREAD ABORTED: {0}", st.thread.Name);
+            }
+            Console.WriteLine();
+
+            // Whait until close.
+            Console.WriteLine("Press any key to exit...");
             Console.ReadKey();
+            #endregion
         }
 
         /// <summary>
@@ -179,17 +194,55 @@ namespace QueriesServer
         /// <param name="query"></param>
         public static void QueryHandler_Relay(ServerTransmissionController _, string query)
         {
+            // Try to decrypt.
+            query = PipesProvider.Security.Crypto.DecryptString(query);
+
             // Detect routing target.
-            bool relayTargetFound = routingTable.TryGetRoutingInstruction(query, out RoutingTable.RoutingInstruction instruction);
+            bool relayTargetFound = UniformClient.BaseClient.routingTable.TryGetRoutingInstruction(query, out Instruction instruction);
 
             // If instruction not found.
             if (!relayTargetFound)
             {
-                // DO BACKWARED ERROR INFORMATION.
-                SendAnswer("error=404", UniformQueries.API.DetectQueryParts(query));
+                // If reley target not found then server will mean that query requested to itself.
+                PipesProvider.Handlers.Query.ProcessingAsync(_, query);
+
+                //// Log
+                //Console.WriteLine("RELAY TARGET NOT FOUND: {q}", query);
+
+                //// DO BACKWARED ERROR INFORMATION.
+                //SendAnswer("error=404", UniformQueries.API.DetectQueryParts(query));
+
+                // Drop continue computing.
                 return;
             }
 
+            // If requested encryption.
+            if (instruction.RSAEncryption)
+            {
+                // Check if instruction key is valid.
+                // If key expired or invalid then will be requested new.
+                if(!instruction.IsValid)
+                {
+                    // Request new key.
+                    UniformClient.BaseClient.GetValidPublicKey(instruction);
+
+                    // Log.
+                    Console.WriteLine("WAITING FOR PUBLIC RSA KEY FROM {0}/{1}", instruction.routingIP, instruction.pipeName);
+
+                    // Wait until validation time.
+                    // Operation will work in another threads, so we just need to take a time.
+                    while(!instruction.IsValid)
+                    {
+                        Thread.Sleep(threadSleepTime);
+                    }
+                    
+                    // Log.
+                    Console.WriteLine("PUBLIC RSA KEY FROM {0}/{1} RECIVED", instruction.routingIP, instruction.pipeName);
+                }
+
+                // Encrypt query by public key of target server.
+                query = PipesProvider.Security.Crypto.EncryptString(query, instruction.PublicKey);
+            }
 
             // Open connection.
             TransmissionLine tl = UniformClient.BaseClient.EnqueueDuplexQuery(

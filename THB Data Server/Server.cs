@@ -73,7 +73,7 @@ namespace THB_Data_Server
             // Initialize Queue monitor.
             try
             {
-                var _qp_loader = UniformQueries.API.QueryProcessors;
+                _ = UniformQueries.API.QueryProcessors;
             }
             catch (Exception ex)
             {
@@ -112,7 +112,7 @@ namespace THB_Data_Server
             #endregion
 
             /// Show help.
-            Commands.CommandResponseProcessor("help");
+            UniformServer.Commands.BaseCommands("help");
 
             #region Main loop
             // Main loop that will provide server services until application close.
@@ -123,14 +123,12 @@ namespace THB_Data_Server
                 {
                     // Log responce.
                     Console.Write("\nEnter command: ");
+                    
                     // Read command.
                     string command = Console.ReadLine();
+                    
                     // Processing of entered command.
-                    bool validCommand = Commands.CommandResponseProcessor(command);
-                    if (validCommand)
-                    {
-                        //Console.WriteLine();
-                    }
+                    UniformServer.Commands.BaseCommands(command);
                 }
                 Thread.Sleep(threadSleepTime);
             }

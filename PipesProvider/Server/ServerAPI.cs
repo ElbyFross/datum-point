@@ -63,7 +63,7 @@ namespace PipesProvider.Server
             // Start loop.
             ServerLoop(
                 guid,
-                Handlers.DNS.ClientToSereverAsync,
+                Handlers.DNS.ClientToServerAsync,
                 queryHandlerCallback,
                 pipeName,
                 PipeDirection.InOut,
@@ -88,7 +88,7 @@ namespace PipesProvider.Server
         {
             ServerLoop(
                 guid,
-                Handlers.DNS.ClientToSereverAsync,
+                Handlers.DNS.ClientToServerAsync,
                 queryHandlerCallback,
                 pipeName,
                 PipeDirection.InOut,
@@ -115,7 +115,7 @@ namespace PipesProvider.Server
         {
             ServerLoop(
                 guid,
-                Handlers.DNS.ClientToSereverAsync,
+                Handlers.DNS.ClientToServerAsync,
                 queryHandlerCallback,
                 pipeName,
                 PipeDirection.InOut,
@@ -147,7 +147,7 @@ namespace PipesProvider.Server
         {
             ServerLoop(
                 guid,
-                Handlers.DNS.ClientToSereverAsync,
+                Handlers.DNS.ClientToServerAsync,
                 queryHandlerCallback,
                 pipeName,
                 pipeDirection,
@@ -247,7 +247,7 @@ namespace PipesProvider.Server
             }
             catch (Exception ex)
             {
-                Console.WriteLine("SERVER LOOP NOT STARTED:\n{0}\n", ex.Message);
+                Console.WriteLine("{1}: SERVER LOOP NOT STARTED:\n{0}\n", ex.Message, pipeName);
                 return;
             }
 
@@ -458,7 +458,11 @@ namespace PipesProvider.Server
             // Clear hashtable with terminated servers.
             openedServers.Clear();
 
+            // Console output formating.
             Console.WriteLine();
+
+            // Let servers time to finish up transmissions.
+            Thread.Sleep(1000);
         }
         #endregion
 

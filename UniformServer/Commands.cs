@@ -18,15 +18,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace THB_Data_Server
+namespace UniformServer
 {
-    public static class Commands
+    public static partial class Commands
     {
         /// <summary>
-        /// React to the command.
+        /// React to the base commands that can be applied to every server.
         /// </summary>
         /// <param name="command"></param>
-        public static bool CommandResponseProcessor(string command)
+        public static bool BaseCommands(string command)
         {
             // Skip if command is empty.
             if (string.IsNullOrEmpty(command))
@@ -44,12 +44,13 @@ namespace THB_Data_Server
                 case "help":
                     Console.WriteLine();
                     ConsoleDraw.Primitives.DrawLine();
-                    Console.WriteLine("\nCOMMANDS LIST:\n{0}\n{1}\n{2}\n{3}\n{4}",
+                    Console.WriteLine("\nCOMMANDS LIST:\n{0}\n{1}\n{2}\n{3}\n{4}\n{5}",
                         "help - List of available commands.",
                         "qhelp - List of available queries with description for each.",
                         "stop - Stoping server and threads. Finishing main loop.",
                         "threads - Return information about started threads.",
-                        "threads <int> - Change the count of started server threads.");
+                        "threads <int> - Change the count of started server threads.",
+                        "clear - Clearing console.");
                     ConsoleDraw.Primitives.DrawLine();
                     Console.WriteLine();
 
@@ -57,7 +58,7 @@ namespace THB_Data_Server
 
                 // Close application.
                 case "stop":
-                    Server.appTerminated = true;
+                    BaseServer.appTerminated = true;
                     break;
 
                 case "qhelp":
@@ -84,7 +85,7 @@ namespace THB_Data_Server
                     {
                         if (Int32.TryParse(commandParts[1], out requestedThreads))
                         {
-                            Server.ThreadsCount = requestedThreads;
+                            BaseServer.ThreadsCount = requestedThreads;
                         }
                         else
                         {
@@ -94,8 +95,12 @@ namespace THB_Data_Server
                     else
                     {
                         Console.WriteLine("ACTUAL COUNT OF THREADS: {0}/{1}",
-                            Server.ThreadsCount, Environment.ProcessorCount);
+                            BaseServer.ThreadsCount, Environment.ProcessorCount);
                     }
+                    break;
+
+                case "clear":
+                    Console.Clear();
                     break;
 
                 // Inform about inccorect command.

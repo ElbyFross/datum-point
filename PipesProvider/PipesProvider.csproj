@@ -47,7 +47,8 @@
     <Compile Include="Handlers\Query.cs" />
     <Compile Include="Handlers\Service.cs" />
     <Compile Include="Networking\Info.cs" />
-    <Compile Include="Networking\RoutingInstruction.cs" />
+    <Compile Include="Networking\Routing\RoutingTable.cs" />
+    <Compile Include="Networking\Routing\Instruction.cs" />
     <Compile Include="Security\Crypto.cs" />
     <Compile Include="Security\General.cs" />
     <Compile Include="Security\LogonConfig.cs" />

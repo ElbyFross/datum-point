@@ -17,8 +17,10 @@ using System.Collections.Generic;
 using System.IO.Pipes;
 using System.Threading;
 using System.Security.Principal;
+using System.Security.Cryptography;
 using System.Runtime.InteropServices;
 using Microsoft.Win32.SafeHandles;
+using PipesProvider.Networking.Routing;
 
 namespace PipesProvider.Client
 {
@@ -29,6 +31,14 @@ namespace PipesProvider.Client
     /// </summary>
     public class TransmissionLine
     {
+        #region Enums
+        public enum TransmissionDirection
+        {
+            In,
+            Out
+        }
+        #endregion
+
         #region Public properties
         /// <summary>
         /// Unique GUID for this pipe.
@@ -99,8 +109,34 @@ namespace PipesProvider.Client
         /// <summary>
         /// Token that will used to autorizing on the server.
         /// </summary>
-        public SafeAccessTokenHandle AccessToken
-        { get; set; }
+        public SafeAccessTokenHandle accessToken;
+
+        /// <summary>
+        /// Contain logon config to remote machine access.
+        /// Contain RSA encryption keys data reklative to this line.
+        /// </summary>
+        public Instruction RoutingInstruction
+        {
+            get; protected set;
+        }
+
+        /// <summary>
+        /// Marker that show does logon already finished.
+        /// By default is true, cause default logon is anonymous.
+        /// </summary>
+        public bool LogonFinished
+        { get; protected set; } = true;
+
+        /// <summary>
+        /// Define bihavior of the client loop.
+        /// 
+        /// In - will connect to target pipe as soon as possible.
+        /// Out - will wait for query in queue.
+        /// </summary>
+        public TransmissionDirection Direction
+        {
+            get; set;
+        } = TransmissionDirection.Out;
         #endregion
 
         #region Public fields
@@ -136,21 +172,55 @@ namespace PipesProvider.Client
         /// <param name="guid">Unique value that will be used to access this prossor.</param>
         /// <param name="serverName">Name of server into the network. If local than place "."</param>
         /// <param name="serverPipeName">Name of the pipe that will be used for transmitiong.</param>
-        /// <param name="queryProcessor">Delegat that will be called when connection will be established.</param>
-        public TransmissionLine(string serverName, string serverPipeName, System.Action<TransmissionLine> queryProcessor, SafeAccessTokenHandle token)
+        /// <param name="queryProcessor">Delegate that will be called when connection will be established.</param>
+        public TransmissionLine(string serverName, string serverPipeName, System.Action<TransmissionLine> queryProcessor, ref SafeAccessTokenHandle token)
         {
             // Set fields.
             ServerName = serverName;
             ServerPipeName = serverPipeName;
             this.queryProcessor = queryProcessor;
-            this.AccessToken = token;
+            this.accessToken = token;
+
+            // Registrate at hashtable.
+            ClientAPI.TryToRegisterTransmissionLine(this);
+        }
+
+        /// <summary>
+        /// Create instance using routing instruction.
+        /// </summary>
+        /// <param name="instruction">Routing insturuction that contain all data about target srver.</param>
+        /// <param name="queryProcessor">Delegate that will be called when connection will be established.</param>
+        public TransmissionLine(ref Instruction instruction, System.Action<TransmissionLine> queryProcessor)
+        {
+            // Set fields.
+            RoutingInstruction = instruction;
+            ServerName = instruction.routingIP;
+            ServerPipeName = instruction.pipeName;
+            this.queryProcessor = queryProcessor;
+
+            // Logon as requested.
+            TryLogonAs(instruction.logonConfig);
 
             // Registrate at hashtable.
             ClientAPI.TryToRegisterTransmissionLine(this);
         }
         #endregion
 
-        #region API
+        #region Operators
+        /// <summary>
+        /// Incremet of attempts count.
+        /// </summary>
+        /// <param name="contaier"></param>
+        /// <returns></returns>
+        public static TransmissionLine operator ++(TransmissionLine line)
+        {
+            line.lastQuery++;
+            return line;
+        }
+        #endregion
+
+
+        #region Queue API
         /// <summary>
         /// Enqueue query to order. Query will be posted to server as soon as will possible.
         /// </summary>
@@ -228,8 +298,9 @@ namespace PipesProvider.Client
         /// </summary>
         public bool HasQueries
         { get {  return queries.Count > 0; } }
-        
+        #endregion
 
+        #region Finilizing API
         /// <summary>
         /// Mark line as closed. Thread will be terminated on the next client tick.
         /// </summary>
@@ -253,8 +324,9 @@ namespace PipesProvider.Client
             pipeClient = null;
             Processing = false;
         }
+        #endregion
 
-
+        #region Remote machine LSA API
         /// <summary>
         /// Trying to logon using provided information.
         /// In case failed - close line.
@@ -263,6 +335,11 @@ namespace PipesProvider.Client
         /// <returns>Result of logon.</returns>
         public bool TryLogonAs(Security.LogonConfig logonMeta)
         {
+            // Disable prmition to start.
+            LogonFinished = false;
+
+            //Console.WriteLine("{0}/{1}: LOGON STARTED", ServerName, ServerPipeName);
+
             // Try to logon using provided config.
             bool logonResult = Security.General.TryLogon(logonMeta, out SafeAccessTokenHandle safeTokenHandle);
             if (!logonResult)
@@ -279,37 +356,43 @@ namespace PipesProvider.Client
             else
             {
                 // Save token as actual.
-                AccessToken = safeTokenHandle;
+                accessToken = safeTokenHandle;
+                
+                // Change marker.
+                LogonFinished = true;
 
-                // inform about success.
+                // Log about success.
+                //Console.WriteLine("{0}/{1}: LOGON FINISHED {2}", ServerName, ServerPipeName, accessToken.GetHashCode());
+
+                // Inform about success.
                 return true;
             }
         }
+        #endregion
 
+        #region Routing instructions API
         /// <summary>
-        /// Logon using provided information.
+        /// Set routing instruction to line.
+        /// Provide access to auto messages encryption with control of keys expiring.
+        /// 
+        /// ATTENTION: Line will not change logon config or server data. 
+        /// If you want get full sync with routing instruction then user relative constructor.
         /// </summary>
-        /// <param name="logonMeta"></param>
+        /// <param name="instruction">Instruction that will ocntain valid RSA key.</param>
         /// <returns></returns>
-        public TransmissionLine LogonAs(Security.LogonConfig logonMeta)
+        public TransmissionLine SetInstructionAsKey(ref Instruction instruction)
         {
-            // Try to logon using provided config.
-            bool logonResult = Security.General.TryLogon(logonMeta, out SafeAccessTokenHandle safeTokenHandle);
-            if (!logonResult)
-            {
-                // Log about error.
-                Console.WriteLine("Logon failed. Connection not possible.");
-            }
-            else
-            {
-                // Save token as actual.
-                AccessToken = safeTokenHandle;
-            }
-
+            // Update data.
+            RoutingInstruction = instruction;
+            
+            // Try to logon as requested to recive token.
+            //TryLogonAs(instruction.logonConfig);
             return this;
         }
         #endregion
 
+
+        #region Static API
         /// <summary>
         /// Method that can be started as thread. Will start client loop.
         /// </summary>
@@ -322,13 +405,25 @@ namespace PipesProvider.Client
                 Console.WriteLine("THREAD NOT STARTED. INVALID ARGUMENT.");
                 return;
             }
-
+                
             // Change thread cuture.
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");
             Console.WriteLine("THREAD STARTED: {0}", Thread.CurrentThread.Name);
 
+            // Wait until logon will finished.
+            while(!line.LogonFinished)
+            {
+                Thread.Sleep(5);
+            }
+
+            // Drop if logon was failed.
+            if(line.Closed)
+            {
+                return;
+            }
+
             // Apply rights for connection.
-            WindowsIdentity.RunImpersonated(line.AccessToken, () =>
+            WindowsIdentity.RunImpersonated(line.accessToken, () =>
             {
                 // Start client loop.
                 ClientAPI.ClientLoop(
@@ -360,17 +455,6 @@ namespace PipesProvider.Client
             //return serverName.GetHashCode() + "_" + pipeName.GetHashCode();
             return serverName + "." + pipeName;
         }
-
-
-        /// <summary>
-        /// Incremet of attempts count.
-        /// </summary>
-        /// <param name="contaier"></param>
-        /// <returns></returns>
-        public static TransmissionLine operator ++(TransmissionLine line)
-        {
-            line.lastQuery++;
-            return line;
-        }
+        #endregion
     }
 }
