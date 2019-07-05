@@ -24,7 +24,7 @@ namespace AuthorityController.Queries
     /// <summary>
     /// Create new user.
     /// </summary>
-    class USER_NEW : IQueryHandlerProcessor
+    public class USER_NEW : IQueryHandlerProcessor
     {
         public string Description(string cultureKey)
         {

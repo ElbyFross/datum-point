@@ -25,7 +25,7 @@ namespace AuthorityController.Queries
     /// Set new password for user.
     /// Require admin or certen user rights.
     /// </summary>
-    class USER_NEW_PASSWORD : IQueryHandlerProcessor
+    public class USER_NEW_PASSWORD : IQueryHandlerProcessor
     {
         public string Description(string cultureKey)
         {

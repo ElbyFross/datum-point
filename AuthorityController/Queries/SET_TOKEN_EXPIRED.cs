@@ -25,7 +25,7 @@ namespace AuthorityController.Queries
     /// Set certain token expired.
     /// Require system rights.
     /// </summary>
-    class SET_TOKEN_EXPIRED : IQueryHandlerProcessor
+    public class SET_TOKEN_EXPIRED : IQueryHandlerProcessor
     {
         public string Description(string cultureKey)
         {

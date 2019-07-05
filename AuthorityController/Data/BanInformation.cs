@@ -17,29 +17,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UniformQueries;
 
-namespace AuthorityController.Queries
+namespace AuthorityController.Data
 {
     /// <summary>
-    /// Change rights list to provided token.
-    /// Require admin rights.
+    /// Provide information about user bans.
     /// </summary>
-    public class SET_TOKEN_RIGHTS : IQueryHandlerProcessor
+    [System.Serializable]
+    public struct BanInformation
     {
-        public string Description(string cultureKey)
+        public enum Duration
         {
-            throw new NotImplementedException();
+            Temporary,
+            Permanent
         }
 
-        public void Execute(QueryPart[] queryParts)
-        {
-            throw new NotImplementedException();
-        }
+        /// <summary>
+        /// Marker that make
+        /// </summary>
+        public bool active;
 
-        public bool IsTarget(QueryPart[] queryParts)
-        {
-            throw new NotImplementedException();
-        }
+        /// <summary>
+        /// Duration mode of this ban.
+        /// 
+        /// Permanent will no have expiry time.
+        /// </summary>
+        public Duration duration;
+
+        /// <summary>
+        /// Date Time in binary format when this bun will be expired.
+        /// </summary>
+        public long expiryTime;
+
+        /// <summary>
+        /// Resones for ban.
+        /// </summary>
+        public string commentary;
     }
 }

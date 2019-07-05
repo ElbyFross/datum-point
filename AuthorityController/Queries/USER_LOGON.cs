@@ -24,8 +24,10 @@ namespace AuthorityController.Queries
     /// <summary>
     /// Logon user in system.
     /// Provide token as result.
+    /// 
+    /// USER&LOGON&login=...&password=...&mac=...&os=....&
     /// </summary>
-    class USER_LOGON : IQueryHandlerProcessor
+    public class USER_LOGON : IQueryHandlerProcessor
     {
         public string Description(string cultureKey)
         {

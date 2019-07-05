@@ -51,6 +51,24 @@ namespace AuthorityController.Data
         /// </summary>
         public string secondName;
 
-        // TODO Local configs like prefered language.
+        /// <summary>
+        /// List of bans that would received by user.
+        /// </summary>
+        public List<BanInformation> bans;
+
+        /// <summary>
+        /// List of culture codes that prefered by this user.
+        /// In order of priority.
+        /// 
+        /// Define what a UI language will selected after user login.
+        /// Useful in multicultural environment like universities.
+        /// </summary>
+        public List<string> culturePreferences;
+
+        /// <summary>
+        /// List that cont tokens provided to this user.
+        /// </summary>
+        [System.Xml.Serialization.XmlIgnore]
+        public List<string> tokens;
     }
 }

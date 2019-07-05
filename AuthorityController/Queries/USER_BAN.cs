@@ -24,7 +24,7 @@ namespace AuthorityController.Queries
     /// <summary>
     /// Set temporaly or permanent ban for user.
     /// </summary>
-    class USER_BAN : IQueryHandlerProcessor
+    public class USER_BAN : IQueryHandlerProcessor
     {
         public string Description(string cultureKey)
         {
