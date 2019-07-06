@@ -33,12 +33,31 @@ namespace AuthorityController.Queries
 
         public void Execute(QueryPart[] queryParts)
         {
-            throw new NotImplementedException();
+            // Get params.
+            UniformQueries.API.TryGetParamValue("user", out QueryPart user, queryParts);
+            UniformQueries.API.TryGetParamValue("token", out QueryPart token, queryParts);
+
+            // XML serialized BanInformation. If empty then will shared permanent ban.
+            UniformQueries.API.TryGetParamValue("ban", out QueryPart ban, queryParts);
+
+            // TODO Check token rights.
+
+            // TODO Find user.
+
+            // TODO Set ban.
         }
 
         public bool IsTarget(QueryPart[] queryParts)
-        {
-            throw new NotImplementedException();
+        { 
+            // USER prop.
+            if (!UniformQueries.API.QueryParamExist("user", queryParts))
+                return false;
+
+            // BAN prop.
+            if (!UniformQueries.API.QueryParamExist("ban", queryParts))
+                return false;
+
+            return true;
         }
     }
 }

@@ -52,6 +52,11 @@ namespace AuthorityController.Data
         public string secondName;
 
         /// <summary>
+        /// Array of rigts' codes provided to this user.
+        /// </summary>
+        public string[] rights;
+
+        /// <summary>
         /// List of bans that would received by user.
         /// </summary>
         public List<BanInformation> bans;

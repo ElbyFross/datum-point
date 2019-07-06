@@ -36,12 +36,55 @@ namespace AuthorityController.Queries
 
         public void Execute(QueryPart[] queryParts)
         {
-            throw new NotImplementedException();
+            // Get params.
+            UniformQueries.API.TryGetParamValue("login", out QueryPart login, queryParts);
+            UniformQueries.API.TryGetParamValue("password", out QueryPart password, queryParts);
+            UniformQueries.API.TryGetParamValue("os", out QueryPart os, queryParts);
+            UniformQueries.API.TryGetParamValue("mac", out QueryPart mac, queryParts);
+            UniformQueries.API.TryGetParamValue("stamp", out QueryPart timeStamp, queryParts);
+
+            // Find user.
+
+            #region Validate password.
+            // Convert password to hashed one.
+
+            // Compare with stored.
+
+            #endregion
         }
 
         public bool IsTarget(QueryPart[] queryParts)
         {
-            throw new NotImplementedException();
+            // Check query.
+            if (!UniformQueries.API.QueryParamExist("USER", queryParts))
+                return false;
+
+            // Check query.
+            if (!UniformQueries.API.QueryParamExist("LOGON", queryParts))
+                return false;
+
+
+            // Login for logon.
+            if (!UniformQueries.API.QueryParamExist("login", queryParts))
+                return false;
+
+            // Password for logon.
+            if (!UniformQueries.API.QueryParamExist("password", queryParts))
+                return false;
+
+            // User operation system.
+            if (!UniformQueries.API.QueryParamExist("os", queryParts))
+                return false;
+
+            // Mac adress of logon device.
+            if (!UniformQueries.API.QueryParamExist("mac", queryParts))
+                return false;
+
+            // Session open time
+            if (!UniformQueries.API.QueryParamExist("stamp", queryParts))
+                return false;
+
+            return true;
         }
     }
 }

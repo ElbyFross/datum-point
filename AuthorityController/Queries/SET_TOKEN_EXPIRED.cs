@@ -34,12 +34,26 @@ namespace AuthorityController.Queries
 
         public void Execute(QueryPart[] queryParts)
         {
-            throw new NotImplementedException();
+            // Get params.
+            UniformQueries.API.TryGetParamValue("token", out QueryPart token, queryParts);
+            UniformQueries.API.TryGetParamValue("expiredToken", out QueryPart expiredToken, queryParts);
+
+            // TODO Check ritghts.
+
+            Session.Last.SetExpired(expiredToken);
         }
 
         public bool IsTarget(QueryPart[] queryParts)
         {
-            throw new NotImplementedException();
+            // Request set property.
+            if (!UniformQueries.API.QueryParamExist("set", queryParts))
+                return false;
+
+            // Token that will expired in case if requester has enough rights to do this.
+            if (!UniformQueries.API.QueryParamExist("expiredToken", queryParts))
+                return false;
+
+            return true;
         }
     }
 }

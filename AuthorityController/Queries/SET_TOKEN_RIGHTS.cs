@@ -34,12 +34,29 @@ namespace AuthorityController.Queries
 
         public void Execute(QueryPart[] queryParts)
         {
-            throw new NotImplementedException();
+            // Get params.
+            UniformQueries.API.TryGetParamValue("token", out QueryPart token, queryParts);
+            UniformQueries.API.TryGetParamValue("targetToken", out QueryPart targetToken, queryParts);
+            UniformQueries.API.TryGetParamValue("rights", out QueryPart rights, queryParts);
+            
+            // TODO Check token rights.
         }
 
         public bool IsTarget(QueryPart[] queryParts)
-        {
-            throw new NotImplementedException();
+        { 
+            // Request set property.
+            if (!UniformQueries.API.QueryParamExist("set", queryParts))
+                return false;
+
+            // Token that will be a target in case if requester has enough rights to do this.
+            if (!UniformQueries.API.QueryParamExist("targetToken", queryParts))
+                return false;
+
+            // List of rights' keys.
+            if (!UniformQueries.API.QueryParamExist("rights", queryParts))
+                return false;
+
+            return true;
         }
     }
 }

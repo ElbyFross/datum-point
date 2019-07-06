@@ -33,6 +33,22 @@ namespace AuthorityController.Data
         }
 
         /// <summary>
+        /// Return information for permanent ban.
+        /// </summary>
+        public static BanInformation Permanent
+        {
+            get
+            {
+                return new BanInformation()
+                {
+                    active = true,
+                    duration = Duration.Permanent,
+                    commentary = "Not described."
+                };
+            }
+        }
+
+        /// <summary>
         /// Marker that make
         /// </summary>
         public bool active;

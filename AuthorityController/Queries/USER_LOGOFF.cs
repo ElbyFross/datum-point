@@ -34,12 +34,23 @@ namespace AuthorityController.Queries
 
         public void Execute(QueryPart[] queryParts)
         {
-            throw new NotImplementedException();
+            // Get params.
+            UniformQueries.API.TryGetParamValue("token", out QueryPart token, queryParts);
+
+            // TODO Set expired.
         }
 
         public bool IsTarget(QueryPart[] queryParts)
         {
-            throw new NotImplementedException();
+            // Check query.
+            if (!UniformQueries.API.QueryParamExist("USER", queryParts))
+                return false;
+
+            // Check query.
+            if (!UniformQueries.API.QueryParamExist("LOGOFF", queryParts))
+                return false;
+
+            return true;
         }
     }
 }

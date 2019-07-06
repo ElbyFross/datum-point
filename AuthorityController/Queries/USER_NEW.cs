@@ -28,17 +28,38 @@ namespace AuthorityController.Queries
     {
         public string Description(string cultureKey)
         {
-            throw new NotImplementedException();
+            switch (cultureKey)
+            {
+                case "en-US":
+                default:
+                    return "USER NEW\n" +
+                            "\tDESCRIPTION: Request new password for user." +
+                            "\n\tToken confirm rights to change it.\n" +
+                            "\n\tOld password required to avoid access from public places.\n" +
+                            "\tQUERY FORMAT: user=XMLSetializedUser" + UniformQueries.API.SPLITTING_SYMBOL +
+                            "new\n";
+            }
         }
 
         public void Execute(QueryPart[] queryParts)
         {
-            throw new NotImplementedException();
+            // Get params.
+            UniformQueries.API.TryGetParamValue("user", out QueryPart user, queryParts);
+
+            // TODO send data to server.
         }
 
         public bool IsTarget(QueryPart[] queryParts)
         {
-            throw new NotImplementedException();
+            // USER prop.
+            if (!UniformQueries.API.QueryParamExist("user", queryParts))
+                return false;
+
+            // NEW prop.
+            if (!UniformQueries.API.QueryParamExist("new", queryParts))
+                return false;
+
+            return true;
         }
     }
 }

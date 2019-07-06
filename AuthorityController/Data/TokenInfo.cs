@@ -40,7 +40,14 @@ namespace AuthorityController.Data
         public string token;
 
         /// <summary>
+        /// Operation system that request this token.
+        /// Using for machine stamp.
+        /// </summary>
+        public string operationSystem;
+
+        /// <summary>
         /// Mac adress of machine that request access.
+        /// Using for machine stamp.
         /// </summary>
         public string machineMac;
 

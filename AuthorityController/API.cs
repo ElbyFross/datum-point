@@ -16,6 +16,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.IO;
+using System.Xml.Serialization;
+using System.Xml;
+using System.Threading;
 using System.Text;
 using System.Threading.Tasks;
 using AuthorityController.Data;
@@ -27,10 +31,19 @@ namespace AuthorityController
     /// </summary>
     public static class API
     {
+        #region Events
+        /// <summary>
+        /// Event that will be called when loading of users from directory will be finished.
+        /// </summary>
+        public static event System.Action<string> DirectoryLoadingUnlocked;
+        #endregion
+
+        #region Configs
         /// <summary>
         /// How many minutes token is valid.
         /// </summary>
-        public static int tokenValidTimeMinuts = 1440;
+        public static int tokenValidTimeMinutes = 1440;
+        #endregion
 
         #region Public properties
         /// <summary>
@@ -51,87 +64,181 @@ namespace AuthorityController
             }
         }
         #endregion
-
+        
         #region Private fields
         /// <summary>
-        /// Table that contains rights provided to token.
-        /// 
-        /// Key - string token
-        /// Value - TokenInfo
+        /// Table that provide aaccess to user data by login.
         /// </summary>
-        private static readonly Hashtable tokensRights = new Hashtable();
+        private static readonly Hashtable UsersByLogin = new Hashtable();
+
+        /// <summary>
+        /// Table that provide access to user by unique ID.
+        /// </summary>
+        private static readonly Hashtable UsersById = new Hashtable();
+
+        /// <summary>
+        /// Contains directories that has users loading process and blocked for new ones.
+        /// </summary>
+        private static readonly HashSet<string> LoadingLockedDirectories = new HashSet<string>();
         #endregion
 
-        #region Public methods
+
+        #region Users API
         /// <summary>
-        /// Set rights' codes array as relative to token.
-        /// 
-        /// In case if token infor not registred then will create anonimouse info with applied rights.
-        /// Applicable to purposes of servers that depends to session provider one, 
-        /// but not require entire token information, cause not manage it.
+        /// Loading users data from directory.
         /// </summary>
-        /// <param name="token">Session token.</param>
-        /// <param name="rights">Array og rights' codes.</param>
-        public static void SetTokenRights(string token, params string[] rights)
+        /// <param name="directory"></param>
+        public static async void LoadUsersAsync(string directory)
         {
-            // Update rights if already exist.
-            if (tokensRights.ContainsKey(token))
+            // Validate directory.
+            if(!Directory.Exists(directory))
             {
-                // Loading toking info.
-                TokenInfo info = (TokenInfo)tokensRights[token];
-                // Update rights.
-                info.rights = rights;
+                Console.WriteLine("ERROR (ACAPI0): USERS LOADING NOT POSSIBLE. DIRECTORY NOT FOUND.");
+                return;
             }
-            else
+
+            // Block if certain directory already in loading process.
+            if(LoadingLockedDirectories.Contains(directory))
             {
-                // Create anonymous container.
-                TokenInfo info = TokenInfo.Anonymous;
-
-                // Apply fields.
-                info.token = token;
-                info.rights = rights;
-
-                // Set as new.
-                tokensRights.Add(token, info);
+                Console.WriteLine("ERROR (ACAPI1): Directory alredy has active loading process. Wait until finish previous one. ({0})",
+                    directory);
+                return;
             }
+
+            // Detect files in provided directory.
+            string[] xmlFiles = Directory.GetFiles(directory, "*.xml", SearchOption.TopDirectoryOnly);
+            
+            // Running async task with loading of every profile.
+            await Task.Run(() => 
+            {
+                // Init encoder.
+                XmlSerializer xmlSer = new XmlSerializer(typeof(User));
+
+                // Deserialize every file to table if possible.
+                foreach (string fileDir in xmlFiles)
+                {
+                    // Open stream to XML file.
+                    using (FileStream fs = new FileStream(fileDir, FileMode.Open))
+                    {
+                        User loadedUser = null;
+                        try
+                        {
+                            // Try to deserialize routing table from file.
+                            loadedUser = xmlSer.Deserialize(fs) as User;
+
+                            #region Add user to ids table.
+                            if(UsersById[loadedUser.id] is User idU)
+                            {
+                                // Override if already exist.
+                                UsersById[loadedUser.id] = loadedUser;
+                            }
+                            else
+                            {
+                                // Add as new.
+                                UsersById.Add(loadedUser.id, loadedUser);
+                            }
+                            #endregion
+
+                            #region Add user to logins table.
+                            if (UsersByLogin[loadedUser.login] is User loginU)
+                            {
+                                // Override if already exist.
+                                UsersByLogin[loadedUser.login] = loadedUser;
+                            }
+                            else
+                            {
+                                // Add as new.
+                                UsersByLogin.Add(loadedUser.login, loadedUser);
+                            }
+                            #endregion
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("ERROR(ACAPIw): Profile damaged. Reason:\n{0}\n", ex.Message);
+                        }
+
+                    }
+                }
+
+                // Remove directory from blocklist.
+                LoadingLockedDirectories.Remove(directory);
+
+                // Inform subscribers about location unlock.
+                DirectoryLoadingUnlocked?.Invoke(directory);
+            });
         }
 
         /// <summary>
-        /// Trying to load rights registred for token.
+        /// Remove al loaded users data.
         /// </summary>
-        /// <param name="token">Session token.</param>
-        /// <param name="rights">Array of rights' codes relative to token.</param>
-        /// <returns></returns>
-        public static bool TryGetTokenRights(string token, out string[] rights)
+        public static void ClearUsersData()
         {
-            // Try to get regustred rights.
-            if(tokensRights[token] is Data.TokenInfo rightsBufer)
+            UsersById.Clear();
+            UsersByLogin.Clear();
+        }
+
+        /// <summary>
+        /// Adding or update user profile by directory.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="directory"></param>
+        public static void SetUser(User user, string directory)
+        {
+            //TODO
+        }
+
+        /// <summary>
+        /// Remove user profile from directory.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="directory"></param>
+        public static void RemoveUser(User user, string directory)
+        {
+            //TODO
+        }
+
+        /// <summary>
+        /// Try to find user by ID in loaded users table.
+        /// </summary>
+        /// <param name="id">Unique user's id.</param>
+        /// <param name="user">Reference on loaded user profile.</param>
+        /// <returns>Result of operation.</returns>
+        public static bool TryToFindUser(int id, out User user)
+        {
+            // Try to find user in table.
+            if(UsersById[id] is User bufer)
             {
-                rights = rightsBufer.rights;
+                user = bufer;
                 return true;
             }
 
             // Inform about fail.
-            rights = null;
+            user = null;
             return false;
         }
 
         /// <summary>
-        /// Removing token from table.
+        /// Try to find user by ID in loaded users table.
         /// </summary>
-        /// <param name="token"></param>
-        public static void RemoveToken(string token)
+        /// <param name="login">Unique user's login.</param>
+        /// <param name="user">Reference on loaded user profile.</param>
+        /// <returns>Result of operation.</returns>
+        public static bool TryToFindUser(string login, out User user)
         {
-            try
+            // Try to find user in table.
+            if (UsersByLogin[login] is User bufer)
             {
-                tokensRights.Remove(token);
+                user = bufer;
+                return true;
             }
-            catch (Exception ex)
-            {
-                Console.WriteLine("TOKEN REMOVING ERROR:\n{0}", ex.Message);
-            }
-        }
 
+            // Inform about fail.
+            user = null;
+            return false;
+        }
+        #endregion
+
+        #region Tokens API
         /// <summary>
         /// Check if token expired based on encoded token data.
         /// Use it on Queries Server to avoid additive time spending on data servers and unnecessary connections.
@@ -142,7 +249,7 @@ namespace AuthorityController
         /// </summary>
         /// <param name="token"></param>
         /// <returns></returns>
-        public static bool IsExpired(string token)
+        public static bool IsTokenExpired(string token)
         {
             // Convert token to bytes array.
             byte[] data = Convert.FromBase64String(token);
@@ -151,7 +258,7 @@ namespace AuthorityController
             DateTime when = DateTime.FromBinary(BitConverter.ToInt64(data, 0));
 
             // Compare with allowed token time.
-            if (when < DateTime.UtcNow.AddMinutes(-tokenValidTimeMinuts))
+            if (when < DateTime.UtcNow.AddMinutes(-tokenValidTimeMinutes))
             {
                 // Confirm expiration.
                 return true;

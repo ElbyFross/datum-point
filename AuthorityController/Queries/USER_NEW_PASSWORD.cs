@@ -29,17 +29,56 @@ namespace AuthorityController.Queries
     {
         public string Description(string cultureKey)
         {
-            throw new NotImplementedException();
+            switch (cultureKey)
+            {
+                case "en-US":
+                default:
+                    return "USER NEW PASSWORD\n" +
+                            "\tDESCRIPTION: Request new password for user." +
+                            "\n\tToken confirm rights to change it.\n" +
+                            "\n\tOld password required to avoid access from public places.\n" +
+                            "\tQUERY FORMAT: user=..." + UniformQueries.API.SPLITTING_SYMBOL + 
+                            "new" + UniformQueries.API.SPLITTING_SYMBOL +
+                            "password=..." + UniformQueries.API.SPLITTING_SYMBOL + 
+                            "oldPassword=..." + UniformQueries.API.SPLITTING_SYMBOL +
+                            "token=..." + "\n";
+            }
         }
 
         public void Execute(QueryPart[] queryParts)
         {
-            throw new NotImplementedException();
+            // Get params.
+            UniformQueries.API.TryGetParamValue("user",         out QueryPart user, queryParts);
+            UniformQueries.API.TryGetParamValue("password",     out QueryPart password, queryParts);
+            UniformQueries.API.TryGetParamValue("oldPassword",  out QueryPart oldPassword, queryParts);
+            UniformQueries.API.TryGetParamValue("token",        out QueryPart token, queryParts);
+
+            // TODO Check token rights.
+
+            // TODO Validate old password.
+
+            // TODO Sending data to server
         }
 
         public bool IsTarget(QueryPart[] queryParts)
         {
-            throw new NotImplementedException();
+            // USER prop.
+            if(!UniformQueries.API.QueryParamExist("user", queryParts))
+                return false;
+
+            // NEW prop.
+            if (!UniformQueries.API.QueryParamExist("new", queryParts))
+                return false;
+
+            // PASSWORD prop.
+            if (!UniformQueries.API.QueryParamExist("password", queryParts))
+                return false;
+
+            // OLD PASSWORD prop.
+            if (!UniformQueries.API.QueryParamExist("oldPassword", queryParts))
+                return false;
+
+            return true;
         }
     }
 }
