@@ -37,7 +37,8 @@ namespace AuthorityController.Queries
             // Get params.
             UniformQueries.API.TryGetParamValue("token", out QueryPart token, queryParts);
 
-            // TODO Set expired.
+            // Set expired.
+            Session.Current.SetExpired(token);
         }
 
         public bool IsTarget(QueryPart[] queryParts)

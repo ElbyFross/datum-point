@@ -44,12 +44,47 @@ namespace AuthorityController.Queries
             UniformQueries.API.TryGetParamValue("stamp", out QueryPart timeStamp, queryParts);
 
             // Find user.
+            if(!API.Users.TryToFindUser(login.propertyValue, out Data.User user))
+            {
+                // Inform that user not found.
+                UniformServer.BaseServer.SendAnswer("ERROR 412: User not found", queryParts);
+                return;
+            }
 
             #region Validate password.
-            // Convert password to hashed one.
+            // Comapre password with stored.
+            if(!user.IsOpenPasswordCorrect(password.propertyValue))
+            {
+                // Inform that password is incorrect.
+                UniformServer.BaseServer.SendAnswer("ERROR 412: Incorrect password", queryParts);
+                return;
+            }
 
-            // Compare with stored.
+            // Check for logon bans
+            if(API.Users.IsBanned(user, "logon"))
+            {
+                // Inform that password is incorrect.
+                UniformServer.BaseServer.SendAnswer("ERROR 412: User banned.", queryParts);
+                return;
+            }
 
+            // Generate new token.
+            string sessionToken = API.Tokens.UnusedToken;
+
+            // Registrate token in session.
+            Session.Current.SetTokenRights(sessionToken, user.rights);
+
+            // Return session data to user.
+            string query = string.Format("token={1}{0}expiryIn={2}",
+                UniformQueries.API.SPLITTING_SYMBOL,
+                sessionToken,
+                Data.Config.Active.tokenValidTimeMinutes);
+
+            // Add rights' codes.
+            foreach(string rightsCode in user.rights)
+            {
+                query += UniformQueries.API.SPLITTING_SYMBOL + rightsCode;
+            }
             #endregion
         }
 

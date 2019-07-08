@@ -146,7 +146,7 @@ namespace UniformServer
         protected static Mutex mutexObj = new Mutex();
         #endregion
 
-
+        #region Fields
         /// <summary>
         /// Reference to thread that host this server.
         /// </summary>
@@ -161,6 +161,8 @@ namespace UniformServer
         /// Squrity level that will applied to pipe.
         /// </summary>
         public PipesProvider.Security.SecurityLevel securityLevel = PipesProvider.Security.SecurityLevel.Anonymous;
+        #endregion
+
 
         #region Application configuration
         /// <summary>

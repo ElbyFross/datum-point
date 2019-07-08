@@ -41,8 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API.cs" />
+    <Compile Include="API\Users.cs" />
     <Compile Include="Data\BanInformation.cs" />
+    <Compile Include="Data\Config.cs" />
     <Compile Include="Data\TokenInfo.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -54,6 +55,7 @@
     <Compile Include="Queries\USER_NEW.cs" />
     <Compile Include="Queries\USER_NEW_PASSWORD.cs" />
     <Compile Include="Session.cs" />
+    <Compile Include="API\Tokens.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PipesProvider\PipesProvider.csproj">
@@ -69,6 +71,9 @@
       <Name>UniformServer</Name>
       <Private>False</Private>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

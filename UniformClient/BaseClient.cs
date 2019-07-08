@@ -520,7 +520,7 @@ namespace UniformClient
             }
             #endregion
 
-            #region Addind answer handler to backward table.
+            #region Append answer handler to backward table.
             string hashKey = line.ServerName + "\\" + domain;
             // Try to load registred callback to overriding.
             if (DuplexBackwardCallbacks[hashKey] is

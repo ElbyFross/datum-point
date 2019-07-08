@@ -380,9 +380,7 @@ namespace PipesProvider.Security
         /// <param name="targetDirectory"></param>
         public static void GenerateUniqueKey256Bit(string targetDirectory)
         {
-            // Create directory if not exist.
-            if (!Directory.Exists(targetDirectory))
-                Directory.CreateDirectory(targetDirectory);
+            throw new NotImplementedException();
         }
         #endregion
     }

@@ -70,7 +70,15 @@ namespace UniformServer
                     Console.WriteLine();
                     foreach (UniformQueries.IQueryHandlerProcessor qp in UniformQueries.API.QueryProcessors)
                     {
-                        Console.WriteLine(qp.Description("en"));
+                        try
+                        {
+                            Console.WriteLine(qp.Description("en"));
+                        }
+                        // Avoid not provided description;
+                        catch
+                        {
+                            Console.WriteLine(qp.GetType() + ": Description not provided.");
+                        }
                         Console.WriteLine();
                     }
                     ConsoleDraw.Primitives.DrawLine();

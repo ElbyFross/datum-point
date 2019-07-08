@@ -69,5 +69,35 @@ namespace AuthorityController.Data
         /// Resones for ban.
         /// </summary>
         public string commentary;
+
+        /// <summary>
+        /// Rights that was blocked for this user.
+        /// 
+        /// Recommend:
+        /// logon - block possibility to logon.
+        /// commenting - block possibility to post commentaries.
+        /// etc.
+        /// </summary>
+        public string[] blockedRights;
+
+        /// <summary>
+        /// Check is this ban still actual.
+        /// </summary>
+        /// <returns></returns>
+        public bool IsExpired
+        {
+            get
+            {
+                // Check for line key expiring.
+                bool isExpired = DateTime.Compare(DateTime.FromBinary(expiryTime), DateTime.Now) < 0;
+                if (isExpired)
+                {
+                    // Mark as invalid if expired.
+                    return true;
+                }
+                return false;
+            }
+        }
+
     }
 }

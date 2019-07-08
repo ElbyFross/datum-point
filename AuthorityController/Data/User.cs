@@ -26,6 +26,7 @@ namespace AuthorityController.Data
     [System.Serializable]
     public class User
     {
+        #region Serialized fields
         /// <summary>
         /// Unique id of this user to allow services access.
         /// </summary>
@@ -39,7 +40,7 @@ namespace AuthorityController.Data
         /// <summary>
         /// Hashed and salted password that confirm user rights to use this account.
         /// </summary>
-        public string hashedPassword;
+        public byte[] hashedPassword;
 
         /// <summary>
         /// Name of the user that will displayed in profile.
@@ -69,11 +70,56 @@ namespace AuthorityController.Data
         /// Useful in multicultural environment like universities.
         /// </summary>
         public List<string> culturePreferences;
+        #endregion
 
+        #region Seesion-time fields
         /// <summary>
         /// List that cont tokens provided to this user.
         /// </summary>
         [System.Xml.Serialization.XmlIgnore]
         public List<string> tokens;
+        #endregion
+
+
+        #region API
+        /// <summary>
+        /// Compare recived open password with stored to user.
+        /// </summary>
+        /// <param name="recivedPassword"></param>
+        /// <returns></returns>
+        public bool IsOpenPasswordCorrect(string recivedPassword)
+        {
+            // Get hashed password from recived.
+            byte[] recivedHashedPassword = API.Users.GetHashedPassword(recivedPassword);
+
+            // Compare.
+            return IsHashedPasswordCorrect(recivedHashedPassword);
+        }
+
+        /// <summary>
+        /// Check does the recived password is the same as stored to user.
+        /// </summary>
+        /// <param name="recivedHashedPassword"></param>
+        /// <returns></returns>
+        public bool IsHashedPasswordCorrect(byte[] recivedHashedPassword)
+        {
+            // Compare length to avoid long time comparing.
+            if (hashedPassword.Length != recivedHashedPassword.Length)
+            {
+                return false;
+            }
+
+            // Compare every byte.
+            for (int i = 0; i < hashedPassword.Length; i++)
+            {
+                if (hashedPassword[i] != recivedHashedPassword[i])
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+        #endregion
     }
 }

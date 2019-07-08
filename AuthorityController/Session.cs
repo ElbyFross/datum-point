@@ -32,7 +32,7 @@ namespace AuthorityController
         /// <summary>
         /// Last created session.
         /// </summary>
-        public static Session Last
+        public static Session Current
         {
             get
             {
@@ -51,7 +51,7 @@ namespace AuthorityController
         public Session()
         {
             // Set this session as active.
-            Last = this;
+            Current = this;
         }
         #endregion
 

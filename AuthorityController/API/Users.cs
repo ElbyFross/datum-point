@@ -22,14 +22,15 @@ using System.Xml;
 using System.Threading;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 using AuthorityController.Data;
 
-namespace AuthorityController
+namespace AuthorityController.API
 {
     /// <summary>
     /// API that provide operation with authority data.
     /// </summary>
-    public static class API
+    public static class Users
     {
         #region Events
         /// <summary>
@@ -37,34 +38,7 @@ namespace AuthorityController
         /// </summary>
         public static event System.Action<string> DirectoryLoadingUnlocked;
         #endregion
-
-        #region Configs
-        /// <summary>
-        /// How many minutes token is valid.
-        /// </summary>
-        public static int tokenValidTimeMinutes = 1440;
-        #endregion
-
-        #region Public properties
-        /// <summary>
-        /// Return free token.
-        /// </summary>
-        public static string UnusedToken
-        {
-            get
-            {
-                // Get current time.
-                byte[] time = BitConverter.GetBytes(DateTime.UtcNow.ToBinary());
-                // Generate id.
-                byte[] key = Guid.NewGuid().ToByteArray();
-                // Create token.
-                string token = Convert.ToBase64String(time.Concat(key).ToArray());
-
-                return token;
-            }
-        }
-        #endregion
-        
+                
         #region Private fields
         /// <summary>
         /// Table that provide aaccess to user data by login.
@@ -83,24 +57,24 @@ namespace AuthorityController
         #endregion
 
 
-        #region Users API
+        #region Data
         /// <summary>
         /// Loading users data from directory.
         /// </summary>
         /// <param name="directory"></param>
-        public static async void LoadUsersAsync(string directory)
+        public static async void LoadProfilesAsync(string directory)
         {
             // Validate directory.
             if(!Directory.Exists(directory))
             {
-                Console.WriteLine("ERROR (ACAPI0): USERS LOADING NOT POSSIBLE. DIRECTORY NOT FOUND.");
+                Console.WriteLine("ERROR (ACAPI 0): USERS LOADING NOT POSSIBLE. DIRECTORY NOT FOUND.");
                 return;
             }
 
             // Block if certain directory already in loading process.
             if(LoadingLockedDirectories.Contains(directory))
             {
-                Console.WriteLine("ERROR (ACAPI1): Directory alredy has active loading process. Wait until finish previous one. ({0})",
+                Console.WriteLine("ERROR (ACAPI 10): Directory alredy has active loading process. Wait until finish previous one. ({0})",
                     directory);
                 return;
             }
@@ -154,7 +128,7 @@ namespace AuthorityController
                         }
                         catch (Exception ex)
                         {
-                            Console.WriteLine("ERROR(ACAPIw): Profile damaged. Reason:\n{0}\n", ex.Message);
+                            Console.WriteLine("ERROR(ACAPI 20): Profile damaged. Reason:\n{0}\n", ex.Message);
                         }
 
                     }
@@ -169,22 +143,54 @@ namespace AuthorityController
         }
 
         /// <summary>
-        /// Remove al loaded users data.
+        /// Adding\updating user's profile by directory sete up via config file.
         /// </summary>
-        public static void ClearUsersData()
+        /// <param name="user"></param>
+        public static void SetProfile(User user)
         {
-            UsersById.Clear();
-            UsersByLogin.Clear();
+            SetProfile(user, Config.Active.UsersStorageDirectory);
         }
 
         /// <summary>
-        /// Adding or update user profile by directory.
+        /// Adding\updating user's profile by directory.
         /// </summary>
         /// <param name="user"></param>
         /// <param name="directory"></param>
-        public static void SetUser(User user, string directory)
+        public static void SetProfile(User user, string directory)
         {
-            //TODO
+            // Check directory exist.
+            if (!Directory.Exists(directory))
+            {
+                // Create if not found.
+                Directory.CreateDirectory(directory);
+            }
+
+            // Convert user to XML file.
+            try
+            {
+                XmlDocument xmlDocument = new XmlDocument();
+                XmlSerializer serializer = new XmlSerializer(typeof(User));
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    serializer.Serialize(stream, user);
+                    stream.Position = 0;
+                    xmlDocument.Load(stream);
+                    xmlDocument.Save(directory + GetUserFileName(user));
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR(ACAPI 30):  Not serialized. Reason:\n{0}", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Remove user profile from directory seted up via Config file.
+        /// </summary>
+        /// <param name="user"></param>
+        public static void RemoveProfile(User user)
+        {
+            RemoveProfile(user, Config.Active.UsersStorageDirectory);
         }
 
         /// <summary>
@@ -192,9 +198,34 @@ namespace AuthorityController
         /// </summary>
         /// <param name="user"></param>
         /// <param name="directory"></param>
-        public static void RemoveUser(User user, string directory)
+        public static void RemoveProfile(User user, string directory)
         {
-            //TODO
+            // Expire user sessions.
+            foreach (string token in user.tokens)
+            {
+                Session.Current.SetExpired(token);
+            }
+
+            // Remove profile.
+            try
+            {
+                File.Delete(directory + GetUserFileName(user));
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("ERROR(ACAPI 60):  Prifile removing failed. Reason:\n{0}", ex.Message);
+            }
+        }
+        #endregion
+
+        #region Cash
+        /// <summary>
+        /// Remove all loaded users data.
+        /// </summary>
+        public static void ClearUsersLoadedData()
+        {
+            UsersById.Clear();
+            UsersByLogin.Clear();
         }
 
         /// <summary>
@@ -206,7 +237,7 @@ namespace AuthorityController
         public static bool TryToFindUser(int id, out User user)
         {
             // Try to find user in table.
-            if(UsersById[id] is User bufer)
+            if (UsersById[id] is User bufer)
             {
                 user = bufer;
                 return true;
@@ -238,34 +269,102 @@ namespace AuthorityController
         }
         #endregion
 
-        #region Tokens API
+        #region Security
         /// <summary>
-        /// Check if token expired based on encoded token data.
-        /// Use it on Queries Server to avoid additive time spending on data servers and unnecessary connections.
-        /// 
-        /// If token have hacked allocate date this just will lead to passing of this check.
-        /// Server wouldn't has has token so sequrity will not be passed.
-        /// Also server will control expire time by him self.
+        /// Convert password to heshed and salted.
         /// </summary>
-        /// <param name="token"></param>
+        /// <param name="input">Password recived from user.</param>
         /// <returns></returns>
-        public static bool IsTokenExpired(string token)
+        public static byte[] GetHashedPassword(string input)
         {
-            // Convert token to bytes array.
-            byte[] data = Convert.FromBase64String(token);
+            // Get recived password to byte array.
+            byte[] plainText = Encoding.UTF8.GetBytes(input);
 
-            // Get when token created. Date time will take the first bytes that contain data stamp.
-            DateTime when = DateTime.FromBinary(BitConverter.ToInt64(data, 0));
+            // Create hash profider.
+            HashAlgorithm algorithm = new SHA256Managed();
 
-            // Compare with allowed token time.
-            if (when < DateTime.UtcNow.AddMinutes(-tokenValidTimeMinutes))
+            // Allocate result array.
+            byte[] plainTextWithSaltBytes =
+              new byte[plainText.Length + Config.Active.Salt.Length];
+
+            // Copy input to result array.
+            for (int i = 0; i < plainText.Length; i++)
             {
-                // Confirm expiration.
-                return true;
+                plainTextWithSaltBytes[i] = plainText[i];
             }
 
-            // Conclude that token is valid.
+            // Add salt to array.
+            for (int i = 0; i < Config.Active.Salt.Length; i++)
+            {
+                plainTextWithSaltBytes[plainText.Length + i] = Config.Active.Salt[i];
+            }
+
+            // Get hash of salted array.
+            return algorithm.ComputeHash(plainTextWithSaltBytes);
+        }
+
+        /// <summary>
+        /// Check permition for action.
+        /// </summary>
+        /// <param name="user">Target user.</param>
+        /// <param name="rightCode">Code of right that required for action.</param>
+        /// <returns></returns>
+        public static bool IsBanned(User user, string rightCode)
+        {
+            // Check every ban.
+            for(int i = 0; i < user.bans.Count; i++)
+            {
+                // Get ban data.
+                BanInformation banInformation = user.bans[i];
+
+                // Skip if ban expired.
+                if (!banInformation.active)
+                    continue;
+
+                // Validate ban and disable it if already expired.
+                if (banInformation.IsExpired)
+                {
+                    // Disactivate ban.
+                    banInformation.active = false;
+
+                    // Update profile.
+                    API.Users.SetProfile(user, Config.Active.UsersStorageDirectory);
+                }
+
+                // Check every baned right.
+                foreach(string blockedRights in banInformation.blockedRights)
+                {
+                    // Compare rights codes.
+                    if(blockedRights == rightCode)
+                    {
+                        // Confirm band if equal.
+                        return true;
+                    }
+                }
+            }
+
+            // ban not found.
             return false;
+        }
+        #endregion
+
+        #region Private methods
+        /// <summary>
+        /// Return unified name based on user's profile.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        private static string GetUserFileName(User user)
+        {
+            if (user == null)
+            {
+                Console.WriteLine("ERROR(ACAPI 40): User can't be null");
+                throw new NullReferenceException();
+            }
+
+            // Get user ID in string format.
+            string name = user.id.ToString() + ".xml";
+            return name;
         }
         #endregion
     }

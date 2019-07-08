@@ -40,7 +40,7 @@ namespace AuthorityController.Queries
 
             // TODO Check ritghts.
 
-            Session.Last.SetExpired(expiredToken);
+            Session.Current.SetExpired(expiredToken);
         }
 
         public bool IsTarget(QueryPart[] queryParts)
