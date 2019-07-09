@@ -19,6 +19,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using AuthorityController.Data;
+using PipesProvider.Networking.Routing;
 
 namespace AuthorityController
 {
@@ -28,7 +29,7 @@ namespace AuthorityController
     [System.Serializable]
     public class Session
     {
-        #region Public properties
+        #region Public properties and fields
         /// <summary>
         /// Last created session.
         /// </summary>
@@ -45,6 +46,15 @@ namespace AuthorityController
 
             protected set { last = value; }
         }
+
+        /// <summary>
+        /// Routing table that contain instructions to access reletive servers
+        /// that need to be informed about token events.
+        /// 
+        /// Before sharing query still will check is the query stituable for that routing instruction.
+        /// If you no need any filtring then just leave query patterns empty.
+        /// </summary>
+        public RoutingTable relatedServers;
         #endregion
 
         #region Constructors
@@ -109,7 +119,20 @@ namespace AuthorityController
                 tokensRights.Add(token, info);
             }
 
-            // TODO inform relative servers.
+            // Compose query that will shared to related servers to update them local data.
+            string informQuery = string.Format("set{0}token={1}{0}rights=",
+                UniformQueries.API.SPLITTING_SYMBOL,
+                token);
+
+            // Add rights' codes.
+            foreach (string rightsCode in rights)
+            {
+                // Add every code splited by '+'.
+                informQuery += "+" + rightsCode;
+            }
+            
+            // Send query to infrom related servers about event.
+            SendEqueryToRelatedServers(informQuery);
         }
 
         /// <summary>
@@ -140,7 +163,13 @@ namespace AuthorityController
         {
             if (RemoveToken(token))
             {
-                // TODO inform relative servers.
+                // Compose query that will shared to related servers to update them local data.
+                string informQuery = string.Format("set{0}token={1}{0}expired",
+                    UniformQueries.API.SPLITTING_SYMBOL,
+                    token);
+
+                // Send query to infrom related servers about event.
+                SendEqueryToRelatedServers(informQuery);
             }
         }
         #endregion
@@ -162,6 +191,37 @@ namespace AuthorityController
             {
                 Console.WriteLine("TOKEN REMOVING ERROR:\n{0}", ex.Message);
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// Transmit information to every related servers that situable for queries.
+        /// </summary>
+        /// <param name="query"></param>
+        private void SendEqueryToRelatedServers(string query)
+        {
+            // Inform relative servers.
+            if (relatedServers != null)
+            {
+                // Check every instruction.
+                for (int i = 0; i < relatedServers.intructions.Count; i++)
+                {
+                    // Get instruction.
+                    Instruction instruction = relatedServers.intructions[i];
+
+                    // Does instruction situable to query.
+                    if (!instruction.IsRoutingTarget(query))
+                    {
+                        // Skip if not.
+                        continue;
+                    }
+
+                    // Open transmission line to server.
+                    UniformClient.BaseClient.OpenOutTransmissionLine(instruction.routingIP, instruction.pipeName).
+                        EnqueueQuery(query).              // Add query to queue.
+                        SetInstructionAsKey(ref instruction).   // Apply encryption if requested.
+                        TryLogonAs(instruction.logonConfig);    // Profide logon data to access remote machine.
+                }
             }
         }
         #endregion

@@ -232,11 +232,11 @@ namespace UniformClient
             // Load routing tables
             routingTable = null;
             // From system folders.
-            routingTable += RoutingTable.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\");
+            routingTable += RoutingTable.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\", SearchOption.AllDirectories);
             // From custrom directories.
             foreach (string dir in directories)
             {
-                routingTable += RoutingTable.LoadRoutingTables(dir);
+                routingTable += RoutingTable.LoadRoutingTables(dir, SearchOption.AllDirectories);
             }
             #endregion
 

@@ -75,7 +75,7 @@ namespace AuthorityController.Queries
             Session.Current.SetTokenRights(sessionToken, user.rights);
 
             // Return session data to user.
-            string query = string.Format("token={1}{0}expiryIn={2}",
+            string query = string.Format("token={1}{0}expiryIn={2}{0}rights=",
                 UniformQueries.API.SPLITTING_SYMBOL,
                 sessionToken,
                 Data.Config.Active.tokenValidTimeMinutes);
@@ -83,7 +83,8 @@ namespace AuthorityController.Queries
             // Add rights' codes.
             foreach(string rightsCode in user.rights)
             {
-                query += UniformQueries.API.SPLITTING_SYMBOL + rightsCode;
+                // Add every code splited by '+'.
+                query += "+" + rightsCode;
             }
             #endregion
         }

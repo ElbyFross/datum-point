@@ -71,7 +71,7 @@ namespace AuthorityController.API
 
         /// <summary>
         /// Check does this token has all requested rights.
-        /// If token is 
+        /// If token is not registred on this server then will throw UnauthorizedAccessException.
         /// </summary>
         /// <param name="token"></param>
         /// <param name="requiredRights"></param>
@@ -89,6 +89,12 @@ namespace AuthorityController.API
             return IsHasEnoughRigths(requesterRights, requiredRights);
         }
 
+        /// <summary>
+        /// Comare two arrays that contain rights code.
+        /// </summary>
+        /// <param name="providedRights">Rights that provided to user.</param>
+        /// <param name="requiredRights">Rights that required to get permisssion.</param>
+        /// <returns></returns>
         public static bool IsHasEnoughRigths(string[] providedRights, params string[] requiredRights)
         {
             // Check every requeted and provided rights.
