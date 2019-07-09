@@ -47,7 +47,7 @@
     <Compile Include="Data\TokenInfo.cs" />
     <Compile Include="Data\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Queries\SET_TOKEN_EXPIRED.cs" />
+    <Compile Include="Queries\GET_GUEST_TOKEN.cs" />
     <Compile Include="Queries\SET_TOKEN_RIGHTS.cs" />
     <Compile Include="Queries\USER_BAN.cs" />
     <Compile Include="Queries\USER_LOGOFF.cs" />
@@ -61,6 +61,11 @@
     <ProjectReference Include="..\PipesProvider\PipesProvider.csproj">
       <Project>{6a8abab9-a495-4286-8606-7360aff2a7b7}</Project>
       <Name>PipesProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UniformClient\UniformClient.csproj">
+      <Project>{6695b55e-8994-475f-a112-6a4e8be019aa}</Project>
+      <Name>UniformClient</Name>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\UniformQueries\UniformQueries.csproj">
       <Project>{b68e2d79-1e9b-436e-899c-930bf945b003}</Project>
