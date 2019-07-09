@@ -25,8 +25,6 @@ namespace AuthorityController.Queries
     /// </summary>
     public class USER_BAN : IQueryHandlerProcessor
     {
-        public static string[] requiredRights = new string[] { "ban" };
-
         public string Description(string cultureKey)
         {
             throw new NotImplementedException();
@@ -34,6 +32,12 @@ namespace AuthorityController.Queries
 
         public void Execute(QueryPart[] queryParts)
         {
+            #region Temporal fields
+            // Array that will contain rights detected by requester token.
+            string[] requesterRights = null;
+            #endregion
+
+            #region Get params
             // Get requestor token.
             UniformQueries.API.TryGetParamValue("token", out QueryPart token, queryParts);
 
@@ -42,12 +46,19 @@ namespace AuthorityController.Queries
 
             // XML serialized BanInformation. If empty then will shared permanent ban.
             UniformQueries.API.TryGetParamValue("ban", out QueryPart ban, queryParts);
+            #endregion
 
-            // Check token rights.
+            #region Check token rights.
             try
             {
-                // Get token of query's sender.
-                API.Tokens.IsHasEnoughRigths(token.propertyValue, requiredRights);
+                // Check if the base rights exist.
+                if(!API.Tokens.IsHasEnoughRigths(token.propertyValue, out requesterRights, 
+                    Data.Config.Active.QUERY_UserBan_RIGHTS))
+                {
+                    // Inform that token not registred.
+                    UniformServer.BaseServer.SendAnswer("ERROR 401: Unauthorized", queryParts);
+                    return;
+                }
             }
             catch (Exception ex)
             {
@@ -59,7 +70,8 @@ namespace AuthorityController.Queries
                     return;
                 }
             }
-
+            #endregion
+                       
 
             #region Detect target user
             // Find user for ban.
@@ -86,6 +98,42 @@ namespace AuthorityController.Queries
                     UniformServer.BaseServer.SendAnswer("ERROR 404: User not found", queryParts);
                     return;
                 }
+            }
+            #endregion         
+            
+            #region Compare ranks
+            // String that will contain instruction.
+            string rankRequirmentsInstruction = null;
+            // Find requester rank.
+            foreach (string rr in requesterRights)
+            {
+                // Check if the rights is the "rank".
+                if (rr.StartsWith("rank="))
+                {
+                    rankRequirmentsInstruction = rr;
+                    break;
+                }
+            }
+
+            // If requester rank not detected.
+            if (string.IsNullOrEmpty(rankRequirmentsInstruction))
+            {
+                // Inform that rank not defined.
+                UniformServer.BaseServer.SendAnswer("ERROR 401: User rank not defined", queryParts);
+                return;
+            }
+            else
+            {
+                // Add modifier that will require from user higher rank the target.
+                rankRequirmentsInstruction = "<" + rankRequirmentsInstruction;
+            }
+
+            // Check is the target user has the less rank then requester.
+            if (!API.Tokens.IsHasEnoughRigths(userProfile.rights, rankRequirmentsInstruction))
+            {
+                // Inform that target user has the same or heigher rank then requester.
+                UniformServer.BaseServer.SendAnswer("ERROR 401: Unauthorized", queryParts);
+                return;
             }
             #endregion
 

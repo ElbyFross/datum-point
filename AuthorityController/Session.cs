@@ -76,14 +76,6 @@ namespace AuthorityController
         /// Value - TokenInfo
         /// </summary>
         private readonly Hashtable tokensRights = new Hashtable();
-
-        /// <summary>
-        /// Table that contain users.
-        /// 
-        /// Key - int id.
-        /// Value - User object.
-        /// </summary>
-        private readonly Hashtable users = new Hashtable();
         #endregion
 
         #region Public methods
@@ -101,11 +93,36 @@ namespace AuthorityController
             // Update rights if already exist.
             if (tokensRights.ContainsKey(token))
             {
-                // Loading toking info.
+                // Loading token info.
                 TokenInfo info = (TokenInfo)tokensRights[token];
-                // Update rights.
-                info.rights = rights;
+
+                // If not anonymous user.
+                if (API.Users.TryToFindUser(info.userId, out User user))
+                {
+                    // Update every token.
+                    foreach(string additiveTokens in user.tokens)
+                    {
+                        // Loading toking info.
+                        TokenInfo additiveInfo = (TokenInfo)tokensRights[additiveTokens];
+
+                        // Update rights.
+                        additiveInfo.rights = rights;
+
+                        // Send info to relative servers.
+                        SendNewRightsForToken(additiveTokens, rights);
+                    }
+                }
+                // if user not detected.
+                else
+                {
+                    // Update rights.
+                    info.rights = rights;
+
+                    // Send info to relative servers.
+                    SendNewRightsForToken(token, rights);
+                }
             }
+            // If user was not loaded.
             else
             {
                 // Create anonymous container.
@@ -117,22 +134,10 @@ namespace AuthorityController
 
                 // Set as new.
                 tokensRights.Add(token, info);
-            }
 
-            // Compose query that will shared to related servers to update them local data.
-            string informQuery = string.Format("set{0}token={1}{0}rights=",
-                UniformQueries.API.SPLITTING_SYMBOL,
-                token);
-
-            // Add rights' codes.
-            foreach (string rightsCode in rights)
-            {
-                // Add every code splited by '+'.
-                informQuery += "+" + rightsCode;
+                // Send info to relative servers.
+                SendNewRightsForToken(token, rights);
             }
-            
-            // Send query to infrom related servers about event.
-            SendEqueryToRelatedServers(informQuery);
         }
 
         /// <summary>
@@ -172,6 +177,24 @@ namespace AuthorityController
                 SendEqueryToRelatedServers(informQuery);
             }
         }
+
+        /// <summary>
+        /// Try to find registred token info.
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="info"></param>
+        /// <returns></returns>
+        public bool TryGetTokenInfo(string token, out TokenInfo info)
+        {
+            if(tokensRights[token] is TokenInfo bufer)
+            {
+                info = bufer;
+                return true;
+            }
+
+            info = TokenInfo.Anonymous;
+            return false;
+        }
         #endregion
 
         #region Private methods
@@ -184,6 +207,14 @@ namespace AuthorityController
         {
             try
             {
+                // If user not anonymous.
+                if(tokensRights[token] is User user)
+                {
+                    // Remove tooken.
+                    user.tokens.Remove(token);
+                }
+
+                // Unregister token from table.
                 tokensRights.Remove(token);
                 return true;
             }
@@ -192,6 +223,29 @@ namespace AuthorityController
                 Console.WriteLine("TOKEN REMOVING ERROR:\n{0}", ex.Message);
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Sending new rights of token to releted servers.
+        /// </summary>
+        /// <param name="token"></param>
+        /// <param name="rights"></param>
+        private void SendNewRightsForToken(string token, string[] rights)
+        {
+            // Compose query that will shared to related servers to update them local data.
+            string informQuery = string.Format("set{0}token={1}{0}rights=",
+                UniformQueries.API.SPLITTING_SYMBOL,
+                token);
+
+            // Add rights' codes.
+            foreach (string rightsCode in rights)
+            {
+                // Add every code splited by '+'.
+                informQuery += "+" + rightsCode;
+            }
+
+            // Send query to infrom related servers about event.
+            SendEqueryToRelatedServers(informQuery);
         }
 
         /// <summary>

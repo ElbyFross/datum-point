@@ -17,6 +17,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Xml.Serialization;
+using System.Xml;
 
 namespace AuthorityController.Data
 {
@@ -38,9 +41,10 @@ namespace AuthorityController.Data
         public string login;
 
         /// <summary>
-        /// Hashed and salted password that confirm user rights to use this account.
+        /// ON CLIENT: Open password. Situable only if user provides profile as new.
+        /// ON SERVER: Hashed and salted password that confirm user rights to use this account.
         /// </summary>
-        public byte[] hashedPassword;
+        public byte[] password;
 
         /// <summary>
         /// Name of the user that will displayed in profile.
@@ -83,6 +87,57 @@ namespace AuthorityController.Data
 
         #region API
         /// <summary>
+        /// Convert user data to string format to allow sharing via query.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public static string ToQueryValue(User user)
+        {
+            // Convert table to XML file.
+            try
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(User));
+                using (StringWriter stream = new StringWriter())
+                {
+                    serializer.Serialize(stream, user);
+                    return stream.ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ROUTING TABLE ERROR: Not serialized. Reason:\n{0}", ex.Message);
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Trying to convert user in string format of object instance.
+        /// </summary>
+        /// <param name="queryValue">String format of user recived from ToQueryValue method.</param>
+        /// <param name="user">Instiniated user with shared data.</param>
+        /// <returns>Does convertation passed success.</returns>
+        public static bool TyToParseQueryValue(string queryValue, out User user)
+        {
+            // Convert table to XML file.
+            try
+            {
+                XmlSerializer serializer = new XmlSerializer(typeof(User));
+                using (StringReader stream = new StringReader(queryValue))
+                {
+                    user = (User)serializer.Deserialize(stream);
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("USER DATA CORUPTED. Reason:\n{0}", ex.Message);
+                user = null;
+                return false; ;
+            }
+        }
+
+
+        /// <summary>
         /// Compare recived open password with stored to user.
         /// </summary>
         /// <param name="recivedPassword"></param>
@@ -104,15 +159,15 @@ namespace AuthorityController.Data
         public bool IsHashedPasswordCorrect(byte[] recivedHashedPassword)
         {
             // Compare length to avoid long time comparing.
-            if (hashedPassword.Length != recivedHashedPassword.Length)
+            if (password.Length != recivedHashedPassword.Length)
             {
                 return false;
             }
 
             // Compare every byte.
-            for (int i = 0; i < hashedPassword.Length; i++)
+            for (int i = 0; i < password.Length; i++)
             {
-                if (hashedPassword[i] != recivedHashedPassword[i])
+                if (password[i] != recivedHashedPassword[i])
                 {
                     return false;
                 }

@@ -72,13 +72,14 @@ namespace AuthorityController.Queries
             string sessionToken = API.Tokens.UnusedToken;
 
             // Registrate token in session.
+            user.tokens.Add(sessionToken);
             Session.Current.SetTokenRights(sessionToken, user.rights);
 
             // Return session data to user.
             string query = string.Format("token={1}{0}expiryIn={2}{0}rights=",
                 UniformQueries.API.SPLITTING_SYMBOL,
                 sessionToken,
-                Data.Config.Active.tokenValidTimeMinutes);
+                Data.Config.Active.TokenValidTimeMinutes);
 
             // Add rights' codes.
             foreach(string rightsCode in user.rights)

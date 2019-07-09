@@ -36,6 +36,93 @@ namespace AuthorityController.Data
         /// </summary>
         public const string CONFIG_FILE_NAME = "config.xml";        
         #endregion
+               
+        #region Serialized fields
+        /// <summary>
+        /// Directory to folder that will contain users data.
+        /// </summary>
+        public string UsersStorageDirectory = "//Resorces//users//";
+
+        #region User logins
+        /// <summary>
+        /// How many character will be required in password.
+        /// </summary>
+        public int LoginMinSize = 5;
+
+        /// <summary>
+        /// How many character will be allowed in password.
+        /// </summary>
+        public int LoginMaxSize = 16;
+        #endregion
+
+        #region User passwords
+        /// <summary>
+        /// Name of the file that will contain salt.
+        /// </summary>
+        public string PasswordSaltFileName = ".salt";
+
+        /// <summary>
+        /// How many character will be required in password.
+        /// </summary>
+        public int PasswordMinAllowedLength = 8;
+
+        /// <summary>
+        /// How many character will be allowed in password.
+        /// </summary>
+        public int PasswordMaxAllowedLength = 8;
+
+        /// <summary>
+        /// If true then will requre at leas one symbol like !@$% etc.
+        /// Application will provide valid mask without your involving.
+        /// </summary>
+        public bool PasswordRequireNotLetterSymbol = false;
+
+        /// <summary>
+        /// If true then will require at least one symbol in high register.
+        /// Application will provide valid mask without your involving.
+        /// </summary>
+        public bool PasswordRequireUpperSymbol = true;
+        
+        /// <summary>
+        /// If true then will require at least one digit.
+        /// Application will provide valid mask without your involving.
+        /// </summary>
+        public bool PasswordRequireDigitSymbol = true;
+        #endregion
+
+
+        /// <summary>
+        /// How many minutes token is valid.
+        /// </summary>
+        public int TokenValidTimeMinutes = 1440;
+
+        /// rank=x where x is
+        /// 0 - guest
+        /// 1 - user 
+        /// 2 - privileged user
+        /// 4 - moderator
+        /// 8 - admin
+        /// 16 - superadmin
+        #region Queries rights
+        /// <summary>
+        /// Rights code required for requester to proceed this action.
+        /// 
+        /// bannhammer - allow user set bans to others.
+        /// >rank=2 - wil requre at least moderators level. 
+        /// </summary>
+        public string[] QUERY_UserBan_RIGHTS = new string[] { "banhammer", ">rank=2" };
+
+
+        /// <summary>
+        /// Rights code required for requester to proceed this action.
+        /// >rank=4 - will requre at least admin level.
+        /// </summary>
+        public string[] QUERY_SetTokenRights_RIGHTS = new string[] {">rank=5" };
+        #endregion
+        #endregion
+
+
+
 
         #region Single tone
         /// <summary>
@@ -47,10 +134,10 @@ namespace AuthorityController.Data
         {
             get
             {
-                if(active == null)
+                if (active == null)
                 {
                     // Try to load config from directory.
-                    if(!TryToLoad<Config>(DIRECTORY, CONFIG_FILE_NAME, out active))
+                    if (!TryToLoad<Config>(DIRECTORY, CONFIG_FILE_NAME, out active))
                     {
                         // Create new one if failed.
                         active = new Config();
@@ -93,25 +180,6 @@ namespace AuthorityController.Data
         [XmlIgnore]
         private byte[] salt;
         #endregion
-
-
-        #region Serialized fields
-        /// <summary>
-        /// Directory to folder that will contain users data.
-        /// </summary>
-        public string UsersStorageDirectory = "//Resorces//users//";
-
-        /// <summary>
-        /// Name of the file that will contain salt.
-        /// </summary>
-        public string SALT_FILE_NAME = ".salt";
-
-        /// <summary>
-        /// How many minutes token is valid.
-        /// </summary>
-        public int tokenValidTimeMinutes = 1440;
-        #endregion
-
 
         #region Constructors
         public Config()

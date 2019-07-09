@@ -59,7 +59,7 @@ namespace AuthorityController.API
             DateTime when = DateTime.FromBinary(BitConverter.ToInt64(data, 0));
 
             // Compare with allowed token time.
-            if (when < DateTime.UtcNow.AddMinutes(-Data.Config.Active.tokenValidTimeMinutes))
+            if (when < DateTime.UtcNow.AddMinutes(-Data.Config.Active.TokenValidTimeMinutes))
             {
                 // Confirm expiration.
                 return true;
@@ -75,11 +75,12 @@ namespace AuthorityController.API
         /// </summary>
         /// <param name="token"></param>
         /// <param name="requiredRights"></param>
+        /// <param name="requesterRights">Rights detected to that token.</param>
         /// <returns></returns>
-        public static bool IsHasEnoughRigths(string token, params string[] requiredRights)
+        public static bool IsHasEnoughRigths(string token, out string[] requesterRights, params string[] requiredRights)
         {
             // Try to get token rights.
-            if (!Session.Current.TryGetTokenRights(token, out string[] requesterRights))
+            if (!Session.Current.TryGetTokenRights(token, out requesterRights))
             {
                 // Create unathorized exception.
                 throw new UnauthorizedAccessException("Token not registred in the table.");
@@ -90,7 +91,8 @@ namespace AuthorityController.API
         }
 
         /// <summary>
-        /// Comare two arrays that contain rights code.
+        /// Compare two arrays that contain rights code.
+        /// Prefix '!' before rquired right will work like "not contain this right."
         /// </summary>
         /// <param name="providedRights">Rights that provided to user.</param>
         /// <param name="requiredRights">Rights that required to get permisssion.</param>
@@ -102,17 +104,76 @@ namespace AuthorityController.API
             for (int i = 0; i < operationAllowenceMask.Length; i++)
             {
                 // Get right that requested.
-                string targetRight = requiredRights[i];
+                string requiredRight = requiredRights[i];
+
+                #region Modifiers
+                // Get modifiers.
+                char prefix = requiredRight[0];
+
+                // Check non prefix.
+                bool non = prefix == '!';
+
+                // Check increse\decrease posfix
+                bool higher = prefix == '>';
+                bool lower = prefix == '<';
+
+                // Remove modifier from string for comparing.
+                if (non || higher || lower)
+                {
+                    // Exclude non prefix.
+                    requiredRight = requiredRight.Substring(1);
+                }
+                #endregion
 
                 // Compare with every right provided to token.
                 foreach (string providedRight in providedRights)
                 {
-                    // Comare provided with target.
-                    if (providedRight.Equals(targetRight))
+                    #region Value compare
+                    if (higher || lower)
                     {
-                        operationAllowenceMask[i] = true;
+                        // Try to operate data.
+                        try
+                        {
+                            // Value that required.
+                            int requiredValue = Int32.Parse(requiredRight.Split('=')[1]);
+                            // Value that provided to user.
+                            int providedValue = Int32.Parse(providedRight.Split('=')[1]);
+
+                            // Compare.
+                            if (higher)
+                            {
+                                operationAllowenceMask[i] = providedValue > requiredValue;
+                            }
+                            else
+                            {
+                                operationAllowenceMask[i] = providedValue < requiredValue;
+                            }
+
+                            // Stop search for this right cause found.
+                            break;
+                        }
+                        catch
+                        {
+                            // Mark as failed.
+                            operationAllowenceMask[i] = false;
+                            // Stop search for this right cause found.
+                            break;
+                        }
+                    }
+                    #endregion
+
+                    #region Normal compare
+                    // Compare provided with target.
+                    if (providedRight.Equals(requiredRight))
+                    {
+                        // Set result.
+                        // Required: true
+                        // Non: false
+                        operationAllowenceMask[i] = !non;
+                        // Stop search for this right cause found.
                         break;
                     }
+                    #endregion
                 }
 
                 // If requsted right not found via provided.
