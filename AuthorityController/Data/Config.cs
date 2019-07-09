@@ -55,6 +55,34 @@ namespace AuthorityController.Data
         public int LoginMaxSize = 16;
         #endregion
 
+        #region User names
+
+        /// <summary>
+        /// Define a format of allowed name.
+        /// By default provide possibility to make a names like:
+        /// Anna
+        /// Anna-Sofia
+        /// Ad'ifaah
+        /// etc.
+        /// 
+        /// For creating your own please use a Regex sinaxis.
+        /// </summary>
+        public string UserNameRegexPattern = @"^[A-Z][a-z]+[-|']?[A-Z]?[a-z]*$";
+        #endregion
+
+        #region User rights
+        /// <summary>
+        /// List of user rights that will profided to every new user.
+        /// Any extra rights will require aditional query from authorised user.
+        /// </summary>
+        public string[] UserDefaultRights = new string[]
+        {
+            "common",
+            "commenting",
+            "publishing"
+        };
+        #endregion
+
         #region User passwords
         /// <summary>
         /// Name of the file that will contain salt.

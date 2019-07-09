@@ -88,6 +88,9 @@ namespace AuthorityController.Queries
                 query += "+" + rightsCode;
             }
             #endregion
+            
+            // Send token to client.
+            UniformServer.BaseServer.SendAnswer(query, queryParts);
         }
 
         public bool IsTarget(QueryPart[] queryParts)

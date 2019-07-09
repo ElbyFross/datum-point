@@ -43,17 +43,20 @@ namespace AuthorityController.Queries
 
         public void Execute(QueryPart[] queryParts)
         {
-            // Get params.
+            #region Get qyery params
             UniformQueries.API.TryGetParamValue("login", out QueryPart login, queryParts);
             UniformQueries.API.TryGetParamValue("password", out QueryPart password, queryParts);
             UniformQueries.API.TryGetParamValue("fn", out QueryPart firstName, queryParts);
             UniformQueries.API.TryGetParamValue("sn", out QueryPart secondName, queryParts);
 
+            UniformQueries.API.TryGetParamValue("token", out QueryPart token, queryParts);
+            UniformQueries.API.TryGetParamValue("guid", out QueryPart guid, queryParts);
             UniformQueries.API.TryGetParamValue("os", out QueryPart os, queryParts);
             UniformQueries.API.TryGetParamValue("mac", out QueryPart mac, queryParts);
             UniformQueries.API.TryGetParamValue("stamp", out QueryPart timeStamp, queryParts);
 
             System.Threading.Thread.Sleep(5);
+            #endregion
 
             #region Validate login
             if (string.IsNullOrEmpty(login.propertyValue) || 
@@ -87,9 +90,10 @@ namespace AuthorityController.Queries
                 UniformServer.BaseServer.SendAnswer("ERROR 401: Login occupied", queryParts);
                 return;
             }
-            #endregion
 
+            // Can take enough long time so just let other query to process.
             System.Threading.Thread.Sleep(5);
+            #endregion
 
             #region Validate password
             if (string.IsNullOrEmpty(login.propertyValue) ||
@@ -157,17 +161,100 @@ namespace AuthorityController.Queries
 
                 }
             }
-            #endregion
-            
+
+            // Can take enough long time so just let other query to process.
             System.Threading.Thread.Sleep(5);
+            #endregion
 
-            // TODO Validate names.
+            #region Validate names
+            // Validate first name.
+            if (!Regex.IsMatch(firstName.propertyName, Data.Config.Active.UserNameRegexPattern))
+            {
+                // Inform about incorrect login size.
+                UniformServer.BaseServer.SendAnswer(
+                    "ERROR 401: Invalid name format.",
+                    queryParts);
+                return;
+            }
 
-            // TODO Create user profile data to server.
+            // Validate second name.
+            if (!Regex.IsMatch(secondName.propertyName, Data.Config.Active.UserNameRegexPattern))
+            {
+                // Inform about incorrect login size.
+                UniformServer.BaseServer.SendAnswer(
+                    "ERROR 401: Invalid name format.",
+                    queryParts);
+                return;
+            }
+            
+            // Can take enough long time so just let other query to process.
+            System.Threading.Thread.Sleep(5);
+            #endregion
+
+
+            // There you can apply some filter of rood words.
+
+            //-----------------------------------------------
+
+            #region Create user profile data.
+            // Create base data.
+            Data.User userProfile = new Data.User()
+            {
+                login = login.propertyValue,
+                password = API.Users.GetHashedPassword(password.propertyValue),
+                firstName = firstName,
+                secondName = secondName
+            };
+
+            // Provide ID.
+            userProfile.id = API.Users.GenerateID(userProfile);
+
+            // Set rights default rights.
+            userProfile.rights = Data.Config.Active.UserDefaultRights;
+            #endregion
+
+            // Save profile in storage.
+            API.Users.SetProfile(userProfile);
+
+            #region Return token to client
+            // Build logon query.
+            QueryPart[] logonQuery = new QueryPart[]
+                {
+                    new QueryPart("USER", null),
+                    new QueryPart("LOGON", null),
+                    token,
+                    guid,
+                    login,
+                    password,
+                    os,
+                    mac,
+                    timeStamp,
+                };
+
+            // Create logon subquery.
+            foreach(UniformQueries.IQueryHandlerProcessor processor in UniformQueries.API.QueryProcessors)
+            {
+                // Fini logon query processor.
+                if(processor is USER_LOGON)
+                {
+                    // Execute and send to client token valided to created user.
+                    processor.Execute(logonQuery);
+                }
+            }
+            #endregion
         }
 
         public bool IsTarget(QueryPart[] queryParts)
         {
+            // Check token exist.
+            if (!UniformQueries.API.QueryParamExist("token", queryParts))
+                return false;
+
+            // Check guid exist.
+            if (!UniformQueries.API.QueryParamExist("guid", queryParts))
+                return false;
+
+
             // USER prop.
             if (!UniformQueries.API.QueryParamExist("user", queryParts))
                 return false;

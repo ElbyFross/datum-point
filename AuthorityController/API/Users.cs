@@ -216,6 +216,30 @@ namespace AuthorityController.API
                 Console.WriteLine("ERROR(ACAPI 60):  Prifile removing failed. Reason:\n{0}", ex.Message);
             }
         }
+
+        /// <summary>
+        /// Looking for free id.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
+        public static int GenerateID(User user)
+        {
+            // Generate ID by hash code.
+            int id = user.login.GetHashCode();
+
+            // If already exist.
+            if (TryToFindUser(id, out User _))
+            {
+                // Increment id until finde free one.
+                do
+                {
+                    id++;
+                }
+                while (TryToFindUser(id, out User _));
+            }
+
+            return id.
+        }
         #endregion
 
         #region Cash
