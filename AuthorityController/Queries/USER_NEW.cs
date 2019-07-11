@@ -137,7 +137,7 @@ namespace AuthorityController.Queries
             Data.User userProfile = new Data.User()
             {
                 login = login.propertyValue,
-                password = API.Users.GetHashedPassword(password.propertyValue),
+                password = API.Users.GetHashedPassword(password.propertyValue, Data.Config.Active.Salt),
                 firstName = firstName,
                 secondName = secondName
             };

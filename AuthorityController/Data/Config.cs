@@ -204,7 +204,7 @@ namespace AuthorityController.Data
         /// Salt loaded from file.
         /// </summary>
         [XmlIgnore]
-        public byte[] Salt
+        public SaltContainer Salt
         {
             get
             {
@@ -212,18 +212,25 @@ namespace AuthorityController.Data
                 if (salt == null)
                 {
                     // Try to load from resources.
-                    if (!TryToLoad<byte[]>(DIRECTORY, CONFIG_FILE_NAME, out salt))
+                    if (!TryToLoad<SaltContainer>(DIRECTORY, PasswordSaltFileName, out salt))
                     {
-                        // Generate new salt.
+                        // TODO Generate new salt.
 
-                        // Save to resources.
+                        // TODO Save to resources.
+                    }
+
+                    // Validate salt.
+                    if(!salt.Validate())
+                    {
+                        // Inform that salt or hash algorithm is failed.
+                        throw new InvalidDataException();
                     }
                 }
                 return salt;
             }
         }
         [XmlIgnore]
-        private byte[] salt;
+        private SaltContainer salt;
         #endregion
 
         #region Constructors

@@ -145,7 +145,7 @@ namespace AuthorityController.Data
         public bool IsOpenPasswordCorrect(string recivedPassword)
         {
             // Get hashed password from recived.
-            byte[] recivedHashedPassword = API.Users.GetHashedPassword(recivedPassword);
+            byte[] recivedHashedPassword = API.Users.GetHashedPassword(recivedPassword, Data.Config.Active.Salt);
 
             // Compare.
             return IsHashedPasswordCorrect(recivedHashedPassword);

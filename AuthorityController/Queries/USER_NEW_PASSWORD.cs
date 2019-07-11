@@ -141,7 +141,7 @@ namespace AuthorityController.Queries
             #endregion
 
             // Update password.
-            userProfile.password = API.Users.GetHashedPassword(password.propertyValue);
+            userProfile.password = API.Users.GetHashedPassword(password.propertyValue, Data.Config.Active.Salt);
 
             // Update stored profile.
             API.Users.SetProfile(userProfile);

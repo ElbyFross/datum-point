@@ -340,7 +340,7 @@ namespace AuthorityController.API
         /// </summary>
         /// <param name="input">Password recived from user.</param>
         /// <returns></returns>
-        public static byte[] GetHashedPassword(string input)
+        public static byte[] GetHashedPassword(string input, Data.SaltContainer salt)
         {
             // Get recived password to byte array.
             byte[] plainText = Encoding.UTF8.GetBytes(input);
@@ -350,7 +350,7 @@ namespace AuthorityController.API
 
             // Allocate result array.
             byte[] plainTextWithSaltBytes =
-              new byte[plainText.Length + Config.Active.Salt.Length];
+              new byte[plainText.Length + salt.key.Length];
 
             // Copy input to result array.
             for (int i = 0; i < plainText.Length; i++)
@@ -359,9 +359,9 @@ namespace AuthorityController.API
             }
 
             // Add salt to array.
-            for (int i = 0; i < Config.Active.Salt.Length; i++)
+            for (int i = 0; i < salt.key.Length; i++)
             {
-                plainTextWithSaltBytes[plainText.Length + i] = Config.Active.Salt[i];
+                plainTextWithSaltBytes[plainText.Length + i] = salt.key[i];
             }
 
             // Get hash of salted array.
