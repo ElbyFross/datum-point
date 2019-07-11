@@ -18,7 +18,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UniformQueries;
-using System.Text.RegularExpressions;
 
 namespace AuthorityController.Queries
 {
@@ -101,7 +100,7 @@ namespace AuthorityController.Queries
             if (!isSelfUpdate)
             {
                 // Get target User's rank.
-                if(!API.Tokens.TryToGetRight("rank", out string userRank, userProfile.rights))
+                if(!API.Collections.TyGetPropertyValue("rank", out string userRank, userProfile.rights))
                 {
                     // Inform that rights not enough.
                     UniformServer.BaseServer.SendAnswer("ERROR 401: Unauthorized", queryParts);
@@ -109,7 +108,7 @@ namespace AuthorityController.Queries
                 }
 
                 // Check token rights.
-                if (!API.Tokens.IsHasEnoughRigths(requesterRights,
+                if (!API.Collections.IsHasEnoughRigths(requesterRights,
                     // Request hiegher rank then user and at least moderator level.
                     ">rank=" + userRank, ">rank=2"))
                 {
@@ -131,7 +130,7 @@ namespace AuthorityController.Queries
             #endregion
 
             #region Validate new password
-            if(!PasswordValidation(password.propertyValue, out string errorMessage))
+            if(!API.Validation.PasswordFormat(password.propertyValue, out string errorMessage))
             {
                 // Inform about incorrect login size.
                 UniformServer.BaseServer.SendAnswer(
@@ -168,72 +167,5 @@ namespace AuthorityController.Queries
 
             return true;
         }
-
-        /// <summary>
-        /// Validate password before converting to salted hash.
-        /// </summary>
-        /// <param name="password">Open password.</param>
-        /// <param name="error">Error string that will be situable in case of validation fail.</param>
-        /// <returns>Result of validation.</returns>
-        public static bool PasswordValidation(string password, out string error)
-        {
-            error = null;
-
-            if (string.IsNullOrEmpty(password) ||
-               password.Length < Data.Config.Active.PasswordMinAllowedLength ||
-               password.Length > Data.Config.Active.PasswordMaxAllowedLength)
-            {
-                // Inform about incorrect login size.
-                error =
-                    "ERROR 401: Invalid password size. Require " +
-                    Data.Config.Active.LoginMinSize + "-" +
-                    Data.Config.Active.LoginMaxSize + " caracters.";
-                return false;
-            }
-
-            // Validate format
-            if (!Regex.IsMatch(password, @"^[a-zA-Z0-9@!#$%_]+$"))
-            {
-                // Inform about incorrect login size.
-                error = "ERROR 401: Invalid password format. Allowed symbols: [a-z][A-Z][0-9]@!#$%_";
-                return false;
-            }
-
-            // Special symbol required.
-            if (Data.Config.Active.PasswordRequireDigitSymbol)
-            {
-                if (!Regex.IsMatch(password, @"^[0-9]+$"))
-                {
-                    // Inform about incorrect login size.
-                    error = "ERROR 401: Invalid password format. Need to have at least one digit 0-9";
-                    return false;
-                }
-            }
-
-            // Special symbol required.
-            if (Data.Config.Active.PasswordRequireNotLetterSymbol)
-            {
-                if (!Regex.IsMatch(password, @"^[@!#$%_]+$"))
-                {
-                    // Inform about incorrect login size.
-                    error = "ERROR 401: Invalid password format. Need to have at least one of followed symbols: @!#$%_";
-                    return false;
-                }
-            }
-
-            // Upper cse required.
-            if (Data.Config.Active.PasswordRequireUpperSymbol)
-            {
-                if (!Regex.IsMatch(password, @"^[A-Z]+$"))
-                {
-                    // Inform about incorrect login size.
-                    error = "ERROR 401: Invalid password format. Need to have at least one symbol in upper case.";
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
     }
 }

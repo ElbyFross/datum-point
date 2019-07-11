@@ -23,6 +23,7 @@ using System.Threading;
 using System.Text;
 using System.Threading.Tasks;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 using AuthorityController.Data;
 
 namespace AuthorityController.API

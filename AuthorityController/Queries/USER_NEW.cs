@@ -43,6 +43,8 @@ namespace AuthorityController.Queries
 
         public void Execute(QueryPart[] queryParts)
         {
+            string error;
+
             #region Get qyery params
             UniformQueries.API.TryGetParamValue("login", out QueryPart login, queryParts);
             UniformQueries.API.TryGetParamValue("password", out QueryPart password, queryParts);
@@ -96,7 +98,7 @@ namespace AuthorityController.Queries
             #endregion
 
             #region Validate password
-            if (!USER_NEW_PASSWORD.PasswordValidation(password.propertyValue, out string errorMessage))
+            if (!API.Validation.PasswordFormat(password.propertyValue, out string errorMessage))
             {
                 // Inform about incorrect login size.
                 UniformServer.BaseServer.SendAnswer(
@@ -110,22 +112,13 @@ namespace AuthorityController.Queries
             #endregion
 
             #region Validate names
-            // Validate first name.
-            if (!Regex.IsMatch(firstName.propertyName, Data.Config.Active.UserNameRegexPattern))
+            // Validate name.
+            if(!API.Validation.NameFormat(ref firstName.propertyName, out error) ||
+               !API.Validation.NameFormat(ref secondName.propertyName, out error))
             {
                 // Inform about incorrect login size.
                 UniformServer.BaseServer.SendAnswer(
-                    "ERROR 401: Invalid name format.",
-                    queryParts);
-                return;
-            }
-
-            // Validate second name.
-            if (!Regex.IsMatch(secondName.propertyName, Data.Config.Active.UserNameRegexPattern))
-            {
-                // Inform about incorrect login size.
-                UniformServer.BaseServer.SendAnswer(
-                    "ERROR 401: Invalid name format.",
+                    error,
                     queryParts);
                 return;
             }

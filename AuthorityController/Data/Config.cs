@@ -29,7 +29,7 @@ namespace AuthorityController.Data
         /// <summary>
         /// Directory that will contain serialized instance of this class.
         /// </summary>
-        public const string DIRECTORY = "//resources//ac//";
+        public const string DIRECTORY = "\\resources\\ac\\";
 
         /// <summary>
         /// Name of the file that will be loaded as config.
@@ -41,7 +41,7 @@ namespace AuthorityController.Data
         /// <summary>
         /// Directory to folder that will contain users data.
         /// </summary>
-        public string UsersStorageDirectory = "//Resorces//users//";
+        public string UsersStorageDirectory = "\\resorces\\users\\";
 
         #region User logins
         /// <summary>
@@ -60,14 +60,14 @@ namespace AuthorityController.Data
         /// <summary>
         /// Define a format of allowed name.
         /// By default provide possibility to make a names like:
-        /// Anna
-        /// Anna-Sofia
-        /// Ad'ifaah
+        /// XXXXX
+        /// Xxxx-Xxxx
+        /// Xx'Xxx
         /// etc.
         /// 
         /// For creating your own please use a Regex sinaxis.
         /// </summary>
-        public string UserNameRegexPattern = @"^[A-Z][a-z]+[-|']?[A-Z]?[a-z]*$";
+        public string UserNameRegexPattern = @"^([A-Z][a-z]+)+([-' ][A-Z][a-z]+)?$";
         #endregion
 
         #region User rights
@@ -99,13 +99,13 @@ namespace AuthorityController.Data
         /// <summary>
         /// How many character will be allowed in password.
         /// </summary>
-        public int PasswordMaxAllowedLength = 8;
+        public int PasswordMaxAllowedLength = 32;
 
         /// <summary>
         /// If true then will requre at leas one symbol like !@$% etc.
         /// Application will provide valid mask without your involving.
         /// </summary>
-        public bool PasswordRequireNotLetterSymbol = false;
+        public bool PasswordRequireSpecialSymbol = false;
 
         /// <summary>
         /// If true then will require at least one symbol in high register.

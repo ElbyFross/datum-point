@@ -51,6 +51,8 @@
   <ItemGroup>
     <Compile Include="AuthorityController\Queries.cs" />
     <Compile Include="AuthorityController\Data.cs" />
+    <Compile Include="AuthorityController\Session.cs" />
+    <Compile Include="AuthorityController\Regex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
