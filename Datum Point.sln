@@ -39,6 +39,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THB Plugin Social", "Plugin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorityController", "AuthorityController\AuthorityController.csproj", "{A64E9D28-BA9C-43B8-B894-E73DD0E23970}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{D41E694D-0245-4D4D-9BE9-BFDB28F4A78C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -117,6 +119,10 @@ Global
 		{A64E9D28-BA9C-43B8-B894-E73DD0E23970}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A64E9D28-BA9C-43B8-B894-E73DD0E23970}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A64E9D28-BA9C-43B8-B894-E73DD0E23970}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D41E694D-0245-4D4D-9BE9-BFDB28F4A78C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D41E694D-0245-4D4D-9BE9-BFDB28F4A78C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D41E694D-0245-4D4D-9BE9-BFDB28F4A78C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D41E694D-0245-4D4D-9BE9-BFDB28F4A78C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -17,6 +17,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices;
+using System.Reflection;
+using System.Threading;
+using PipesProvider.Security;
+using PipesProvider.Server;
+using PipesProvider.Client;
+using PipesProvider.Networking.Routing;
 
 namespace SessionProvider
 {
@@ -28,8 +35,63 @@ namespace SessionProvider
     /// </summary>
     class Server : UniformServer.BaseServer
     {
+        public static bool UsersLoaded
+        {
+            get;
+            private set;
+        }
+
         static void Main(string[] args)
         {
+            #region Detect processes conflicts
+            // Get GUID of this assebly.
+            string guid = Marshal.GetTypeLibGuidForAssembly(Assembly.GetExecutingAssembly()).ToString();
+
+            // Create Mutex for this app instance.
+            mutexObj = new Mutex(true, guid, out bool newApp);
+
+            // Check does this instance a new single app, or same app already runned.
+            if (!newApp)
+            {
+                // Log error.
+                Console.WriteLine("\"THB Data Server\" already started. Application not allow multiple instances at single moment.\nGUID: " + guid);
+                // Wait a time until exit.
+                Thread.Sleep(2000);
+                return;
+            }
+            #endregion
+
+            #region Set default data \ load DLLs \ appling arguments
+            // Set default thread count. Can be changed via args or command.
+            threadsCount = Environment.ProcessorCount;
+            longTermServerThreads = new Server[threadsCount];
+
+            // React on uniform arguments.
+            ArgsReactor(args);
+
+            // Check direcroties
+            LoadAssemblies(AppDomain.CurrentDomain.BaseDirectory + "libs\\");
+            #endregion
+
+            #region Initialize authority controller
+            // Load users.
+            AuthorityController.API.Users.DirectoryLoadingUnlocked += Users_DirectoryLoadingUnlocked;
+            AuthorityController.API.Users.LoadProfilesAsync(AuthorityController.Data.Config.Active.UsersStorageDirectory);
+
+
+            #endregion
+        }
+
+        private static void Users_DirectoryLoadingUnlocked(string unlockedDirectory)
+        {
+            // If users storage loaded.
+            if (unlockedDirectory.Equals(AuthorityController.Data.Config.Active.UsersStorageDirectory))
+            {
+                // Mark users like unlocked.
+                UsersLoaded = true;
+
+                // TODO Check super admin existing.
+            }
         }
     }
 }

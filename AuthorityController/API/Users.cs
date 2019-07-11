@@ -238,7 +238,7 @@ namespace AuthorityController.API
                 while (TryToFindUser(id, out User _));
             }
 
-            return id.
+            return id;
         }
         #endregion
 

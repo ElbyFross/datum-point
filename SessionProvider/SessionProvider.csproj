@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AuthorityController\AuthorityController.csproj">
+      <Project>{a64e9d28-ba9c-43b8-b894-e73dd0e23970}</Project>
+      <Name>AuthorityController</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ConsoleDraw\ConsoleDraw.csproj">
       <Project>{f5a10f87-bcd8-4d29-8c7f-0ebeafe65a90}</Project>
       <Name>ConsoleDraw</Name>
