@@ -77,9 +77,11 @@ namespace AuthorityController.Data
         /// </summary>
         public string[] UserDefaultRights = new string[]
         {
-            "common",
+            "base",
             "commenting",
-            "publishing"
+            "publishing",
+            "personManaging",
+            "passwordManaging",
         };
         #endregion
 
@@ -139,6 +141,21 @@ namespace AuthorityController.Data
         /// >rank=2 - wil requre at least moderators level. 
         /// </summary>
         public string[] QUERY_UserBan_RIGHTS = new string[] { "banhammer", ">rank=2" };
+
+        /// <summary>
+        /// Rights code required for requester to proceed this action.
+        /// 
+        /// passwordManaging - user can change them passwords.
+        /// </summary>
+        public string[] QUERY_UserNewPassword_RIGHTS = new string[] { "passwordManaging" };
+
+        /// <summary>
+        /// What a rights will required to user that try to change the password of other user.
+        /// Also system auto add instruction where user need to have hieghest rank the target.
+        /// 
+        /// ">rank=2 - ata least moderator level.
+        /// </summary>
+        public string[] QUERY_UserPasswordModeration_RIGHTS = new string[] { ">rank=2" };
 
 
         /// <summary>

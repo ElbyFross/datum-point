@@ -67,7 +67,9 @@ namespace AuthorityController.Queries
                 UniformServer.BaseServer.SendAnswer("ERROR 412: User banned.", queryParts);
                 return;
             }
+            #endregion
 
+            #region Build answer
             // Generate new token.
             string sessionToken = API.Tokens.UnusedToken;
 
@@ -87,10 +89,10 @@ namespace AuthorityController.Queries
                 // Add every code splited by '+'.
                 query += "+" + rightsCode;
             }
-            #endregion
             
             // Send token to client.
             UniformServer.BaseServer.SendAnswer(query, queryParts);
+            #endregion
         }
 
         public bool IsTarget(QueryPart[] queryParts)

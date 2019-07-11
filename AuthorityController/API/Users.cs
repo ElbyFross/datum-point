@@ -291,6 +291,46 @@ namespace AuthorityController.API
             user = null;
             return false;
         }
+
+        /// <summary>
+        /// Seeking for user.
+        /// </summary>
+        /// <param name="uniformValue">ID or login in string format.</param>
+        /// <param name="userProfile">Field that will contain user's profile in case of found.</param>
+        /// <param name="error">Error that describe a reasone of fail. Could be send backward to client.</param>
+        /// <returns></returns>
+        public static bool TryToFindUserUniform(string uniformValue, out User userProfile, out string error)
+        {
+            // Initialize outputs.
+            userProfile = null;
+            error = null;
+            // Seeking marker.
+            bool userFound = false;
+
+            // Try to parse id from query.
+            if (Int32.TryParse(uniformValue, out int userId))
+            {
+                // Try to find user by id.
+                if (API.Users.TryToFindUser(userId, out userProfile))
+                {
+                    userFound = true;
+                }
+            }
+
+            // if user not found by ID.
+            if (!userFound)
+            {
+                // Try to find user by login.
+                if (!API.Users.TryToFindUser(uniformValue, out userProfile))
+                {
+                    // If also not found.
+                    error = "ERROR 404: User not found";
+                    return false;
+                }
+            }
+
+            return true;
+        }
         #endregion
 
         #region Security

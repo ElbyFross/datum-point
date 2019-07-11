@@ -18,6 +18,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UniformQueries;
+using System.Text.RegularExpressions;
 
 namespace AuthorityController.Queries
 {
@@ -47,17 +48,104 @@ namespace AuthorityController.Queries
 
         public void Execute(QueryPart[] queryParts)
         {
-            // Get params.
+            string error;
+
+            #region Get params.
             UniformQueries.API.TryGetParamValue("user",         out QueryPart user, queryParts);
             UniformQueries.API.TryGetParamValue("password",     out QueryPart password, queryParts);
             UniformQueries.API.TryGetParamValue("oldPassword",  out QueryPart oldPassword, queryParts);
             UniformQueries.API.TryGetParamValue("token",        out QueryPart token, queryParts);
+            #endregion
 
-            // TODO Check token rights.
+            #region Detect target user
+            if (!API.Users.TryToFindUserUniform(user.propertyValue, out Data.User userProfile, out error))
+            {
+                // Inform about error.
+                UniformServer.BaseServer.SendAnswer(error, queryParts);
+                return;
+            }
+            #endregion
 
-            // TODO Validate old password.
+            #region Check base requester rights
+            if (!API.Tokens.IsHasEnoughRigths(
+                token.propertyValue,
+                out string[] requesterRights,
+                out error,
+                Data.Config.Active.QUERY_UserNewPassword_RIGHTS))
+            {
+                // Inform about error.
+                UniformServer.BaseServer.SendAnswer(error, queryParts);
+                return;
+            }
+            #endregion
 
-            // TODO Sending data to server
+            #region Check rank permition
+            // Is that the self update?
+            bool isSelfUpdate = false;
+
+            // Check every token provided to target user.
+            foreach(string userToken in userProfile.tokens)
+            {
+                // Comare tokens.
+                if (token == userToken)
+                {
+                    // Mark as self target.
+                    isSelfUpdate = true;
+
+                    // Interupt loop.
+                    break;
+                }
+            }
+
+            // If not the self update request, then check rights to moderate.
+            if (!isSelfUpdate)
+            {
+                // Get target User's rank.
+                if(!API.Tokens.TryToGetRight("rank", out string userRank, userProfile.rights))
+                {
+                    // Inform that rights not enough.
+                    UniformServer.BaseServer.SendAnswer("ERROR 401: Unauthorized", queryParts);
+                    return;
+                }
+
+                // Check token rights.
+                if (!API.Tokens.IsHasEnoughRigths(requesterRights,
+                    // Request hiegher rank then user and at least moderator level.
+                    ">rank=" + userRank, ">rank=2"))
+                {
+                    // Inform that rank not defined.
+                    UniformServer.BaseServer.SendAnswer("ERROR 401: User rank not defined", queryParts);
+                    return;
+                }
+            }
+            #endregion
+
+            #region Validate password.
+            // Comapre password with stored.
+            if (!userProfile.IsOpenPasswordCorrect(oldPassword.propertyValue))
+            {
+                // Inform that password is incorrect.
+                UniformServer.BaseServer.SendAnswer("ERROR 412: Incorrect password", queryParts);
+                return;
+            }
+            #endregion
+
+            #region Validate new password
+            if(!PasswordValidation(password.propertyValue, out string errorMessage))
+            {
+                // Inform about incorrect login size.
+                UniformServer.BaseServer.SendAnswer(
+                    errorMessage,
+                    queryParts);
+                return;
+            }
+            #endregion
+
+            // Update password.
+            userProfile.password = API.Users.GetHashedPassword(password.propertyValue);
+
+            // Update stored profile.
+            API.Users.SetProfile(userProfile);
         }
 
         public bool IsTarget(QueryPart[] queryParts)
@@ -80,5 +168,72 @@ namespace AuthorityController.Queries
 
             return true;
         }
+
+        /// <summary>
+        /// Validate password before converting to salted hash.
+        /// </summary>
+        /// <param name="password">Open password.</param>
+        /// <param name="error">Error string that will be situable in case of validation fail.</param>
+        /// <returns>Result of validation.</returns>
+        public static bool PasswordValidation(string password, out string error)
+        {
+            error = null;
+
+            if (string.IsNullOrEmpty(password) ||
+               password.Length < Data.Config.Active.PasswordMinAllowedLength ||
+               password.Length > Data.Config.Active.PasswordMaxAllowedLength)
+            {
+                // Inform about incorrect login size.
+                error =
+                    "ERROR 401: Invalid password size. Require " +
+                    Data.Config.Active.LoginMinSize + "-" +
+                    Data.Config.Active.LoginMaxSize + " caracters.";
+                return false;
+            }
+
+            // Validate format
+            if (!Regex.IsMatch(password, @"^[a-zA-Z0-9@!#$%_]+$"))
+            {
+                // Inform about incorrect login size.
+                error = "ERROR 401: Invalid password format. Allowed symbols: [a-z][A-Z][0-9]@!#$%_";
+                return false;
+            }
+
+            // Special symbol required.
+            if (Data.Config.Active.PasswordRequireDigitSymbol)
+            {
+                if (!Regex.IsMatch(password, @"^[0-9]+$"))
+                {
+                    // Inform about incorrect login size.
+                    error = "ERROR 401: Invalid password format. Need to have at least one digit 0-9";
+                    return false;
+                }
+            }
+
+            // Special symbol required.
+            if (Data.Config.Active.PasswordRequireNotLetterSymbol)
+            {
+                if (!Regex.IsMatch(password, @"^[@!#$%_]+$"))
+                {
+                    // Inform about incorrect login size.
+                    error = "ERROR 401: Invalid password format. Need to have at least one of followed symbols: @!#$%_";
+                    return false;
+                }
+            }
+
+            // Upper cse required.
+            if (Data.Config.Active.PasswordRequireUpperSymbol)
+            {
+                if (!Regex.IsMatch(password, @"^[A-Z]+$"))
+                {
+                    // Inform about incorrect login size.
+                    error = "ERROR 401: Invalid password format. Need to have at least one symbol in upper case.";
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
     }
 }

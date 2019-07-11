@@ -69,6 +69,51 @@ namespace AuthorityController.API
             return false;
         }
 
+
+        /// <summary>
+        /// Check does this token has all requested rights.
+        /// If token is not registred on this server then will throw UnauthorizedAccessException.
+        /// </summary>
+        /// <param name="token">Unitque token of the user.</param>
+        /// <param name="error">Error that describe a reasone of fail. Could be send backward to client.</param>
+        /// <param name="requesterRights">Rights detected to that token.</param>
+        /// <param name="requiredRights">Array that contain the rights that need to by existed.</param>
+        /// <returns></returns>
+        public static bool IsHasEnoughRigths(
+            string token,
+            out string[] requesterRights, 
+            out string error, 
+            params string[] requiredRights)
+        {
+            // Initialize outputs
+            requesterRights = null;
+            error = null;
+
+            try
+            {
+                // Check if the base rights exist.
+                if (!API.Tokens.IsHasEnoughRigths(token, out requesterRights,
+                    Data.Config.Active.QUERY_UserBan_RIGHTS))
+                {
+                    // Inform that token not registred.
+                    error = "ERROR 401: Unauthorized";
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                // if token not registred.
+                if (ex is UnauthorizedAccessException)
+                {
+                    // Inform that token not registred.
+                    error = "ERROR 401: Invalid token";
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
         /// <summary>
         /// Check does this token has all requested rights.
         /// If token is not registred on this server then will throw UnauthorizedAccessException.
@@ -184,6 +229,68 @@ namespace AuthorityController.API
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// Check right existing in rights array.
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="value">Value that stored to that property by using "PROP_NAME=PROP_VALUE" format. 
+        /// NULL if empty.</param>
+        /// <param name="rights">Array that contain all rights.</param>
+        /// <returns>Result of the seeking.</returns>
+        public static bool TryToGetRight(string name, out string value, params string[] rights)
+        {
+            value = null;
+            string[] parts = new string[2];
+
+            // Check every right.
+            foreach(string right in rights)
+            {
+                // Continue incorrct property.
+                if(!right.StartsWith(name))
+                {
+                    continue;
+                }
+
+                // Try to detect value.
+                int valueIndex = right.IndexOf('=');
+                if (valueIndex != -1)
+                {
+                    // Get prop name
+                    parts[0] = right.Substring(0, valueIndex);
+
+                    // Skip if property name just seems similar to request.
+                    if (!parts[0].Equals(name))
+                    {
+                        continue;
+                    }
+
+                    // Get value.
+                    parts[1] = right.Substring(valueIndex + 1);
+
+                    // Set value to ourput.
+                    value = parts[1];
+
+                    // Iform about success.
+                    return true;
+                }
+                // If property not contain value.
+                else
+                {
+                    // Skip if property name just seems similar to request.
+                    if (!right.Equals(name))
+                    {
+                        continue;
+                    }
+
+                    // Iform about success.
+                    return true;
+                }
+            }
+
+            // Inform that property not found.
+            return false;
         }
     }
 }

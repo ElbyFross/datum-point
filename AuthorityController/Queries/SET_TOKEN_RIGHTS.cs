@@ -34,7 +34,7 @@ namespace AuthorityController.Queries
 
         public void Execute(QueryPart[] queryParts)
         {
-            string[] requesterRights = null;
+            string error;
 
             #region Get fields from query
             // Get params.
@@ -44,21 +44,14 @@ namespace AuthorityController.Queries
             #endregion
 
             #region Check requester rights
-            try
+            if (!API.Tokens.IsHasEnoughRigths(
+                token.propertyValue,
+                out string[] requesterRights,
+                out error,
+                Data.Config.Active.QUERY_SetTokenRights_RIGHTS))
             {
-                // Check token rights.
-                if (!API.Tokens.IsHasEnoughRigths(token, out requesterRights, 
-                    Data.Config.Active.QUERY_SetTokenRights_RIGHTS))
-                {
-                    // Inform that rights not enought..
-                    UniformServer.BaseServer.SendAnswer("ERROR 401: Unauthorized", queryParts);
-                    return;
-                }
-            }
-            catch
-            {
-                // Inform that token not registred.
-                UniformServer.BaseServer.SendAnswer("ERROR 401: Token not found", queryParts);
+                // Inform about error.
+                UniformServer.BaseServer.SendAnswer(error, queryParts);
                 return;
             }
             #endregion
@@ -73,34 +66,15 @@ namespace AuthorityController.Queries
             #endregion
 
             #region Compare ranks
-            // String that will contain instruction.
-            string rankRequirmentsInstruction = null;
-            // Find requester rank.
-            foreach (string rr in requesterRights)
+            // Get target User's rank.
+            if (!API.Tokens.TryToGetRight("rank", out string userRank, targetTokenRights))
             {
-                // Check if the rights is the "rank".
-                if (rr.StartsWith("rank="))
-                {
-                    rankRequirmentsInstruction = rr;
-                    break;
-                }
-            }
-
-            // If requester rank not detected.
-            if (string.IsNullOrEmpty(rankRequirmentsInstruction))
-            {
-                // Inform that rank not defined.
-                UniformServer.BaseServer.SendAnswer("ERROR 401: User rank not defined", queryParts);
-                return;
-            }
-            else
-            {
-                // Add modifier that will require from user higher rank the target.
-                rankRequirmentsInstruction = "<" + rankRequirmentsInstruction;
+                // Mean that user has a guest rank.
+                userRank = "0";
             }
 
             // Check is the target user has the less rank then requester.
-            if (!API.Tokens.IsHasEnoughRigths(targetTokenRights, rankRequirmentsInstruction))
+            if (!API.Tokens.IsHasEnoughRigths(requesterRights, ">rank=" + userRank))
             {
                 // Inform that target user has the same or heigher rank then requester.
                 UniformServer.BaseServer.SendAnswer("ERROR 401: Unauthorized", queryParts);

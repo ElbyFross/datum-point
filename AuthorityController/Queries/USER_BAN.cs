@@ -32,10 +32,7 @@ namespace AuthorityController.Queries
 
         public void Execute(QueryPart[] queryParts)
         {
-            #region Temporal fields
-            // Array that will contain rights detected by requester token.
-            string[] requesterRights = null;
-            #endregion
+            string error;
 
             #region Get params
             // Get requestor token.
@@ -49,87 +46,38 @@ namespace AuthorityController.Queries
             #endregion
 
             #region Check token rights.
-            try
+            if(!API.Tokens.IsHasEnoughRigths(
+                token.propertyValue,
+                out string[] requesterRights,
+                out error,
+                Data.Config.Active.QUERY_UserBan_RIGHTS))
             {
-                // Check if the base rights exist.
-                if(!API.Tokens.IsHasEnoughRigths(token.propertyValue, out requesterRights, 
-                    Data.Config.Active.QUERY_UserBan_RIGHTS))
-                {
-                    // Inform that token not registred.
-                    UniformServer.BaseServer.SendAnswer("ERROR 401: Unauthorized", queryParts);
-                    return;
-                }
-            }
-            catch (Exception ex)
-            {
-                // if token not registred.
-                if(ex is UnauthorizedAccessException)
-                {
-                    // Inform that token not registred.
-                    UniformServer.BaseServer.SendAnswer("ERROR 401: Invalid token", queryParts);
-                    return;
-                }
+                // Inform about error.
+                UniformServer.BaseServer.SendAnswer(error, queryParts);
+                return;
             }
             #endregion
-                       
 
             #region Detect target user
             // Find user for ban.
-            Data.User userProfile = null;
-            bool userFound = false;
-
-            // Try to parse id from query.
-            if (Int32.TryParse(user.propertyValue, out int userId))
+            if(!API.Users.TryToFindUserUniform(user.propertyValue, out Data.User userProfile, out error))
             {
-                // Try to find user by id.
-                if (API.Users.TryToFindUser(userId, out userProfile))
-                {
-                    userFound = true;
-                }
-            }
-
-            // if user not found by ID.
-            if(!userFound)
-            {
-                // Try to find user by login.
-                if (!API.Users.TryToFindUser(user.propertyValue, out userProfile))
-                {
-                    // If also not found.
-                    UniformServer.BaseServer.SendAnswer("ERROR 404: User not found", queryParts);
-                    return;
-                }
-            }
-            #endregion         
-            
-            #region Compare ranks
-            // String that will contain instruction.
-            string rankRequirmentsInstruction = null;
-            // Find requester rank.
-            foreach (string rr in requesterRights)
-            {
-                // Check if the rights is the "rank".
-                if (rr.StartsWith("rank="))
-                {
-                    rankRequirmentsInstruction = rr;
-                    break;
-                }
-            }
-
-            // If requester rank not detected.
-            if (string.IsNullOrEmpty(rankRequirmentsInstruction))
-            {
-                // Inform that rank not defined.
-                UniformServer.BaseServer.SendAnswer("ERROR 401: User rank not defined", queryParts);
+                // Inform about error.
+                UniformServer.BaseServer.SendAnswer(error, queryParts);
                 return;
             }
-            else
+            #endregion
+
+            #region Compare ranks
+            // Get target User's rank.
+            if (!API.Tokens.TryToGetRight("rank", out string userRank, userProfile.rights))
             {
-                // Add modifier that will require from user higher rank the target.
-                rankRequirmentsInstruction = "<" + rankRequirmentsInstruction;
+                // Mean that user has a guest rank.
+                userRank = "0";
             }
 
             // Check is the target user has the less rank then requester.
-            if (!API.Tokens.IsHasEnoughRigths(userProfile.rights, rankRequirmentsInstruction))
+            if (!API.Tokens.IsHasEnoughRigths(requesterRights, ">rank=" + userRank))
             {
                 // Inform that target user has the same or heigher rank then requester.
                 UniformServer.BaseServer.SendAnswer("ERROR 401: Unauthorized", queryParts);

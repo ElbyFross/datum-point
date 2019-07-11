@@ -96,70 +96,13 @@ namespace AuthorityController.Queries
             #endregion
 
             #region Validate password
-            if (string.IsNullOrEmpty(login.propertyValue) ||
-               password.propertyValue.Length < Data.Config.Active.PasswordMinAllowedLength ||
-               password.propertyValue.Length > Data.Config.Active.PasswordMaxAllowedLength)
+            if (!USER_NEW_PASSWORD.PasswordValidation(password.propertyValue, out string errorMessage))
             {
                 // Inform about incorrect login size.
                 UniformServer.BaseServer.SendAnswer(
-                    "ERROR 401: Invalid password size. Require " +
-                    Data.Config.Active.LoginMinSize + "-" +
-                    Data.Config.Active.LoginMaxSize + " caracters.",
+                    errorMessage,
                     queryParts);
                 return;
-            }
-
-            // Validate format
-            if (!Regex.IsMatch(login.propertyValue, @"^[a-zA-Z0-9@!#$%_]+$"))
-            {
-                // Inform about incorrect login size.
-                UniformServer.BaseServer.SendAnswer(
-                    "ERROR 401: Invalid password format. Allowed symbols: [a-z][A-Z][0-9]@!#$%_",
-                    queryParts);
-                return;
-
-            }
-
-            // Special symbol required.
-            if (Data.Config.Active.PasswordRequireDigitSymbol)
-            {
-                if (!Regex.IsMatch(login.propertyValue, @"^[0-9]+$"))
-                {
-                    // Inform about incorrect login size.
-                    UniformServer.BaseServer.SendAnswer(
-                        "ERROR 401: Invalid password format. Need to have at least one digit 0-9",
-                        queryParts);
-                    return;
-
-                }
-            }
-
-            // Special symbol required.
-            if (Data.Config.Active.PasswordRequireNotLetterSymbol)
-            {
-                if (!Regex.IsMatch(login.propertyValue, @"^[@!#$%_]+$"))
-                {
-                    // Inform about incorrect login size.
-                    UniformServer.BaseServer.SendAnswer(
-                        "ERROR 401: Invalid password format. Need to have at least one of followed symbols: @!#$%_",
-                        queryParts);
-                    return;
-
-                }
-            }
-
-            // Upper cse required.
-            if (Data.Config.Active.PasswordRequireUpperSymbol)
-            {
-                if (!Regex.IsMatch(login.propertyValue, @"^[A-Z]+$"))
-                {
-                    // Inform about incorrect login size.
-                    UniformServer.BaseServer.SendAnswer(
-                        "ERROR 401: Invalid password format. Need to have at least one symbol in upper case.",
-                        queryParts);
-                    return;
-
-                }
             }
 
             // Can take enough long time so just let other query to process.
