@@ -31,7 +31,7 @@ namespace AuthorityController.Data
         /// </summary>
         public static TokenInfo Anonymous
         {
-            get { return new TokenInfo() { userId = -1 }; }
+            get { return new TokenInfo() { userId = 0 }; }
         }
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace AuthorityController.Data
         /// <summary>
         /// Id of user that recive this token.
         /// </summary>
-        public int userId;
+        public uint userId;
 
         /// <summary>
         /// Time when token was allocated in system.

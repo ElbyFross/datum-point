@@ -36,10 +36,22 @@ namespace AuthorityController.API
         #region Events
         /// <summary>
         /// Event that will be called when loading of users from directory will be finished.
+        /// Int - count of loaded files.
+        /// Int - count of corupted files.
         /// </summary>
-        public static event System.Action<string> DirectoryLoadingUnlocked;
+        public static event System.Action<string, int, int> DirectoryLoadingFinished;
+
+        /// <summary>
+        /// Event that will be called when profile will be setted to storage.
+        /// </summary>
+        public static event System.Action<User> UserProfileStored;
+
+        /// <summary>
+        /// Event that will be called when profile will be fail adding to storage.
+        /// </summary>
+        public static event System.Action<User, string> UserProfileNotStored;
         #endregion
-                
+
         #region Private fields
         /// <summary>
         /// Table that provide aaccess to user data by login.
@@ -66,25 +78,39 @@ namespace AuthorityController.API
         public static async void LoadProfilesAsync(string directory)
         {
             // Validate directory.
-            if(!Directory.Exists(directory))
+            if (!Directory.Exists(directory))
             {
                 Console.WriteLine("ERROR (ACAPI 0): USERS LOADING NOT POSSIBLE. DIRECTORY NOT FOUND.");
+
+                // Inform subscribers about finish.
+                DirectoryLoadingFinished?.Invoke(directory, 0, 0);
+
                 return;
             }
 
             // Block if certain directory already in loading process.
-            if(LoadingLockedDirectories.Contains(directory))
+            if (LoadingLockedDirectories.Contains(directory))
             {
                 Console.WriteLine("ERROR (ACAPI 10): Directory alredy has active loading process. Wait until finish previous one. ({0})",
                     directory);
+
+                // Inform subscribers about finish.
+                DirectoryLoadingFinished?.Invoke(directory, 0, 0);
+
                 return;
             }
 
+            // Lock directory.
+            LoadingLockedDirectories.Add(directory);
+
             // Detect files in provided directory.
-            string[] xmlFiles = Directory.GetFiles(directory, "*.xml", SearchOption.TopDirectoryOnly);
-            
+            string[] xmlFiles = Directory.GetFiles(directory, "*", SearchOption.TopDirectoryOnly);
+
+            int loadingSucceed = 0;
+            int loadingFailed = 0;
+
             // Running async task with loading of every profile.
-            await Task.Run(() => 
+            await Task.Run(() =>
             {
                 // Init encoder.
                 XmlSerializer xmlSer = new XmlSerializer(typeof(User));
@@ -102,7 +128,7 @@ namespace AuthorityController.API
                             loadedUser = xmlSer.Deserialize(fs) as User;
 
                             #region Add user to ids table.
-                            if(UsersById[loadedUser.id] is User idU)
+                            if (UsersById[loadedUser.id] is User idU)
                             {
                                 // Override if already exist.
                                 UsersById[loadedUser.id] = loadedUser;
@@ -126,20 +152,29 @@ namespace AuthorityController.API
                                 UsersByLogin.Add(loadedUser.login, loadedUser);
                             }
                             #endregion
+
+                            // Up counter.
+                            loadingSucceed++;
                         }
                         catch (Exception ex)
                         {
+                            // Up counter.
+                            loadingFailed++;
+
+                            // Inform.
                             Console.WriteLine("ERROR(ACAPI 20): Profile damaged. Reason:\n{0}\n", ex.Message);
                         }
-
                     }
+
+                    // Share quant to other processes.
+                    Thread.Yield();
                 }
 
                 // Remove directory from blocklist.
                 LoadingLockedDirectories.Remove(directory);
 
                 // Inform subscribers about location unlock.
-                DirectoryLoadingUnlocked?.Invoke(directory);
+                DirectoryLoadingFinished?.Invoke(directory, loadingSucceed, loadingFailed);
             });
         }
 
@@ -149,7 +184,7 @@ namespace AuthorityController.API
         /// <param name="user"></param>
         public static void SetProfile(User user)
         {
-            SetProfile(user, Config.Active.UsersStorageDirectory);
+            SetProfileAsync(user, Config.Active.UsersStorageDirectory);
         }
 
         /// <summary>
@@ -157,7 +192,7 @@ namespace AuthorityController.API
         /// </summary>
         /// <param name="user"></param>
         /// <param name="directory"></param>
-        public static void SetProfile(User user, string directory)
+        public static async void SetProfileAsync(User user, string directory)
         {
             // Check directory exist.
             if (!Directory.Exists(directory))
@@ -166,32 +201,43 @@ namespace AuthorityController.API
                 Directory.CreateDirectory(directory);
             }
 
-            // Convert user to XML file.
-            try
+            await Task.Run(() =>
             {
-                XmlDocument xmlDocument = new XmlDocument();
-                XmlSerializer serializer = new XmlSerializer(typeof(User));
-                using (MemoryStream stream = new MemoryStream())
+                string filePath = directory + GetUserFileName(user);
+
+                // Convert user to XML file.
+                try
                 {
-                    serializer.Serialize(stream, user);
-                    stream.Position = 0;
-                    xmlDocument.Load(stream);
-                    xmlDocument.Save(directory + GetUserFileName(user));
+                    XmlDocument xmlDocument = new XmlDocument();
+                    XmlSerializer serializer = new XmlSerializer(typeof(User));
+                    using (MemoryStream stream = new MemoryStream())
+                    {
+                        serializer.Serialize(stream, user);
+                        stream.Position = 0;
+                        xmlDocument.Load(stream);
+                        xmlDocument.Save(filePath);
+                    }
+
+                    // inform subscribers.
+                    UserProfileStored?.Invoke(user);
                 }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("ERROR(ACAPI 30):  Not serialized. Reason:\n{0}", ex.Message);
-            }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("ERROR(ACAPI 30):  Not serialized. Reason:\n{0}", ex.Message);
+
+                    // inform subscribers.
+                    UserProfileNotStored?.Invoke(user, ex.Message);
+                }
+            });
         }
 
         /// <summary>
         /// Remove user profile from directory seted up via Config file.
         /// </summary>
         /// <param name="user"></param>
-        public static void RemoveProfile(User user)
+        public static bool RemoveProfile(User user)
         {
-            RemoveProfile(user, Config.Active.UsersStorageDirectory);
+            return RemoveProfile(user, Config.Active.UsersStorageDirectory);
         }
 
         /// <summary>
@@ -199,7 +245,7 @@ namespace AuthorityController.API
         /// </summary>
         /// <param name="user"></param>
         /// <param name="directory"></param>
-        public static void RemoveProfile(User user, string directory)
+        public static bool RemoveProfile(User user, string directory)
         {
             // Expire user sessions.
             foreach (string token in user.tokens)
@@ -211,10 +257,12 @@ namespace AuthorityController.API
             try
             {
                 File.Delete(directory + GetUserFileName(user));
+                return true;
             }
             catch(Exception ex)
             {
                 Console.WriteLine("ERROR(ACAPI 60):  Prifile removing failed. Reason:\n{0}", ex.Message);
+                return false;
             }
         }
 
@@ -223,10 +271,10 @@ namespace AuthorityController.API
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public static int GenerateID(User user)
+        public static uint GenerateID(User user)
         {
             // Generate ID by hash code.
-            int id = user.login.GetHashCode();
+            uint id = (uint)Math.Abs(user.login.GetHashCode());
 
             // If already exist.
             if (TryToFindUser(id, out User _))
@@ -259,7 +307,7 @@ namespace AuthorityController.API
         /// <param name="id">Unique user's id.</param>
         /// <param name="user">Reference on loaded user profile.</param>
         /// <returns>Result of operation.</returns>
-        public static bool TryToFindUser(int id, out User user)
+        public static bool TryToFindUser(uint id, out User user)
         {
             // Try to find user in table.
             if (UsersById[id] is User bufer)
@@ -309,7 +357,7 @@ namespace AuthorityController.API
             bool userFound = false;
 
             // Try to parse id from query.
-            if (Int32.TryParse(uniformValue, out int userId))
+            if (uint.TryParse(uniformValue, out uint userId))
             {
                 // Try to find user by id.
                 if (API.Users.TryToFindUser(userId, out userProfile))
@@ -393,7 +441,7 @@ namespace AuthorityController.API
                     banInformation.active = false;
 
                     // Update profile.
-                    API.Users.SetProfile(user, Config.Active.UsersStorageDirectory);
+                    API.Users.SetProfileAsync(user, Config.Active.UsersStorageDirectory);
                 }
 
                 // Check every baned right.
@@ -428,7 +476,7 @@ namespace AuthorityController.API
             }
 
             // Get user ID in string format.
-            string name = user.id.ToString() + ".xml";
+            string name = user.id.ToString() + ".user";
             return name;
         }
         #endregion

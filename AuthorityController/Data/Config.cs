@@ -29,12 +29,12 @@ namespace AuthorityController.Data
         /// <summary>
         /// Directory that will contain serialized instance of this class.
         /// </summary>
-        public const string DIRECTORY = "\\resources\\ac\\";
+        public static string DIRECTORY = "\\resources\\ac\\";
 
         /// <summary>
         /// Name of the file that will be loaded as config.
         /// </summary>
-        public const string CONFIG_FILE_NAME = "config.xml";        
+        public static string CONFIG_FILE_NAME = ".config";        
         #endregion
                
         #region Serialized fields
@@ -182,14 +182,13 @@ namespace AuthorityController.Data
                 if (active == null)
                 {
                     // Try to load config from directory.
-                    if (!TryToLoad<Config>(DIRECTORY, CONFIG_FILE_NAME, out active))
+                    if (!TryToLoad<Config>(DIRECTORY + CONFIG_FILE_NAME, out active))
                     {
                         // Create new one if failed.
                         active = new Config();
 
                         // Save to resources.
                         active.SaveAs(DIRECTORY, CONFIG_FILE_NAME);
-
                     }
                 }
                 return active;
@@ -212,7 +211,7 @@ namespace AuthorityController.Data
                 if (salt == null)
                 {
                     // Try to load from resources.
-                    if (!TryToLoad<SaltContainer>(DIRECTORY, PasswordSaltFileName, out salt))
+                    if (!TryToLoad<SaltContainer>(DIRECTORY + PasswordSaltFileName, out salt))
                     {
                         // TODO Generate new salt.
 
@@ -266,7 +265,7 @@ namespace AuthorityController.Data
                     serializer.Serialize(stream, this);
                     stream.Position = 0;
                     xmlDocument.Load(stream);
-                    xmlDocument.Save(directory + fileName + ".xml");
+                    xmlDocument.Save(directory + fileName);
                 }
             }
             catch (Exception ex)
@@ -279,13 +278,13 @@ namespace AuthorityController.Data
         /// Trying to deserialize object from XML file.
         /// </summary>
         /// <typeparam name="T">Required type</typeparam>
-        /// <param name="directory">Folder where file stored.</param>
-        /// <param name="fileName">Name of the file incliding extension.</param>
+        /// <param name="path">Full path to file.</param>
         /// <param name="result">Deserizlised object.</param>
         /// <returns></returns>
-        public static bool TryToLoad<T>(string directory, string fileName, out T result)
-        { // Check file exist.
-            if (!File.Exists(directory))
+        public static bool TryToLoad<T>(string path, out T result)
+        { 
+            // Check file exist.
+            if (!File.Exists(path))
             {
                 result = default(T);
                 return false;
@@ -295,7 +294,7 @@ namespace AuthorityController.Data
             XmlSerializer xmlSer = new XmlSerializer(typeof(T));
 
             // Open stream to XML file.
-            using (FileStream fs = new FileStream(directory + fileName, FileMode.Open))
+            using (FileStream fs = new FileStream(path, FileMode.Open))
             {
                 try
                 {

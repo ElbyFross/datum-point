@@ -75,7 +75,7 @@ namespace SessionProvider
 
             #region Initialize authority controller
             // Load users.
-            AuthorityController.API.Users.DirectoryLoadingUnlocked += Users_DirectoryLoadingUnlocked;
+            AuthorityController.API.Users.DirectoryLoadingFinished += Users_DirectoryLoadingUnlocked;
             AuthorityController.API.Users.LoadProfilesAsync(AuthorityController.Data.Config.Active.UsersStorageDirectory);
 
 

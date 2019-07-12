@@ -33,7 +33,7 @@ namespace AuthorityController.Data
         /// <summary>
         /// Unique id of this user to allow services access.
         /// </summary>
-        public int id;
+        public uint id;
 
         /// <summary>
         /// Login of this user to access the system.
@@ -59,12 +59,12 @@ namespace AuthorityController.Data
         /// <summary>
         /// Array of rigts' codes provided to this user.
         /// </summary>
-        public string[] rights;
+        public string[] rights = new string[0];
 
         /// <summary>
         /// List of bans that would received by user.
         /// </summary>
-        public List<BanInformation> bans;
+        public List<BanInformation> bans = new List<BanInformation>();
 
         /// <summary>
         /// List of culture codes that prefered by this user.
@@ -73,7 +73,7 @@ namespace AuthorityController.Data
         /// Define what a UI language will selected after user login.
         /// Useful in multicultural environment like universities.
         /// </summary>
-        public List<string> culturePreferences;
+        public List<string> culturePreferences = new List<string>();
         #endregion
 
         #region Seesion-time fields
@@ -81,7 +81,7 @@ namespace AuthorityController.Data
         /// List that cont tokens provided to this user.
         /// </summary>
         [System.Xml.Serialization.XmlIgnore]
-        public List<string> tokens;
+        public List<string> tokens = new List<string>();
         #endregion
 
 

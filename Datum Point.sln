@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "THB Plugin Social", "Plugin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorityController", "AuthorityController\AuthorityController.csproj", "{A64E9D28-BA9C-43B8-B894-E73DD0E23970}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorityControllerTests", "UnitTestProject\AuthorityControllerTests.csproj", "{D41E694D-0245-4D4D-9BE9-BFDB28F4A78C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthorityControllerTests", "AuthorityControllerTests\AuthorityControllerTests.csproj", "{D41E694D-0245-4D4D-9BE9-BFDB28F4A78C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
