@@ -13,19 +13,100 @@
 //limitations under the License.
 
 using System;
+using System.Threading;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using AuthorityControllerTests;
+using Microsoft.Win32.SafeHandles;
+using UniformQueries;
 
 namespace AuthorityController.Tests
 {
     [TestClass]
     public class Queries
     {
+        [TestInitialize]
+        public void Setup()
+        {
+        }
+
         /// <summary>
         /// Trying to get guest token using query.
         /// </summary>
         [TestMethod]
         public void GetGuestToken()
         {
+            // Marker.
+            bool waitingAnswer = true;
+
+            // Make query.
+            QueryPart[] queryParts = new QueryPart[]
+            {
+                new QueryPart("guid", "GetGuestToken"),
+                new QueryPart("GET"),
+                new QueryPart("GUEST"),
+                new QueryPart("TOKEN")
+            };
+
+            // Start listening client.
+            UniformClient.SimpleClient.ReceiveAnswer(
+                UniformClient.BaseClient.OpenOutTransmissionLine("localhost", "GetGuestToken"),
+                queryParts,
+                (PipesProvider.Client.TransmissionLine line, object obj) =>
+                {
+                    // Validate answer.
+                    if (obj is string answer)
+                    {
+                        // Unlock finish blocker.
+                        waitingAnswer = false;
+
+                        QueryPart[] recivedQuery = UniformQueries.API.DetectQueryParts(answer);
+
+                        // Check token.
+                        if(UniformQueries.API.TryGetParamValue("token", out QueryPart token, recivedQuery))
+                        {
+                            bool tokenProvided = !string.IsNullOrEmpty(token.propertyValue);
+                            Assert.IsTrue(tokenProvided, "Token is null.\n"+ answer);
+                        }
+                        else
+                        {
+                            // Inform that failed.
+                            Assert.IsTrue(false, "Token not provided.\n" + answer);
+                            return;
+                        }
+
+                        // Check expire time.
+                        if (!UniformQueries.API.TryGetParamValue("expireIn", out QueryPart _, recivedQuery))
+                            Assert.IsTrue(false, "Expire time not provided.\n" + answer);
+
+                        // Check rights providing.
+                        if (!UniformQueries.API.TryGetParamValue("rights", out QueryPart _, recivedQuery))
+                            Assert.IsTrue(false, "Rights not shared.\n" + answer);
+                    }
+                    else
+                    {
+                        // Inform that failed.
+                        Assert.IsTrue(false, "Incorrect answer type.");
+                        return;
+                    }
+                });
+
+            // Start processing.
+            if (UniformQueries.API.TryFindQueryHandler(queryParts, out IQueryHandler handler))
+            {
+                // Execute query.
+                handler.Execute(queryParts);
+            }
+            else
+            {
+                // Inform that failed.
+                Assert.IsTrue(false, "Query not found.");
+            }
+
+            // Wait server answer.
+            while(waitingAnswer)
+            {
+                Thread.Sleep(5);
+            }
         }
 
         /// <summary>

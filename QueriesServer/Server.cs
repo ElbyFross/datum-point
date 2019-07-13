@@ -24,6 +24,7 @@ using PipesProvider.Security;
 using PipesProvider.Server;
 using PipesProvider.Client;
 using PipesProvider.Networking.Routing;
+using PipesProvider.Server.TransmissionControllers;
 
 namespace QueriesServer
 {
@@ -192,7 +193,7 @@ namespace QueriesServer
         /// </summary>
         /// <param name="_"></param>
         /// <param name="query"></param>
-        public static void QueryHandler_Relay(ServerTransmissionController _, string query)
+        public static void QueryHandler_Relay(BaseServerTransmissionController _, string query)
         {
             // Try to decrypt.
             query = PipesProvider.Security.Crypto.DecryptString(query);

@@ -20,6 +20,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
 using PipesProvider.Server;
+using PipesProvider.Server.TransmissionControllers;
 
 namespace UniformServer
 {
@@ -269,39 +270,49 @@ namespace UniformServer
             server.pipeName = domain;
 
             // Create delegate that will set our answer message to processing whentransmission meta will available.
-            Action<PipesProvider.Server.ServerTransmissionController> initationCallback = null;
-            initationCallback = delegate (PipesProvider.Server.ServerTransmissionController tm)
+            void InitationCallback(BaseServerTransmissionController tc)
             {
-                // Target callback.
-                if (tm.name == server.pipeName)
+                if (tc is ServerAnswerTransmissionController transmissionController)
                 {
-                    // Unsubscribe.
-                    ServerAPI.ServerTransmissionMeta_InProcessing -= initationCallback;
-
-                    // Encrypt query if requested by "pk" query's param.
-                    if(UniformQueries.API.TryGetParamValue(
-                        "pk", 
-                        out UniformQueries.QueryPart publicKeyProp, 
-                        entryQueryParts))
+                    // Target callback.
+                    if (transmissionController.name == server.pipeName)
                     {
-                        // Try to get publick key from entry query.
-                        if (PipesProvider.Security.Crypto.TryDeserializeRSAKey(publicKeyProp.propertyValue, 
-                            out System.Security.Cryptography.RSAParameters publicKey))
+                        // Unsubscribe.
+                        ServerAPI.ServerTransmissionMeta_InProcessing -= InitationCallback;
+
+                        // Encrypt query if requested by "pk" query's param.
+                        if (UniformQueries.API.TryGetParamValue(
+                            "pk",
+                            out UniformQueries.QueryPart publicKeyProp,
+                            entryQueryParts))
                         {
-                            // Encrypt query.
-                            answer = PipesProvider.Security.Crypto.EncryptString(answer, publicKey);
+                            // Try to get publick key from entry query.
+                            if (PipesProvider.Security.Crypto.TryDeserializeRSAKey(publicKeyProp.propertyValue,
+                                out System.Security.Cryptography.RSAParameters publicKey))
+                            {
+                                // Encrypt query.
+                                answer = PipesProvider.Security.Crypto.EncryptString(answer, publicKey);
+                            }
                         }
+
+                        // Set answer query as target for processing,
+                        transmissionController.ProcessingQuery = answer;
+
+                        // Log.
+                        Console.WriteLine("{0}: Processing query changed on:\n{1}\n", transmissionController.name, answer);
                     }
-
-                    // Set answer query as target for processing,
-                    tm.ProcessingQuery = answer;
-
-                    // Log.
-                    Console.WriteLine("{0}: Processing query changed on:\n{1}\n", tm.name, answer);
                 }
-            };            
+                else // Incorrect type.
+                {
+                    // Close transmisssion.
+                    tc.SetStoped();
+                    
+                    // Log.
+                    Console.WriteLine("{0}: ERROR Incorrect transmisssion controller. Required \"ServerAnswerTransmissionController\"", tc.name);
+                }
+            }
             // Subscribe or waiting delegate on server loop event.
-            ServerAPI.ServerTransmissionMeta_InProcessing += initationCallback;
+            ServerAPI.ServerTransmissionMeta_InProcessing += InitationCallback;
 
 
             // Starting server loop.

@@ -301,7 +301,7 @@ namespace AuthorityController.Data
             // Check file exist.
             if (!File.Exists(path))
             {
-                result = default(T);
+                result = default;
                 return false;
             }
 
@@ -319,7 +319,7 @@ namespace AuthorityController.Data
                 catch (Exception ex)
                 {
                     Console.WriteLine("Auth control error (ACC 20): File reading failed. Reason:\n{0}\n", ex.Message);
-                    result = default(T);
+                    result = default;
                     return false;
                 }
             }

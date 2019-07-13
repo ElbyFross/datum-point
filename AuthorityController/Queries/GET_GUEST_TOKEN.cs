@@ -24,7 +24,7 @@ namespace AuthorityController.Queries
     /// <summary>
     /// Registrate token with guest rights in the system and return to client.
     /// </summary>
-    class GET_GUEST_TOKEN : IQueryHandlerProcessor
+    class GET_GUEST_TOKEN : IQueryHandler
     {
         public string Description(string cultureKey)
         {

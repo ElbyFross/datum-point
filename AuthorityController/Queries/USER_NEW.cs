@@ -24,7 +24,7 @@ namespace AuthorityController.Queries
     /// <summary>
     /// Create new user.
     /// </summary>
-    public class USER_NEW : IQueryHandlerProcessor
+    public class USER_NEW : IQueryHandler
     {
         public string Description(string cultureKey)
         {
@@ -168,7 +168,7 @@ namespace AuthorityController.Queries
                 };
 
             // Create logon subquery.
-            foreach(UniformQueries.IQueryHandlerProcessor processor in UniformQueries.API.QueryProcessors)
+            foreach(UniformQueries.IQueryHandler processor in UniformQueries.API.QueryProcessors)
             {
                 // Fini logon query processor.
                 if(processor is USER_LOGON)

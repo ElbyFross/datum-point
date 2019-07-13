@@ -20,6 +20,7 @@ using System.IO;
 using System.IO.Pipes;
 using UniformQueries;
 using UQAPI = UniformQueries.API;
+using PipesProvider.Server.TransmissionControllers;
 
 namespace PipesProvider.Handlers
 {
@@ -31,7 +32,7 @@ namespace PipesProvider.Handlers
         /// </summary>
         /// <param name="meta"></param>
         /// <param name="query"></param>
-        public static async void ProcessingAsync(PipesProvider.Server.ServerTransmissionController _, string query)
+        public static async void ProcessingAsync(BaseServerTransmissionController _, string query)
         {
             // Detect query parts.
             QueryPart[] queryParts = UQAPI.DetectQueryParts(query);
@@ -55,32 +56,22 @@ namespace PipesProvider.Handlers
             }
 
             // Try to detect target query processor.
-            bool processorFound = false;
-            foreach (UniformQueries.IQueryHandlerProcessor processor in UniformQueries.API.QueryProcessors)
+            if(API.TryFindQueryHandler(queryParts, out UniformQueries.IQueryHandler handler))
             {
-                // Check header
-                if (processor.IsTarget(queryParts))
-                {
-                    // Log.
-                    Console.WriteLine("Start execution: [{0}]\n for token: [{1}]",
-                        query, token.IsNone ? "token not found" : token.propertyValue);
+                // Log.
+                Console.WriteLine("Start execution: [{0}]\n for token: [{1}]",
+                    query, token.IsNone ? "token not found" : token.propertyValue);
 
-                    // Execute query as async.
-                    await Task.Run(() => processor.Execute(queryParts));
-
-                    // Mark detection as succeed.
-                    processorFound = true;
-
-                    // Leave search.
-                    break;
-                }
+                // Execute query as async.
+                await Task.Run(() => handler.Execute(queryParts));
             }
-
-            // If not found.
-            if (!processorFound)
+            else
             {
-                Console.WriteLine("POST ERROR: Token: {1} | Handler for query \"{0}\" not implemented.", query, token);
+                // Inform about error.
+                Console.WriteLine("POST ERROR: Token: {1} | Handler for query \"{0}\" not implemented.",
+                    query, token);
             }
+           
         }
     }
 }

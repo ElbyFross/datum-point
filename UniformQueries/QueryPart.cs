@@ -54,6 +54,17 @@ namespace UniformQueries
 
         /// <summary>
         /// Base constructor.
+        /// Value will be null
+        /// </summary>
+        /// <param name="key">String key that allow to find this part in query.</param>
+        public QueryPart(string key)
+        {
+            this.propertyName = key;
+            this.propertyValue = null;
+        }
+
+        /// <summary>
+        /// Base constructor.
         /// </summary>
         /// <param name="key">String key that allow to find this part in query.</param>
         /// <param name="property">String property that will be available to  find by key.</param>

@@ -25,7 +25,7 @@ namespace AuthorityController.Queries
     /// Log out user.
     /// Expire shared token.
     /// </summary>
-    public class USER_LOGOFF : IQueryHandlerProcessor
+    public class USER_LOGOFF : IQueryHandler
     {
         public string Description(string cultureKey)
         {

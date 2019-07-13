@@ -68,7 +68,7 @@ namespace UniformServer
                     Console.WriteLine();
                     Console.WriteLine("QUERIES LIST:");
                     Console.WriteLine();
-                    foreach (UniformQueries.IQueryHandlerProcessor qp in UniformQueries.API.QueryProcessors)
+                    foreach (UniformQueries.IQueryHandler qp in UniformQueries.API.QueryProcessors)
                     {
                         try
                         {

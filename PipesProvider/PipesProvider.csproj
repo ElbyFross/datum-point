@@ -56,9 +56,11 @@
     <Compile Include="Security\SecurityLevel.cs" />
     <Compile Include="Client\TransmissionLine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\TransmisssionControllers\BroadcastingServerTransmissionController.cs" />
     <Compile Include="Server\QueryContainer.cs" />
     <Compile Include="Server\ServerAPI.cs" />
-    <Compile Include="Server\ServerTransmissionController.cs" />
+    <Compile Include="Server\TransmisssionControllers\ServerAnswerTransmissionController.cs" />
+    <Compile Include="Server\TransmisssionControllers\BaseServerTransmissionController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UniformQueries\UniformQueries.csproj">

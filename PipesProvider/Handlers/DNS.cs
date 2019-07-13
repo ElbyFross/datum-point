@@ -21,6 +21,7 @@ using System.IO.Pipes;
 using UniformQueries;
 using PipesProvider.Server;
 using UQAPI = UniformQueries.API;
+using PipesProvider.Server.TransmissionControllers;
 
 namespace PipesProvider.Handlers
 {
@@ -33,15 +34,15 @@ namespace PipesProvider.Handlers
         /// Code that will work on server loop when connection will be established.
         /// Recoomended to using as default DNS Handler for queries reciving.
         /// </summary>
-        public static async void ClientToServerAsync(ServerTransmissionController meta)
+        public static async void ClientToServerAsync(BaseServerTransmissionController controller)
         {
             // Open stream reader.
-            StreamReader sr = new StreamReader(meta.pipe);
+            StreamReader sr = new StreamReader(controller.pipe);
             string queryBufer;
             DateTime sessionTime = DateTime.Now.AddSeconds(5000);
 
             // Read until trasmition exits not finished.
-            while (meta.pipe.IsConnected)
+            while (controller.pipe.IsConnected)
             {
                 queryBufer = null;
                 // Read line from stream.
@@ -65,7 +66,7 @@ namespace PipesProvider.Handlers
                         /// Avoid disconnectin error.
                         try
                         {
-                            meta.pipe.Disconnect();
+                            controller.pipe.Disconnect();
                         }
                         catch { throw; }
 
@@ -74,13 +75,13 @@ namespace PipesProvider.Handlers
                 }
 
                 // Disconnect user if query recived.
-                if (meta.pipe.IsConnected)
+                if (controller.pipe.IsConnected)
                 {
-                    meta.pipe.Disconnect();
+                    controller.pipe.Disconnect();
                 }
 
                 // Remove temporal data.
-                meta.pipe.Dispose();
+                controller.pipe.Dispose();
 
                 // Drop if stream is over.
                 if (string.IsNullOrEmpty(queryBufer))
@@ -99,7 +100,7 @@ namespace PipesProvider.Handlers
                 Console.WriteLine(@"RECIVED QUERY (DNS0): {0}", queryBufer);
 
                 // Redirect handler.
-                meta.queryHandlerCallback?.Invoke(meta, queryBufer);
+                controller.queryHandlerCallback?.Invoke(controller, queryBufer);
             }
 
             // Log about transmission finish.
@@ -110,42 +111,99 @@ namespace PipesProvider.Handlers
         /// Code that will work on server loop when connection will be established.
         /// Recoomended to using as default DNS Handler for message sending.
         /// </summary>
-        public static async void ServerToClientAsync(ServerTransmissionController meta)
+        public static async void ServerToClientAsync(BaseServerTransmissionController controller)
         {
-            // Open stream reader.
-            StreamWriter sw = new StreamWriter(meta.pipe);
-            //StreamWriter sw = new StreamWriter(meta.pipe, Encoding.UTF8, 128, true);
-
-            // Buferise query before calling of async operations.
-            string sharedQuery = meta.ProcessingQuery;
-
-            // Read until trasmition exits not finished.
-            // Avoid an error caused to disconection of client.
-            try
+            // Try to get correct controller.
+            if (controller is ServerAnswerTransmissionController outController)
             {
-                // Write message to stream.
-                Console.WriteLine("{0}: Start transmission to client.", meta.name);
-                await sw.WriteAsync(sharedQuery);
-                await sw.FlushAsync();
+                // Open stream reader.
+                StreamWriter sw = new StreamWriter(outController.pipe);
+
+                // Buferise query before calling of async operations.
+                string sharedQuery = outController.ProcessingQuery;
+
+                // Read until trasmition exits not finished.
+                // Avoid an error caused to disconection of client.
+                try
+                {
+                    // Write message to stream.
+                    Console.WriteLine("{0}: Start transmission to client.", outController.name);
+                    await sw.WriteAsync(sharedQuery);
+                    await sw.FlushAsync();
+                }
+                // Catch the Exception that is raised if the pipe is broken or disconnected.
+                catch (Exception e)
+                {
+                    Console.WriteLine("DNS HANDLER ERROR (StC0): {0}", e.Message);
+                    return;
+                }
             }
-            // Catch the Exception that is raised if the pipe is broken or disconnected.
-            catch (Exception e)
+            else
             {
-                Console.WriteLine("DNS HANDLER ERROR (StC0): {0}", e.Message);
-                return;
+                // Log about transmission finish.
+                Console.WriteLine("TRANSMISSION ERROR: Try to user invalid controller as output.");
             }
 
             // Disconnect user if query recived.
-            if (meta.pipe.IsConnected)
+            if (controller.pipe.IsConnected)
             {
-                meta.pipe.Disconnect();
+                controller.pipe.Disconnect();
             }
 
             // Remove temporal data.
-            meta.pipe.Dispose();
+            controller.pipe.Dispose();
 
             // Stop this transmission line.
-            meta.SetStoped();
+            controller.SetStoped();
+
+            // Log about transmission finish.
+            Console.WriteLine("TRANSMISSION FINISHED AT {0}", DateTime.Now.ToString("HH:mm:ss.fff"));
+        }
+
+        /// <summary>
+        /// Code that will work on server loop when connection will be established.
+        /// Recoomended to using as default DNS Handler for message sending.
+        /// 
+        /// Provide broadcasting to client by useing GetMessage delegate of BroadcastingServerTC controller.
+        /// </summary>
+        public static async void ServerBroadcasting(BaseServerTransmissionController controller)
+        {
+            // Try to get correct controller.
+            if (controller is BroadcastingServerTransmissionController broadcastController)
+            {
+                // Open stream reader.
+                StreamWriter sw = new StreamWriter(controller.pipe);
+
+                // Read until trasmition exits not finished.
+                // Avoid an error caused to disconection of client.
+                try
+                {
+                    // Get message
+                    string message = broadcastController.GetMessage();
+
+                    // Write message to stream.
+                    Console.WriteLine("{0}: Start transmission to client.", controller.name);
+                    await sw.WriteAsync(message);
+                    await sw.FlushAsync();
+                }
+                // Catch the Exception that is raised if the pipe is broken or disconnected.
+                catch (Exception e)
+                {
+                    Console.WriteLine("DNS HANDLER ERROR (StC0): {0}", e.Message);
+                    return;
+                }
+            }
+            else
+            {
+                // Log about transmission finish.
+                Console.WriteLine("TRANSMISSION ERROR: Try to user invalid controller for broadcasting.");
+            }
+
+            // Disconnect user if query recived.
+            if (controller.pipe.IsConnected)
+            {
+                controller.pipe.Disconnect();
+            }
 
             // Log about transmission finish.
             Console.WriteLine("TRANSMISSION FINISHED AT {0}", DateTime.Now.ToString("HH:mm:ss.fff"));

@@ -82,7 +82,7 @@ namespace SessionProvider
             #endregion
         }
 
-        private static void Users_DirectoryLoadingUnlocked(string unlockedDirectory)
+        private static void Users_DirectoryLoadingUnlocked(string unlockedDirectory, int sucess, int failed)
         {
             // If users storage loaded.
             if (unlockedDirectory.Equals(AuthorityController.Data.Config.Active.UsersStorageDirectory))

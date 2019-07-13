@@ -27,7 +27,7 @@ namespace AuthorityController.Queries
     /// 
     /// USER&LOGON&login=...&password=...&mac=...&os=....&
     /// </summary>
-    public class USER_LOGON : IQueryHandlerProcessor
+    public class USER_LOGON : IQueryHandler
     {
         public string Description(string cultureKey)
         {

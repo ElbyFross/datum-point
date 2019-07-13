@@ -23,7 +23,7 @@ namespace UniformServer.Queries
     /// <summary>
     /// Query that request from server public encription key (RSA algorithm).
     /// </summary>
-    class GET_PUBLIC_KEY : IQueryHandlerProcessor
+    class GET_PUBLIC_KEY : IQueryHandler
     {
         public string Description(string cultureKey)
         {

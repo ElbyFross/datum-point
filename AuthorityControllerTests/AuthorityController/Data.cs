@@ -17,41 +17,13 @@ using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AuthorityController.Data;
 using System.Threading;
+using AuthorityControllerTests;
 
 namespace AuthorityController.Tests
 {
     [TestClass]
     public class Data
     {
-        /// <summary>
-        /// Return unicue subfolder for the test.
-        /// </summary>
-        public static string TestSubfolder
-        {
-            get
-            {
-                if (_testSubFolder == null)
-                {
-                    _testSubFolder = "Tests\\" + Guid.NewGuid().ToString();
-                }
-                return _testSubFolder;
-            }
-        }
-        private static string _testSubFolder;
-
-        /// <summary>
-        /// Marker that need to avoid tests conflicts.
-        /// </summary>
-        public static bool CONFIG_FILE_GENERATED = false;
-
-        [TestInitialize]
-        public void Setup()
-        {
-            // Open folder.
-            Directory.CreateDirectory(TestSubfolder);
-            System.Diagnostics.Process.Start(TestSubfolder);
-        }
-
         [TestMethod]
         public void ConfigValidation()
         {
@@ -66,13 +38,13 @@ namespace AuthorityController.Tests
         public void Config_New()
         {
             // Set new directory.
-            Config.DIRECTORY = TestSubfolder + Config.DIRECTORY;
+            Config.DIRECTORY = Configurator.TestSubfolder + Config.DIRECTORY;
 
             // Init file.
             _ = Config.Active;
 
             // Mark result.
-            CONFIG_FILE_GENERATED = true;
+            Configurator.CONFIG_FILE_GENERATED = true;
 
             // Check existing.
             bool result = File.Exists(Config.DIRECTORY + Config.CONFIG_FILE_NAME);
@@ -145,7 +117,7 @@ namespace AuthorityController.Tests
 
             // Try to load config from directory.
             bool result = Config.TryToLoad<Config>(
-            corruptedFileDirectory, out Config config);
+            corruptedFileDirectory, out Config _);
 
             Assert.IsTrue(!result, "Corrupted file cause error.");
         }
@@ -171,14 +143,14 @@ namespace AuthorityController.Tests
             int poolUsersCount = 50000;
 
             // Fail callback
-            System.Action<User, string> FailHandler = null;
-            FailHandler = (User obj, string error) =>
+            void FailHandler(User obj, string error)
             {
                 poolFailed = true;
                 API.Users.UserProfileNotStored -= FailHandler;
 
                 Assert.IsTrue(false, "Data storing failed.");
-            };
+            }
+
             API.Users.UserProfileNotStored += FailHandler;
 
 
@@ -193,13 +165,13 @@ namespace AuthorityController.Tests
                 user.id = API.Users.GenerateID(user);
 
                 // Save profile.
-                API.Users.SetProfileAsync(user, TestSubfolder + "\\USERS\\");
+                API.Users.SetProfileAsync(user, Configurator.TestSubfolder + "\\USERS\\");
             }
 
             // Wait until operation compleeting.
             while(!poolFailed)
             {
-                if (Directory.GetFiles(TestSubfolder + "\\USERS\\").Length == poolUsersCount)
+                if (Directory.GetFiles(Configurator.TestSubfolder + "\\USERS\\").Length == poolUsersCount)
                 {
                     break;
                 }
@@ -216,13 +188,12 @@ namespace AuthorityController.Tests
         public void UsersPoo_Load()
         {
             // Init
-            string loadDirectory = TestSubfolder + "\\USERS\\";
+            string loadDirectory = Configurator.TestSubfolder + "\\USERS\\";
             bool loaded = false;
 
             #region Test finish handler.
             // Wait until loading finish.
-            System.Action<string, int, int> FinishHandler = null;
-            FinishHandler = (string dir, int succeed, int failed) =>
+            void FinishHandler(string dir, int succeed, int failed)
             {
                 // If currect directory
                 if (dir.Equals(loadDirectory))
@@ -240,7 +211,8 @@ namespace AuthorityController.Tests
                     // Check corrupted.
                     Assert.IsTrue(failed == 0, "Some files corrupted: " + failed);
                 }
-            };
+            }
+
             API.Users.DirectoryLoadingFinished += FinishHandler;
             #endregion
 
@@ -279,7 +251,7 @@ namespace AuthorityController.Tests
             testUser.id = API.Users.GenerateID(testUser);
 
             // Save profile.
-            API.Users.SetProfileAsync(testUser, TestSubfolder + "\\USERS\\TEMP\\");
+            API.Users.SetProfileAsync(testUser, Configurator.TestSubfolder + "\\USERS\\TEMP\\");
             bool userTestPaused = true;
 
             #region Wait for result
@@ -322,7 +294,7 @@ namespace AuthorityController.Tests
             testUser.secondName = "Updated";
 
             // Save profile.
-            API.Users.SetProfileAsync(testUser, TestSubfolder + "\\USERS\\TEMP\\");
+            API.Users.SetProfileAsync(testUser, Configurator.TestSubfolder + "\\USERS\\TEMP\\");
 
             bool userTestPaused = true;
 
@@ -360,7 +332,7 @@ namespace AuthorityController.Tests
         /// </summary>
         public void User_Remove(User testUser)
         {
-            Assert.IsTrue(API.Users.RemoveProfile(testUser, TestSubfolder + "\\USERS\\TEMP\\"));
+            Assert.IsTrue(API.Users.RemoveProfile(testUser, Configurator.TestSubfolder + "\\USERS\\TEMP\\"));
         }
 
 
@@ -371,7 +343,7 @@ namespace AuthorityController.Tests
         public void SaltGeneration()
         {
             // Wait for config files.
-            while(!CONFIG_FILE_GENERATED)
+            while(!Configurator.CONFIG_FILE_GENERATED)
             {
                 Thread.Sleep(5);
             }
@@ -412,7 +384,7 @@ namespace AuthorityController.Tests
         public void Salt_Loading()
         {
             // Create new configs to drop loaded salt.
-            AuthorityController.Data.Config newConfig = new Config();
+            _ = new Config();
 
             try
             {

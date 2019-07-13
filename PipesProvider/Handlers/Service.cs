@@ -21,6 +21,7 @@ using System.IO.Pipes;
 using UniformQueries;
 using UQAPI = UniformQueries.API;
 using PipesProvider.Server;
+using PipesProvider.Server.TransmissionControllers;
 
 
 namespace PipesProvider.Handlers
@@ -39,7 +40,7 @@ namespace PipesProvider.Handlers
         {
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");
             // Load transmission meta data.
-            ServerTransmissionController meta = (ServerTransmissionController)result.AsyncState;
+            BaseServerTransmissionController meta = (BaseServerTransmissionController)result.AsyncState;
 
             // Stop connection waiting.
             try

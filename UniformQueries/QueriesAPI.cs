@@ -32,14 +32,14 @@ namespace UniformQueries
         /// <summary>
         /// List that contain references to all query's processors instances.
         /// </summary>
-        public static List<IQueryHandlerProcessor> QueryProcessors
+        public static List<IQueryHandler> QueryProcessors
         {
             get
             {
                 return queryProcessors;
             }
         }
-        private static readonly List<IQueryHandlerProcessor> queryProcessors = null;
+        private static readonly List<IQueryHandler> queryProcessors = null;
         
         
         /// <summary>
@@ -47,7 +47,7 @@ namespace UniformQueries
         /// </summary>
         static API()
         {
-            queryProcessors = new List<IQueryHandlerProcessor>();
+            queryProcessors = new List<IQueryHandler>();
 
             // Load query's processors.
             System.Reflection.Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
@@ -64,7 +64,7 @@ namespace UniformQueries
                         if (type.GetInterface("UniformQueries.IQueryHandlerProcessor") != null)
                         {
                             // Instiniating querie processor.
-                            UniformQueries.IQueryHandlerProcessor instance = (UniformQueries.IQueryHandlerProcessor)Activator.CreateInstance(type);
+                            UniformQueries.IQueryHandler instance = (UniformQueries.IQueryHandler)Activator.CreateInstance(type);
                             queryProcessors.Add(instance);
                             Console.WriteLine("{0}", type.Name);
                         }
@@ -303,6 +303,43 @@ namespace UniformQueries
             return parts;
         }
 
+
+        /// <summary>
+        /// Looking for processor situable for provided query.
+        /// </summary>
+        /// <param name="query">Recived query in string format.</param>
+        /// <param name="handler">Qirty handler that situable for that query.</param>
+        /// <returns></returns>
+        public static bool TryFindQueryHandler(string query, out IQueryHandler handler)
+        {
+            // Detect query parts.
+            QueryPart[] queryParts = DetectQueryParts(query);
+
+            // Search.
+            return TryFindQueryHandler(queryParts, out handler);
+        }
+
+        /// <summary>
+        /// Looking for query handler.
+        /// </summary>
+        /// <param name="queryParts">Recived query splited by parts.</param>
+        /// <param name="handler">Hadler that's situated to this query.</param>
+        /// <returns></returns>
+        public static bool TryFindQueryHandler(QueryPart[] queryParts, out IQueryHandler handler)
+        {
+            foreach (UniformQueries.IQueryHandler pb in UniformQueries.API.QueryProcessors)
+            {
+                // Check header
+                if (pb.IsTarget(queryParts))
+                {
+                    handler = pb;
+                    return true;
+                }
+            }
+
+            handler = null;
+            return false;
+        }
 
         /// <summary>
         /// Try to detect core query parts.

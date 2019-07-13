@@ -25,7 +25,7 @@ namespace AuthorityController.Queries
     /// Change rights list to provided token.
     /// Require admin rights.
     /// </summary>
-    public class SET_TOKEN_RIGHTS : IQueryHandlerProcessor
+    public class SET_TOKEN_RIGHTS : IQueryHandler
     {
         public string Description(string cultureKey)
         {
