@@ -92,6 +92,11 @@ namespace AuthorityController.Data
         public string PasswordSaltFileName = ".salt";
 
         /// <summary>
+        /// How many bytes will contain salt.
+        /// </summary>
+        public int PasswordSaltSize = 32;
+
+        /// <summary>
         /// How many character will be required in password.
         /// </summary>
         public int PasswordMinAllowedLength = 8;
@@ -188,7 +193,7 @@ namespace AuthorityController.Data
                         active = new Config();
 
                         // Save to resources.
-                        active.SaveAs(DIRECTORY, CONFIG_FILE_NAME);
+                        SaveAs<Config>(active, DIRECTORY, CONFIG_FILE_NAME);
                     }
                 }
                 return active;
@@ -213,9 +218,18 @@ namespace AuthorityController.Data
                     // Try to load from resources.
                     if (!TryToLoad<SaltContainer>(DIRECTORY + PasswordSaltFileName, out salt))
                     {
-                        // TODO Generate new salt.
+                        // Generate new salt.
+                        salt = new SaltContainer(PasswordSaltSize);
 
-                        // TODO Save to resources.
+                        try
+                        {
+                            // Save to resources.
+                            SaveAs<SaltContainer>(salt, DIRECTORY, PasswordSaltFileName);
+                        }
+                        catch (Exception ex)
+                        {
+                            throw ex;
+                        }
                     }
 
                     // Validate salt.
@@ -246,7 +260,7 @@ namespace AuthorityController.Data
         /// </summary>
         /// <param name="directory"></param>
         /// <param name="fileName"></param>
-        public void SaveAs(string directory, string fileName)
+        public static void SaveAs<T>(object obj, string directory, string fileName)
         {
             // Check directory exist.
             if (!Directory.Exists(directory))
@@ -259,10 +273,10 @@ namespace AuthorityController.Data
             try
             {
                 XmlDocument xmlDocument = new XmlDocument();
-                XmlSerializer serializer = new XmlSerializer(typeof(Config));
+                XmlSerializer serializer = new XmlSerializer(typeof(T));
                 using (MemoryStream stream = new MemoryStream())
                 {
-                    serializer.Serialize(stream, this);
+                    serializer.Serialize(stream, obj);
                     stream.Position = 0;
                     xmlDocument.Load(stream);
                     xmlDocument.Save(directory + fileName);
@@ -271,6 +285,7 @@ namespace AuthorityController.Data
             catch (Exception ex)
             {
                 Console.WriteLine("Auth control error (ACC 10): Not serialized. Reason:\n{0}", ex.Message);
+                throw ex;
             }
         }
         

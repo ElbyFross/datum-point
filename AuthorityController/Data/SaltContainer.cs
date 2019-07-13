@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
 
 namespace AuthorityController.Data
 {
@@ -34,6 +35,44 @@ namespace AuthorityController.Data
         /// </summary>
         public byte[] validationStamp;
 
+        public SaltContainer() { }
+
+        /// <summary>
+        /// Create salt container with requested salt size.
+        /// </summary>
+        /// <param name="keySize"></param>
+        public SaltContainer(int keySize)
+        {
+            GenerateNewKey(keySize);
+        }
+        
+        /// <summary>
+        /// Generate new key for container with requiered size.
+        /// </summary>
+        /// <param name="keySize"></param>
+        public void GenerateNewKey(int keySize)
+        {
+            // Generate key.
+            key = new byte[keySize];
+            using (var random = new RNGCryptoServiceProvider())
+            {
+                random.GetNonZeroBytes(key);
+            }
+
+            // Generate validation stamp.
+            validationStamp = GetStamp();
+        }
+
+        /// <summary>
+        /// Create a stamp related to current salt.
+        /// </summary>
+        /// <returns></returns>
+        public byte[] GetStamp()
+        {
+            byte[] hashResult = API.Users.GetHashedPassword("SALT VALIDATION STRING", this);
+            return hashResult;
+        }
+
         /// <summary>
         /// Call base operation and compare results.
         /// Relevant result must be equal to stamp.
@@ -42,7 +81,7 @@ namespace AuthorityController.Data
         public bool Validate()
         {
             // Get hashed string by using this stamp.
-            byte[] hashResult = API.Users.GetHashedPassword("SALT VALIDATION STRING", this);
+            byte[] hashResult = GetStamp();
 
             // Comapre length
             if (hashResult.Length != validationStamp.Length)

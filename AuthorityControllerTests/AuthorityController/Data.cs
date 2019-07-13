@@ -24,24 +24,9 @@ namespace AuthorityController.Tests
     public class Data
     {
         /// <summary>
-        /// Set configs related to base password test.
-        /// </summary>
-        private void SetBaseDataConfig()
-        {
-            new Config()
-            {
-                PasswordRequireUpperSymbol = false,
-                PasswordRequireDigitSymbol = false,
-                PasswordRequireSpecialSymbol = false,
-                PasswordMinAllowedLength = 5,
-                PasswordMaxAllowedLength = 16
-            };
-        }
-
-        /// <summary>
         /// Return unicue subfolder for the test.
         /// </summary>
-        public string TestSubfolder
+        public static string TestSubfolder
         {
             get
             {
@@ -52,12 +37,12 @@ namespace AuthorityController.Tests
                 return _testSubFolder;
             }
         }
-        private string _testSubFolder;
+        private static string _testSubFolder;
 
         /// <summary>
-        /// Directory of config file created at this session.
+        /// Marker that need to avoid tests conflicts.
         /// </summary>
-        public string CofigFilePath { get; set; }
+        public static bool CONFIG_FILE_GENERATED = false;
 
         [TestInitialize]
         public void Setup()
@@ -70,34 +55,28 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ConfigValidation()
         {
-            ConfigCreate();
-            ConfigLoad_ValidData();
-            ConfigLoad_CoruptedData();
+            Config_New();
+            Config_Load_ValidData();
+            Config_Load_CoruptedData();
         }
 
         /// <summary>
         /// Create new config file.
         /// </summary>
-        public void ConfigCreate()
+        public void Config_New()
         {
             // Set new directory.
-            string directoryBufer = Config.DIRECTORY;
             Config.DIRECTORY = TestSubfolder + Config.DIRECTORY;
 
             // Init file.
             _ = Config.Active;
 
-            // Make path to file.
-            CofigFilePath = 
-                Config.DIRECTORY + 
-                Config.CONFIG_FILE_NAME;
+            // Mark result.
+            CONFIG_FILE_GENERATED = true;
 
             // Check existing.
-            bool result = File.Exists(CofigFilePath);
+            bool result = File.Exists(Config.DIRECTORY + Config.CONFIG_FILE_NAME);
             
-            // Revert value.
-            Config.DIRECTORY = directoryBufer;
-
             // Assert.
             Assert.IsTrue(result, "File creation failed.");
         }
@@ -105,11 +84,11 @@ namespace AuthorityController.Tests
         /// <summary>
         /// Try to load valid config data file.
         /// </summary>
-        public void ConfigLoad_ValidData()
+        public void Config_Load_ValidData()
         {
             // Try to load config from directory.
             bool result = Config.TryToLoad<Config>(
-                CofigFilePath, out Config _);
+                Config.DIRECTORY + Config.CONFIG_FILE_NAME, out Config _);
 
             Assert.IsTrue(result, "Loading failed.");
         }
@@ -117,12 +96,12 @@ namespace AuthorityController.Tests
         /// <summary>
         /// Trying to load corrupted config dile.
         /// </summary>
-        public void ConfigLoad_CoruptedData()
+        public void Config_Load_CoruptedData()
         {
-            string corruptedFileDirectory = CofigFilePath + ".invalid";
+            string corruptedFileDirectory = Config.DIRECTORY + Config.CONFIG_FILE_NAME + ".invalid";
 
             // Copy valid file.
-            File.Copy(CofigFilePath, corruptedFileDirectory);
+            File.Copy(Config.DIRECTORY + Config.CONFIG_FILE_NAME, corruptedFileDirectory);
 
             #region Damage file
             string[] lines = File.ReadAllLines(corruptedFileDirectory);
@@ -176,17 +155,17 @@ namespace AuthorityController.Tests
         /// Stress test in working with huge data.
         /// </summary>
         [TestMethod]
-        public void HugePoolValidation()
+        public void UsersPoolStressTest()
         {
-            NewUsersPool();
-            LoadProfilesPool();
+            UsersPool_New();
+            UsersPoo_Load();
         }
 
         /// <summary>
         /// Create huge pool of users.
         /// Use for stress tests.
         /// </summary>
-        public void NewUsersPool()
+        public void UsersPool_New()
         {
             bool poolFailed = false;
             int poolUsersCount = 50000;
@@ -234,7 +213,7 @@ namespace AuthorityController.Tests
         /// Try to load a huge pool of users. Some users can be corrupted.
         /// Need to finish operation without freezing of other threads and without crush due corupted data.
         /// </summary>
-        public void LoadProfilesPool()
+        public void UsersPoo_Load()
         {
             // Init
             string loadDirectory = TestSubfolder + "\\USERS\\";
@@ -281,15 +260,15 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void UserProfileValidation()
         {
-            User testUser = NewUser();
-            UpdateUser(testUser);
-            RemoveUser(testUser);
+            User testUser = User_New();
+            User_Update(testUser);
+            User_Remove(testUser);
         }
         
         /// <summary>
         /// Creating new user profile and saving to storage.
         /// </summary>
-        public User NewUser()
+        public User User_New()
         {
             // Create user.
             User testUser = new User()
@@ -337,7 +316,7 @@ namespace AuthorityController.Tests
         /// <summary>
         /// Update already existed profile.
         /// </summary>
-        public void UpdateUser(User testUser)
+        public void User_Update(User testUser)
         {
             testUser.firstName = "Updated";
             testUser.secondName = "Updated";
@@ -379,26 +358,100 @@ namespace AuthorityController.Tests
         /// <summary>
         /// Remove profile from storage.
         /// </summary>
-        public void RemoveUser(User testUser)
+        public void User_Remove(User testUser)
         {
             Assert.IsTrue(API.Users.RemoveProfile(testUser, TestSubfolder + "\\USERS\\TEMP\\"));
         }
 
+
+        /// <summary>
+        /// Start complex list of tests thet validate password salt feature.
+        /// </summary>
+        [TestMethod]
+        public void SaltGeneration()
+        {
+            // Wait for config files.
+            while(!CONFIG_FILE_GENERATED)
+            {
+                Thread.Sleep(5);
+            }
+
+            Salt_Init();
+            Salt_Loading();
+            Salt_Validation_ValidData();
+            Salt_Validation_InvalidData();
+        }
         
         /// <summary>
         /// Creating a new salt data.
         /// </summary>
-        [TestMethod]
-        public void SaltInit()
+        public void Salt_Init()
         {
+            try
+            {
+                // Init new salt file generation.
+                _ = AuthorityController.Data.Config.Active.Salt;
+            }
+            catch (Exception ex)
+            {
+                // Fail.
+                Assert.IsTrue(false, ex.Message);
+                return;
+            }
+
+            bool result = File.Exists(
+                Config.DIRECTORY + 
+                AuthorityController.Data.Config.Active.PasswordSaltFileName);
+
+            Assert.IsTrue(result, "Salt file not found");
         }
 
         /// <summary>
         /// Validate loading of already created salt
         /// </summary>
-        [TestMethod]
-        public void SaltLoading()
+        public void Salt_Loading()
         {
+            // Create new configs to drop loaded salt.
+            AuthorityController.Data.Config newConfig = new Config();
+
+            try
+            {
+                // Call existed salt.
+                _ = AuthorityController.Data.Config.Active.Salt;
+
+                Assert.IsTrue(true);
+            }
+            catch(Exception ex)
+            {
+                Assert.IsTrue(false, ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Validate salt with correct stamp.
+        /// </summary>
+        public void Salt_Validation_ValidData()
+        {
+            // Validate
+            bool result = AuthorityController.Data.Config.Active.Salt.Validate();
+
+            // Assert.
+            Assert.IsTrue(result, "Stamp not pass validation");
+        }
+
+        /// <summary>
+        /// Validate salt with incorrect salt.
+        /// </summary>
+        public void Salt_Validation_InvalidData()
+        {
+            // Reinit stamp with the same lenght but with default values.
+            AuthorityController.Data.Config.Active.Salt.validationStamp = new byte[AuthorityController.Data.Config.Active.Salt.validationStamp.Length];
+
+            // Validate
+            bool result = AuthorityController.Data.Config.Active.Salt.Validate();
+
+            // Assert.
+            Assert.IsTrue(!result, "Validator pass invalid stamp.");
         }
     }
 }
