@@ -18,15 +18,46 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using AuthorityControllerTests;
 using Microsoft.Win32.SafeHandles;
 using UniformQueries;
+using UniformServer;
+using UniformClient;
+using PipesProvider.Server.TransmissionControllers;
 
 namespace AuthorityController.Tests
 {
     [TestClass]
     public class Queries
     {
+        /// <summary>
+        /// Get routing table situale for local broadcasting.
+        /// </summary>
+        PipesProvider.Networking.Routing.RoutingTable BroadcastingRoutingTable
+        {
+            get
+            {
+                // Create new if not found.
+                if(_broadcastingRoutingTable == null)
+                {
+
+                }
+
+                return _broadcastingRoutingTable;
+            }
+        }
+        PipesProvider.Networking.Routing.RoutingTable _broadcastingRoutingTable;
+
         [TestInitialize]
         public void Setup()
         {
+            // Set guest token provider as MessageHandeler.
+            BroadcastingServerTransmissionController.MessageHandeler messageHandler =
+                AuthorityController.API.Tokens.AuthorizeNewGuestToken;
+
+            // Start broadcastig.
+            BaseServer.StartBroadcastingViaPP(
+                "guests",
+                PipesProvider.Security.SecurityLevel.Anonymous,
+                messageHandler, 
+                1);
         }
 
         /// <summary>
@@ -41,15 +72,15 @@ namespace AuthorityController.Tests
             // Make query.
             QueryPart[] queryParts = new QueryPart[]
             {
-                new QueryPart("guid", "GetGuestToken"),
                 new QueryPart("GET"),
                 new QueryPart("GUEST"),
                 new QueryPart("TOKEN")
             };
 
+            #region Server answer processing
             // Start listening client.
-            UniformClient.Standard.SimpleClient.ReceiveAnswerViaPP(
-                UniformClient.BaseClient.OpenOutTransmissionLineViaPP("localhost", "GetGuestToken"),
+            bool reciverStarted = UniformClient.Standard.SimpleClient.ReceiveDelayedAnswerViaPP(
+                UniformClient.BaseClient.OpenOutTransmissionLineViaPP("localhost", "guests"),
                 queryParts,
                 (PipesProvider.Client.TransmissionLine line, object obj) =>
                 {
@@ -90,17 +121,12 @@ namespace AuthorityController.Tests
                     }
                 });
 
-            // Start processing.
-            if (UniformQueries.API.TryFindQueryHandler(queryParts, out IQueryHandler handler))
+            if(!reciverStarted)
             {
-                // Execute query.
-                handler.Execute(queryParts);
+                Assert.IsTrue(false, "Reciver not started");
+                return;
             }
-            else
-            {
-                // Inform that failed.
-                Assert.IsTrue(false, "Query not found.");
-            }
+            #endregion
 
             // Wait server answer.
             while(waitingAnswer)

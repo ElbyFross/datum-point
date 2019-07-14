@@ -168,7 +168,7 @@ namespace AuthorityController.Queries
                 };
 
             // Create logon subquery.
-            foreach(UniformQueries.IQueryHandler processor in UniformQueries.API.QueryProcessors)
+            foreach(UniformQueries.IQueryHandler processor in UniformQueries.API.QueryHandlers)
             {
                 // Fini logon query processor.
                 if(processor is USER_LOGON)

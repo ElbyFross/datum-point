@@ -34,12 +34,10 @@ namespace PipesProvider.Server.TransmissionControllers
         public ServerToClientTransmissionController(
            IAsyncResult connectionMarker,
            System.Action<BaseServerTransmissionController> connectionCallback,
-           System.Action<BaseServerTransmissionController, string> queryHandlerCallback,
            NamedPipeServerStream pipe,
            string pipeName) : base(
                 connectionMarker,
                 connectionCallback,
-                queryHandlerCallback,
                 pipe,
                 pipeName)
         { }
@@ -77,7 +75,6 @@ namespace PipesProvider.Server.TransmissionControllers
             ServerAPI.ServerLoop<ServerToClientTransmissionController>(
                 guid,
                 Handlers.DNS.ServerToClientAsync,
-                null,
                 pipeName,
                 PipeDirection.InOut,
                 1,

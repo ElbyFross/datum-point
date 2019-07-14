@@ -29,21 +29,6 @@ namespace UniformServer
     /// </summary>
     public abstract partial class BaseServer
     {
-        #region Events
-        /// <summary>
-        /// Event will be called when system will request a thread termination.
-        /// Argument - index of thread.
-        /// </summary>
-        public static event System.Action<int> ThreadTerminateRequest;
-
-        /// <summary>
-        /// Event that will be called when seystem will require a thread start.
-        /// Argument - index of thread.
-        /// </summary>
-        public static event System.Action<int> ThreadStartRequest;
-        #endregion
-
-
         #region Static fields and properties
         /// <summary>
         /// Imported method that allo to controll console window state.

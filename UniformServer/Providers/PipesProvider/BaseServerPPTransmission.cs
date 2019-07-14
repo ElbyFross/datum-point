@@ -59,17 +59,19 @@ namespace UniformServer
             // Set fields.
             server.pipeName = domain;
 
-            // Create delegate that will set our answer message to processing whentransmission meta will available.
+            // Create delegate that will set our answer message to processing
+            // when transmission line would established.
             void InitationCallback(BaseServerTransmissionController tc)
             {
                 if (tc is ServerToClientTransmissionController transmissionController)
                 {
                     // Target callback.
-                    if (transmissionController.name == server.pipeName)
+                    if (transmissionController.pipeName == server.pipeName)
                     {
                         // Unsubscribe.
                         ServerAPI.ServerTransmissionMeta_InProcessing -= InitationCallback;
 
+                        #region Encryption
                         // Encrypt query if requested by "pk" query's param.
                         if (UniformQueries.API.TryGetParamValue(
                             "pk",
@@ -84,12 +86,13 @@ namespace UniformServer
                                 answer = PipesProvider.Security.Crypto.EncryptString(answer, publicKey);
                             }
                         }
+                        #endregion
 
                         // Set answer query as target for processing,
                         transmissionController.ProcessingQuery = answer;
 
                         // Log.
-                        Console.WriteLine("{0}: Processing query changed on:\n{1}\n", transmissionController.name, answer);
+                        Console.WriteLine("{0}: Processing query changed on:\n{1}\n", transmissionController.pipeName, answer);
                     }
                 }
                 else // Incorrect type.
@@ -98,7 +101,7 @@ namespace UniformServer
                     tc.SetStoped();
 
                     // Log.
-                    Console.WriteLine("{0}: ERROR Incorrect transmisssion controller. Required \"ServerAnswerTransmissionController\"", tc.name);
+                    Console.WriteLine("{0}: ERROR Incorrect transmisssion controller. Required \"ServerAnswerTransmissionController\"", tc.pipeName);
                 }
             }
             // Subscribe or waiting delegate on server loop event.
@@ -108,14 +111,43 @@ namespace UniformServer
             // Starting server loop.
             server.StartServerThread(
                 "SERVER ANSWER " + domain, server,
-                ThreadingServerLoop_PP_Answer);
-
-            // Change thread culture to recive international format messages.
-            server.thread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");
+                ThreadingServerLoop_PP_Output);
 
             // Skip line
             Console.WriteLine();
             return true;
+        }
+
+        /// <summary>
+        /// Open server with broadcasting chanels using PipesProvider.
+        /// </summary>
+        /// <param name="getBroadcastingMessageHandler">delegate that will be called to get message for new client.</param>
+        /// <param name="chanels">How many many connections would awaiable to this server.
+        /// Attention: every chanel is a tread.</param>
+        public static void StartBroadcastingViaPP(
+            string pipeName,
+            PipesProvider.Security.SecurityLevel securityLevel,
+            BroadcastingServerTransmissionController.MessageHandeler getBroadcastingMessageHandler,
+            int chanels)
+        {
+            // Open every requested chanel.
+            for (int i = 0; i < chanels; i++)
+            {
+                // Instiniate primitive server to provide loop.
+                Standard.BroadcastingServer server = new Standard.BroadcastingServer
+                {
+                    pipeName = pipeName,
+                    securityLevel = securityLevel,
+                    // Set handler tha will provide message.
+                    GetMessage = getBroadcastingMessageHandler
+                };
+
+                // Starting server loop.
+                server.StartServerThread(
+                    string.Format("BS|{0}|{1}", pipeName, Guid.NewGuid().ToString()),
+                    server,
+                    ThreadingServerLoop_PP_Broadcast);
+            }
         }
     }
 }

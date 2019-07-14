@@ -12,9 +12,7 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-using System;
-using System.Collections.Generic;
-using System.Text;
+using PipesProvider.Server.TransmissionControllers;
 
 namespace UniformServer.Standard
 {
@@ -24,10 +22,12 @@ namespace UniformServer.Standard
     /// 
     /// Case of using - simple operations like registing of server for answer.
     /// </summary>
-    public class SimpleServer : BaseServer
+    public class BroadcastingServer : BaseServer
     {
+        public BroadcastingServerTransmissionController.MessageHandeler GetMessage;
+
         // Init default constructor.
-        public SimpleServer() : base()
+        public BroadcastingServer() : base()
         {
 
         }

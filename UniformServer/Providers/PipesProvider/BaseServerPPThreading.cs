@@ -25,14 +25,29 @@ using PipesProvider.Server.TransmissionControllers;
 namespace UniformServer
 {
     /// <summary>
-    /// Part of class that provide Hadler to control pipes provider transmission.
+    /// Part of class that provide methods can be started as thread for server init;
     /// </summary>
     public abstract partial class BaseServer
     {
+        #region Events
+        /// <summary>
+        /// Event will be called when system will request a thread termination.
+        /// Argument - index of thread.
+        /// </summary>
+        public static event System.Action<int> ThreadTerminateRequest;
+
+        /// <summary>
+        /// Event that will be called when seystem will require a thread start.
+        /// Argument - index of thread.
+        /// </summary>
+        public static event System.Action<int> ThreadStartRequest;
+        #endregion
+
+
         /// <summary>
         ///  Main loop that control monitor thread.
         /// </summary>
-        protected static void ThreadingServerLoop_PP_Answer(object server)
+        protected static void ThreadingServerLoop_PP_Output(object server)
         {
             #region Init
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");
@@ -55,7 +70,7 @@ namespace UniformServer
         /// <summary>
         ///  Main loop that control pipe chanel that will recive clients.
         /// </summary>
-        protected static void ThreadingServerLoop_PP_OpenChanel(object server)
+        protected static void ThreadingServerLoop_PP_Input(object server)
         {
             #region Init
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");
@@ -74,6 +89,38 @@ namespace UniformServer
                 ((BaseServer)server).pipeName,
                 ((BaseServer)server).securityLevel);
             #endregion
+        }
+
+        /// <summary>
+        /// Main threaded loop that control broadcassting server loop start.
+        /// </summary>
+        protected static void ThreadingServerLoop_PP_Broadcast(object server)
+        {
+            if (server is Standard.BroadcastingServer broadcastingServer)
+            {
+                #region Init
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");
+                Console.WriteLine("THREAD STARTED: {0}", Thread.CurrentThread.Name);
+
+                // Name of pipe server that will established.
+                // Access to this pipe by clients will be available by this name.
+                string serverName = broadcastingServer.thread.Name;
+                #endregion
+
+                #region Server establishing
+                // Start server loop.
+                PipesProvider.Server.TransmissionControllers.BroadcastingServerTransmissionController.ServerLoop(
+                    serverName,
+                    broadcastingServer.pipeName,
+                    broadcastingServer.securityLevel,
+                    broadcastingServer.GetMessage);
+                #endregion
+            }
+            else
+            {
+                // Throw error.
+                throw new InvalidCastException("Require Standard.BroadcastingServer server as shared object.");
+            }
         }
     }
 }

@@ -60,10 +60,9 @@ namespace PipesProvider.Server
         /// <param name="pipeOptions">Configuration of the pipe.</param>
         /// <param name="initHandler">Handler that will be called in case if transmisssion still not registred.
         /// Provide possibility to castom initialization for every type of controller.</param>
-        public static void ServerLoop<TCT>(
+        public static void ServerLoop<TransmissionControllerType>(
             string guid,
             System.Action<BaseServerTransmissionController> connectionCallback,
-            System.Action<BaseServerTransmissionController, string> queryHandlerCallback,
             string pipeName,
             PipeDirection pipeDirection,
             int allowedServerInstances,
@@ -71,7 +70,7 @@ namespace PipesProvider.Server
             PipeOptions pipeOptions,
             Security.SecurityLevel securityLevel,
             System.Action<BaseServerTransmissionController>initHandler = null)
-            where TCT : BaseServerTransmissionController
+            where TransmissionControllerType : BaseServerTransmissionController
         {
             // Create PipeSecurity relative to requesteed level.
             PipeSecurity pipeSecurity = Security.General.GetRulesForLevels(securityLevel);
@@ -94,11 +93,11 @@ namespace PipesProvider.Server
 
             #region Meta data
             // Meta data about curent transmition.
-            TCT transmisssionController = (TCT)BaseServerTransmissionController.None;
+            TransmissionControllerType transmisssionController = null;
             IAsyncResult connectionMarker = null;
 
             // Registration or update controller of oppened transmission.
-            if (openedServers[guid] is TCT bufer)
+            if (openedServers[guid] is TransmissionControllerType bufer)
             {
                 // Load previous contorller.
                 transmisssionController = bufer;
@@ -106,14 +105,15 @@ namespace PipesProvider.Server
             else
             {
                 // Create new controller.
-                transmisssionController = (TCT)Activator.CreateInstance(typeof(TCT), new object[] 
-                {
-                    null,
-                    connectionCallback,
-                    queryHandlerCallback,
-                    pipeServer,
-                    pipeName
-                });
+                transmisssionController = (TransmissionControllerType)Activator.CreateInstance(
+                    typeof(TransmissionControllerType), 
+                    new object[] 
+                    {
+                        null,
+                        connectionCallback,
+                        pipeServer,
+                        pipeName
+                    });
 
                 // Call additive init.
                 initHandler?.Invoke(transmisssionController);
@@ -162,7 +162,7 @@ namespace PipesProvider.Server
                         transmissionMode, pipeOptions, 0, 0, pipeSecurity);
 
                         // Update meta data.
-                        transmisssionController.pipe = pipeServer;
+                        transmisssionController.pipeServer = pipeServer;
                     }
                     //Console.WriteLine("TRANSMITION META HASH: {0}", meta.GetHashCode());
                 }
@@ -184,7 +184,7 @@ namespace PipesProvider.Server
             // Finish stream.
             pipeServer.Close();
 
-            Console.WriteLine("{0}: PIPE SERVER CLOSED", transmisssionController.name);
+            Console.WriteLine("{0}: PIPE SERVER CLOSED", transmisssionController.pipeName);
         }
         #endregion
 
@@ -246,7 +246,7 @@ namespace PipesProvider.Server
                 StopServer(meta);
 
                 // Discharge existing in hashtable.
-                openedServers.Remove(meta.name);
+                openedServers.Remove(meta.pipeName);
             }
         }
 
@@ -263,13 +263,13 @@ namespace PipesProvider.Server
                 try
                 {
                     // Disconnects clients.
-                    if (meta.pipe.IsConnected)
+                    if (meta.pipeServer.IsConnected)
                     {
-                        meta.pipe.Disconnect();
+                        meta.pipeServer.Disconnect();
                     }
 
                     // Closing pipe.
-                    meta.pipe.Close();
+                    meta.pipeServer.Close();
                 }
                 catch (Exception ex)
                 {
@@ -277,7 +277,7 @@ namespace PipesProvider.Server
                     Console.WriteLine("SERVER STOP FAILED: {0}", ex.Message);
                 }
 
-                Console.WriteLine("PIPE CLOSED: {0}", meta.name);
+                Console.WriteLine("PIPE CLOSED: {0}", meta.pipeName);
                 return;
             }
 

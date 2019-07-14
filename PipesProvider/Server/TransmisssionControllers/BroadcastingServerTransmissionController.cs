@@ -36,12 +36,10 @@ namespace PipesProvider.Server.TransmissionControllers
         public BroadcastingServerTransmissionController(
            IAsyncResult connectionMarker,
            System.Action<BaseServerTransmissionController> connectionCallback,
-           System.Action<BaseServerTransmissionController, string> queryHandlerCallback,
            NamedPipeServerStream pipe, 
            string pipeName) : base(
                 connectionMarker, 
                 connectionCallback,
-                queryHandlerCallback,
                 pipe, 
                 pipeName) { }
         #endregion
@@ -85,7 +83,6 @@ namespace PipesProvider.Server.TransmissionControllers
             ServerAPI.ServerLoop<BroadcastingServerTransmissionController>(
                 guid,
                 Handlers.DNS.ServerToClientAsync,
-                null,
                 pipeName,
                 PipeDirection.InOut,
                 System.IO.Pipes.NamedPipeServerStream.MaxAllowedServerInstances,
@@ -95,12 +92,20 @@ namespace PipesProvider.Server.TransmissionControllers
                 // Initialise broadcasting delegate.
                 (BaseServerTransmissionController tc) =>
                     {
-                        ((BroadcastingServerTransmissionController)tc).
-                        GetMessage = getMessageHanler;
+                        if (tc is BroadcastingServerTransmissionController bstc)
+                        {
+                            bstc.GetMessage = getMessageHanler;
+                        }
+                        else
+                        {
+                            // Stop server
+                            tc.SetStoped();
+
+                            // Log error
+                            Console.WriteLine("SERVER ERROR (BSS_TC 10): Created controler can't be casted to BroadcastingServerTransmissionController");
+                        }
                     }
                 );
-
-            // Apply handler.
         }
         #endregion
     }

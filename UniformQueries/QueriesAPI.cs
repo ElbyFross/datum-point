@@ -30,16 +30,16 @@ namespace UniformQueries
         public const char SPLITTING_SYMBOL = '&';
 
         /// <summary>
-        /// List that contain references to all query's processors instances.
+        /// List that contain references to all query's handlers instances.
         /// </summary>
-        public static List<IQueryHandler> QueryProcessors
+        public static List<IQueryHandler> QueryHandlers
         {
             get
             {
-                return queryProcessors;
+                return queryHandlers;
             }
         }
-        private static readonly List<IQueryHandler> queryProcessors = null;
+        private static readonly List<IQueryHandler> queryHandlers = null;
         
         
         /// <summary>
@@ -47,7 +47,8 @@ namespace UniformQueries
         /// </summary>
         static API()
         {
-            queryProcessors = new List<IQueryHandler>();
+            // Init query handlers list.
+            queryHandlers = new List<IQueryHandler>();
 
             // Load query's processors.
             System.Reflection.Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
@@ -61,11 +62,11 @@ namespace UniformQueries
                     try
                     {
                         // Check if this type is subclass of query.
-                        if (type.GetInterface("UniformQueries.IQueryHandlerProcessor") != null)
+                        if (type.GetInterface(typeof(UniformQueries.IQueryHandler).FullName) != null)
                         {
                             // Instiniating querie processor.
                             UniformQueries.IQueryHandler instance = (UniformQueries.IQueryHandler)Activator.CreateInstance(type);
-                            queryProcessors.Add(instance);
+                            queryHandlers.Add(instance);
                             Console.WriteLine("{0}", type.Name);
                         }
                     }
@@ -78,7 +79,7 @@ namespace UniformQueries
 
             // Log
             Console.WriteLine("\nRESUME:\nQueriesMonitor established. Session started at {0}\nTotal query processors detected: {1}",
-                DateTime.Now.ToString("HH:mm:ss"), queryProcessors.Count);
+                DateTime.Now.ToString("HH:mm:ss"), queryHandlers.Count);
         }        
 
 
@@ -327,7 +328,7 @@ namespace UniformQueries
         /// <returns></returns>
         public static bool TryFindQueryHandler(QueryPart[] queryParts, out IQueryHandler handler)
         {
-            foreach (UniformQueries.IQueryHandler pb in UniformQueries.API.QueryProcessors)
+            foreach (UniformQueries.IQueryHandler pb in UniformQueries.API.QueryHandlers)
             {
                 // Check header
                 if (pb.IsTarget(queryParts))

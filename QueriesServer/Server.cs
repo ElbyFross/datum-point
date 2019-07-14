@@ -87,7 +87,7 @@ namespace QueriesServer
             // Initialize Queue monitor.
             try
             {
-                _ = UniformQueries.API.QueryProcessors;
+                _ = UniformQueries.API.QueryHandlers;
             }
             catch (Exception ex)
             {

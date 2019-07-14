@@ -37,13 +37,14 @@ namespace PipesProvider.Handlers
         public static async void ClientToServerAsync(BaseServerTransmissionController controller)
         {
             // Open stream reader.
-            StreamReader sr = new StreamReader(controller.pipe);
+            StreamReader sr = new StreamReader(controller.pipeServer);
             string queryBufer;
             DateTime sessionTime = DateTime.Now.AddSeconds(5000);
 
             // Read until trasmition exits not finished.
-            while (controller.pipe.IsConnected)
+            while (controller.pipeServer.IsConnected)
             {
+                #region Reciving message
                 queryBufer = null;
                 // Read line from stream.
                 while (queryBufer == null)
@@ -66,23 +67,27 @@ namespace PipesProvider.Handlers
                         /// Avoid disconnectin error.
                         try
                         {
-                            controller.pipe.Disconnect();
+                            controller.pipeServer.Disconnect();
                         }
                         catch { throw; }
 
                         return;
                     }
                 }
+                #endregion
 
+                #region Finalizing connection
                 // Disconnect user if query recived.
-                if (controller.pipe.IsConnected)
+                if (controller.pipeServer.IsConnected)
                 {
-                    controller.pipe.Disconnect();
+                    controller.pipeServer.Disconnect();
                 }
 
                 // Remove temporal data.
-                controller.pipe.Dispose();
+                controller.pipeServer.Dispose();
+                #endregion
 
+                #region Query processing
                 // Drop if stream is over.
                 if (string.IsNullOrEmpty(queryBufer))
                 {
@@ -90,17 +95,25 @@ namespace PipesProvider.Handlers
                     break;
                 }
 
-                // Log query before decryption.
-                //Console.WriteLine(@"RECIVED QUERY (DNS01): {0}", queryBufer);
-
                 // Try to decrypt. In case of fail decryptor return entry message.
                 queryBufer = Security.Crypto.DecryptString(queryBufer);
 
                 // Log query.
                 Console.WriteLine(@"RECIVED QUERY (DNS0): {0}", queryBufer);
 
-                // Redirect handler.
-                controller.queryHandlerCallback?.Invoke(controller, queryBufer);
+                // Try to get correct transmisssion controller.
+                if (controller is ClientToServerTransmissionController ct)
+                {
+                    // Redirect handler.
+                    ct.queryHandlerCallback?.Invoke(controller, queryBufer);
+                }
+                else
+                {
+                    // Log error.
+                    Console.WriteLine(@"DNS HANDLER ERROR (DNS40):\nQuery processing not posssible.\nTransmission controller not {0}",
+                        typeof(ClientToServerTransmissionController).FullName);
+                }
+                #endregion
             }
 
             // Log about transmission finish.
@@ -117,7 +130,7 @@ namespace PipesProvider.Handlers
             if (controller is ServerToClientTransmissionController outController)
             {
                 // Open stream reader.
-                StreamWriter sw = new StreamWriter(outController.pipe);
+                StreamWriter sw = new StreamWriter(outController.pipeServer);
 
                 // Buferise query before calling of async operations.
                 string sharedQuery = outController.ProcessingQuery;
@@ -127,7 +140,7 @@ namespace PipesProvider.Handlers
                 try
                 {
                     // Write message to stream.
-                    Console.WriteLine("{0}: Start transmission to client.", outController.name);
+                    Console.WriteLine("{0}: Start transmission to client.", outController.pipeName);
                     await sw.WriteAsync(sharedQuery);
                     await sw.FlushAsync();
                 }
@@ -145,13 +158,13 @@ namespace PipesProvider.Handlers
             }
 
             // Disconnect user if query recived.
-            if (controller.pipe.IsConnected)
+            if (controller.pipeServer.IsConnected)
             {
-                controller.pipe.Disconnect();
+                controller.pipeServer.Disconnect();
             }
 
             // Remove temporal data.
-            controller.pipe.Dispose();
+            controller.pipeServer.Dispose();
 
             // Stop this transmission line.
             controller.SetStoped();
@@ -172,7 +185,7 @@ namespace PipesProvider.Handlers
             if (controller is BroadcastingServerTransmissionController broadcastController)
             {
                 // Open stream reader.
-                StreamWriter sw = new StreamWriter(controller.pipe);
+                StreamWriter sw = new StreamWriter(controller.pipeServer);
 
                 // Read until trasmition exits not finished.
                 // Avoid an error caused to disconection of client.
@@ -182,7 +195,7 @@ namespace PipesProvider.Handlers
                     string message = broadcastController.GetMessage();
 
                     // Write message to stream.
-                    Console.WriteLine("{0}: Start transmission to client.", controller.name);
+                    Console.WriteLine("{0}: Start transmission to client.", controller.pipeName);
                     await sw.WriteAsync(message);
                     await sw.FlushAsync();
                 }
@@ -200,9 +213,9 @@ namespace PipesProvider.Handlers
             }
 
             // Disconnect user if query recived.
-            if (controller.pipe.IsConnected)
+            if (controller.pipeServer.IsConnected)
             {
-                controller.pipe.Disconnect();
+                controller.pipeServer.Disconnect();
             }
 
             // Log about transmission finish.

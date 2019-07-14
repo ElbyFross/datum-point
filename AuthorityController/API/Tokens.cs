@@ -134,6 +134,27 @@ namespace AuthorityController.API
             // Compare arrays.
             return API.Collections.IsHasEnoughRigths(requesterRights, requiredRights);
         }
+
+        /// <summary>
+        /// Authorizing new token with guest's rights, and return information in query format.
+        /// </summary>
+        /// <returns>Token that can be used by client in queries.</returns>
+        public static string AuthorizeNewGuestToken()
+        {
+            // Get free token.
+            string sessionToken = API.Tokens.UnusedToken;
+
+            // Registrate token with guest rank.
+            Session.Current.SetTokenRights(sessionToken, new string[] { "rank=0" });
+
+            // Return session data to user.
+            string query = string.Format("token={1}{0}expiryIn={2}{0}rights=rank=0",
+                UniformQueries.API.SPLITTING_SYMBOL,
+                sessionToken,
+                Data.Config.Active.TokenValidTimeMinutes);
+
+            return query;
+        }
         #endregion
     }
 }

@@ -59,7 +59,10 @@ namespace UniformClient
 
         #region Input transmisssion
         /// <summary>
+        /// Open a line that will be ready to recive server answer.
+        /// New line will created related to params of requesting line and sended query.
         /// 
+        /// Attention: Not work with broadcasting server.
         /// </summary>
         /// <param name="line">Line that was used to transmition</param>
         /// <param name="answerHandler">Delegate that will be called as handler for answer processing. 
@@ -67,19 +70,22 @@ namespace UniformClient
         /// object contain recived query (usualy string or byte[]).</param>
         /// <param name="decodedQuery">Query that sent to server and must recive answer. Must be not encoded.</param>
         /// <returns></returns>
-        public static bool ReceiveAnswerViaPP(
+        public static bool ReceiveDelayedAnswerViaPP(
             TransmissionLine line,
             string decodedQuery,
             System.Action<TransmissionLine, object> answerHandler)
         {
-            return ReceiveAnswerViaPP(
+            return ReceiveDelayedAnswerViaPP(
                 line,
                 UniformQueries.API.DetectQueryParts(decodedQuery),
                 answerHandler);
         }
 
         /// <summary>
+        /// Open a line that will be ready to recive server answer.
+        /// New line will created related to params of requesting line and sended query.
         /// 
+        /// Attention: Not work with broadcasting server.
         /// </summary>
         /// <param name="line">Line that was used to transmition</param>
         /// <param name="answerHandler">Delegate that will be called as handler for answer processing. 
@@ -88,7 +94,7 @@ namespace UniformClient
         /// <param name="entryQueryParts">Parts of query that was recived from client. 
         /// Method will detect core part and establish backward connection.</param>
         /// <returns></returns>
-        public static bool ReceiveAnswerViaPP(
+        public static bool ReceiveDelayedAnswerViaPP(
             TransmissionLine line,
             UniformQueries.QueryPart[] entryQueryParts,
             System.Action<TransmissionLine, object> answerHandler)
@@ -154,7 +160,7 @@ namespace UniformClient
             line.EnqueueQuery(query);
 
             // Open backward chanel to recive answer from server.
-            ReceiveAnswerViaPP(line, query, answerHandler);
+            ReceiveDelayedAnswerViaPP(line, query, answerHandler);
         }
 
         /// <summary>

@@ -22,16 +22,21 @@ namespace PipesProvider.Server.TransmissionControllers
     /// </summary>
     public class ClientToServerTransmissionController : BaseServerTransmissionController
     {
+        /// <summary>
+        /// Delegate that will be called when server will recive query.
+        /// ServerTransmissionMeta - meta data of transmission.
+        /// string - shared query.
+        /// </summary>
+        public System.Action<BaseServerTransmissionController, string> queryHandlerCallback;
+
         // Set uniform constructor.
         public ClientToServerTransmissionController(
            IAsyncResult connectionMarker,
            System.Action<BaseServerTransmissionController> connectionCallback,
-           System.Action<BaseServerTransmissionController, string> queryHandlerCallback,
            NamedPipeServerStream pipe,
            string pipeName) : base(
                 connectionMarker,
                 connectionCallback,
-                queryHandlerCallback,
                 pipe,
                 pipeName)
         { }
@@ -128,16 +133,32 @@ namespace PipesProvider.Server.TransmissionControllers
             PipeOptions pipeOptions,
             Security.SecurityLevel securityLevel)
         {
-            ServerAPI.ServerLoop<BaseServerTransmissionController>(
+            ServerAPI.ServerLoop<ClientToServerTransmissionController>(
                 guid,
                 Handlers.DNS.ClientToServerAsync,
-                queryHandlerCallback,
                 pipeName,
                 pipeDirection,
                 allowedServerInstances,
                 transmissionMode,
                 pipeOptions,
-                securityLevel);
+                securityLevel,
+                // Set query handler callback
+                (BaseServerTransmissionController tc) =>
+                    {
+                        if (tc is ClientToServerTransmissionController csts)
+                        {
+                            csts.queryHandlerCallback = queryHandlerCallback;
+                        }
+                        else
+                        {
+                            // Stop server
+                            tc.SetStoped();
+
+                            // Log error
+                            Console.WriteLine("SERVER ERROR (CtS_TC 10): Created controler can't be casted to ClientToServerTransmissionController");
+                        }
+                    }
+                );
         }
         #endregion
     }

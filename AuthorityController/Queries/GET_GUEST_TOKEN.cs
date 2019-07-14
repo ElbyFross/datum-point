@@ -24,7 +24,7 @@ namespace AuthorityController.Queries
     /// <summary>
     /// Registrate token with guest rights in the system and return to client.
     /// </summary>
-    class GET_GUEST_TOKEN : IQueryHandler
+    public class GET_GUEST_TOKEN : IQueryHandler
     {
         public string Description(string cultureKey)
         {
@@ -33,21 +33,9 @@ namespace AuthorityController.Queries
 
         public void Execute(QueryPart[] queryParts)
         {
-            // Get free token.
-            string sessionToken = API.Tokens.UnusedToken;
-
-            // Registrate token with guest rank.
-            Session.Current.SetTokenRights(sessionToken, new string[] { "rank=0" });
-
-            // Return session data to user.
-            string query = string.Format("token={1}{0}expiryIn={2}{0}rights=rank=0",
-                UniformQueries.API.SPLITTING_SYMBOL,
-                sessionToken,
-                Data.Config.Active.TokenValidTimeMinutes);
-
             // Send token to client.
-            UniformServer.BaseServer.SendAnswerViaPP(query, queryParts);
-        }
+            UniformServer.BaseServer.SendAnswerViaPP(AuthorityController.API.Tokens.AuthorizeNewGuestToken(), queryParts);
+        }               
 
         public bool IsTarget(QueryPart[] queryParts)
         {
