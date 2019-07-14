@@ -180,7 +180,7 @@ namespace QueriesServer
 
             #region Server establishing
             // Start server loop.
-            ServerAPI.ClientToServerLoop(
+            PipesProvider.Server.TransmissionControllers.ClientToServerTransmissionController.ServerLoop(
                 serverName,
                 QueryHandler_Relay,
                 ((Server)server).pipeName,
@@ -225,7 +225,7 @@ namespace QueriesServer
                 if(!instruction.IsValid)
                 {
                     // Request new key.
-                    UniformClient.BaseClient.GetValidPublicKey(instruction);
+                    UniformClient.BaseClient.GetValidPublicKeyViaPP(instruction);
 
                     // Log.
                     Console.WriteLine("WAITING FOR PUBLIC RSA KEY FROM {0}/{1}", instruction.routingIP, instruction.pipeName);
@@ -246,7 +246,7 @@ namespace QueriesServer
             }
 
             // Open connection.
-            TransmissionLine tl = UniformClient.BaseClient.EnqueueDuplexQuery(
+            TransmissionLine tl = UniformClient.BaseClient.EnqueueDuplexQueryViaPP(
                 instruction.routingIP,
                 instruction.pipeName,
                 query,
@@ -258,7 +258,7 @@ namespace QueriesServer
                     string answerAsString = answer as string;
                     if (!string.IsNullOrEmpty(answerAsString))
                     {
-                        SendAnswer(answerAsString, UniformQueries.API.DetectQueryParts(query));
+                        SendAnswerViaPP(answerAsString, UniformQueries.API.DetectQueryParts(query));
                         return;
                     }
 

@@ -48,8 +48,8 @@ namespace AuthorityController.Tests
             };
 
             // Start listening client.
-            UniformClient.SimpleClient.ReceiveAnswer(
-                UniformClient.BaseClient.OpenOutTransmissionLine("localhost", "GetGuestToken"),
+            UniformClient.Standard.SimpleClient.ReceiveAnswerViaPP(
+                UniformClient.BaseClient.OpenOutTransmissionLineViaPP("localhost", "GetGuestToken"),
                 queryParts,
                 (PipesProvider.Client.TransmissionLine line, object obj) =>
                 {

@@ -127,7 +127,7 @@ namespace TestClient
                             // Send as duplex.
                             if (tmp.StartsWith("DPX:"))
                             {
-                                EnqueueDuplexQuery(SERVER_NAME, SERVER_PIPE_NAME,
+                                EnqueueDuplexQueryViaPP(SERVER_NAME, SERVER_PIPE_NAME,
                                     tmp.Substring(4), ServerAnswerHandler_RSAPublicKey).
                                     TryLogonAs(routingInstruction.logonConfig);
                             }
@@ -175,7 +175,7 @@ namespace TestClient
             Console.WriteLine("ONE WAY query.\nTransmisssion to {0}/{1}", SERVER_NAME, SERVER_PIPE_NAME);
 
             // Short way to send one way query.
-            OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME). // Opern transmission line via starndard DNS handler.
+            OpenOutTransmissionLineViaPP(SERVER_NAME, SERVER_PIPE_NAME). // Opern transmission line via starndard DNS handler.
                 EnqueueQuery(string.Format("token={1}{0}guid=echo{0}q=ECHO", UniformQueries.API.SPLITTING_SYMBOL, token)). // Adding query to line's queue.
                 SetInstructionAsKey(ref routingInstruction).        // Connect instruction to provide auto-encryption via RSA.
                 TryLogonAs(routingInstruction.logonConfig);         // Request remote logon. By default LogonConfig equal Anonymous (Guest) user.
@@ -226,7 +226,7 @@ namespace TestClient
             #endregion
 
             // Create transmission line.
-            TransmissionLine lineProcessor = OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME);
+            TransmissionLine lineProcessor = OpenOutTransmissionLineViaPP(SERVER_NAME, SERVER_PIPE_NAME);
             // Set impersonate token.
             lineProcessor.accessToken = safeTokenHandle;
 
@@ -249,7 +249,7 @@ namespace TestClient
 
             // Open duplex chanel. First line processor will send query to server and after that will listen to its andwer.
             // When answer will recived it will redirected to callback.
-            EnqueueDuplexQuery(SERVER_NAME, SERVER_PIPE_NAME, 
+            EnqueueDuplexQueryViaPP(SERVER_NAME, SERVER_PIPE_NAME, 
                 GetPKQuery, ServerAnswerHandler_RSAPublicKey).
                 TryLogonAs(routingInstruction.logonConfig); // Share logon cofig to allow connectio for not public servers.
 

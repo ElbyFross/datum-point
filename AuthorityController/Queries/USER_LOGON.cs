@@ -47,7 +47,7 @@ namespace AuthorityController.Queries
             if(!API.Users.TryToFindUser(login.propertyValue, out Data.User user))
             {
                 // Inform that user not found.
-                UniformServer.BaseServer.SendAnswer("ERROR 412: User not found", queryParts);
+                UniformServer.BaseServer.SendAnswerViaPP("ERROR 412: User not found", queryParts);
                 return;
             }
 
@@ -56,7 +56,7 @@ namespace AuthorityController.Queries
             if(!user.IsOpenPasswordCorrect(password.propertyValue))
             {
                 // Inform that password is incorrect.
-                UniformServer.BaseServer.SendAnswer("ERROR 412: Incorrect password", queryParts);
+                UniformServer.BaseServer.SendAnswerViaPP("ERROR 412: Incorrect password", queryParts);
                 return;
             }
 
@@ -64,7 +64,7 @@ namespace AuthorityController.Queries
             if(API.Users.IsBanned(user, "logon"))
             {
                 // Inform that password is incorrect.
-                UniformServer.BaseServer.SendAnswer("ERROR 412: User banned.", queryParts);
+                UniformServer.BaseServer.SendAnswerViaPP("ERROR 412: User banned.", queryParts);
                 return;
             }
             #endregion
@@ -91,7 +91,7 @@ namespace AuthorityController.Queries
             }
             
             // Send token to client.
-            UniformServer.BaseServer.SendAnswer(query, queryParts);
+            UniformServer.BaseServer.SendAnswerViaPP(query, queryParts);
             #endregion
         }
 

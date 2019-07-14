@@ -97,7 +97,7 @@ namespace THB_Data_Server
                 // Starting server loop.
                 serverBufer.StartServerThread(
                     "Queries monitor #" + i, serverBufer, 
-                    ThreadingServerLoop_OpenChanel);
+                    ThreadingServerLoop_PP_OpenChanel);
 
                 // Change thread culture.
                 serverBufer.thread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");

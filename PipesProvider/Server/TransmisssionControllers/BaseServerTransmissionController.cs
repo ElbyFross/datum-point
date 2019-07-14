@@ -22,6 +22,7 @@ namespace PipesProvider.Server.TransmissionControllers
     /// </summary>
     public class BaseServerTransmissionController
     {
+        #region Fields & properties
         /// <summary>
         /// Object that provide access to async connection.
         /// </summary>
@@ -60,7 +61,9 @@ namespace PipesProvider.Server.TransmissionControllers
         /// Marker that show does this transmition stoped.
         /// </summary>
         public bool Stoped { get; protected set; }
-        
+        #endregion
+
+
         #region Constructors
         public BaseServerTransmissionController() { }
 
@@ -88,6 +91,7 @@ namespace PipesProvider.Server.TransmissionControllers
         }
         #endregion
 
+        #region API
         /// <summary>
         /// Maeking transmission as expired. Line will be remaked.
         /// </summary>
@@ -109,5 +113,6 @@ namespace PipesProvider.Server.TransmissionControllers
 
             Console.WriteLine("{0}: PIPE SERVER MANUALY STOPED", name);
         }
+        #endregion
     }
 }

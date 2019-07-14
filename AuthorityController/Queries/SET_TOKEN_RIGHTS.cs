@@ -51,7 +51,7 @@ namespace AuthorityController.Queries
                 Data.Config.Active.QUERY_SetTokenRights_RIGHTS))
             {
                 // Inform about error.
-                UniformServer.BaseServer.SendAnswer(error, queryParts);
+                UniformServer.BaseServer.SendAnswerViaPP(error, queryParts);
                 return;
             }
             #endregion
@@ -60,7 +60,7 @@ namespace AuthorityController.Queries
             if (Session.Current.TryGetTokenRights(targetToken.propertyValue, out string[] targetTokenRights))
             {
                 // If also not found.
-                UniformServer.BaseServer.SendAnswer("ERROR 404: User not found", queryParts);
+                UniformServer.BaseServer.SendAnswerViaPP("ERROR 404: User not found", queryParts);
                 return;
             }
             #endregion
@@ -77,7 +77,7 @@ namespace AuthorityController.Queries
             if (!API.Collections.IsHasEnoughRigths(requesterRights, ">rank=" + userRank))
             {
                 // Inform that target user has the same or heigher rank then requester.
-                UniformServer.BaseServer.SendAnswer("ERROR 401: Unauthorized", queryParts);
+                UniformServer.BaseServer.SendAnswerViaPP("ERROR 401: Unauthorized", queryParts);
                 return;
             }
             #endregion

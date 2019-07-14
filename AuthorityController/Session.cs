@@ -271,7 +271,7 @@ namespace AuthorityController
                     }
 
                     // Open transmission line to server.
-                    UniformClient.BaseClient.OpenOutTransmissionLine(instruction.routingIP, instruction.pipeName).
+                    UniformClient.BaseClient.OpenOutTransmissionLineViaPP(instruction.routingIP, instruction.pipeName).
                         EnqueueQuery(query).              // Add query to queue.
                         SetInstructionAsKey(ref instruction).   // Apply encryption if requested.
                         TryLogonAs(instruction.logonConfig);    // Profide logon data to access remote machine.

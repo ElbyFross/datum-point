@@ -66,7 +66,7 @@ namespace AuthorityController.Queries
                login.propertyValue.Length > Data.Config.Active.LoginMaxSize)
             {
                 // Inform about incorrect login size.
-                UniformServer.BaseServer.SendAnswer(
+                UniformServer.BaseServer.SendAnswerViaPP(
                     "ERROR 401: Invalid login size. Require " +
                     Data.Config.Active.LoginMinSize + "-" +
                     Data.Config.Active.LoginMaxSize + " caracters.",
@@ -78,7 +78,7 @@ namespace AuthorityController.Queries
             if(!Regex.IsMatch(login.propertyValue, @"^[a-zA-Z0-9@._]+$"))
             {
                 // Inform about incorrect login size.
-                UniformServer.BaseServer.SendAnswer(
+                UniformServer.BaseServer.SendAnswerViaPP(
                     "ERROR 401: Invalid login format. Allowed symbols: [a-z][A-Z][0-9]@._" ,
                     queryParts);
                 return;
@@ -89,7 +89,7 @@ namespace AuthorityController.Queries
             if (API.Users.TryToFindUser(login.propertyValue, out Data.User _))
             {
                 // Inform that target user has the same or heigher rank then requester.
-                UniformServer.BaseServer.SendAnswer("ERROR 401: Login occupied", queryParts);
+                UniformServer.BaseServer.SendAnswerViaPP("ERROR 401: Login occupied", queryParts);
                 return;
             }
 
@@ -101,7 +101,7 @@ namespace AuthorityController.Queries
             if (!API.Validation.PasswordFormat(password.propertyValue, out string errorMessage))
             {
                 // Inform about incorrect login size.
-                UniformServer.BaseServer.SendAnswer(
+                UniformServer.BaseServer.SendAnswerViaPP(
                     errorMessage,
                     queryParts);
                 return;
@@ -117,7 +117,7 @@ namespace AuthorityController.Queries
                !API.Validation.NameFormat(ref secondName.propertyName, out error))
             {
                 // Inform about incorrect login size.
-                UniformServer.BaseServer.SendAnswer(
+                UniformServer.BaseServer.SendAnswerViaPP(
                     error,
                     queryParts);
                 return;

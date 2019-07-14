@@ -16,7 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace UniformServer
+namespace UniformServer.Standard
 {
     /// <summary>
     /// Server that allow instiniate BaseServer.

@@ -44,206 +44,7 @@ namespace PipesProvider.Server
         /// </summary>
         private static readonly Hashtable openedServers = new Hashtable();
         #endregion
-
-
-        #region Client-Server loops
-        /// <summary>
-        /// Automaticly create server's pipe that will recive queries from clients.
-        /// </summary>
-        /// <param name="queryHandlerCallback">Callback that will be called when server will recive query from clinet.</param>
-        /// <param name="pipeName">Name of pipe that will created. Client will access this server using that name.</param>
-        public static void ClientToServerLoop(
-            System.Action<BaseServerTransmissionController, string> queryHandlerCallback,
-            string pipeName, 
-            out string guid,
-            Security.SecurityLevel securityLevel)
-        {
-            // Generate GUID.
-            guid = pipeName.GetHashCode().ToString();
-
-            // Start loop.
-            ServerLoop<BaseServerTransmissionController>(
-                guid,
-                Handlers.DNS.ClientToServerAsync,
-                queryHandlerCallback,
-                pipeName,
-                PipeDirection.InOut,
-                System.IO.Pipes.NamedPipeServerStream.MaxAllowedServerInstances,
-                PipeTransmissionMode.Message,
-                PipeOptions.Asynchronous | PipeOptions.WriteThrough,
-                securityLevel);
-        }
-
-        /// <summary>
-        /// Automaticly create server's pipe.
-        /// Allow to customise GUID.
-        /// </summary>
-        /// <param name="guid"></param>
-        /// <param name="queryHandlerCallback"></param>
-        /// <param name="pipeName"></param>
-        public static void ClientToServerLoop(
-            string guid,
-            System.Action<BaseServerTransmissionController, string> queryHandlerCallback,
-            string pipeName,
-            Security.SecurityLevel securityLevel)
-        {
-            ServerLoop<BaseServerTransmissionController>(
-                guid,
-                Handlers.DNS.ClientToServerAsync,
-                queryHandlerCallback,
-                pipeName,
-                PipeDirection.InOut,
-                System.IO.Pipes.NamedPipeServerStream.MaxAllowedServerInstances,
-                PipeTransmissionMode.Message,
-                PipeOptions.Asynchronous | PipeOptions.WriteThrough,
-                securityLevel);
-        }
-
-        /// <summary>
-        /// Automaticly create server's pipe.
-        /// Allow to customise GUID.
-        /// </summary>
-        /// <param name="guid"></param>
-        /// <param name="queryHandlerCallback"></param>
-        /// <param name="pipeName"></param>
-        /// <param name="pipeName"></param>
-        public static void ClientToServerLoop(
-            string guid,
-            System.Action<BaseServerTransmissionController, string> queryHandlerCallback,
-            string pipeName,
-            int allowedServerInstances,
-            Security.SecurityLevel securityLevel)
-        {
-            ServerLoop<BaseServerTransmissionController>(
-                guid,
-                Handlers.DNS.ClientToServerAsync,
-                queryHandlerCallback,
-                pipeName,
-                PipeDirection.InOut,
-                allowedServerInstances,
-                PipeTransmissionMode.Message,
-                PipeOptions.Asynchronous | PipeOptions.WriteThrough,
-                securityLevel);
-        }
-
-        /// <summary>
-        /// Server loop 
-        /// </summary>
-        /// <param name="guid"></param>
-        /// <param name="queryHandlerCallback"></param>
-        /// <param name="pipeName"></param>
-        /// <param name="pipeDirection"></param>
-        /// <param name="allowedServerInstances"></param>
-        /// <param name="transmissionMode"></param>
-        /// <param name="pipeOptions"></param>
-        public static void ClientToServerLoop(
-            string guid,
-            System.Action<BaseServerTransmissionController, string> queryHandlerCallback,
-            string pipeName,
-            PipeDirection pipeDirection,
-            int allowedServerInstances,
-            PipeTransmissionMode transmissionMode,
-            PipeOptions pipeOptions,
-            Security.SecurityLevel securityLevel)
-        {
-            ServerLoop<BaseServerTransmissionController>(
-                guid,
-                Handlers.DNS.ClientToServerAsync,
-                queryHandlerCallback,
-                pipeName,
-                pipeDirection,
-                allowedServerInstances,
-                transmissionMode,
-                pipeOptions,
-                securityLevel);
-        }
-        #endregion
-
-        #region Server-Client loops
-        /// <summary>
-        /// Automaticly create server's pipe that will send message to client.
-        /// </summary>
-        /// <param name="queryHandlerCallback">Callback that will be called when server will recive query from clinet.</param>
-        /// <param name="pipeName">Name of pipe that will created. Client will access this server using that name.</param>
-        public static void ServerToClientLoop(
-            string pipeName,
-            out string guid,
-            Security.SecurityLevel securityLevel)
-        {
-            // Generate GUID.
-            guid = pipeName.GetHashCode().ToString();
-
-            // Start loop.
-            ServerToClientLoop(guid, pipeName, securityLevel);
-        }
-
-        /// <summary>
-        /// Automaticly create server's pipe that will send message to client.
-        /// </summary>
-        /// <param name="queryHandlerCallback">Callback that will be called when server will recive query from clinet.</param>
-        /// <param name="pipeName">Name of pipe that will created. Client will access this server using that name.</param>
-        public static void ServerToClientLoop(
-            string guid,
-            string pipeName,
-            Security.SecurityLevel securityLevel)
-        {
-            // Start loop.
-            ServerLoop<ServerAnswerTransmissionController>(
-                guid,
-                Handlers.DNS.ServerToClientAsync,
-                null,
-                pipeName,
-                PipeDirection.InOut,
-                1,
-                PipeTransmissionMode.Message,
-                PipeOptions.Asynchronous | PipeOptions.WriteThrough,
-                securityLevel);
-        }
-        #endregion
-
-        #region Server Broadcasing loops
-        public static void ServerBroadcastingLoop(
-           string pipeName,
-           out string guid,
-           Security.SecurityLevel securityLevel,
-            BroadcastingServerTransmissionController.MessageHandeler getMessageHanler)
-        {
-            // Generate GUID.
-            guid = pipeName.GetHashCode().ToString();
-
-            // Start loop.
-            ServerBroadcastingLoop(guid, pipeName, securityLevel, getMessageHanler);
-        }
-
-        public static void ServerBroadcastingLoop(
-            string guid,
-            string pipeName,
-            Security.SecurityLevel securityLevel,
-            BroadcastingServerTransmissionController.MessageHandeler getMessageHanler)
-        {
-            // Start loop.
-            ServerLoop<BroadcastingServerTransmissionController>(
-                guid,
-                Handlers.DNS.ServerToClientAsync,
-                null,
-                pipeName,
-                PipeDirection.InOut,
-                1,
-                PipeTransmissionMode.Message,
-                PipeOptions.Asynchronous | PipeOptions.WriteThrough,
-                securityLevel,
-                // Initialise broadcasting delegate.
-                (BaseServerTransmissionController tc) =>
-                {
-                    ((BroadcastingServerTransmissionController)openedServers[guid]).
-                    GetMessage = getMessageHanler;
-                }
-                );
-
-            // Apply handler.
-        }
-        #endregion
-
+        
         #region Core configurable loop
         /// <summary>
         /// Provide base server loop that control pipe.
@@ -387,7 +188,6 @@ namespace PipesProvider.Server
         }
         #endregion
 
-
         #region Controls
         /// <summary>
         /// Marking pipe as expired. 
@@ -522,7 +322,7 @@ namespace PipesProvider.Server
         /// <param name="guid"></param>
         /// <param name="meta"></param>
         /// <returns></returns>
-        public static bool TryGetServerTransmissionMeta(string guid, out BaseServerTransmissionController meta)
+        public static bool TryGetServerTransmissionController(string guid, out BaseServerTransmissionController meta)
         {
             meta = openedServers[guid] as BaseServerTransmissionController;
             return meta != null;

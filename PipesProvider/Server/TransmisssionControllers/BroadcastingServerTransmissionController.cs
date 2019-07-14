@@ -19,15 +19,19 @@ namespace PipesProvider.Server.TransmissionControllers
 {
     /// <summary>
     /// Transmission controller that situable for broadcasting.
+    /// Every connection will call Message handler that can share scripted or constant data.
     /// </summary>
     public class BroadcastingServerTransmissionController : BaseServerTransmissionController
     {
+        #region Properties
         /// <summary>
         /// Handler that contain delegate that generate message for every broadcasting session.
         /// </summary>
         public MessageHandeler GetMessage { get; set; }
         public delegate string MessageHandeler();
+        #endregion
 
+        #region Constructors
         // Set uniform constructor.
         public BroadcastingServerTransmissionController(
            IAsyncResult connectionMarker,
@@ -40,5 +44,64 @@ namespace PipesProvider.Server.TransmissionControllers
                 queryHandlerCallback,
                 pipe, 
                 pipeName) { }
+        #endregion
+
+        #region Server loops
+        /// <summary>
+        /// Start server loop that provide server pipe.
+        /// </summary>
+        /// <param name="guid">Id signed to connection. Will generated authomaticly and returned to </param>
+        /// <param name="pipeName">Name of the pipe that will be started.</param>
+        /// <param name="securityLevel">Pipes security levels that will be applied to pipe.</param>
+        /// <param name="getMessageHanler">Handler that generate brodcasting message for every connected client.</param>
+        public static void ServerLoop(
+           out string guid,
+           string pipeName,
+           Security.SecurityLevel securityLevel,
+            BroadcastingServerTransmissionController.MessageHandeler getMessageHanler)
+        {
+            // Generate GUID.
+            guid = (System.Threading.Thread.CurrentThread.Name + "\\" + pipeName).GetHashCode().ToString();
+
+            // Start loop.
+            ServerLoop(guid, pipeName, securityLevel, getMessageHanler);
+        }
+
+        /// <summary>
+        /// 
+        /// Start server loop that provide server pipe.
+        /// </summary>
+        /// <param name="guid">Id signed to connection.</param>
+        /// <param name="pipeName">Name of the pipe that will be started.</param>
+        /// <param name="securityLevel">Pipes security levels that will be applied to pipe.</param>
+        /// <param name="getMessageHanler">Handler that generate brodcasting message for every connected client.</param>
+        public static void ServerLoop(
+            string guid,
+            string pipeName,
+            Security.SecurityLevel securityLevel,
+            BroadcastingServerTransmissionController.MessageHandeler getMessageHanler)
+        {
+            // Start loop.
+            ServerAPI.ServerLoop<BroadcastingServerTransmissionController>(
+                guid,
+                Handlers.DNS.ServerToClientAsync,
+                null,
+                pipeName,
+                PipeDirection.InOut,
+                System.IO.Pipes.NamedPipeServerStream.MaxAllowedServerInstances,
+                PipeTransmissionMode.Message,
+                PipeOptions.Asynchronous | PipeOptions.WriteThrough,
+                securityLevel,
+                // Initialise broadcasting delegate.
+                (BaseServerTransmissionController tc) =>
+                    {
+                        ((BroadcastingServerTransmissionController)tc).
+                        GetMessage = getMessageHanler;
+                    }
+                );
+
+            // Apply handler.
+        }
+        #endregion
     }
 }

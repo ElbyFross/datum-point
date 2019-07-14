@@ -46,7 +46,7 @@ namespace AuthorityController.Queries
                 Data.Config.Active.TokenValidTimeMinutes);
 
             // Send token to client.
-            UniformServer.BaseServer.SendAnswer(query, queryParts);
+            UniformServer.BaseServer.SendAnswerViaPP(query, queryParts);
         }
 
         public bool IsTarget(QueryPart[] queryParts)

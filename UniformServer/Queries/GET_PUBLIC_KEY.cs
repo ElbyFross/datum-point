@@ -50,7 +50,7 @@ namespace UniformServer.Queries
             string answer = publicKey + API.SPLITTING_SYMBOL + expireTime;
 
             // Open answer chanel on server and send message.
-            BaseServer.SendAnswer(answer, queryParts);
+            BaseServer.SendAnswerViaPP(answer, queryParts);
         }
 
         public bool IsTarget(QueryPart[] queryParts)

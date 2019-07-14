@@ -17,7 +17,7 @@ using System.Collections.Generic;
 using System.Text;
 using PipesProvider.Security;
 
-namespace UniformClient
+namespace UniformClient.Standard
 {
     /// <summary>
     /// Client that allow instiniate BaseClient.

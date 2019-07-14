@@ -60,7 +60,7 @@ namespace AuthorityController.Queries
             if (!API.Users.TryToFindUserUniform(user.propertyValue, out Data.User userProfile, out error))
             {
                 // Inform about error.
-                UniformServer.BaseServer.SendAnswer(error, queryParts);
+                UniformServer.BaseServer.SendAnswerViaPP(error, queryParts);
                 return;
             }
             #endregion
@@ -73,7 +73,7 @@ namespace AuthorityController.Queries
                 Data.Config.Active.QUERY_UserNewPassword_RIGHTS))
             {
                 // Inform about error.
-                UniformServer.BaseServer.SendAnswer(error, queryParts);
+                UniformServer.BaseServer.SendAnswerViaPP(error, queryParts);
                 return;
             }
             #endregion
@@ -103,7 +103,7 @@ namespace AuthorityController.Queries
                 if(!API.Collections.TyGetPropertyValue("rank", out string userRank, userProfile.rights))
                 {
                     // Inform that rights not enough.
-                    UniformServer.BaseServer.SendAnswer("ERROR 401: Unauthorized", queryParts);
+                    UniformServer.BaseServer.SendAnswerViaPP("ERROR 401: Unauthorized", queryParts);
                     return;
                 }
 
@@ -113,7 +113,7 @@ namespace AuthorityController.Queries
                     ">rank=" + userRank, ">rank=2"))
                 {
                     // Inform that rank not defined.
-                    UniformServer.BaseServer.SendAnswer("ERROR 401: User rank not defined", queryParts);
+                    UniformServer.BaseServer.SendAnswerViaPP("ERROR 401: User rank not defined", queryParts);
                     return;
                 }
             }
@@ -124,7 +124,7 @@ namespace AuthorityController.Queries
             if (!userProfile.IsOpenPasswordCorrect(oldPassword.propertyValue))
             {
                 // Inform that password is incorrect.
-                UniformServer.BaseServer.SendAnswer("ERROR 412: Incorrect password", queryParts);
+                UniformServer.BaseServer.SendAnswerViaPP("ERROR 412: Incorrect password", queryParts);
                 return;
             }
             #endregion
@@ -133,7 +133,7 @@ namespace AuthorityController.Queries
             if(!API.Validation.PasswordFormat(password.propertyValue, out string errorMessage))
             {
                 // Inform about incorrect login size.
-                UniformServer.BaseServer.SendAnswer(
+                UniformServer.BaseServer.SendAnswerViaPP(
                     errorMessage,
                     queryParts);
                 return;

@@ -53,7 +53,7 @@ namespace AuthorityController.Queries
                 Data.Config.Active.QUERY_UserBan_RIGHTS))
             {
                 // Inform about error.
-                UniformServer.BaseServer.SendAnswer(error, queryParts);
+                UniformServer.BaseServer.SendAnswerViaPP(error, queryParts);
                 return;
             }
             #endregion
@@ -63,7 +63,7 @@ namespace AuthorityController.Queries
             if(!API.Users.TryToFindUserUniform(user.propertyValue, out Data.User userProfile, out error))
             {
                 // Inform about error.
-                UniformServer.BaseServer.SendAnswer(error, queryParts);
+                UniformServer.BaseServer.SendAnswerViaPP(error, queryParts);
                 return;
             }
             #endregion
@@ -80,7 +80,7 @@ namespace AuthorityController.Queries
             if (!API.Collections.IsHasEnoughRigths(requesterRights, ">rank=" + userRank))
             {
                 // Inform that target user has the same or heigher rank then requester.
-                UniformServer.BaseServer.SendAnswer("ERROR 401: Unauthorized", queryParts);
+                UniformServer.BaseServer.SendAnswerViaPP("ERROR 401: Unauthorized", queryParts);
                 return;
             }
             #endregion
@@ -106,7 +106,7 @@ namespace AuthorityController.Queries
                     catch
                     {
                         // If also not found.
-                        UniformServer.BaseServer.SendAnswer("ERROR 404: Ban information corrupted.", queryParts);
+                        UniformServer.BaseServer.SendAnswerViaPP("ERROR 404: Ban information corrupted.", queryParts);
                         return;
                     }
                 }

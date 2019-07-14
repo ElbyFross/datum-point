@@ -114,7 +114,7 @@ namespace PipesProvider.Handlers
         public static async void ServerToClientAsync(BaseServerTransmissionController controller)
         {
             // Try to get correct controller.
-            if (controller is ServerAnswerTransmissionController outController)
+            if (controller is ServerToClientTransmissionController outController)
             {
                 // Open stream reader.
                 StreamWriter sw = new StreamWriter(outController.pipe);

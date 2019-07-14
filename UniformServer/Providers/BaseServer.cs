@@ -27,7 +27,7 @@ namespace UniformServer
     /// <summary>
     /// Class that provide base server features and envirounment static API.
     /// </summary>
-    public abstract class BaseServer
+    public abstract partial class BaseServer
     {
         #region Events
         /// <summary>
@@ -238,97 +238,7 @@ namespace UniformServer
             }
         }
         #endregion
-
-        #region Transmission API
-        /// <summary>
-        /// Open server line that will send answer backward to cliend by dirrect line.
-        /// Line will established relative to the data shared by client query.
-        /// 
-        /// Using this method you frovide uniform revers connection and not need to create 
-        /// a transmission line by yourself.
-        /// 
-        /// Recommended to use this methos by default dor duplex connection between sever and clients.
-        /// </summary>
-        /// <param name="server">Instance of server that will provide multithreading implementation.</param>
-        /// <param name="answer">Message that will sent by server to target client.</param>
-        /// <param name="entryQueryParts">Parts of query that was recived from client. 
-        /// Method will detect core part and establish backward connection.</param>
-        /// <returns></returns>
-        public static bool SendAnswer(string answer, UniformQueries.QueryPart[] entryQueryParts)
-        {
-            BaseServer server = new SimpleServer();
-
-            // Try to compute bacward domaint to contact with client.
-            if (!UniformQueries.QueryPart.TryGetBackwardDomain(entryQueryParts, out string domain))
-            {
-                Console.WriteLine("ERROR (BSSA0): Unable to buid backward domain. QUERY: {0}", 
-                    UniformQueries.QueryPart.QueryPartsArrayToString(entryQueryParts));
-                return false;
-            }
-
-            // Set fields.
-            server.pipeName = domain;
-
-            // Create delegate that will set our answer message to processing whentransmission meta will available.
-            void InitationCallback(BaseServerTransmissionController tc)
-            {
-                if (tc is ServerAnswerTransmissionController transmissionController)
-                {
-                    // Target callback.
-                    if (transmissionController.name == server.pipeName)
-                    {
-                        // Unsubscribe.
-                        ServerAPI.ServerTransmissionMeta_InProcessing -= InitationCallback;
-
-                        // Encrypt query if requested by "pk" query's param.
-                        if (UniformQueries.API.TryGetParamValue(
-                            "pk",
-                            out UniformQueries.QueryPart publicKeyProp,
-                            entryQueryParts))
-                        {
-                            // Try to get publick key from entry query.
-                            if (PipesProvider.Security.Crypto.TryDeserializeRSAKey(publicKeyProp.propertyValue,
-                                out System.Security.Cryptography.RSAParameters publicKey))
-                            {
-                                // Encrypt query.
-                                answer = PipesProvider.Security.Crypto.EncryptString(answer, publicKey);
-                            }
-                        }
-
-                        // Set answer query as target for processing,
-                        transmissionController.ProcessingQuery = answer;
-
-                        // Log.
-                        Console.WriteLine("{0}: Processing query changed on:\n{1}\n", transmissionController.name, answer);
-                    }
-                }
-                else // Incorrect type.
-                {
-                    // Close transmisssion.
-                    tc.SetStoped();
-                    
-                    // Log.
-                    Console.WriteLine("{0}: ERROR Incorrect transmisssion controller. Required \"ServerAnswerTransmissionController\"", tc.name);
-                }
-            }
-            // Subscribe or waiting delegate on server loop event.
-            ServerAPI.ServerTransmissionMeta_InProcessing += InitationCallback;
-
-
-            // Starting server loop.
-            server.StartServerThread(
-                "SERVER ANSWER " + domain, server,
-                ThreadingServerLoop_Answer);
-
-            // Change thread culture to recive international format messages.
-            server.thread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");
-
-            // Skip line
-            Console.WriteLine();
-            return true;
-        }
-        #endregion
-
+        
         #region Multithreading
         /// <summary>
         /// Method that starting server thread.
@@ -353,53 +263,6 @@ namespace UniformServer
 
             return thread;
         }
-
-        /// <summary>
-        ///  Main loop that control monitor thread.
-        /// </summary>
-        protected static void ThreadingServerLoop_Answer(object server)
-        {
-            #region Init
-            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");
-            Console.WriteLine("THREAD STARTED: {0}", Thread.CurrentThread.Name);
-
-            // Name of pipe server that will established.
-            // Access to this pipe by clients will be available by this name.
-            string serverName = ((BaseServer)server).thread.Name;
-            #endregion
-
-            #region Server establishing
-            // Start server loop.
-            ServerAPI.ServerToClientLoop(
-                serverName,
-                ((BaseServer)server).pipeName,
-                ((BaseServer)server).securityLevel);
-            #endregion
-        }
-
-        /// <summary>
-        ///  Main loop that control pipe chanel that will recive clients.
-        /// </summary>
-        protected static void ThreadingServerLoop_OpenChanel(object server)
-        {
-            #region Init
-            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");
-            Console.WriteLine("THREAD STARTED: {0}", Thread.CurrentThread.Name);
-
-            // Name of pipe server that will established.
-            // Access to this pipe by clients will be available by this name.
-            string serverName = ((BaseServer)server).thread.Name;
-            #endregion
-
-            #region Server establishing
-            // Start server loop.
-            ServerAPI.ClientToServerLoop(
-                serverName,
-                PipesProvider.Handlers.Query.ProcessingAsync,
-                ((BaseServer)server).pipeName,
-                ((BaseServer)server).securityLevel);
-            #endregion
-        }        
         #endregion
     }
 }
