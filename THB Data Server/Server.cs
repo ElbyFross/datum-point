@@ -26,8 +26,7 @@ namespace THB_Data_Server
     /// Server that provide and manage data by queries.
     /// </summary>
     class Server : UniformServer.BaseServer
-    {
-        
+    {        
         /// <summary>
         /// Main loop.
         /// </summary>

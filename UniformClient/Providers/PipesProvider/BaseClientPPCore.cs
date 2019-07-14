@@ -29,7 +29,7 @@ using PipesProvider.Client;
 namespace UniformClient
 {
     /// <summary>
-    /// Part of class that provide core methods.
+    /// Part of class that provide core methods and fields.
     /// </summary>
     public abstract partial class BaseClient
     {

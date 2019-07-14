@@ -33,6 +33,14 @@ namespace UniformClient
     /// </summary>
     public abstract partial class BaseClient
     {
+        /// <summary>
+        /// Table that contain delegatds subscribed to beckward lines in duplex queries.
+        /// 
+        /// Key string - backward domain
+        /// Value System.Action<TransmissionLine, object> - answer processing delegat.
+        /// </summary>
+        protected static Hashtable DuplexBackwardCallbacks = new Hashtable();
+
         #region Output transmission
         /// <summary>
         /// Oppening transmition line that will able to send querie to described server's pipe.

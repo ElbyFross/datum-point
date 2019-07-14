@@ -33,33 +33,7 @@ namespace UniformClient
     /// </summary>
     public abstract partial class BaseClient
     {
-        #region Static fields and properties
-        /// <summary>
-        /// Imported method that allo to controll console window state.
-        /// </summary>
-        /// <param name="hWnd"></param>
-        /// <param name="nCmdShow"></param>
-        /// <returns></returns>
-        [DllImport("user32.dll")]
-        protected static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
-
-        /// <summary>
-        /// Inported method that allow acces to console window.
-        /// </summary>
-        /// <returns></returns>
-        [DllImport("Kernel32")]
-        protected static extern IntPtr GetConsoleWindow();
-
-        /// <summary>
-        /// Argument that will hide console window.
-        /// </summary>
-        protected const int SW_HIDE = 0;
-
-        /// <summary>
-        /// Agrument that will show console window.
-        /// </summary>
-        protected const int SW_SHOW = 5;
-
+        #region Fields and properties
         /// <summary>
         /// How many milisseconds will sleep thread after tick.
         /// </summary>
@@ -71,29 +45,14 @@ namespace UniformClient
         public static bool AppTerminated { get; set; }
 
         /// <summary>
-        /// Table that contain delegatds subscribed to beckward lines in duplex queries.
-        /// 
-        /// Key string - backward domain
-        /// Value System.Action<TransmissionLine, object> - answer processing delegat.
+        /// Token that authorize client to data and commands access.
         /// </summary>
-        protected static Hashtable DuplexBackwardCallbacks = new Hashtable();
-        #endregion
+        public static string token;
 
-        #region Public fields
         /// <summary>
         /// Reference to thread that host this server.
         /// </summary>
         public Thread thread;
-
-        /// <summary>
-        /// Table that contain instruction that allow to determine the server which is a target for recived query.
-        /// </summary>
-        public static RoutingTable routingTable;
-
-        /// <summary>
-        /// Token that authorize client to data and commands access.
-        /// </summary>
-        public static string token;
         #endregion
 
 
@@ -199,62 +158,6 @@ namespace UniformClient
             Thread.Sleep(threadSleepTime);
 
             return thread;
-        }
-
-        /// <summary>
-        /// Update routing table by the files that will found be requested directory.
-        /// Also auto loking for core routing  table by "resources\routing\".
-        /// 
-        /// In case if tables not found then create new one to provide example.
-        /// </summary>
-        /// <param name="directories"></param>
-        public static void LoadRoutingTables(params string[] directories)
-        {
-            #region Load routing tables
-            // Load routing tables
-            routingTable = null;
-            // From system folders.
-            routingTable += RoutingTable.LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\", SearchOption.AllDirectories);
-            // From custrom directories.
-            foreach (string dir in directories)
-            {
-                routingTable += RoutingTable.LoadRoutingTables(dir, SearchOption.AllDirectories);
-            }
-            #endregion
-
-            #region Request public keys
-            foreach(Instruction instruction in routingTable.intructions)
-            {
-                // If encryption requested.
-                if (instruction.RSAEncryption)
-                {
-                    Console.WriteLine("INSTRUCTION ROUTING RSA", instruction.routingIP, instruction.pipeName);
-
-                    // Request publick key reciving.
-                    GetValidPublicKeyViaPP(instruction);
-                }
-            }
-            #endregion
-
-            #region Validate
-            // If routing table not found.
-            if (routingTable.intructions.Count == 0)
-            {
-                // Log error.
-                Console.WriteLine("ROUTING TABLE NOT FOUND: Create default table by directory \\resources\\routing\\ROUTING.xml");
-
-                // Set default intruction.
-                routingTable.intructions.Add(Instruction.Default);
-
-                // Save sample routing table to application files.
-                RoutingTable.SaveRoutingTable(routingTable, AppDomain.CurrentDomain.BaseDirectory + "resources\\routing\\", "ROUTING");
-            }
-            else
-            {
-                // Log error.
-                Console.WriteLine("ROUTING TABLE: Detected {0} instructions.", routingTable.intructions.Count);
-            }
-            #endregion
         }
         #endregion
         
