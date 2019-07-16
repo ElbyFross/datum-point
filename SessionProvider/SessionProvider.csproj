@@ -62,6 +62,10 @@
       <Project>{6a8abab9-a495-4286-8606-7360aff2a7b7}</Project>
       <Name>PipesProvider</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UniformClient\UniformClient.csproj">
+      <Project>{6695b55e-8994-475f-a112-6a4e8be019aa}</Project>
+      <Name>UniformClient</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UniformServer\UniformServer.csproj">
       <Project>{e3156133-0296-4670-a961-726174860e1a}</Project>
       <Name>UniformServer</Name>

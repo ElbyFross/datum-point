@@ -48,15 +48,11 @@ namespace AuthorityController.Tests
         [TestInitialize]
         public void Setup()
         {
-            // Set guest token provider as MessageHandeler.
-            BroadcastingServerTransmissionController.MessageHandeler messageHandler =
-                AuthorityController.API.Tokens.AuthorizeNewGuestToken;
-
-            // Start broadcastig.
+            // Start broadcasting server that would share guest tokens.
             BaseServer.StartBroadcastingViaPP(
                 "guests",
                 PipesProvider.Security.SecurityLevel.Anonymous,
-                messageHandler, 
+                AuthorityController.API.Tokens.AuthorizeNewGuestToken, 
                 1);
         }
 
@@ -69,19 +65,10 @@ namespace AuthorityController.Tests
             // Marker.
             bool waitingAnswer = true;
 
-            // Make query.
-            QueryPart[] queryParts = new QueryPart[]
-            {
-                new QueryPart("GET"),
-                new QueryPart("GUEST"),
-                new QueryPart("TOKEN")
-            };
-
             #region Server answer processing
             // Start listening client.
-            bool reciverStarted = UniformClient.Standard.SimpleClient.ReceiveDelayedAnswerViaPP(
-                UniformClient.BaseClient.OpenOutTransmissionLineViaPP("localhost", "guests"),
-                queryParts,
+            UniformClient.Standard.SimpleClient.ReciveAnonymousBroadcastMessage(
+                "localhost", "guests",
                 (PipesProvider.Client.TransmissionLine line, object obj) =>
                 {
                     // Validate answer.
@@ -120,12 +107,6 @@ namespace AuthorityController.Tests
                         return;
                     }
                 });
-
-            if(!reciverStarted)
-            {
-                Assert.IsTrue(false, "Reciver not started");
-                return;
-            }
             #endregion
 
             // Wait server answer.

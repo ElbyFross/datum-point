@@ -160,7 +160,12 @@ namespace PipesProvider.Handlers
             // Disconnect user if query recived.
             if (controller.pipeServer.IsConnected)
             {
-                controller.pipeServer.Disconnect();
+                try
+                {
+                    controller.pipeServer.Disconnect();
+                }
+                catch
+                { }
             }
 
             // Remove temporal data.
@@ -192,7 +197,7 @@ namespace PipesProvider.Handlers
                 try
                 {
                     // Get message
-                    string message = broadcastController.GetMessage();
+                    string message = broadcastController?.GetMessage();
 
                     // Write message to stream.
                     Console.WriteLine("{0}: Start transmission to client.", controller.pipeName);

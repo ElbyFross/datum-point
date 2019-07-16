@@ -35,6 +35,15 @@ namespace SessionProvider
     /// </summary>
     class Server : UniformServer.BaseServer
     {
+        /// <summary>
+        /// Routing table that contain instructions to access reletive servers
+        /// that need to be informed about token events.
+        /// 
+        /// Before sharing query still will check is the query stituable for that routing instruction.
+        /// If you no need any filtring then just leave query patterns empty.
+        /// </summary>
+        public static RoutingTable relatedServers;
+
         public static bool UsersLoaded
         {
             get;
@@ -74,11 +83,59 @@ namespace SessionProvider
             #endregion
 
             #region Initialize authority controller
+            // Subscribe to events.
+            AuthorityController.Session.InformateRelatedServers += InformateRelatedServers;
+
             // Load users.
             AuthorityController.API.Users.DirectoryLoadingFinished += Users_DirectoryLoadingUnlocked;
             AuthorityController.API.Users.LoadProfilesAsync(AuthorityController.Data.Config.Active.UsersStorageDirectory);
+            #endregion
 
+            #region Guest tokens broadcasting
+            // Start broadcasting server that would share guest tokens.
+            UniformServer.BaseServer.StartBroadcastingViaPP(
+                "guests",
+                PipesProvider.Security.SecurityLevel.Anonymous,
+                AuthorityController.API.Tokens.AuthorizeNewGuestToken,
+                1);
+            #endregion
 
+            /// Show help.
+            UniformServer.Commands.BaseCommands("help");
+
+            #region Main loop
+            // Main loop that will provide server services until application close.
+            while (!appTerminated)
+            {
+                // Check input
+                if (Console.KeyAvailable)
+                {
+                    // Log responce.
+                    Console.Write("\nEnter command: ");
+
+                    // Read command.
+                    string command = Console.ReadLine();
+
+                    // Processing of entered command.
+                    UniformServer.Commands.BaseCommands(command);
+                }
+                Thread.Sleep(threadSleepTime);
+            }
+            #endregion
+
+            #region Finalize
+            Console.WriteLine();
+
+            // Stop started servers.
+            ServerAPI.StopAllServers();
+
+            // Unsubscribe from events
+            AuthorityController.Session.InformateRelatedServers -= InformateRelatedServers;
+            AuthorityController.API.Users.DirectoryLoadingFinished -= Users_DirectoryLoadingUnlocked;
+
+            // Whait until close.
+            Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
             #endregion
         }
 
@@ -91,6 +148,38 @@ namespace SessionProvider
                 UsersLoaded = true;
 
                 // TODO Check super admin existing.
+            }
+        }
+
+
+        /// <summary>
+        /// Transmit information to every related server that suitable for query format.
+        /// </summary>
+        /// <param name="message"></param>
+        private static void InformateRelatedServers(string message)
+        {
+            // Inform relative servers.
+            if (relatedServers != null)
+            {
+                // Check every instruction.
+                for (int i = 0; i < relatedServers.intructions.Count; i++)
+                {
+                    // Get instruction.
+                    Instruction instruction = relatedServers.intructions[i];
+
+                    // Does instruction situable to query.
+                    if (!instruction.IsRoutingTarget(message))
+                    {
+                        // Skip if not.
+                        continue;
+                    }
+
+                    // Open transmission line to server.
+                    UniformClient.BaseClient.OpenOutTransmissionLineViaPP(instruction.routingIP, instruction.pipeName).
+                        EnqueueQuery(message).                  // Add query to queue.
+                        SetInstructionAsKey(ref instruction).   // Apply encryption if requested.
+                        TryLogonAs(instruction.logonConfig);    // Profide logon data to access remote machine.
+                }
             }
         }
     }

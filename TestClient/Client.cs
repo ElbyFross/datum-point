@@ -18,6 +18,7 @@ using Microsoft.Win32.SafeHandles;
 using PipesProvider.Networking.Routing;
 using PipesProvider.Security;
 using PipesProvider.Client;
+using UniformQueries;
 
 namespace TestClient
 {
@@ -43,6 +44,11 @@ namespace TestClient
         /// </summary>
         public static string SERVER_PIPE_NAME = null; // Pipe openned at server that will recive out queries.
 
+        /// <summary>
+        /// Is guest token required.
+        /// </summary>
+        public static bool questTokenRequired = true;
+
 
         static void Main(string[] args)
         {
@@ -55,6 +61,54 @@ namespace TestClient
             #endregion
 
             token = "invalid";
+
+            #region Recive guest token
+            // Open client that will listen server guest chanel broadcasting.
+            UniformClient.Standard.SimpleClient.ReciveAnonymousBroadcastMessage(
+                "localhost", 
+                "guests",
+                (PipesProvider.Client.TransmissionLine line, object obj) =>
+                {  
+                    // Validate answer.
+                    if (obj is string answer)
+                    {
+                        Console.WriteLine("GUSET BROAADCASTING CHANEL ANSWER RECIVED: {0}", answer);
+                        // Unlock finish blocker.
+                        questTokenRequired = false;
+
+                        QueryPart[] recivedQuery = UniformQueries.API.DetectQueryParts(answer);
+
+                        // Check token.
+                        if (UniformQueries.API.TryGetParamValue("token", out QueryPart tokenQP, recivedQuery) &&
+                        !string.IsNullOrEmpty(tokenQP.propertyValue))
+                        {
+                            token = tokenQP.propertyValue;
+                            Console.WriteLine("Guest token: {0}", token);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Guest token not detected. Authorization not possible.");
+                            Thread.Sleep(2000);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Guest token not recived. Incorrect answer format.");
+                        Thread.Sleep(2000);
+                        return;
+                    }
+                });
+
+            // Log
+            Console.WriteLine("Witing forguest token from server autority system...");
+
+            // Wait for guest token.
+            while(questTokenRequired)
+            {
+                Thread.Sleep(5);
+            }
+            #endregion
 
             #region Init
             // React on uniform arguments.

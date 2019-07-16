@@ -143,6 +143,55 @@ namespace UniformClient
         }
         #endregion
 
+        #region Broadcast connection
+        /// <summary>
+        /// Recive message from broadcasting server.
+        /// ATTENTION: Eould connect to server as guest user.
+        /// </summary>
+        /// <param name="serverName">Srver name or ip.</param>
+        /// <param name="pipeName">Name of pipe started on server.</param>
+        /// <param name="answerHandler">Delegate that would to call when message received.</param>
+        /// <returns>Created line.</returns>
+        public static TransmissionLine ReciveAnonymousBroadcastMessage(
+            string serverName, 
+            string pipeName,
+            System.Action<TransmissionLine, object> answerHandler)
+        {
+            #region Append answer handler to backward table.
+            string hashKey = serverName + "\\" + pipeName;
+            // Try to load registred callback to overriding.
+            if (DuplexBackwardCallbacks[hashKey] is
+                System.Action<TransmissionLine, object> registredCallback)
+            {
+                // Override current delegate.
+                DuplexBackwardCallbacks[hashKey] = answerHandler;
+            }
+            else
+            {
+                // Add callback to table as new.
+                DuplexBackwardCallbacks.Add(hashKey, answerHandler);
+            }
+            #endregion
+
+            #region Opening transmition line
+            // Create transmission line.
+            TransmissionLine line = OpenTransmissionLineViaPP(
+                serverName, pipeName,
+                HandlerInputTransmissionAsync
+                );
+
+            // Set input direction.
+            line.Direction = TransmissionLine.TransmissionDirection.In;
+            #endregion
+
+            // Skip line
+            Console.WriteLine();
+
+            // Return created line.
+            return line;
+        }
+        #endregion
+
         #region Duplex (two-ways) quries API
         /// <summary>
         /// Add query to queue. 
