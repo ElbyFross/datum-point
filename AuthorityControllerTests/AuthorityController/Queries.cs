@@ -45,7 +45,7 @@ namespace AuthorityController.Tests
         /// -User
         /// -Guest
         /// </summary>
-        public void SetBaseUserPool()
+        public void SetBaseUsersPool()
         {
             lock (Locks.CONFIG_LOCK)
             {
@@ -230,7 +230,7 @@ namespace AuthorityController.Tests
             lock (Locks.CONFIG_LOCK)
             {
                 // Create users for test.
-                SetBaseUserPool();
+                SetBaseUsersPool();
             }
         }
 
@@ -243,7 +243,7 @@ namespace AuthorityController.Tests
             lock (Locks.CONFIG_LOCK)
             {
                 // Create users for test.
-                SetBaseUserPool();
+                SetBaseUsersPool();
             }
         }
 
@@ -256,7 +256,7 @@ namespace AuthorityController.Tests
             lock (Locks.CONFIG_LOCK)
             {
                 // Create users for test.
-                SetBaseUserPool();
+                SetBaseUsersPool();
             }
         }
 
@@ -269,7 +269,7 @@ namespace AuthorityController.Tests
             lock (Locks.CONFIG_LOCK)
             {
                 // Create users for test.
-                SetBaseUserPool();
+                SetBaseUsersPool();
             }
         }
 
@@ -282,7 +282,7 @@ namespace AuthorityController.Tests
             lock (Locks.CONFIG_LOCK)
             {
                 // Create users for test.
-                SetBaseUserPool();
+                SetBaseUsersPool();
             }
         }
 
@@ -295,7 +295,7 @@ namespace AuthorityController.Tests
             lock (Locks.CONFIG_LOCK)
             {
                 // Create users for test.
-                SetBaseUserPool();
+                SetBaseUsersPool();
 
                 // Create the query that would simulate logon.
                 UniformQueries.QueryPart[] query = new UniformQueries.QueryPart[]
@@ -381,7 +381,7 @@ namespace AuthorityController.Tests
             lock (Locks.CONFIG_LOCK)
             {
                 // Create users for test.
-                SetBaseUserPool();
+                SetBaseUsersPool();
 
                 // Create the query that would simulate logon.
                 UniformQueries.QueryPart[] query = new UniformQueries.QueryPart[]
@@ -456,7 +456,7 @@ namespace AuthorityController.Tests
             lock (Locks.CONFIG_LOCK)
             {
                 // Create users for test.
-                SetBaseUserPool();
+                SetBaseUsersPool();
 
                 // Create the query that would simulate logon.
                 UniformQueries.QueryPart[] query = new UniformQueries.QueryPart[]
@@ -531,7 +531,7 @@ namespace AuthorityController.Tests
             lock (Locks.CONFIG_LOCK)
             {
                 // Create users for test.
-                SetBaseUserPool();
+                SetBaseUsersPool();
 
                 // Generate new token.
                 string newToken = AuthorityController.API.Tokens.UnusedToken;
@@ -554,7 +554,7 @@ namespace AuthorityController.Tests
             lock (Locks.CONFIG_LOCK)
             {
                 // Create users for test.
-                SetBaseUserPool();
+                SetBaseUsersPool();
 
                 // Get token of registred user.
                 string userToken = user_User.tokens[0];
@@ -609,7 +609,71 @@ namespace AuthorityController.Tests
             lock (Locks.CONFIG_LOCK)
             {
                 // Create users for test.
-                SetBaseUserPool();
+                SetBaseUsersPool();
+
+                // Create the query that would simulate logon.
+                UniformQueries.QueryPart[] query = new UniformQueries.QueryPart[]
+                {
+                    new UniformQueries.QueryPart("token", user_User.tokens[0]),
+                    new UniformQueries.QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+
+                    new UniformQueries.QueryPart("user=" + user_User.id, null),
+                    new UniformQueries.QueryPart("new", null),
+
+                    new UniformQueries.QueryPart("password", "newPassword!2"),
+                    new UniformQueries.QueryPart("oldpassword", "password"),
+                    new UniformQueries.QueryPart("os", Environment.OSVersion.VersionString),
+                    new UniformQueries.QueryPart("mac", "anonymous"),
+                    new UniformQueries.QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
+                };
+
+                // Marker that avoid finishing of the test until receiving result.
+                bool operationCompete = false;
+
+                // Start reciving clent line.
+                UniformClient.BaseClient.EnqueueDuplexQuery(
+
+                    // Request connection to localhost server via main pipe.
+                    "localhost", PIPE_NAME,
+
+                    // Convert query parts array to string view in correct format provided by UniformQueries API.
+                    UniformQueries.QueryPart.QueryPartsArrayToString(query),
+
+                    // Handler that would recive ther ver answer.
+                    (PipesProvider.Client.TransmissionLine line, object answer) =>
+                    {
+                        // Try to convert answer to string
+                        if (answer is string answerS)
+                        {
+                            // Is operation success?
+                            if (!answerS.StartsWith("error", StringComparison.OrdinalIgnoreCase))
+                            {
+                                // Log error.
+                                Assert.IsTrue(true);
+                                operationCompete = true;
+                            }
+                            else
+                            {
+                                // Log error.
+                                Assert.Fail("Recived error: " + answerS);
+                                operationCompete = true;
+                            }
+                        }
+                        else
+                        {
+                            // Assert error.
+                            Assert.Fail("Incorrect format of answer. Required format is string. Type:" + answer.GetType());
+                            operationCompete = true;
+                        }
+                    });
+
+                // Wait until operation would complete.
+                while (!operationCompete)
+                {
+                    Thread.Sleep(5);
+                }
+
+                Thread.Sleep(200);
             }
         }
 
@@ -622,7 +686,7 @@ namespace AuthorityController.Tests
             lock (Locks.CONFIG_LOCK)
             {
                 // Create users for test.
-                SetBaseUserPool();
+                SetBaseUsersPool();
             }
         }
 
@@ -635,7 +699,7 @@ namespace AuthorityController.Tests
             lock (Locks.CONFIG_LOCK)
             {
                 // Create users for test.
-                SetBaseUserPool();
+                SetBaseUsersPool();
             }
         }
     }

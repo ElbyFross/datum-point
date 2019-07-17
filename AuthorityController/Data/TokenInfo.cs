@@ -24,7 +24,7 @@ namespace AuthorityController.Data
     /// Container that contain data about token.
     /// </summary>
     [System.Serializable]
-    public struct TokenInfo
+    public class TokenInfo
     {
         /// <summary>
         /// Return empty info.

@@ -389,12 +389,16 @@ namespace AuthorityController.API
         /// <returns>Result of operation.</returns>
         public static bool TryToFindUser(string login, out User user)
         {
-            // Try to find user in table.
-            if (UsersByLogin[login] is User bufer)
+            try
             {
-                user = bufer;
-                return true;
+                // Try to find user in table.
+                if (UsersByLogin[login] is User bufer)
+                {
+                    user = bufer;
+                    return true;
+                }
             }
+            catch { }
 
             // Inform about fail.
             user = null;
