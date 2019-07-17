@@ -150,12 +150,64 @@ namespace AuthorityController.Queries
             #endregion
 
             // Save profile in storage.
-            API.Users.SetProfile(userProfile);
+            API.Users.SetProfileAsync(userProfile, Data.Config.Active.UsersStorageDirectory);
+            API.Users.UserProfileStored += DataStoredCallback;
+            API.Users.UserProfileNotStored += DataStroringFailed;
 
-            #region Return token to client
-            // Build logon query.
-            QueryPart[] logonQuery = new QueryPart[]
+            // Marker that will enabled untill operation will recive result.
+            bool storingInProgress = true;
+            // Marker that contin result of storing operation.
+            bool storingResult = false;
+            // Field that would contain operation error in case of fail.
+            string storingError = null;
+
+
+            void DataStoredCallback(Data.User target)
+            {
+                // Check is that user is a target of this request.
+                if (target.id == userProfile.id)
                 {
+                    // Unsubscribe.
+                    API.Users.UserProfileStored -= DataStoredCallback;
+
+                    // Unblock loop.
+                    storingInProgress = false;
+
+                    // Set operation result.
+                    storingResult = true;
+                }
+
+            }
+
+            void DataStroringFailed(Data.User target, string operationError)
+            {
+                // Check is that user is a target of this request.
+                if (target.id == userProfile.id)
+                {
+                    // Unsubscribe.
+                    API.Users.UserProfileNotStored -= DataStroringFailed;
+
+                    // Unblock loop.
+                    storingInProgress = false;
+
+                    // Set operation result.
+                    storingResult = false;
+                    storingError = operationError;
+                }
+            }
+
+            // Wait until operation finish.
+            while (storingInProgress)
+            {
+                System.Threading.Thread.Sleep(5);
+            }
+
+            if (storingResult)
+            {
+                #region Return token to client
+                // Build logon query.
+                QueryPart[] logonQuery = new QueryPart[]
+                    {
                     new QueryPart("USER", null),
                     new QueryPart("LOGON", null),
                     token,
@@ -165,19 +217,32 @@ namespace AuthorityController.Queries
                     os,
                     mac,
                     timeStamp,
-                };
+                    };
 
+<<<<<<< HEAD
             // Create logon subquery.
             foreach(UniformQueries.IQueryHandler processor in UniformQueries.API.QueryHandlers)
             {
                 // Fini logon query processor.
                 if(processor is USER_LOGON)
+=======
+                // Looking for suitable query handler.
+                if (UniformQueries.API.TryFindQueryHandler(logonQuery, out UniformQueries.IQueryHandlerProcessor handler))
+>>>>>>> 7e1f44400cf69f54d8f2fe500d9b0239df721eff
                 {
                     // Execute and send to client token valided to created user.
-                    processor.Execute(logonQuery);
+                    handler.Execute(logonQuery);
                 }
+                #endregion
             }
-            #endregion
+            else
+            {
+                // Send answer with operation's error.
+                UniformServer.BaseServer.SendAnswer(
+                    "failed:" + storingError,
+                    queryParts
+                    );
+            }
         }
 
         public bool IsTarget(QueryPart[] queryParts)

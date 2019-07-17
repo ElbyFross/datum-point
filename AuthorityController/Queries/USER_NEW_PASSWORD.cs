@@ -84,7 +84,7 @@ namespace AuthorityController.Queries
             foreach(string userToken in userProfile.tokens)
             {
                 // Comare tokens.
-                if (token == userToken)
+                if (token.propertyValue == userToken)
                 {
                     // Mark as self target.
                     isSelfUpdate = true;
@@ -143,6 +143,11 @@ namespace AuthorityController.Queries
 
             // Update stored profile.
             API.Users.SetProfile(userProfile);
+
+            // Inform about success
+            UniformServer.BaseServer.SendAnswer(
+                "success",
+                queryParts);
         }
 
         public bool IsTarget(QueryPart[] queryParts)
