@@ -70,8 +70,10 @@ namespace AuthorityController.Tests
         {
             // Set new directory.
             Config.DIRECTORY = TestSubfolder + Config.DIRECTORY;
+            string buferizedConfigDir = Config.DIRECTORY;
 
             // Init file.
+            Config.Active = null;
             _ = Config.Active;
 
             // Mark result.
@@ -81,7 +83,7 @@ namespace AuthorityController.Tests
             bool result = File.Exists(Config.DIRECTORY + Config.CONFIG_FILE_NAME);
             
             // Assert.
-            Assert.IsTrue(result, "File creation failed.");
+            Assert.IsTrue(result, "File creation failed. " + buferizedConfigDir);
         }
 
         /// <summary>
