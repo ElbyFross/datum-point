@@ -305,6 +305,44 @@ namespace UniformQueries
 
 
         /// <summary>
+        /// Looking for processor situable for provided query.
+        /// </summary>
+        /// <param name="query">Recived query in string format.</param>
+        /// <param name="handler">Qirty handler that situable for that query.</param>
+        /// <returns></returns>
+        public static bool TryFindQueryHandler(string query, out IQueryHandlerProcessor handler)
+        {
+            // Detect query parts.
+            QueryPart[] queryParts = DetectQueryParts(query);
+
+            // Search.
+            return TryFindQueryHandler(queryParts, out handler);
+        }
+
+        /// <summary>
+        /// Looking for query handler.
+        /// </summary>
+        /// <param name="queryParts">Recived query splited by parts.</param>
+        /// <param name="handler">Hadler that's situated to this query.</param>
+        /// <returns></returns>
+        public static bool TryFindQueryHandler(QueryPart[] queryParts, out IQueryHandlerProcessor handler)
+        {
+            foreach (UniformQueries.IQueryHandlerProcessor pb in UniformQueries.API.QueryProcessors)
+            {
+                // Check header
+                if (pb.IsTarget(queryParts))
+                {
+                    handler = pb;
+                    return true;
+                }
+            }
+
+            handler = null;
+            return false;
+        }
+
+
+        /// <summary>
         /// Try to detect core query parts.
         /// Example case of using: is decryption required.
         /// </summary>

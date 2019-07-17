@@ -140,31 +140,8 @@ namespace AuthorityController.API
                             // Try to deserialize routing table from file.
                             loadedUser = xmlSer.Deserialize(fs) as User;
 
-                            #region Add user to ids table.
-                            if (UsersById[loadedUser.id] is User idU)
-                            {
-                                // Override if already exist.
-                                UsersById[loadedUser.id] = loadedUser;
-                            }
-                            else
-                            {
-                                // Add as new.
-                                UsersById.Add(loadedUser.id, loadedUser);
-                            }
-                            #endregion
-
-                            #region Add user to logins table.
-                            if (UsersByLogin[loadedUser.login] is User loginU)
-                            {
-                                // Override if already exist.
-                                UsersByLogin[loadedUser.login] = loadedUser;
-                            }
-                            else
-                            {
-                                // Add as new.
-                                UsersByLogin.Add(loadedUser.login, loadedUser);
-                            }
-                            #endregion
+                            // Add user to tables.
+                            AddToLoadedData(loadedUser);
 
                             // Up counter.
                             loadingSucceed++;
@@ -209,20 +186,24 @@ namespace AuthorityController.API
         {                       
             await Task.Run(() =>
                 {
-                    // Create file path.
-                    string filePath = directory + GetUserFileName(user);
+                    // Lock thread not saved hashset
+                    lock (LoadingLockedDirectories)
+                    {
+                        // Create file path.
+                        string filePath = directory + GetUserFileName(user);
 
-                    // Lock directory.
-                    LoadingLockedDirectories.Add(filePath);
+                        // Lock directory.
+                        LoadingLockedDirectories.Add(filePath);
 
-                    // Set profile synchronically.
-                    bool result = SetProfile(user, directory);
+                        // Set profile synchronically.
+                        bool result = SetProfile(user, directory);
 
-                    // Unlock directory.
-                    LoadingLockedDirectories.Remove(filePath);
+                        // Unlock directory.
+                        LoadingLockedDirectories.Remove(filePath);
 
-                    // Inform subscribers about location unlock.
-                    DirectoryLoadingFinished?.Invoke(directory, result ? 1 : 0, result ? 0 : 1);
+                        // Inform subscribers about location unlock.
+                        DirectoryLoadingFinished?.Invoke(directory, result ? 1 : 0, result ? 0 : 1);
+                    }
                 }
             );
         }
@@ -234,6 +215,10 @@ namespace AuthorityController.API
         /// <param name="directory">Users storage.</param>
         public static bool SetProfile(User user, string directory)
         {
+            // Update user in tables.
+            AddToLoadedData(user);
+
+            #region Save by directory
             // Check directory exist.
             if (!Directory.Exists(directory))
             {
@@ -270,6 +255,7 @@ namespace AuthorityController.API
 
                 return false;
             }
+            #endregion
         }
 
         /// <summary>
@@ -333,6 +319,39 @@ namespace AuthorityController.API
         #endregion
 
         #region Cash
+        /// <summary>
+        /// Registrate user in tables by id and login.
+        /// </summary>
+        /// <param name="user"></param>
+        public static void AddToLoadedData(User user)
+        {
+            #region Add user to ids table.
+            if (UsersById[user.id] is User idU)
+            {
+                // Override if already exist.
+                UsersById[user.id] = user;
+            }
+            else
+            {
+                // Add as new.
+                UsersById.Add(user.id, user);
+            }
+            #endregion
+
+            #region Add user to logins table.
+            if (UsersByLogin[user.login] is User loginU)
+            {
+                // Override if already exist.
+                UsersByLogin[user.login] = user;
+            }
+            else
+            {
+                // Add as new.
+                UsersByLogin.Add(user.login, user);
+            }
+            #endregion
+        }
+
         /// <summary>
         /// Remove all loaded users data.
         /// </summary>

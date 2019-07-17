@@ -142,7 +142,16 @@ namespace UniformQueries
         /// <returns></returns>
         public bool ParamNameEqual(string key)
         {
-            return this.propertyName.Equals(key, StringComparison.OrdinalIgnoreCase);
+            // Try to compare
+            try
+            {
+                return this.propertyName.Equals(key, StringComparison.OrdinalIgnoreCase);
+            }
+            catch
+            {
+                // Failed.
+                return false;
+            }
         }
 
         /// <summary>

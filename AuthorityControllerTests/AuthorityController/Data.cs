@@ -55,9 +55,12 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ConfigValidation()
         {
-            Config_New();
-            Config_Load_ValidData();
-            Config_Load_CoruptedData();
+            lock (Locks.CONFIG_LOCK)
+            {
+                Config_New();
+                Config_Load_ValidData();
+                Config_Load_CoruptedData();
+            }
         }
 
         /// <summary>
@@ -157,8 +160,11 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void UsersPoolStressTest()
         {
-            UsersPool_New();
-            UsersPoo_Load();
+            lock (Locks.CONFIG_LOCK)
+            {
+                UsersPool_New();
+                UsersPoo_Load();
+            }
         }
 
         /// <summary>
@@ -168,7 +174,7 @@ namespace AuthorityController.Tests
         public void UsersPool_New()
         {
             bool poolFailed = false;
-            int poolUsersCount = 50000;
+            int poolUsersCount = 10000;
 
             // Fail callback
             System.Action<User, string> FailHandler = null;
@@ -181,7 +187,7 @@ namespace AuthorityController.Tests
             };
             API.Users.UserProfileNotStored += FailHandler;
 
-
+            // Create all requested users.
             for (int i = 0; i < poolUsersCount; i++)
             {
                 // Create user.
@@ -195,11 +201,18 @@ namespace AuthorityController.Tests
                 // Save profile.
                 API.Users.SetProfileAsync(user, TestSubfolder + "\\USERS\\");
             }
+            
+            // Create users directory if notexist.
+            if (!Directory.Exists(TestSubfolder + "\\USERS\\"))
+            {
+                Directory.CreateDirectory(TestSubfolder + "\\USERS\\");
+            }
 
             // Wait until operation compleeting.
-            while(!poolFailed)
+            while (!poolFailed)
             {
-                if (Directory.GetFiles(TestSubfolder + "\\USERS\\").Length == poolUsersCount)
+                int profilesCount = Directory.GetFiles(TestSubfolder + "\\USERS\\").Length;
+                if (profilesCount == poolUsersCount)
                 {
                     break;
                 }
@@ -260,9 +273,12 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void UserProfileValidation()
         {
-            User testUser = User_New();
-            User_Update(testUser);
-            User_Remove(testUser);
+            lock (Locks.CONFIG_LOCK)
+            {
+                User testUser = User_New();
+                User_Update(testUser);
+                User_Remove(testUser);
+            }
         }
         
         /// <summary>
@@ -370,16 +386,19 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void SaltGeneration()
         {
-            // Wait for config files.
-            while(!CONFIG_FILE_GENERATED)
+            lock (Locks.CONFIG_LOCK)
             {
-                Thread.Sleep(5);
-            }
+                // Wait for config files.
+                while (!CONFIG_FILE_GENERATED)
+                {
+                    Thread.Sleep(5);
+                }
 
-            Salt_Init();
-            Salt_Loading();
-            Salt_Validation_ValidData();
-            Salt_Validation_InvalidData();
+                Salt_Init();
+                Salt_Loading();
+                Salt_Validation_ValidData();
+                Salt_Validation_InvalidData();
+            }
         }
         
         /// <summary>
