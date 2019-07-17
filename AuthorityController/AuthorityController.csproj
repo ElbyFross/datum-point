@@ -65,6 +65,11 @@
       <Project>{6a8abab9-a495-4286-8606-7360aff2a7b7}</Project>
       <Name>PipesProvider</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UniformClient\UniformClient.csproj">
+      <Project>{6695b55e-8994-475f-a112-6a4e8be019aa}</Project>
+      <Name>UniformClient</Name>
+      <Private>False</Private>
+    </ProjectReference>
     <ProjectReference Include="..\UniformQueries\UniformQueries.csproj">
       <Project>{b68e2d79-1e9b-436e-899c-930bf945b003}</Project>
       <Name>UniformQueries</Name>
@@ -72,6 +77,7 @@
     <ProjectReference Include="..\UniformServer\UniformServer.csproj">
       <Project>{fa54f91c-5e34-47a6-af34-2cf0b9f90c32}</Project>
       <Name>UniformServer</Name>
+      <Private>False</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

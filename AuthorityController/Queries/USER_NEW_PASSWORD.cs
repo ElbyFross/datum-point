@@ -47,6 +47,8 @@ namespace AuthorityController.Queries
 
         public void Execute(QueryPart[] queryParts)
         {
+            string error;
+
             #region Get params.
             UniformQueries.API.TryGetParamValue("user",         out QueryPart user, queryParts);
             UniformQueries.API.TryGetParamValue("password",     out QueryPart password, queryParts);
@@ -55,7 +57,7 @@ namespace AuthorityController.Queries
             #endregion
 
             #region Detect target user
-            if (!API.Users.TryToFindUserUniform(user.propertyValue, out Data.User userProfile, out string error))
+            if (!API.Users.TryToFindUserUniform(user.propertyValue, out Data.User userProfile, out error))
             {
                 // Inform about error.
                 UniformServer.BaseServer.SendAnswerViaPP(error, queryParts);

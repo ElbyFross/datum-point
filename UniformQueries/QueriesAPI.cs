@@ -56,33 +56,24 @@ namespace UniformQueries
             Console.WriteLine("\nDETECTED QUERIES:");
             foreach (System.Reflection.Assembly assembly in assemblies)
             {
-                try
+                // Get all types for assembly.
+                foreach (System.Type type in assembly.GetTypes())
                 {
-                    Type[] types = assembly.GetTypes();
-
-                    // Get all types for assembly.
-                    foreach (Type type in assembly.GetTypes())
+                    try
                     {
-                        try
+                        // Check if this type is subclass of query.
+                        if (type.GetInterface(typeof(UniformQueries.IQueryHandler).FullName) != null)
                         {
-                            // Check if this type is subclass of query.
-                            if (type.GetInterface(typeof(UniformQueries.IQueryHandler).FullName) != null)
-                            {
-                                // Instiniating querie processor.
-                                UniformQueries.IQueryHandler instance = (UniformQueries.IQueryHandler)Activator.CreateInstance(type);
-                                queryHandlers.Add(instance);
-                                Console.WriteLine("{0}", type.Name);
-                            }
-                        }
-                        catch (Exception ex)
-                        {
-                            Console.WriteLine("Queries asseblies loading failed (qapi10): {0}", ex.Message);
+                            // Instiniating querie processor.
+                            UniformQueries.IQueryHandler instance = (UniformQueries.IQueryHandler)Activator.CreateInstance(type);
+                            queryHandlers.Add(instance);
+                            Console.WriteLine("{0}", type.Name);
                         }
                     }
-                }
-                catch(Exception ex)
-                {
-                    Console.WriteLine("Queries asseblies loading failed (2): {qapi20}", ex.Message);
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Queries asseblies loading failed: {0}", ex.Message);
+                    }
                 }
             }
 

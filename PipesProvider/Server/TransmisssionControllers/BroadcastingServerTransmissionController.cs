@@ -82,7 +82,7 @@ namespace PipesProvider.Server.TransmissionControllers
             // Start loop.
             ServerAPI.ServerLoop<BroadcastingServerTransmissionController>(
                 guid,
-                Handlers.DNS.ServerBroadcasting,
+                Handlers.DNS.ServerToClientAsync,
                 pipeName,
                 PipeDirection.InOut,
                 System.IO.Pipes.NamedPipeServerStream.MaxAllowedServerInstances,

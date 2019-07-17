@@ -29,13 +29,6 @@ namespace AuthorityController
     [System.Serializable]
     public class Session
     {
-        #region Events
-        /// <summary>
-        /// Event that would called when provider would need to informate related servers by new data.
-        /// </summary>
-        public static event System.Action<string> InformateRelatedServers;
-        #endregion
-
         #region Public properties and fields
         /// <summary>
         /// Last created session.
@@ -53,6 +46,15 @@ namespace AuthorityController
 
             protected set { last = value; }
         }
+
+        /// <summary>
+        /// Routing table that contain instructions to access reletive servers
+        /// that need to be informed about token events.
+        /// 
+        /// Before sharing query still will check is the query stituable for that routing instruction.
+        /// If you no need any filtring then just leave query patterns empty.
+        /// </summary>
+        public RoutingTable relatedServers;
         #endregion
 
         #region Constructors
@@ -107,7 +109,7 @@ namespace AuthorityController
                         additiveInfo.rights = rights;
 
                         // Send info to relative servers.
-                        ShareTokenRights(additiveTokens, rights);
+                        SendNewRightsForToken(additiveTokens, rights);
                     }
                 }
                 // if user not detected.
@@ -117,7 +119,7 @@ namespace AuthorityController
                     info.rights = rights;
 
                     // Send info to relative servers.
-                    ShareTokenRights(token, rights);
+                    SendNewRightsForToken(token, rights);
                 }
             }
             // If user was not loaded.
@@ -134,7 +136,7 @@ namespace AuthorityController
                 tokensRights.Add(token, info);
 
                 // Send info to relative servers.
-                ShareTokenRights(token, rights);
+                SendNewRightsForToken(token, rights);
             }
         }
 
@@ -172,7 +174,7 @@ namespace AuthorityController
                     token);
 
                 // Send query to infrom related servers about event.
-                InformateRelatedServers(informQuery);
+                SendEqueryToRelatedServers(informQuery);
             }
         }
 
@@ -224,26 +226,57 @@ namespace AuthorityController
         }
 
         /// <summary>
-        /// Sending new rights of token to related servers.
+        /// Sending new rights of token to releted servers.
         /// </summary>
         /// <param name="token"></param>
         /// <param name="rights"></param>
-        private void ShareTokenRights(string token, string[] rights)
+        private void SendNewRightsForToken(string token, string[] rights)
         {
-            // Composing query that will shared to related servers for update them local data.
+            // Compose query that will shared to related servers to update them local data.
             string informQuery = string.Format("set{0}token={1}{0}rights=",
                 UniformQueries.API.SPLITTING_SYMBOL,
                 token);
 
-            // Adding rights' codes.
+            // Add rights' codes.
             foreach (string rightsCode in rights)
             {
                 // Add every code splited by '+'.
                 informQuery += "+" + rightsCode;
             }
 
-            // Sending query to inform related servers about event.
-            InformateRelatedServers?.Invoke(informQuery);
+            // Send query to infrom related servers about event.
+            SendEqueryToRelatedServers(informQuery);
+        }
+
+        /// <summary>
+        /// Transmit information to every related servers that situable for queries.
+        /// </summary>
+        /// <param name="query"></param>
+        private void SendEqueryToRelatedServers(string query)
+        {
+            // Inform relative servers.
+            if (relatedServers != null)
+            {
+                // Check every instruction.
+                for (int i = 0; i < relatedServers.intructions.Count; i++)
+                {
+                    // Get instruction.
+                    Instruction instruction = relatedServers.intructions[i];
+
+                    // Does instruction situable to query.
+                    if (!instruction.IsRoutingTarget(query))
+                    {
+                        // Skip if not.
+                        continue;
+                    }
+
+                    // Open transmission line to server.
+                    UniformClient.BaseClient.OpenOutTransmissionLineViaPP(instruction.routingIP, instruction.pipeName).
+                        EnqueueQuery(query).              // Add query to queue.
+                        SetInstructionAsKey(ref instruction).   // Apply encryption if requested.
+                        TryLogonAs(instruction.logonConfig);    // Profide logon data to access remote machine.
+                }
+            }
         }
         #endregion
     }
