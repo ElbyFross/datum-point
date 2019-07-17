@@ -30,7 +30,31 @@ namespace AuthorityController.Tests
         /// <summary>
         /// Get routing table situale for local broadcasting.
         /// </summary>
+<<<<<<< HEAD
         PipesProvider.Networking.Routing.RoutingTable BroadcastingRoutingTable
+=======
+        string PIPE_NAME = "ACTestPublic";
+
+        #region Users
+        User user_SuperAdmin = null;
+        User user_Admin = null;
+        User user_Moderator = null;
+        User user_PrivilegedUser = null;
+        User user_User = null;
+        User user_Guest = null;
+        #endregion
+
+        /// <summary>
+        /// Creating and apply base users pool:
+        /// -Super admin
+        /// -Admin
+        /// -Moderator
+        /// -Privileged user
+        /// -User
+        /// -Guest
+        /// </summary>
+        public void SetBaseUserPool()
+>>>>>>> Authorization
         {
             get
             {
@@ -141,6 +165,14 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void SetTokenRights_NoRights()
         {
+<<<<<<< HEAD
+=======
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create users for test.
+                SetBaseUserPool();
+            }
+>>>>>>> Authorization
         }
 
         /// <summary>
@@ -149,6 +181,14 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void SetTokenRights_HasRights()
         {
+<<<<<<< HEAD
+=======
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create users for test.
+                SetBaseUserPool();
+            }
+>>>>>>> Authorization
         }
 
         /// <summary>
@@ -157,6 +197,14 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void UserBan_NoRights()
         {
+<<<<<<< HEAD
+=======
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create users for test.
+                SetBaseUserPool();
+            }
+>>>>>>> Authorization
         }
 
         /// <summary>
@@ -165,6 +213,14 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void UserBan_HighrankerBan()
         {
+<<<<<<< HEAD
+=======
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create users for test.
+                SetBaseUserPool();
+            }
+>>>>>>> Authorization
         }
 
         /// <summary>
@@ -173,6 +229,14 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void UserBan_HasRights()
         {
+<<<<<<< HEAD
+=======
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create users for test.
+                SetBaseUserPool();
+            }
+>>>>>>> Authorization
         }
 
         /// <summary>
@@ -181,6 +245,86 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void Logon_UserExist()
         {
+<<<<<<< HEAD
+=======
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create users for test.
+                SetBaseUserPool();
+
+                // Create the query that would simulate logon.
+                UniformQueries.QueryPart[] query = new UniformQueries.QueryPart[]
+                {
+                    new UniformQueries.QueryPart("token", AuthorityController.API.Tokens.UnusedToken),
+                    new UniformQueries.QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+
+                    new UniformQueries.QueryPart("user", null),
+                    new UniformQueries.QueryPart("logon", null),
+
+                    new UniformQueries.QueryPart("login", "sadmin"),
+                    new UniformQueries.QueryPart("password", "password"),
+                    new UniformQueries.QueryPart("os", Environment.OSVersion.VersionString),
+                    new UniformQueries.QueryPart("mac", "anonymous"),
+                    new UniformQueries.QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
+                };
+
+                // Marker that avoid finishing of the test until receiving result.
+                bool operationCompete = false;
+
+                // Start reciving clent line.
+                UniformClient.BaseClient.EnqueueDuplexQuery(
+
+                    // Request connection to localhost server via main pipe.
+                    "localhost", PIPE_NAME,
+
+                    // Convert query parts array to string view in correct format provided by UniformQueries API.
+                    UniformQueries.QueryPart.QueryPartsArrayToString(query),
+
+                    // Handler that would recive ther ver answer.
+                    (PipesProvider.Client.TransmissionLine line, object answer) =>
+                    {
+                        // Try to convert answer to string
+                        if (answer is string answerS)
+                        {
+                        // Is operation success?
+                        if (answerS.StartsWith("error", StringComparison.OrdinalIgnoreCase))
+                            {
+                            // Log error.
+                            Assert.Fail("Recived error:\n" + answerS);
+                                operationCompete = true;
+                            }
+                            else
+                            {
+                            // Try to get toekn from answer.
+                            if (UniformQueries.API.TryGetParamValue("token", out string value, answerS))
+                                {
+                                // Confirm logon.
+                                Assert.IsTrue(true);
+                                    operationCompete = true;
+                                }
+                                else
+                                {
+                                // Log error.
+                                Assert.Fail("Answer not contain token:\nFull answer:" + answerS);
+                                    operationCompete = true;
+                                }
+                            }
+                        }
+                        else
+                        {
+                        // Assert error.
+                        Assert.Fail("Incorrect format of answer. Required format is string. Type:" + answer.GetType());
+                            operationCompete = true;
+                        }
+                    });
+
+                // Wait until operation would complete.
+                while (!operationCompete)
+                {
+                    Thread.Sleep(5);
+                }
+            }
+>>>>>>> Authorization
         }
 
 
@@ -190,6 +334,76 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void Logon_UserNotExist()
         {
+<<<<<<< HEAD
+=======
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create users for test.
+                SetBaseUserPool();
+
+                // Create the query that would simulate logon.
+                UniformQueries.QueryPart[] query = new UniformQueries.QueryPart[]
+                {
+                    new UniformQueries.QueryPart("token", AuthorityController.API.Tokens.UnusedToken),
+                    new UniformQueries.QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+
+                    new UniformQueries.QueryPart("user", null),
+                    new UniformQueries.QueryPart("logon", null),
+
+                    new UniformQueries.QueryPart("login", "notExistedUser"),
+                    new UniformQueries.QueryPart("password", "password"),
+                    new UniformQueries.QueryPart("os", Environment.OSVersion.VersionString),
+                    new UniformQueries.QueryPart("mac", "anonymous"),
+                    new UniformQueries.QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
+                };
+
+                // Marker that avoid finishing of the test until receiving result.
+                bool operationCompete = false;
+
+                // Start reciving clent line.
+                UniformClient.BaseClient.EnqueueDuplexQuery(
+
+                    // Request connection to localhost server via main pipe.
+                    "localhost", PIPE_NAME,
+
+                    // Convert query parts array to string view in correct format provided by UniformQueries API.
+                    UniformQueries.QueryPart.QueryPartsArrayToString(query),
+
+                    // Handler that would recive ther ver answer.
+                    (PipesProvider.Client.TransmissionLine line, object answer) =>
+                    {
+                        // Try to convert answer to string
+                        if (answer is string answerS)
+                        {
+                            // Is operation success?
+                            if (answerS.StartsWith("error", StringComparison.OrdinalIgnoreCase))
+                            {
+                                // Log error.
+                                Assert.IsTrue(true);
+                                operationCompete = true;
+                            }
+                            else
+                            {
+                                // Log error.
+                                Assert.Fail("Unexisted user found on server.\nAnswer:" + answerS);
+                                operationCompete = true;
+                            }
+                        }
+                        else
+                        {
+                            // Assert error.
+                            Assert.Fail("Incorrect format of answer. Required format is string. Type:" + answer.GetType());
+                            operationCompete = true;
+                        }
+                    });
+
+                // Wait until operation would complete.
+                while (!operationCompete)
+                {
+                    Thread.Sleep(5);
+                }
+            }
+>>>>>>> Authorization
         }
 
         /// <summary>
@@ -198,6 +412,76 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void Logon_InvalidData()
         {
+<<<<<<< HEAD
+=======
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create users for test.
+                SetBaseUserPool();
+
+                // Create the query that would simulate logon.
+                UniformQueries.QueryPart[] query = new UniformQueries.QueryPart[]
+                {
+                    new UniformQueries.QueryPart("token", AuthorityController.API.Tokens.UnusedToken),
+                    new UniformQueries.QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+
+                    new UniformQueries.QueryPart("user", null),
+                    new UniformQueries.QueryPart("logon", null),
+
+                    new UniformQueries.QueryPart("login", "user"),
+                    new UniformQueries.QueryPart("password", "invalidPassword"),
+                    new UniformQueries.QueryPart("os", Environment.OSVersion.VersionString),
+                    new UniformQueries.QueryPart("mac", "anonymous"),
+                    new UniformQueries.QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
+                };
+
+                // Marker that avoid finishing of the test until receiving result.
+                bool operationCompete = false;
+
+                // Start reciving clent line.
+                UniformClient.BaseClient.EnqueueDuplexQuery(
+
+                    // Request connection to localhost server via main pipe.
+                    "localhost", PIPE_NAME,
+
+                    // Convert query parts array to string view in correct format provided by UniformQueries API.
+                    UniformQueries.QueryPart.QueryPartsArrayToString(query),
+
+                    // Handler that would recive ther ver answer.
+                    (PipesProvider.Client.TransmissionLine line, object answer) =>
+                    {
+                        // Try to convert answer to string
+                        if (answer is string answerS)
+                        {
+                            // Is operation success?
+                            if (answerS.StartsWith("error", StringComparison.OrdinalIgnoreCase))
+                            {
+                                // Log error.
+                                Assert.IsTrue(true);
+                                operationCompete = true;
+                            }
+                            else
+                            {
+                                // Log error.
+                                Assert.Fail("Unexisted user found on server.\nAnswer:" + answerS);
+                                operationCompete = true;
+                            }
+                        }
+                        else
+                        {
+                            // Assert error.
+                            Assert.Fail("Incorrect format of answer. Required format is string. Type:" + answer.GetType());
+                            operationCompete = true;
+                        }
+                    });
+
+                // Wait until operation would complete.
+                while (!operationCompete)
+                {
+                    Thread.Sleep(5);
+                }
+            }
+>>>>>>> Authorization
         }
 
         /// <summary>
@@ -206,6 +490,24 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void Logoff_InvalidToken()
         {
+<<<<<<< HEAD
+=======
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create users for test.
+                SetBaseUserPool();
+
+                // Generate new token.
+                string newToken = AuthorityController.API.Tokens.UnusedToken;
+
+                // Logoff unregistred token.
+                bool result = AuthorityController.Queries.USER_LOGOFF.LogoffToken(newToken);
+
+                // Assert that token was rejected by a system.
+                // If token was processed that this mean that system failed.
+                Assert.IsTrue(!result, "Token detected, that can't be true.");
+            }
+>>>>>>> Authorization
         }
 
         /// <summary>
@@ -214,6 +516,24 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void Logoff_ValidToken()
         {
+<<<<<<< HEAD
+=======
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create users for test.
+                SetBaseUserPool();
+
+                // Get token of registred user.
+                string userToken = user_User.tokens[0];
+
+                // Logoff unregistred token.
+                bool result = AuthorityController.Queries.USER_LOGOFF.LogoffToken(userToken);
+
+                // Assert that token was rejected by a system.
+                // If token was processed that this mean that system failed.
+                Assert.IsTrue(result, "Token not detected.");
+            }
+>>>>>>> Authorization
         }
         
         /// <summary>
@@ -254,6 +574,14 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void NewPasswrod_Self()
         {
+<<<<<<< HEAD
+=======
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create users for test.
+                SetBaseUserPool();
+            }
+>>>>>>> Authorization
         }
 
         /// <summary>
@@ -262,6 +590,14 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void NewPasswrod_LowerRankUser()
         {
+<<<<<<< HEAD
+=======
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create users for test.
+                SetBaseUserPool();
+            }
+>>>>>>> Authorization
         }
 
         /// <summary>
@@ -270,6 +606,14 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void NewPasswrod_HigherRankUser()
         {
+<<<<<<< HEAD
+=======
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create users for test.
+                SetBaseUserPool();
+            }
+>>>>>>> Authorization
         }
     }
 }
