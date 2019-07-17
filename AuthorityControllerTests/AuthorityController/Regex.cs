@@ -53,15 +53,18 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ComplexNameValidation_ValidType1()
         {
-            // Create default config file.
-            SetBasePersonalDataConfig();
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create default config file.
+                SetBasePersonalDataConfig();
 
-            string name = "Volodymyr";
+                string name = "Volodymyr";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
 
-            Assert.IsTrue(result, error);
+                Assert.IsTrue(result, error);
+            }
         }
 
         /// <summary>
@@ -71,15 +74,18 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ComplexNameValidation_ValidType2()
         {
-            // Create default config file.
-            SetBasePersonalDataConfig();
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create default config file.
+                SetBasePersonalDataConfig();
 
-            string name = "DeGole";
+                string name = "DeGole";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
 
-            Assert.IsTrue(result, error);
+                Assert.IsTrue(result, error);
+            }
         }
 
 
@@ -90,15 +96,18 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ComplexNameValidation_ValidType3()
         {
-            // Create default config file.
-            SetBasePersonalDataConfig();
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create default config file.
+                SetBasePersonalDataConfig();
 
-            string name = "Al'Said";
+                string name = "Al'Said";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
 
-            Assert.IsTrue(result, error);
+                Assert.IsTrue(result, error);
+            }
         }
 
         /// <summary>
@@ -108,15 +117,18 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ComplexNameValidation_ValidType4()
         {
-            // Create default config file.
-            SetBasePersonalDataConfig();
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create default config file.
+                SetBasePersonalDataConfig();
 
-            string name = "Anna Grace";
+                string name = "Anna Grace";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
 
-            Assert.IsTrue(result, error);
+                Assert.IsTrue(result, error);
+            }
         }
 
         /// <summary>
@@ -126,15 +138,18 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ComplexNameValidation_InvalidType1()
         {
-            // Create default config file.
-            SetBasePersonalDataConfig();
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create default config file.
+                SetBasePersonalDataConfig();
 
-            string name = "anna";
+                string name = "anna";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
 
-            Assert.IsTrue(!result, error);
+                Assert.IsTrue(!result, error);
+            }
         }
         
         /// <summary>
@@ -144,15 +159,18 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ComplexNameValidation_InvalidType2()
         {
-            // Create default config file.
-            SetBasePersonalDataConfig();
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create default config file.
+                SetBasePersonalDataConfig();
 
-            string name = "Ben4";
+                string name = "Ben4";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
 
-            Assert.IsTrue(!result, error);
+                Assert.IsTrue(!result, error);
+            }
         }
 
         /// <summary>
@@ -162,15 +180,18 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ComplexNameValidation_InvalidType3()
         {
-            // Create default config file.
-            SetBasePersonalDataConfig();
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create default config file.
+                SetBasePersonalDataConfig();
 
-            string name = "A";
+                string name = "A";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
 
-            Assert.IsTrue(!result, error);
+                Assert.IsTrue(!result, error);
+            }
         }
 
         /// <summary>
@@ -180,15 +201,18 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ComplexNameValidation_InvalidType4()
         {
-            // Create default config file.
-            SetBasePersonalDataConfig();
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create default config file.
+                SetBasePersonalDataConfig();
 
-            string name = "Jorge!";
+                string name = "Jorge!";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
 
-            Assert.IsTrue(!result, error);
+                Assert.IsTrue(!result, error);
+            }
         }
         
         /// <summary>
@@ -198,15 +222,18 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ComplexNameValidation_InvalidType5()
         {
-            // Create default config file.
-            SetBasePersonalDataConfig();
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create default config file.
+                SetBasePersonalDataConfig();
 
-            string name = "Jorge-";
+                string name = "Jorge-";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
 
-            Assert.IsTrue(!result, error);
+                Assert.IsTrue(!result, error);
+            }
         }
 
         /// <summary>
@@ -216,15 +243,18 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ComplexNameValidation_ValidType5()
         {
-            // Create default config file.
-            SetBasePersonalDataConfig();
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create default config file.
+                SetBasePersonalDataConfig();
 
-            string name = "Anna-Sofia";
+                string name = "Anna-Sofia";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
 
-            Assert.IsTrue(result, error);
+                Assert.IsTrue(result, error);
+            }
         }
 
         /// <summary>
@@ -234,15 +264,18 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ComplexNameValidation_ValidType6()
         {
-            // Create default config file.
-            SetBasePersonalDataConfig();
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create default config file.
+                SetBasePersonalDataConfig();
 
-            string name = " Jorge";
+                string name = " Jorge";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.NameFormat(ref name, out string error);
 
-            Assert.IsTrue(result, error);
+                Assert.IsTrue(result, error);
+            }
         }
 
 
@@ -252,16 +285,19 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ValidatePassord_BaseValid()
         {
-            // Create default config file.
-            SetBasePasswordConfig();
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create default config file.
+                SetBasePasswordConfig();
 
-            // Valid base password.
-            string passwordValid1 = "qwerty";
+                // Valid base password.
+                string passwordValid1 = "qwerty";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.PasswordFormat(passwordValid1, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.PasswordFormat(passwordValid1, out string error);
 
-            Assert.IsTrue(result, error);
+                Assert.IsTrue(result, error);
+            }
         }
 
         /// <summary>
@@ -270,16 +306,19 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ValidatePassord_BaseValid2()
         {
-            // Create default config file.
-            SetBasePasswordConfig();
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create default config file.
+                SetBasePasswordConfig();
 
-            // Valid base password.
-            string passwordValid2 = "qw_22erty";
+                // Valid base password.
+                string passwordValid2 = "qw_22erty";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.PasswordFormat(passwordValid2, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.PasswordFormat(passwordValid2, out string error);
 
-            Assert.IsTrue(result, error);
+                Assert.IsTrue(result, error);
+            }
         }
 
         /// <summary>
@@ -288,16 +327,19 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ValidatePassord_BaseValid3()
         {
-            // Create default config file.
-            SetBasePasswordConfig();
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create default config file.
+                SetBasePasswordConfig();
 
-            // Valid base password.
-            string passwordValid3 = "AdsqASSAD";
+                // Valid base password.
+                string passwordValid3 = "AdsqASSAD";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.PasswordFormat(passwordValid3, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.PasswordFormat(passwordValid3, out string error);
 
-            Assert.IsTrue(result, error);
+                Assert.IsTrue(result, error);
+            }
         }
 
         /// <summary>
@@ -306,16 +348,19 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ValidatePassord_BaseInvalid1()
         {
-            // Create default config file.
-            SetBasePasswordConfig();
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create default config file.
+                SetBasePasswordConfig();
 
-            // Too short.
-            string passwordInvalid1 = "qw";
+                // Too short.
+                string passwordInvalid1 = "qw";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid1, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid1, out string error);
 
-            Assert.IsTrue(!result, error);
+                Assert.IsTrue(!result, error);
+            }
         }
 
         /// <summary>
@@ -324,16 +369,19 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ValidatePassord_BaseInvalid2()
         {
-            // Create default config file.
-            SetBasePasswordConfig();
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create default config file.
+                SetBasePasswordConfig();
 
-            // Incorrect language.
-            string passwordInvalid2 = "йц";
+                // Incorrect language.
+                string passwordInvalid2 = "йц";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid2, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid2, out string error);
 
-            Assert.IsTrue(!result, error);
+                Assert.IsTrue(!result, error);
+            }
 
         }
 
@@ -343,17 +391,19 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ValidatePassord_BaseInvalid3()
         {
-            // Create default config file.
-            SetBasePasswordConfig();
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create default config file.
+                SetBasePasswordConfig();
 
-            // Incorrect symbols.
-            string passwordInvalid3 = ", .";
+                // Incorrect symbols.
+                string passwordInvalid3 = ", .";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid3, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid3, out string error);
 
-            Assert.IsTrue(!result, error);
-
+                Assert.IsTrue(!result, error);
+            }
         }
 
         /// <summary>
@@ -362,17 +412,19 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ValidatePassord_BaseInvalid4()
         {
-            // Create default config file.
-            SetBasePasswordConfig();
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create default config file.
+                SetBasePasswordConfig();
 
-            // Too long.
-            string passwordInvalid4 = "qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty";
+                // Too long.
+                string passwordInvalid4 = "qwertyqwertyqwertyqwertyqwertyqwertyqwertyqwerty";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid4, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid4, out string error);
 
-            Assert.IsTrue(!result, error);
-
+                Assert.IsTrue(!result, error);
+            }
         }
 
         /// <summary>
@@ -381,16 +433,19 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ValidatePassord_UpperCaseValid()
         {
-            SetBasePasswordConfig();
-            AuthorityController.Data.Config.Active.PasswordRequireUpperSymbol = true;
+            lock (Locks.CONFIG_LOCK)
+            {
+                SetBasePasswordConfig();
+                AuthorityController.Data.Config.Active.PasswordRequireUpperSymbol = true;
 
-            // Valid one
-            string passwordInvalid4 = "Qwerty";
+                // Valid one
+                string passwordInvalid4 = "Qwerty";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid4, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid4, out string error);
 
-            Assert.IsTrue(result, error);
+                Assert.IsTrue(result, error);
+            }
         }
 
         /// <summary>
@@ -399,16 +454,19 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ValidatePassord_UpperCaseInvalid()
         {
-            SetBasePasswordConfig();
-            AuthorityController.Data.Config.Active.PasswordRequireUpperSymbol = true;
+            lock (Locks.CONFIG_LOCK)
+            {
+                SetBasePasswordConfig();
+                AuthorityController.Data.Config.Active.PasswordRequireUpperSymbol = true;
 
-            // invalid one
-            string passwordInvalid4 = "qwerty";
+                // invalid one
+                string passwordInvalid4 = "qwerty";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid4, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid4, out string error);
 
-            Assert.IsTrue(!result, error);
+                Assert.IsTrue(!result, error);
+            }
         }
 
         /// <summary>
@@ -417,16 +475,19 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ValidatePassord_SpecialSymbolValid()
         {
-            SetBasePasswordConfig();
-            AuthorityController.Data.Config.Active.PasswordRequireSpecialSymbol = true;
+            lock (Locks.CONFIG_LOCK)
+            {
+                SetBasePasswordConfig();
+                AuthorityController.Data.Config.Active.PasswordRequireSpecialSymbol = true;
 
-            // invalid one
-            string passwordInvalid4 = "qwerty!";
-                        
-            // Validate
-            bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid4, out string error);
+                // invalid one
+                string passwordInvalid4 = "qwerty!";
 
-            Assert.IsTrue(result, error);
+                // Validate
+                bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid4, out string error);
+
+                Assert.IsTrue(result, error);
+            }
         }
 
         /// <summary>
@@ -435,16 +496,19 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ValidatePassord_SpecialSymbolInvalid()
         {
-            SetBasePasswordConfig();
-            AuthorityController.Data.Config.Active.PasswordRequireSpecialSymbol = true;
+            lock (Locks.CONFIG_LOCK)
+            {
+                SetBasePasswordConfig();
+                AuthorityController.Data.Config.Active.PasswordRequireSpecialSymbol = true;
 
-            // invalid one
-            string passwordInvalid4 = "qwerty";
+                // invalid one
+                string passwordInvalid4 = "qwerty";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid4, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid4, out string error);
 
-            Assert.IsTrue(!result, error);
+                Assert.IsTrue(!result, error);
+            }
         }
 
         /// <summary>
@@ -453,16 +517,19 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ValidatePassord_DigitsValid()
         {
-            SetBasePasswordConfig();
-            AuthorityController.Data.Config.Active.PasswordRequireDigitSymbol = true;
+            lock (Locks.CONFIG_LOCK)
+            {
+                SetBasePasswordConfig();
+                AuthorityController.Data.Config.Active.PasswordRequireDigitSymbol = true;
 
-            // invalid one
-            string passwordInvalid4 = "qwerty4";
+                // invalid one
+                string passwordInvalid4 = "qwerty4";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid4, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid4, out string error);
 
-            Assert.IsTrue(result, error);
+                Assert.IsTrue(result, error);
+            }
         }
 
         /// <summary>
@@ -471,16 +538,19 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ValidatePassord_DigitsInvalid()
         {
-            SetBasePasswordConfig();
-            AuthorityController.Data.Config.Active.PasswordRequireDigitSymbol = true;
+            lock (Locks.CONFIG_LOCK)
+            {
+                SetBasePasswordConfig();
+                AuthorityController.Data.Config.Active.PasswordRequireDigitSymbol = true;
 
-            // invalid one
-            string passwordInvalid4 = "qwerty";
+                // invalid one
+                string passwordInvalid4 = "qwerty";
 
-            // Validate
-            bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid4, out string error);
+                // Validate
+                bool result = AuthorityController.API.Validation.PasswordFormat(passwordInvalid4, out string error);
 
-            Assert.IsTrue(!result, error);
+                Assert.IsTrue(!result, error);
+            }
         }
     }
 }
