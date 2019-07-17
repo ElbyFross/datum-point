@@ -93,7 +93,7 @@ namespace AuthorityController.API
             {
                 // Check if the base rights exist.
                 if (!API.Tokens.IsHasEnoughRigths(token, out requesterRights,
-                    requiredRights))
+                    Data.Config.Active.QUERY_UserBan_RIGHTS))
                 {
                     // Inform that token not registred.
                     error = "ERROR 401: Unauthorized";
