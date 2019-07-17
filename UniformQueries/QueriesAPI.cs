@@ -320,11 +320,7 @@ namespace UniformQueries
         /// <param name="query">Recived query in string format.</param>
         /// <param name="handler">Qirty handler that situable for that query.</param>
         /// <returns></returns>
-<<<<<<< HEAD
         public static bool TryFindQueryHandler(string query, out IQueryHandler handler)
-=======
-        public static bool TryFindQueryHandler(string query, out IQueryHandlerProcessor handler)
->>>>>>> 7e1f44400cf69f54d8f2fe500d9b0239df721eff
         {
             // Detect query parts.
             QueryPart[] queryParts = DetectQueryParts(query);
@@ -339,15 +335,9 @@ namespace UniformQueries
         /// <param name="queryParts">Recived query splited by parts.</param>
         /// <param name="handler">Hadler that's situated to this query.</param>
         /// <returns></returns>
-<<<<<<< HEAD
         public static bool TryFindQueryHandler(QueryPart[] queryParts, out IQueryHandler handler)
         {
             foreach (UniformQueries.IQueryHandler pb in UniformQueries.API.QueryHandlers)
-=======
-        public static bool TryFindQueryHandler(QueryPart[] queryParts, out IQueryHandlerProcessor handler)
-        {
-            foreach (UniformQueries.IQueryHandlerProcessor pb in UniformQueries.API.QueryProcessors)
->>>>>>> 7e1f44400cf69f54d8f2fe500d9b0239df721eff
             {
                 // Check header
                 if (pb.IsTarget(queryParts))
@@ -361,10 +351,6 @@ namespace UniformQueries
             return false;
         }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 7e1f44400cf69f54d8f2fe500d9b0239df721eff
         /// <summary>
         /// Try to detect core query parts.
         /// Example case of using: is decryption required.

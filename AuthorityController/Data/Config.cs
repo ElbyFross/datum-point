@@ -198,7 +198,6 @@ namespace AuthorityController.Data
                 }
                 return active;
             }
-            set { active = null; }
         }
         [XmlIgnore]
         private static Config active;

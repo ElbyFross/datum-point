@@ -37,20 +37,9 @@ namespace AuthorityController.Queries
             // Get params.
             UniformQueries.API.TryGetParamValue("token", out QueryPart token, queryParts);
 
-            // Request logoff.
-            LogoffToken(token.propertyValue);
-        }
-
-        /// <summary>
-        /// Request token expiring that equal to logoff operation.
-        /// </summary>
-        /// <param name="token"></param>
-        public static bool LogoffToken(string token)
-        {
             // Set expired.
-            return Session.Current.SetExpired(token);
+            Session.Current.SetExpired(token);
         }
-            
 
         public bool IsTarget(QueryPart[] queryParts)
         {

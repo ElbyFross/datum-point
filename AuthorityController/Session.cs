@@ -78,55 +78,6 @@ namespace AuthorityController
 
         #region Public methods
         /// <summary>
-        /// Create token registration binded for user profile.
-        /// Not profided fields would filled like anonymous.
-        /// Time stamp will contain the time of method call.
-        /// </summary>
-        /// <param name="user"></param>
-        /// <param name="token"></param>
-        /// <returns></returns>
-        public bool AsignTokenToUser(User user, string token)
-        {
-            return AsignTokenToUser(
-                user, 
-                token, 
-                "anonymous",
-                "anonymous", 
-                DateTime.Now.ToBinary().ToString());
-        }
-
-        /// <summary>
-        /// Create token registration binded for user profile.
-        /// </summary>
-        /// <param name="user">User profile that contain core data.</param>
-        /// <param name="token">Token provided to that user.</param>
-        /// <param name="mac">Mac adress of user machine.</param>
-        /// <param name="os">OS of user.</param>
-        /// <param name="stamp">Time stamp that show when the session was started.</param>
-        /// <returns></returns>
-        public bool AsignTokenToUser(User user, string token, string mac, string os, string stamp)
-        {
-            // Update rights if already exist.
-            if (tokensRights[token] is TokenInfo info)
-            {
-                // Inform that token alredy asigned.
-                return false;
-            }
-
-            // Create token registration for this user id.
-            tokensRights.Add(
-                token,
-                new TokenInfo()
-                {
-                    token = token,
-                    userId = user.id,
-                });
-
-            // Inform about success.
-            return true;
-        }
-
-        /// <summary>
         /// Set rights' codes array as relative to token.
         /// 
         /// In case if token infor not registred then will create anonimouse info with applied rights.
@@ -206,12 +157,12 @@ namespace AuthorityController
             rights = null;
             return false;
         }
-
+        
         /// <summary>
-        ///Removing of token from table and inform relative servers about that.
+        /// Remove token from table and inform relative servers about that.
         /// </summary>
         /// <param name="token"></param>
-        public bool SetExpired(string token)
+        public void SetExpired(string token)
         {
             if (RemoveToken(token))
             {
@@ -221,18 +172,8 @@ namespace AuthorityController
                     token);
 
                 // Send query to infrom related servers about event.
-<<<<<<< HEAD
                 InformateRelatedServers(informQuery);
-=======
-                SendEqueryToRelatedServers(informQuery);
-
-                // Confirm token removing.
-                return true;
->>>>>>> 7e1f44400cf69f54d8f2fe500d9b0239df721eff
             }
-
-            // Inform that token not found.
-            return false;
         }
 
         /// <summary>
@@ -265,30 +206,18 @@ namespace AuthorityController
             try
             {
                 // If user not anonymous.
-                if (tokensRights[token] is TokenInfo info)
+                if(tokensRights[token] is User user)
                 {
-                    // Try to get user by id.
-                    // Would found if server not anonymous and has registred data about user.
-                    if(API.Users.TryToFindUser(info.userId, out User user))
-                    {
-                        // Remove tokens from registred list.
-                        user.tokens.Remove(token);
-                    }
-
-                    // Unregister token from table.
-                    tokensRights.Remove(token);
-
-                    // Conclude success of operation.
-                    return true;
+                    // Remove tooken.
+                    user.tokens.Remove(token);
                 }
 
-                // Conclude that token registration not found.
-                Console.WriteLine("TOKEN REMOVING: Failed\nToken not registred.");
-                return false;
+                // Unregister token from table.
+                tokensRights.Remove(token);
+                return true;
             }
             catch (Exception ex)
             {
-                // Log about error.
                 Console.WriteLine("TOKEN REMOVING ERROR:\n{0}", ex.Message);
                 return false;
             }

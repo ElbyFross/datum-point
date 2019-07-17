@@ -27,12 +27,9 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void ConfigValidation()
         {
-            lock (Locks.CONFIG_LOCK)
-            {
-                Config_New();
-                Config_Load_ValidData();
-                Config_Load_CoruptedData();
-            }
+            Config_New();
+            Config_Load_ValidData();
+            Config_Load_CoruptedData();
         }
 
         /// <summary>
@@ -41,15 +38,9 @@ namespace AuthorityController.Tests
         public void Config_New()
         {
             // Set new directory.
-<<<<<<< HEAD
             Config.DIRECTORY = Configurator.TestSubfolder + Config.DIRECTORY;
-=======
-            Config.DIRECTORY = TestSubfolder + Config.DIRECTORY;
-            string buferizedConfigDir = Config.DIRECTORY;
->>>>>>> 7e1f44400cf69f54d8f2fe500d9b0239df721eff
 
             // Init file.
-            Config.Active = null;
             _ = Config.Active;
 
             // Mark result.
@@ -59,7 +50,7 @@ namespace AuthorityController.Tests
             bool result = File.Exists(Config.DIRECTORY + Config.CONFIG_FILE_NAME);
             
             // Assert.
-            Assert.IsTrue(result, "File creation failed. " + buferizedConfigDir);
+            Assert.IsTrue(result, "File creation failed.");
         }
 
         /// <summary>
@@ -138,11 +129,8 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void UsersPoolStressTest()
         {
-            lock (Locks.CONFIG_LOCK)
-            {
-                UsersPool_New();
-                UsersPoo_Load();
-            }
+            UsersPool_New();
+            UsersPoo_Load();
         }
 
         /// <summary>
@@ -152,7 +140,7 @@ namespace AuthorityController.Tests
         public void UsersPool_New()
         {
             bool poolFailed = false;
-            int poolUsersCount = 10000;
+            int poolUsersCount = 50000;
 
             // Fail callback
             void FailHandler(User obj, string error)
@@ -165,7 +153,7 @@ namespace AuthorityController.Tests
 
             API.Users.UserProfileNotStored += FailHandler;
 
-            // Create all requested users.
+
             for (int i = 0; i < poolUsersCount; i++)
             {
                 // Create user.
@@ -179,22 +167,11 @@ namespace AuthorityController.Tests
                 // Save profile.
                 API.Users.SetProfileAsync(user, Configurator.TestSubfolder + "\\USERS\\");
             }
-            
-            // Create users directory if notexist.
-            if (!Directory.Exists(TestSubfolder + "\\USERS\\"))
-            {
-                Directory.CreateDirectory(TestSubfolder + "\\USERS\\");
-            }
 
             // Wait until operation compleeting.
-            while (!poolFailed)
+            while(!poolFailed)
             {
-<<<<<<< HEAD
                 if (Directory.GetFiles(Configurator.TestSubfolder + "\\USERS\\").Length == poolUsersCount)
-=======
-                int profilesCount = Directory.GetFiles(TestSubfolder + "\\USERS\\").Length;
-                if (profilesCount == poolUsersCount)
->>>>>>> 7e1f44400cf69f54d8f2fe500d9b0239df721eff
                 {
                     break;
                 }
@@ -255,12 +232,9 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void UserProfileValidation()
         {
-            lock (Locks.CONFIG_LOCK)
-            {
-                User testUser = User_New();
-                User_Update(testUser);
-                User_Remove(testUser);
-            }
+            User testUser = User_New();
+            User_Update(testUser);
+            User_Remove(testUser);
         }
         
         /// <summary>
@@ -368,24 +342,16 @@ namespace AuthorityController.Tests
         [TestMethod]
         public void SaltGeneration()
         {
-<<<<<<< HEAD
             // Wait for config files.
             while(!Configurator.CONFIG_FILE_GENERATED)
-=======
-            lock (Locks.CONFIG_LOCK)
->>>>>>> 7e1f44400cf69f54d8f2fe500d9b0239df721eff
             {
-                // Wait for config files.
-                while (!CONFIG_FILE_GENERATED)
-                {
-                    Thread.Sleep(5);
-                }
-
-                Salt_Init();
-                Salt_Loading();
-                Salt_Validation_ValidData();
-                Salt_Validation_InvalidData();
+                Thread.Sleep(5);
             }
+
+            Salt_Init();
+            Salt_Loading();
+            Salt_Validation_ValidData();
+            Salt_Validation_InvalidData();
         }
         
         /// <summary>

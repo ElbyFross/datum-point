@@ -74,19 +74,7 @@ namespace AuthorityController.Queries
             string sessionToken = API.Tokens.UnusedToken;
 
             // Registrate token in session.
-            if (!user.tokens.Contains(sessionToken))
-            {
-                user.tokens.Add(sessionToken);
-            }
-            // Registrate token for user.
-            Session.Current.AsignTokenToUser(
-                user, 
-                sessionToken,
-                mac.propertyValue, 
-                os.propertyValue, 
-                timeStamp.propertyValue);
-
-            // Set rights.
+            user.tokens.Add(sessionToken);
             Session.Current.SetTokenRights(sessionToken, user.rights);
 
             // Return session data to user.
