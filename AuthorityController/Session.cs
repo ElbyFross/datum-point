@@ -69,7 +69,7 @@ namespace AuthorityController
 
         /// <summary>
         /// Table that contains rights provided to token.
-        /// 
+        ///
         /// Key - string token
         /// Value - TokenInfo
         /// </summary>
@@ -78,10 +78,59 @@ namespace AuthorityController
 
         #region Public methods
         /// <summary>
+        /// Create token registration binded for user profile.
+        /// Not profided fields would filled like anonymous.
+        /// Time stamp will contain the time of method call.
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="token"></param>
+        /// <returns></returns>
+        public bool AsignTokenToUser(User user, string token)
+        {
+            return AsignTokenToUser(
+                user,
+                token,
+                "anonymous",
+                "anonymous",
+                DateTime.Now.ToBinary().ToString());
+        }
+
+        /// <summary>
+        /// Create token registration binded for user profile.
+        /// </summary>
+        /// <param name="user">User profile that contain core data.</param>
+        /// <param name="token">Token provided to that user.</param>
+        /// <param name="mac">Mac adress of user machine.</param>
+        /// <param name="os">OS of user.</param>
+        /// <param name="stamp">Time stamp that show when the session was started.</param>
+        /// <returns></returns>
+        public bool AsignTokenToUser(User user, string token, string mac, string os, string stamp)
+        {
+            // Update rights if already exist.
+            if (tokensRights[token] is TokenInfo info)
+            {
+                // Inform that token alredy asigned.
+                return false;
+            }
+
+            // Create token registration for this user id.
+            tokensRights.Add(
+                token,
+                new TokenInfo()
+                {
+                    token = token,
+                    userId = user.id,
+                });
+
+            // Inform about success.
+            return true;
+        }
+
+        /// <summary>
         /// Set rights' codes array as relative to token.
-        /// 
+        ///
         /// In case if token infor not registred then will create anonimouse info with applied rights.
-        /// Applicable to purposes of servers that depends to session provider one, 
+        /// Applicable to purposes of servers that depends to session provider one,
         /// but not require entire token information, cause not manage it.
         /// </summary>
         /// <param name="token">Session token.</param>
@@ -157,12 +206,12 @@ namespace AuthorityController
             rights = null;
             return false;
         }
-        
+
         /// <summary>
-        /// Remove token from table and inform relative servers about that.
+        ///Removing of token from table and inform relative servers about that.
         /// </summary>
         /// <param name="token"></param>
-        public void SetExpired(string token)
+        public bool SetExpired(string token)
         {
             if (RemoveToken(token))
             {
@@ -173,7 +222,13 @@ namespace AuthorityController
 
                 // Send query to infrom related servers about event.
                 InformateRelatedServers(informQuery);
+
+                // Confirm token removing.
+                return true;
             }
+
+            // Inform that token not found.
+            return false;
         }
 
         /// <summary>
@@ -206,18 +261,30 @@ namespace AuthorityController
             try
             {
                 // If user not anonymous.
-                if(tokensRights[token] is User user)
+                if (tokensRights[token] is TokenInfo info)
                 {
-                    // Remove tooken.
-                    user.tokens.Remove(token);
+                    // Try to get user by id.
+                    // Would found if server not anonymous and has registred data about user.
+                    if(API.Users.TryToFindUser(info.userId, out User user))
+                    {
+                        // Remove tokens from registred list.
+                        user.tokens.Remove(token);
+                    }
+
+                    // Unregister token from table.
+                    tokensRights.Remove(token);
+
+                    // Conclude success of operation.
+                    return true;
                 }
 
-                // Unregister token from table.
-                tokensRights.Remove(token);
-                return true;
+                // Conclude that token registration not found.
+                Console.WriteLine("TOKEN REMOVING: Failed\nToken not registred.");
+                return false;
             }
             catch (Exception ex)
             {
+                // Log about error.
                 Console.WriteLine("TOKEN REMOVING ERROR:\n{0}", ex.Message);
                 return false;
             }

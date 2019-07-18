@@ -52,6 +52,19 @@ namespace AuthorityController.API
         public static event System.Action<User, string> UserProfileNotStored;
         #endregion
 
+        #region Public properties
+        /// <summary>
+        /// Does async processes started at the moment?
+        /// </summary>
+        public static bool HasAsyncLoadings
+        {
+            get
+            {
+                return LoadingLockedDirectories.Count > 0 ? true : false;
+            }
+        }
+        #endregion
+
         #region Private fields
         /// <summary>
         /// Table that provide aaccess to user data by login.
@@ -127,31 +140,8 @@ namespace AuthorityController.API
                             // Try to deserialize routing table from file.
                             loadedUser = xmlSer.Deserialize(fs) as User;
 
-                            #region Add user to ids table.
-                            if (UsersById[loadedUser.id] is User idU)
-                            {
-                                // Override if already exist.
-                                UsersById[loadedUser.id] = loadedUser;
-                            }
-                            else
-                            {
-                                // Add as new.
-                                UsersById.Add(loadedUser.id, loadedUser);
-                            }
-                            #endregion
-
-                            #region Add user to logins table.
-                            if (UsersByLogin[loadedUser.login] is User loginU)
-                            {
-                                // Override if already exist.
-                                UsersByLogin[loadedUser.login] = loadedUser;
-                            }
-                            else
-                            {
-                                // Add as new.
-                                UsersByLogin.Add(loadedUser.login, loadedUser);
-                            }
-                            #endregion
+                            // Add user to tables.
+                            AddToLoadedData(loadedUser);
 
                             // Up counter.
                             loadingSucceed++;
@@ -181,19 +171,54 @@ namespace AuthorityController.API
         /// <summary>
         /// Adding\updating user's profile by directory sete up via config file.
         /// </summary>
-        /// <param name="user"></param>
+        /// <param name="user">User profile.</param>
         public static void SetProfile(User user)
         {
-            SetProfileAsync(user, Config.Active.UsersStorageDirectory);
+            SetProfile(user, Config.Active.UsersStorageDirectory);
         }
 
         /// <summary>
         /// Adding\updating user's profile by directory.
         /// </summary>
-        /// <param name="user"></param>
-        /// <param name="directory"></param>
+        /// <param name="user">User profile.</param>
+        /// <param name="directory">Users storage.</param>
         public static async void SetProfileAsync(User user, string directory)
+        {                       
+            await Task.Run(() =>
+                {
+                    // Lock thread not saved hashset
+                    lock (LoadingLockedDirectories)
+                    {
+                        // Create file path.
+                        string filePath = directory + GetUserFileName(user);
+
+                        // Lock directory.
+                        LoadingLockedDirectories.Add(filePath);
+
+                        // Set profile synchronically.
+                        bool result = SetProfile(user, directory);
+
+                        // Unlock directory.
+                        LoadingLockedDirectories.Remove(filePath);
+
+                        // Inform subscribers about location unlock.
+                        DirectoryLoadingFinished?.Invoke(directory, result ? 1 : 0, result ? 0 : 1);
+                    }
+                }
+            );
+        }
+
+        /// <summary>
+        /// Adding\updating user's profile by directory.
+        /// </summary>
+        /// <param name="user">User profile.</param>
+        /// <param name="directory">Users storage.</param>
+        public static bool SetProfile(User user, string directory)
         {
+            // Update user in tables.
+            AddToLoadedData(user);
+
+            #region Save by directory
             // Check directory exist.
             if (!Directory.Exists(directory))
             {
@@ -201,34 +226,36 @@ namespace AuthorityController.API
                 Directory.CreateDirectory(directory);
             }
 
-            await Task.Run(() =>
+            string filePath = directory + GetUserFileName(user);
+
+            // Convert user to XML file.
+            try
             {
-                string filePath = directory + GetUserFileName(user);
-
-                // Convert user to XML file.
-                try
+                XmlDocument xmlDocument = new XmlDocument();
+                XmlSerializer serializer = new XmlSerializer(typeof(User));
+                using (MemoryStream stream = new MemoryStream())
                 {
-                    XmlDocument xmlDocument = new XmlDocument();
-                    XmlSerializer serializer = new XmlSerializer(typeof(User));
-                    using (MemoryStream stream = new MemoryStream())
-                    {
-                        serializer.Serialize(stream, user);
-                        stream.Position = 0;
-                        xmlDocument.Load(stream);
-                        xmlDocument.Save(filePath);
-                    }
-
-                    // inform subscribers.
-                    UserProfileStored?.Invoke(user);
+                    serializer.Serialize(stream, user);
+                    stream.Position = 0;
+                    xmlDocument.Load(stream);
+                    xmlDocument.Save(filePath);
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine("ERROR(ACAPI 30):  Not serialized. Reason:\n{0}", ex.Message);
 
-                    // inform subscribers.
-                    UserProfileNotStored?.Invoke(user, ex.Message);
-                }
-            });
+                // inform subscribers.
+                UserProfileStored?.Invoke(user);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR(ACAPI 30):  Not serialized. Reason:\n{0}", ex.Message);
+
+                // inform subscribers.
+                UserProfileNotStored?.Invoke(user, ex.Message);
+
+                return false;
+            }
+            #endregion
         }
 
         /// <summary>
@@ -293,6 +320,39 @@ namespace AuthorityController.API
 
         #region Cash
         /// <summary>
+        /// Registrate user in tables by id and login.
+        /// </summary>
+        /// <param name="user"></param>
+        public static void AddToLoadedData(User user)
+        {
+            #region Add user to ids table.
+            if (UsersById[user.id] is User idU)
+            {
+                // Override if already exist.
+                UsersById[user.id] = user;
+            }
+            else
+            {
+                // Add as new.
+                UsersById.Add(user.id, user);
+            }
+            #endregion
+
+            #region Add user to logins table.
+            if (UsersByLogin[user.login] is User loginU)
+            {
+                // Override if already exist.
+                UsersByLogin[user.login] = user;
+            }
+            else
+            {
+                // Add as new.
+                UsersByLogin.Add(user.login, user);
+            }
+            #endregion
+        }
+
+        /// <summary>
         /// Remove all loaded users data.
         /// </summary>
         public static void ClearUsersLoadedData()
@@ -329,12 +389,16 @@ namespace AuthorityController.API
         /// <returns>Result of operation.</returns>
         public static bool TryToFindUser(string login, out User user)
         {
-            // Try to find user in table.
-            if (UsersByLogin[login] is User bufer)
+            try
             {
-                user = bufer;
-                return true;
+                // Try to find user in table.
+                if (UsersByLogin[login] is User bufer)
+                {
+                    user = bufer;
+                    return true;
+                }
             }
+            catch { }
 
             // Inform about fail.
             user = null;

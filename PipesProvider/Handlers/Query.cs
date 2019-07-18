@@ -38,23 +38,6 @@ namespace PipesProvider.Handlers
             QueryPart[] queryParts = UQAPI.DetectQueryParts(query);
             QueryPart token = QueryPart.None;
 
-            // Check query format.
-            bool queryFormatIsValid =
-                UQAPI.QueryParamExist("q", queryParts) &&
-                UQAPI.QueryParamExist("guid", queryParts) &&
-                UQAPI.TryGetParamValue("token", out token, queryParts);
-
-            // Ignore if requiest not valid.
-            if (!queryFormatIsValid)
-            {
-                Console.WriteLine("INVALID QUERY. LOSED ONE OR MORE PARTS BY SCHEME:{0}\nExample:{1}",
-                    "guid=GUID" + UQAPI.SPLITTING_SYMBOL + "token=TOKEN" + UQAPI.SPLITTING_SYMBOL + "q=QUERY",
-                    "guid=sharedGUID" + UQAPI.SPLITTING_SYMBOL + "token=clientToken" + UQAPI.SPLITTING_SYMBOL +
-                    "q=GET" + UQAPI.SPLITTING_SYMBOL + "sq=DAYSRANGE" + UQAPI.SPLITTING_SYMBOL +
-                    "f=07.11.2019" + UQAPI.SPLITTING_SYMBOL + "t=08.11.2019");
-                return;
-            }
-
             // Try to detect target query processor.
             if(API.TryFindQueryHandler(queryParts, out UniformQueries.IQueryHandler handler))
             {

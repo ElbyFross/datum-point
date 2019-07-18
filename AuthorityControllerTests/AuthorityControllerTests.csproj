@@ -8,7 +8,7 @@
     <ProjectGuid>{D41E694D-0245-4D4D-9BE9-BFDB28F4A78C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AuthorityControllerTests</RootNamespace>
+    <RootNamespace>AuthorityController</RootNamespace>
     <AssemblyName>AuthorityControllerTests</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -49,6 +49,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuthorityTestServer\Server.cs" />
+    <Compile Include="Locks.cs" />
     <Compile Include="AuthorityController\Queries.cs" />
     <Compile Include="AuthorityController\Data.cs" />
     <Compile Include="AuthorityController\Session.cs" />

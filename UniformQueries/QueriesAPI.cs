@@ -40,8 +40,8 @@ namespace UniformQueries
             }
         }
         private static readonly List<IQueryHandler> queryHandlers = null;
-        
-        
+
+
         /// <summary>
         /// Load query handlers during first call.
         /// </summary>
@@ -89,7 +89,7 @@ namespace UniformQueries
             // Log
             Console.WriteLine("\nRESUME:\nQueriesMonitor established. Session started at {0}\nTotal query processors detected: {1}",
                 DateTime.Now.ToString("HH:mm:ss"), queryHandlers.Count);
-        }        
+        }
 
 
         /// <summary>
@@ -142,7 +142,7 @@ namespace UniformQueries
 
 
         /// <summary>
-        /// Try to find requested param's value in query. 
+        /// Try to find requested param's value in query.
         /// </summary>
         /// <param name="param"></param>
         /// <param name="value"></param>
@@ -154,7 +154,7 @@ namespace UniformQueries
         }
 
         /// <summary>
-        /// Try to find requested param's value among query parts. 
+        /// Try to find requested param's value among query parts.
         /// </summary>
         /// <param name="param"></param>
         /// <param name="value"></param>
@@ -181,7 +181,7 @@ namespace UniformQueries
         }
 
         /// <summary>
-        /// Try to find requested param's value among query parts. 
+        /// Try to find requested param's value among query parts.
         /// </summary>
         /// <param name="param"></param>
         /// <param name="value"></param>
@@ -209,7 +209,7 @@ namespace UniformQueries
 
 
         /// <summary>
-        /// Try to find requested all param's value among query parts by requested param name. 
+        /// Try to find requested all param's value among query parts by requested param name.
         /// </summary>
         /// <param name="param"></param>
         /// <param name="value"></param>
@@ -232,7 +232,7 @@ namespace UniformQueries
         }
 
         /// <summary>
-        /// Try to find requested all param's value among query parts by requested param name. 
+        /// Try to find requested all param's value among query parts by requested param name.
         /// </summary>
         /// <param name="param"></param>
         /// <param name="value"></param>
