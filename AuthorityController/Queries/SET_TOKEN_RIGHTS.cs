@@ -57,7 +57,7 @@ namespace AuthorityController.Queries
             #endregion
 
             #region Get target token rights
-            if (Session.Current.TryGetTokenRights(targetToken.propertyValue, out string[] targetTokenRights))
+            if (!Session.Current.TryGetTokenRights(targetToken.propertyValue, out string[] targetTokenRights))
             {
                 // If also not found.
                 UniformServer.BaseServer.SendAnswerViaPP("ERROR 404: User not found", queryParts);
@@ -85,6 +85,9 @@ namespace AuthorityController.Queries
             // Apply new rights
             string[] rightsArray = rights.propertyValue.Split('+');
             Session.Current.SetTokenRights(targetToken.propertyValue, rightsArray);
+            
+            // Inform about success.
+            UniformServer.BaseServer.SendAnswerViaPP("Success", queryParts);
         }
 
         public bool IsTarget(QueryPart[] queryParts)

@@ -43,6 +43,18 @@ namespace AuthorityController.Tests
         #endregion
 
         /// <summary>
+        /// Starting public server that would able to recive queries.
+        /// </summary>
+        public void StartPublicServer()
+        {
+            // Stop previos servers.
+            PipesProvider.Server.ServerAPI.StopAllServers();
+
+            // Start new server pipe.
+            AuthorityTestServer.Server.StartQueryProcessing(PIPE_NAME);
+        }
+
+        /// <summary>
         /// Creating and apply base users pool:
         /// -Super admin
         /// -Admin
@@ -211,11 +223,8 @@ namespace AuthorityController.Tests
                 AuthorityController.Session.Current.SetTokenRights(user_Guest.tokens[0], user_Guest.rights);
                 #endregion
 
-                // Stop previos servers.
-                PipesProvider.Server.ServerAPI.StopAllServers();
-
-                // Start new server pipe.
-                AuthorityTestServer.Server.StartQueryProcessing(PIPE_NAME);
+                // Start server that would manage that data.
+                StartPublicServer();
             }
         }
 
@@ -231,7 +240,7 @@ namespace AuthorityController.Tests
         }
 
         /// <summary>
-        /// Trying to get guest token using query.
+        /// Tryinging to get guest token using query.
         /// </summary>
         [TestMethod]
         public void GetGuestToken()
@@ -248,14 +257,15 @@ namespace AuthorityController.Tests
                     // Validate answer.
                     if (obj is string answer)
                     {
-                        // Unlock finish blocker.
-                        waitingAnswer = false;
-
                         QueryPart[] recivedQuery = UniformQueries.API.DetectQueryParts(answer);
 
                         // Check token.
                         if(UniformQueries.API.TryGetParamValue("token", out QueryPart token, recivedQuery))
                         {
+                            // Set token as GUEST to share between other tests.
+                            Configurator.GUEST_TOKEN = token.propertyValue;
+
+                            // Assert test result.
                             bool tokenProvided = !string.IsNullOrEmpty(token.propertyValue);
                             Assert.IsTrue(tokenProvided, "Token is null.\n"+ answer);
                         }
@@ -263,11 +273,10 @@ namespace AuthorityController.Tests
                         {
                             // Inform that failed.
                             Assert.IsTrue(false, "Token not provided.\n" + answer);
-                            return;
                         }
 
                         // Check expire time.
-                        if (!UniformQueries.API.TryGetParamValue("expireIn", out QueryPart _, recivedQuery))
+                        if (!UniformQueries.API.TryGetParamValue("expiryIn", out QueryPart _, recivedQuery))
                             Assert.IsTrue(false, "Expire time not provided.\n" + answer);
 
                         // Check rights providing.
@@ -278,8 +287,10 @@ namespace AuthorityController.Tests
                     {
                         // Inform that failed.
                         Assert.IsTrue(false, "Incorrect answer type.");
-                        return;
                     }
+
+                    // Unlock finish blocker.
+                    waitingAnswer = false;
                 });
             #endregion
 
@@ -291,7 +302,7 @@ namespace AuthorityController.Tests
         }
 
         /// <summary>
-        /// Trying to update token rights without authority.
+        /// Tryinging to update token rights without authority.
         /// </summary>
         [TestMethod]
         public void SetTokenRights_NoRights()
@@ -300,11 +311,74 @@ namespace AuthorityController.Tests
             {
                 // Create users for test.
                 SetBaseUsersPool();
+
+                // Create the query that would contain user data.
+                QueryPart[] query = new QueryPart[]
+                {
+                    new QueryPart("token", user_User.tokens[0]),
+                    new QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+
+                    new QueryPart("set"),
+                    new QueryPart("targetToken", user_Admin.tokens[0]),
+                    new QueryPart("rights", "newRight"),
+                };
+
+                // Marker that avoid finishing of the test until receiving result.
+                bool operationCompete = false;
+                bool operationResult = false;
+                string operationError = null;
+
+                // Start reciving clent line.
+                UniformClient.BaseClient.EnqueueDuplexQueryViaPP(
+
+                    // Request connection to localhost server via main pipe.
+                    "localhost", PIPE_NAME,
+
+                    // Convert query parts array to string view in correct format provided by UniformQueries API.
+                    QueryPart.QueryPartsArrayToString(query),
+
+                    // Handler that would recive ther ver answer.
+                    (PipesProvider.Client.TransmissionLine line, object answer) =>
+                    {
+                        // Trying to convert answer to string
+                        if (answer is string answerS)
+                        {
+                            // Is operation success?
+                            if (answerS.StartsWith("error", StringComparison.OrdinalIgnoreCase))
+                            {
+                                // Log error.
+                                operationResult = true;
+                                operationCompete = true;
+                            }
+                            else
+                            {
+                                // Log error.
+                                operationResult = false;
+                                operationError = "Unathorized operation passed. Server answer:" + answerS;
+                                operationCompete = true;
+                            }
+                        }
+                        else
+                        {
+                            // Log error.
+                            operationResult = false;
+                            operationError = "Incorrect format of answer.Required format is string.Type:" + answer.GetType();
+                            operationCompete = true;
+                        }
+                    });
+
+                // Wait until operation would complete.
+                while (!operationCompete)
+                {
+                    Thread.Sleep(5);
+                }
+
+                Assert.IsTrue(operationResult, operationError);
             }
         }
 
         /// <summary>
-        /// Trying to update token rights with walid permition.
+        /// Tryinging to update token rights with walid permition.
         /// </summary>
         [TestMethod]
         public void SetTokenRights_HasRights()
@@ -313,11 +387,74 @@ namespace AuthorityController.Tests
             {
                 // Create users for test.
                 SetBaseUsersPool();
+
+                // Create the query that would contain user data.
+                QueryPart[] query = new QueryPart[]
+                {
+                    new QueryPart("token", user_Admin.tokens[0]),
+                    new QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+
+                    new QueryPart("set"),
+                    new QueryPart("targetToken", user_User.tokens[0]),
+                    new QueryPart("rights", "newRight"),
+                };
+
+                // Marker that avoid finishing of the test until receiving result.
+                bool operationCompete = false;
+                bool operationResult = false;
+                string operationError = null;
+
+                // Start reciving clent line.
+                UniformClient.BaseClient.EnqueueDuplexQueryViaPP(
+
+                    // Request connection to localhost server via main pipe.
+                    "localhost", PIPE_NAME,
+
+                    // Convert query parts array to string view in correct format provided by UniformQueries API.
+                    QueryPart.QueryPartsArrayToString(query),
+
+                    // Handler that would recive ther ver answer.
+                    (PipesProvider.Client.TransmissionLine line, object answer) =>
+                    {
+                        // Trying to convert answer to string
+                        if (answer is string answerS)
+                        {
+                            // Is operation success?
+                            if (!answerS.StartsWith("error", StringComparison.OrdinalIgnoreCase))
+                            {
+                                // Log error.
+                                operationResult = true;
+                                operationCompete = true;
+                            }
+                            else
+                            {
+                                // Log error.
+                                operationResult = false;
+                                operationError = "Operation failed with error: " + answerS;
+                                operationCompete = true;
+                            }
+                        }
+                        else
+                        {
+                            // Log error.
+                            operationResult = false;
+                            operationError = "Incorrect format of answer.Required format is string.Type:" + answer.GetType();
+                            operationCompete = true;
+                        }
+                    });
+
+                // Wait until operation would complete.
+                while (!operationCompete)
+                {
+                    Thread.Sleep(5);
+                }
+
+                Assert.IsTrue(operationResult, operationError);
             }
         }
 
         /// <summary>
-        /// Try to ban user but has no rights to this.
+        /// Trying to ban user but has no rights to this.
         /// </summary>
         [TestMethod]
         public void UserBan_NoRights()
@@ -330,7 +467,7 @@ namespace AuthorityController.Tests
         }
 
         /// <summary>
-        /// Try to ban user that has a higher rank than requester.
+        /// Trying to ban user that has a higher rank than requester.
         /// </summary>
         [TestMethod]
         public void UserBan_HighrankerBan()
@@ -343,7 +480,7 @@ namespace AuthorityController.Tests
         }
 
         /// <summary>
-        /// Try to ban user with enough rights to that.
+        /// Trying to ban user with enough rights to that.
         /// </summary>
         [TestMethod]
         public void UserBan_HasRights()
@@ -356,7 +493,17 @@ namespace AuthorityController.Tests
         }
 
         /// <summary>
-        /// Try to logon as existed user with corerct logon data.
+        /// Check ban expiring.
+        /// </summary>
+        [TestMethod]
+        public void UserBan_BanExpire()
+        {
+
+        }
+
+
+        /// <summary>
+        /// Trying to logon as existed user with corerct logon data.
         /// </summary>
         [TestMethod]
         public void Logon_ValidData()
@@ -367,19 +514,19 @@ namespace AuthorityController.Tests
                 SetBaseUsersPool();
 
                 // Create the query that would simulate logon.
-                UniformQueries.QueryPart[] query = new UniformQueries.QueryPart[]
+                QueryPart[] query = new QueryPart[]
                 {
-                    new UniformQueries.QueryPart("token", AuthorityController.API.Tokens.UnusedToken),
-                    new UniformQueries.QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+                    new QueryPart("token", AuthorityController.API.Tokens.UnusedToken),
+                    new QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
 
-                    new UniformQueries.QueryPart("user", null),
-                    new UniformQueries.QueryPart("logon", null),
+                    new QueryPart("user", null),
+                    new QueryPart("logon", null),
 
-                    new UniformQueries.QueryPart("login", "sadmin"),
-                    new UniformQueries.QueryPart("password", "password"),
-                    new UniformQueries.QueryPart("os", Environment.OSVersion.VersionString),
-                    new UniformQueries.QueryPart("mac", "anonymous"),
-                    new UniformQueries.QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
+                    new QueryPart("login", "sadmin"),
+                    new QueryPart("password", "password"),
+                    new QueryPart("os", Environment.OSVersion.VersionString),
+                    new QueryPart("mac", "anonymous"),
+                    new QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
                 };
 
                 // Marker that avoid finishing of the test until receiving result.
@@ -392,12 +539,12 @@ namespace AuthorityController.Tests
                     "localhost", PIPE_NAME,
 
                     // Convert query parts array to string view in correct format provided by UniformQueries API.
-                    UniformQueries.QueryPart.QueryPartsArrayToString(query),
+                    QueryPart.QueryPartsArrayToString(query),
 
                     // Handler that would recive ther ver answer.
                     (PipesProvider.Client.TransmissionLine line, object answer) =>
                     {
-                        // Try to convert answer to string
+                        // Trying to convert answer to string
                         if (answer is string answerS)
                         {
                         // Is operation success?
@@ -409,7 +556,7 @@ namespace AuthorityController.Tests
                             }
                             else
                             {
-                            // Try to get toekn from answer.
+                            // Trying to get toekn from answer.
                             if (UniformQueries.API.TryGetParamValue("token", out string value, answerS))
                                 {
                                 // Confirm logon.
@@ -440,9 +587,8 @@ namespace AuthorityController.Tests
             }
         }
 
-
         /// <summary>
-        /// Try to logon as existed user that not registred.
+        /// Trying to logon as existed user that not registred.
         /// </summary>
         [TestMethod]
         public void Logon_UserNotExist()
@@ -453,19 +599,19 @@ namespace AuthorityController.Tests
                 SetBaseUsersPool();
 
                 // Create the query that would simulate logon.
-                UniformQueries.QueryPart[] query = new UniformQueries.QueryPart[]
+                QueryPart[] query = new QueryPart[]
                 {
-                    new UniformQueries.QueryPart("token", AuthorityController.API.Tokens.UnusedToken),
-                    new UniformQueries.QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+                    new QueryPart("token", AuthorityController.API.Tokens.UnusedToken),
+                    new QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
 
-                    new UniformQueries.QueryPart("user", null),
-                    new UniformQueries.QueryPart("logon", null),
+                    new QueryPart("user", null),
+                    new QueryPart("logon", null),
 
-                    new UniformQueries.QueryPart("login", "notExistedUser"),
-                    new UniformQueries.QueryPart("password", "password"),
-                    new UniformQueries.QueryPart("os", Environment.OSVersion.VersionString),
-                    new UniformQueries.QueryPart("mac", "anonymous"),
-                    new UniformQueries.QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
+                    new QueryPart("login", "notExistedUser"),
+                    new QueryPart("password", "password"),
+                    new QueryPart("os", Environment.OSVersion.VersionString),
+                    new QueryPart("mac", "anonymous"),
+                    new QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
                 };
 
                 // Marker that avoid finishing of the test until receiving result.
@@ -478,12 +624,12 @@ namespace AuthorityController.Tests
                     "localhost", PIPE_NAME,
 
                     // Convert query parts array to string view in correct format provided by UniformQueries API.
-                    UniformQueries.QueryPart.QueryPartsArrayToString(query),
+                    QueryPart.QueryPartsArrayToString(query),
 
                     // Handler that would recive ther ver answer.
                     (PipesProvider.Client.TransmissionLine line, object answer) =>
                     {
-                        // Try to convert answer to string
+                        // Trying to convert answer to string
                         if (answer is string answerS)
                         {
                             // Is operation success?
@@ -517,7 +663,7 @@ namespace AuthorityController.Tests
         }
 
         /// <summary>
-        /// Try to logon with incorrrect password.
+        /// Trying to logon with incorrrect password.
         /// </summary>
         [TestMethod]
         public void Logon_InvalidData()
@@ -528,19 +674,19 @@ namespace AuthorityController.Tests
                 SetBaseUsersPool();
 
                 // Create the query that would simulate logon.
-                UniformQueries.QueryPart[] query = new UniformQueries.QueryPart[]
+                QueryPart[] query = new QueryPart[]
                 {
-                    new UniformQueries.QueryPart("token", AuthorityController.API.Tokens.UnusedToken),
-                    new UniformQueries.QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+                    new QueryPart("token", AuthorityController.API.Tokens.UnusedToken),
+                    new QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
 
-                    new UniformQueries.QueryPart("user", null),
-                    new UniformQueries.QueryPart("logon", null),
+                    new QueryPart("user", null),
+                    new QueryPart("logon", null),
 
-                    new UniformQueries.QueryPart("login", "user"),
-                    new UniformQueries.QueryPart("password", "invalidPassword"),
-                    new UniformQueries.QueryPart("os", Environment.OSVersion.VersionString),
-                    new UniformQueries.QueryPart("mac", "anonymous"),
-                    new UniformQueries.QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
+                    new QueryPart("login", "user"),
+                    new QueryPart("password", "invalidPassword"),
+                    new QueryPart("os", Environment.OSVersion.VersionString),
+                    new QueryPart("mac", "anonymous"),
+                    new QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
                 };
 
                 // Marker that avoid finishing of the test until receiving result.
@@ -553,12 +699,12 @@ namespace AuthorityController.Tests
                     "localhost", PIPE_NAME,
 
                     // Convert query parts array to string view in correct format provided by UniformQueries API.
-                    UniformQueries.QueryPart.QueryPartsArrayToString(query),
+                    QueryPart.QueryPartsArrayToString(query),
 
                     // Handler that would recive ther ver answer.
                     (PipesProvider.Client.TransmissionLine line, object answer) =>
                     {
-                        // Try to convert answer to string
+                        // Trying to convert answer to string
                         if (answer is string answerS)
                         {
                             // Is operation success?
@@ -592,7 +738,7 @@ namespace AuthorityController.Tests
         }
 
         /// <summary>
-        /// Try to logoff user by invalid token.
+        /// Trying to logoff user by invalid token.
         /// </summary>
         [TestMethod]
         public void Logoff_InvalidToken()
@@ -615,7 +761,7 @@ namespace AuthorityController.Tests
         }
 
         /// <summary>
-        /// Try to logoff user by valid token.
+        /// Trying to logoff user by valid token.
         /// </summary>
         [TestMethod]
         public void Logoff_ValidToken()
@@ -638,62 +784,47 @@ namespace AuthorityController.Tests
         }
 
         /// <summary>
-        /// Try to create user with valid data.
+        /// Trying to create user with valid data.
         /// </summary>
         [TestMethod]
         public void NewUser_ValidData()
         {
-        }
+            #region Getting guest token to logon on server
+            if (string.IsNullOrEmpty(Configurator.GUEST_TOKEN))
+            {
+                // Request guest token.
+                GetGuestToken();
 
-        /// <summary>
-        /// Try to logoff invalid token.
-        /// </summary>
-        [TestMethod]
-        public void NewUser_InvalidPassword()
-        {
-        }
+                // Wait until guest token would provided.
+                while (string.IsNullOrEmpty(Configurator.GUEST_TOKEN))
+                {
+                    Thread.Sleep(5);
+                }
+            }
+            #endregion
 
-        /// <summary>
-        /// Try to create new user with invalid login.
-        /// </summary>
-        [TestMethod]
-        public void NewUser_InvalidLogin()
-        {
-        }
-
-        /// <summary>
-        /// Try to create user with invalid personal data.
-        /// </summary>
-        [TestMethod]
-        public void NewUser_InvalidPersonal()
-        {
-        }
-
-        /// <summary>
-        /// Try to change self password.
-        /// </summary>
-        [TestMethod]
-        public void NewPassword_Self()
-        {
             lock (Locks.CONFIG_LOCK)
             {
-                // Create users for test.
-                SetBaseUsersPool();
+                // Start new server for thsi test to avoid conflicts.
+                StartPublicServer();
 
-                // Create the query that would simulate logon.
-                UniformQueries.QueryPart[] query = new UniformQueries.QueryPart[]
+                // Create the query that would contain user data.
+                QueryPart[] query = new QueryPart[]
                 {
-                    new UniformQueries.QueryPart("token", user_User.tokens[0]),
-                    new UniformQueries.QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+                    new QueryPart("token", Configurator.GUEST_TOKEN),
+                    new QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
 
-                    new UniformQueries.QueryPart("user=" + user_User.id, null),
-                    new UniformQueries.QueryPart("new", null),
+                    new QueryPart("user"),
+                    new QueryPart("new"),
 
-                    new UniformQueries.QueryPart("password", "newPassword!2"),
-                    new UniformQueries.QueryPart("oldpassword", "password"),
-                    new UniformQueries.QueryPart("os", Environment.OSVersion.VersionString),
-                    new UniformQueries.QueryPart("mac", "anonymous"),
-                    new UniformQueries.QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
+                    new QueryPart("login", "login123@"),
+                    new QueryPart("password", "Password123!"),
+                    new QueryPart("fn", "Mark"),
+                    new QueryPart("sn", "Sanders"),
+
+                    new QueryPart("os", Environment.OSVersion.VersionString),
+                    new QueryPart("mac", "anonymous"),
+                    new QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
                 };
 
                 // Marker that avoid finishing of the test until receiving result.
@@ -708,12 +839,488 @@ namespace AuthorityController.Tests
                     "localhost", PIPE_NAME,
 
                     // Convert query parts array to string view in correct format provided by UniformQueries API.
-                    UniformQueries.QueryPart.QueryPartsArrayToString(query),
+                    QueryPart.QueryPartsArrayToString(query),
 
                     // Handler that would recive ther ver answer.
                     (PipesProvider.Client.TransmissionLine line, object answer) =>
                     {
-                        // Try to convert answer to string
+                        // Trying to convert answer to string
+                        if (answer is string answerS)
+                        {
+                            // Is operation success?
+                            if (!answerS.StartsWith("error", StringComparison.OrdinalIgnoreCase))
+                            {
+                                // Log error.
+                                operationResult = true;
+                                operationCompete = true;
+                            }
+                            else
+                            {
+                                // Log error.
+                                operationResult = false;
+                                operationError = "User creation returned error: " + answerS;
+                                operationCompete = true;
+                            }
+                        }
+                        else
+                        {
+                            // Log error.
+                            operationResult = false;
+                            operationError = "Incorrect format of answer.Required format is string.Type:" + answer.GetType();
+                            operationCompete = true;
+                        }
+                    });
+
+                // Wait until operation would complete.
+                while (!operationCompete)
+                {
+                    Thread.Sleep(5);
+                }
+
+                Assert.IsTrue(operationResult, operationError);
+            }
+        }
+
+        /// <summary>
+        /// Trying to logoff invalid token.
+        /// </summary>
+        [TestMethod]
+        public void NewUser_InvalidPassword()
+        {
+            #region Getting guset token to logon on server
+            if (string.IsNullOrEmpty(Configurator.GUEST_TOKEN))
+            {
+                // Request guest token.
+                GetGuestToken();
+
+                // Wait until guest token would provided.
+                while (string.IsNullOrEmpty(Configurator.GUEST_TOKEN))
+                {
+                    Thread.Sleep(5);
+                }
+            }
+            #endregion
+            
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Start new server for thsi test to avoid conflicts.
+                StartPublicServer();
+
+                // Create the query that would contain user data.
+                QueryPart[] query = new QueryPart[]
+                {
+                    new QueryPart("token", Configurator.GUEST_TOKEN),
+                    new QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+
+                    new QueryPart("user"),
+                    new QueryPart("new"),
+
+                    new QueryPart("login", "login123@"),
+                    new QueryPart("password", "aa!"),
+                    new QueryPart("fn", "Mark"),
+                    new QueryPart("sn", "Sanders"),
+
+                    new QueryPart("os", Environment.OSVersion.VersionString),
+                    new QueryPart("mac", "anonymous"),
+                    new QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
+                };
+
+                // Marker that avoid finishing of the test until receiving result.
+                bool operationCompete = false;
+                bool operationResult = false;
+                string operationError = null;
+
+                // Start reciving clent line.
+                UniformClient.BaseClient.EnqueueDuplexQueryViaPP(
+
+                    // Request connection to localhost server via main pipe.
+                    "localhost", PIPE_NAME,
+
+                    // Convert query parts array to string view in correct format provided by UniformQueries API.
+                    QueryPart.QueryPartsArrayToString(query),
+
+                    // Handler that would recive ther ver answer.
+                    (PipesProvider.Client.TransmissionLine line, object answer) =>
+                    {
+                        // Trying to convert answer to string
+                        if (answer is string answerS)
+                        {
+                            // Is operation success?
+                            if (answerS.StartsWith("error", StringComparison.OrdinalIgnoreCase))
+                            {
+                                // Log error.
+                                operationResult = true;
+                                operationCompete = true;
+                            }
+                            else
+                            {
+                                // Log error.
+                                operationResult = false;
+                                operationError = "User creation returned error: " + answerS;
+                                operationCompete = true;
+                            }
+                        }
+                        else
+                        {
+                            // Log error.
+                            operationResult = false;
+                            operationError = "Incorrect format of answer.Required format is string.Type:" + answer.GetType();
+                            operationCompete = true;
+                        }
+                    });
+
+                // Wait until operation would complete.
+                while (!operationCompete)
+                {
+                    Thread.Sleep(5);
+                }
+
+                Assert.IsTrue(operationResult, operationError);
+            }
+        }
+
+        /// <summary>
+        /// Trying to create new user with invalid login.
+        /// </summary>
+        [TestMethod]
+        public void NewUser_InvalidLogin()
+        {
+            #region Getting guset token to logon on server
+            if (string.IsNullOrEmpty(Configurator.GUEST_TOKEN))
+            {
+                // Request guest token.
+                GetGuestToken();
+
+                // Wait until guest token would provided.
+                while (string.IsNullOrEmpty(Configurator.GUEST_TOKEN))
+                {
+                    Thread.Sleep(5);
+                }
+            }
+            #endregion
+            
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Start new server for thsi test to avoid conflicts.
+                StartPublicServer();
+
+                // Create the query that would contain user data.
+                QueryPart[] query = new QueryPart[]
+                {
+                    new QueryPart("token", Configurator.GUEST_TOKEN),
+                    new QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+
+                    new QueryPart("user"),
+                    new QueryPart("new"),
+
+                    new QueryPart("login", "a"),
+                    new QueryPart("password", "validPass2@"),
+                    new QueryPart("fn", "Mark"),
+                    new QueryPart("sn", "Sanders"),
+
+                    new QueryPart("os", Environment.OSVersion.VersionString),
+                    new QueryPart("mac", "anonymous"),
+                    new QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
+                };
+
+                // Marker that avoid finishing of the test until receiving result.
+                bool operationCompete = false;
+                bool operationResult = false;
+                string operationError = null;
+
+                // Start reciving clent line.
+                UniformClient.BaseClient.EnqueueDuplexQueryViaPP(
+
+                    // Request connection to localhost server via main pipe.
+                    "localhost", PIPE_NAME,
+
+                    // Convert query parts array to string view in correct format provided by UniformQueries API.
+                    QueryPart.QueryPartsArrayToString(query),
+
+                    // Handler that would recive ther ver answer.
+                    (PipesProvider.Client.TransmissionLine line, object answer) =>
+                    {
+                        // Trying to convert answer to string
+                        if (answer is string answerS)
+                        {
+                            // Is operation success?
+                            if (answerS.StartsWith("error", StringComparison.OrdinalIgnoreCase))
+                            {
+                                // Log error.
+                                operationResult = true;
+                                operationCompete = true;
+                            }
+                            else
+                            {
+                                // Log error.
+                                operationResult = false;
+                                operationError = "User creation returned error: " + answerS;
+                                operationCompete = true;
+                            }
+                        }
+                        else
+                        {
+                            // Log error.
+                            operationResult = false;
+                            operationError = "Incorrect format of answer.Required format is string.Type:" + answer.GetType();
+                            operationCompete = true;
+                        }
+                    });
+
+                // Wait until operation would complete.
+                while (!operationCompete)
+                {
+                    Thread.Sleep(5);
+                }
+
+                Assert.IsTrue(operationResult, operationError);
+            }
+        }
+
+        /// <summary>
+        /// Trying to create new user that already exist.
+        /// </summary>
+        [TestMethod]
+        public void NewUser_UserExist()
+        {
+            #region Getting guset token to logon on server
+            if (string.IsNullOrEmpty(Configurator.GUEST_TOKEN))
+            {
+                // Request guest token.
+                GetGuestToken();
+
+                // Wait until guest token would provided.
+                while (string.IsNullOrEmpty(Configurator.GUEST_TOKEN))
+                {
+                    Thread.Sleep(5);
+                }
+            }
+            #endregion
+
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create users.
+                SetBaseUsersPool();
+
+                // Start new server for thsi test to avoid conflicts.
+                StartPublicServer();
+
+                // Create the query that would contain user data.
+                QueryPart[] query = new QueryPart[]
+                {
+                    new QueryPart("token", Configurator.GUEST_TOKEN),
+                    new QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+
+                    new QueryPart("user"),
+                    new QueryPart("new"),
+
+                    new QueryPart("login", "admin"),
+                    new QueryPart("password", "validPass2@"),
+                    new QueryPart("fn", "Mark"),
+                    new QueryPart("sn", "Sanders"),
+
+                    new QueryPart("os", Environment.OSVersion.VersionString),
+                    new QueryPart("mac", "anonymous"),
+                    new QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
+                };
+
+                // Marker that avoid finishing of the test until receiving result.
+                bool operationCompete = false;
+                bool operationResult = false;
+                string operationError = null;
+
+                // Start reciving clent line.
+                UniformClient.BaseClient.EnqueueDuplexQueryViaPP(
+
+                    // Request connection to localhost server via main pipe.
+                    "localhost", PIPE_NAME,
+
+                    // Convert query parts array to string view in correct format provided by UniformQueries API.
+                    QueryPart.QueryPartsArrayToString(query),
+
+                    // Handler that would recive ther ver answer.
+                    (PipesProvider.Client.TransmissionLine line, object answer) =>
+                    {
+                        // Trying to convert answer to string
+                        if (answer is string answerS)
+                        {
+                            // Is operation success?
+                            if (answerS.StartsWith("error", StringComparison.OrdinalIgnoreCase))
+                            {
+                                // Log error.
+                                operationResult = true;
+                                operationCompete = true;
+                            }
+                            else
+                            {
+                                // Log error.
+                                operationResult = false;
+                                operationError = "User creation returned error: " + answerS;
+                                operationCompete = true;
+                            }
+                        }
+                        else
+                        {
+                            // Log error.
+                            operationResult = false;
+                            operationError = "Incorrect format of answer.Required format is string.Type:" + answer.GetType();
+                            operationCompete = true;
+                        }
+                    });
+
+                // Wait until operation would complete.
+                while (!operationCompete)
+                {
+                    Thread.Sleep(5);
+                }
+
+                Assert.IsTrue(operationResult, operationError);
+            }
+        }
+
+        /// <summary>
+        /// Trying to create user with invalid personal data.
+        /// </summary>
+        [TestMethod]
+        public void NewUser_InvalidPersonal()
+        {
+            #region Getting guset token to logon on server
+            if (string.IsNullOrEmpty(Configurator.GUEST_TOKEN))
+            {
+                // Request guest token.
+                GetGuestToken();
+
+                // Wait until guest token would provided.
+                while (string.IsNullOrEmpty(Configurator.GUEST_TOKEN))
+                {
+                    Thread.Sleep(5);
+                }
+            }
+            #endregion
+            
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Start new server for thsi test to avoid conflicts.
+                StartPublicServer();
+
+                // Create the query that would contain user data.
+                QueryPart[] query = new QueryPart[]
+                {
+                    new QueryPart("token", Configurator.GUEST_TOKEN),
+                    new QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+
+                    new QueryPart("user"),
+                    new QueryPart("new"),
+
+                    new QueryPart("login", "newLogin"),
+                    new QueryPart("password", "validPass2@"),
+                    new QueryPart("fn", "Mark2"),
+                    new QueryPart("sn", "Sanders"),
+
+                    new QueryPart("os", Environment.OSVersion.VersionString),
+                    new QueryPart("mac", "anonymous"),
+                    new QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
+                };
+
+                // Marker that avoid finishing of the test until receiving result.
+                bool operationCompete = false;
+                bool operationResult = false;
+                string operationError = null;
+
+                // Start reciving clent line.
+                UniformClient.BaseClient.EnqueueDuplexQueryViaPP(
+
+                    // Request connection to localhost server via main pipe.
+                    "localhost", PIPE_NAME,
+
+                    // Convert query parts array to string view in correct format provided by UniformQueries API.
+                    QueryPart.QueryPartsArrayToString(query),
+
+                    // Handler that would recive ther ver answer.
+                    (PipesProvider.Client.TransmissionLine line, object answer) =>
+                    {
+                        // Trying to convert answer to string
+                        if (answer is string answerS)
+                        {
+                            // Is operation success?
+                            if (answerS.StartsWith("error", StringComparison.OrdinalIgnoreCase))
+                            {
+                                // Log error.
+                                operationResult = true;
+                                operationCompete = true;
+                            }
+                            else
+                            {
+                                // Log error.
+                                operationResult = false;
+                                operationError = "User creation returned error: " + answerS;
+                                operationCompete = true;
+                            }
+                        }
+                        else
+                        {
+                            // Log error.
+                            operationResult = false;
+                            operationError = "Incorrect format of answer.Required format is string.Type:" + answer.GetType();
+                            operationCompete = true;
+                        }
+                    });
+
+                // Wait until operation would complete.
+                while (!operationCompete)
+                {
+                    Thread.Sleep(5);
+                }
+
+                Assert.IsTrue(operationResult, operationError);
+            }
+        }
+
+        /// <summary>
+        /// Trying to change self password.
+        /// </summary>
+        [TestMethod]
+        public void NewPassword_Self()
+        {
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create users for test.
+                SetBaseUsersPool();
+
+                // Create the query that would simulate logon.
+                QueryPart[] query = new QueryPart[]
+                {
+                    new QueryPart("token", user_User.tokens[0]),
+                    new QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+
+                    new QueryPart("user", user_User.id.ToString()),
+                    new QueryPart("new", null),
+
+                    new QueryPart("password", "newPassword!2"),
+                    new QueryPart("oldpassword", "password"),
+                    new QueryPart("os", Environment.OSVersion.VersionString),
+                    new QueryPart("mac", "anonymous"),
+                    new QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
+                };
+
+                // Marker that avoid finishing of the test until receiving result.
+                bool operationCompete = false;
+                bool operationResult = false;
+                string operationError = null;
+
+                // Start reciving clent line.
+                UniformClient.BaseClient.EnqueueDuplexQueryViaPP(
+
+                    // Request connection to localhost server via main pipe.
+                    "localhost", PIPE_NAME,
+
+                    // Convert query parts array to string view in correct format provided by UniformQueries API.
+                    QueryPart.QueryPartsArrayToString(query),
+
+                    // Handler that would recive ther ver answer.
+                    (PipesProvider.Client.TransmissionLine line, object answer) =>
+                    {
+                        // Trying to convert answer to string
                         if (answer is string answerS)
                         {
                             // Is operation success?
@@ -751,7 +1358,7 @@ namespace AuthorityController.Tests
         }
 
         /// <summary>
-        /// Try to change password of user with higher rank then requeter.
+        /// Trying to change password of user with higher rank then requeter.
         /// </summary>
         [TestMethod]
         public void NewPassword_ModeratorToAdmin()
@@ -762,19 +1369,19 @@ namespace AuthorityController.Tests
                 SetBaseUsersPool();
 
                 // Create the query that would simulate logon.
-                UniformQueries.QueryPart[] query = new UniformQueries.QueryPart[]
+                QueryPart[] query = new QueryPart[]
                 {
-                    new UniformQueries.QueryPart("token", user_Moderator.tokens[0]),
-                    new UniformQueries.QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+                    new QueryPart("token", user_Moderator.tokens[0]),
+                    new QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
 
-                    new UniformQueries.QueryPart("user=" + user_Admin.id, null),
-                    new UniformQueries.QueryPart("new", null),
+                    new QueryPart("user", user_Admin.id.ToString()),
+                    new QueryPart("new", null),
 
-                    new UniformQueries.QueryPart("password", "newPassword!2"),
-                    new UniformQueries.QueryPart("oldpassword", "password"),
-                    new UniformQueries.QueryPart("os", Environment.OSVersion.VersionString),
-                    new UniformQueries.QueryPart("mac", "anonymous"),
-                    new UniformQueries.QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
+                    new QueryPart("password", "newPassword!2"),
+                    new QueryPart("oldpassword", "password"),
+                    new QueryPart("os", Environment.OSVersion.VersionString),
+                    new QueryPart("mac", "anonymous"),
+                    new QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
                 };
 
                 // Marker that avoid finishing of the test until receiving result.
@@ -789,12 +1396,12 @@ namespace AuthorityController.Tests
                     "localhost", PIPE_NAME,
 
                     // Convert query parts array to string view in correct format provided by UniformQueries API.
-                    UniformQueries.QueryPart.QueryPartsArrayToString(query),
+                    QueryPart.QueryPartsArrayToString(query),
 
                     // Handler that would recive ther ver answer.
                     (PipesProvider.Client.TransmissionLine line, object answer) =>
                     {
-                        // Try to convert answer to string
+                        // Trying to convert answer to string
                         if (answer is string answerS)
                         {
                             // Is operation success?
@@ -833,7 +1440,7 @@ namespace AuthorityController.Tests
 
 
         /// <summary>
-        /// Try to change password of user with lower rank then requester.
+        /// Trying to change password of user with lower rank then requester.
         /// </summary>
         [TestMethod]
         public void NewPassword_AdminToUser()
@@ -844,19 +1451,19 @@ namespace AuthorityController.Tests
                 SetBaseUsersPool();
 
                 // Create the query that would simulate logon.
-                UniformQueries.QueryPart[] query = new UniformQueries.QueryPart[]
+                QueryPart[] query = new QueryPart[]
                 {
-                    new UniformQueries.QueryPart("token", user_Admin.tokens[0]),
-                    new UniformQueries.QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+                    new QueryPart("token", user_Admin.tokens[0]),
+                    new QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
 
-                    new UniformQueries.QueryPart("user=" + user_User.id, null),
-                    new UniformQueries.QueryPart("new", null),
+                    new QueryPart("user", user_User.id.ToString()),
+                    new QueryPart("new", null),
 
-                    new UniformQueries.QueryPart("password", "newPassword!2"),
-                    new UniformQueries.QueryPart("oldpassword", "password"),
-                    new UniformQueries.QueryPart("os", Environment.OSVersion.VersionString),
-                    new UniformQueries.QueryPart("mac", "anonymous"),
-                    new UniformQueries.QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
+                    new QueryPart("password", "newPassword!2"),
+                    new QueryPart("oldpassword", "password"),
+                    new QueryPart("os", Environment.OSVersion.VersionString),
+                    new QueryPart("mac", "anonymous"),
+                    new QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
                 };
 
                 // Marker that avoid finishing of the test until receiving result.
@@ -871,12 +1478,12 @@ namespace AuthorityController.Tests
                     "localhost", PIPE_NAME,
 
                     // Convert query parts array to string view in correct format provided by UniformQueries API.
-                    UniformQueries.QueryPart.QueryPartsArrayToString(query),
+                    QueryPart.QueryPartsArrayToString(query),
 
                     // Handler that would recive ther ver answer.
                     (PipesProvider.Client.TransmissionLine line, object answer) =>
                     {
-                        // Try to convert answer to string
+                        // Trying to convert answer to string
                         if (answer is string answerS)
                         {
                             // Is operation success?

@@ -63,5 +63,10 @@ namespace AuthorityControllerTests
         /// Marker that need to avoid tests conflicts.
         /// </summary>
         public static bool CONFIG_FILE_GENERATED = false;
+
+        /// <summary>
+        /// Provided guest token.
+        /// </summary>
+        public static string GUEST_TOKEN = null;
     }
 }

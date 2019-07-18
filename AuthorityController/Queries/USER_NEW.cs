@@ -111,8 +111,8 @@ namespace AuthorityController.Queries
 
             #region Validate names
             // Validate name.
-            if(!API.Validation.NameFormat(ref firstName.propertyName, out string error) ||
-               !API.Validation.NameFormat(ref secondName.propertyName, out error))
+            if(!API.Validation.NameFormat(ref firstName.propertyValue, out string error) ||
+               !API.Validation.NameFormat(ref secondName.propertyValue, out error))
             {
                 // Inform about incorrect login size.
                 UniformServer.BaseServer.SendAnswerViaPP(
