@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d5/d0b/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_day" kind="class" language="C#" prot="public">
+    <compoundname>TeacherHandbook::Core::Containers::Schedule::Day</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="d5/d0b/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_day_1afd349c077122c7e3193348644bd08828" prot="public" static="no" mutable="no">
+        <type>string</type>
+        <definition>string TeacherHandbook.Core.Containers.Schedule.Day.key</definition>
+        <argsstring></argsstring>
+        <name>key</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+<para>Unitye key of this day in logbook. format dd.mm.yyyy </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Schedule/Day.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Schedule/Day.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d5/d0b/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_day_1ab7130291674ea826085d0090d6acdddb" prot="public" static="no" mutable="no">
+        <type><ref refid="d5/d8e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_session" kindref="compound">Session</ref> []</type>
+        <definition>Session [] TeacherHandbook.Core.Containers.Schedule.Day.sessions</definition>
+        <argsstring></argsstring>
+        <name>sessions</name>
+        <initializer>= null</initializer>
+        <briefdescription>
+<para>List of sessions during this day. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Schedule/Day.cs" line="34" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Schedule/Day.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Sigle data that contain shedule. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="90">
+        <label>TeacherHandbook.Core.Containers.Schedule.Day</label>
+        <link refid="d5/d0b/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_day"/>
+        <childnode refid="91" relation="usage">
+          <edgelabel>sessions</edgelabel>
+        </childnode>
+      </node>
+      <node id="91">
+        <label>TeacherHandbook.Core.Containers.Schedule.Session</label>
+        <link refid="d5/d8e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_session"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Schedule/Day.cs" line="24" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Schedule/Day.cs" bodystart="23" bodyend="35"/>
+    <listofallmembers>
+      <member refid="d5/d0b/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_day_1afd349c077122c7e3193348644bd08828" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Schedule::Day</scope><name>key</name></member>
+      <member refid="d5/d0b/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_day_1ab7130291674ea826085d0090d6acdddb" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Schedule::Day</scope><name>sessions</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

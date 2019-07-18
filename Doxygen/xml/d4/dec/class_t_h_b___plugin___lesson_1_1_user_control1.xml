@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1" kind="class" language="C#" prot="public">
+    <compoundname>THB_Plugin_Lesson::UserControl1</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1_1ad58ace768113ee37aa177bfbf97bf7cf" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool THB_Plugin_Lesson.UserControl1._contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1_1a6b157c1dad624766c5da2c984c9b1368" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.UserControl1.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1_1a052591678edd4a1701981778548968cf" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.UserControl1.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1" kindref="compound">UserControl1</ref> </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="311">
+        <label>THB_Plugin_Lesson.UserControl1</label>
+        <link refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1"/>
+        <childnode refid="312" relation="public-inheritance">
+        </childnode>
+        <childnode refid="313" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="312">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="313">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="314">
+        <label>THB_Plugin_Lesson.UserControl1</label>
+        <link refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1"/>
+        <childnode refid="315" relation="public-inheritance">
+        </childnode>
+        <childnode refid="316" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="315">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="316">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/UserControl1.g.i.cs" bodystart="41" bodyend="73"/>
+    <listofallmembers>
+      <member refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1_1ad58ace768113ee37aa177bfbf97bf7cf" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::UserControl1</scope><name>_contentLoaded</name></member>
+      <member refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1_1a052591678edd4a1701981778548968cf" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::UserControl1</scope><name>Connect</name></member>
+      <member refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1_1a6b157c1dad624766c5da2c984c9b1368" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::UserControl1</scope><name>InitializeComponent</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

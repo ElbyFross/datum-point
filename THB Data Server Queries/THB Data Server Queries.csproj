@@ -11,7 +11,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\THB Data Types\THB Data Types.csproj" />
-    <ProjectReference Include="..\UniformQueries\UniformQueries.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="UniformQueries">
+      <HintPath>..\doloro-networking-framework\libs\UniformQueries.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

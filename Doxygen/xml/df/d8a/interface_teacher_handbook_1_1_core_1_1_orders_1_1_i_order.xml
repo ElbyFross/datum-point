@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order" kind="interface" language="C#" prot="public">
+    <compoundname>TeacherHandbook::Core::Orders::IOrder</compoundname>
+    <derivedcompoundref refid="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order" prot="public" virt="non-virtual">TeacherHandbook.Core.Orders.BaseOrder</derivedcompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order_1a095dc6b1b492dee172826971fa7ec0b2" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="dc/d14/struct_teacher_handbook_1_1_core_1_1_orders_1_1_order_date" kindref="compound">OrderDate</ref></type>
+        <definition>OrderDate TeacherHandbook.Core.Orders.IOrder.StartDate</definition>
+        <argsstring></argsstring>
+        <name>StartDate</name>
+        <briefdescription>
+<para>Date and session whe order will started. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/IOrder.cs" line="27" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/IOrder.cs" bodystart="27" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="property" id="df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order_1a869d2255133d85c06a68a1f566c8f584" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type><ref refid="dc/d14/struct_teacher_handbook_1_1_core_1_1_orders_1_1_order_date" kindref="compound">OrderDate</ref></type>
+        <definition>OrderDate TeacherHandbook.Core.Orders.IOrder.ExpireDate</definition>
+        <argsstring></argsstring>
+        <name>ExpireDate</name>
+        <briefdescription>
+<para>Date and session when order will expire inpact. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/IOrder.cs" line="32" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/IOrder.cs" bodystart="32" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="property" id="df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order_1abc8bec467e3650f9db2ea0e383025bee" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>string</type>
+        <definition>string TeacherHandbook.Core.Orders.IOrder.OrderPublisher</definition>
+        <argsstring></argsstring>
+        <name>OrderPublisher</name>
+        <briefdescription>
+<para>User that place this order. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/IOrder.cs" line="37" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/IOrder.cs" bodystart="37" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="property" id="df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order_1afb608aeb72b8634be6d2a10a861356d2" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>DateTime</type>
+        <definition>DateTime TeacherHandbook.Core.Orders.IOrder.PooledTime</definition>
+        <argsstring></argsstring>
+        <name>PooledTime</name>
+        <briefdescription>
+<para>When this order was pooled to stack. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/IOrder.cs" line="42" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/IOrder.cs" bodystart="42" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interface that devlare the base properties fo orders. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="125">
+        <label>TeacherHandbook.Core.Orders.BaseOrder</label>
+        <link refid="df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order"/>
+        <childnode refid="124" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="124">
+        <label>TeacherHandbook.Core.Orders.IOrder</label>
+        <link refid="df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order"/>
+      </node>
+      <node id="126">
+        <label>TeacherHandbook.Core.Orders.MentoringOrder</label>
+        <link refid="d8/d91/class_teacher_handbook_1_1_core_1_1_orders_1_1_mentoring_order"/>
+        <childnode refid="125" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/IOrder.cs" line="23" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Orders/IOrder.cs" bodystart="22" bodyend="43"/>
+    <listofallmembers>
+      <member refid="df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order_1a869d2255133d85c06a68a1f566c8f584" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Orders::IOrder</scope><name>ExpireDate</name></member>
+      <member refid="df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order_1abc8bec467e3650f9db2ea0e383025bee" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Orders::IOrder</scope><name>OrderPublisher</name></member>
+      <member refid="df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order_1afb608aeb72b8634be6d2a10a861356d2" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Orders::IOrder</scope><name>PooledTime</name></member>
+      <member refid="df/d8a/interface_teacher_handbook_1_1_core_1_1_orders_1_1_i_order_1a095dc6b1b492dee172826971fa7ec0b2" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Orders::IOrder</scope><name>StartDate</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

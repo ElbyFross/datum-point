@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d4/daa/namespace_uniform_queries" kind="namespace" language="Unknown">
+    <compoundname>UniformQueries</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/THB Data Server Queries/GET_DAYS_RANGE.cs" line="18" column="1"/>
+  </compounddef>
+</doxygen>

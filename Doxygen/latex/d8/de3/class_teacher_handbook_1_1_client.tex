@@ -1,0 +1,91 @@
+\hypertarget{class_teacher_handbook_1_1_client}{}\section{Teacher\+Handbook.\+Client Class Reference}
+\label{class_teacher_handbook_1_1_client}\index{Teacher\+Handbook.\+Client@{Teacher\+Handbook.\+Client}}
+
+
+Instance of this class will provide client features.  
+
+
+Inheritance diagram for Teacher\+Handbook.\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{d8/de3/class_teacher_handbook_1_1_client}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_teacher_handbook_1_1_client_1_1_domain_container}{Domain\+Container}}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_teacher_handbook_1_1_client_a8cf998f202069ab5bbbfcdc779e4af29}{Init}} ()
+\begin{DoxyCompactList}\small\item\em Make first start of client. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_teacher_handbook_1_1_client_a863d00fe6a0ac5b86583c0a8245e07e9}{Load\+X\+A\+M\+L\+\_\+\+Lang\+Dicts}} (Culture\+Info target\+Culture, Culture\+Info secondary\+Culture)
+\begin{DoxyCompactList}\small\item\em Scaning for language dictionaries in X\+A\+ML files, and load them to Merged dictionaries. Load relative to new culture if found. Leave previous culture if not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_teacher_handbook_1_1_client_aaa6bae79ce27b06ba243b4b87f1822a5}\label{class_teacher_handbook_1_1_client_aaa6bae79ce27b06ba243b4b87f1822a5}} 
+static \mbox{\hyperlink{class_teacher_handbook_1_1_client}{Client}} {\bfseries active}
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_teacher_handbook_1_1_client}{Client}} \mbox{\hyperlink{class_teacher_handbook_1_1_client_a403583a80a8d5040410c4f1f180aafad}{Active}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, protected set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Reference to current client provider. Always return not null result. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Instance of this class will provide client features. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_teacher_handbook_1_1_client_a8cf998f202069ab5bbbfcdc779e4af29}\label{class_teacher_handbook_1_1_client_a8cf998f202069ab5bbbfcdc779e4af29}} 
+\index{Teacher\+Handbook\+::\+Client@{Teacher\+Handbook\+::\+Client}!Init@{Init}}
+\index{Init@{Init}!Teacher\+Handbook\+::\+Client@{Teacher\+Handbook\+::\+Client}}
+\subsubsection{\texorpdfstring{Init()}{Init()}}
+{\footnotesize\ttfamily static void Teacher\+Handbook.\+Client.\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Make first start of client. 
+
+\mbox{\Hypertarget{class_teacher_handbook_1_1_client_a863d00fe6a0ac5b86583c0a8245e07e9}\label{class_teacher_handbook_1_1_client_a863d00fe6a0ac5b86583c0a8245e07e9}} 
+\index{Teacher\+Handbook\+::\+Client@{Teacher\+Handbook\+::\+Client}!Load\+X\+A\+M\+L\+\_\+\+Lang\+Dicts@{Load\+X\+A\+M\+L\+\_\+\+Lang\+Dicts}}
+\index{Load\+X\+A\+M\+L\+\_\+\+Lang\+Dicts@{Load\+X\+A\+M\+L\+\_\+\+Lang\+Dicts}!Teacher\+Handbook\+::\+Client@{Teacher\+Handbook\+::\+Client}}
+\subsubsection{\texorpdfstring{Load\+X\+A\+M\+L\+\_\+\+Lang\+Dicts()}{LoadXAML\_LangDicts()}}
+{\footnotesize\ttfamily static void Teacher\+Handbook.\+Client.\+Load\+X\+A\+M\+L\+\_\+\+Lang\+Dicts (\begin{DoxyParamCaption}\item[{Culture\+Info}]{target\+Culture,  }\item[{Culture\+Info}]{secondary\+Culture }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Scaning for language dictionaries in X\+A\+ML files, and load them to Merged dictionaries. Load relative to new culture if found. Leave previous culture if not. 
+
+Require files format\+: $\ast$.lang.\+C\+U\+L\+T\+U\+R\+E\+\_\+\+C\+O\+D\+E.\+xaml, where culture code equal current translation of the app. Example\+: plugin.\+feed.\+lang.\+en-\/\+U\+S.\+xaml 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target\+Culture} & Culture that will be serched with hightest priority.\\
+\hline
+{\em secondary\+Culture} & Culture that will be prefured in case of target not implemented. If also not implemented than will be used first entry.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_teacher_handbook_1_1_client_a403583a80a8d5040410c4f1f180aafad}\label{class_teacher_handbook_1_1_client_a403583a80a8d5040410c4f1f180aafad}} 
+\index{Teacher\+Handbook\+::\+Client@{Teacher\+Handbook\+::\+Client}!Active@{Active}}
+\index{Active@{Active}!Teacher\+Handbook\+::\+Client@{Teacher\+Handbook\+::\+Client}}
+\subsubsection{\texorpdfstring{Active}{Active}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_teacher_handbook_1_1_client}{Client}} Teacher\+Handbook.\+Client.\+Active\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [get]}, {\ttfamily [protected set]}}
+
+
+
+Reference to current client provider. Always return not null result. 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Work/\+Git\+Hub/datum-\/point/\+Teacher\+Handbook/Client.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d8/de3/class_teacher_handbook_1_1_client" kind="class" language="C#" prot="public">
+    <compoundname>TeacherHandbook::Client</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">BaseClient</basecompoundref>
+    <innerclass refid="db/de2/class_teacher_handbook_1_1_client_1_1_domain_container" prot="private">TeacherHandbook::Client::DomainContainer</innerclass>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="d8/de3/class_teacher_handbook_1_1_client_1a403583a80a8d5040410c4f1f180aafad" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="yes">
+        <type><ref refid="d8/de3/class_teacher_handbook_1_1_client" kindref="compound">Client</ref></type>
+        <definition>Client TeacherHandbook.Client.Active</definition>
+        <argsstring></argsstring>
+        <name>Active</name>
+        <briefdescription>
+<para>Reference to current client provider. Always return not null result. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" line="40" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" bodystart="41" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-attrib">
+      <memberdef kind="variable" id="d8/de3/class_teacher_handbook_1_1_client_1aaa6bae79ce27b06ba243b4b87f1822a5" prot="protected" static="yes" mutable="no">
+        <type><ref refid="d8/de3/class_teacher_handbook_1_1_client" kindref="compound">Client</ref></type>
+        <definition>Client TeacherHandbook.Client.active</definition>
+        <argsstring></argsstring>
+        <name>active</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" line="52" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d8/de3/class_teacher_handbook_1_1_client_1aed2ed704ccdfd253f3305ff17855ad3d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>TeacherHandbook.Client.Client</definition>
+        <argsstring>()</argsstring>
+        <name>Client</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" line="54" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" bodystart="54" bodyend="67"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="d8/de3/class_teacher_handbook_1_1_client_1a8cf998f202069ab5bbbfcdc779e4af29" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void TeacherHandbook.Client.Init</definition>
+        <argsstring>()</argsstring>
+        <name>Init</name>
+        <briefdescription>
+<para>Make first start of client. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" line="72" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" bodystart="72" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="d8/de3/class_teacher_handbook_1_1_client_1a863d00fe6a0ac5b86583c0a8245e07e9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void TeacherHandbook.Client.LoadXAML_LangDicts</definition>
+        <argsstring>(CultureInfo targetCulture, CultureInfo secondaryCulture)</argsstring>
+        <name>LoadXAML_LangDicts</name>
+        <param>
+          <type>CultureInfo</type>
+          <declname>targetCulture</declname>
+        </param>
+        <param>
+          <type>CultureInfo</type>
+          <declname>secondaryCulture</declname>
+        </param>
+        <briefdescription>
+<para>Scaning for language dictionaries in XAML files, and load them to Merged dictionaries. Load relative to new culture if found. Leave previous culture if not. </para>        </briefdescription>
+        <detaileddescription>
+<para>Require files format: *.lang.CULTURE_CODE.xaml, where culture code equal current translation of the app. Example: plugin.feed.lang.en-US.xaml </para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>targetCulture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Culture that will be serched with hightest priority.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>secondaryCulture</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Culture that will be prefured in case of target not implemented. If also not implemented than will be used first entry.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" line="86" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" bodystart="86" bodyend="224"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Instance of this class will provide client features. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="86">
+        <label>UniformClient::BaseClient</label>
+      </node>
+      <node id="85">
+        <label>TeacherHandbook.Client</label>
+        <link refid="d8/de3/class_teacher_handbook_1_1_client"/>
+        <childnode refid="86" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="88">
+        <label>UniformClient::BaseClient</label>
+      </node>
+      <node id="87">
+        <label>TeacherHandbook.Client</label>
+        <link refid="d8/de3/class_teacher_handbook_1_1_client"/>
+        <childnode refid="88" relation="public-inheritance">
+        </childnode>
+        <childnode refid="87" relation="usage">
+          <edgelabel>active</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" line="35" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Client.cs" bodystart="34" bodyend="233"/>
+    <listofallmembers>
+      <member refid="d8/de3/class_teacher_handbook_1_1_client_1a403583a80a8d5040410c4f1f180aafad" prot="public" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>Active</name></member>
+      <member refid="d8/de3/class_teacher_handbook_1_1_client_1aaa6bae79ce27b06ba243b4b87f1822a5" prot="protected" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>active</name></member>
+      <member refid="d8/de3/class_teacher_handbook_1_1_client_1aed2ed704ccdfd253f3305ff17855ad3d" prot="public" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>Client</name></member>
+      <member refid="d8/de3/class_teacher_handbook_1_1_client_1a8cf998f202069ab5bbbfcdc779e4af29" prot="public" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>Init</name></member>
+      <member refid="d8/de3/class_teacher_handbook_1_1_client_1a863d00fe6a0ac5b86583c0a8245e07e9" prot="public" virt="non-virtual"><scope>TeacherHandbook::Client</scope><name>LoadXAML_LangDicts</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

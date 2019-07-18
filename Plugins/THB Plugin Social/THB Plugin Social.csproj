@@ -43,6 +43,9 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UniformClient">
+      <HintPath>..\..\doloro-networking-framework\libs\UniformClient.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -115,10 +118,6 @@
     <ProjectReference Include="..\..\THB Data Types\THB Data Types.csproj">
       <Project>{0958e0cd-408e-4f04-a22f-67753dfca5e3}</Project>
       <Name>THB Data Types</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\UniformClient\UniformClient.csproj">
-      <Project>{36a2c9b2-15b0-429c-b5c2-489a80bd4926}</Project>
-      <Name>UniformClient</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\WpfHandler\WpfHandler.csproj">
       <Project>{9a1f206b-1f7a-43df-8a08-d86f26b8fc81}</Project>

@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings" kind="class" language="C#" prot="package">
+    <compoundname>THB_Plugin_Exams::Properties::Settings</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ApplicationSettingsBase</basecompoundref>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings_1a9aa1e91ef757890464a72793f1eb73f5" prot="private" static="yes" mutable="no">
+        <type><ref refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings" kindref="compound">Settings</ref></type>
+        <definition>Settings THB_Plugin_Exams.Properties.Settings.defaultInstance</definition>
+        <argsstring></argsstring>
+        <name>defaultInstance</name>
+        <initializer>= ((<ref refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings" kindref="compound">Settings</ref>)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new <ref refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings" kindref="compound">Settings</ref>())))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/Properties/Settings.Designer.cs" line="20" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/Properties/Settings.Designer.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings_1a66f1b0647e31c1a4ca44a07101154767" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type><ref refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings" kindref="compound">Settings</ref></type>
+        <definition>Settings THB_Plugin_Exams.Properties.Settings.Default</definition>
+        <argsstring></argsstring>
+        <name>Default</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/Properties/Settings.Designer.cs" line="22" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/Properties/Settings.Designer.cs" bodystart="23" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="261">
+        <label>global::SystemConfiguration::ApplicationSettingsBase</label>
+      </node>
+      <node id="260">
+        <label>THB_Plugin_Exams.Properties.Settings</label>
+        <link refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings"/>
+        <childnode refid="261" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="263">
+        <label>global::SystemConfiguration::ApplicationSettingsBase</label>
+      </node>
+      <node id="262">
+        <label>THB_Plugin_Exams.Properties.Settings</label>
+        <link refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings"/>
+        <childnode refid="263" relation="public-inheritance">
+        </childnode>
+        <childnode refid="262" relation="usage">
+          <edgelabel>defaultInstance</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/Properties/Settings.Designer.cs" line="18" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/Properties/Settings.Designer.cs" bodystart="17" bodyend="29"/>
+    <listofallmembers>
+      <member refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings_1a66f1b0647e31c1a4ca44a07101154767" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::Properties::Settings</scope><name>Default</name></member>
+      <member refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings_1a9aa1e91ef757890464a72793f1eb73f5" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::Properties::Settings</scope><name>defaultInstance</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

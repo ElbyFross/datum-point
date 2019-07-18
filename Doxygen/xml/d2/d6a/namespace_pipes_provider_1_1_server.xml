@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d2/d6a/namespace_pipes_provider_1_1_server" kind="namespace" language="Unknown">
+    <compoundname>PipesProvider::Server</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" line="21" column="1"/>
+  </compounddef>
+</doxygen>

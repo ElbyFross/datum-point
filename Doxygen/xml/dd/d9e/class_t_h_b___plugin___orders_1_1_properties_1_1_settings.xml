@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings" kind="class" language="C#" prot="package">
+    <compoundname>THB_Plugin_Orders::Properties::Settings</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">ApplicationSettingsBase</basecompoundref>
+      <sectiondef kind="private-static-attrib">
+      <memberdef kind="variable" id="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings_1af1617d6bc9802134b5f147a6eaa63627" prot="private" static="yes" mutable="no">
+        <type><ref refid="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings" kindref="compound">Settings</ref></type>
+        <definition>Settings THB_Plugin_Orders.Properties.Settings.defaultInstance</definition>
+        <argsstring></argsstring>
+        <name>defaultInstance</name>
+        <initializer>= ((<ref refid="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings" kindref="compound">Settings</ref>)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new <ref refid="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings" kindref="compound">Settings</ref>())))</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/Properties/Settings.Designer.cs" line="20" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/Properties/Settings.Designer.cs" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings_1aa9bb1b48c0521b2a4e7d2d390dccd7ed" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type><ref refid="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings" kindref="compound">Settings</ref></type>
+        <definition>Settings THB_Plugin_Orders.Properties.Settings.Default</definition>
+        <argsstring></argsstring>
+        <name>Default</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/Properties/Settings.Designer.cs" line="22" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/Properties/Settings.Designer.cs" bodystart="23" bodyend="28"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="244">
+        <label>THB_Plugin_Orders.Properties.Settings</label>
+        <link refid="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings"/>
+        <childnode refid="245" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="245">
+        <label>global::SystemConfiguration::ApplicationSettingsBase</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="246">
+        <label>THB_Plugin_Orders.Properties.Settings</label>
+        <link refid="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings"/>
+        <childnode refid="247" relation="public-inheritance">
+        </childnode>
+        <childnode refid="246" relation="usage">
+          <edgelabel>defaultInstance</edgelabel>
+        </childnode>
+      </node>
+      <node id="247">
+        <label>global::SystemConfiguration::ApplicationSettingsBase</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/Properties/Settings.Designer.cs" line="18" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/Properties/Settings.Designer.cs" bodystart="17" bodyend="29"/>
+    <listofallmembers>
+      <member refid="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings_1aa9bb1b48c0521b2a4e7d2d390dccd7ed" prot="public" virt="non-virtual"><scope>THB_Plugin_Orders::Properties::Settings</scope><name>Default</name></member>
+      <member refid="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings_1af1617d6bc9802134b5f147a6eaa63627" prot="private" virt="non-virtual"><scope>THB_Plugin_Orders::Properties::Settings</scope><name>defaultInstance</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user" kind="class" language="C#" prot="public">
+    <compoundname>TeacherHandbook::Core::Containers::Entities::BaseUser</compoundname>
+    <basecompoundref refid="d1/dfc/interface_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_i_user" prot="public" virt="non-virtual">TeacherHandbook.Core.Containers.Entities.IUser</basecompoundref>
+    <derivedcompoundref refid="d5/d63/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_teacher" prot="public" virt="non-virtual">TeacherHandbook.Core.Containers.Entities.Teacher</derivedcompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1a0aeebd3854d7996435cdb2fc691c2bc3" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>UserRights</type>
+        <definition>UserRights TeacherHandbook.Core.Containers.Entities.BaseUser.Rigts</definition>
+        <argsstring></argsstring>
+        <name>Rigts</name>
+        <briefdescription>
+<para>Rights provided to current user </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" line="35" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" bodystart="35" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="property" id="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1a53a606a419de1741eb85a13062267be9" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>Hashtable</type>
+        <definition>Hashtable TeacherHandbook.Core.Containers.Entities.BaseUser.Name</definition>
+        <argsstring></argsstring>
+        <name>Name</name>
+        <briefdescription>
+<para>Hashtable that contain names relative to languages. Key (string) -&gt; language key Value (NameContainer) -&gt; localized data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" line="42" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" bodystart="42" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1ad8da6882147f62d42960e2a436b8dff1" prot="protected" static="no" mutable="no">
+        <type>System.Collections.Hashtable</type>
+        <definition>System.Collections.Hashtable TeacherHandbook.Core.Containers.Entities.BaseUser.name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <initializer>= new System.Collections.Hashtable()</initializer>
+        <briefdescription>
+<para>Hashtable that contain names relative to languages. Key (string) -&gt; language key Value (NameContainer) -&gt; localized data. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" line="51" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1ad553bd1715f8aa5ab9253027533b8287" prot="protected" static="no" mutable="no">
+        <type>UserRights</type>
+        <definition>UserRights TeacherHandbook.Core.Containers.Entities.BaseUser.rights</definition>
+        <argsstring></argsstring>
+        <name>rights</name>
+        <briefdescription>
+<para>Rights provided to current user </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" line="56" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Base class implemented the API for users. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="63">
+        <label>TeacherHandbook.Core.Containers.Entities.BaseUser</label>
+        <link refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user"/>
+        <childnode refid="64" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="64">
+        <label>IUser</label>
+        <link refid="d1/dfc/interface_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_i_user"/>
+      </node>
+      <node id="65">
+        <label>TeacherHandbook.Core.Containers.Entities.Teacher</label>
+        <link refid="d5/d63/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_teacher"/>
+        <childnode refid="63" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="66">
+        <label>TeacherHandbook.Core.Containers.Entities.BaseUser</label>
+        <link refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user"/>
+        <childnode refid="67" relation="public-inheritance">
+        </childnode>
+        <childnode refid="68" relation="usage">
+          <edgelabel>name</edgelabel>
+        </childnode>
+      </node>
+      <node id="67">
+        <label>IUser</label>
+        <link refid="d1/dfc/interface_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_i_user"/>
+      </node>
+      <node id="68">
+        <label>System</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" line="30" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users/BaseUser.cs" bodystart="29" bodyend="58"/>
+    <listofallmembers>
+      <member refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1a53a606a419de1741eb85a13062267be9" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Entities::BaseUser</scope><name>Name</name></member>
+      <member refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1ad8da6882147f62d42960e2a436b8dff1" prot="protected" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Entities::BaseUser</scope><name>name</name></member>
+      <member refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1ad553bd1715f8aa5ab9253027533b8287" prot="protected" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Entities::BaseUser</scope><name>rights</name></member>
+      <member refid="d2/dbe/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_base_user_1a0aeebd3854d7996435cdb2fc691c2bc3" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Containers::Entities::BaseUser</scope><name>Rigts</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

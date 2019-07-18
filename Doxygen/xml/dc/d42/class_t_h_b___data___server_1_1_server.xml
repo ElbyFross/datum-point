@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dc/d42/class_t_h_b___data___server_1_1_server" kind="class" language="C#" prot="public">
+    <compoundname>THB_Data_Server::Server</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">BaseServer</basecompoundref>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="dc/d42/class_t_h_b___data___server_1_1_server_1a87515fb7b3422af002d33dd3fbe8f4e9" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void THB_Data_Server.Server.Main</definition>
+        <argsstring>(string[] args)</argsstring>
+        <name>Main</name>
+        <param>
+          <type>string []</type>
+          <declname>args</declname>
+        </param>
+        <briefdescription>
+<para>Main loop. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>args</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>Draw line</para><para>Draw line</para><para>Show help. </para>        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" line="34" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" bodystart="34" bodyend="154"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="dc/d42/class_t_h_b___data___server_1_1_server" kindref="compound">Server</ref> that provide and manage data by queries. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="238">
+        <label>THB_Data_Server.Server</label>
+        <link refid="dc/d42/class_t_h_b___data___server_1_1_server"/>
+        <childnode refid="239" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="239">
+        <label>UniformServer::BaseServer</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="240">
+        <label>THB_Data_Server.Server</label>
+        <link refid="dc/d42/class_t_h_b___data___server_1_1_server"/>
+        <childnode refid="241" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="241">
+        <label>UniformServer::BaseServer</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" bodystart="28" bodyend="155"/>
+    <listofallmembers>
+      <member refid="dc/d42/class_t_h_b___data___server_1_1_server_1a87515fb7b3422af002d33dd3fbe8f4e9" prot="private" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>Main</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

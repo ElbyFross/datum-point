@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d9/dd6/_r_e_a_d_m_e_8md" kind="file" language="Markdown">
+    <compoundname>README.md</compoundname>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline><highlight class="normal">#<sp/>Datum<sp/>Point</highlight></codeline>
+<codeline><highlight class="normal">&quot;Datum<sp/>Point&quot;<sp/>is<sp/>a<sp/>collection<sp/>of<sp/>applications<sp/>and<sp/>plugins<sp/>focused<sp/>on<sp/>providing<sp/>strong<sp/>educational<sp/>tools<sp/>for<sp/>regions<sp/>and<sp/>organizations<sp/>unable<sp/>to<sp/>use<sp/>commercial<sp/>software<sp/>to<sp/>control<sp/>internal<sp/>processes.</highlight></codeline>
+<codeline></codeline>
+<codeline><highlight class="normal">#<sp/>Attention!</highlight></codeline>
+<codeline><highlight class="normal">Product<sp/>incomplited.</highlight></codeline>
+    </programlisting>
+    <location file="D:/Work/GitHub/datum-point/README.md"/>
+  </compounddef>
+</doxygen>

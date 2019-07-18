@@ -1,0 +1,317 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner" kind="class" language="C#" prot="public">
+    <compoundname>THB_Plugin_Exams::ExamPlanner</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IPlugin</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1a56f812d4b6635d22d18a8af11ba65b38" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>MenuItemMeta</type>
+        <definition>MenuItemMeta THB_Plugin_Exams.ExamPlanner.Meta</definition>
+        <argsstring></argsstring>
+        <name>Meta</name>
+        <initializer>= new MenuItemMeta()
+        {
+            defaultTitle = &quot;Exam planner&quot;,
+            domain = &quot;30_exams.10_examPlanner&quot;,
+            titleDictionaryCode = &quot;p_podshyvalov_examPlanner_menuTitle&quot;
+        }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/ExamPlanner.xaml.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/ExamPlanner.xaml.cs" bodystart="43" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1a64434a4c2701b50cf43bd4d1c83bbd56" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool THB_Plugin_Exams.ExamPlanner::_contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamPlanner.g.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamPlanner.g.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1abb2402eef9c4c84cc6313b33fa78f363" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>THB_Plugin_Exams.ExamPlanner.ExamPlanner</definition>
+        <argsstring>()</argsstring>
+        <name>ExamPlanner</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/ExamPlanner.xaml.cs" line="38" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/ExamPlanner.xaml.cs" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1ac6ef0d9bcbfcc9ee66d132d7e8fb2c6d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Exams.ExamPlanner.OnStart</definition>
+        <argsstring>(object sender)</argsstring>
+        <name>OnStart</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/ExamPlanner.xaml.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/ExamPlanner.xaml.cs" bodystart="50" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1aa5d0299d3f5a4130f99df3b9628d2f7a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Exams.ExamPlanner.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamPlanner.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamPlanner.g.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1aa5d0299d3f5a4130f99df3b9628d2f7a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Exams.ExamPlanner.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamPlanner.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamPlanner.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1aa5d0299d3f5a4130f99df3b9628d2f7a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Exams.ExamPlanner.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamPlanner.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamPlanner.g.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1aa5d0299d3f5a4130f99df3b9628d2f7a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Exams.ExamPlanner.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamPlanner.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamPlanner.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1a962a9efa9aaa49f756df8f7d4aed664d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Exams.ExamPlanner.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamPlanner.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamPlanner.g.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1a962a9efa9aaa49f756df8f7d4aed664d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Exams.ExamPlanner.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamPlanner.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamPlanner.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1a962a9efa9aaa49f756df8f7d4aed664d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Exams.ExamPlanner.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamPlanner.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamPlanner.g.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1a962a9efa9aaa49f756df8f7d4aed664d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Exams.ExamPlanner.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamPlanner.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamPlanner.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interaction logic for ExamPlanner.xaml </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner" kindref="compound">ExamPlanner</ref> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="98">
+        <label>IPlugin</label>
+      </node>
+      <node id="94">
+        <label>THB_Plugin_Exams.ExamPlanner</label>
+        <link refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner"/>
+        <childnode refid="95" relation="public-inheritance">
+        </childnode>
+        <childnode refid="96" relation="public-inheritance">
+        </childnode>
+        <childnode refid="95" relation="public-inheritance">
+        </childnode>
+        <childnode refid="96" relation="public-inheritance">
+        </childnode>
+        <childnode refid="95" relation="public-inheritance">
+        </childnode>
+        <childnode refid="96" relation="public-inheritance">
+        </childnode>
+        <childnode refid="95" relation="public-inheritance">
+        </childnode>
+        <childnode refid="96" relation="public-inheritance">
+        </childnode>
+        <childnode refid="97" relation="public-inheritance">
+        </childnode>
+        <childnode refid="98" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="95">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="96">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+      <node id="97">
+        <label>UserControl</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="103">
+        <label>IPlugin</label>
+      </node>
+      <node id="99">
+        <label>THB_Plugin_Exams.ExamPlanner</label>
+        <link refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner"/>
+        <childnode refid="100" relation="public-inheritance">
+        </childnode>
+        <childnode refid="101" relation="public-inheritance">
+        </childnode>
+        <childnode refid="100" relation="public-inheritance">
+        </childnode>
+        <childnode refid="101" relation="public-inheritance">
+        </childnode>
+        <childnode refid="100" relation="public-inheritance">
+        </childnode>
+        <childnode refid="101" relation="public-inheritance">
+        </childnode>
+        <childnode refid="100" relation="public-inheritance">
+        </childnode>
+        <childnode refid="101" relation="public-inheritance">
+        </childnode>
+        <childnode refid="102" relation="public-inheritance">
+        </childnode>
+        <childnode refid="103" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="100">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="101">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+      <node id="102">
+        <label>UserControl</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/ExamPlanner.xaml.cs" line="37" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/ExamPlanner.xaml.cs" bodystart="36" bodyend="54"/>
+    <listofallmembers>
+      <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1a64434a4c2701b50cf43bd4d1c83bbd56" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::ExamPlanner</scope><name>_contentLoaded</name></member>
+      <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1a962a9efa9aaa49f756df8f7d4aed664d" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::ExamPlanner</scope><name>Connect</name></member>
+      <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1a962a9efa9aaa49f756df8f7d4aed664d" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::ExamPlanner</scope><name>Connect</name></member>
+      <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1a962a9efa9aaa49f756df8f7d4aed664d" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::ExamPlanner</scope><name>Connect</name></member>
+      <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1a962a9efa9aaa49f756df8f7d4aed664d" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::ExamPlanner</scope><name>Connect</name></member>
+      <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1abb2402eef9c4c84cc6313b33fa78f363" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::ExamPlanner</scope><name>ExamPlanner</name></member>
+      <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1aa5d0299d3f5a4130f99df3b9628d2f7a" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::ExamPlanner</scope><name>InitializeComponent</name></member>
+      <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1aa5d0299d3f5a4130f99df3b9628d2f7a" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::ExamPlanner</scope><name>InitializeComponent</name></member>
+      <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1aa5d0299d3f5a4130f99df3b9628d2f7a" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::ExamPlanner</scope><name>InitializeComponent</name></member>
+      <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1aa5d0299d3f5a4130f99df3b9628d2f7a" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::ExamPlanner</scope><name>InitializeComponent</name></member>
+      <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1a56f812d4b6635d22d18a8af11ba65b38" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::ExamPlanner</scope><name>Meta</name></member>
+      <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1ac6ef0d9bcbfcc9ee66d132d7e8fb2c6d" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::ExamPlanner</scope><name>OnStart</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

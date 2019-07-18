@@ -43,6 +43,10 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UniformClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\doloro-networking-framework\libs\UniformClient.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -70,12 +74,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\UniformClient\UniformClient.csproj">
-      <Project>{36a2c9b2-15b0-429c-b5c2-489a80bd4926}</Project>
-      <Name>UniformClient</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GUI\" />

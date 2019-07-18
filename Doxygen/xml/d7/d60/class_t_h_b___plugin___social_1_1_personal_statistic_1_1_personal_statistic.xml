@@ -1,0 +1,317 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic" kind="class" language="C#" prot="public">
+    <compoundname>THB_Plugin_Social::PersonalStatistic::PersonalStatistic</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IPlugin</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a037d8487091d3848a7e6f0e96170ca0c" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool THB_Plugin_Social.PersonalStatistic.PersonalStatistic::_contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic/PersonalStatistic.g.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic/PersonalStatistic.g.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a13f840788e043a6bd79c33adbd68f045" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>MenuItemMeta</type>
+        <definition>MenuItemMeta THB_Plugin_Social.PersonalStatistic.PersonalStatistic.Meta</definition>
+        <argsstring></argsstring>
+        <name>Meta</name>
+        <initializer>= new MenuItemMeta()
+        {
+            domain = &quot;0_main.20_pStat&quot;,
+            titleDictionaryCode = &quot;p_podshyvalov_pStat_menuTitle&quot;,
+            defaultTitle = &quot;Personal statistic&quot;
+        }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/PersonalStatistic/PersonalStatistic.xaml.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/PersonalStatistic/PersonalStatistic.xaml.cs" bodystart="43" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1accd1054e342a7f08b35fea1e39378bf3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Social.PersonalStatistic.PersonalStatistic.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic/PersonalStatistic.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic/PersonalStatistic.g.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1accd1054e342a7f08b35fea1e39378bf3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Social.PersonalStatistic.PersonalStatistic.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic/PersonalStatistic.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic/PersonalStatistic.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1accd1054e342a7f08b35fea1e39378bf3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Social.PersonalStatistic.PersonalStatistic.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/PersonalStatistic/PersonalStatistic.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/PersonalStatistic/PersonalStatistic.g.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1accd1054e342a7f08b35fea1e39378bf3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Social.PersonalStatistic.PersonalStatistic.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/PersonalStatistic/PersonalStatistic.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/PersonalStatistic/PersonalStatistic.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a64b070533a315d960484da8d2f3633f9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>THB_Plugin_Social.PersonalStatistic.PersonalStatistic.PersonalStatistic</definition>
+        <argsstring>()</argsstring>
+        <name>PersonalStatistic</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/PersonalStatistic/PersonalStatistic.xaml.cs" line="38" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/PersonalStatistic/PersonalStatistic.xaml.cs" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1aa00014213f73519580b0d37f9dd5f845" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Social.PersonalStatistic.PersonalStatistic.OnStart</definition>
+        <argsstring>(object sender)</argsstring>
+        <name>OnStart</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/PersonalStatistic/PersonalStatistic.xaml.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/PersonalStatistic/PersonalStatistic.xaml.cs" bodystart="50" bodyend="54"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a2caa604388601555e72bad0ce97f0c03" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Social.PersonalStatistic.PersonalStatistic.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic/PersonalStatistic.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic/PersonalStatistic.g.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a2caa604388601555e72bad0ce97f0c03" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Social.PersonalStatistic.PersonalStatistic.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic/PersonalStatistic.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic/PersonalStatistic.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a2caa604388601555e72bad0ce97f0c03" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Social.PersonalStatistic.PersonalStatistic.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/PersonalStatistic/PersonalStatistic.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/PersonalStatistic/PersonalStatistic.g.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a2caa604388601555e72bad0ce97f0c03" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Social.PersonalStatistic.PersonalStatistic.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/PersonalStatistic/PersonalStatistic.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/PersonalStatistic/PersonalStatistic.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic" kindref="compound">PersonalStatistic</ref> </para>    </briefdescription>
+    <detaileddescription>
+<para>Interaction logic for PersonalStatistic.xaml </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="187">
+        <label>THB_Plugin_Social.PersonalStatistic.PersonalStatistic</label>
+        <link refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic"/>
+        <childnode refid="188" relation="public-inheritance">
+        </childnode>
+        <childnode refid="189" relation="public-inheritance">
+        </childnode>
+        <childnode refid="190" relation="public-inheritance">
+        </childnode>
+        <childnode refid="191" relation="public-inheritance">
+        </childnode>
+        <childnode refid="190" relation="public-inheritance">
+        </childnode>
+        <childnode refid="191" relation="public-inheritance">
+        </childnode>
+        <childnode refid="190" relation="public-inheritance">
+        </childnode>
+        <childnode refid="191" relation="public-inheritance">
+        </childnode>
+        <childnode refid="190" relation="public-inheritance">
+        </childnode>
+        <childnode refid="191" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="189">
+        <label>IPlugin</label>
+      </node>
+      <node id="190">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="191">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+      <node id="188">
+        <label>UserControl</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="192">
+        <label>THB_Plugin_Social.PersonalStatistic.PersonalStatistic</label>
+        <link refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic"/>
+        <childnode refid="193" relation="public-inheritance">
+        </childnode>
+        <childnode refid="194" relation="public-inheritance">
+        </childnode>
+        <childnode refid="195" relation="public-inheritance">
+        </childnode>
+        <childnode refid="196" relation="public-inheritance">
+        </childnode>
+        <childnode refid="195" relation="public-inheritance">
+        </childnode>
+        <childnode refid="196" relation="public-inheritance">
+        </childnode>
+        <childnode refid="195" relation="public-inheritance">
+        </childnode>
+        <childnode refid="196" relation="public-inheritance">
+        </childnode>
+        <childnode refid="195" relation="public-inheritance">
+        </childnode>
+        <childnode refid="196" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="194">
+        <label>IPlugin</label>
+      </node>
+      <node id="195">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="196">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+      <node id="193">
+        <label>UserControl</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic/PersonalStatistic.g.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic/PersonalStatistic.g.cs" bodystart="41" bodyend="73"/>
+    <listofallmembers>
+      <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a037d8487091d3848a7e6f0e96170ca0c" prot="private" virt="non-virtual"><scope>THB_Plugin_Social::PersonalStatistic::PersonalStatistic</scope><name>_contentLoaded</name></member>
+      <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a2caa604388601555e72bad0ce97f0c03" prot="private" virt="non-virtual"><scope>THB_Plugin_Social::PersonalStatistic::PersonalStatistic</scope><name>Connect</name></member>
+      <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a2caa604388601555e72bad0ce97f0c03" prot="private" virt="non-virtual"><scope>THB_Plugin_Social::PersonalStatistic::PersonalStatistic</scope><name>Connect</name></member>
+      <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a2caa604388601555e72bad0ce97f0c03" prot="private" virt="non-virtual"><scope>THB_Plugin_Social::PersonalStatistic::PersonalStatistic</scope><name>Connect</name></member>
+      <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a2caa604388601555e72bad0ce97f0c03" prot="private" virt="non-virtual"><scope>THB_Plugin_Social::PersonalStatistic::PersonalStatistic</scope><name>Connect</name></member>
+      <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1accd1054e342a7f08b35fea1e39378bf3" prot="public" virt="non-virtual"><scope>THB_Plugin_Social::PersonalStatistic::PersonalStatistic</scope><name>InitializeComponent</name></member>
+      <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1accd1054e342a7f08b35fea1e39378bf3" prot="public" virt="non-virtual"><scope>THB_Plugin_Social::PersonalStatistic::PersonalStatistic</scope><name>InitializeComponent</name></member>
+      <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1accd1054e342a7f08b35fea1e39378bf3" prot="public" virt="non-virtual"><scope>THB_Plugin_Social::PersonalStatistic::PersonalStatistic</scope><name>InitializeComponent</name></member>
+      <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1accd1054e342a7f08b35fea1e39378bf3" prot="public" virt="non-virtual"><scope>THB_Plugin_Social::PersonalStatistic::PersonalStatistic</scope><name>InitializeComponent</name></member>
+      <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a13f840788e043a6bd79c33adbd68f045" prot="public" virt="non-virtual"><scope>THB_Plugin_Social::PersonalStatistic::PersonalStatistic</scope><name>Meta</name></member>
+      <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1aa00014213f73519580b0d37f9dd5f845" prot="public" virt="non-virtual"><scope>THB_Plugin_Social::PersonalStatistic::PersonalStatistic</scope><name>OnStart</name></member>
+      <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a64b070533a315d960484da8d2f3633f9" prot="public" virt="non-virtual"><scope>THB_Plugin_Social::PersonalStatistic::PersonalStatistic</scope><name>PersonalStatistic</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
