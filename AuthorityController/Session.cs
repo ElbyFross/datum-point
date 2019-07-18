@@ -107,20 +107,31 @@ namespace AuthorityController
         public bool AsignTokenToUser(User user, string token, string mac, string os, string stamp)
         {
             // Update rights if already exist.
-            if (tokensRights[token] is TokenInfo info)
+            if (tokensRights[token] is TokenInfo)
             {
                 // Inform that token alredy asigned.
+                return false;
+            }
+
+            TokenInfo info =
+                new TokenInfo()
+                {
+                    token = token,
+                    userId = user.id,
+                    machineMac = mac,
+                    operationSystem = os,
+                };
+
+            if (!long.TryParse(stamp, out info.allocationTime))
+            {
+                // Invelid stamp format.
                 return false;
             }
 
             // Create token registration for this user id.
             tokensRights.Add(
                 token,
-                new TokenInfo()
-                {
-                    token = token,
-                    userId = user.id,
-                });
+                info);
 
             // Inform about success.
             return true;
@@ -221,7 +232,7 @@ namespace AuthorityController
                     token);
 
                 // Send query to infrom related servers about event.
-                InformateRelatedServers(informQuery);
+                InformateRelatedServers?.Invoke(informQuery);
 
                 // Confirm token removing.
                 return true;

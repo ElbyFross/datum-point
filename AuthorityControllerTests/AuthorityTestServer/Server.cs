@@ -31,15 +31,15 @@ namespace AuthorityController.AuthorityTestServer
         public static Server StartQueryProcessing(string pipeName)
         {
             // Instiniate server.
-            Server serverBufer = new Server();
-
-            // Set fields.
-            serverBufer.pipeName = pipeName;
+            Server serverBufer = new Server
+            {
+                pipeName = pipeName
+            };
 
             // Starting server loop.
             serverBufer.StartServerThread(
                 Guid.NewGuid().ToString(), serverBufer,
-                ThreadingServerLoop_OpenChanel);
+                ThreadingServerLoop_PP_Input);
 
             return serverBufer;
         }

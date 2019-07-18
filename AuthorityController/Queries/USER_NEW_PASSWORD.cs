@@ -145,7 +145,7 @@ namespace AuthorityController.Queries
             API.Users.SetProfile(userProfile);
 
             // Inform about success
-            UniformServer.BaseServer.SendAnswer(
+            UniformServer.BaseServer.SendAnswerViaPP(
                 "success",
                 queryParts);
         }

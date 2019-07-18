@@ -43,8 +43,6 @@ namespace AuthorityController.Queries
 
         public void Execute(QueryPart[] queryParts)
         {
-            string error;
-
             #region Get qyery params
             UniformQueries.API.TryGetParamValue("login", out QueryPart login, queryParts);
             UniformQueries.API.TryGetParamValue("password", out QueryPart password, queryParts);
@@ -113,7 +111,7 @@ namespace AuthorityController.Queries
 
             #region Validate names
             // Validate name.
-            if(!API.Validation.NameFormat(ref firstName.propertyName, out error) ||
+            if(!API.Validation.NameFormat(ref firstName.propertyName, out string error) ||
                !API.Validation.NameFormat(ref secondName.propertyName, out error))
             {
                 // Inform about incorrect login size.
@@ -234,7 +232,7 @@ namespace AuthorityController.Queries
             else
             {
                 // Send answer with operation's error.
-                UniformServer.BaseServer.SendAnswer(
+                UniformServer.BaseServer.SendAnswerViaPP(
                     "failed:" + storingError,
                     queryParts
                     );

@@ -31,7 +31,7 @@ namespace AuthorityController.Tests
         /// <summary>
         /// Name  of the pipe that would be started on server during tests.
         /// </summary>
-        string PIPE_NAME = "ACTestPublic";
+        readonly string PIPE_NAME = "ACTestPublic";
 
         #region Users
         User user_SuperAdmin = null;
@@ -219,24 +219,6 @@ namespace AuthorityController.Tests
             }
         }
 
-        /// <summary>
-        /// Get routing table situale for local broadcasting.
-        /// </summary>
-        PipesProvider.Networking.Routing.RoutingTable BroadcastingRoutingTable
-        {
-            get
-            {
-                // Create new if not found.
-                if(_broadcastingRoutingTable == null)
-                {
-
-                }
-
-                return _broadcastingRoutingTable;
-            }
-        }
-        PipesProvider.Networking.Routing.RoutingTable _broadcastingRoutingTable;
-
         [TestInitialize]
         public void Setup()
         {
@@ -246,7 +228,6 @@ namespace AuthorityController.Tests
                 PipesProvider.Security.SecurityLevel.Anonymous,
                 AuthorityController.API.Tokens.AuthorizeNewGuestToken,
                 1);
-              );
         }
 
         /// <summary>
@@ -405,7 +386,7 @@ namespace AuthorityController.Tests
                 bool operationCompete = false;
 
                 // Start reciving clent line.
-                UniformClient.BaseClient.EnqueueDuplexQuery(
+                UniformClient.BaseClient.EnqueueDuplexQueryViaPP(
 
                     // Request connection to localhost server via main pipe.
                     "localhost", PIPE_NAME,
@@ -491,7 +472,7 @@ namespace AuthorityController.Tests
                 bool operationCompete = false;
 
                 // Start reciving clent line.
-                UniformClient.BaseClient.EnqueueDuplexQuery(
+                UniformClient.BaseClient.EnqueueDuplexQueryViaPP(
 
                     // Request connection to localhost server via main pipe.
                     "localhost", PIPE_NAME,
@@ -566,8 +547,8 @@ namespace AuthorityController.Tests
                 bool operationCompete = false;
 
                 // Start reciving clent line.
-                UniformClient.BaseClient.EnqueueDuplexQuery(
-
+                UniformClient.BaseClient.EnqueueDuplexQueryViaPP(
+                    
                     // Request connection to localhost server via main pipe.
                     "localhost", PIPE_NAME,
 
@@ -719,7 +700,7 @@ namespace AuthorityController.Tests
                 bool operationCompete = false;
 
                 // Start reciving clent line.
-                UniformClient.BaseClient.EnqueueDuplexQuery(
+                UniformClient.BaseClient.EnqueueDuplexQueryViaPP(
 
                     // Request connection to localhost server via main pipe.
                     "localhost", PIPE_NAME,

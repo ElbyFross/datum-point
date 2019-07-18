@@ -59,7 +59,7 @@ namespace AuthorityController.Data
         /// <summary>
         /// Time when token was allocated in system.
         /// </summary>
-        public DateTime allocationTime;
+        public long allocationTime;
 
         /// <summary>
         /// Array that contain rights provided to this token.

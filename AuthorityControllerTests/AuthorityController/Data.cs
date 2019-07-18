@@ -42,6 +42,7 @@ namespace AuthorityController.Tests
         {
             // Set new directory.
             Config.DIRECTORY = Configurator.TestSubfolder + Config.DIRECTORY;
+            string buferizedConfigDir = Config.DIRECTORY;
 
             // Init file.
             Config.Active = null;
@@ -176,9 +177,9 @@ namespace AuthorityController.Tests
             }
 
             // Create users directory if notexist.
-            if (!Directory.Exists(TestSubfolder + "\\USERS\\"))
+            if (!Directory.Exists(Configurator.TestSubfolder + "\\USERS\\"))
             {
-                Directory.CreateDirectory(TestSubfolder + "\\USERS\\");
+                Directory.CreateDirectory(Configurator.TestSubfolder + "\\USERS\\");
             }
 
             // Wait until operation compleeting.
@@ -362,7 +363,7 @@ namespace AuthorityController.Tests
             lock (Locks.CONFIG_LOCK)
             {
                 // Wait for config files.
-                while (!CONFIG_FILE_GENERATED)
+                while (!Configurator.CONFIG_FILE_GENERATED)
                 {
                     Thread.Sleep(5);
                 }
