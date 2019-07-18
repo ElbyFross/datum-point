@@ -14,17 +14,20 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace UniformServer
+namespace AuthorityController
 {
     /// <summary>
-    /// Server that allow instiniate BaseServer.
-    /// Not contain any additive methods.
-    /// 
-    /// Case of using - simple operations like registing of server for answer.
+    /// While that contain objects that can be used for detect multy thread locks.
     /// </summary>
-    public class SimpleServer : BaseServer
+    public static class Locks
     {
+        /// <summary>
+        /// Show doest lock file is locked.
+        /// </summary>
+        public static object CONFIG_LOCK = new object();
     }
 }

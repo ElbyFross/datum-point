@@ -56,9 +56,12 @@
     <Compile Include="Security\SecurityLevel.cs" />
     <Compile Include="Client\TransmissionLine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Server\TransmisssionControllers\BroadcastingServerTransmissionController.cs" />
     <Compile Include="Server\QueryContainer.cs" />
     <Compile Include="Server\ServerAPI.cs" />
-    <Compile Include="Server\ServerTransmissionController.cs" />
+    <Compile Include="Server\TransmisssionControllers\ClientToServerTransmissionController.cs" />
+    <Compile Include="Server\TransmisssionControllers\ServerToClientTransmissionController.cs" />
+    <Compile Include="Server\TransmisssionControllers\BaseServerTransmissionController.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UniformQueries\UniformQueries.csproj">
@@ -66,6 +69,8 @@
       <Name>UniformQueries</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Client\TransmissionControllers\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

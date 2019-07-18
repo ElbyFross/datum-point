@@ -36,6 +36,7 @@ namespace PipesProvider.Networking.Routing
         /// <summary>
         /// Path from was loaded tis table.
         /// </summary>
+        [XmlIgnoreAttribute]
         public string SourcePath { get; set; }
         #endregion
 
@@ -70,16 +71,16 @@ namespace PipesProvider.Networking.Routing
             return false;
         }
         #endregion
-        
+
         #region Serialization
         /// <summary>
         /// Trying to load all routing tables from durectory.
         /// You could have several XML serialized routing tables. This way allow to share it via plugins.
         /// </summary>
-        /// <param name="directory"></param>
-        /// <param name="table"></param>
+        /// <param name="directory">Root folder.</param>
+        /// <param name="searchOption">Defind does search will applied to child foldeers.</param>
         /// <returns></returns>
-        public static RoutingTable LoadRoutingTables(string directory)
+        public static RoutingTable LoadRoutingTables(string directory, SearchOption searchOption)
         {
             // Create new empty table.
             RoutingTable table = new RoutingTable();
@@ -92,7 +93,7 @@ namespace PipesProvider.Networking.Routing
             }
 
             // Detect all xml files in directory.
-            string[] xmlFiles = Directory.GetFiles(directory, "*.xml", SearchOption.AllDirectories);
+            string[] xmlFiles = Directory.GetFiles(directory, "*.xml", searchOption);
 
             // Init encoder.
             XmlSerializer xmlSer = new XmlSerializer(typeof(RoutingTable));

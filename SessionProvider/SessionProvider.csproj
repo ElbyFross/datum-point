@@ -50,6 +50,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\AuthorityController\AuthorityController.csproj">
+      <Project>{a64e9d28-ba9c-43b8-b894-e73dd0e23970}</Project>
+      <Name>AuthorityController</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ConsoleDraw\ConsoleDraw.csproj">
       <Project>{f5a10f87-bcd8-4d29-8c7f-0ebeafe65a90}</Project>
       <Name>ConsoleDraw</Name>
@@ -57,6 +61,10 @@
     <ProjectReference Include="..\PipesProvider\PipesProvider.csproj">
       <Project>{6a8abab9-a495-4286-8606-7360aff2a7b7}</Project>
       <Name>PipesProvider</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UniformClient\UniformClient.csproj">
+      <Project>{6695b55e-8994-475f-a112-6a4e8be019aa}</Project>
+      <Name>UniformClient</Name>
     </ProjectReference>
     <ProjectReference Include="..\UniformServer\UniformServer.csproj">
       <Project>{e3156133-0296-4670-a961-726174860e1a}</Project>

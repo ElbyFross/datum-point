@@ -20,6 +20,7 @@ using System.IO;
 using System.IO.Pipes;
 using UniformQueries;
 using UQAPI = UniformQueries.API;
+using PipesProvider.Server.TransmissionControllers;
 
 namespace PipesProvider.Server
 {
@@ -32,7 +33,7 @@ namespace PipesProvider.Server
         /// <summary>
         /// Event that will be called when server transmission will be registred or updated.
         /// </summary>
-        public static event System.Action<ServerTransmissionController> ServerTransmissionMeta_InProcessing;
+        public static event System.Action<BaseServerTransmissionController> ServerTransmissionMeta_InProcessing;
         #endregion
 
         #region Fields
@@ -43,173 +44,7 @@ namespace PipesProvider.Server
         /// </summary>
         private static readonly Hashtable openedServers = new Hashtable();
         #endregion
-
-
-        #region Client-Server loops
-        /// <summary>
-        /// Automaticly create server's pipe that will recive queries from clients.
-        /// </summary>
-        /// <param name="queryHandlerCallback">Callback that will be called when server will recive query from clinet.</param>
-        /// <param name="pipeName">Name of pipe that will created. Client will access this server using that name.</param>
-        public static void ClientToServerLoop(
-            System.Action<ServerTransmissionController, string> queryHandlerCallback,
-            string pipeName, 
-            out string guid,
-            Security.SecurityLevel securityLevel)
-        {
-            // Generate GUID.
-            guid = pipeName.GetHashCode().ToString();
-
-            // Start loop.
-            ServerLoop(
-                guid,
-                Handlers.DNS.ClientToServerAsync,
-                queryHandlerCallback,
-                pipeName,
-                PipeDirection.InOut,
-                System.IO.Pipes.NamedPipeServerStream.MaxAllowedServerInstances,
-                PipeTransmissionMode.Message,
-                PipeOptions.Asynchronous | PipeOptions.WriteThrough,
-                securityLevel);
-        }
-
-        /// <summary>
-        /// Automaticly create server's pipe.
-        /// Allow to customise GUID.
-        /// </summary>
-        /// <param name="guid"></param>
-        /// <param name="queryHandlerCallback"></param>
-        /// <param name="pipeName"></param>
-        public static void ClientToServerLoop(
-            string guid,
-            System.Action<ServerTransmissionController, string> queryHandlerCallback,
-            string pipeName,
-            Security.SecurityLevel securityLevel)
-        {
-            ServerLoop(
-                guid,
-                Handlers.DNS.ClientToServerAsync,
-                queryHandlerCallback,
-                pipeName,
-                PipeDirection.InOut,
-                System.IO.Pipes.NamedPipeServerStream.MaxAllowedServerInstances,
-                PipeTransmissionMode.Message,
-                PipeOptions.Asynchronous | PipeOptions.WriteThrough,
-                securityLevel);
-        }
-
-        /// <summary>
-        /// Automaticly create server's pipe.
-        /// Allow to customise GUID.
-        /// </summary>
-        /// <param name="guid"></param>
-        /// <param name="queryHandlerCallback"></param>
-        /// <param name="pipeName"></param>
-        /// <param name="pipeName"></param>
-        public static void ClientToServerLoop(
-            string guid,
-            System.Action<ServerTransmissionController, string> queryHandlerCallback,
-            string pipeName,
-            int allowedServerInstances,
-            Security.SecurityLevel securityLevel)
-        {
-            ServerLoop(
-                guid,
-                Handlers.DNS.ClientToServerAsync,
-                queryHandlerCallback,
-                pipeName,
-                PipeDirection.InOut,
-                allowedServerInstances,
-                PipeTransmissionMode.Message,
-                PipeOptions.Asynchronous | PipeOptions.WriteThrough,
-                securityLevel);
-        }
-
-        /// <summary>
-        /// Server loop 
-        /// </summary>
-        /// <param name="guid"></param>
-        /// <param name="queryHandlerCallback"></param>
-        /// <param name="pipeName"></param>
-        /// <param name="pipeDirection"></param>
-        /// <param name="allowedServerInstances"></param>
-        /// <param name="transmissionMode"></param>
-        /// <param name="pipeOptions"></param>
-        public static void ClientToServerLoop(
-            string guid,
-            System.Action<ServerTransmissionController, string> queryHandlerCallback,
-            string pipeName,
-            PipeDirection pipeDirection,
-            int allowedServerInstances,
-            PipeTransmissionMode transmissionMode,
-            PipeOptions pipeOptions,
-            Security.SecurityLevel securityLevel)
-        {
-            ServerLoop(
-                guid,
-                Handlers.DNS.ClientToServerAsync,
-                queryHandlerCallback,
-                pipeName,
-                pipeDirection,
-                allowedServerInstances,
-                transmissionMode,
-                pipeOptions,
-                securityLevel);
-        }
-        #endregion
-
-        #region Server-Client loops
-        /// <summary>
-        /// Automaticly create server's pipe that will send message to client.
-        /// </summary>
-        /// <param name="queryHandlerCallback">Callback that will be called when server will recive query from clinet.</param>
-        /// <param name="pipeName">Name of pipe that will created. Client will access this server using that name.</param>
-        public static void ServerToClientLoop(
-            string pipeName,
-            out string guid,
-            Security.SecurityLevel securityLevel)
-        {
-            // Generate GUID.
-            guid = pipeName.GetHashCode().ToString();
-
-            // Start loop.
-            ServerLoop(
-                guid,
-                Handlers.DNS.ServerToClientAsync,
-                null,
-                pipeName,
-                PipeDirection.InOut,
-                1,
-                PipeTransmissionMode.Message,
-                PipeOptions.Asynchronous | PipeOptions.WriteThrough,
-                securityLevel);
-        }
-
-        /// <summary>
-        /// Automaticly create server's pipe that will send message to client.
-        /// </summary>
-        /// <param name="queryHandlerCallback">Callback that will be called when server will recive query from clinet.</param>
-        /// <param name="pipeName">Name of pipe that will created. Client will access this server using that name.</param>
-        public static void ServerToClientLoop(
-            string guid,
-            string pipeName,
-            Security.SecurityLevel securityLevel)
-        {
-            // Start loop.
-            ServerLoop(
-                guid,
-                Handlers.DNS.ServerToClientAsync,
-                null,
-                pipeName,
-                PipeDirection.InOut,
-                1,
-                PipeTransmissionMode.Message,
-                PipeOptions.Asynchronous | PipeOptions.WriteThrough,
-                securityLevel);
-        }
-        #endregion
-
-
+        
         #region Core configurable loop
         /// <summary>
         /// Provide base server loop that control pipe.
@@ -223,16 +58,19 @@ namespace PipesProvider.Server
         /// <param name="allowedServerInstances">How many server pipes can be started with the same name.</param>
         /// <param name="transmissionMode">Type of transmission.</param>
         /// <param name="pipeOptions">Configuration of the pipe.</param>
-        public static void ServerLoop(
+        /// <param name="initHandler">Handler that will be called in case if transmisssion still not registred.
+        /// Provide possibility to castom initialization for every type of controller.</param>
+        public static void ServerLoop<TransmissionControllerType>(
             string guid,
-            System.Action<ServerTransmissionController> connectionCallback,
-            System.Action<ServerTransmissionController, string> queryHandlerCallback,
+            System.Action<BaseServerTransmissionController> connectionCallback,
             string pipeName,
             PipeDirection pipeDirection,
             int allowedServerInstances,
             PipeTransmissionMode transmissionMode,
             PipeOptions pipeOptions,
-            Security.SecurityLevel securityLevel)
+            Security.SecurityLevel securityLevel,
+            System.Action<BaseServerTransmissionController>initHandler = null)
+            where TransmissionControllerType : BaseServerTransmissionController
         {
             // Create PipeSecurity relative to requesteed level.
             PipeSecurity pipeSecurity = Security.General.GetRulesForLevels(securityLevel);
@@ -255,26 +93,39 @@ namespace PipesProvider.Server
 
             #region Meta data
             // Meta data about curent transmition.
-            ServerTransmissionController meta = ServerTransmissionController.None;
+            TransmissionControllerType transmisssionController = null;
             IAsyncResult connectionMarker = null;
 
-            // Registration or update meta data of oppened transmission.
-            if (openedServers.ContainsKey(guid))
+            // Registration or update controller of oppened transmission.
+            if (openedServers[guid] is TransmissionControllerType bufer)
             {
-                // Load previous meta.
-                meta = (ServerTransmissionController)openedServers[guid];
+                // Load previous contorller.
+                transmisssionController = bufer;
             }
             else
             {
-                // Create new meta.
-                meta = new ServerTransmissionController(null, connectionCallback, queryHandlerCallback, pipeServer, pipeName);
-                openedServers.Add(guid, meta);
+                // Create new controller.
+                transmisssionController = (TransmissionControllerType)Activator.CreateInstance(
+                    typeof(TransmissionControllerType), 
+                    new object[] 
+                    {
+                        null,
+                        connectionCallback,
+                        pipeServer,
+                        pipeName
+                    });
+
+                // Call additive init.
+                initHandler?.Invoke(transmisssionController);
+
+                // Add to table.
+                openedServers.Add(guid, transmisssionController);
             }
 
             try
             {
                 // Inform subscribers about new pass with this transmission to give possibility correct data.
-                ServerTransmissionMeta_InProcessing?.Invoke(meta);
+                ServerTransmissionMeta_InProcessing?.Invoke(transmisssionController);
             }
             catch (Exception ex)
             {
@@ -283,7 +134,7 @@ namespace PipesProvider.Server
             #endregion
 
             #region Main loop
-            while (!meta.Expired)
+            while (!transmisssionController.Expired)
             {
                 // Wait for a client to connect
                 if ((connectionMarker == null || connectionMarker.IsCompleted) &&
@@ -293,9 +144,9 @@ namespace PipesProvider.Server
                     {
                         // Start async waiting of connection.
                         connectionMarker = pipeServer.BeginWaitForConnection(
-                            Handlers.Service.ConnectionEstablishedCallbackRetranslator, meta);
+                            Handlers.Service.ConnectionEstablishedCallbackRetranslator, transmisssionController);
                         /// Update data.
-                        meta.connectionMarker = connectionMarker;
+                        transmisssionController.connectionMarker = connectionMarker;
 
                         Console.Write("{0}: Waiting for client connection...\n", pipeName);
                     }
@@ -311,7 +162,7 @@ namespace PipesProvider.Server
                         transmissionMode, pipeOptions, 0, 0, pipeSecurity);
 
                         // Update meta data.
-                        meta.pipe = pipeServer;
+                        transmisssionController.pipeServer = pipeServer;
                     }
                     //Console.WriteLine("TRANSMITION META HASH: {0}", meta.GetHashCode());
                 }
@@ -322,9 +173,9 @@ namespace PipesProvider.Server
             #endregion
 
             // Finalize server.
-            if (!meta.Stoped)
+            if (!transmisssionController.Stoped)
             {
-                StopServer(meta);
+                StopServer(transmisssionController);
             }
 
             // Discharge existing in hashtable.
@@ -333,10 +184,9 @@ namespace PipesProvider.Server
             // Finish stream.
             pipeServer.Close();
 
-            Console.WriteLine("{0}: PIPE SERVER CLOSED", meta.name);
+            Console.WriteLine("{0}: PIPE SERVER CLOSED", transmisssionController.pipeName);
         }
         #endregion
-
 
         #region Controls
         /// <summary>
@@ -350,7 +200,7 @@ namespace PipesProvider.Server
             if (openedServers.ContainsKey(pipeName))
             {
                 // Load meta data.
-                ServerTransmissionController meta = (ServerTransmissionController)openedServers[pipeName];
+                BaseServerTransmissionController meta = (BaseServerTransmissionController)openedServers[pipeName];
 
                 // Mark it as expired.
                 meta.SetExpired();
@@ -362,7 +212,7 @@ namespace PipesProvider.Server
         /// On the next loop tick connections will be disconnect and pipe will close.
         /// </summary>
         /// <param name="pipeName"></param>
-        public static void SetExpired(ServerTransmissionController meta)
+        public static void SetExpired(BaseServerTransmissionController meta)
         {
             // Mark it as expired.
             meta.SetExpired();
@@ -374,7 +224,7 @@ namespace PipesProvider.Server
         /// </summary>
         public static void SetExpiredAll()
         {
-            foreach(ServerTransmissionController meta in openedServers.Values)
+            foreach(BaseServerTransmissionController meta in openedServers.Values)
             {
                 meta.SetExpired();
             }
@@ -390,13 +240,13 @@ namespace PipesProvider.Server
             if (openedServers.ContainsKey(pipeName))
             {
                 // Load meta data.
-                ServerTransmissionController meta = (ServerTransmissionController)openedServers[pipeName];
+                BaseServerTransmissionController meta = (BaseServerTransmissionController)openedServers[pipeName];
 
                 // Stop server relative to meta data.
                 StopServer(meta);
 
                 // Discharge existing in hashtable.
-                openedServers.Remove(meta.name);
+                openedServers.Remove(meta.pipeName);
             }
         }
 
@@ -404,7 +254,7 @@ namespace PipesProvider.Server
         /// Stop server by relative meta data.
         /// </summary>
         /// <param name="meta"></param>
-        public static void StopServer(ServerTransmissionController meta)
+        public static void StopServer(BaseServerTransmissionController meta)
         {
             // If transmission has been opening.
             if (meta != null)
@@ -413,13 +263,13 @@ namespace PipesProvider.Server
                 try
                 {
                     // Disconnects clients.
-                    if (meta.pipe.IsConnected)
+                    if (meta.pipeServer.IsConnected)
                     {
-                        meta.pipe.Disconnect();
+                        meta.pipeServer.Disconnect();
                     }
 
                     // Closing pipe.
-                    meta.pipe.Close();
+                    meta.pipeServer.Close();
                 }
                 catch (Exception ex)
                 {
@@ -427,7 +277,7 @@ namespace PipesProvider.Server
                     Console.WriteLine("SERVER STOP FAILED: {0}", ex.Message);
                 }
 
-                Console.WriteLine("PIPE CLOSED: {0}", meta.name);
+                Console.WriteLine("PIPE CLOSED: {0}", meta.pipeName);
                 return;
             }
 
@@ -443,7 +293,7 @@ namespace PipesProvider.Server
             Console.WriteLine("TRANSMISSIONS TO CLOSE: {0}", openedServers.Count);
 
             // Stop every registred server.
-            foreach (ServerTransmissionController meta in openedServers.Values)
+            foreach (BaseServerTransmissionController meta in openedServers.Values)
             {
                 // Log about target to close.
                 //Console.WriteLine("STOPING SERVER: {0}", meta.name);
@@ -472,9 +322,9 @@ namespace PipesProvider.Server
         /// <param name="guid"></param>
         /// <param name="meta"></param>
         /// <returns></returns>
-        public static bool TryGetServerTransmissionMeta(string guid, out ServerTransmissionController meta)
+        public static bool TryGetServerTransmissionController(string guid, out BaseServerTransmissionController meta)
         {
-            meta = openedServers[guid] as ServerTransmissionController;
+            meta = openedServers[guid] as BaseServerTransmissionController;
             return meta != null;
         }
     }

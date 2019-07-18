@@ -26,8 +26,7 @@ namespace THB_Data_Server
     /// Server that provide and manage data by queries.
     /// </summary>
     class Server : UniformServer.BaseServer
-    {
-        
+    {        
         /// <summary>
         /// Main loop.
         /// </summary>
@@ -73,7 +72,7 @@ namespace THB_Data_Server
             // Initialize Queue monitor.
             try
             {
-                _ = UniformQueries.API.QueryProcessors;
+                _ = UniformQueries.API.QueryHandlers;
             }
             catch (Exception ex)
             {
@@ -97,7 +96,7 @@ namespace THB_Data_Server
                 // Starting server loop.
                 serverBufer.StartServerThread(
                     "Queries monitor #" + i, serverBufer, 
-                    ThreadingServerLoop_OpenChanel);
+                    ThreadingServerLoop_PP_Input);
 
                 // Change thread culture.
                 serverBufer.thread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");

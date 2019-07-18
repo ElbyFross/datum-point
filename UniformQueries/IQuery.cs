@@ -24,7 +24,7 @@ namespace UniformQueries
     /// All classes that implements this interface 
     /// will automaticly detected by QueriesAPI via first use and connected to queries processing.
     /// </summary>
-    public interface IQueryHandlerProcessor
+    public interface IQueryHandler
     {
         /// <summary>
         /// Methods that process query.

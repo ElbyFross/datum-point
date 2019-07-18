@@ -371,19 +371,5 @@ namespace PipesProvider.Security
             return builder.ToString();
         }
         #endregion
-
-
-        #region Generators
-        /// <summary>
-        /// TODO Create binnary file with unique 256 bit key that can be used as seed to session providing.
-        /// </summary>
-        /// <param name="targetDirectory"></param>
-        public static void GenerateUniqueKey256Bit(string targetDirectory)
-        {
-            // Create directory if not exist.
-            if (!Directory.Exists(targetDirectory))
-                Directory.CreateDirectory(targetDirectory);
-        }
-        #endregion
     }
 }

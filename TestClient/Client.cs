@@ -18,6 +18,7 @@ using Microsoft.Win32.SafeHandles;
 using PipesProvider.Networking.Routing;
 using PipesProvider.Security;
 using PipesProvider.Client;
+using UniformQueries;
 
 namespace TestClient
 {
@@ -43,6 +44,11 @@ namespace TestClient
         /// </summary>
         public static string SERVER_PIPE_NAME = null; // Pipe openned at server that will recive out queries.
 
+        /// <summary>
+        /// Is guest token required.
+        /// </summary>
+        public static bool questTokenRequired = true;
+
 
         static void Main(string[] args)
         {
@@ -55,6 +61,54 @@ namespace TestClient
             #endregion
 
             token = "invalid";
+
+            #region Recive guest token
+            // Open client that will listen server guest chanel broadcasting.
+            UniformClient.Standard.SimpleClient.ReciveAnonymousBroadcastMessage(
+                "localhost", 
+                "guests",
+                (PipesProvider.Client.TransmissionLine line, object obj) =>
+                {  
+                    // Validate answer.
+                    if (obj is string answer)
+                    {
+                        Console.WriteLine("GUSET BROAADCASTING CHANEL ANSWER RECIVED: {0}", answer);
+                        // Unlock finish blocker.
+                        questTokenRequired = false;
+
+                        QueryPart[] recivedQuery = UniformQueries.API.DetectQueryParts(answer);
+
+                        // Check token.
+                        if (UniformQueries.API.TryGetParamValue("token", out QueryPart tokenQP, recivedQuery) &&
+                        !string.IsNullOrEmpty(tokenQP.propertyValue))
+                        {
+                            token = tokenQP.propertyValue;
+                            Console.WriteLine("Guest token: {0}", token);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Guest token not detected. Authorization not possible.");
+                            Thread.Sleep(2000);
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("Guest token not recived. Incorrect answer format.");
+                        Thread.Sleep(2000);
+                        return;
+                    }
+                });
+
+            // Log
+            Console.WriteLine("Witing forguest token from server autority system...");
+
+            // Wait for guest token.
+            while(questTokenRequired)
+            {
+                Thread.Sleep(5);
+            }
+            #endregion
 
             #region Init
             // React on uniform arguments.
@@ -127,7 +181,7 @@ namespace TestClient
                             // Send as duplex.
                             if (tmp.StartsWith("DPX:"))
                             {
-                                EnqueueDuplexQuery(SERVER_NAME, SERVER_PIPE_NAME,
+                                EnqueueDuplexQueryViaPP(SERVER_NAME, SERVER_PIPE_NAME,
                                     tmp.Substring(4), ServerAnswerHandler_RSAPublicKey).
                                     TryLogonAs(routingInstruction.logonConfig);
                             }
@@ -175,7 +229,7 @@ namespace TestClient
             Console.WriteLine("ONE WAY query.\nTransmisssion to {0}/{1}", SERVER_NAME, SERVER_PIPE_NAME);
 
             // Short way to send one way query.
-            OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME). // Opern transmission line via starndard DNS handler.
+            OpenOutTransmissionLineViaPP(SERVER_NAME, SERVER_PIPE_NAME). // Opern transmission line via starndard DNS handler.
                 EnqueueQuery(string.Format("token={1}{0}guid=echo{0}q=ECHO", UniformQueries.API.SPLITTING_SYMBOL, token)). // Adding query to line's queue.
                 SetInstructionAsKey(ref routingInstruction).        // Connect instruction to provide auto-encryption via RSA.
                 TryLogonAs(routingInstruction.logonConfig);         // Request remote logon. By default LogonConfig equal Anonymous (Guest) user.
@@ -226,7 +280,7 @@ namespace TestClient
             #endregion
 
             // Create transmission line.
-            TransmissionLine lineProcessor = OpenOutTransmissionLine(SERVER_NAME, SERVER_PIPE_NAME);
+            TransmissionLine lineProcessor = OpenOutTransmissionLineViaPP(SERVER_NAME, SERVER_PIPE_NAME);
             // Set impersonate token.
             lineProcessor.accessToken = safeTokenHandle;
 
@@ -249,7 +303,7 @@ namespace TestClient
 
             // Open duplex chanel. First line processor will send query to server and after that will listen to its andwer.
             // When answer will recived it will redirected to callback.
-            EnqueueDuplexQuery(SERVER_NAME, SERVER_PIPE_NAME, 
+            EnqueueDuplexQueryViaPP(SERVER_NAME, SERVER_PIPE_NAME, 
                 GetPKQuery, ServerAnswerHandler_RSAPublicKey).
                 TryLogonAs(routingInstruction.logonConfig); // Share logon cofig to allow connectio for not public servers.
 

@@ -21,6 +21,7 @@ using System.IO.Pipes;
 using UniformQueries;
 using UQAPI = UniformQueries.API;
 using PipesProvider.Server;
+using PipesProvider.Server.TransmissionControllers;
 
 
 namespace PipesProvider.Handlers
@@ -39,7 +40,7 @@ namespace PipesProvider.Handlers
         {
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en-us");
             // Load transmission meta data.
-            ServerTransmissionController meta = (ServerTransmissionController)result.AsyncState;
+            BaseServerTransmissionController meta = (BaseServerTransmissionController)result.AsyncState;
 
             // Stop connection waiting.
             try
@@ -47,7 +48,7 @@ namespace PipesProvider.Handlers
                 // Close connection if not conplited.
                 //if (!meta.connectionMarker.IsCompleted)
                 {
-                    meta.pipe.EndWaitForConnection(meta.connectionMarker);
+                    meta.pipeServer.EndWaitForConnection(meta.connectionMarker);
                 }
             }
             catch (Exception ex)
@@ -63,29 +64,29 @@ namespace PipesProvider.Handlers
 
             try
             {
-                if (!meta.pipe.IsConnected)
-                    await meta.pipe.WaitForConnectionAsync();
+                if (!meta.pipeServer.IsConnected)
+                    await meta.pipeServer.WaitForConnectionAsync();
             }
             catch (Exception ex)
             {
-                Console.WriteLine("CONNECTION ERROR (CECR EWFC 2): {0} {1}", meta.name, ex.Message);
+                Console.WriteLine("CONNECTION ERROR (CECR EWFC 2): {0} {1}", meta.pipeName, ex.Message);
             }
 
             //Console.WriteLine("\nAsync compleated:{0} {1}\nPipe connected:{2}\n", result.IsCompleted, result.CompletedSynchronously, meta.pipe.IsConnected);
 
             // Log about success.
-            if (meta.pipe.IsConnected)
+            if (meta.pipeServer.IsConnected)
             {
-                Console.WriteLine("\n{0}: Client connected.", meta.name);
+                Console.WriteLine("\n{0}: Client connected.", meta.pipeName);
             }
             else
             {
-                Console.WriteLine("\n{0}: Connection waiting was terminated", meta.name);
+                Console.WriteLine("\n{0}: Connection waiting was terminated", meta.pipeName);
             }
 
             // Call handler.
             //Console.WriteLine("Connected: {0}\tCallback valid: {1}", meta.pipe.IsConnected, meta.connectionCallback != null);
-            if (meta.pipe.IsConnected) meta.connectionCallback?.Invoke(meta);
+            if (meta.pipeServer.IsConnected) meta.connectionCallback?.Invoke(meta);
         }
     }
 }

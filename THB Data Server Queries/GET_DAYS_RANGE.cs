@@ -19,7 +19,7 @@ using UniformQueries;
 
 namespace THB_Data_Server_Queries
 {
-    public class GET_DAYS_RANGE : IQueryHandlerProcessor
+    public class GET_DAYS_RANGE : IQueryHandler
     {
         public string Description(string cultureKey)
         {

@@ -12,20 +12,15 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-using System;
-using System.Collections.Generic;
-using System.Text;
-using PipesProvider.Security;
+WHAT IS AUTHORITY CONTROLLER?
+AuthorityController it's a library that allow easy integration of 
+an authentication system, that provides possibility to control
+users' rights, data, bans, etc.
 
-namespace UniformClient
-{
-    /// <summary>
-    /// Client that allow instiniate BaseClient.
-    /// Not contain any additive methods.
-    /// 
-    /// Case of using - simple transmition line that not require complex responce.
-    /// </summary>
-    public class SimpleClient : BaseClient
-    {
-    }
-}
+Moreover provides base security like managing of user password in 
+hashed and salted state.
+
+Furthermore provides possibilities to use this controller in servers'
+architecture that contains a list of releted servers that need to
+know only the tokens data but have no authority to operate private
+personalized users' data.

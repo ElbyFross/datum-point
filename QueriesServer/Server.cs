@@ -24,6 +24,7 @@ using PipesProvider.Security;
 using PipesProvider.Server;
 using PipesProvider.Client;
 using PipesProvider.Networking.Routing;
+using PipesProvider.Server.TransmissionControllers;
 
 namespace QueriesServer
 {
@@ -86,7 +87,7 @@ namespace QueriesServer
             // Initialize Queue monitor.
             try
             {
-                _ = UniformQueries.API.QueryProcessors;
+                _ = UniformQueries.API.QueryHandlers;
             }
             catch (Exception ex)
             {
@@ -179,7 +180,7 @@ namespace QueriesServer
 
             #region Server establishing
             // Start server loop.
-            ServerAPI.ClientToServerLoop(
+            PipesProvider.Server.TransmissionControllers.ClientToServerTransmissionController.ServerLoop(
                 serverName,
                 QueryHandler_Relay,
                 ((Server)server).pipeName,
@@ -192,7 +193,7 @@ namespace QueriesServer
         /// </summary>
         /// <param name="_"></param>
         /// <param name="query"></param>
-        public static void QueryHandler_Relay(ServerTransmissionController _, string query)
+        public static void QueryHandler_Relay(BaseServerTransmissionController _, string query)
         {
             // Try to decrypt.
             query = PipesProvider.Security.Crypto.DecryptString(query);
@@ -224,7 +225,7 @@ namespace QueriesServer
                 if(!instruction.IsValid)
                 {
                     // Request new key.
-                    UniformClient.BaseClient.GetValidPublicKey(instruction);
+                    UniformClient.BaseClient.GetValidPublicKeyViaPP(instruction);
 
                     // Log.
                     Console.WriteLine("WAITING FOR PUBLIC RSA KEY FROM {0}/{1}", instruction.routingIP, instruction.pipeName);
@@ -245,7 +246,7 @@ namespace QueriesServer
             }
 
             // Open connection.
-            TransmissionLine tl = UniformClient.BaseClient.EnqueueDuplexQuery(
+            TransmissionLine tl = UniformClient.BaseClient.EnqueueDuplexQueryViaPP(
                 instruction.routingIP,
                 instruction.pipeName,
                 query,
@@ -257,7 +258,7 @@ namespace QueriesServer
                     string answerAsString = answer as string;
                     if (!string.IsNullOrEmpty(answerAsString))
                     {
-                        SendAnswer(answerAsString, UniformQueries.API.DetectQueryParts(query));
+                        SendAnswerViaPP(answerAsString, UniformQueries.API.DetectQueryParts(query));
                         return;
                     }
 

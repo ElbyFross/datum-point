@@ -15,13 +15,14 @@
 using System;
 using System.IO.Pipes;
 
-namespace PipesProvider.Server
+namespace PipesProvider.Server.TransmissionControllers
 {
     /// <summary>
     /// Container that contain meta data about server instance.
     /// </summary>
-    public class ServerTransmissionController
+    public class BaseServerTransmissionController
     {
+        #region Fields & properties
         /// <summary>
         /// Object that provide access to async connection.
         /// </summary>
@@ -31,24 +32,17 @@ namespace PipesProvider.Server
         /// Delegate that will be called when connection will be established.
         /// ServerTransmissionMeta - meta data of transmission.
         /// </summary>
-        public System.Action<ServerTransmissionController> connectionCallback;
-
-        /// <summary>
-        /// Delegate that will be called when server will recive query.
-        /// ServerTransmissionMeta - meta data of transmission.
-        /// string - shared query.
-        /// </summary>
-        public System.Action<ServerTransmissionController, string> queryHandlerCallback;
-
+        public System.Action<BaseServerTransmissionController> connectionCallback;
+        
         /// <summary>
         /// Reference to created pipe.
         /// </summary>
-        public NamedPipeServerStream pipe;
+        public NamedPipeServerStream pipeServer;
 
         /// <summary>
         /// Name of this connection.
         /// </summary>
-        public string name;
+        public string pipeName;
 
         /// <summary>
         /// Marker that show does current transmission is relevant.
@@ -60,29 +54,21 @@ namespace PipesProvider.Server
         /// Marker that show does this transmition stoped.
         /// </summary>
         public bool Stoped { get; protected set; }
+        #endregion
 
-        /// <summary>
-        /// Query that aqtualu in processing. 
-        /// 
-        /// Attention: Value can be changed if some of handlers will call disconecction or transmission error. 
-        /// This situation will lead to establishing new connection that lead to changing of this value.
-        /// </summary>
-        public string ProcessingQuery { get; set; }
 
         #region Constructors
-        public ServerTransmissionController() { }
+        public BaseServerTransmissionController() { }
 
-        public ServerTransmissionController(
+        public BaseServerTransmissionController(
             IAsyncResult connectionMarker, 
-            System.Action<ServerTransmissionController> connectionCallback,
-            System.Action<ServerTransmissionController, string> queryHandlerCallback,
+            System.Action<BaseServerTransmissionController> connectionCallback,
             NamedPipeServerStream pipe, string pipeName)
         {
             this.connectionMarker = connectionMarker;
             this.connectionCallback = connectionCallback;
-            this.queryHandlerCallback = queryHandlerCallback;
-            this.pipe = pipe;
-            this.name = pipeName;
+            this.pipeServer = pipe;
+            this.pipeName = pipeName;
             Expired = false;
             Stoped = false;
         }
@@ -90,12 +76,13 @@ namespace PipesProvider.Server
         /// <summary>
         /// Return instance that not contain initialized fields.
         /// </summary>
-        public static ServerTransmissionController None
+        public static BaseServerTransmissionController None
         {
-            get { return new ServerTransmissionController(); }
+            get { return new BaseServerTransmissionController(); }
         }
         #endregion
 
+        #region API
         /// <summary>
         /// Maeking transmission as expired. Line will be remaked.
         /// </summary>
@@ -103,7 +90,7 @@ namespace PipesProvider.Server
         {
             Expired = true;
 
-            Console.WriteLine("{0}: PIPE SERVER MANUALY EXPIRED", name);
+            Console.WriteLine("{0}: PIPE SERVER MANUALY EXPIRED", pipeName);
         }
 
         /// <summary>
@@ -115,7 +102,8 @@ namespace PipesProvider.Server
             Stoped = true;
             Expired = true;
 
-            Console.WriteLine("{0}: PIPE SERVER MANUALY STOPED", name);
+            Console.WriteLine("{0}: PIPE SERVER MANUALY STOPED", pipeName);
         }
+        #endregion
     }
 }

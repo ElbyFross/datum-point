@@ -30,24 +30,25 @@ namespace UniformQueries
         public const char SPLITTING_SYMBOL = '&';
 
         /// <summary>
-        /// List that contain references to all query's processors instances.
+        /// List that contain references to all query's handlers instances.
         /// </summary>
-        public static List<IQueryHandlerProcessor> QueryProcessors
+        public static List<IQueryHandler> QueryHandlers
         {
             get
             {
-                return queryProcessors;
+                return queryHandlers;
             }
         }
-        private static readonly List<IQueryHandlerProcessor> queryProcessors = null;
-        
-        
+        private static readonly List<IQueryHandler> queryHandlers = null;
+
+
         /// <summary>
         /// Load query handlers during first call.
         /// </summary>
         static API()
         {
-            queryProcessors = new List<IQueryHandlerProcessor>();
+            // Init query handlers list.
+            queryHandlers = new List<IQueryHandler>();
 
             // Load query's processors.
             System.Reflection.Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
@@ -55,31 +56,41 @@ namespace UniformQueries
             Console.WriteLine("\nDETECTED QUERIES:");
             foreach (System.Reflection.Assembly assembly in assemblies)
             {
-                // Get all types for assembly.
-                foreach (System.Type type in assembly.GetTypes())
+                try
                 {
-                    try
+                    Type[] types = assembly.GetTypes();
+
+                    // Get all types for assembly.
+                    foreach (Type type in assembly.GetTypes())
                     {
-                        // Check if this type is subclass of query.
-                        if (type.GetInterface("UniformQueries.IQueryHandlerProcessor") != null)
+                        try
                         {
-                            // Instiniating querie processor.
-                            UniformQueries.IQueryHandlerProcessor instance = (UniformQueries.IQueryHandlerProcessor)Activator.CreateInstance(type);
-                            queryProcessors.Add(instance);
-                            Console.WriteLine("{0}", type.Name);
+                            // Check if this type is subclass of query.
+                            if (type.GetInterface(typeof(UniformQueries.IQueryHandler).FullName) != null)
+                            {
+                                // Instiniating querie processor.
+                                UniformQueries.IQueryHandler instance = (UniformQueries.IQueryHandler)Activator.CreateInstance(type);
+                                queryHandlers.Add(instance);
+                                Console.WriteLine("{0}", type.Name);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine("Queries asseblies loading failed (qapi10): {0}", ex.Message);
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine("Queries asseblies loading failed: {0}", ex.Message);
-                    }
+                }
+                catch(Exception ex)
+                {
+                    Console.WriteLine("Queries asseblies loading failed (2): {qapi20}", ex.Message);
                 }
             }
 
             // Log
             Console.WriteLine("\nRESUME:\nQueriesMonitor established. Session started at {0}\nTotal query processors detected: {1}",
-                DateTime.Now.ToString("HH:mm:ss"), queryProcessors.Count);
-        }        
+                DateTime.Now.ToString("HH:mm:ss"), queryHandlers.Count);
+        }
+
 
         /// <summary>
         /// Check existing of param in query parts.
@@ -131,7 +142,7 @@ namespace UniformQueries
 
 
         /// <summary>
-        /// Try to find requested param's value in query. 
+        /// Try to find requested param's value in query.
         /// </summary>
         /// <param name="param"></param>
         /// <param name="value"></param>
@@ -143,7 +154,7 @@ namespace UniformQueries
         }
 
         /// <summary>
-        /// Try to find requested param's value among query parts. 
+        /// Try to find requested param's value among query parts.
         /// </summary>
         /// <param name="param"></param>
         /// <param name="value"></param>
@@ -170,7 +181,7 @@ namespace UniformQueries
         }
 
         /// <summary>
-        /// Try to find requested param's value among query parts. 
+        /// Try to find requested param's value among query parts.
         /// </summary>
         /// <param name="param"></param>
         /// <param name="value"></param>
@@ -198,7 +209,7 @@ namespace UniformQueries
 
 
         /// <summary>
-        /// Try to find requested all param's value among query parts by requested param name. 
+        /// Try to find requested all param's value among query parts by requested param name.
         /// </summary>
         /// <param name="param"></param>
         /// <param name="value"></param>
@@ -221,7 +232,7 @@ namespace UniformQueries
         }
 
         /// <summary>
-        /// Try to find requested all param's value among query parts by requested param name. 
+        /// Try to find requested all param's value among query parts by requested param name.
         /// </summary>
         /// <param name="param"></param>
         /// <param name="value"></param>
@@ -302,6 +313,43 @@ namespace UniformQueries
             return parts;
         }
 
+
+        /// <summary>
+        /// Looking for processor situable for provided query.
+        /// </summary>
+        /// <param name="query">Recived query in string format.</param>
+        /// <param name="handler">Qirty handler that situable for that query.</param>
+        /// <returns></returns>
+        public static bool TryFindQueryHandler(string query, out IQueryHandler handler)
+        {
+            // Detect query parts.
+            QueryPart[] queryParts = DetectQueryParts(query);
+
+            // Search.
+            return TryFindQueryHandler(queryParts, out handler);
+        }
+
+        /// <summary>
+        /// Looking for query handler.
+        /// </summary>
+        /// <param name="queryParts">Recived query splited by parts.</param>
+        /// <param name="handler">Hadler that's situated to this query.</param>
+        /// <returns></returns>
+        public static bool TryFindQueryHandler(QueryPart[] queryParts, out IQueryHandler handler)
+        {
+            foreach (UniformQueries.IQueryHandler pb in UniformQueries.API.QueryHandlers)
+            {
+                // Check header
+                if (pb.IsTarget(queryParts))
+                {
+                    handler = pb;
+                    return true;
+                }
+            }
+
+            handler = null;
+            return false;
+        }
 
         /// <summary>
         /// Try to detect core query parts.
