@@ -101,7 +101,7 @@ namespace AuthorityController.Queries
                 if(!API.Collections.TyGetPropertyValue("rank", out string userRank, userProfile.rights))
                 {
                     // Inform that rights not enough.
-                    UniformServer.BaseServer.SendAnswerViaPP("ERROR 401: Unauthorized", queryParts);
+                    UniformServer.BaseServer.SendAnswerViaPP("ERROR 401: User rank not defined", queryParts);
                     return;
                 }
 
@@ -111,7 +111,7 @@ namespace AuthorityController.Queries
                     ">rank=" + userRank, ">rank=2"))
                 {
                     // Inform that rank not defined.
-                    UniformServer.BaseServer.SendAnswerViaPP("ERROR 401: User rank not defined", queryParts);
+                    UniformServer.BaseServer.SendAnswerViaPP("ERROR 401: Unauthorized", queryParts);
                     return;
                 }
             }

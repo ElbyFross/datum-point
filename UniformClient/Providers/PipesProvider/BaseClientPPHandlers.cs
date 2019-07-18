@@ -50,15 +50,15 @@ namespace UniformClient
             // Mark line as busy to avoid calling of next query, cause this handler is async.
             lineProcessor.Processing = true;
 
+            #region Reciving message
             // Open stream reader.
+            string message = null;
             StreamReader sr = new StreamReader(lineProcessor.pipeClient);
             try
             {
-                #region Reciving message
                 Console.WriteLine("{0}/{1}: WAITING FOR MESSAGE",
                         lineProcessor.ServerName, lineProcessor.ServerPipeName);
 
-                string message = null;
                 while (string.IsNullOrEmpty(message))
                 {
                     // Avoid an error caused to disconection of client.
@@ -80,11 +80,23 @@ namespace UniformClient
                         return;
                     }
                 }
+            }
+            // Catch the Exception that is raised if the pipe is broken or disconnected.
+            catch (Exception e)
+            {
+                // Log
+                if (string.IsNullOrEmpty(message))
+                {
+                    Console.WriteLine("DNS HANDLER ERROR ({1}): {0}", e.Message, lineProcessor.pipeClient.GetHashCode());
+                }
+            }
+            #endregion
 
+            if (!string.IsNullOrEmpty(message))
+            {
                 // Log state.
                 Console.WriteLine("{0}/{1}: MESSAGE RECIVED",
-                    lineProcessor.ServerName, lineProcessor.ServerPipeName);
-                #endregion
+                        lineProcessor.ServerName, lineProcessor.ServerPipeName);
 
                 #region Processing message
                 // Try to call answer handler.
@@ -113,11 +125,6 @@ namespace UniformClient
                 //Console.WriteLine("{0}/{1}: ANSWER READING FINISH.\nMESSAGE: {2}",
                 //    lineProcessor.ServerName, lineProcessor.ServerPipeName, message);
                 #endregion
-            }
-            // Catch the Exception that is raised if the pipe is broken or disconnected.
-            catch (Exception e)
-            {
-                Console.WriteLine("DNS HANDLER ERROR ({1}): {0}", e.Message, lineProcessor.pipeClient.GetHashCode());
             }
 
             // Stop processing merker to pass async block.

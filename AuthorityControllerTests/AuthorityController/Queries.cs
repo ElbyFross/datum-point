@@ -670,10 +670,10 @@ namespace AuthorityController.Tests
         }
 
         /// <summary>
-        /// Try to change self passoword.
+        /// Try to change self password.
         /// </summary>
         [TestMethod]
-        public void NewPasswrod_Self()
+        public void NewPassword_Self()
         {
             lock (Locks.CONFIG_LOCK)
             {
@@ -698,6 +698,171 @@ namespace AuthorityController.Tests
 
                 // Marker that avoid finishing of the test until receiving result.
                 bool operationCompete = false;
+                bool operationResult = false;
+                string operationError = null;
+
+                // Start reciving clent line.
+                UniformClient.BaseClient.EnqueueDuplexQueryViaPP(
+
+                    // Request connection to localhost server via main pipe.
+                    "localhost", PIPE_NAME,
+
+                    // Convert query parts array to string view in correct format provided by UniformQueries API.
+                    UniformQueries.QueryPart.QueryPartsArrayToString(query),
+
+                    // Handler that would recive ther ver answer.
+                    (PipesProvider.Client.TransmissionLine line, object answer) =>
+                    {
+                        // Try to convert answer to string
+                        if (answer is string answerS)
+                        {
+                            // Is operation success?
+                            if (!answerS.StartsWith("error", StringComparison.OrdinalIgnoreCase))
+                            {
+                                // Log success.
+                                operationResult = true;
+                                operationCompete = true;
+                            }
+                            else
+                            {
+                                // Log fail & error.
+                                operationResult = false;
+                                operationError = "Recived error: " + answerS;
+                                operationCompete = true;
+                            }
+                        }
+                        else
+                        {
+                            // Log fail & error.
+                            operationResult = false;
+                            operationError = "Incorrect format of answer. Required format is string. Type:" + answer.GetType();
+                            operationCompete = true;
+                        }
+                    });
+
+                // Wait until operation would complete.
+                while (!operationCompete)
+                {
+                    Thread.Sleep(5);
+                }
+
+                Assert.IsTrue(operationResult, operationError);
+            }
+        }
+
+        /// <summary>
+        /// Try to change password of user with higher rank then requeter.
+        /// </summary>
+        [TestMethod]
+        public void NewPassword_ModeratorToAdmin()
+        {
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create users for test.
+                SetBaseUsersPool();
+
+                // Create the query that would simulate logon.
+                UniformQueries.QueryPart[] query = new UniformQueries.QueryPart[]
+                {
+                    new UniformQueries.QueryPart("token", user_Moderator.tokens[0]),
+                    new UniformQueries.QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+
+                    new UniformQueries.QueryPart("user=" + user_Admin.id, null),
+                    new UniformQueries.QueryPart("new", null),
+
+                    new UniformQueries.QueryPart("password", "newPassword!2"),
+                    new UniformQueries.QueryPart("oldpassword", "password"),
+                    new UniformQueries.QueryPart("os", Environment.OSVersion.VersionString),
+                    new UniformQueries.QueryPart("mac", "anonymous"),
+                    new UniformQueries.QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
+                };
+
+                // Marker that avoid finishing of the test until receiving result.
+                bool operationCompete = false;
+                bool operationResult = false;
+                string operationError = null;
+
+                // Start reciving clent line.
+                UniformClient.BaseClient.EnqueueDuplexQueryViaPP(
+
+                    // Request connection to localhost server via main pipe.
+                    "localhost", PIPE_NAME,
+
+                    // Convert query parts array to string view in correct format provided by UniformQueries API.
+                    UniformQueries.QueryPart.QueryPartsArrayToString(query),
+
+                    // Handler that would recive ther ver answer.
+                    (PipesProvider.Client.TransmissionLine line, object answer) =>
+                    {
+                        // Try to convert answer to string
+                        if (answer is string answerS)
+                        {
+                            // Is operation success?
+                            if (answerS.StartsWith("error", StringComparison.OrdinalIgnoreCase))
+                            {
+                                // Log error.
+                                operationResult = true;
+                                operationCompete = true;
+                            }
+                            else
+                            {
+                                // Log error.
+                                operationResult = false;
+                                operationError = "Unatuorized operation allowed with result: " + answerS;
+                                operationCompete = true;
+                            }
+                        }
+                        else
+                        {
+                            // Log error.
+                            operationResult = false;
+                            operationError = "Incorrect format of answer.Required format is string.Type:" + answer.GetType();
+                            operationCompete = true;
+                        }
+                    });
+
+                // Wait until operation would complete.
+                while (!operationCompete)
+                {
+                    Thread.Sleep(5);
+                }
+
+                Assert.IsTrue(operationResult, operationError);
+            }
+        }
+
+
+        /// <summary>
+        /// Try to change password of user with lower rank then requester.
+        /// </summary>
+        [TestMethod]
+        public void NewPassword_AdminToUser()
+        {
+            lock (Locks.CONFIG_LOCK)
+            {
+                // Create users for test.
+                SetBaseUsersPool();
+
+                // Create the query that would simulate logon.
+                UniformQueries.QueryPart[] query = new UniformQueries.QueryPart[]
+                {
+                    new UniformQueries.QueryPart("token", user_Admin.tokens[0]),
+                    new UniformQueries.QueryPart("guid", AuthorityController.API.Tokens.UnusedToken),
+
+                    new UniformQueries.QueryPart("user=" + user_User.id, null),
+                    new UniformQueries.QueryPart("new", null),
+
+                    new UniformQueries.QueryPart("password", "newPassword!2"),
+                    new UniformQueries.QueryPart("oldpassword", "password"),
+                    new UniformQueries.QueryPart("os", Environment.OSVersion.VersionString),
+                    new UniformQueries.QueryPart("mac", "anonymous"),
+                    new UniformQueries.QueryPart("stamp", DateTime.Now.ToBinary().ToString()),
+                };
+
+                // Marker that avoid finishing of the test until receiving result.
+                bool operationCompete = false;
+                bool operationResult = false;
+                string operationError = null;
 
                 // Start reciving clent line.
                 UniformClient.BaseClient.EnqueueDuplexQueryViaPP(
@@ -718,20 +883,22 @@ namespace AuthorityController.Tests
                             if (!answerS.StartsWith("error", StringComparison.OrdinalIgnoreCase))
                             {
                                 // Log error.
-                                Assert.IsTrue(true);
+                                operationResult = true;
                                 operationCompete = true;
                             }
                             else
                             {
                                 // Log error.
-                                Assert.Fail("Recived error: " + answerS);
+                                operationResult = false;
+                                operationError = "Authorized operation denied with error: " + answerS;
                                 operationCompete = true;
                             }
                         }
                         else
                         {
-                            // Assert error.
-                            Assert.Fail("Incorrect format of answer. Required format is string. Type:" + answer.GetType());
+                            // Log error.
+                            operationResult = false;
+                            operationError = "Incorrect format of answer.Required format is string.Type:" + answer.GetType();
                             operationCompete = true;
                         }
                     });
@@ -742,33 +909,7 @@ namespace AuthorityController.Tests
                     Thread.Sleep(5);
                 }
 
-                Thread.Sleep(200);
-            }
-        }
-
-        /// <summary>
-        /// Try to change passoword of user with lowes rank.
-        /// </summary>
-        [TestMethod]
-        public void NewPasswrod_LowerRankUser()
-        {
-            lock (Locks.CONFIG_LOCK)
-            {
-                // Create users for test.
-                SetBaseUsersPool();
-            }
-        }
-
-        /// <summary>
-        /// Try to change passoword of user with higher rank.
-        /// </summary>
-        [TestMethod]
-        public void NewPasswrod_HigherRankUser()
-        {
-            lock (Locks.CONFIG_LOCK)
-            {
-                // Create users for test.
-                SetBaseUsersPool();
+                Assert.IsTrue(operationResult, operationError);
             }
         }
     }
