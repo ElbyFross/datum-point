@@ -57,11 +57,13 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ConsoleDraw">
-      <HintPath>..\doloro-networking-framework\libs\ConsoleDraw.dll</HintPath>
+    <Reference Include="ConsoleDraw, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\doloro-networking-framework\libs\ConsoleDraw.dll</HintPath>
     </Reference>
-    <Reference Include="PipesProvider">
-      <HintPath>..\doloro-networking-framework\libs\PipesProvider.dll</HintPath>
+    <Reference Include="PipesProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\doloro-networking-framework\libs\PipesProvider.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
@@ -73,14 +75,17 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="UniformClient">
-      <HintPath>..\doloro-networking-framework\libs\UniformClient.dll</HintPath>
+    <Reference Include="UniformClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\doloro-networking-framework\libs\UniformClient.dll</HintPath>
     </Reference>
-    <Reference Include="UniformQueries">
-      <HintPath>..\doloro-networking-framework\libs\UniformQueries.dll</HintPath>
+    <Reference Include="UniformQueries, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\doloro-networking-framework\libs\UniformQueries.dll</HintPath>
     </Reference>
-    <Reference Include="UniformServer">
-      <HintPath>..\doloro-networking-framework\libs\UniformServer.dll</HintPath>
+    <Reference Include="UniformServer, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\doloro-networking-framework\libs\UniformServer.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -89,7 +94,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Server.cs" />
+    <Compile Include="Networking\Server.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

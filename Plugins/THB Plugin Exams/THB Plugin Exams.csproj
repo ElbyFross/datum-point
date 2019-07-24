@@ -51,11 +51,11 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExamPlanner.xaml.cs">
-      <DependentUpon>ExamPlanner.xaml</DependentUpon>
+    <Compile Include="ExamsPlanner\Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Monitor.xaml.cs">
-      <DependentUpon>Monitor.xaml</DependentUpon>
+    <Compile Include="ExamsMonitor\Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -70,8 +70,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="TestConstructor.xaml.cs">
-      <DependentUpon>TestConstructor.xaml</DependentUpon>
+    <Compile Include="TestsConstructor\Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -83,15 +83,15 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="ExamPlanner.xaml">
+    <Page Include="ExamsPlanner\Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Monitor.xaml">
+    <Page Include="ExamsMonitor\Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TestConstructor.xaml">
+    <Page Include="TestsConstructor\Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

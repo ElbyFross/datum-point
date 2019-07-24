@@ -53,14 +53,14 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assesments.xaml.cs">
-      <DependentUpon>Assesments.xaml</DependentUpon>
+    <Compile Include="Assesments\Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AttendanceLog.xaml.cs">
-      <DependentUpon>AttendanceLog.xaml</DependentUpon>
+    <Compile Include="AttendanceLog\Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LessonBoard.xaml.cs">
-      <DependentUpon>LessonBoard.xaml</DependentUpon>
+    <Compile Include="LessonBoard\Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -75,8 +75,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Repository.xaml.cs">
-      <DependentUpon>Repository.xaml</DependentUpon>
+    <Compile Include="Repository\Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -88,19 +88,19 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Assesments.xaml">
+    <Page Include="Assesments\Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AttendanceLog.xaml">
+    <Page Include="AttendanceLog\Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LessonBoard.xaml">
+    <Page Include="LessonBoard\Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Repository.xaml">
+    <Page Include="Repository\Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -51,11 +51,11 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddOrder.xaml.cs">
-      <DependentUpon>AddOrder.xaml</DependentUpon>
+    <Compile Include="AddOrder\Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="OrdersBoard.xaml.cs">
-      <DependentUpon>OrdersBoard.xaml</DependentUpon>
+    <Compile Include="OrdersBoard\Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -80,11 +80,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="AddOrder.xaml">
+    <Page Include="AddOrder\Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="OrdersBoard.xaml">
+    <Page Include="OrdersBoard\Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -95,5 +95,6 @@
       <Name>WpfHandler</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

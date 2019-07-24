@@ -19,33 +19,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+using UniformClient.Plugins;
 
-namespace WpfHandler.Plugins
+namespace THB_Plugin_Social.Achivments
 {
     /// <summary>
-    /// Class that profide simplifyed way to integrate WPF plugins to client.
+    /// Interaction logic for Achivments.xaml
     /// </summary>
-    public static class API
+    public partial class Page : UserControl, IPlugin
     {
-        public static void OpenGUI(UniformClient.Plugins.IPlugin plugin)
+        public Page()
         {
-            // Drop invalid types.
-            if (!(plugin is UIElement pluginUI))
-            {
-                return;
-            }
+            InitializeComponent();
+        }
 
-            Window main = Application.Current.Windows.OfType<Window>().SingleOrDefault(x => x.IsActive);
-            if (main != null)
-            {
-                Panel panel = (Panel)main.FindName("canvas");
+        public MenuItemMeta Meta { get; set; } = new MenuItemMeta()
+        {
+            domain = "0_main.30_achivments",
+            titleDictionaryCode = "p_podshyvalov_achivments_menuTitle",
+            defaultTitle = "Achivments"
+        };
 
-                if (panel != null)
-                {
-                    panel.Children.Clear();
-                    panel.Children.Add(pluginUI);
-                }
-            }
+        public void OnStart(object sender)
+        {
+            // Request changing of GUI.
+            WpfHandler.Plugins.API.OpenGUI(this);
         }
     }
 }

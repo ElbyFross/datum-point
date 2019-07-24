@@ -51,15 +51,15 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Achivments\Achivments.xaml">
+    <Page Include="Achivments\Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Advices\Advices.xaml">
+    <Page Include="Advices\Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Feed\Feed.xaml">
+    <Page Include="Feed\Page.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -67,28 +67,28 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="PersonalStatistic\PersonalStatistic.xaml">
+    <Page Include="PersonalStatistic\Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Schedule\Schedule.xaml">
+    <Page Include="Schedule\Page.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="Achivments\Achivments.xaml.cs">
-      <DependentUpon>Achivments.xaml</DependentUpon>
+    <Compile Include="Achivments\Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Advices\Advices.xaml.cs">
-      <DependentUpon>Advices.xaml</DependentUpon>
+    <Compile Include="Advices\Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Feed\Feed.xaml.cs">
-      <DependentUpon>Feed.xaml</DependentUpon>
+    <Compile Include="Feed\Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PersonalStatistic\PersonalStatistic.xaml.cs">
-      <DependentUpon>PersonalStatistic.xaml</DependentUpon>
+    <Compile Include="PersonalStatistic\Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Schedule\Schedule.xaml.cs">
-      <DependentUpon>Schedule.xaml</DependentUpon>
+    <Compile Include="Schedule\Page.xaml.cs">
+      <DependentUpon>Page.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

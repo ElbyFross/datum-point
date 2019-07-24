@@ -52,6 +52,8 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Localization\API.cs" />
+    <Compile Include="Localization\DomainContainer.cs" />
     <Compile Include="Plugins\API.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
