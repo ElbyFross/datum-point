@@ -29,6 +29,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using TeacherHandbook.Networking;
+using WpfHandler.Plugins;
 
 namespace TeacherHandbook.UI.Windows
 {
@@ -41,7 +42,7 @@ namespace TeacherHandbook.UI.Windows
         /// <summary>
         /// List that contain all loaded plugins.
         /// </summary>
-        public ObservableCollection<UniformClient.Plugins.IPlugin> Plugins { get; set; }
+        public ObservableCollection<IPlugin> Plugins { get; set; }
 
         /// <summary>
         /// List that contain menu's controls.
@@ -89,10 +90,10 @@ namespace TeacherHandbook.UI.Windows
             Client.Init();
 
             // Load plugins.
-            Plugins = Client.LoadPluginsCollection();
+            Plugins = API.LoadPluginsCollection();
 
             // Sort plugins
-            UniformClient.Plugins.API.SortByDomains(Plugins);
+            API.SortByDomains(Plugins);
             #endregion
 
             #region Load main menu      
@@ -103,7 +104,7 @@ namespace TeacherHandbook.UI.Windows
             }
 
             // Connect all plugins to main menu to provide access via UI.
-            foreach (UniformClient.Plugins.IPlugin plugin in Plugins)
+            foreach (IPlugin plugin in Plugins)
             {
                 if (plugin.Meta != null)
                 {

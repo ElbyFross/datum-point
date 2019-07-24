@@ -26,7 +26,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using UniformClient.Plugins;
+using WpfHandler.Plugins;
 
 namespace THB_Plugin_Exams.ExamsPlanner
 {
@@ -49,7 +49,7 @@ namespace THB_Plugin_Exams.ExamsPlanner
 
         public void OnStart(object sender)
         {
-            WpfHandler.Plugins.API.OpenGUI(this);
+            API.OpenGUI(this);
         }
     }
 }

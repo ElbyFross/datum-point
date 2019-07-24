@@ -26,14 +26,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using UniformClient.Plugins;
+using WpfHandler.Plugins;
 
 namespace THB_Plugin_Exams.ExamsMonitor
 {
     /// <summary>
     /// Interaction logic for Monitor.xaml
     /// </summary>
-    public partial class Page : UserControl, UniformClient.Plugins.IPlugin
+    public partial class Page : UserControl, IPlugin
     {
         public Page()
         {
@@ -49,7 +49,7 @@ namespace THB_Plugin_Exams.ExamsMonitor
 
         public void OnStart(object sender)
         {
-            WpfHandler.Plugins.API.OpenGUI(this);
+            API.OpenGUI(this);
         }
     }
 }

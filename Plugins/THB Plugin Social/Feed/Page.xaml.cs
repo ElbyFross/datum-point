@@ -26,14 +26,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using UniformClient.Plugins;
+using WpfHandler.Plugins;
 
 namespace TeacherHandbook.Plugins.Feed
 {
     /// <summary>
     /// Interaction logic for Feed.xaml
     /// </summary>
-    public partial class Page : UserControl, UniformClient.Plugins.IPlugin
+    public partial class Page : UserControl, IPlugin
     {
         public Page()
         {
@@ -49,7 +49,7 @@ namespace TeacherHandbook.Plugins.Feed
         public void OnStart(object sender)
         {
             // Request changing of GUI.
-            WpfHandler.Plugins.API.OpenGUI(this);
+            API.OpenGUI(this);
         }
     }
 }

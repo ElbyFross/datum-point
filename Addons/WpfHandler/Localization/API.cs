@@ -42,9 +42,9 @@ namespace WpfHandler.Localization
         {
             #region Validate and fix base conditions
             // Validate directory.
-            if (!Directory.Exists(UniformClient.Plugins.Constants.PLUGINS_DIR))
+            if (!Directory.Exists(WpfHandler.Plugins.Constants.PLUGINS_DIR))
             {
-                Directory.CreateDirectory(UniformClient.Plugins.Constants.PLUGINS_DIR);
+                Directory.CreateDirectory(WpfHandler.Plugins.Constants.PLUGINS_DIR);
                 Console.WriteLine("PLUGINS DIRECTORY NOT FOUND. NEW ONE WAS CREATED.");
             }
             #endregion
@@ -52,7 +52,7 @@ namespace WpfHandler.Localization
             #region Find localization files
             // Load all lang files.
             Regex searchPattern = new Regex(@"\w*.lang.[0-9a-z-]*.xaml", RegexOptions.IgnoreCase);
-            var xamlDicts = Directory.EnumerateFiles(UniformClient.Plugins.Constants.PLUGINS_DIR, "*.xaml", SearchOption.AllDirectories)
+            var xamlDicts = Directory.EnumerateFiles(WpfHandler.Plugins.Constants.PLUGINS_DIR, "*.xaml", SearchOption.AllDirectories)
                 .Where(s => searchPattern.IsMatch(s));
 
 
