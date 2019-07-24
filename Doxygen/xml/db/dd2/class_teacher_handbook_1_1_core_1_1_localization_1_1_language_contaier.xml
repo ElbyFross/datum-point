@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Localization/LanguageContaier.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Localization/LanguageContaier.cs" bodystart="29" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/Core/THB Data Types/Core/Localization/LanguageContaier.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/Core/THB Data Types/Core/Localization/LanguageContaier.cs" bodystart="29" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/dd2/class_teacher_handbook_1_1_core_1_1_localization_1_1_language_contaier_1a8270ebfe17630e68e74b0d99ac6480d7" prot="public" static="no" mutable="no">
         <type>string</type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Localization/LanguageContaier.cs" line="34" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Localization/LanguageContaier.cs" bodystart="34" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/Core/THB Data Types/Core/Localization/LanguageContaier.cs" line="34" column="1" bodyfile="D:/Work/GitHub/datum-point/Core/THB Data Types/Core/Localization/LanguageContaier.cs" bodystart="34" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="db/dd2/class_teacher_handbook_1_1_core_1_1_localization_1_1_language_contaier_1afd80663ae6aaf8d7e1f5a6bdc658caa4" prot="public" static="no" mutable="no">
         <type>System.Collections.Hashtable</type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Localization/LanguageContaier.cs" line="39" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Localization/LanguageContaier.cs" bodystart="39" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/Core/THB Data Types/Core/Localization/LanguageContaier.cs" line="39" column="1" bodyfile="D:/Work/GitHub/datum-point/Core/THB Data Types/Core/Localization/LanguageContaier.cs" bodystart="39" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -51,18 +51,18 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="133">
+      <node id="107">
         <label>TeacherHandbook.Core.Localization.LanguageContaier</label>
         <link refid="db/dd2/class_teacher_handbook_1_1_core_1_1_localization_1_1_language_contaier"/>
-        <childnode refid="134" relation="usage">
+        <childnode refid="108" relation="usage">
           <edgelabel>map</edgelabel>
         </childnode>
       </node>
-      <node id="134">
+      <node id="108">
         <label>System</label>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/GitHub/datum-point/THB Data Types/Core/Localization/LanguageContaier.cs" line="24" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Types/Core/Localization/LanguageContaier.cs" bodystart="23" bodyend="41"/>
+    <location file="D:/Work/GitHub/datum-point/Core/THB Data Types/Core/Localization/LanguageContaier.cs" line="24" column="1" bodyfile="D:/Work/GitHub/datum-point/Core/THB Data Types/Core/Localization/LanguageContaier.cs" bodystart="23" bodyend="41"/>
     <listofallmembers>
       <member refid="db/dd2/class_teacher_handbook_1_1_core_1_1_localization_1_1_language_contaier_1a62bf6f365eec9c0b9a214a1a0d265601" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Localization::LanguageContaier</scope><name>key</name></member>
       <member refid="db/dd2/class_teacher_handbook_1_1_core_1_1_localization_1_1_language_contaier_1afd80663ae6aaf8d7e1f5a6bdc658caa4" prot="public" virt="non-virtual"><scope>TeacherHandbook::Core::Localization::LanguageContaier</scope><name>map</name></member>

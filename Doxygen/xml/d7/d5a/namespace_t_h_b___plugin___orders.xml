@@ -5,11 +5,13 @@
     <innerclass refid="d4/d17/class_t_h_b___plugin___orders_1_1_add_order" prot="public">THB_Plugin_Orders::AddOrder</innerclass>
     <innerclass refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board" prot="public">THB_Plugin_Orders::OrdersBoard</innerclass>
     <innerclass refid="d2/dc6/class_t_h_b___plugin___orders_1_1_user_control1" prot="public">THB_Plugin_Orders::UserControl1</innerclass>
+    <innernamespace refid="dc/d6b/namespace_t_h_b___plugin___orders_1_1_add_order">THB_Plugin_Orders::AddOrder</innernamespace>
+    <innernamespace refid="db/d8f/namespace_t_h_b___plugin___orders_1_1_orders_board">THB_Plugin_Orders::OrdersBoard</innernamespace>
     <innernamespace refid="d1/d57/namespace_t_h_b___plugin___orders_1_1_properties">THB_Plugin_Orders::Properties</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/AddOrder.xaml.cs" line="32" column="1"/>
+    <location file="[generated]" line="1" column="1"/>
   </compounddef>
 </doxygen>

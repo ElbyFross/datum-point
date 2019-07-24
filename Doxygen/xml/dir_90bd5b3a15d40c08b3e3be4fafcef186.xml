@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_90bd5b3a15d40c08b3e3be4fafcef186" kind="dir">
+    <compoundname>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/TestsConstructor</compoundname>
+    <innerfile refid="d0/d4c/_t_h_b_01_plugin_01_exams_2obj_2_debug_2_tests_constructor_2_page_8g_8cs">Page.g.cs</innerfile>
+    <innerfile refid="d0/dca/_t_h_b_01_plugin_01_exams_2obj_2_debug_2_tests_constructor_2_page_8g_8i_8cs">Page.g.i.cs</innerfile>
+    <innerfile refid="da/dc0/_debug_2_tests_constructor_2_test_constructor_8g_8i_8cs">TestConstructor.g.i.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/TestsConstructor/"/>
+  </compounddef>
+</doxygen>

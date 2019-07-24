@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dc/d6b/namespace_t_h_b___plugin___orders_1_1_add_order" kind="namespace" language="C#">
+    <compoundname>THB_Plugin_Orders::AddOrder</compoundname>
+    <innerclass refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page" prot="public">THB_Plugin_Orders::AddOrder::Page</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/AddOrder/Page.xaml.cs" line="32" column="1"/>
+  </compounddef>
+</doxygen>

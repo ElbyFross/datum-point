@@ -2,10 +2,6 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="d3/df7/_plugins_2_t_h_b_01_plugin_01_exams_2_properties_2_assembly_info_8cs" kind="file" language="C#">
     <compoundname>AssemblyInfo.cs</compoundname>
-    <innernamespace refid="d0/d9d/namespace_system_1_1_reflection">System::Reflection</innernamespace>
-    <innernamespace refid="d1/d9e/namespace_system_1_1_resources">System::Resources</innernamespace>
-    <innernamespace refid="da/d54/namespace_system_1_1_runtime_1_1_compiler_services">System::Runtime::CompilerServices</innernamespace>
-    <innernamespace refid="d1/dee/namespace_system_1_1_runtime_1_1_interop_services">System::Runtime::InteropServices</innernamespace>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

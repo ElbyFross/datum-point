@@ -3,10 +3,11 @@
   <compounddef id="dc/d95/namespace_teacher_handbook_1_1_plugins_1_1_feed" kind="namespace" language="C#">
     <compoundname>TeacherHandbook::Plugins::Feed</compoundname>
     <innerclass refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed" prot="public">TeacherHandbook::Plugins::Feed::Feed</innerclass>
+    <innerclass refid="d4/d8a/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_page" prot="public">TeacherHandbook::Plugins::Feed::Page</innerclass>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Feed/Feed.xaml.cs" line="32" column="1"/>
+    <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Plugins/Feed/Feed.g.i.cs" line="35" column="1"/>
   </compounddef>
 </doxygen>

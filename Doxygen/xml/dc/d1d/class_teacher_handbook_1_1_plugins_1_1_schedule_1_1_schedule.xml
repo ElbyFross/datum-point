@@ -5,12 +5,6 @@
     <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
     <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
     <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">IPlugin</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
     <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
     <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
     <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
@@ -26,26 +20,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Schedule/Schedule.g.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Schedule/Schedule.g.cs" bodystart="43" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="property">
-      <memberdef kind="property" id="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a42435b27bd43eb1afbf5a504bbae08b6" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
-        <type>MenuItemMeta</type>
-        <definition>MenuItemMeta TeacherHandbook.Plugins.Schedule.Schedule.Meta</definition>
-        <argsstring></argsstring>
-        <name>Meta</name>
-        <initializer>= new MenuItemMeta() {
-            domain = &quot;0_main.10_schedule&quot;,
-            titleDictionaryCode = &quot;p_podshyvalov_schedule_menuTitle&quot;,
-            defaultTitle = &quot;Schedule&quot; }</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Schedule/Schedule.xaml.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Schedule/Schedule.xaml.cs" bodystart="43" bodyend="43"/>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Plugins/Schedule/Schedule.g.i.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Plugins/Schedule/Schedule.g.i.cs" bodystart="43" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -60,7 +35,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Schedule/Schedule.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Schedule/Schedule.g.cs" bodystart="50" bodyend="62"/>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Plugins/Schedule/Schedule.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Plugins/Schedule/Schedule.g.i.cs" bodystart="50" bodyend="62"/>
       </memberdef>
       <memberdef kind="function" id="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a4e0847c918304d0ce088671e13e8f9a6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -86,63 +61,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Schedule/Schedule.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Schedule/Schedule.g.cs" bodystart="50" bodyend="62"/>
-      </memberdef>
-      <memberdef kind="function" id="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a4e0847c918304d0ce088671e13e8f9a6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void TeacherHandbook.Plugins.Schedule.Schedule.InitializeComponent</definition>
-        <argsstring>()</argsstring>
-        <name>InitializeComponent</name>
-        <briefdescription>
-<para>InitializeComponent </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
         <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Schedule/Schedule.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Schedule/Schedule.g.i.cs" bodystart="50" bodyend="62"/>
-      </memberdef>
-      <memberdef kind="function" id="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1adc7ec0bfd6db513f6106304eccbaa3ba" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type></type>
-        <definition>TeacherHandbook.Plugins.Schedule.Schedule.Schedule</definition>
-        <argsstring>()</argsstring>
-        <name>Schedule</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Schedule/Schedule.xaml.cs" line="38" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Schedule/Schedule.xaml.cs" bodystart="38" bodyend="41"/>
-      </memberdef>
-      <memberdef kind="function" id="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a8f74818aad2b85eea41959b41e4572bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void TeacherHandbook.Plugins.Schedule.Schedule.OnStart</definition>
-        <argsstring>(object sender)</argsstring>
-        <name>OnStart</name>
-        <param>
-          <type>object</type>
-          <declname>sender</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Schedule/Schedule.xaml.cs" line="48" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Schedule/Schedule.xaml.cs" bodystart="48" bodyend="52"/>
-      </memberdef>
-      <memberdef kind="function" id="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a4e0847c918304d0ce088671e13e8f9a6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void TeacherHandbook.Plugins.Schedule.Schedule.InitializeComponent</definition>
-        <argsstring>()</argsstring>
-        <name>InitializeComponent</name>
-        <briefdescription>
-<para>InitializeComponent </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Plugins/Schedule/Schedule.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Plugins/Schedule/Schedule.g.i.cs" bodystart="50" bodyend="62"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -165,7 +84,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Schedule/Schedule.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Schedule/Schedule.g.cs" bodystart="70" bodyend="72"/>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Plugins/Schedule/Schedule.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Plugins/Schedule/Schedule.g.i.cs" bodystart="70" bodyend="72"/>
       </memberdef>
       <memberdef kind="function" id="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a6b69e488632bb6650e94e68de0137da0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void System.Windows.Markup.IComponentConnector.</type>
@@ -207,155 +126,70 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Schedule/Schedule.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Schedule/Schedule.g.cs" bodystart="70" bodyend="72"/>
-      </memberdef>
-      <memberdef kind="function" id="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a6b69e488632bb6650e94e68de0137da0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void System.Windows.Markup.IComponentConnector.</type>
-        <definition>void System.Windows.Markup.IComponentConnector. TeacherHandbook.Plugins.Schedule.Schedule.Connect</definition>
-        <argsstring>(int connectionId, object target)</argsstring>
-        <name>Connect</name>
-        <param>
-          <type>int</type>
-          <declname>connectionId</declname>
-        </param>
-        <param>
-          <type>object</type>
-          <declname>target</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
         <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Schedule/Schedule.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Schedule/Schedule.g.i.cs" bodystart="70" bodyend="72"/>
-      </memberdef>
-      <memberdef kind="function" id="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a6b69e488632bb6650e94e68de0137da0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void System.Windows.Markup.IComponentConnector.</type>
-        <definition>void System.Windows.Markup.IComponentConnector. TeacherHandbook.Plugins.Schedule.Schedule.Connect</definition>
-        <argsstring>(int connectionId, object target)</argsstring>
-        <name>Connect</name>
-        <param>
-          <type>int</type>
-          <declname>connectionId</declname>
-        </param>
-        <param>
-          <type>object</type>
-          <declname>target</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Plugins/Schedule/Schedule.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Plugins/Schedule/Schedule.g.i.cs" bodystart="70" bodyend="72"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para><ref refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule" kindref="compound">Schedule</ref> </para>    </briefdescription>
     <detaileddescription>
-<para>Interaction logic for Schedule.xaml </para>    </detaileddescription>
+    </detaileddescription>
     <inheritancegraph>
-      <node id="228">
+      <node id="335">
         <label>TeacherHandbook.Plugins.Schedule.Schedule</label>
         <link refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule"/>
-        <childnode refid="229" relation="public-inheritance">
+        <childnode refid="336" relation="public-inheritance">
         </childnode>
-        <childnode refid="230" relation="public-inheritance">
+        <childnode refid="337" relation="public-inheritance">
         </childnode>
-        <childnode refid="231" relation="public-inheritance">
+        <childnode refid="336" relation="public-inheritance">
         </childnode>
-        <childnode refid="232" relation="public-inheritance">
+        <childnode refid="337" relation="public-inheritance">
         </childnode>
-        <childnode refid="229" relation="public-inheritance">
+        <childnode refid="336" relation="public-inheritance">
         </childnode>
-        <childnode refid="230" relation="public-inheritance">
-        </childnode>
-        <childnode refid="229" relation="public-inheritance">
-        </childnode>
-        <childnode refid="230" relation="public-inheritance">
-        </childnode>
-        <childnode refid="229" relation="public-inheritance">
-        </childnode>
-        <childnode refid="230" relation="public-inheritance">
-        </childnode>
-        <childnode refid="229" relation="public-inheritance">
-        </childnode>
-        <childnode refid="230" relation="public-inheritance">
+        <childnode refid="337" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="232">
-        <label>UniformClient::Plugins::IPlugin</label>
-      </node>
-      <node id="229">
+      <node id="336">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="230">
+      <node id="337">
         <label>System::Windows::Markup::IComponentConnector</label>
-      </node>
-      <node id="231">
-        <label>UserControl</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="233">
+      <node id="338">
         <label>TeacherHandbook.Plugins.Schedule.Schedule</label>
         <link refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule"/>
-        <childnode refid="234" relation="public-inheritance">
+        <childnode refid="339" relation="public-inheritance">
         </childnode>
-        <childnode refid="235" relation="public-inheritance">
+        <childnode refid="340" relation="public-inheritance">
         </childnode>
-        <childnode refid="236" relation="public-inheritance">
+        <childnode refid="339" relation="public-inheritance">
         </childnode>
-        <childnode refid="237" relation="public-inheritance">
+        <childnode refid="340" relation="public-inheritance">
         </childnode>
-        <childnode refid="234" relation="public-inheritance">
+        <childnode refid="339" relation="public-inheritance">
         </childnode>
-        <childnode refid="235" relation="public-inheritance">
-        </childnode>
-        <childnode refid="234" relation="public-inheritance">
-        </childnode>
-        <childnode refid="235" relation="public-inheritance">
-        </childnode>
-        <childnode refid="234" relation="public-inheritance">
-        </childnode>
-        <childnode refid="235" relation="public-inheritance">
-        </childnode>
-        <childnode refid="234" relation="public-inheritance">
-        </childnode>
-        <childnode refid="235" relation="public-inheritance">
+        <childnode refid="340" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="237">
-        <label>UniformClient::Plugins::IPlugin</label>
-      </node>
-      <node id="234">
+      <node id="339">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="235">
+      <node id="340">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
-      <node id="236">
-        <label>UserControl</label>
-      </node>
     </collaborationgraph>
-    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Schedule/Schedule.g.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Schedule/Schedule.g.cs" bodystart="41" bodyend="73"/>
+    <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Plugins/Schedule/Schedule.g.i.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Plugins/Schedule/Schedule.g.i.cs" bodystart="41" bodyend="73"/>
     <listofallmembers>
       <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1aa1b4c4609f2d3f479a8c8566f988d11e" prot="private" virt="non-virtual"><scope>TeacherHandbook::Plugins::Schedule::Schedule</scope><name>_contentLoaded</name></member>
       <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a6b69e488632bb6650e94e68de0137da0" prot="private" virt="non-virtual"><scope>TeacherHandbook::Plugins::Schedule::Schedule</scope><name>Connect</name></member>
       <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a6b69e488632bb6650e94e68de0137da0" prot="private" virt="non-virtual"><scope>TeacherHandbook::Plugins::Schedule::Schedule</scope><name>Connect</name></member>
       <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a6b69e488632bb6650e94e68de0137da0" prot="private" virt="non-virtual"><scope>TeacherHandbook::Plugins::Schedule::Schedule</scope><name>Connect</name></member>
-      <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a6b69e488632bb6650e94e68de0137da0" prot="private" virt="non-virtual"><scope>TeacherHandbook::Plugins::Schedule::Schedule</scope><name>Connect</name></member>
-      <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a6b69e488632bb6650e94e68de0137da0" prot="private" virt="non-virtual"><scope>TeacherHandbook::Plugins::Schedule::Schedule</scope><name>Connect</name></member>
       <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a4e0847c918304d0ce088671e13e8f9a6" prot="public" virt="non-virtual"><scope>TeacherHandbook::Plugins::Schedule::Schedule</scope><name>InitializeComponent</name></member>
       <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a4e0847c918304d0ce088671e13e8f9a6" prot="public" virt="non-virtual"><scope>TeacherHandbook::Plugins::Schedule::Schedule</scope><name>InitializeComponent</name></member>
       <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a4e0847c918304d0ce088671e13e8f9a6" prot="public" virt="non-virtual"><scope>TeacherHandbook::Plugins::Schedule::Schedule</scope><name>InitializeComponent</name></member>
-      <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a4e0847c918304d0ce088671e13e8f9a6" prot="public" virt="non-virtual"><scope>TeacherHandbook::Plugins::Schedule::Schedule</scope><name>InitializeComponent</name></member>
-      <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a4e0847c918304d0ce088671e13e8f9a6" prot="public" virt="non-virtual"><scope>TeacherHandbook::Plugins::Schedule::Schedule</scope><name>InitializeComponent</name></member>
-      <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a42435b27bd43eb1afbf5a504bbae08b6" prot="public" virt="non-virtual"><scope>TeacherHandbook::Plugins::Schedule::Schedule</scope><name>Meta</name></member>
-      <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a8f74818aad2b85eea41959b41e4572bd" prot="public" virt="non-virtual"><scope>TeacherHandbook::Plugins::Schedule::Schedule</scope><name>OnStart</name></member>
-      <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1adc7ec0bfd6db513f6106304eccbaa3ba" prot="public" virt="non-virtual"><scope>TeacherHandbook::Plugins::Schedule::Schedule</scope><name>Schedule</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

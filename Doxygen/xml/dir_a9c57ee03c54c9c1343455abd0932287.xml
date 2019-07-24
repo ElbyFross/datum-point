@@ -2,12 +2,12 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_a9c57ee03c54c9c1343455abd0932287" kind="dir">
     <compoundname>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson</compoundname>
+    <innerdir refid="dir_ddae18d5b5e7d98994b15c0951be184a">D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Assesments</innerdir>
+    <innerdir refid="dir_b574c9c5daca2b6486c1dfe75b421ab8">D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/AttendanceLog</innerdir>
+    <innerdir refid="dir_d4d9ebf90067a127e4a9351c12da5bd2">D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/LessonBoard</innerdir>
     <innerdir refid="dir_1c3ca9b4d75d703a8e054452029b21a2">D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj</innerdir>
     <innerdir refid="dir_f776110637899bdc82985f907ec52540">D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Properties</innerdir>
-    <innerfile refid="d8/dd1/_assesments_8xaml_8cs">Assesments.xaml.cs</innerfile>
-    <innerfile refid="d9/d4f/_attendance_log_8xaml_8cs">AttendanceLog.xaml.cs</innerfile>
-    <innerfile refid="d2/d79/_lesson_board_8xaml_8cs">LessonBoard.xaml.cs</innerfile>
-    <innerfile refid="d2/d11/_repository_8xaml_8cs">Repository.xaml.cs</innerfile>
+    <innerdir refid="dir_4dae95a3e5ed1d985f80ca34d2666f13">D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Repository</innerdir>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

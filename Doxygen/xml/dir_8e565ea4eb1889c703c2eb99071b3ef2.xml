@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_8e565ea4eb1889c703c2eb99071b3ef2" kind="dir">
+    <compoundname>D:/Work/GitHub/datum-point/Addons/WpfHandler/Localization</compoundname>
+    <innerfile refid="df/d29/_localization_2_a_p_i_8cs">API.cs</innerfile>
+    <innerfile refid="df/dbf/_domain_container_8cs">DomainContainer.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/Addons/WpfHandler/Localization/"/>
+  </compounddef>
+</doxygen>

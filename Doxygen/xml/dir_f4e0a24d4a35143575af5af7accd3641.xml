@@ -2,9 +2,9 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_f4e0a24d4a35143575af5af7accd3641" kind="dir">
     <compoundname>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug</compoundname>
-    <innerfile refid="d1/d3c/_debug_2_add_order_8g_8cs">AddOrder.g.cs</innerfile>
+    <innerdir refid="dir_73629713b03c57a91416357c70cd7380">D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/AddOrder</innerdir>
+    <innerdir refid="dir_205fc6134b6f4a366707da6e26484701">D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard</innerdir>
     <innerfile refid="de/da0/_debug_2_add_order_8g_8i_8cs">AddOrder.g.i.cs</innerfile>
-    <innerfile refid="d8/d41/_debug_2_orders_board_8g_8cs">OrdersBoard.g.cs</innerfile>
     <innerfile refid="d8/da9/_debug_2_orders_board_8g_8i_8cs">OrdersBoard.g.i.cs</innerfile>
     <innerfile refid="df/da0/_plugins_2_t_h_b_01_plugin_01_orders_2obj_2_debug_2_temporary_generated_file__036_c0_b5_b-1481-4a5b31a662db6a2dae23e02723014d74a">TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</innerfile>
     <innerfile refid="db/db3/_plugins_2_t_h_b_01_plugin_01_orders_2obj_2_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs">TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</innerfile>

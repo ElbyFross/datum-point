@@ -39,27 +39,27 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="248">
+      <node id="363">
         <label>THB_Plugin_Social.Properties.Settings</label>
         <link refid="d5/dbf/class_t_h_b___plugin___social_1_1_properties_1_1_settings"/>
-        <childnode refid="249" relation="public-inheritance">
+        <childnode refid="364" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="249">
+      <node id="364">
         <label>global::SystemConfiguration::ApplicationSettingsBase</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="250">
+      <node id="365">
         <label>THB_Plugin_Social.Properties.Settings</label>
         <link refid="d5/dbf/class_t_h_b___plugin___social_1_1_properties_1_1_settings"/>
-        <childnode refid="251" relation="public-inheritance">
+        <childnode refid="366" relation="public-inheritance">
         </childnode>
-        <childnode refid="250" relation="usage">
+        <childnode refid="365" relation="usage">
           <edgelabel>defaultInstance</edgelabel>
         </childnode>
       </node>
-      <node id="251">
+      <node id="366">
         <label>global::SystemConfiguration::ApplicationSettingsBase</label>
       </node>
     </collaborationgraph>

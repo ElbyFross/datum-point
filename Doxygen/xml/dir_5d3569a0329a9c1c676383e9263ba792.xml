@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_5d3569a0329a9c1c676383e9263ba792" kind="dir">
+    <compoundname>D:/Work/GitHub/datum-point/Apps/Servers/THB Data Server</compoundname>
+    <innerdir refid="dir_315527f1c5a2ea9f7a9f7a449e8e718a">D:/Work/GitHub/datum-point/Apps/Servers/THB Data Server/Networking</innerdir>
+    <innerdir refid="dir_58b02b874027e9e17e36ed2207005ab7">D:/Work/GitHub/datum-point/Apps/Servers/THB Data Server/obj</innerdir>
+    <innerdir refid="dir_1123da69350a56e6e1e3f7f84677b7b4">D:/Work/GitHub/datum-point/Apps/Servers/THB Data Server/Properties</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/Apps/Servers/THB Data Server/"/>
+  </compounddef>
+</doxygen>

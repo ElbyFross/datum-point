@@ -78,17 +78,17 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="220">
+      <node id="324">
         <label>THB_Plugin_Exams.Properties.Resources</label>
         <link refid="d8/d18/class_t_h_b___plugin___exams_1_1_properties_1_1_resources"/>
-        <childnode refid="221" relation="usage">
+        <childnode refid="325" relation="usage">
           <edgelabel>resourceCulture</edgelabel>
         </childnode>
-        <childnode refid="220" relation="usage">
+        <childnode refid="324" relation="usage">
           <edgelabel>resourceMan</edgelabel>
         </childnode>
       </node>
-      <node id="221">
+      <node id="325">
         <label>Globalization</label>
       </node>
     </collaborationgraph>

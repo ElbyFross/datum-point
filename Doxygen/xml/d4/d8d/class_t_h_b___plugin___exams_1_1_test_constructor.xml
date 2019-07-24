@@ -3,12 +3,6 @@
   <compounddef id="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor" kind="class" language="C#" prot="public">
     <compoundname>THB_Plugin_Exams::TestConstructor</compoundname>
     <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">IPlugin</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
     <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
     <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
     <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
@@ -24,42 +18,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/TestConstructor.g.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/TestConstructor.g.cs" bodystart="43" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="property">
-      <memberdef kind="property" id="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a85cefaa72576228ed78d6c8702efcc1d" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
-        <type>MenuItemMeta</type>
-        <definition>MenuItemMeta THB_Plugin_Exams.TestConstructor.Meta</definition>
-        <argsstring></argsstring>
-        <name>Meta</name>
-        <initializer>= new MenuItemMeta() {
-            defaultTitle = &quot;Test constructor&quot;,
-            domain = &quot;30_exams.20_testConstructor&quot;,
-            titleDictionaryCode = &quot;p_podshyvalov_testConstructor_menuTitle&quot; }</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/TestConstructor.xaml.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/TestConstructor.xaml.cs" bodystart="43" bodyend="43"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/TestConstructor.g.i.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/TestConstructor.g.i.cs" bodystart="43" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1ad70275bbde2d37af9f1a5c16ee51ebdc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void THB_Plugin_Exams.TestConstructor.InitializeComponent</definition>
-        <argsstring>()</argsstring>
-        <name>InitializeComponent</name>
-        <briefdescription>
-<para>InitializeComponent </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/TestConstructor.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/TestConstructor.g.cs" bodystart="50" bodyend="62"/>
-      </memberdef>
       <memberdef kind="function" id="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1ad70275bbde2d37af9f1a5c16ee51ebdc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void THB_Plugin_Exams.TestConstructor.InitializeComponent</definition>
@@ -84,74 +46,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/TestConstructor.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/TestConstructor.g.cs" bodystart="50" bodyend="62"/>
-      </memberdef>
-      <memberdef kind="function" id="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1ad70275bbde2d37af9f1a5c16ee51ebdc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void THB_Plugin_Exams.TestConstructor.InitializeComponent</definition>
-        <argsstring>()</argsstring>
-        <name>InitializeComponent</name>
-        <briefdescription>
-<para>InitializeComponent </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
         <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/TestConstructor.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/TestConstructor.g.i.cs" bodystart="50" bodyend="62"/>
-      </memberdef>
-      <memberdef kind="function" id="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1aace6b5247031bfb0e7b0dbb9a90873b2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type></type>
-        <definition>THB_Plugin_Exams.TestConstructor.TestConstructor</definition>
-        <argsstring>()</argsstring>
-        <name>TestConstructor</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/TestConstructor.xaml.cs" line="38" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/TestConstructor.xaml.cs" bodystart="38" bodyend="41"/>
-      </memberdef>
-      <memberdef kind="function" id="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a63e4366632dc3a521527366b5c28dffc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void THB_Plugin_Exams.TestConstructor.OnStart</definition>
-        <argsstring>(object sender)</argsstring>
-        <name>OnStart</name>
-        <param>
-          <type>object</type>
-          <declname>sender</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/TestConstructor.xaml.cs" line="48" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/TestConstructor.xaml.cs" bodystart="48" bodyend="51"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
-      <memberdef kind="function" id="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a22d27f93166ca180758b1aea7adcf6e0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void System.Windows.Markup.IComponentConnector.</type>
-        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Exams.TestConstructor.Connect</definition>
-        <argsstring>(int connectionId, object target)</argsstring>
-        <name>Connect</name>
-        <param>
-          <type>int</type>
-          <declname>connectionId</declname>
-        </param>
-        <param>
-          <type>object</type>
-          <declname>target</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/TestConstructor.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/TestConstructor.g.cs" bodystart="70" bodyend="72"/>
-      </memberdef>
       <memberdef kind="function" id="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a22d27f93166ca180758b1aea7adcf6e0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void System.Windows.Markup.IComponentConnector.</type>
         <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Exams.TestConstructor.Connect</definition>
@@ -192,124 +90,60 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/TestConstructor.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/TestConstructor.g.cs" bodystart="70" bodyend="72"/>
-      </memberdef>
-      <memberdef kind="function" id="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a22d27f93166ca180758b1aea7adcf6e0" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void System.Windows.Markup.IComponentConnector.</type>
-        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Exams.TestConstructor.Connect</definition>
-        <argsstring>(int connectionId, object target)</argsstring>
-        <name>Connect</name>
-        <param>
-          <type>int</type>
-          <declname>connectionId</declname>
-        </param>
-        <param>
-          <type>object</type>
-          <declname>target</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
         <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/TestConstructor.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/TestConstructor.g.i.cs" bodystart="70" bodyend="72"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para><ref refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor" kindref="compound">TestConstructor</ref> </para>    </briefdescription>
     <detaileddescription>
-<para>Interaction logic for TestConstructor.xaml </para>    </detaileddescription>
+    </detaileddescription>
     <inheritancegraph>
-      <node id="279">
-        <label>UniformClient::Plugins::IPlugin</label>
-      </node>
-      <node id="280">
+      <node id="381">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="281">
+      <node id="382">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
-      <node id="278">
-        <label>UserControl</label>
-      </node>
-      <node id="277">
+      <node id="380">
         <label>THB_Plugin_Exams.TestConstructor</label>
         <link refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor"/>
-        <childnode refid="278" relation="public-inheritance">
+        <childnode refid="381" relation="public-inheritance">
         </childnode>
-        <childnode refid="279" relation="public-inheritance">
+        <childnode refid="382" relation="public-inheritance">
         </childnode>
-        <childnode refid="280" relation="public-inheritance">
+        <childnode refid="381" relation="public-inheritance">
         </childnode>
-        <childnode refid="281" relation="public-inheritance">
-        </childnode>
-        <childnode refid="280" relation="public-inheritance">
-        </childnode>
-        <childnode refid="281" relation="public-inheritance">
-        </childnode>
-        <childnode refid="280" relation="public-inheritance">
-        </childnode>
-        <childnode refid="281" relation="public-inheritance">
-        </childnode>
-        <childnode refid="280" relation="public-inheritance">
-        </childnode>
-        <childnode refid="281" relation="public-inheritance">
+        <childnode refid="382" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="284">
-        <label>UniformClient::Plugins::IPlugin</label>
-      </node>
-      <node id="285">
+      <node id="384">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="286">
+      <node id="385">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
-      <node id="283">
-        <label>UserControl</label>
-      </node>
-      <node id="282">
+      <node id="383">
         <label>THB_Plugin_Exams.TestConstructor</label>
         <link refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor"/>
-        <childnode refid="283" relation="public-inheritance">
+        <childnode refid="384" relation="public-inheritance">
         </childnode>
-        <childnode refid="284" relation="public-inheritance">
+        <childnode refid="385" relation="public-inheritance">
         </childnode>
-        <childnode refid="285" relation="public-inheritance">
+        <childnode refid="384" relation="public-inheritance">
         </childnode>
-        <childnode refid="286" relation="public-inheritance">
-        </childnode>
-        <childnode refid="285" relation="public-inheritance">
-        </childnode>
-        <childnode refid="286" relation="public-inheritance">
-        </childnode>
-        <childnode refid="285" relation="public-inheritance">
-        </childnode>
-        <childnode refid="286" relation="public-inheritance">
-        </childnode>
-        <childnode refid="285" relation="public-inheritance">
-        </childnode>
-        <childnode refid="286" relation="public-inheritance">
+        <childnode refid="385" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/TestConstructor.g.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/TestConstructor.g.cs" bodystart="41" bodyend="73"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/TestConstructor.g.i.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/TestConstructor.g.i.cs" bodystart="41" bodyend="73"/>
     <listofallmembers>
       <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a1eaeb6477f25dff83c567410511fad08" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::TestConstructor</scope><name>_contentLoaded</name></member>
       <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a22d27f93166ca180758b1aea7adcf6e0" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::TestConstructor</scope><name>Connect</name></member>
       <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a22d27f93166ca180758b1aea7adcf6e0" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::TestConstructor</scope><name>Connect</name></member>
-      <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a22d27f93166ca180758b1aea7adcf6e0" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::TestConstructor</scope><name>Connect</name></member>
-      <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a22d27f93166ca180758b1aea7adcf6e0" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::TestConstructor</scope><name>Connect</name></member>
       <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1ad70275bbde2d37af9f1a5c16ee51ebdc" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::TestConstructor</scope><name>InitializeComponent</name></member>
       <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1ad70275bbde2d37af9f1a5c16ee51ebdc" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::TestConstructor</scope><name>InitializeComponent</name></member>
-      <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1ad70275bbde2d37af9f1a5c16ee51ebdc" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::TestConstructor</scope><name>InitializeComponent</name></member>
-      <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1ad70275bbde2d37af9f1a5c16ee51ebdc" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::TestConstructor</scope><name>InitializeComponent</name></member>
-      <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a85cefaa72576228ed78d6c8702efcc1d" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::TestConstructor</scope><name>Meta</name></member>
-      <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a63e4366632dc3a521527366b5c28dffc" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::TestConstructor</scope><name>OnStart</name></member>
-      <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1aace6b5247031bfb0e7b0dbb9a90873b2" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::TestConstructor</scope><name>TestConstructor</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

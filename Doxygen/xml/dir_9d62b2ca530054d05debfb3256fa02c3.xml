@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_9d62b2ca530054d05debfb3256fa02c3" kind="dir">
+    <compoundname>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamPlanner</compoundname>
+    <innerfile refid="d5/d57/_debug_2_exam_planner_2_exam_planner_8g_8i_8cs">ExamPlanner.g.i.cs</innerfile>
+    <innerfile refid="d9/d1f/_t_h_b_01_plugin_01_exams_2obj_2_debug_2_exam_planner_2_page_8g_8i_8cs">Page.g.i.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamPlanner/"/>
+  </compounddef>
+</doxygen>

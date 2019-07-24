@@ -47,7 +47,7 @@
 <codeline lineno="36"><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal"><ref refid="dc/da6/namespace_teacher_handbook" kindref="compound">TeacherHandbook</ref><sp/>{</highlight></codeline>
 <codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">partial<sp/>class<sp/></highlight><highlight class="normal"><ref refid="df/d32/class_teacher_handbook_1_1_main_window" kindref="compound">MainWindow</ref><sp/>:<sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Windows.Window,<sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Windows.Markup.IComponentConnector<sp/>{</highlight></codeline>
+<codeline lineno="42" refid="df/d32/class_teacher_handbook_1_1_main_window" refkind="compound"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">partial<sp/>class<sp/></highlight><highlight class="normal"><ref refid="df/d32/class_teacher_handbook_1_1_main_window" kindref="compound">MainWindow</ref><sp/>:<sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Windows.Window,<sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Windows.Markup.IComponentConnector<sp/>{</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#line<sp/>22<sp/>&quot;..\..\MainWindow.xaml&quot;</highlight><highlight class="normal"></highlight></codeline>
@@ -142,6 +142,6 @@
 <codeline lineno="137"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="138"><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/MainWindow.g.i.cs"/>
+    <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/MainWindow.g.i.cs"/>
   </compounddef>
 </doxygen>

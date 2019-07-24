@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_42efd13ab9b2a775f66bc0ed95bf5775" kind="dir">
+    <compoundname>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/Properties</compoundname>
+    <innerfile refid="dd/dcd/_apps_2_clients_2_teacher_handbook_2_properties_2_assembly_info_8cs">AssemblyInfo.cs</innerfile>
+    <innerfile refid="d9/d0a/_apps_2_clients_2_teacher_handbook_2_properties_2_resources_8_designer_8cs">Resources.Designer.cs</innerfile>
+    <innerfile refid="d4/d71/_apps_2_clients_2_teacher_handbook_2_properties_2_settings_8_designer_8cs">Settings.Designer.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/Properties/"/>
+  </compounddef>
+</doxygen>

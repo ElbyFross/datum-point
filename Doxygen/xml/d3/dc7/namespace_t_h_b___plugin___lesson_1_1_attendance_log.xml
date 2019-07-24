@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d3/dc7/namespace_t_h_b___plugin___lesson_1_1_attendance_log" kind="namespace" language="C#">
+    <compoundname>THB_Plugin_Lesson::AttendanceLog</compoundname>
+    <innerclass refid="d9/d5f/class_t_h_b___plugin___lesson_1_1_attendance_log_1_1_page" prot="public">THB_Plugin_Lesson::AttendanceLog::Page</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/AttendanceLog/Page.xaml.cs" line="32" column="1"/>
+  </compounddef>
+</doxygen>

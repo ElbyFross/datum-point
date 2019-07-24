@@ -6,33 +6,6 @@
     <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
     <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
     <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">IPlugin</basecompoundref>
-      <sectiondef kind="property">
-      <memberdef kind="property" id="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1abd3121deb1475dcaa00041ac8b1a5ba4" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
-        <type>MenuItemMeta</type>
-        <definition>MenuItemMeta THB_Plugin_Social.Achivments.Achivments.Meta</definition>
-        <argsstring></argsstring>
-        <name>Meta</name>
-        <initializer>= new MenuItemMeta()
-        {
-            domain = &quot;0_main.30_achivments&quot;,
-            titleDictionaryCode = &quot;p_podshyvalov_achivments_menuTitle&quot;,
-            defaultTitle = &quot;Achivments&quot;
-        }</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Achivments/Achivments.xaml.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Achivments/Achivments.xaml.cs" bodystart="43" bodyend="43"/>
-      </memberdef>
-      </sectiondef>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1ab8b036a3f1931db6974296216d403fd0" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -45,53 +18,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Achivments/Achivments.g.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Achivments/Achivments.g.cs" bodystart="43" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Achivments/Achivments.g.i.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Achivments/Achivments.g.i.cs" bodystart="43" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1aa87c0cce6773312a3216ed95f2c575d0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type></type>
-        <definition>THB_Plugin_Social.Achivments.Achivments.Achivments</definition>
-        <argsstring>()</argsstring>
-        <name>Achivments</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Achivments/Achivments.xaml.cs" line="38" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Achivments/Achivments.xaml.cs" bodystart="38" bodyend="41"/>
-      </memberdef>
-      <memberdef kind="function" id="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a8dfdd6bb71beeebc277e91d16497dac0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void THB_Plugin_Social.Achivments.Achivments.OnStart</definition>
-        <argsstring>(object sender)</argsstring>
-        <name>OnStart</name>
-        <param>
-          <type>object</type>
-          <declname>sender</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Achivments/Achivments.xaml.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Achivments/Achivments.xaml.cs" bodystart="50" bodyend="54"/>
-      </memberdef>
-      <memberdef kind="function" id="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a6f673611ddba423db8bacc8dbdff7a00" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void THB_Plugin_Social.Achivments.Achivments.InitializeComponent</definition>
-        <argsstring>()</argsstring>
-        <name>InitializeComponent</name>
-        <briefdescription>
-<para>InitializeComponent </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Achivments/Achivments.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Achivments/Achivments.g.cs" bodystart="50" bodyend="62"/>
-      </memberdef>
       <memberdef kind="function" id="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a6f673611ddba423db8bacc8dbdff7a00" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void THB_Plugin_Social.Achivments.Achivments.InitializeComponent</definition>
@@ -116,44 +46,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Achivments/Achivments.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Achivments/Achivments.g.cs" bodystart="50" bodyend="62"/>
-      </memberdef>
-      <memberdef kind="function" id="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a6f673611ddba423db8bacc8dbdff7a00" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void THB_Plugin_Social.Achivments.Achivments.InitializeComponent</definition>
-        <argsstring>()</argsstring>
-        <name>InitializeComponent</name>
-        <briefdescription>
-<para>InitializeComponent </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
         <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Achivments/Achivments.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Achivments/Achivments.g.i.cs" bodystart="50" bodyend="62"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
-      <memberdef kind="function" id="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a1ba800d5953f08b8d81e731da0c441ac" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void System.Windows.Markup.IComponentConnector.</type>
-        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Social.Achivments.Achivments.Connect</definition>
-        <argsstring>(int connectionId, object target)</argsstring>
-        <name>Connect</name>
-        <param>
-          <type>int</type>
-          <declname>connectionId</declname>
-        </param>
-        <param>
-          <type>object</type>
-          <declname>target</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Achivments/Achivments.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Achivments/Achivments.g.cs" bodystart="70" bodyend="72"/>
-      </memberdef>
       <memberdef kind="function" id="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a1ba800d5953f08b8d81e731da0c441ac" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void System.Windows.Markup.IComponentConnector.</type>
         <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Social.Achivments.Achivments.Connect</definition>
@@ -194,38 +90,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Achivments/Achivments.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Achivments/Achivments.g.cs" bodystart="70" bodyend="72"/>
-      </memberdef>
-      <memberdef kind="function" id="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a1ba800d5953f08b8d81e731da0c441ac" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void System.Windows.Markup.IComponentConnector.</type>
-        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Social.Achivments.Achivments.Connect</definition>
-        <argsstring>(int connectionId, object target)</argsstring>
-        <name>Connect</name>
-        <param>
-          <type>int</type>
-          <declname>connectionId</declname>
-        </param>
-        <param>
-          <type>object</type>
-          <declname>target</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
         <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Achivments/Achivments.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Achivments/Achivments.g.i.cs" bodystart="70" bodyend="72"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Interaction logic for Achivments.xaml </para>    </briefdescription>
+<para><ref refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments" kindref="compound">Achivments</ref> </para>    </briefdescription>
     <detaileddescription>
-<para><ref refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments" kindref="compound">Achivments</ref> </para>    </detaileddescription>
+    </detaileddescription>
     <inheritancegraph>
-      <node id="4">
-        <label>IPlugin</label>
-      </node>
       <node id="0">
         <label>THB_Plugin_Social.Achivments.Achivments</label>
         <link refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments"/>
@@ -237,18 +109,6 @@
         </childnode>
         <childnode refid="2" relation="public-inheritance">
         </childnode>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-        <childnode refid="1" relation="public-inheritance">
-        </childnode>
-        <childnode refid="2" relation="public-inheritance">
-        </childnode>
-        <childnode refid="3" relation="public-inheritance">
-        </childnode>
-        <childnode refid="4" relation="public-inheritance">
-        </childnode>
       </node>
       <node id="1">
         <label>System::Windows::Controls::UserControl</label>
@@ -256,62 +116,34 @@
       <node id="2">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
-      <node id="3">
-        <label>UserControl</label>
-      </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="9">
-        <label>IPlugin</label>
-      </node>
-      <node id="5">
+      <node id="3">
         <label>THB_Plugin_Social.Achivments.Achivments</label>
         <link refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments"/>
-        <childnode refid="6" relation="public-inheritance">
+        <childnode refid="4" relation="public-inheritance">
         </childnode>
-        <childnode refid="7" relation="public-inheritance">
+        <childnode refid="5" relation="public-inheritance">
         </childnode>
-        <childnode refid="6" relation="public-inheritance">
+        <childnode refid="4" relation="public-inheritance">
         </childnode>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-        <childnode refid="6" relation="public-inheritance">
-        </childnode>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-        <childnode refid="6" relation="public-inheritance">
-        </childnode>
-        <childnode refid="7" relation="public-inheritance">
-        </childnode>
-        <childnode refid="8" relation="public-inheritance">
-        </childnode>
-        <childnode refid="9" relation="public-inheritance">
+        <childnode refid="5" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="6">
+      <node id="4">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="7">
+      <node id="5">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
-      <node id="8">
-        <label>UserControl</label>
-      </node>
     </collaborationgraph>
-    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Achivments/Achivments.xaml.cs" line="37" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Achivments/Achivments.xaml.cs" bodystart="36" bodyend="55"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Achivments/Achivments.g.i.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Achivments/Achivments.g.i.cs" bodystart="41" bodyend="73"/>
     <listofallmembers>
       <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1ab8b036a3f1931db6974296216d403fd0" prot="private" virt="non-virtual"><scope>THB_Plugin_Social::Achivments::Achivments</scope><name>_contentLoaded</name></member>
-      <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1aa87c0cce6773312a3216ed95f2c575d0" prot="public" virt="non-virtual"><scope>THB_Plugin_Social::Achivments::Achivments</scope><name>Achivments</name></member>
-      <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a1ba800d5953f08b8d81e731da0c441ac" prot="private" virt="non-virtual"><scope>THB_Plugin_Social::Achivments::Achivments</scope><name>Connect</name></member>
-      <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a1ba800d5953f08b8d81e731da0c441ac" prot="private" virt="non-virtual"><scope>THB_Plugin_Social::Achivments::Achivments</scope><name>Connect</name></member>
       <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a1ba800d5953f08b8d81e731da0c441ac" prot="private" virt="non-virtual"><scope>THB_Plugin_Social::Achivments::Achivments</scope><name>Connect</name></member>
       <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a1ba800d5953f08b8d81e731da0c441ac" prot="private" virt="non-virtual"><scope>THB_Plugin_Social::Achivments::Achivments</scope><name>Connect</name></member>
       <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a6f673611ddba423db8bacc8dbdff7a00" prot="public" virt="non-virtual"><scope>THB_Plugin_Social::Achivments::Achivments</scope><name>InitializeComponent</name></member>
       <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a6f673611ddba423db8bacc8dbdff7a00" prot="public" virt="non-virtual"><scope>THB_Plugin_Social::Achivments::Achivments</scope><name>InitializeComponent</name></member>
-      <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a6f673611ddba423db8bacc8dbdff7a00" prot="public" virt="non-virtual"><scope>THB_Plugin_Social::Achivments::Achivments</scope><name>InitializeComponent</name></member>
-      <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a6f673611ddba423db8bacc8dbdff7a00" prot="public" virt="non-virtual"><scope>THB_Plugin_Social::Achivments::Achivments</scope><name>InitializeComponent</name></member>
-      <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1abd3121deb1475dcaa00041ac8b1a5ba4" prot="public" virt="non-virtual"><scope>THB_Plugin_Social::Achivments::Achivments</scope><name>Meta</name></member>
-      <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a8dfdd6bb71beeebc277e91d16497dac0" prot="public" virt="non-virtual"><scope>THB_Plugin_Social::Achivments::Achivments</scope><name>OnStart</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_fe252eff974f3cbde25d54aeb6f86821" kind="dir">
+    <compoundname>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Controls</compoundname>
+    <innerfile refid="d3/df5/_debug_2_controls_2_catalog_button_8g_8i_8cs">CatalogButton.g.i.cs</innerfile>
+    <innerfile refid="d2/d9b/_apps_2_clients_2_teacher_handbook_2obj_2_debug_2_controls_2_user_control1_8g_8i_8cs">UserControl1.g.i.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Controls/"/>
+  </compounddef>
+</doxygen>

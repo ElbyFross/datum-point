@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d2/dce/namespace_t_h_b___plugin___lesson_1_1_lesson_board" kind="namespace" language="C#">
+    <compoundname>THB_Plugin_Lesson::LessonBoard</compoundname>
+    <innerclass refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page" prot="public">THB_Plugin_Lesson::LessonBoard::Page</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/LessonBoard/Page.xaml.cs" line="32" column="1"/>
+  </compounddef>
+</doxygen>

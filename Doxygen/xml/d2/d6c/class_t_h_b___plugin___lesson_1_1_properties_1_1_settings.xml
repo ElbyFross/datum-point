@@ -39,26 +39,26 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="265">
+      <node id="348">
         <label>global::SystemConfiguration::ApplicationSettingsBase</label>
       </node>
-      <node id="264">
+      <node id="347">
         <label>THB_Plugin_Lesson.Properties.Settings</label>
         <link refid="d2/d6c/class_t_h_b___plugin___lesson_1_1_properties_1_1_settings"/>
-        <childnode refid="265" relation="public-inheritance">
+        <childnode refid="348" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="267">
+      <node id="350">
         <label>global::SystemConfiguration::ApplicationSettingsBase</label>
       </node>
-      <node id="266">
+      <node id="349">
         <label>THB_Plugin_Lesson.Properties.Settings</label>
         <link refid="d2/d6c/class_t_h_b___plugin___lesson_1_1_properties_1_1_settings"/>
-        <childnode refid="267" relation="public-inheritance">
+        <childnode refid="350" relation="public-inheritance">
         </childnode>
-        <childnode refid="266" relation="usage">
+        <childnode refid="349" relation="usage">
           <edgelabel>defaultInstance</edgelabel>
         </childnode>
       </node>

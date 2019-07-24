@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_205fc6134b6f4a366707da6e26484701" kind="dir">
+    <compoundname>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard</compoundname>
+    <innerfile refid="de/d0c/_debug_2_orders_board_2_orders_board_8g_8i_8cs">OrdersBoard.g.i.cs</innerfile>
+    <innerfile refid="d0/de0/_t_h_b_01_plugin_01_orders_2obj_2_debug_2_orders_board_2_page_8g_8cs">Page.g.cs</innerfile>
+    <innerfile refid="dc/df4/_t_h_b_01_plugin_01_orders_2obj_2_debug_2_orders_board_2_page_8g_8i_8cs">Page.g.i.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard/"/>
+  </compounddef>
+</doxygen>

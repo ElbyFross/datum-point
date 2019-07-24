@@ -1,0 +1,363 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page" kind="class" language="C#" prot="public">
+    <compoundname>THB_Plugin_Lesson::Assesments::Page</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IPlugin</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1afd843b1fada13c4f765133fd8cdd6bc2" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>MenuItemMeta</type>
+        <definition>MenuItemMeta THB_Plugin_Lesson.Assesments.Page.Meta</definition>
+        <argsstring></argsstring>
+        <name>Meta</name>
+        <initializer>= new MenuItemMeta()
+        {
+            domain = &quot;20_lesson.10_assesments&quot;,
+            titleDictionaryCode = &quot;p_podshyvalov_lbAssestments_menuTitle&quot;,
+            defaultTitle = &quot;Assesments&quot;
+        }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Assesments/Page.xaml.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Assesments/Page.xaml.cs" bodystart="43" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1aef1c774d473089615382f0e3f6f3259d" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool THB_Plugin_Lesson.Assesments.Page::_contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Assesments/Assesments.g.i.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Assesments/Assesments.g.i.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a4cfc1ac2d5a3dfdcaa4cc31d1fac2da3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>THB_Plugin_Lesson.Assesments.Page.Page</definition>
+        <argsstring>()</argsstring>
+        <name>Page</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Assesments/Page.xaml.cs" line="38" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Assesments/Page.xaml.cs" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a6c4fd1211a5edfce5075aaabaeb0071b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.Assesments.Page.OnStart</definition>
+        <argsstring>(object sender)</argsstring>
+        <name>OnStart</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Assesments/Page.xaml.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Assesments/Page.xaml.cs" bodystart="50" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a9f9240dd6f48a930d8b98fab7ded779d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.Assesments.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Assesments/Assesments.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Assesments/Assesments.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a9f9240dd6f48a930d8b98fab7ded779d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.Assesments.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Assesments/Page.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Assesments/Page.g.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a9f9240dd6f48a930d8b98fab7ded779d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.Assesments.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Assesments/Page.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Assesments/Page.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a9f9240dd6f48a930d8b98fab7ded779d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.Assesments.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/Assesments/Page.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/Assesments/Page.g.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a9f9240dd6f48a930d8b98fab7ded779d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.Assesments.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/Assesments/Page.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/Assesments/Page.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a3d7b3bfd0bfd5ff6f88e5d1bfeff98a9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.Assesments.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Assesments/Assesments.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Assesments/Assesments.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a3d7b3bfd0bfd5ff6f88e5d1bfeff98a9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.Assesments.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Assesments/Page.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Assesments/Page.g.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a3d7b3bfd0bfd5ff6f88e5d1bfeff98a9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.Assesments.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Assesments/Page.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Assesments/Page.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a3d7b3bfd0bfd5ff6f88e5d1bfeff98a9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.Assesments.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/Assesments/Page.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/Assesments/Page.g.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a3d7b3bfd0bfd5ff6f88e5d1bfeff98a9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.Assesments.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/Assesments/Page.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/Assesments/Page.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interaction logic for Assesments.xaml </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page" kindref="compound">Page</ref> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="226">
+        <label>THB_Plugin_Lesson.Assesments.Page</label>
+        <link refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page"/>
+        <childnode refid="227" relation="public-inheritance">
+        </childnode>
+        <childnode refid="228" relation="public-inheritance">
+        </childnode>
+        <childnode refid="227" relation="public-inheritance">
+        </childnode>
+        <childnode refid="228" relation="public-inheritance">
+        </childnode>
+        <childnode refid="227" relation="public-inheritance">
+        </childnode>
+        <childnode refid="228" relation="public-inheritance">
+        </childnode>
+        <childnode refid="227" relation="public-inheritance">
+        </childnode>
+        <childnode refid="228" relation="public-inheritance">
+        </childnode>
+        <childnode refid="227" relation="public-inheritance">
+        </childnode>
+        <childnode refid="228" relation="public-inheritance">
+        </childnode>
+        <childnode refid="229" relation="public-inheritance">
+        </childnode>
+        <childnode refid="230" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="230">
+        <label>IPlugin</label>
+      </node>
+      <node id="227">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="228">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+      <node id="229">
+        <label>UserControl</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="231">
+        <label>THB_Plugin_Lesson.Assesments.Page</label>
+        <link refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page"/>
+        <childnode refid="232" relation="public-inheritance">
+        </childnode>
+        <childnode refid="233" relation="public-inheritance">
+        </childnode>
+        <childnode refid="232" relation="public-inheritance">
+        </childnode>
+        <childnode refid="233" relation="public-inheritance">
+        </childnode>
+        <childnode refid="232" relation="public-inheritance">
+        </childnode>
+        <childnode refid="233" relation="public-inheritance">
+        </childnode>
+        <childnode refid="232" relation="public-inheritance">
+        </childnode>
+        <childnode refid="233" relation="public-inheritance">
+        </childnode>
+        <childnode refid="232" relation="public-inheritance">
+        </childnode>
+        <childnode refid="233" relation="public-inheritance">
+        </childnode>
+        <childnode refid="234" relation="public-inheritance">
+        </childnode>
+        <childnode refid="235" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="235">
+        <label>IPlugin</label>
+      </node>
+      <node id="232">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="233">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+      <node id="234">
+        <label>UserControl</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Assesments/Page.xaml.cs" line="37" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Assesments/Page.xaml.cs" bodystart="36" bodyend="55"/>
+    <listofallmembers>
+      <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1aef1c774d473089615382f0e3f6f3259d" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::Assesments::Page</scope><name>_contentLoaded</name></member>
+      <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a3d7b3bfd0bfd5ff6f88e5d1bfeff98a9" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::Assesments::Page</scope><name>Connect</name></member>
+      <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a3d7b3bfd0bfd5ff6f88e5d1bfeff98a9" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::Assesments::Page</scope><name>Connect</name></member>
+      <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a3d7b3bfd0bfd5ff6f88e5d1bfeff98a9" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::Assesments::Page</scope><name>Connect</name></member>
+      <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a3d7b3bfd0bfd5ff6f88e5d1bfeff98a9" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::Assesments::Page</scope><name>Connect</name></member>
+      <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a3d7b3bfd0bfd5ff6f88e5d1bfeff98a9" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::Assesments::Page</scope><name>Connect</name></member>
+      <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a9f9240dd6f48a930d8b98fab7ded779d" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::Assesments::Page</scope><name>InitializeComponent</name></member>
+      <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a9f9240dd6f48a930d8b98fab7ded779d" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::Assesments::Page</scope><name>InitializeComponent</name></member>
+      <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a9f9240dd6f48a930d8b98fab7ded779d" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::Assesments::Page</scope><name>InitializeComponent</name></member>
+      <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a9f9240dd6f48a930d8b98fab7ded779d" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::Assesments::Page</scope><name>InitializeComponent</name></member>
+      <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a9f9240dd6f48a930d8b98fab7ded779d" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::Assesments::Page</scope><name>InitializeComponent</name></member>
+      <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1afd843b1fada13c4f765133fd8cdd6bc2" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::Assesments::Page</scope><name>Meta</name></member>
+      <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a6c4fd1211a5edfce5075aaabaeb0071b" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::Assesments::Page</scope><name>OnStart</name></member>
+      <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a4cfc1ac2d5a3dfdcaa4cc31d1fac2da3" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::Assesments::Page</scope><name>Page</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

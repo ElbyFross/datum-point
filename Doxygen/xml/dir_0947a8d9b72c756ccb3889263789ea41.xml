@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_0947a8d9b72c756ccb3889263789ea41" kind="dir">
+    <compoundname>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI</compoundname>
+    <innerdir refid="dir_002abe5879e82bf3280aa5375fc8e7af">D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Controls</innerdir>
+    <innerdir refid="dir_d69f9836c6f20d7cc44c9e3781291332">D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows</innerdir>
+    <innerfile refid="d0/de6/_debug_2_u_i_2_main_window_8g_8i_8cs">MainWindow.g.i.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/"/>
+  </compounddef>
+</doxygen>

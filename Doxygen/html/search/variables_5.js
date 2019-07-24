@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['pooledtime',['PooledTime',['../df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order.html#ac11e738e1d6b9e7ff3fe4b55e2bd50d5',1,'TeacherHandbook::Core::Orders::BaseOrder']]]
+  ['orderpublisher',['OrderPublisher',['../df/d39/class_teacher_handbook_1_1_core_1_1_orders_1_1_base_order.html#a59ec952bde8892fe9c48d34c838be374',1,'TeacherHandbook::Core::Orders::BaseOrder']]],
+  ['orders',['orders',['../d5/d0e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_logbook.html#a563af1c666ffd5e11808ed38b7f2ed83',1,'TeacherHandbook::Core::Containers::Schedule::Logbook']]]
 ];

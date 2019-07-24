@@ -62,34 +62,34 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="317">
+      <node id="386">
         <label>THB_Plugin_Social.UserControl1</label>
         <link refid="d1/d79/class_t_h_b___plugin___social_1_1_user_control1"/>
-        <childnode refid="318" relation="public-inheritance">
+        <childnode refid="387" relation="public-inheritance">
         </childnode>
-        <childnode refid="319" relation="public-inheritance">
+        <childnode refid="388" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="318">
+      <node id="387">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="319">
+      <node id="388">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="320">
+      <node id="389">
         <label>THB_Plugin_Social.UserControl1</label>
         <link refid="d1/d79/class_t_h_b___plugin___social_1_1_user_control1"/>
-        <childnode refid="321" relation="public-inheritance">
+        <childnode refid="390" relation="public-inheritance">
         </childnode>
-        <childnode refid="322" relation="public-inheritance">
+        <childnode refid="391" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="321">
+      <node id="390">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="322">
+      <node id="391">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
     </collaborationgraph>

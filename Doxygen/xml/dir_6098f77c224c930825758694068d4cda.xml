@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_6098f77c224c930825758694068d4cda" kind="dir">
+    <compoundname>D:/Work/GitHub/datum-point/Apps</compoundname>
+    <innerdir refid="dir_83ab06a0fac8c9a178bccf4756e8502f">D:/Work/GitHub/datum-point/Apps/Clients</innerdir>
+    <innerdir refid="dir_90309e480e910621ef803daa36733b1d">D:/Work/GitHub/datum-point/Apps/Servers</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/Apps/"/>
+  </compounddef>
+</doxygen>

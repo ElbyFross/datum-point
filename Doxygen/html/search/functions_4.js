@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loadxaml_5flangdicts',['LoadXAML_LangDicts',['../d8/de3/class_teacher_handbook_1_1_client.html#a863d00fe6a0ac5b86583c0a8245e07e9',1,'TeacherHandbook::Client']]]
+  ['loadxaml_5flangdicts',['LoadXAML_LangDicts',['../d0/d4e/class_wpf_handler_1_1_localization_1_1_a_p_i.html#a731d709472e9bf3fff2e55145f7a1c4c',1,'WpfHandler::Localization::API']]]
 ];

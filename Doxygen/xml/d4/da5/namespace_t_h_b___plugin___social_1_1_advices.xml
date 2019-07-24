@@ -3,10 +3,11 @@
   <compounddef id="d4/da5/namespace_t_h_b___plugin___social_1_1_advices" kind="namespace" language="C#">
     <compoundname>THB_Plugin_Social::Advices</compoundname>
     <innerclass refid="dc/d36/class_t_h_b___plugin___social_1_1_advices_1_1_advices" prot="public">THB_Plugin_Social::Advices::Advices</innerclass>
+    <innerclass refid="d7/dfb/class_t_h_b___plugin___social_1_1_advices_1_1_page" prot="public">THB_Plugin_Social::Advices::Page</innerclass>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Advices/Advices.xaml.cs" line="32" column="1"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Advices/Page.xaml.cs" line="32" column="1"/>
   </compounddef>
 </doxygen>

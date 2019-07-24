@@ -2,8 +2,9 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_88cbc80a45f57d0edf0c6bbfd5312489" kind="dir">
     <compoundname>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Advices</compoundname>
-    <innerfile refid="df/d34/_release_2_advices_2_advices_8g_8cs">Advices.g.cs</innerfile>
     <innerfile refid="d1/dbb/_release_2_advices_2_advices_8g_8i_8cs">Advices.g.i.cs</innerfile>
+    <innerfile refid="dc/d33/_t_h_b_01_plugin_01_social_2obj_2_release_2_advices_2_page_8g_8cs">Page.g.cs</innerfile>
+    <innerfile refid="d0/df8/_t_h_b_01_plugin_01_social_2obj_2_release_2_advices_2_page_8g_8i_8cs">Page.g.i.cs</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

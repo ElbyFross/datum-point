@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_0ddc832dbbda589c388a0817b3a5c4dc" kind="dir">
+    <compoundname>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug</compoundname>
+    <innerdir refid="dir_fe252eff974f3cbde25d54aeb6f86821">D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Controls</innerdir>
+    <innerdir refid="dir_c905d27f491cc8c425f79988e626a2e9">D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Plugins</innerdir>
+    <innerdir refid="dir_0947a8d9b72c756ccb3889263789ea41">D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI</innerdir>
+    <innerdir refid="dir_b5902a7f466a1762961ffd08b36ca7a8">D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Windows</innerdir>
+    <innerfile refid="d5/d62/_debug_2_app_8g_8cs">App.g.cs</innerfile>
+    <innerfile refid="d7/d83/_debug_2_app_8g_8i_8cs">App.g.i.cs</innerfile>
+    <innerfile refid="d2/d0a/_debug_2_catalog_button_8g_8i_8cs">CatalogButton.g.i.cs</innerfile>
+    <innerfile refid="df/dde/_debug_2_generated_internal_type_helper_8g_8cs">GeneratedInternalTypeHelper.g.cs</innerfile>
+    <innerfile refid="d7/de7/_debug_2_generated_internal_type_helper_8g_8i_8cs">GeneratedInternalTypeHelper.g.i.cs</innerfile>
+    <innerfile refid="d8/d80/_debug_2_main_window_8g_8i_8cs">MainWindow.g.i.cs</innerfile>
+    <innerfile refid="d4/d86/_apps_2_clients_2_teacher_handbook_2obj_2_debug_2_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs">TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</innerfile>
+    <innerfile refid="d4/dae/_apps_2_clients_2_teacher_handbook_2obj_2_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs">TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</innerfile>
+    <innerfile refid="d4/dcf/_apps_2_clients_2_teacher_handbook_2obj_2_debug_2_temporary_generated_file___e7_a71_f73-0_f8_d-45eaaaa070952cc06ebeaed71d4e21d5a">TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/"/>
+  </compounddef>
+</doxygen>

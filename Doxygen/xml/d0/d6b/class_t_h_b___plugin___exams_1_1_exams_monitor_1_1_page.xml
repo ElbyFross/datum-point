@@ -1,0 +1,409 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page" kind="class" language="C#" prot="public">
+    <compoundname>THB_Plugin_Exams::ExamsMonitor::Page</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IPlugin</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a2a93c249b6171b34d0a60e049f4a552d" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>MenuItemMeta</type>
+        <definition>MenuItemMeta THB_Plugin_Exams.ExamsMonitor.Page.Meta</definition>
+        <argsstring></argsstring>
+        <name>Meta</name>
+        <initializer>= new MenuItemMeta()
+        {
+            defaultTitle = &quot;Exams monitor&quot;,
+            domain = &quot;30_exams&quot;,
+            titleDictionaryCode = &quot;p_podshyvalov_examsMonitor_menuTitle&quot;
+        }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/ExamsMonitor/Page.xaml.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/ExamsMonitor/Page.xaml.cs" bodystart="43" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a0426f659cf9405b6663f488af616c2ef" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool THB_Plugin_Exams.ExamsMonitor.Page::_contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamMonitor/Monitor.g.i.cs" line="45" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamMonitor/Monitor.g.i.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a6afe8ded25cbb017efea4d7743cd0fb3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>THB_Plugin_Exams.ExamsMonitor.Page.Page</definition>
+        <argsstring>()</argsstring>
+        <name>Page</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/ExamsMonitor/Page.xaml.cs" line="38" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/ExamsMonitor/Page.xaml.cs" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a1fe972efc415ed5c2a43f9463165fd93" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Exams.ExamsMonitor.Page.OnStart</definition>
+        <argsstring>(object sender)</argsstring>
+        <name>OnStart</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/ExamsMonitor/Page.xaml.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/ExamsMonitor/Page.xaml.cs" bodystart="50" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1ab0fefb3d9540c12aa45fb516ba4355b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Exams.ExamsMonitor.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamMonitor/Monitor.g.i.cs" line="52" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamMonitor/Monitor.g.i.cs" bodystart="52" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1ab0fefb3d9540c12aa45fb516ba4355b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Exams.ExamsMonitor.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamsMonitor/Monitor.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamsMonitor/Monitor.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1ab0fefb3d9540c12aa45fb516ba4355b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Exams.ExamsMonitor.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamsMonitor/Page.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamsMonitor/Page.g.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1ab0fefb3d9540c12aa45fb516ba4355b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Exams.ExamsMonitor.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamsMonitor/Page.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamsMonitor/Page.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1ab0fefb3d9540c12aa45fb516ba4355b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Exams.ExamsMonitor.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamsMonitor/Page.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamsMonitor/Page.g.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1ab0fefb3d9540c12aa45fb516ba4355b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Exams.ExamsMonitor.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamsMonitor/Page.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamsMonitor/Page.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a8abf501e85bd4a89570f586faf58195e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Exams.ExamsMonitor.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamMonitor/Monitor.g.i.cs" line="74" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamMonitor/Monitor.g.i.cs" bodystart="74" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a8abf501e85bd4a89570f586faf58195e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Exams.ExamsMonitor.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamsMonitor/Monitor.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamsMonitor/Monitor.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a8abf501e85bd4a89570f586faf58195e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Exams.ExamsMonitor.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamsMonitor/Page.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamsMonitor/Page.g.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a8abf501e85bd4a89570f586faf58195e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Exams.ExamsMonitor.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamsMonitor/Page.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamsMonitor/Page.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a8abf501e85bd4a89570f586faf58195e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Exams.ExamsMonitor.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamsMonitor/Page.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamsMonitor/Page.g.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a8abf501e85bd4a89570f586faf58195e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Exams.ExamsMonitor.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamsMonitor/Page.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamsMonitor/Page.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interaction logic for Monitor.xaml </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page" kindref="compound">Page</ref> </para><para><ref refid="d9/d79/class_t_h_b___plugin___exams_1_1_monitor" kindref="compound">Monitor</ref> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="190">
+        <label>UniformClient::Plugins::IPlugin</label>
+      </node>
+      <node id="186">
+        <label>THB_Plugin_Exams.ExamsMonitor.Page</label>
+        <link refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page"/>
+        <childnode refid="187" relation="public-inheritance">
+        </childnode>
+        <childnode refid="188" relation="public-inheritance">
+        </childnode>
+        <childnode refid="187" relation="public-inheritance">
+        </childnode>
+        <childnode refid="188" relation="public-inheritance">
+        </childnode>
+        <childnode refid="187" relation="public-inheritance">
+        </childnode>
+        <childnode refid="188" relation="public-inheritance">
+        </childnode>
+        <childnode refid="187" relation="public-inheritance">
+        </childnode>
+        <childnode refid="188" relation="public-inheritance">
+        </childnode>
+        <childnode refid="187" relation="public-inheritance">
+        </childnode>
+        <childnode refid="188" relation="public-inheritance">
+        </childnode>
+        <childnode refid="187" relation="public-inheritance">
+        </childnode>
+        <childnode refid="188" relation="public-inheritance">
+        </childnode>
+        <childnode refid="189" relation="public-inheritance">
+        </childnode>
+        <childnode refid="190" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="187">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="188">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+      <node id="189">
+        <label>UserControl</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="195">
+        <label>UniformClient::Plugins::IPlugin</label>
+      </node>
+      <node id="191">
+        <label>THB_Plugin_Exams.ExamsMonitor.Page</label>
+        <link refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page"/>
+        <childnode refid="192" relation="public-inheritance">
+        </childnode>
+        <childnode refid="193" relation="public-inheritance">
+        </childnode>
+        <childnode refid="192" relation="public-inheritance">
+        </childnode>
+        <childnode refid="193" relation="public-inheritance">
+        </childnode>
+        <childnode refid="192" relation="public-inheritance">
+        </childnode>
+        <childnode refid="193" relation="public-inheritance">
+        </childnode>
+        <childnode refid="192" relation="public-inheritance">
+        </childnode>
+        <childnode refid="193" relation="public-inheritance">
+        </childnode>
+        <childnode refid="192" relation="public-inheritance">
+        </childnode>
+        <childnode refid="193" relation="public-inheritance">
+        </childnode>
+        <childnode refid="192" relation="public-inheritance">
+        </childnode>
+        <childnode refid="193" relation="public-inheritance">
+        </childnode>
+        <childnode refid="194" relation="public-inheritance">
+        </childnode>
+        <childnode refid="195" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="192">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="193">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+      <node id="194">
+        <label>UserControl</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/ExamsMonitor/Page.xaml.cs" line="37" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/ExamsMonitor/Page.xaml.cs" bodystart="36" bodyend="54"/>
+    <listofallmembers>
+      <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a0426f659cf9405b6663f488af616c2ef" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::ExamsMonitor::Page</scope><name>_contentLoaded</name></member>
+      <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a8abf501e85bd4a89570f586faf58195e" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::ExamsMonitor::Page</scope><name>Connect</name></member>
+      <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a8abf501e85bd4a89570f586faf58195e" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::ExamsMonitor::Page</scope><name>Connect</name></member>
+      <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a8abf501e85bd4a89570f586faf58195e" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::ExamsMonitor::Page</scope><name>Connect</name></member>
+      <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a8abf501e85bd4a89570f586faf58195e" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::ExamsMonitor::Page</scope><name>Connect</name></member>
+      <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a8abf501e85bd4a89570f586faf58195e" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::ExamsMonitor::Page</scope><name>Connect</name></member>
+      <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a8abf501e85bd4a89570f586faf58195e" prot="private" virt="non-virtual"><scope>THB_Plugin_Exams::ExamsMonitor::Page</scope><name>Connect</name></member>
+      <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1ab0fefb3d9540c12aa45fb516ba4355b3" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::ExamsMonitor::Page</scope><name>InitializeComponent</name></member>
+      <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1ab0fefb3d9540c12aa45fb516ba4355b3" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::ExamsMonitor::Page</scope><name>InitializeComponent</name></member>
+      <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1ab0fefb3d9540c12aa45fb516ba4355b3" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::ExamsMonitor::Page</scope><name>InitializeComponent</name></member>
+      <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1ab0fefb3d9540c12aa45fb516ba4355b3" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::ExamsMonitor::Page</scope><name>InitializeComponent</name></member>
+      <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1ab0fefb3d9540c12aa45fb516ba4355b3" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::ExamsMonitor::Page</scope><name>InitializeComponent</name></member>
+      <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1ab0fefb3d9540c12aa45fb516ba4355b3" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::ExamsMonitor::Page</scope><name>InitializeComponent</name></member>
+      <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a2a93c249b6171b34d0a60e049f4a552d" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::ExamsMonitor::Page</scope><name>Meta</name></member>
+      <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a1fe972efc415ed5c2a43f9463165fd93" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::ExamsMonitor::Page</scope><name>OnStart</name></member>
+      <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a6afe8ded25cbb017efea4d7743cd0fb3" prot="public" virt="non-virtual"><scope>THB_Plugin_Exams::ExamsMonitor::Page</scope><name>Page</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

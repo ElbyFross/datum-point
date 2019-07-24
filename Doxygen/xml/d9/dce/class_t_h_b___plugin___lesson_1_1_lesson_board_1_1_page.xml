@@ -1,0 +1,363 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page" kind="class" language="C#" prot="public">
+    <compoundname>THB_Plugin_Lesson::LessonBoard::Page</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IPlugin</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a2fa2ce0d3e248f3e6a23a8d02586dc12" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>MenuItemMeta</type>
+        <definition>MenuItemMeta THB_Plugin_Lesson.LessonBoard.Page.Meta</definition>
+        <argsstring></argsstring>
+        <name>Meta</name>
+        <initializer>= new MenuItemMeta()
+        {
+            domain = &quot;20_lesson&quot;,
+            titleDictionaryCode = &quot;p_podshyvalov_lessonBoard_menuTitle&quot;,
+            defaultTitle = &quot;Lesson&apos;s board&quot;
+        }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/LessonBoard/Page.xaml.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/LessonBoard/Page.xaml.cs" bodystart="43" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a9fdc20ce74c492e465267174aab1678f" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool THB_Plugin_Lesson.LessonBoard.Page::_contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/LessonBoard/LessonBoard.g.i.cs" line="45" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/LessonBoard/LessonBoard.g.i.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1acbca21c464a1718934e24b71e8916aab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>THB_Plugin_Lesson.LessonBoard.Page.Page</definition>
+        <argsstring>()</argsstring>
+        <name>Page</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/LessonBoard/Page.xaml.cs" line="38" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/LessonBoard/Page.xaml.cs" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a26bf5fbc58015eaa293bb6f803dfdb34" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.LessonBoard.Page.OnStart</definition>
+        <argsstring>(object sender)</argsstring>
+        <name>OnStart</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/LessonBoard/Page.xaml.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/LessonBoard/Page.xaml.cs" bodystart="50" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1ad6a869dd5b70c9c4194a27e1c3ea0fcd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.LessonBoard.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/LessonBoard/LessonBoard.g.i.cs" line="52" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/LessonBoard/LessonBoard.g.i.cs" bodystart="52" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1ad6a869dd5b70c9c4194a27e1c3ea0fcd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.LessonBoard.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/LessonBoard/Page.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/LessonBoard/Page.g.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1ad6a869dd5b70c9c4194a27e1c3ea0fcd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.LessonBoard.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/LessonBoard/Page.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/LessonBoard/Page.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1ad6a869dd5b70c9c4194a27e1c3ea0fcd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.LessonBoard.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/LessonBoard/Page.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/LessonBoard/Page.g.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1ad6a869dd5b70c9c4194a27e1c3ea0fcd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.LessonBoard.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/LessonBoard/Page.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/LessonBoard/Page.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a5d50fb1252109d6fb36e58a32dde82c6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.LessonBoard.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/LessonBoard/LessonBoard.g.i.cs" line="74" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/LessonBoard/LessonBoard.g.i.cs" bodystart="74" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a5d50fb1252109d6fb36e58a32dde82c6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.LessonBoard.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/LessonBoard/Page.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/LessonBoard/Page.g.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a5d50fb1252109d6fb36e58a32dde82c6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.LessonBoard.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/LessonBoard/Page.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/LessonBoard/Page.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a5d50fb1252109d6fb36e58a32dde82c6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.LessonBoard.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/LessonBoard/Page.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/LessonBoard/Page.g.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a5d50fb1252109d6fb36e58a32dde82c6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.LessonBoard.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/LessonBoard/Page.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/LessonBoard/Page.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interaction logic for LessonBoard.xaml </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page" kindref="compound">Page</ref> </para><para><ref refid="d1/d3b/class_t_h_b___plugin___lesson_1_1_lesson_board" kindref="compound">LessonBoard</ref> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="260">
+        <label>IPlugin</label>
+      </node>
+      <node id="257">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="256">
+        <label>THB_Plugin_Lesson.LessonBoard.Page</label>
+        <link refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page"/>
+        <childnode refid="257" relation="public-inheritance">
+        </childnode>
+        <childnode refid="258" relation="public-inheritance">
+        </childnode>
+        <childnode refid="257" relation="public-inheritance">
+        </childnode>
+        <childnode refid="258" relation="public-inheritance">
+        </childnode>
+        <childnode refid="257" relation="public-inheritance">
+        </childnode>
+        <childnode refid="258" relation="public-inheritance">
+        </childnode>
+        <childnode refid="257" relation="public-inheritance">
+        </childnode>
+        <childnode refid="258" relation="public-inheritance">
+        </childnode>
+        <childnode refid="257" relation="public-inheritance">
+        </childnode>
+        <childnode refid="258" relation="public-inheritance">
+        </childnode>
+        <childnode refid="259" relation="public-inheritance">
+        </childnode>
+        <childnode refid="260" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="258">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+      <node id="259">
+        <label>UserControl</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="265">
+        <label>IPlugin</label>
+      </node>
+      <node id="262">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="261">
+        <label>THB_Plugin_Lesson.LessonBoard.Page</label>
+        <link refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page"/>
+        <childnode refid="262" relation="public-inheritance">
+        </childnode>
+        <childnode refid="263" relation="public-inheritance">
+        </childnode>
+        <childnode refid="262" relation="public-inheritance">
+        </childnode>
+        <childnode refid="263" relation="public-inheritance">
+        </childnode>
+        <childnode refid="262" relation="public-inheritance">
+        </childnode>
+        <childnode refid="263" relation="public-inheritance">
+        </childnode>
+        <childnode refid="262" relation="public-inheritance">
+        </childnode>
+        <childnode refid="263" relation="public-inheritance">
+        </childnode>
+        <childnode refid="262" relation="public-inheritance">
+        </childnode>
+        <childnode refid="263" relation="public-inheritance">
+        </childnode>
+        <childnode refid="264" relation="public-inheritance">
+        </childnode>
+        <childnode refid="265" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="263">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+      <node id="264">
+        <label>UserControl</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/LessonBoard/Page.xaml.cs" line="37" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/LessonBoard/Page.xaml.cs" bodystart="36" bodyend="55"/>
+    <listofallmembers>
+      <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a9fdc20ce74c492e465267174aab1678f" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::LessonBoard::Page</scope><name>_contentLoaded</name></member>
+      <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a5d50fb1252109d6fb36e58a32dde82c6" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::LessonBoard::Page</scope><name>Connect</name></member>
+      <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a5d50fb1252109d6fb36e58a32dde82c6" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::LessonBoard::Page</scope><name>Connect</name></member>
+      <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a5d50fb1252109d6fb36e58a32dde82c6" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::LessonBoard::Page</scope><name>Connect</name></member>
+      <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a5d50fb1252109d6fb36e58a32dde82c6" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::LessonBoard::Page</scope><name>Connect</name></member>
+      <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a5d50fb1252109d6fb36e58a32dde82c6" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::LessonBoard::Page</scope><name>Connect</name></member>
+      <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1ad6a869dd5b70c9c4194a27e1c3ea0fcd" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::LessonBoard::Page</scope><name>InitializeComponent</name></member>
+      <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1ad6a869dd5b70c9c4194a27e1c3ea0fcd" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::LessonBoard::Page</scope><name>InitializeComponent</name></member>
+      <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1ad6a869dd5b70c9c4194a27e1c3ea0fcd" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::LessonBoard::Page</scope><name>InitializeComponent</name></member>
+      <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1ad6a869dd5b70c9c4194a27e1c3ea0fcd" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::LessonBoard::Page</scope><name>InitializeComponent</name></member>
+      <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1ad6a869dd5b70c9c4194a27e1c3ea0fcd" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::LessonBoard::Page</scope><name>InitializeComponent</name></member>
+      <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a2fa2ce0d3e248f3e6a23a8d02586dc12" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::LessonBoard::Page</scope><name>Meta</name></member>
+      <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a26bf5fbc58015eaa293bb6f803dfdb34" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::LessonBoard::Page</scope><name>OnStart</name></member>
+      <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1acbca21c464a1718934e24b71e8916aab" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::LessonBoard::Page</scope><name>Page</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

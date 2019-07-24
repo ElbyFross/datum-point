@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d5/d0b/namespace_teacher_handbook_1_1_u_i_1_1_windows" kind="namespace" language="C#">
+    <compoundname>TeacherHandbook::UI::Windows</compoundname>
+    <innerclass refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window" prot="public">TeacherHandbook::UI::Windows::MainWindow</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" line="36" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_c6310732a22f63c0c2fc5595561e68f1" kind="dir">
+    <compoundname>D:/Work/GitHub/datum-point/Core</compoundname>
+    <innerdir refid="dir_87415dbaf52748428533cb989c2d3f5b">D:/Work/GitHub/datum-point/Core/THB Data Server Queries</innerdir>
+    <innerdir refid="dir_2fe91226cb38b0969dedb0c9d83a4f41">D:/Work/GitHub/datum-point/Core/THB Data Types</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/Core/"/>
+  </compounddef>
+</doxygen>

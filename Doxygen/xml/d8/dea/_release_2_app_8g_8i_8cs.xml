@@ -9,7 +9,7 @@
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>checksum<sp/>&quot;..\..\App.xaml&quot;<sp/>&quot;{8829d00f-11b8-4213-878b-770e8597ac16}&quot;<sp/>&quot;11A59C7FDC83879F186153D6716001E9E969DAC53E68880411873AB7C6B78AC6&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="1"><highlight class="preprocessor">#pragma<sp/>checksum<sp/>&quot;..\..\App.xaml&quot;<sp/>&quot;{8829d00f-11b8-4213-878b-770e8597ac16}&quot;<sp/>&quot;EEB69BD68AF46D6DEC53E0FF9D694A8721E4266C8B9AB15EA344497E148BD047&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="comment">//------------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight><highlight class="comment">//<sp/>&lt;auto-generated&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="4"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/>This<sp/>code<sp/>was<sp/>generated<sp/>by<sp/>a<sp/>tool.</highlight><highlight class="normal"></highlight></codeline>
@@ -59,7 +59,7 @@
 <codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>_contentLoaded<sp/>=<sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
 <codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="56"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#line<sp/>5<sp/>&quot;..\..\App.xaml&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.StartupUri<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Uri(</highlight><highlight class="stringliteral">&quot;MainWindow.xaml&quot;</highlight><highlight class="normal">,<sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.UriKind.Relative);</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.StartupUri<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.Uri(</highlight><highlight class="stringliteral">&quot;UI/Windows/MainWindow.xaml&quot;</highlight><highlight class="normal">,<sp/><ref refid="d8/dd0/namespace_system" kindref="compound">System</ref>.UriKind.Relative);</highlight></codeline>
 <codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#line<sp/>default</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="60"><highlight class="normal"></highlight><highlight class="preprocessor"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>#line<sp/>hidden</highlight><highlight class="normal"></highlight></codeline>
@@ -84,6 +84,6 @@
 <codeline lineno="82"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"></highlight></codeline>
     </programlisting>
-    <location file="D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/App.g.i.cs"/>
+    <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/App.g.i.cs"/>
   </compounddef>
 </doxygen>

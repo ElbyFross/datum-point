@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_498a35706611cc851c5ca6d767bf0c13" kind="dir">
+    <compoundname>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release</compoundname>
+    <innerdir refid="dir_ddb96ab8d9d6ff48f863814aaee99e73">D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/Controls</innerdir>
+    <innerdir refid="dir_764e3a0122e5ffbc3ef0532df7a8e217">D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/Plugins</innerdir>
+    <innerdir refid="dir_57ea19c1bfa8b2b89405c0ecfa2960ef">D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/UI</innerdir>
+    <innerfile refid="d5/d6d/_release_2_app_8g_8cs">App.g.cs</innerfile>
+    <innerfile refid="d8/dea/_release_2_app_8g_8i_8cs">App.g.i.cs</innerfile>
+    <innerfile refid="d0/de4/_release_2_generated_internal_type_helper_8g_8cs">GeneratedInternalTypeHelper.g.cs</innerfile>
+    <innerfile refid="df/d66/_release_2_generated_internal_type_helper_8g_8i_8cs">GeneratedInternalTypeHelper.g.i.cs</innerfile>
+    <innerfile refid="d3/d8d/_release_2_main_window_8g_8cs">MainWindow.g.cs</innerfile>
+    <innerfile refid="dd/db5/_release_2_main_window_8g_8i_8cs">MainWindow.g.i.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/"/>
+  </compounddef>
+</doxygen>

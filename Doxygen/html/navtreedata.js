@@ -33,7 +33,7 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
         [ "Properties", "functions_prop.html", null ]
@@ -45,7 +45,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"d9/d79/class_t_h_b___plugin___exams_1_1_monitor.html#a9d12d6aaf4f374b5a3b9c4d1128e9a6a"
+"d7/d6e/class_t_h_b___plugin___exams_1_1_tests_constructor_1_1_page.html#a3645341e57d1e94f3799822f1c4a423b",
+"dd/dfe/namespace_t_h_b___plugin___exams_1_1_exams_planner.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

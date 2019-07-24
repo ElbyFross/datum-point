@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['title',['title',['../da/dfa/class_teacher_handbook_1_1_core_1_1_containers_1_1_entities_1_1_group.html#a230fa40688f7bed7e0e6d2fada98665f',1,'TeacherHandbook.Core.Containers.Entities.Group.title()'],['../db/dd2/class_teacher_handbook_1_1_core_1_1_localization_1_1_language_contaier.html#a8270ebfe17630e68e74b0d99ac6480d7',1,'TeacherHandbook.Core.Localization.LanguageContaier.title()']]],
-  ['titles',['titles',['../db/dce/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_subject.html#ac024684f42182cdbcf4ae477395f92a1',1,'TeacherHandbook::Core::Containers::Schedule::Subject']]]
+  ['session',['session',['../dc/d14/struct_teacher_handbook_1_1_core_1_1_orders_1_1_order_date.html#a8ffd98cdee8fc98d2eb79af227084dd1',1,'TeacherHandbook::Core::Orders::OrderDate']]],
+  ['sessions',['sessions',['../d5/d0b/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_day.html#ab7130291674ea826085d0090d6acdddb',1,'TeacherHandbook::Core::Containers::Schedule::Day']]],
+  ['subjects',['subjects',['../d5/d8e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_session.html#a1e3ab318ef7a0b8330eb06704d129531',1,'TeacherHandbook::Core::Containers::Schedule::Session']]]
 ];

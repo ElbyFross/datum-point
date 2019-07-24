@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 500.000000
+%%BoundingBox: 0 0 500 550.000000
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,12 +19,12 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 1.000000 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 0.909091 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
-/rows 10 def
+/rows 11 def
 /cols 2 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
@@ -183,6 +183,7 @@ boxfont setfont
 (Window) cw
 (IComponentConnector) cw
 (Window) cw
+(IComponentConnector) cw
 /boxwidth boxwidth marginwidth 2 mul add def
 /xspacing boxwidth distx add def
 /yspacing boxheight disty add def
@@ -195,15 +196,16 @@ boundx scalefactor div boundy scalefactor div scale
 % ----- classes -----
 
  (TeacherHandbook.MainWindow) 0.000000 0.000000 box
- (Window) 1.000000 1.000000 box
- (IComponentConnector) 1.000000 2.000000 box
- (Window) 1.000000 3.000000 box
- (IComponentConnector) 1.000000 4.000000 box
- (Window) 1.000000 5.000000 box
- (IComponentConnector) 1.000000 6.000000 box
- (Window) 1.000000 7.000000 box
- (IComponentConnector) 1.000000 8.000000 box
- (Window) 1.000000 9.000000 box
+ (IComponentConnector) 1.000000 1.000000 box
+ (Window) 1.000000 2.000000 box
+ (IComponentConnector) 1.000000 3.000000 box
+ (Window) 1.000000 4.000000 box
+ (IComponentConnector) 1.000000 5.000000 box
+ (Window) 1.000000 6.000000 box
+ (IComponentConnector) 1.000000 7.000000 box
+ (Window) 1.000000 8.000000 box
+ (IComponentConnector) 1.000000 9.000000 box
+ (Window) 1.000000 10.000000 box
 
 % ----- relations -----
 
@@ -228,4 +230,6 @@ solid
 solid
 1 0.000000 9.500000 hedge
 solid
-0.000000 1.000000 9.500000 vedge
+1 0.000000 10.500000 hedge
+solid
+0.000000 1.000000 10.500000 vedge

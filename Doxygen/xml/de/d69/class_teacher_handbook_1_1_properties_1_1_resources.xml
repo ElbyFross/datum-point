@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Properties/Resources.Designer.cs" line="27" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Properties/Resources.Designer.cs" bodystart="27" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/Properties/Resources.Designer.cs" line="27" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/Properties/Resources.Designer.cs" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="de/d69/class_teacher_handbook_1_1_properties_1_1_resources_1a63cc181fd05c1ca38e3524ff28794761" prot="private" static="yes" mutable="no">
         <type>global::System.Globalization.CultureInfo</type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Properties/Resources.Designer.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Properties/Resources.Designer.cs" bodystart="29" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/Properties/Resources.Designer.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/Properties/Resources.Designer.cs" bodystart="29" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="property">
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Properties/Resources.Designer.cs" line="39" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Properties/Resources.Designer.cs" bodystart="39" bodyend="47"/>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/Properties/Resources.Designer.cs" line="39" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/Properties/Resources.Designer.cs" bodystart="39" bodyend="47"/>
       </memberdef>
       <memberdef kind="property" id="de/d69/class_teacher_handbook_1_1_properties_1_1_resources_1a7d2a69e42deca52f95de104f0283705c" prot="public" static="yes" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
         <type>global::System.Globalization.CultureInfo</type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Properties/Resources.Designer.cs" line="54" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Properties/Resources.Designer.cs" bodystart="54" bodyend="61"/>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/Properties/Resources.Designer.cs" line="54" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/Properties/Resources.Designer.cs" bodystart="54" bodyend="61"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="package-func">
@@ -70,7 +70,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Properties/Resources.Designer.cs" line="32" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Properties/Resources.Designer.cs" bodystart="32" bodyend="33"/>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/Properties/Resources.Designer.cs" line="32" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/Properties/Resources.Designer.cs" bodystart="32" bodyend="33"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -78,21 +78,21 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="214">
+      <node id="315">
         <label>TeacherHandbook.Properties.Resources</label>
         <link refid="de/d69/class_teacher_handbook_1_1_properties_1_1_resources"/>
-        <childnode refid="214" relation="usage">
+        <childnode refid="315" relation="usage">
           <edgelabel>resourceMan</edgelabel>
         </childnode>
-        <childnode refid="215" relation="usage">
+        <childnode refid="316" relation="usage">
           <edgelabel>resourceCulture</edgelabel>
         </childnode>
       </node>
-      <node id="215">
+      <node id="316">
         <label>Globalization</label>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/GitHub/datum-point/TeacherHandbook/Properties/Resources.Designer.cs" line="25" column="1" bodyfile="D:/Work/GitHub/datum-point/TeacherHandbook/Properties/Resources.Designer.cs" bodystart="25" bodyend="62"/>
+    <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/Properties/Resources.Designer.cs" line="25" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/Properties/Resources.Designer.cs" bodystart="25" bodyend="62"/>
     <listofallmembers>
       <member refid="de/d69/class_teacher_handbook_1_1_properties_1_1_resources_1a7d2a69e42deca52f95de104f0283705c" prot="public" virt="non-virtual"><scope>TeacherHandbook::Properties::Resources</scope><name>Culture</name></member>
       <member refid="de/d69/class_teacher_handbook_1_1_properties_1_1_resources_1a63cc181fd05c1ca38e3524ff28794761" prot="private" virt="non-virtual"><scope>TeacherHandbook::Properties::Resources</scope><name>resourceCulture</name></member>

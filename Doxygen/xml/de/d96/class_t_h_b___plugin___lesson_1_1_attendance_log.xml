@@ -6,33 +6,6 @@
     <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
     <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
     <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
-    <basecompoundref prot="public" virt="non-virtual">IPlugin</basecompoundref>
-      <sectiondef kind="property">
-      <memberdef kind="property" id="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a9b9a7f9b6196807a9f8ee6d5faa2dbf2" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
-        <type>MenuItemMeta</type>
-        <definition>MenuItemMeta THB_Plugin_Lesson.AttendanceLog.Meta</definition>
-        <argsstring></argsstring>
-        <name>Meta</name>
-        <initializer>= new MenuItemMeta()
-        {
-            domain = &quot;20_lesson.20_attendance&quot;,
-            titleDictionaryCode = &quot;p_podshyvalov_lbAttendance_menuTitle&quot;,
-            defaultTitle = &quot;Attendance log&quot;
-        }</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/AttendanceLog.xaml.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/AttendanceLog.xaml.cs" bodystart="43" bodyend="43"/>
-      </memberdef>
-      </sectiondef>
       <sectiondef kind="private-attrib">
       <memberdef kind="variable" id="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a5b596611bf684dbca40d2f5cf7b8c709" prot="private" static="no" mutable="no">
         <type>bool</type>
@@ -45,53 +18,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/AttendanceLog.g.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/AttendanceLog.g.cs" bodystart="43" bodyend="-1"/>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/AttendanceLog.g.i.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/AttendanceLog.g.i.cs" bodystart="43" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
-      <memberdef kind="function" id="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1aae25b2057466ea0cec3d9aad569976ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type></type>
-        <definition>THB_Plugin_Lesson.AttendanceLog.AttendanceLog</definition>
-        <argsstring>()</argsstring>
-        <name>AttendanceLog</name>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/AttendanceLog.xaml.cs" line="38" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/AttendanceLog.xaml.cs" bodystart="38" bodyend="41"/>
-      </memberdef>
-      <memberdef kind="function" id="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a9aff654e1cb6af3e8df4f2a796a1fb50" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void THB_Plugin_Lesson.AttendanceLog.OnStart</definition>
-        <argsstring>(object sender)</argsstring>
-        <name>OnStart</name>
-        <param>
-          <type>object</type>
-          <declname>sender</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/AttendanceLog.xaml.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/AttendanceLog.xaml.cs" bodystart="50" bodyend="54"/>
-      </memberdef>
-      <memberdef kind="function" id="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a0a404a85aae774982191011835216820" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void THB_Plugin_Lesson.AttendanceLog.InitializeComponent</definition>
-        <argsstring>()</argsstring>
-        <name>InitializeComponent</name>
-        <briefdescription>
-<para>InitializeComponent </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/AttendanceLog.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/AttendanceLog.g.cs" bodystart="50" bodyend="62"/>
-      </memberdef>
       <memberdef kind="function" id="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a0a404a85aae774982191011835216820" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>void THB_Plugin_Lesson.AttendanceLog.InitializeComponent</definition>
@@ -116,44 +46,10 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/AttendanceLog.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/AttendanceLog.g.cs" bodystart="50" bodyend="62"/>
-      </memberdef>
-      <memberdef kind="function" id="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a0a404a85aae774982191011835216820" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void THB_Plugin_Lesson.AttendanceLog.InitializeComponent</definition>
-        <argsstring>()</argsstring>
-        <name>InitializeComponent</name>
-        <briefdescription>
-<para>InitializeComponent </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
         <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/AttendanceLog.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/AttendanceLog.g.i.cs" bodystart="50" bodyend="62"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
-      <memberdef kind="function" id="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a5b9cdcd533bb9522e504d294f3fe6526" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void System.Windows.Markup.IComponentConnector.</type>
-        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.AttendanceLog.Connect</definition>
-        <argsstring>(int connectionId, object target)</argsstring>
-        <name>Connect</name>
-        <param>
-          <type>int</type>
-          <declname>connectionId</declname>
-        </param>
-        <param>
-          <type>object</type>
-          <declname>target</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/AttendanceLog.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/AttendanceLog.g.cs" bodystart="70" bodyend="72"/>
-      </memberdef>
       <memberdef kind="function" id="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a5b9cdcd533bb9522e504d294f3fe6526" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void System.Windows.Markup.IComponentConnector.</type>
         <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.AttendanceLog.Connect</definition>
@@ -194,124 +90,60 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/AttendanceLog.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/AttendanceLog.g.cs" bodystart="70" bodyend="72"/>
-      </memberdef>
-      <memberdef kind="function" id="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a5b9cdcd533bb9522e504d294f3fe6526" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void System.Windows.Markup.IComponentConnector.</type>
-        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.AttendanceLog.Connect</definition>
-        <argsstring>(int connectionId, object target)</argsstring>
-        <name>Connect</name>
-        <param>
-          <type>int</type>
-          <declname>connectionId</declname>
-        </param>
-        <param>
-          <type>object</type>
-          <declname>target</declname>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
         <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/AttendanceLog.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/AttendanceLog.g.i.cs" bodystart="70" bodyend="72"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Interaction logic for AttendanceLog.xaml </para>    </briefdescription>
+<para><ref refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log" kindref="compound">AttendanceLog</ref> </para>    </briefdescription>
     <detaileddescription>
-<para><ref refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log" kindref="compound">AttendanceLog</ref> </para>    </detaileddescription>
+    </detaileddescription>
     <inheritancegraph>
-      <node id="52">
-        <label>IPlugin</label>
-      </node>
-      <node id="48">
+      <node id="34">
         <label>THB_Plugin_Lesson.AttendanceLog</label>
         <link refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log"/>
-        <childnode refid="49" relation="public-inheritance">
+        <childnode refid="35" relation="public-inheritance">
         </childnode>
-        <childnode refid="50" relation="public-inheritance">
+        <childnode refid="36" relation="public-inheritance">
         </childnode>
-        <childnode refid="49" relation="public-inheritance">
+        <childnode refid="35" relation="public-inheritance">
         </childnode>
-        <childnode refid="50" relation="public-inheritance">
-        </childnode>
-        <childnode refid="49" relation="public-inheritance">
-        </childnode>
-        <childnode refid="50" relation="public-inheritance">
-        </childnode>
-        <childnode refid="49" relation="public-inheritance">
-        </childnode>
-        <childnode refid="50" relation="public-inheritance">
-        </childnode>
-        <childnode refid="51" relation="public-inheritance">
-        </childnode>
-        <childnode refid="52" relation="public-inheritance">
+        <childnode refid="36" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="49">
+      <node id="35">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="50">
+      <node id="36">
         <label>System::Windows::Markup::IComponentConnector</label>
-      </node>
-      <node id="51">
-        <label>UserControl</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="57">
-        <label>IPlugin</label>
-      </node>
-      <node id="53">
+      <node id="37">
         <label>THB_Plugin_Lesson.AttendanceLog</label>
         <link refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log"/>
-        <childnode refid="54" relation="public-inheritance">
+        <childnode refid="38" relation="public-inheritance">
         </childnode>
-        <childnode refid="55" relation="public-inheritance">
+        <childnode refid="39" relation="public-inheritance">
         </childnode>
-        <childnode refid="54" relation="public-inheritance">
+        <childnode refid="38" relation="public-inheritance">
         </childnode>
-        <childnode refid="55" relation="public-inheritance">
-        </childnode>
-        <childnode refid="54" relation="public-inheritance">
-        </childnode>
-        <childnode refid="55" relation="public-inheritance">
-        </childnode>
-        <childnode refid="54" relation="public-inheritance">
-        </childnode>
-        <childnode refid="55" relation="public-inheritance">
-        </childnode>
-        <childnode refid="56" relation="public-inheritance">
-        </childnode>
-        <childnode refid="57" relation="public-inheritance">
+        <childnode refid="39" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="54">
+      <node id="38">
         <label>System::Windows::Controls::UserControl</label>
       </node>
-      <node id="55">
+      <node id="39">
         <label>System::Windows::Markup::IComponentConnector</label>
       </node>
-      <node id="56">
-        <label>UserControl</label>
-      </node>
     </collaborationgraph>
-    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/AttendanceLog.xaml.cs" line="37" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/AttendanceLog.xaml.cs" bodystart="36" bodyend="55"/>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/AttendanceLog.g.i.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/AttendanceLog.g.i.cs" bodystart="41" bodyend="73"/>
     <listofallmembers>
       <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a5b596611bf684dbca40d2f5cf7b8c709" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::AttendanceLog</scope><name>_contentLoaded</name></member>
-      <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1aae25b2057466ea0cec3d9aad569976ec" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::AttendanceLog</scope><name>AttendanceLog</name></member>
-      <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a5b9cdcd533bb9522e504d294f3fe6526" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::AttendanceLog</scope><name>Connect</name></member>
-      <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a5b9cdcd533bb9522e504d294f3fe6526" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::AttendanceLog</scope><name>Connect</name></member>
       <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a5b9cdcd533bb9522e504d294f3fe6526" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::AttendanceLog</scope><name>Connect</name></member>
       <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a5b9cdcd533bb9522e504d294f3fe6526" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::AttendanceLog</scope><name>Connect</name></member>
       <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a0a404a85aae774982191011835216820" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::AttendanceLog</scope><name>InitializeComponent</name></member>
       <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a0a404a85aae774982191011835216820" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::AttendanceLog</scope><name>InitializeComponent</name></member>
-      <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a0a404a85aae774982191011835216820" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::AttendanceLog</scope><name>InitializeComponent</name></member>
-      <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a0a404a85aae774982191011835216820" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::AttendanceLog</scope><name>InitializeComponent</name></member>
-      <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a9b9a7f9b6196807a9f8ee6d5faa2dbf2" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::AttendanceLog</scope><name>Meta</name></member>
-      <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a9aff654e1cb6af3e8df4f2a796a1fb50" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::AttendanceLog</scope><name>OnStart</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

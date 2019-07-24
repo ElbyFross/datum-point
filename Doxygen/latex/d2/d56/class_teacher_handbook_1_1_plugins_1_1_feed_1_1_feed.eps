@@ -5,7 +5,7 @@
 %%For: 
 %Magnification: 1.00
 %%Orientation: Portrait
-%%BoundingBox: 0 0 500 723.404255
+%%BoundingBox: 0 0 500 468.085106
 %%Pages: 0
 %%BeginSetup
 %%EndSetup
@@ -19,12 +19,12 @@
 /marginwidth 10 def
 /distx 20 def
 /disty 40 def
-/boundaspect 0.691176 def  % aspect ratio of the BoundingBox (width/height)
+/boundaspect 1.068182 def  % aspect ratio of the BoundingBox (width/height)
 /boundx 500 def
 /boundy boundx boundaspect div def
 /xspacing 0 def
 /yspacing 0 def
-/rows 17 def
+/rows 11 def
 /cols 2 def
 /scalefactor 0 def
 /boxfont /Times-Roman findfont fontheight scalefont def
@@ -184,12 +184,6 @@ boxfont setfont
 (IComponentConnector) cw
 (UserControl) cw
 (IComponentConnector) cw
-(UserControl) cw
-(IComponentConnector) cw
-(UserControl) cw
-(IComponentConnector) cw
-(UserControl) cw
-(IPlugin) cw
 /boxwidth boxwidth marginwidth 2 mul add def
 /xspacing boxwidth distx add def
 /yspacing boxheight disty add def
@@ -202,7 +196,7 @@ boundx scalefactor div boundy scalefactor div scale
 % ----- classes -----
 
  (TeacherHandbook.Plugins.Feed.Feed) 0.000000 0.000000 box
- (IPlugin) 1.000000 1.000000 box
+ (IComponentConnector) 1.000000 1.000000 box
  (UserControl) 1.000000 2.000000 box
  (IComponentConnector) 1.000000 3.000000 box
  (UserControl) 1.000000 4.000000 box
@@ -212,12 +206,6 @@ boundx scalefactor div boundy scalefactor div scale
  (UserControl) 1.000000 8.000000 box
  (IComponentConnector) 1.000000 9.000000 box
  (UserControl) 1.000000 10.000000 box
- (IComponentConnector) 1.000000 11.000000 box
- (UserControl) 1.000000 12.000000 box
- (IComponentConnector) 1.000000 13.000000 box
- (UserControl) 1.000000 14.000000 box
- (IComponentConnector) 1.000000 15.000000 box
- (UserControl) 1.000000 16.000000 box
 
 % ----- relations -----
 
@@ -244,16 +232,4 @@ solid
 solid
 1 0.000000 10.500000 hedge
 solid
-1 0.000000 11.500000 hedge
-solid
-1 0.000000 12.500000 hedge
-solid
-1 0.000000 13.500000 hedge
-solid
-1 0.000000 14.500000 hedge
-solid
-1 0.000000 15.500000 hedge
-solid
-1 0.000000 16.500000 hedge
-solid
-0.000000 1.000000 16.500000 vedge
+0.000000 1.000000 10.500000 vedge

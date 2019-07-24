@@ -18,14 +18,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/WpfHandler/Plugins/API.cs" line="30" column="1" bodyfile="D:/Work/GitHub/datum-point/WpfHandler/Plugins/API.cs" bodystart="30" bodyend="47"/>
+        <location file="D:/Work/GitHub/datum-point/Addons/WpfHandler/Plugins/API.cs" line="30" column="1" bodyfile="D:/Work/GitHub/datum-point/Addons/WpfHandler/Plugins/API.cs" bodystart="30" bodyend="49"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Class that profide simplifyed way to integrate WPF plugins to client. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/Work/GitHub/datum-point/WpfHandler/Plugins/API.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/WpfHandler/Plugins/API.cs" bodystart="28" bodyend="48"/>
+    <location file="D:/Work/GitHub/datum-point/Addons/WpfHandler/Plugins/API.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/Addons/WpfHandler/Plugins/API.cs" bodystart="28" bodyend="50"/>
     <listofallmembers>
       <member refid="d2/d9a/class_wpf_handler_1_1_plugins_1_1_a_p_i_1ab5fa2212cf7d00290d86c0aa5bc65f91" prot="public" virt="non-virtual"><scope>WpfHandler::Plugins::API</scope><name>OpenGUI</name></member>
     </listofallmembers>

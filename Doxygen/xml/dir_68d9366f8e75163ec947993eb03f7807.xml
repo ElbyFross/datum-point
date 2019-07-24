@@ -2,14 +2,16 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_68d9366f8e75163ec947993eb03f7807" kind="dir">
     <compoundname>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug</compoundname>
-    <innerfile refid="d1/d66/_debug_2_exam_planner_8g_8cs">ExamPlanner.g.cs</innerfile>
+    <innerdir refid="dir_a890adbeaf38536727896b47d2cda821">D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamMonitor</innerdir>
+    <innerdir refid="dir_9d62b2ca530054d05debfb3256fa02c3">D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamPlanner</innerdir>
+    <innerdir refid="dir_4d32d6bcd49b87235170ec5117a014f8">D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamsMonitor</innerdir>
+    <innerdir refid="dir_a418fc8ce67f2e4bfcae5844a25dd276">D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamsPlanner</innerdir>
+    <innerdir refid="dir_90bd5b3a15d40c08b3e3be4fafcef186">D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/TestsConstructor</innerdir>
     <innerfile refid="d1/dc3/_debug_2_exam_planner_8g_8i_8cs">ExamPlanner.g.i.cs</innerfile>
-    <innerfile refid="d3/d7c/_debug_2_monitor_8g_8cs">Monitor.g.cs</innerfile>
     <innerfile refid="dd/d98/_debug_2_monitor_8g_8i_8cs">Monitor.g.i.cs</innerfile>
     <innerfile refid="d7/d3b/_plugins_2_t_h_b_01_plugin_01_exams_2obj_2_debug_2_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs">TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</innerfile>
     <innerfile refid="d7/d0c/_plugins_2_t_h_b_01_plugin_01_exams_2obj_2_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs">TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</innerfile>
     <innerfile refid="df/df8/_plugins_2_t_h_b_01_plugin_01_exams_2obj_2_debug_2_temporary_generated_file___e7_a71_f73-0_f8_d-5db61dc0c4309ad2bb9072f211da86b0">TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</innerfile>
-    <innerfile refid="d5/d2c/_debug_2_test_constructor_8g_8cs">TestConstructor.g.cs</innerfile>
     <innerfile refid="d7/da1/_debug_2_test_constructor_8g_8i_8cs">TestConstructor.g.i.cs</innerfile>
     <innerfile refid="d2/d31/_plugins_2_t_h_b_01_plugin_01_exams_2obj_2_debug_2_user_control1_8g_8i_8cs">UserControl1.g.i.cs</innerfile>
     <briefdescription>

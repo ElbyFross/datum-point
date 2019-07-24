@@ -1,0 +1,541 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window" kind="class" language="C#" prot="public">
+    <compoundname>TeacherHandbook::UI::Windows::MainWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Window</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Window</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Window</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Window</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Window</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a3b9164942deb6814e75125f62869c7ca" prot="package" static="no" mutable="no">
+        <type>System.Windows.Controls.ColumnDefinition</type>
+        <definition>System Windows Controls ColumnDefinition TeacherHandbook.UI.Windows.MainWindow::controlPanelColumn</definition>
+        <argsstring></argsstring>
+        <name>controlPanelColumn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" line="47" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a0c339f60d9d61f768601b79e22b90fe5" prot="package" static="no" mutable="no">
+        <type>System.Windows.Controls.Grid</type>
+        <definition>System Windows Controls Grid TeacherHandbook.UI.Windows.MainWindow::controlPanel</definition>
+        <argsstring></argsstring>
+        <name>controlPanel</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" line="55" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1acedae577428afa3e671a0496e5f13f27" prot="package" static="no" mutable="no">
+        <type>System.Windows.Controls.ItemsControl</type>
+        <definition>System Windows Controls ItemsControl TeacherHandbook.UI.Windows.MainWindow::MainMenu</definition>
+        <argsstring></argsstring>
+        <name>MainMenu</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" line="63" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a439ddf5fd2640224e38ee5bed18d68fc" prot="package" static="no" mutable="no">
+        <type>System.Windows.Controls.Grid</type>
+        <definition>System Windows Controls Grid TeacherHandbook.UI.Windows.MainWindow::canvas</definition>
+        <argsstring></argsstring>
+        <name>canvas</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" line="71" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" bodystart="71" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a61f9907ba7396bd66a5a2d73437d47ea" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool TeacherHandbook.UI.Windows.MainWindow::_contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" line="76" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1ab39623b0a06a164945f5748514c5d5c9" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>ObservableCollection&lt; UniformClient.Plugins.IPlugin &gt;</type>
+        <definition>ObservableCollection&lt;UniformClient.Plugins.IPlugin&gt; TeacherHandbook.UI.Windows.MainWindow.Plugins</definition>
+        <argsstring></argsstring>
+        <name>Plugins</name>
+        <briefdescription>
+<para>List that contain all loaded plugins. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/UI/Windows/MainWindow.xaml.cs" line="44" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/UI/Windows/MainWindow.xaml.cs" bodystart="44" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="property" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a9fbd1efdebcd7758b71b6ab1a03a745b" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>ObservableCollection&lt; FrameworkElement &gt;</type>
+        <definition>ObservableCollection&lt;FrameworkElement&gt; TeacherHandbook.UI.Windows.MainWindow.MenuButtons</definition>
+        <argsstring></argsstring>
+        <name>MenuButtons</name>
+        <initializer>= new ObservableCollection&lt;FrameworkElement&gt;()</initializer>
+        <briefdescription>
+<para>List that contain menu&apos;s controls. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/UI/Windows/MainWindow.xaml.cs" line="49" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/UI/Windows/MainWindow.xaml.cs" bodystart="49" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="property" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a9535228898acc92c7fa2f20a86477eb3" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="no" privatesettable="no" protectedsettable="no">
+        <type>double</type>
+        <definition>double TeacherHandbook.UI.Windows.MainWindow.ControlPanelWidth</definition>
+        <argsstring></argsstring>
+        <name>ControlPanelWidth</name>
+        <briefdescription>
+<para>Compute panel width relative to thw window&apos;s size. Implemented for old monitors&apos; cases (640x480 etc.) in the poor countries. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/UI/Windows/MainWindow.xaml.cs" line="55" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/UI/Windows/MainWindow.xaml.cs" bodystart="56" bodyend="73"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a4effbf9e476f5a0648fc669c06a0a924" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TeacherHandbook.UI.Windows.MainWindow.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" line="83" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" bodystart="83" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a4effbf9e476f5a0648fc669c06a0a924" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TeacherHandbook.UI.Windows.MainWindow.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.i.cs" line="83" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.i.cs" bodystart="83" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a4effbf9e476f5a0648fc669c06a0a924" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TeacherHandbook.UI.Windows.MainWindow.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/UI/Windows/MainWindow.g.cs" line="83" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/UI/Windows/MainWindow.g.cs" bodystart="83" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a4effbf9e476f5a0648fc669c06a0a924" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TeacherHandbook.UI.Windows.MainWindow.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/UI/Windows/MainWindow.g.i.cs" line="83" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/UI/Windows/MainWindow.g.i.cs" bodystart="83" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a9bdeac7e4da191dc405287c7937aeb54" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>TeacherHandbook.UI.Windows.MainWindow.MainWindow</definition>
+        <argsstring>()</argsstring>
+        <name>MainWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/UI/Windows/MainWindow.xaml.cs" line="77" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/UI/Windows/MainWindow.xaml.cs" bodystart="77" bodyend="152"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a5fceead18e1919ce5bc27cce55433601" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>System.Delegate</type>
+        <definition>System.Delegate TeacherHandbook.UI.Windows.MainWindow._CreateDelegate</definition>
+        <argsstring>(System.Type delegateType, string handler)</argsstring>
+        <name>_CreateDelegate</name>
+        <param>
+          <type>System.Type</type>
+          <declname>delegateType</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>handler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" line="100" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" bodystart="100" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a5fceead18e1919ce5bc27cce55433601" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>System.Delegate</type>
+        <definition>System.Delegate TeacherHandbook.UI.Windows.MainWindow._CreateDelegate</definition>
+        <argsstring>(System.Type delegateType, string handler)</argsstring>
+        <name>_CreateDelegate</name>
+        <param>
+          <type>System.Type</type>
+          <declname>delegateType</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>handler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.i.cs" line="100" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.i.cs" bodystart="100" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a5fceead18e1919ce5bc27cce55433601" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>System.Delegate</type>
+        <definition>System.Delegate TeacherHandbook.UI.Windows.MainWindow._CreateDelegate</definition>
+        <argsstring>(System.Type delegateType, string handler)</argsstring>
+        <name>_CreateDelegate</name>
+        <param>
+          <type>System.Type</type>
+          <declname>delegateType</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>handler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/UI/Windows/MainWindow.g.cs" line="100" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/UI/Windows/MainWindow.g.cs" bodystart="100" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a5fceead18e1919ce5bc27cce55433601" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>System.Delegate</type>
+        <definition>System.Delegate TeacherHandbook.UI.Windows.MainWindow._CreateDelegate</definition>
+        <argsstring>(System.Type delegateType, string handler)</argsstring>
+        <name>_CreateDelegate</name>
+        <param>
+          <type>System.Type</type>
+          <declname>delegateType</declname>
+        </param>
+        <param>
+          <type>string</type>
+          <declname>handler</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/UI/Windows/MainWindow.g.i.cs" line="100" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/UI/Windows/MainWindow.g.i.cs" bodystart="100" bodyend="102"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a2cf222703bc19ba205642fcfcde4b6f9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. TeacherHandbook.UI.Windows.MainWindow.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" line="110" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" bodystart="110" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a2cf222703bc19ba205642fcfcde4b6f9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. TeacherHandbook.UI.Windows.MainWindow.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.i.cs" line="110" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.i.cs" bodystart="110" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a2cf222703bc19ba205642fcfcde4b6f9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. TeacherHandbook.UI.Windows.MainWindow.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/UI/Windows/MainWindow.g.cs" line="110" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/UI/Windows/MainWindow.g.cs" bodystart="110" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a2cf222703bc19ba205642fcfcde4b6f9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. TeacherHandbook.UI.Windows.MainWindow.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/UI/Windows/MainWindow.g.i.cs" line="110" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/UI/Windows/MainWindow.g.i.cs" bodystart="110" bodyend="135"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a77d5c81388a8cdb9fcdad1f9b91adddb" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>TeacherHandbook.UI.Windows.MainWindow.~MainWindow</definition>
+        <argsstring>()</argsstring>
+        <name>~MainWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/UI/Windows/MainWindow.xaml.cs" line="154" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/UI/Windows/MainWindow.xaml.cs" bodystart="154" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1ab6ef44632d6cc2566f9c498c658528b3" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TeacherHandbook.UI.Windows.MainWindow.MainWindow_SizeChanged</definition>
+        <argsstring>(object sender, SizeChangedEventArgs e)</argsstring>
+        <name>MainWindow_SizeChanged</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>SizeChangedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Callback that will be called when widow size will be changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/UI/Windows/MainWindow.xaml.cs" line="167" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/UI/Windows/MainWindow.xaml.cs" bodystart="167" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a22afd69c54f5874e5fa59e856302f2e1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void TeacherHandbook.UI.Windows.MainWindow.Window_Loaded</definition>
+        <argsstring>(object sender, RoutedEventArgs e)</argsstring>
+        <name>Window_Loaded</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>RoutedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/UI/Windows/MainWindow.xaml.cs" line="173" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/UI/Windows/MainWindow.xaml.cs" bodystart="173" bodyend="177"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window" kindref="compound">MainWindow</ref> </para>    </briefdescription>
+    <detaileddescription>
+<para>Interaction logic for MainWindow.xaml </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="120">
+        <label>System::Windows::Window</label>
+      </node>
+      <node id="119">
+        <label>Window</label>
+      </node>
+      <node id="118">
+        <label>TeacherHandbook.UI.Windows.MainWindow</label>
+        <link refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window"/>
+        <childnode refid="119" relation="public-inheritance">
+        </childnode>
+        <childnode refid="120" relation="public-inheritance">
+        </childnode>
+        <childnode refid="121" relation="public-inheritance">
+        </childnode>
+        <childnode refid="120" relation="public-inheritance">
+        </childnode>
+        <childnode refid="121" relation="public-inheritance">
+        </childnode>
+        <childnode refid="120" relation="public-inheritance">
+        </childnode>
+        <childnode refid="121" relation="public-inheritance">
+        </childnode>
+        <childnode refid="120" relation="public-inheritance">
+        </childnode>
+        <childnode refid="121" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="121">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="124">
+        <label>System::Windows::Window</label>
+      </node>
+      <node id="123">
+        <label>Window</label>
+      </node>
+      <node id="126">
+        <label>System</label>
+      </node>
+      <node id="122">
+        <label>TeacherHandbook.UI.Windows.MainWindow</label>
+        <link refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window"/>
+        <childnode refid="123" relation="public-inheritance">
+        </childnode>
+        <childnode refid="124" relation="public-inheritance">
+        </childnode>
+        <childnode refid="125" relation="public-inheritance">
+        </childnode>
+        <childnode refid="124" relation="public-inheritance">
+        </childnode>
+        <childnode refid="125" relation="public-inheritance">
+        </childnode>
+        <childnode refid="124" relation="public-inheritance">
+        </childnode>
+        <childnode refid="125" relation="public-inheritance">
+        </childnode>
+        <childnode refid="124" relation="public-inheritance">
+        </childnode>
+        <childnode refid="125" relation="public-inheritance">
+        </childnode>
+        <childnode refid="126" relation="usage">
+          <edgelabel>MainMenu</edgelabel>
+          <edgelabel>canvas</edgelabel>
+          <edgelabel>controlPanelColumn</edgelabel>
+          <edgelabel>controlPanel</edgelabel>
+        </childnode>
+      </node>
+      <node id="125">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" line="42" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows/MainWindow.g.cs" bodystart="42" bodyend="136"/>
+    <listofallmembers>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a61f9907ba7396bd66a5a2d73437d47ea" prot="private" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>_contentLoaded</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a5fceead18e1919ce5bc27cce55433601" prot="package" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>_CreateDelegate</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a5fceead18e1919ce5bc27cce55433601" prot="package" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>_CreateDelegate</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a5fceead18e1919ce5bc27cce55433601" prot="package" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>_CreateDelegate</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a5fceead18e1919ce5bc27cce55433601" prot="package" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>_CreateDelegate</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a439ddf5fd2640224e38ee5bed18d68fc" prot="package" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>canvas</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a2cf222703bc19ba205642fcfcde4b6f9" prot="private" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>Connect</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a2cf222703bc19ba205642fcfcde4b6f9" prot="private" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>Connect</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a2cf222703bc19ba205642fcfcde4b6f9" prot="private" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>Connect</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a2cf222703bc19ba205642fcfcde4b6f9" prot="private" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>Connect</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a0c339f60d9d61f768601b79e22b90fe5" prot="package" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>controlPanel</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a3b9164942deb6814e75125f62869c7ca" prot="package" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>controlPanelColumn</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a9535228898acc92c7fa2f20a86477eb3" prot="public" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>ControlPanelWidth</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a4effbf9e476f5a0648fc669c06a0a924" prot="public" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>InitializeComponent</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a4effbf9e476f5a0648fc669c06a0a924" prot="public" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>InitializeComponent</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a4effbf9e476f5a0648fc669c06a0a924" prot="public" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>InitializeComponent</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a4effbf9e476f5a0648fc669c06a0a924" prot="public" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>InitializeComponent</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1acedae577428afa3e671a0496e5f13f27" prot="package" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>MainMenu</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a9bdeac7e4da191dc405287c7937aeb54" prot="public" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>MainWindow</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1ab6ef44632d6cc2566f9c498c658528b3" prot="private" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>MainWindow_SizeChanged</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a9fbd1efdebcd7758b71b6ab1a03a745b" prot="public" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>MenuButtons</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1ab39623b0a06a164945f5748514c5d5c9" prot="public" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>Plugins</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a22afd69c54f5874e5fa59e856302f2e1" prot="private" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>Window_Loaded</name></member>
+      <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a77d5c81388a8cdb9fcdad1f9b91adddb" prot="private" virt="non-virtual"><scope>TeacherHandbook::UI::Windows::MainWindow</scope><name>~MainWindow</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

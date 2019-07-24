@@ -1,49 +1,31 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.14">
   <compound refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments" kind="class"><name>THB_Plugin_Social::Achivments::Achivments</name>
-    <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1abd3121deb1475dcaa00041ac8b1a5ba4" kind="property"><name>Meta</name></member>
     <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1ab8b036a3f1931db6974296216d403fd0" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1aa87c0cce6773312a3216ed95f2c575d0" kind="function"><name>Achivments</name></member>
-    <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a8dfdd6bb71beeebc277e91d16497dac0" kind="function"><name>OnStart</name></member>
     <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a6f673611ddba423db8bacc8dbdff7a00" kind="function"><name>InitializeComponent</name></member>
     <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a6f673611ddba423db8bacc8dbdff7a00" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a6f673611ddba423db8bacc8dbdff7a00" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a6f673611ddba423db8bacc8dbdff7a00" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a1ba800d5953f08b8d81e731da0c441ac" kind="function"><name>Connect</name></member>
-    <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a1ba800d5953f08b8d81e731da0c441ac" kind="function"><name>Connect</name></member>
     <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a1ba800d5953f08b8d81e731da0c441ac" kind="function"><name>Connect</name></member>
     <member refid="d8/dcc/class_t_h_b___plugin___social_1_1_achivments_1_1_achivments_1a1ba800d5953f08b8d81e731da0c441ac" kind="function"><name>Connect</name></member>
   </compound>
   <compound refid="d4/d17/class_t_h_b___plugin___orders_1_1_add_order" kind="class"><name>THB_Plugin_Orders::AddOrder</name>
-    <member refid="d4/d17/class_t_h_b___plugin___orders_1_1_add_order_1a4252f76a378dcb21c4f77bc3e7c94d23" kind="property"><name>Meta</name></member>
     <member refid="d4/d17/class_t_h_b___plugin___orders_1_1_add_order_1a7f35054689e2db409071ef4196268410" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="d4/d17/class_t_h_b___plugin___orders_1_1_add_order_1ac461c0e1f26cd37bd14e321065cb2a69" kind="function"><name>AddOrder</name></member>
-    <member refid="d4/d17/class_t_h_b___plugin___orders_1_1_add_order_1a4fd7d41ab031cd2ae71342e31106a114" kind="function"><name>OnStart</name></member>
     <member refid="d4/d17/class_t_h_b___plugin___orders_1_1_add_order_1a89a7af41cf5bc108266f4a335ce5d7df" kind="function"><name>InitializeComponent</name></member>
     <member refid="d4/d17/class_t_h_b___plugin___orders_1_1_add_order_1a89a7af41cf5bc108266f4a335ce5d7df" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d4/d17/class_t_h_b___plugin___orders_1_1_add_order_1a89a7af41cf5bc108266f4a335ce5d7df" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d4/d17/class_t_h_b___plugin___orders_1_1_add_order_1a89a7af41cf5bc108266f4a335ce5d7df" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d4/d17/class_t_h_b___plugin___orders_1_1_add_order_1abbc9a83974ca159364b21ec868014332" kind="function"><name>Connect</name></member>
-    <member refid="d4/d17/class_t_h_b___plugin___orders_1_1_add_order_1abbc9a83974ca159364b21ec868014332" kind="function"><name>Connect</name></member>
     <member refid="d4/d17/class_t_h_b___plugin___orders_1_1_add_order_1abbc9a83974ca159364b21ec868014332" kind="function"><name>Connect</name></member>
     <member refid="d4/d17/class_t_h_b___plugin___orders_1_1_add_order_1abbc9a83974ca159364b21ec868014332" kind="function"><name>Connect</name></member>
   </compound>
   <compound refid="dc/d36/class_t_h_b___plugin___social_1_1_advices_1_1_advices" kind="class"><name>THB_Plugin_Social::Advices::Advices</name>
-    <member refid="dc/d36/class_t_h_b___plugin___social_1_1_advices_1_1_advices_1a3bf255584096fb4a8f5ec2d7d5048c4c" kind="property"><name>Meta</name></member>
     <member refid="dc/d36/class_t_h_b___plugin___social_1_1_advices_1_1_advices_1a46fa630dbede5b98b08a931896020306" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="dc/d36/class_t_h_b___plugin___social_1_1_advices_1_1_advices_1aa496c2cbacaa8eb37f8a4388c1f03058" kind="function"><name>Advices</name></member>
-    <member refid="dc/d36/class_t_h_b___plugin___social_1_1_advices_1_1_advices_1a8256cafb68923b668926b3c13ce5201e" kind="function"><name>OnStart</name></member>
     <member refid="dc/d36/class_t_h_b___plugin___social_1_1_advices_1_1_advices_1a270ffdf24c38f6c886996ff608b940a2" kind="function"><name>InitializeComponent</name></member>
     <member refid="dc/d36/class_t_h_b___plugin___social_1_1_advices_1_1_advices_1a270ffdf24c38f6c886996ff608b940a2" kind="function"><name>InitializeComponent</name></member>
-    <member refid="dc/d36/class_t_h_b___plugin___social_1_1_advices_1_1_advices_1a270ffdf24c38f6c886996ff608b940a2" kind="function"><name>InitializeComponent</name></member>
-    <member refid="dc/d36/class_t_h_b___plugin___social_1_1_advices_1_1_advices_1a270ffdf24c38f6c886996ff608b940a2" kind="function"><name>InitializeComponent</name></member>
-    <member refid="dc/d36/class_t_h_b___plugin___social_1_1_advices_1_1_advices_1a13d20d8ac01863194fee5df3ef954add" kind="function"><name>Connect</name></member>
-    <member refid="dc/d36/class_t_h_b___plugin___social_1_1_advices_1_1_advices_1a13d20d8ac01863194fee5df3ef954add" kind="function"><name>Connect</name></member>
     <member refid="dc/d36/class_t_h_b___plugin___social_1_1_advices_1_1_advices_1a13d20d8ac01863194fee5df3ef954add" kind="function"><name>Connect</name></member>
     <member refid="dc/d36/class_t_h_b___plugin___social_1_1_advices_1_1_advices_1a13d20d8ac01863194fee5df3ef954add" kind="function"><name>Connect</name></member>
   </compound>
   <compound refid="d2/d9a/class_wpf_handler_1_1_plugins_1_1_a_p_i" kind="class"><name>WpfHandler::Plugins::API</name>
     <member refid="d2/d9a/class_wpf_handler_1_1_plugins_1_1_a_p_i_1ab5fa2212cf7d00290d86c0aa5bc65f91" kind="function"><name>OpenGUI</name></member>
+  </compound>
+  <compound refid="d0/d4e/class_wpf_handler_1_1_localization_1_1_a_p_i" kind="class"><name>WpfHandler::Localization::API</name>
+    <member refid="d0/d4e/class_wpf_handler_1_1_localization_1_1_a_p_i_1a731d709472e9bf3fff2e55145f7a1c4c" kind="function"><name>LoadXAML_LangDicts</name></member>
   </compound>
   <compound refid="d2/d56/class_teacher_handbook_1_1_app" kind="class"><name>TeacherHandbook::App</name>
     <member refid="d2/d56/class_teacher_handbook_1_1_app_1af85a80dcd07d73660fe52c78248265eb" kind="variable"><name>_contentLoaded</name></member>
@@ -57,30 +39,16 @@
     <member refid="d2/d56/class_teacher_handbook_1_1_app_1a023352bc757e3dc9fce26276dfdadd15" kind="function"><name>Main</name></member>
   </compound>
   <compound refid="d7/dc2/class_t_h_b___plugin___lesson_1_1_assesments" kind="class"><name>THB_Plugin_Lesson::Assesments</name>
-    <member refid="d7/dc2/class_t_h_b___plugin___lesson_1_1_assesments_1a85b55cf759ecf390c0649661e11f621d" kind="property"><name>Meta</name></member>
     <member refid="d7/dc2/class_t_h_b___plugin___lesson_1_1_assesments_1a7d1e1622fba92126d0eec09b6da498b1" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="d7/dc2/class_t_h_b___plugin___lesson_1_1_assesments_1a2c9a439c359e4bb7b184da67d726fb04" kind="function"><name>Assesments</name></member>
-    <member refid="d7/dc2/class_t_h_b___plugin___lesson_1_1_assesments_1a77ba4cf5ad5c707e69eb94119ccf9b32" kind="function"><name>OnStart</name></member>
     <member refid="d7/dc2/class_t_h_b___plugin___lesson_1_1_assesments_1a22b672070dc6b0a67049489116347112" kind="function"><name>InitializeComponent</name></member>
     <member refid="d7/dc2/class_t_h_b___plugin___lesson_1_1_assesments_1a22b672070dc6b0a67049489116347112" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d7/dc2/class_t_h_b___plugin___lesson_1_1_assesments_1a22b672070dc6b0a67049489116347112" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d7/dc2/class_t_h_b___plugin___lesson_1_1_assesments_1a22b672070dc6b0a67049489116347112" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d7/dc2/class_t_h_b___plugin___lesson_1_1_assesments_1a42de142372ed19e056c775d8a76afd61" kind="function"><name>Connect</name></member>
-    <member refid="d7/dc2/class_t_h_b___plugin___lesson_1_1_assesments_1a42de142372ed19e056c775d8a76afd61" kind="function"><name>Connect</name></member>
     <member refid="d7/dc2/class_t_h_b___plugin___lesson_1_1_assesments_1a42de142372ed19e056c775d8a76afd61" kind="function"><name>Connect</name></member>
     <member refid="d7/dc2/class_t_h_b___plugin___lesson_1_1_assesments_1a42de142372ed19e056c775d8a76afd61" kind="function"><name>Connect</name></member>
   </compound>
   <compound refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log" kind="class"><name>THB_Plugin_Lesson::AttendanceLog</name>
-    <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a9b9a7f9b6196807a9f8ee6d5faa2dbf2" kind="property"><name>Meta</name></member>
     <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a5b596611bf684dbca40d2f5cf7b8c709" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1aae25b2057466ea0cec3d9aad569976ec" kind="function"><name>AttendanceLog</name></member>
-    <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a9aff654e1cb6af3e8df4f2a796a1fb50" kind="function"><name>OnStart</name></member>
     <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a0a404a85aae774982191011835216820" kind="function"><name>InitializeComponent</name></member>
     <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a0a404a85aae774982191011835216820" kind="function"><name>InitializeComponent</name></member>
-    <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a0a404a85aae774982191011835216820" kind="function"><name>InitializeComponent</name></member>
-    <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a0a404a85aae774982191011835216820" kind="function"><name>InitializeComponent</name></member>
-    <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a5b9cdcd533bb9522e504d294f3fe6526" kind="function"><name>Connect</name></member>
-    <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a5b9cdcd533bb9522e504d294f3fe6526" kind="function"><name>Connect</name></member>
     <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a5b9cdcd533bb9522e504d294f3fe6526" kind="function"><name>Connect</name></member>
     <member refid="de/d96/class_t_h_b___plugin___lesson_1_1_attendance_log_1a5b9cdcd533bb9522e504d294f3fe6526" kind="function"><name>Connect</name></member>
   </compound>
@@ -103,6 +71,8 @@
     <member refid="d2/d3e/class_teacher_handbook_1_1_catalog_button_1a0accf252602f5a0dc642e299bb64b970" kind="function"><name>Connect</name></member>
   </compound>
   <compound refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button" kind="class"><name>TeacherHandbook::Controls::CatalogButton</name>
+    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1ae45079c15cbf261f88829dba291174b0" kind="variable"><name>catalogButton</name></member>
+    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a4d31da551e1ef4555ef13f04afd6342c" kind="variable"><name>_contentLoaded</name></member>
     <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1abba763a21c7841f39966c90b3febd4e1" kind="variable"><name>TextProperty</name></member>
     <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a48a13c6e4e68649b1c02cf245cfde154" kind="variable"><name>UnfocusedBackgroundColorProperty</name></member>
     <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a555f299fdcd37b102cd33cbeb665ccfb" kind="variable"><name>FocusedBackgroundColorProperty</name></member>
@@ -115,63 +85,52 @@
     <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a5c4261e5d872e61b281085dc29971203" kind="property"><name>FocusedBackgroundColor</name></member>
     <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1ad9f4d0665c824c892cfcdb5c71031328" kind="property"><name>TextColor</name></member>
     <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1afeb6f1ef9c37714972b7678d76e2f45a" kind="property"><name>ClickCallback</name></member>
-    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1ae45079c15cbf261f88829dba291174b0" kind="variable"><name>catalogButton</name></member>
-    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a4d31da551e1ef4555ef13f04afd6342c" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a930173b42b66bb6370c3ac8cf0e1882b" kind="function"><name>InitializeComponent</name></member>
+    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a930173b42b66bb6370c3ac8cf0e1882b" kind="function"><name>InitializeComponent</name></member>
+    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a930173b42b66bb6370c3ac8cf0e1882b" kind="function"><name>InitializeComponent</name></member>
+    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a930173b42b66bb6370c3ac8cf0e1882b" kind="function"><name>InitializeComponent</name></member>
+    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a930173b42b66bb6370c3ac8cf0e1882b" kind="function"><name>InitializeComponent</name></member>
+    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a930173b42b66bb6370c3ac8cf0e1882b" kind="function"><name>InitializeComponent</name></member>
+    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a930173b42b66bb6370c3ac8cf0e1882b" kind="function"><name>InitializeComponent</name></member>
     <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1aab40d692099f4c6ec53ed797e1d8ff05" kind="function"><name>CatalogButton</name></member>
-    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a930173b42b66bb6370c3ac8cf0e1882b" kind="function"><name>InitializeComponent</name></member>
-    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a930173b42b66bb6370c3ac8cf0e1882b" kind="function"><name>InitializeComponent</name></member>
-    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a930173b42b66bb6370c3ac8cf0e1882b" kind="function"><name>InitializeComponent</name></member>
-    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1a930173b42b66bb6370c3ac8cf0e1882b" kind="function"><name>InitializeComponent</name></member>
+    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1aee1606053e8ffdb900fd8cb3f1d71bd4" kind="function"><name>Connect</name></member>
+    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1aee1606053e8ffdb900fd8cb3f1d71bd4" kind="function"><name>Connect</name></member>
+    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1aee1606053e8ffdb900fd8cb3f1d71bd4" kind="function"><name>Connect</name></member>
+    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1aee1606053e8ffdb900fd8cb3f1d71bd4" kind="function"><name>Connect</name></member>
+    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1aee1606053e8ffdb900fd8cb3f1d71bd4" kind="function"><name>Connect</name></member>
+    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1aee1606053e8ffdb900fd8cb3f1d71bd4" kind="function"><name>Connect</name></member>
+    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1aee1606053e8ffdb900fd8cb3f1d71bd4" kind="function"><name>Connect</name></member>
     <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1ab6fdcafe2b97c645486d1ca83109c979" kind="function"><name>CatalogButton_Click</name></member>
-    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1aee1606053e8ffdb900fd8cb3f1d71bd4" kind="function"><name>Connect</name></member>
-    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1aee1606053e8ffdb900fd8cb3f1d71bd4" kind="function"><name>Connect</name></member>
-    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1aee1606053e8ffdb900fd8cb3f1d71bd4" kind="function"><name>Connect</name></member>
-    <member refid="df/d61/class_teacher_handbook_1_1_controls_1_1_catalog_button_1aee1606053e8ffdb900fd8cb3f1d71bd4" kind="function"><name>Connect</name></member>
   </compound>
-  <compound refid="d8/de3/class_teacher_handbook_1_1_client" kind="class"><name>TeacherHandbook::Client</name>
-    <member refid="d8/de3/class_teacher_handbook_1_1_client_1a403583a80a8d5040410c4f1f180aafad" kind="property"><name>Active</name></member>
-    <member refid="d8/de3/class_teacher_handbook_1_1_client_1aaa6bae79ce27b06ba243b4b87f1822a5" kind="variable"><name>active</name></member>
-    <member refid="d8/de3/class_teacher_handbook_1_1_client_1aed2ed704ccdfd253f3305ff17855ad3d" kind="function"><name>Client</name></member>
-    <member refid="d8/de3/class_teacher_handbook_1_1_client_1a8cf998f202069ab5bbbfcdc779e4af29" kind="function"><name>Init</name></member>
-    <member refid="d8/de3/class_teacher_handbook_1_1_client_1a863d00fe6a0ac5b86583c0a8245e07e9" kind="function"><name>LoadXAML_LangDicts</name></member>
+  <compound refid="d8/d91/class_teacher_handbook_1_1_networking_1_1_client" kind="class"><name>TeacherHandbook::Networking::Client</name>
+    <member refid="d8/d91/class_teacher_handbook_1_1_networking_1_1_client_1a426f783c455abac0bd658c7b290e0066" kind="property"><name>Active</name></member>
+    <member refid="d8/d91/class_teacher_handbook_1_1_networking_1_1_client_1a2df2ba8468bd5796d0b9cbe7cb27caa8" kind="variable"><name>active</name></member>
+    <member refid="d8/d91/class_teacher_handbook_1_1_networking_1_1_client_1a4dc132062a2df2922b19d0e820a49f2c" kind="function"><name>Client</name></member>
+    <member refid="d8/d91/class_teacher_handbook_1_1_networking_1_1_client_1ad37de86191b6dae582e338c57182bace" kind="function"><name>Init</name></member>
   </compound>
   <compound refid="d5/d0b/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_day" kind="class"><name>TeacherHandbook::Core::Containers::Schedule::Day</name>
     <member refid="d5/d0b/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_day_1afd349c077122c7e3193348644bd08828" kind="variable"><name>key</name></member>
     <member refid="d5/d0b/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_day_1ab7130291674ea826085d0090d6acdddb" kind="variable"><name>sessions</name></member>
   </compound>
-  <compound refid="db/de2/class_teacher_handbook_1_1_client_1_1_domain_container" kind="class"><name>TeacherHandbook::Client::DomainContainer</name>
-    <member refid="db/de2/class_teacher_handbook_1_1_client_1_1_domain_container_1ae72edd58099a7ac8a146367a71b75d3e" kind="variable"><name>cultureKey</name></member>
-    <member refid="db/de2/class_teacher_handbook_1_1_client_1_1_domain_container_1a369aa498ee2cf929f7b93dd02d70e2d2" kind="variable"><name>pluginDomain</name></member>
-    <member refid="db/de2/class_teacher_handbook_1_1_client_1_1_domain_container_1ac7941ee0cc4a0a462939c719e2b21c4d" kind="variable"><name>path</name></member>
+  <compound refid="db/d6e/class_wpf_handler_1_1_localization_1_1_domain_container" kind="class"><name>WpfHandler::Localization::DomainContainer</name>
+    <member refid="db/d6e/class_wpf_handler_1_1_localization_1_1_domain_container_1a38f0df8c27c95e4250a31fa0c843c1b0" kind="variable"><name>cultureKey</name></member>
+    <member refid="db/d6e/class_wpf_handler_1_1_localization_1_1_domain_container_1a7ae59873c6462b5ad0a8331ad39c5ade" kind="variable"><name>pluginDomain</name></member>
+    <member refid="db/d6e/class_wpf_handler_1_1_localization_1_1_domain_container_1a21cb28dec2062a288eca31a2f62c68c1" kind="variable"><name>path</name></member>
   </compound>
   <compound refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner" kind="class"><name>THB_Plugin_Exams::ExamPlanner</name>
-    <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1a56f812d4b6635d22d18a8af11ba65b38" kind="property"><name>Meta</name></member>
     <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1a64434a4c2701b50cf43bd4d1c83bbd56" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1abb2402eef9c4c84cc6313b33fa78f363" kind="function"><name>ExamPlanner</name></member>
-    <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1ac6ef0d9bcbfcc9ee66d132d7e8fb2c6d" kind="function"><name>OnStart</name></member>
     <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1aa5d0299d3f5a4130f99df3b9628d2f7a" kind="function"><name>InitializeComponent</name></member>
     <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1aa5d0299d3f5a4130f99df3b9628d2f7a" kind="function"><name>InitializeComponent</name></member>
-    <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1aa5d0299d3f5a4130f99df3b9628d2f7a" kind="function"><name>InitializeComponent</name></member>
-    <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1aa5d0299d3f5a4130f99df3b9628d2f7a" kind="function"><name>InitializeComponent</name></member>
-    <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1a962a9efa9aaa49f756df8f7d4aed664d" kind="function"><name>Connect</name></member>
-    <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1a962a9efa9aaa49f756df8f7d4aed664d" kind="function"><name>Connect</name></member>
     <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1a962a9efa9aaa49f756df8f7d4aed664d" kind="function"><name>Connect</name></member>
     <member refid="df/df8/class_t_h_b___plugin___exams_1_1_exam_planner_1a962a9efa9aaa49f756df8f7d4aed664d" kind="function"><name>Connect</name></member>
   </compound>
   <compound refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed" kind="class"><name>TeacherHandbook::Plugins::Feed::Feed</name>
-    <member refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed_1ad6b1451650ec2439f1aee0707514ef63" kind="property"><name>Meta</name></member>
     <member refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed_1ad8d26f607bc0133748dab9619bb0abee" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed_1a077ef0cde24fd8065e90b82917cd5ca3" kind="function"><name>Feed</name></member>
-    <member refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed_1a70afd18136a6dc16b5edec667a02e6c6" kind="function"><name>OnStart</name></member>
     <member refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed_1af30cfc1a3c7dc2b1874970fbc721113d" kind="function"><name>InitializeComponent</name></member>
     <member refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed_1af30cfc1a3c7dc2b1874970fbc721113d" kind="function"><name>InitializeComponent</name></member>
     <member refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed_1af30cfc1a3c7dc2b1874970fbc721113d" kind="function"><name>InitializeComponent</name></member>
     <member refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed_1af30cfc1a3c7dc2b1874970fbc721113d" kind="function"><name>InitializeComponent</name></member>
     <member refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed_1af30cfc1a3c7dc2b1874970fbc721113d" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed_1af30cfc1a3c7dc2b1874970fbc721113d" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed_1af30cfc1a3c7dc2b1874970fbc721113d" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed_1a46057408648aa7e05ed3c54cb0a1cf56" kind="function"><name>Connect</name></member>
-    <member refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed_1a46057408648aa7e05ed3c54cb0a1cf56" kind="function"><name>Connect</name></member>
     <member refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed_1a46057408648aa7e05ed3c54cb0a1cf56" kind="function"><name>Connect</name></member>
     <member refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed_1a46057408648aa7e05ed3c54cb0a1cf56" kind="function"><name>Connect</name></member>
     <member refid="d2/d56/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_feed_1a46057408648aa7e05ed3c54cb0a1cf56" kind="function"><name>Connect</name></member>
@@ -216,18 +175,9 @@
     <member refid="db/dd2/class_teacher_handbook_1_1_core_1_1_localization_1_1_language_contaier_1afd80663ae6aaf8d7e1f5a6bdc658caa4" kind="variable"><name>map</name></member>
   </compound>
   <compound refid="d1/d3b/class_t_h_b___plugin___lesson_1_1_lesson_board" kind="class"><name>THB_Plugin_Lesson::LessonBoard</name>
-    <member refid="d1/d3b/class_t_h_b___plugin___lesson_1_1_lesson_board_1a8e0dbfdf59e44583f46bcd3728288e19" kind="property"><name>Meta</name></member>
     <member refid="d1/d3b/class_t_h_b___plugin___lesson_1_1_lesson_board_1a0eaaa12bff49f3f8247e41fab9388d6d" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="d1/d3b/class_t_h_b___plugin___lesson_1_1_lesson_board_1a0cc9c2768909357db39ca5e7e012e2a5" kind="function"><name>LessonBoard</name></member>
-    <member refid="d1/d3b/class_t_h_b___plugin___lesson_1_1_lesson_board_1aabdbd8844a5616d7a9423df08ec4e5cb" kind="function"><name>OnStart</name></member>
     <member refid="d1/d3b/class_t_h_b___plugin___lesson_1_1_lesson_board_1aa22da2f78d4cfce95489bdb60c943438" kind="function"><name>InitializeComponent</name></member>
     <member refid="d1/d3b/class_t_h_b___plugin___lesson_1_1_lesson_board_1aa22da2f78d4cfce95489bdb60c943438" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d1/d3b/class_t_h_b___plugin___lesson_1_1_lesson_board_1aa22da2f78d4cfce95489bdb60c943438" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d1/d3b/class_t_h_b___plugin___lesson_1_1_lesson_board_1aa22da2f78d4cfce95489bdb60c943438" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d1/d3b/class_t_h_b___plugin___lesson_1_1_lesson_board_1aa22da2f78d4cfce95489bdb60c943438" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d1/d3b/class_t_h_b___plugin___lesson_1_1_lesson_board_1a0c30d214fb143e600203e66bab022b8f" kind="function"><name>Connect</name></member>
-    <member refid="d1/d3b/class_t_h_b___plugin___lesson_1_1_lesson_board_1a0c30d214fb143e600203e66bab022b8f" kind="function"><name>Connect</name></member>
-    <member refid="d1/d3b/class_t_h_b___plugin___lesson_1_1_lesson_board_1a0c30d214fb143e600203e66bab022b8f" kind="function"><name>Connect</name></member>
     <member refid="d1/d3b/class_t_h_b___plugin___lesson_1_1_lesson_board_1a0c30d214fb143e600203e66bab022b8f" kind="function"><name>Connect</name></member>
     <member refid="d1/d3b/class_t_h_b___plugin___lesson_1_1_lesson_board_1a0c30d214fb143e600203e66bab022b8f" kind="function"><name>Connect</name></member>
   </compound>
@@ -235,45 +185,60 @@
     <member refid="d5/d0e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_logbook_1ac848ae0c5ec991bae660417d0b96a13c" kind="variable"><name>recordedDays</name></member>
     <member refid="d5/d0e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_logbook_1a563af1c666ffd5e11808ed38b7f2ed83" kind="variable"><name>orders</name></member>
   </compound>
+  <compound refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window" kind="class"><name>TeacherHandbook::UI::Windows::MainWindow</name>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a3b9164942deb6814e75125f62869c7ca" kind="variable"><name>controlPanelColumn</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a0c339f60d9d61f768601b79e22b90fe5" kind="variable"><name>controlPanel</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1acedae577428afa3e671a0496e5f13f27" kind="variable"><name>MainMenu</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a439ddf5fd2640224e38ee5bed18d68fc" kind="variable"><name>canvas</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a61f9907ba7396bd66a5a2d73437d47ea" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1ab39623b0a06a164945f5748514c5d5c9" kind="property"><name>Plugins</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a9fbd1efdebcd7758b71b6ab1a03a745b" kind="property"><name>MenuButtons</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a9535228898acc92c7fa2f20a86477eb3" kind="property"><name>ControlPanelWidth</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a4effbf9e476f5a0648fc669c06a0a924" kind="function"><name>InitializeComponent</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a4effbf9e476f5a0648fc669c06a0a924" kind="function"><name>InitializeComponent</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a4effbf9e476f5a0648fc669c06a0a924" kind="function"><name>InitializeComponent</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a4effbf9e476f5a0648fc669c06a0a924" kind="function"><name>InitializeComponent</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a9bdeac7e4da191dc405287c7937aeb54" kind="function"><name>MainWindow</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a5fceead18e1919ce5bc27cce55433601" kind="function"><name>_CreateDelegate</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a5fceead18e1919ce5bc27cce55433601" kind="function"><name>_CreateDelegate</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a5fceead18e1919ce5bc27cce55433601" kind="function"><name>_CreateDelegate</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a5fceead18e1919ce5bc27cce55433601" kind="function"><name>_CreateDelegate</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a2cf222703bc19ba205642fcfcde4b6f9" kind="function"><name>Connect</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a2cf222703bc19ba205642fcfcde4b6f9" kind="function"><name>Connect</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a2cf222703bc19ba205642fcfcde4b6f9" kind="function"><name>Connect</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a2cf222703bc19ba205642fcfcde4b6f9" kind="function"><name>Connect</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a77d5c81388a8cdb9fcdad1f9b91adddb" kind="function"><name>~MainWindow</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1ab6ef44632d6cc2566f9c498c658528b3" kind="function"><name>MainWindow_SizeChanged</name></member>
+    <member refid="df/d7b/class_teacher_handbook_1_1_u_i_1_1_windows_1_1_main_window_1a22afd69c54f5874e5fa59e856302f2e1" kind="function"><name>Window_Loaded</name></member>
+  </compound>
   <compound refid="df/d32/class_teacher_handbook_1_1_main_window" kind="class"><name>TeacherHandbook::MainWindow</name>
-    <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a86e1ee1d12e39fbbd0bc0d7f32e36ad0" kind="property"><name>Plugins</name></member>
-    <member refid="df/d32/class_teacher_handbook_1_1_main_window_1ada9d7a71ad01c470b09f6c62bf2afb7c" kind="property"><name>MenuButtons</name></member>
-    <member refid="df/d32/class_teacher_handbook_1_1_main_window_1ad5d35ace4162888ef660d19eb3990626" kind="property"><name>ControlPanelWidth</name></member>
     <member refid="df/d32/class_teacher_handbook_1_1_main_window_1ac36bb4fc2ccf9ed61ea2705b75aabc15" kind="variable"><name>controlPanelColumn</name></member>
     <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a39fb37d144a6d9efc57fc17b78321a1a" kind="variable"><name>controlPanel</name></member>
     <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a83a05dbd21ff62a1bb244c1e83c5be54" kind="variable"><name>MainMenu</name></member>
     <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a02d103e0b780385b00acf5494c63496a" kind="variable"><name>canvas</name></member>
     <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a13ad6f37e439449ae9cfbe3431dc66d2" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="df/d32/class_teacher_handbook_1_1_main_window_1ac05a36216a6e133a56053dd362b1d5e9" kind="function"><name>MainWindow</name></member>
     <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a5c88103977c278c6c7fc73b06de160d0" kind="function"><name>InitializeComponent</name></member>
     <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a5c88103977c278c6c7fc73b06de160d0" kind="function"><name>InitializeComponent</name></member>
     <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a5c88103977c278c6c7fc73b06de160d0" kind="function"><name>InitializeComponent</name></member>
     <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a5c88103977c278c6c7fc73b06de160d0" kind="function"><name>InitializeComponent</name></member>
-    <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a4a0a4febbe97057af6d9ea8dcaedb827" kind="function"><name>~MainWindow</name></member>
-    <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a3465ff2f60cc2db4e53d699639e84173" kind="function"><name>MainWindow_SizeChanged</name></member>
-    <member refid="df/d32/class_teacher_handbook_1_1_main_window_1aebb0343dedccc6a5031f02b8f758195a" kind="function"><name>Window_Loaded</name></member>
-    <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a78d73a3313e3d2b787989f6f3ac0f987" kind="function"><name>Connect</name></member>
-    <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a78d73a3313e3d2b787989f6f3ac0f987" kind="function"><name>Connect</name></member>
-    <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a78d73a3313e3d2b787989f6f3ac0f987" kind="function"><name>Connect</name></member>
-    <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a78d73a3313e3d2b787989f6f3ac0f987" kind="function"><name>Connect</name></member>
+    <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a5c88103977c278c6c7fc73b06de160d0" kind="function"><name>InitializeComponent</name></member>
     <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a2cd23d6759ae818c7db481b1efb4bfbd" kind="function"><name>_CreateDelegate</name></member>
     <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a2cd23d6759ae818c7db481b1efb4bfbd" kind="function"><name>_CreateDelegate</name></member>
     <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a2cd23d6759ae818c7db481b1efb4bfbd" kind="function"><name>_CreateDelegate</name></member>
     <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a2cd23d6759ae818c7db481b1efb4bfbd" kind="function"><name>_CreateDelegate</name></member>
+    <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a2cd23d6759ae818c7db481b1efb4bfbd" kind="function"><name>_CreateDelegate</name></member>
+    <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a78d73a3313e3d2b787989f6f3ac0f987" kind="function"><name>Connect</name></member>
+    <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a78d73a3313e3d2b787989f6f3ac0f987" kind="function"><name>Connect</name></member>
+    <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a78d73a3313e3d2b787989f6f3ac0f987" kind="function"><name>Connect</name></member>
+    <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a78d73a3313e3d2b787989f6f3ac0f987" kind="function"><name>Connect</name></member>
+    <member refid="df/d32/class_teacher_handbook_1_1_main_window_1a78d73a3313e3d2b787989f6f3ac0f987" kind="function"><name>Connect</name></member>
   </compound>
   <compound refid="d8/d91/class_teacher_handbook_1_1_core_1_1_orders_1_1_mentoring_order" kind="class"><name>TeacherHandbook::Core::Orders::MentoringOrder</name>
   </compound>
   <compound refid="d9/d79/class_t_h_b___plugin___exams_1_1_monitor" kind="class"><name>THB_Plugin_Exams::Monitor</name>
-    <member refid="d9/d79/class_t_h_b___plugin___exams_1_1_monitor_1ac96dc019e2e0865c1c3b9a48a74a7015" kind="property"><name>Meta</name></member>
     <member refid="d9/d79/class_t_h_b___plugin___exams_1_1_monitor_1a9d12d6aaf4f374b5a3b9c4d1128e9a6a" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="d9/d79/class_t_h_b___plugin___exams_1_1_monitor_1aa97b09555da9dbb5c685ae0163a4e198" kind="function"><name>Monitor</name></member>
-    <member refid="d9/d79/class_t_h_b___plugin___exams_1_1_monitor_1a57a29bc70438a8b6a186d34c37aea791" kind="function"><name>OnStart</name></member>
     <member refid="d9/d79/class_t_h_b___plugin___exams_1_1_monitor_1ae2ad56728566bc79087a4688e94db888" kind="function"><name>InitializeComponent</name></member>
     <member refid="d9/d79/class_t_h_b___plugin___exams_1_1_monitor_1ae2ad56728566bc79087a4688e94db888" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d9/d79/class_t_h_b___plugin___exams_1_1_monitor_1ae2ad56728566bc79087a4688e94db888" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d9/d79/class_t_h_b___plugin___exams_1_1_monitor_1ae2ad56728566bc79087a4688e94db888" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d9/d79/class_t_h_b___plugin___exams_1_1_monitor_1acafc947f48f9dbde9c1b0d726aae5c1f" kind="function"><name>Connect</name></member>
-    <member refid="d9/d79/class_t_h_b___plugin___exams_1_1_monitor_1acafc947f48f9dbde9c1b0d726aae5c1f" kind="function"><name>Connect</name></member>
     <member refid="d9/d79/class_t_h_b___plugin___exams_1_1_monitor_1acafc947f48f9dbde9c1b0d726aae5c1f" kind="function"><name>Connect</name></member>
     <member refid="d9/d79/class_t_h_b___plugin___exams_1_1_monitor_1acafc947f48f9dbde9c1b0d726aae5c1f" kind="function"><name>Connect</name></member>
   </compound>
@@ -291,59 +256,245 @@
   </compound>
   <compound refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board" kind="class"><name>THB_Plugin_Orders::OrdersBoard</name>
     <member refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1a5b500b10816d90a096341d0fd26f839e" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1a29aa5cbda92c3d6558e51a51c687d4a1" kind="property"><name>Meta</name></member>
     <member refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1a2ceb19fe78642e77f7e5ae462bc10e16" kind="function"><name>InitializeComponent</name></member>
     <member refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1a2ceb19fe78642e77f7e5ae462bc10e16" kind="function"><name>InitializeComponent</name></member>
-    <member refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1a2ceb19fe78642e77f7e5ae462bc10e16" kind="function"><name>InitializeComponent</name></member>
-    <member refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1a2ceb19fe78642e77f7e5ae462bc10e16" kind="function"><name>InitializeComponent</name></member>
-    <member refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1aaf0e4c91f289783c67eb2979be15b817" kind="function"><name>OrdersBoard</name></member>
-    <member refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1a3e8397e5999faf2ed2850a8a7d485699" kind="function"><name>OnStart</name></member>
-    <member refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1ada300d5554820e4bef6e5ef58e45e221" kind="function"><name>Connect</name></member>
-    <member refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1ada300d5554820e4bef6e5ef58e45e221" kind="function"><name>Connect</name></member>
     <member refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1ada300d5554820e4bef6e5ef58e45e221" kind="function"><name>Connect</name></member>
     <member refid="dd/d7c/class_t_h_b___plugin___orders_1_1_orders_board_1ada300d5554820e4bef6e5ef58e45e221" kind="function"><name>Connect</name></member>
   </compound>
+  <compound refid="d7/dfb/class_t_h_b___plugin___social_1_1_advices_1_1_page" kind="class"><name>THB_Plugin_Social::Advices::Page</name>
+    <member refid="d7/dfb/class_t_h_b___plugin___social_1_1_advices_1_1_page_1ac0942177dab031b84b27f88368f28c5e" kind="property"><name>Meta</name></member>
+    <member refid="d7/dfb/class_t_h_b___plugin___social_1_1_advices_1_1_page_1af8ed0436eabf2c5a5de92040af0d2ccc" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="d7/dfb/class_t_h_b___plugin___social_1_1_advices_1_1_page_1ae162abf86bb5f080e6c06f4a064691fc" kind="function"><name>Page</name></member>
+    <member refid="d7/dfb/class_t_h_b___plugin___social_1_1_advices_1_1_page_1a1e38f104d47a478601205b4f7062d7be" kind="function"><name>OnStart</name></member>
+    <member refid="d7/dfb/class_t_h_b___plugin___social_1_1_advices_1_1_page_1a1ffb68a0ea67f1e1f06fdff93e4424e7" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d7/dfb/class_t_h_b___plugin___social_1_1_advices_1_1_page_1a1ffb68a0ea67f1e1f06fdff93e4424e7" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d7/dfb/class_t_h_b___plugin___social_1_1_advices_1_1_page_1a1ffb68a0ea67f1e1f06fdff93e4424e7" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d7/dfb/class_t_h_b___plugin___social_1_1_advices_1_1_page_1a1ffb68a0ea67f1e1f06fdff93e4424e7" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d7/dfb/class_t_h_b___plugin___social_1_1_advices_1_1_page_1a47cd5faf85e3db9d9474286dac0e348c" kind="function"><name>Connect</name></member>
+    <member refid="d7/dfb/class_t_h_b___plugin___social_1_1_advices_1_1_page_1a47cd5faf85e3db9d9474286dac0e348c" kind="function"><name>Connect</name></member>
+    <member refid="d7/dfb/class_t_h_b___plugin___social_1_1_advices_1_1_page_1a47cd5faf85e3db9d9474286dac0e348c" kind="function"><name>Connect</name></member>
+    <member refid="d7/dfb/class_t_h_b___plugin___social_1_1_advices_1_1_page_1a47cd5faf85e3db9d9474286dac0e348c" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="d1/dc9/class_t_h_b___plugin___social_1_1_achivments_1_1_page" kind="class"><name>THB_Plugin_Social::Achivments::Page</name>
+    <member refid="d1/dc9/class_t_h_b___plugin___social_1_1_achivments_1_1_page_1a2638356766eaf9036434f5623887b31d" kind="property"><name>Meta</name></member>
+    <member refid="d1/dc9/class_t_h_b___plugin___social_1_1_achivments_1_1_page_1a3f6d68f488880b21b4e75f431370e6f9" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="d1/dc9/class_t_h_b___plugin___social_1_1_achivments_1_1_page_1a35d853615c75e8be32b3210679624a15" kind="function"><name>Page</name></member>
+    <member refid="d1/dc9/class_t_h_b___plugin___social_1_1_achivments_1_1_page_1a92d3a3f73188086e1fee5f063bc064a0" kind="function"><name>OnStart</name></member>
+    <member refid="d1/dc9/class_t_h_b___plugin___social_1_1_achivments_1_1_page_1a0051ae595ba358abb1832b1a721d80f3" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d1/dc9/class_t_h_b___plugin___social_1_1_achivments_1_1_page_1a0051ae595ba358abb1832b1a721d80f3" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d1/dc9/class_t_h_b___plugin___social_1_1_achivments_1_1_page_1a0051ae595ba358abb1832b1a721d80f3" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d1/dc9/class_t_h_b___plugin___social_1_1_achivments_1_1_page_1a0051ae595ba358abb1832b1a721d80f3" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d1/dc9/class_t_h_b___plugin___social_1_1_achivments_1_1_page_1a36b7ab5db99c6b887a85373e73ad2dce" kind="function"><name>Connect</name></member>
+    <member refid="d1/dc9/class_t_h_b___plugin___social_1_1_achivments_1_1_page_1a36b7ab5db99c6b887a85373e73ad2dce" kind="function"><name>Connect</name></member>
+    <member refid="d1/dc9/class_t_h_b___plugin___social_1_1_achivments_1_1_page_1a36b7ab5db99c6b887a85373e73ad2dce" kind="function"><name>Connect</name></member>
+    <member refid="d1/dc9/class_t_h_b___plugin___social_1_1_achivments_1_1_page_1a36b7ab5db99c6b887a85373e73ad2dce" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="df/db4/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_page" kind="class"><name>TeacherHandbook::Plugins::Schedule::Page</name>
+    <member refid="df/db4/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_page_1a7ca28905c1fe3a47a61a71d1032d0c95" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="df/db4/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_page_1a749a4d033f27643fc2adb3a5f5632553" kind="property"><name>Meta</name></member>
+    <member refid="df/db4/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_page_1a4953ee1dd6879926b431d481af77116f" kind="function"><name>InitializeComponent</name></member>
+    <member refid="df/db4/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_page_1a4953ee1dd6879926b431d481af77116f" kind="function"><name>InitializeComponent</name></member>
+    <member refid="df/db4/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_page_1a4953ee1dd6879926b431d481af77116f" kind="function"><name>InitializeComponent</name></member>
+    <member refid="df/db4/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_page_1a4953ee1dd6879926b431d481af77116f" kind="function"><name>InitializeComponent</name></member>
+    <member refid="df/db4/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_page_1a10133e4806c0dee8f504bbda44d9fb45" kind="function"><name>Page</name></member>
+    <member refid="df/db4/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_page_1a5f4c848c2f6e2c1a069eaaa999a82805" kind="function"><name>OnStart</name></member>
+    <member refid="df/db4/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_page_1ae892b453201c76f4e733891f77163142" kind="function"><name>Connect</name></member>
+    <member refid="df/db4/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_page_1ae892b453201c76f4e733891f77163142" kind="function"><name>Connect</name></member>
+    <member refid="df/db4/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_page_1ae892b453201c76f4e733891f77163142" kind="function"><name>Connect</name></member>
+    <member refid="df/db4/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_page_1ae892b453201c76f4e733891f77163142" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page" kind="class"><name>THB_Plugin_Exams::ExamsMonitor::Page</name>
+    <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a2a93c249b6171b34d0a60e049f4a552d" kind="property"><name>Meta</name></member>
+    <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a0426f659cf9405b6663f488af616c2ef" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a6afe8ded25cbb017efea4d7743cd0fb3" kind="function"><name>Page</name></member>
+    <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a1fe972efc415ed5c2a43f9463165fd93" kind="function"><name>OnStart</name></member>
+    <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1ab0fefb3d9540c12aa45fb516ba4355b3" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1ab0fefb3d9540c12aa45fb516ba4355b3" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1ab0fefb3d9540c12aa45fb516ba4355b3" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1ab0fefb3d9540c12aa45fb516ba4355b3" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1ab0fefb3d9540c12aa45fb516ba4355b3" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1ab0fefb3d9540c12aa45fb516ba4355b3" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a8abf501e85bd4a89570f586faf58195e" kind="function"><name>Connect</name></member>
+    <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a8abf501e85bd4a89570f586faf58195e" kind="function"><name>Connect</name></member>
+    <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a8abf501e85bd4a89570f586faf58195e" kind="function"><name>Connect</name></member>
+    <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a8abf501e85bd4a89570f586faf58195e" kind="function"><name>Connect</name></member>
+    <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a8abf501e85bd4a89570f586faf58195e" kind="function"><name>Connect</name></member>
+    <member refid="d0/d6b/class_t_h_b___plugin___exams_1_1_exams_monitor_1_1_page_1a8abf501e85bd4a89570f586faf58195e" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="d0/d19/class_t_h_b___plugin___exams_1_1_exams_planner_1_1_page" kind="class"><name>THB_Plugin_Exams::ExamsPlanner::Page</name>
+    <member refid="d0/d19/class_t_h_b___plugin___exams_1_1_exams_planner_1_1_page_1a5641a870e91f0211959eba05532cbbdf" kind="property"><name>Meta</name></member>
+    <member refid="d0/d19/class_t_h_b___plugin___exams_1_1_exams_planner_1_1_page_1ade9b31d7bc75118e5c0ee2521803cefa" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="d0/d19/class_t_h_b___plugin___exams_1_1_exams_planner_1_1_page_1a8fb5e95e6b239c7afd271a54dd1442e0" kind="function"><name>Page</name></member>
+    <member refid="d0/d19/class_t_h_b___plugin___exams_1_1_exams_planner_1_1_page_1a0737801dbf364685789530b807b8b36e" kind="function"><name>OnStart</name></member>
+    <member refid="d0/d19/class_t_h_b___plugin___exams_1_1_exams_planner_1_1_page_1aae3165e0680379b346b8b0db152dd063" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d0/d19/class_t_h_b___plugin___exams_1_1_exams_planner_1_1_page_1aae3165e0680379b346b8b0db152dd063" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d0/d19/class_t_h_b___plugin___exams_1_1_exams_planner_1_1_page_1aae3165e0680379b346b8b0db152dd063" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d0/d19/class_t_h_b___plugin___exams_1_1_exams_planner_1_1_page_1aae3165e0680379b346b8b0db152dd063" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d0/d19/class_t_h_b___plugin___exams_1_1_exams_planner_1_1_page_1aafa44a3d35e97d6ec9bc6c365ce75790" kind="function"><name>Connect</name></member>
+    <member refid="d0/d19/class_t_h_b___plugin___exams_1_1_exams_planner_1_1_page_1aafa44a3d35e97d6ec9bc6c365ce75790" kind="function"><name>Connect</name></member>
+    <member refid="d0/d19/class_t_h_b___plugin___exams_1_1_exams_planner_1_1_page_1aafa44a3d35e97d6ec9bc6c365ce75790" kind="function"><name>Connect</name></member>
+    <member refid="d0/d19/class_t_h_b___plugin___exams_1_1_exams_planner_1_1_page_1aafa44a3d35e97d6ec9bc6c365ce75790" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="d9/d9e/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_page" kind="class"><name>THB_Plugin_Social::PersonalStatistic::Page</name>
+    <member refid="d9/d9e/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_page_1a273ec20dec2a7f6ba46f849887ad7f60" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="d9/d9e/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_page_1ae70fce91bc8e4f2eb01caab193ce1491" kind="property"><name>Meta</name></member>
+    <member refid="d9/d9e/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_page_1aee35fc04ce0a5e5ed9232164e640a29a" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/d9e/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_page_1aee35fc04ce0a5e5ed9232164e640a29a" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/d9e/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_page_1aee35fc04ce0a5e5ed9232164e640a29a" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/d9e/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_page_1aee35fc04ce0a5e5ed9232164e640a29a" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/d9e/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_page_1a86b9bd59d68d924b3d82ea83c9538dbd" kind="function"><name>Page</name></member>
+    <member refid="d9/d9e/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_page_1a2437604db445e50cd7cbe28d50ccfad7" kind="function"><name>OnStart</name></member>
+    <member refid="d9/d9e/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_page_1a8832b1db414283df7eacd9d9608ca48e" kind="function"><name>Connect</name></member>
+    <member refid="d9/d9e/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_page_1a8832b1db414283df7eacd9d9608ca48e" kind="function"><name>Connect</name></member>
+    <member refid="d9/d9e/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_page_1a8832b1db414283df7eacd9d9608ca48e" kind="function"><name>Connect</name></member>
+    <member refid="d9/d9e/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_page_1a8832b1db414283df7eacd9d9608ca48e" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="d7/d6e/class_t_h_b___plugin___exams_1_1_tests_constructor_1_1_page" kind="class"><name>THB_Plugin_Exams::TestsConstructor::Page</name>
+    <member refid="d7/d6e/class_t_h_b___plugin___exams_1_1_tests_constructor_1_1_page_1a4ff00a54c2b980f7c981465368b4fd9e" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="d7/d6e/class_t_h_b___plugin___exams_1_1_tests_constructor_1_1_page_1a15a7cb3cb37b31731f9087a65a5bdf92" kind="property"><name>Meta</name></member>
+    <member refid="d7/d6e/class_t_h_b___plugin___exams_1_1_tests_constructor_1_1_page_1a3645341e57d1e94f3799822f1c4a423b" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d7/d6e/class_t_h_b___plugin___exams_1_1_tests_constructor_1_1_page_1a3645341e57d1e94f3799822f1c4a423b" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d7/d6e/class_t_h_b___plugin___exams_1_1_tests_constructor_1_1_page_1a3645341e57d1e94f3799822f1c4a423b" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d7/d6e/class_t_h_b___plugin___exams_1_1_tests_constructor_1_1_page_1a3645341e57d1e94f3799822f1c4a423b" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d7/d6e/class_t_h_b___plugin___exams_1_1_tests_constructor_1_1_page_1a3645341e57d1e94f3799822f1c4a423b" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d7/d6e/class_t_h_b___plugin___exams_1_1_tests_constructor_1_1_page_1afd419b503226f14c2330f8759f920375" kind="function"><name>Page</name></member>
+    <member refid="d7/d6e/class_t_h_b___plugin___exams_1_1_tests_constructor_1_1_page_1a82ac65014f8e8c04ba4ec397d37ea9bb" kind="function"><name>OnStart</name></member>
+    <member refid="d7/d6e/class_t_h_b___plugin___exams_1_1_tests_constructor_1_1_page_1a28bd5d286f4a0ed41d92ad3fb1bd4bcb" kind="function"><name>Connect</name></member>
+    <member refid="d7/d6e/class_t_h_b___plugin___exams_1_1_tests_constructor_1_1_page_1a28bd5d286f4a0ed41d92ad3fb1bd4bcb" kind="function"><name>Connect</name></member>
+    <member refid="d7/d6e/class_t_h_b___plugin___exams_1_1_tests_constructor_1_1_page_1a28bd5d286f4a0ed41d92ad3fb1bd4bcb" kind="function"><name>Connect</name></member>
+    <member refid="d7/d6e/class_t_h_b___plugin___exams_1_1_tests_constructor_1_1_page_1a28bd5d286f4a0ed41d92ad3fb1bd4bcb" kind="function"><name>Connect</name></member>
+    <member refid="d7/d6e/class_t_h_b___plugin___exams_1_1_tests_constructor_1_1_page_1a28bd5d286f4a0ed41d92ad3fb1bd4bcb" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page" kind="class"><name>THB_Plugin_Lesson::Assesments::Page</name>
+    <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1afd843b1fada13c4f765133fd8cdd6bc2" kind="property"><name>Meta</name></member>
+    <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1aef1c774d473089615382f0e3f6f3259d" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a4cfc1ac2d5a3dfdcaa4cc31d1fac2da3" kind="function"><name>Page</name></member>
+    <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a6c4fd1211a5edfce5075aaabaeb0071b" kind="function"><name>OnStart</name></member>
+    <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a9f9240dd6f48a930d8b98fab7ded779d" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a9f9240dd6f48a930d8b98fab7ded779d" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a9f9240dd6f48a930d8b98fab7ded779d" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a9f9240dd6f48a930d8b98fab7ded779d" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a9f9240dd6f48a930d8b98fab7ded779d" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a3d7b3bfd0bfd5ff6f88e5d1bfeff98a9" kind="function"><name>Connect</name></member>
+    <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a3d7b3bfd0bfd5ff6f88e5d1bfeff98a9" kind="function"><name>Connect</name></member>
+    <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a3d7b3bfd0bfd5ff6f88e5d1bfeff98a9" kind="function"><name>Connect</name></member>
+    <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a3d7b3bfd0bfd5ff6f88e5d1bfeff98a9" kind="function"><name>Connect</name></member>
+    <member refid="d9/ddd/class_t_h_b___plugin___lesson_1_1_assesments_1_1_page_1a3d7b3bfd0bfd5ff6f88e5d1bfeff98a9" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="d4/d8a/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_page" kind="class"><name>TeacherHandbook::Plugins::Feed::Page</name>
+    <member refid="d4/d8a/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_page_1ae379e753495615436874deae2c4dca8c" kind="property"><name>Meta</name></member>
+    <member refid="d4/d8a/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_page_1ac5de5ee3c1345998e007c4cbf4c3c4ae" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="d4/d8a/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_page_1aa0283d734cd8d58a24366a0de4af17e6" kind="function"><name>Page</name></member>
+    <member refid="d4/d8a/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_page_1af4dfd254ebcefdb19462957b7ae01abc" kind="function"><name>OnStart</name></member>
+    <member refid="d4/d8a/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_page_1a6ed1347e26e2ed603972b1d6627b8d56" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d4/d8a/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_page_1a6ed1347e26e2ed603972b1d6627b8d56" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d4/d8a/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_page_1a6ed1347e26e2ed603972b1d6627b8d56" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d4/d8a/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_page_1a6ed1347e26e2ed603972b1d6627b8d56" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d4/d8a/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_page_1a974655f42ad07adb21a4c1dba32fd293" kind="function"><name>Connect</name></member>
+    <member refid="d4/d8a/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_page_1a974655f42ad07adb21a4c1dba32fd293" kind="function"><name>Connect</name></member>
+    <member refid="d4/d8a/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_page_1a974655f42ad07adb21a4c1dba32fd293" kind="function"><name>Connect</name></member>
+    <member refid="d4/d8a/class_teacher_handbook_1_1_plugins_1_1_feed_1_1_page_1a974655f42ad07adb21a4c1dba32fd293" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="d9/d5f/class_t_h_b___plugin___lesson_1_1_attendance_log_1_1_page" kind="class"><name>THB_Plugin_Lesson::AttendanceLog::Page</name>
+    <member refid="d9/d5f/class_t_h_b___plugin___lesson_1_1_attendance_log_1_1_page_1a3c462eed6ca87d827ef7df87ba63e3ff" kind="property"><name>Meta</name></member>
+    <member refid="d9/d5f/class_t_h_b___plugin___lesson_1_1_attendance_log_1_1_page_1a465be097d586757657aa2a3e7d0dd2d5" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="d9/d5f/class_t_h_b___plugin___lesson_1_1_attendance_log_1_1_page_1abf27bf0e5f90aa00a90c63ddc38b4791" kind="function"><name>Page</name></member>
+    <member refid="d9/d5f/class_t_h_b___plugin___lesson_1_1_attendance_log_1_1_page_1a8565302c332242e005a3de7b6d842f61" kind="function"><name>OnStart</name></member>
+    <member refid="d9/d5f/class_t_h_b___plugin___lesson_1_1_attendance_log_1_1_page_1adff29562c5730f46b5e76913130105bb" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/d5f/class_t_h_b___plugin___lesson_1_1_attendance_log_1_1_page_1adff29562c5730f46b5e76913130105bb" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/d5f/class_t_h_b___plugin___lesson_1_1_attendance_log_1_1_page_1adff29562c5730f46b5e76913130105bb" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/d5f/class_t_h_b___plugin___lesson_1_1_attendance_log_1_1_page_1adff29562c5730f46b5e76913130105bb" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/d5f/class_t_h_b___plugin___lesson_1_1_attendance_log_1_1_page_1adff29562c5730f46b5e76913130105bb" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/d5f/class_t_h_b___plugin___lesson_1_1_attendance_log_1_1_page_1aafe000285c206a71405a592df10e8a72" kind="function"><name>Connect</name></member>
+    <member refid="d9/d5f/class_t_h_b___plugin___lesson_1_1_attendance_log_1_1_page_1aafe000285c206a71405a592df10e8a72" kind="function"><name>Connect</name></member>
+    <member refid="d9/d5f/class_t_h_b___plugin___lesson_1_1_attendance_log_1_1_page_1aafe000285c206a71405a592df10e8a72" kind="function"><name>Connect</name></member>
+    <member refid="d9/d5f/class_t_h_b___plugin___lesson_1_1_attendance_log_1_1_page_1aafe000285c206a71405a592df10e8a72" kind="function"><name>Connect</name></member>
+    <member refid="d9/d5f/class_t_h_b___plugin___lesson_1_1_attendance_log_1_1_page_1aafe000285c206a71405a592df10e8a72" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page" kind="class"><name>THB_Plugin_Lesson::LessonBoard::Page</name>
+    <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a2fa2ce0d3e248f3e6a23a8d02586dc12" kind="property"><name>Meta</name></member>
+    <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a9fdc20ce74c492e465267174aab1678f" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1acbca21c464a1718934e24b71e8916aab" kind="function"><name>Page</name></member>
+    <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a26bf5fbc58015eaa293bb6f803dfdb34" kind="function"><name>OnStart</name></member>
+    <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1ad6a869dd5b70c9c4194a27e1c3ea0fcd" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1ad6a869dd5b70c9c4194a27e1c3ea0fcd" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1ad6a869dd5b70c9c4194a27e1c3ea0fcd" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1ad6a869dd5b70c9c4194a27e1c3ea0fcd" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1ad6a869dd5b70c9c4194a27e1c3ea0fcd" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a5d50fb1252109d6fb36e58a32dde82c6" kind="function"><name>Connect</name></member>
+    <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a5d50fb1252109d6fb36e58a32dde82c6" kind="function"><name>Connect</name></member>
+    <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a5d50fb1252109d6fb36e58a32dde82c6" kind="function"><name>Connect</name></member>
+    <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a5d50fb1252109d6fb36e58a32dde82c6" kind="function"><name>Connect</name></member>
+    <member refid="d9/dce/class_t_h_b___plugin___lesson_1_1_lesson_board_1_1_page_1a5d50fb1252109d6fb36e58a32dde82c6" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="d5/dcf/class_t_h_b___plugin___exams_1_1_exam_planner_1_1_page" kind="class"><name>THB_Plugin_Exams::ExamPlanner::Page</name>
+    <member refid="d5/dcf/class_t_h_b___plugin___exams_1_1_exam_planner_1_1_page_1a17fe4c281fd0694fd9974359f77f66f7" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="d5/dcf/class_t_h_b___plugin___exams_1_1_exam_planner_1_1_page_1a847df3ab7efff49dde2471c64a8ea0b7" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d5/dcf/class_t_h_b___plugin___exams_1_1_exam_planner_1_1_page_1a847df3ab7efff49dde2471c64a8ea0b7" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d5/dcf/class_t_h_b___plugin___exams_1_1_exam_planner_1_1_page_1a7420e1cc3c5b7067cf3d8d5ea22080df" kind="function"><name>Connect</name></member>
+    <member refid="d5/dcf/class_t_h_b___plugin___exams_1_1_exam_planner_1_1_page_1a7420e1cc3c5b7067cf3d8d5ea22080df" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page" kind="class"><name>THB_Plugin_Lesson::Repository::Page</name>
+    <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a01aac514897da5ee55bb5b76a27717c6" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a976e23f558d00631ed9d0c7f0e815363" kind="property"><name>Meta</name></member>
+    <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a0c8baa1110fb4c37104c1d037270c38b" kind="function"><name>InitializeComponent</name></member>
+    <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a0c8baa1110fb4c37104c1d037270c38b" kind="function"><name>InitializeComponent</name></member>
+    <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a0c8baa1110fb4c37104c1d037270c38b" kind="function"><name>InitializeComponent</name></member>
+    <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a0c8baa1110fb4c37104c1d037270c38b" kind="function"><name>InitializeComponent</name></member>
+    <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a0c8baa1110fb4c37104c1d037270c38b" kind="function"><name>InitializeComponent</name></member>
+    <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a45ad374efc955d41451bd3e34b0abf01" kind="function"><name>Page</name></member>
+    <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1ab41ec7648f4c5878e58f74c25cbe9b70" kind="function"><name>OnStart</name></member>
+    <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1ade8122690e0bf257a26b3b6f1c6ebe8d" kind="function"><name>Connect</name></member>
+    <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1ade8122690e0bf257a26b3b6f1c6ebe8d" kind="function"><name>Connect</name></member>
+    <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1ade8122690e0bf257a26b3b6f1c6ebe8d" kind="function"><name>Connect</name></member>
+    <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1ade8122690e0bf257a26b3b6f1c6ebe8d" kind="function"><name>Connect</name></member>
+    <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1ade8122690e0bf257a26b3b6f1c6ebe8d" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page" kind="class"><name>THB_Plugin_Orders::AddOrder::Page</name>
+    <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1ab7841683b29aaf53241443e78a823f17" kind="property"><name>Meta</name></member>
+    <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a4dae85c81c2e5206fc91fb46afc0cbe7" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a6791870e67093c280d4f00b7696d618b" kind="function"><name>Page</name></member>
+    <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a4cd50e3faab81e2317e5f527b49f1992" kind="function"><name>OnStart</name></member>
+    <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a3585721cfa534b8bd5800af7ec8df98d" kind="function"><name>InitializeComponent</name></member>
+    <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a3585721cfa534b8bd5800af7ec8df98d" kind="function"><name>InitializeComponent</name></member>
+    <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a3585721cfa534b8bd5800af7ec8df98d" kind="function"><name>InitializeComponent</name></member>
+    <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a3585721cfa534b8bd5800af7ec8df98d" kind="function"><name>InitializeComponent</name></member>
+    <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a3585721cfa534b8bd5800af7ec8df98d" kind="function"><name>InitializeComponent</name></member>
+    <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a6b720097b2ed11b0f52ddcda8bed8c1b" kind="function"><name>Connect</name></member>
+    <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a6b720097b2ed11b0f52ddcda8bed8c1b" kind="function"><name>Connect</name></member>
+    <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a6b720097b2ed11b0f52ddcda8bed8c1b" kind="function"><name>Connect</name></member>
+    <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a6b720097b2ed11b0f52ddcda8bed8c1b" kind="function"><name>Connect</name></member>
+    <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a6b720097b2ed11b0f52ddcda8bed8c1b" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="da/d68/class_t_h_b___plugin___orders_1_1_orders_board_1_1_page" kind="class"><name>THB_Plugin_Orders::OrdersBoard::Page</name>
+    <member refid="da/d68/class_t_h_b___plugin___orders_1_1_orders_board_1_1_page_1a0441ef9ef06e18edcf87a19ad94becba" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="da/d68/class_t_h_b___plugin___orders_1_1_orders_board_1_1_page_1a6899ee263f76f52dd494fb5aeb9c5f8d" kind="property"><name>Meta</name></member>
+    <member refid="da/d68/class_t_h_b___plugin___orders_1_1_orders_board_1_1_page_1a94f1fdf76417d5d8403b0b5621a8a2cd" kind="function"><name>InitializeComponent</name></member>
+    <member refid="da/d68/class_t_h_b___plugin___orders_1_1_orders_board_1_1_page_1a94f1fdf76417d5d8403b0b5621a8a2cd" kind="function"><name>InitializeComponent</name></member>
+    <member refid="da/d68/class_t_h_b___plugin___orders_1_1_orders_board_1_1_page_1a94f1fdf76417d5d8403b0b5621a8a2cd" kind="function"><name>InitializeComponent</name></member>
+    <member refid="da/d68/class_t_h_b___plugin___orders_1_1_orders_board_1_1_page_1a94f1fdf76417d5d8403b0b5621a8a2cd" kind="function"><name>InitializeComponent</name></member>
+    <member refid="da/d68/class_t_h_b___plugin___orders_1_1_orders_board_1_1_page_1a94f1fdf76417d5d8403b0b5621a8a2cd" kind="function"><name>InitializeComponent</name></member>
+    <member refid="da/d68/class_t_h_b___plugin___orders_1_1_orders_board_1_1_page_1aa2d4205a201eb65be143fb9dcf035960" kind="function"><name>Page</name></member>
+    <member refid="da/d68/class_t_h_b___plugin___orders_1_1_orders_board_1_1_page_1ad81dda6c97861e7db9ea7a9e98141d08" kind="function"><name>OnStart</name></member>
+    <member refid="da/d68/class_t_h_b___plugin___orders_1_1_orders_board_1_1_page_1acc34b2952ed95aa3030cbf5c353e2088" kind="function"><name>Connect</name></member>
+    <member refid="da/d68/class_t_h_b___plugin___orders_1_1_orders_board_1_1_page_1acc34b2952ed95aa3030cbf5c353e2088" kind="function"><name>Connect</name></member>
+    <member refid="da/d68/class_t_h_b___plugin___orders_1_1_orders_board_1_1_page_1acc34b2952ed95aa3030cbf5c353e2088" kind="function"><name>Connect</name></member>
+    <member refid="da/d68/class_t_h_b___plugin___orders_1_1_orders_board_1_1_page_1acc34b2952ed95aa3030cbf5c353e2088" kind="function"><name>Connect</name></member>
+    <member refid="da/d68/class_t_h_b___plugin___orders_1_1_orders_board_1_1_page_1acc34b2952ed95aa3030cbf5c353e2088" kind="function"><name>Connect</name></member>
+  </compound>
   <compound refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic" kind="class"><name>THB_Plugin_Social::PersonalStatistic::PersonalStatistic</name>
     <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a037d8487091d3848a7e6f0e96170ca0c" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a13f840788e043a6bd79c33adbd68f045" kind="property"><name>Meta</name></member>
     <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1accd1054e342a7f08b35fea1e39378bf3" kind="function"><name>InitializeComponent</name></member>
     <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1accd1054e342a7f08b35fea1e39378bf3" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1accd1054e342a7f08b35fea1e39378bf3" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1accd1054e342a7f08b35fea1e39378bf3" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a64b070533a315d960484da8d2f3633f9" kind="function"><name>PersonalStatistic</name></member>
-    <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1aa00014213f73519580b0d37f9dd5f845" kind="function"><name>OnStart</name></member>
-    <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a2caa604388601555e72bad0ce97f0c03" kind="function"><name>Connect</name></member>
-    <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a2caa604388601555e72bad0ce97f0c03" kind="function"><name>Connect</name></member>
     <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a2caa604388601555e72bad0ce97f0c03" kind="function"><name>Connect</name></member>
     <member refid="d7/d60/class_t_h_b___plugin___social_1_1_personal_statistic_1_1_personal_statistic_1a2caa604388601555e72bad0ce97f0c03" kind="function"><name>Connect</name></member>
   </compound>
   <compound refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository" kind="class"><name>THB_Plugin_Lesson::Repository</name>
     <member refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository_1ac8b761093ce23e767c2d550872d2b804" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository_1aa8951c83aac524f207e3b97c83fa226e" kind="property"><name>Meta</name></member>
     <member refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository_1afdf074d19e7e43f5cb9388fefdcc42d0" kind="function"><name>InitializeComponent</name></member>
     <member refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository_1afdf074d19e7e43f5cb9388fefdcc42d0" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository_1afdf074d19e7e43f5cb9388fefdcc42d0" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository_1afdf074d19e7e43f5cb9388fefdcc42d0" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository_1a11173e8a528769c23a21707cb67869ab" kind="function"><name>Repository</name></member>
-    <member refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository_1aaf5e62410e0a3df767020f4113d0f51c" kind="function"><name>OnStart</name></member>
     <member refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository_1a4fc89daa4cdaff9f9c61b46da60889fe" kind="function"><name>Connect</name></member>
     <member refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository_1a4fc89daa4cdaff9f9c61b46da60889fe" kind="function"><name>Connect</name></member>
-    <member refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository_1a4fc89daa4cdaff9f9c61b46da60889fe" kind="function"><name>Connect</name></member>
-    <member refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository_1a4fc89daa4cdaff9f9c61b46da60889fe" kind="function"><name>Connect</name></member>
-  </compound>
-  <compound refid="d2/d90/class_wpf_handler_1_1_properties_1_1_resources" kind="class"><name>WpfHandler::Properties::Resources</name>
-    <member refid="d2/d90/class_wpf_handler_1_1_properties_1_1_resources_1a70255d9bbf2306b40e8bed65c3ec52ae" kind="variable"><name>resourceMan</name></member>
-    <member refid="d2/d90/class_wpf_handler_1_1_properties_1_1_resources_1a32f5b165404b01ed52a1aa141dbee00f" kind="variable"><name>resourceCulture</name></member>
-    <member refid="d2/d90/class_wpf_handler_1_1_properties_1_1_resources_1a4908c4924066b6d42cc0e042fdae5079" kind="property"><name>ResourceManager</name></member>
-    <member refid="d2/d90/class_wpf_handler_1_1_properties_1_1_resources_1a9d6eb037cf7891a3ed5b2370e7dfdc23" kind="property"><name>Culture</name></member>
-    <member refid="d2/d90/class_wpf_handler_1_1_properties_1_1_resources_1a1716741adf60fb090a9a65b5b0314240" kind="function"><name>Resources</name></member>
-  </compound>
-  <compound refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources" kind="class"><name>THB_Plugin_Orders::Properties::Resources</name>
-    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1a55f529fe90663a657c5b13d890aa9940" kind="variable"><name>resourceMan</name></member>
-    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1a92e2dbc2c2b32065ca3b5196eeb94e3c" kind="variable"><name>resourceCulture</name></member>
-    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1af9431eab17864a9aff07751c973e07b4" kind="property"><name>ResourceManager</name></member>
-    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1abc067a0bcc5bdc35ac68752a464d42cc" kind="property"><name>Culture</name></member>
-    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1a32135e8b0c0f9fc6403e77ae86fc446d" kind="function"><name>Resources</name></member>
   </compound>
   <compound refid="de/d69/class_teacher_handbook_1_1_properties_1_1_resources" kind="class"><name>TeacherHandbook::Properties::Resources</name>
     <member refid="de/d69/class_teacher_handbook_1_1_properties_1_1_resources_1a744ab1269c4931be089de79e8e1866bb" kind="variable"><name>resourceMan</name></member>
@@ -351,6 +502,13 @@
     <member refid="de/d69/class_teacher_handbook_1_1_properties_1_1_resources_1a21ca51d6f85c0dfdff618767488d942f" kind="property"><name>ResourceManager</name></member>
     <member refid="de/d69/class_teacher_handbook_1_1_properties_1_1_resources_1a7d2a69e42deca52f95de104f0283705c" kind="property"><name>Culture</name></member>
     <member refid="de/d69/class_teacher_handbook_1_1_properties_1_1_resources_1a79af218580b0d5791b9650661e1f84dd" kind="function"><name>Resources</name></member>
+  </compound>
+  <compound refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources" kind="class"><name>THB_Plugin_Social::Properties::Resources</name>
+    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1a8ff25bc7c1484e726983f36b516c56f7" kind="variable"><name>resourceMan</name></member>
+    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1af6f06bd4c037c13a9c69e7700a6950b9" kind="variable"><name>resourceCulture</name></member>
+    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1a480b09e333fe9a3de46ecf95895fdde8" kind="property"><name>ResourceManager</name></member>
+    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1a4b1ade895a2309c9b4020346f8ed51c3" kind="property"><name>Culture</name></member>
+    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1aafcc2b3edf5a61df82d719606256fdc4" kind="function"><name>Resources</name></member>
   </compound>
   <compound refid="d1/d40/class_t_h_b___data___server_1_1_properties_1_1_resources" kind="class"><name>THB_Data_Server::Properties::Resources</name>
     <member refid="d1/d40/class_t_h_b___data___server_1_1_properties_1_1_resources_1a713fd57fd8801c7746351c27854346b3" kind="variable"><name>resourceMan</name></member>
@@ -366,12 +524,12 @@
     <member refid="d8/d18/class_t_h_b___plugin___exams_1_1_properties_1_1_resources_1ad00eb8a1a616471660b17263b4e580ad" kind="property"><name>Culture</name></member>
     <member refid="d8/d18/class_t_h_b___plugin___exams_1_1_properties_1_1_resources_1a0c53088172773a253a38f9b08ef5fcb2" kind="function"><name>Resources</name></member>
   </compound>
-  <compound refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources" kind="class"><name>THB_Plugin_Social::Properties::Resources</name>
-    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1a8ff25bc7c1484e726983f36b516c56f7" kind="variable"><name>resourceMan</name></member>
-    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1af6f06bd4c037c13a9c69e7700a6950b9" kind="variable"><name>resourceCulture</name></member>
-    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1a480b09e333fe9a3de46ecf95895fdde8" kind="property"><name>ResourceManager</name></member>
-    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1a4b1ade895a2309c9b4020346f8ed51c3" kind="property"><name>Culture</name></member>
-    <member refid="d9/df5/class_t_h_b___plugin___social_1_1_properties_1_1_resources_1aafcc2b3edf5a61df82d719606256fdc4" kind="function"><name>Resources</name></member>
+  <compound refid="d2/d90/class_wpf_handler_1_1_properties_1_1_resources" kind="class"><name>WpfHandler::Properties::Resources</name>
+    <member refid="d2/d90/class_wpf_handler_1_1_properties_1_1_resources_1a70255d9bbf2306b40e8bed65c3ec52ae" kind="variable"><name>resourceMan</name></member>
+    <member refid="d2/d90/class_wpf_handler_1_1_properties_1_1_resources_1a32f5b165404b01ed52a1aa141dbee00f" kind="variable"><name>resourceCulture</name></member>
+    <member refid="d2/d90/class_wpf_handler_1_1_properties_1_1_resources_1a4908c4924066b6d42cc0e042fdae5079" kind="property"><name>ResourceManager</name></member>
+    <member refid="d2/d90/class_wpf_handler_1_1_properties_1_1_resources_1a9d6eb037cf7891a3ed5b2370e7dfdc23" kind="property"><name>Culture</name></member>
+    <member refid="d2/d90/class_wpf_handler_1_1_properties_1_1_resources_1a1716741adf60fb090a9a65b5b0314240" kind="function"><name>Resources</name></member>
   </compound>
   <compound refid="d1/d04/class_t_h_b___plugin___lesson_1_1_properties_1_1_resources" kind="class"><name>THB_Plugin_Lesson::Properties::Resources</name>
     <member refid="d1/d04/class_t_h_b___plugin___lesson_1_1_properties_1_1_resources_1ac08be1ba22be5a78c1903fab9ef4b4af" kind="variable"><name>resourceMan</name></member>
@@ -380,18 +538,18 @@
     <member refid="d1/d04/class_t_h_b___plugin___lesson_1_1_properties_1_1_resources_1a4cbee6fc062dab9463a53238fa76b2d0" kind="property"><name>Culture</name></member>
     <member refid="d1/d04/class_t_h_b___plugin___lesson_1_1_properties_1_1_resources_1a6ad6072afd70a71fb5956d46945149ca" kind="function"><name>Resources</name></member>
   </compound>
+  <compound refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources" kind="class"><name>THB_Plugin_Orders::Properties::Resources</name>
+    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1a55f529fe90663a657c5b13d890aa9940" kind="variable"><name>resourceMan</name></member>
+    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1a92e2dbc2c2b32065ca3b5196eeb94e3c" kind="variable"><name>resourceCulture</name></member>
+    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1af9431eab17864a9aff07751c973e07b4" kind="property"><name>ResourceManager</name></member>
+    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1abc067a0bcc5bdc35ac68752a464d42cc" kind="property"><name>Culture</name></member>
+    <member refid="d6/d74/class_t_h_b___plugin___orders_1_1_properties_1_1_resources_1a32135e8b0c0f9fc6403e77ae86fc446d" kind="function"><name>Resources</name></member>
+  </compound>
   <compound refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule" kind="class"><name>TeacherHandbook::Plugins::Schedule::Schedule</name>
     <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1aa1b4c4609f2d3f479a8c8566f988d11e" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a42435b27bd43eb1afbf5a504bbae08b6" kind="property"><name>Meta</name></member>
     <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a4e0847c918304d0ce088671e13e8f9a6" kind="function"><name>InitializeComponent</name></member>
     <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a4e0847c918304d0ce088671e13e8f9a6" kind="function"><name>InitializeComponent</name></member>
     <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a4e0847c918304d0ce088671e13e8f9a6" kind="function"><name>InitializeComponent</name></member>
-    <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a4e0847c918304d0ce088671e13e8f9a6" kind="function"><name>InitializeComponent</name></member>
-    <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1adc7ec0bfd6db513f6106304eccbaa3ba" kind="function"><name>Schedule</name></member>
-    <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a8f74818aad2b85eea41959b41e4572bd" kind="function"><name>OnStart</name></member>
-    <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a4e0847c918304d0ce088671e13e8f9a6" kind="function"><name>InitializeComponent</name></member>
-    <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a6b69e488632bb6650e94e68de0137da0" kind="function"><name>Connect</name></member>
-    <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a6b69e488632bb6650e94e68de0137da0" kind="function"><name>Connect</name></member>
     <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a6b69e488632bb6650e94e68de0137da0" kind="function"><name>Connect</name></member>
     <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a6b69e488632bb6650e94e68de0137da0" kind="function"><name>Connect</name></member>
     <member refid="dc/d1d/class_teacher_handbook_1_1_plugins_1_1_schedule_1_1_schedule_1a6b69e488632bb6650e94e68de0137da0" kind="function"><name>Connect</name></member>
@@ -402,29 +560,29 @@
   <compound refid="d5/d8e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_session" kind="class"><name>TeacherHandbook::Core::Containers::Schedule::Session</name>
     <member refid="d5/d8e/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_session_1a1e3ab318ef7a0b8330eb06704d129531" kind="variable"><name>subjects</name></member>
   </compound>
+  <compound refid="d2/d6c/class_t_h_b___plugin___lesson_1_1_properties_1_1_settings" kind="class"><name>THB_Plugin_Lesson::Properties::Settings</name>
+    <member refid="d2/d6c/class_t_h_b___plugin___lesson_1_1_properties_1_1_settings_1a3468ef1e17fceecd069556491bd2fd4d" kind="variable"><name>defaultInstance</name></member>
+    <member refid="d2/d6c/class_t_h_b___plugin___lesson_1_1_properties_1_1_settings_1a62c075a5b387e28e65836510eb611744" kind="property"><name>Default</name></member>
+  </compound>
   <compound refid="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings" kind="class"><name>THB_Plugin_Orders::Properties::Settings</name>
     <member refid="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings_1af1617d6bc9802134b5f147a6eaa63627" kind="variable"><name>defaultInstance</name></member>
     <member refid="dd/d9e/class_t_h_b___plugin___orders_1_1_properties_1_1_settings_1aa9bb1b48c0521b2a4e7d2d390dccd7ed" kind="property"><name>Default</name></member>
-  </compound>
-  <compound refid="d5/dbf/class_t_h_b___plugin___social_1_1_properties_1_1_settings" kind="class"><name>THB_Plugin_Social::Properties::Settings</name>
-    <member refid="d5/dbf/class_t_h_b___plugin___social_1_1_properties_1_1_settings_1ad13b332c3b0bb32f646f60e018fb93cd" kind="variable"><name>defaultInstance</name></member>
-    <member refid="d5/dbf/class_t_h_b___plugin___social_1_1_properties_1_1_settings_1a561f116fda9ea9e2cee13c36295a5a8a" kind="property"><name>Default</name></member>
-  </compound>
-  <compound refid="d0/d4b/class_teacher_handbook_1_1_properties_1_1_settings" kind="class"><name>TeacherHandbook::Properties::Settings</name>
-    <member refid="d0/d4b/class_teacher_handbook_1_1_properties_1_1_settings_1a0ab4c8518be984ba2f07b4553ab289f2" kind="variable"><name>defaultInstance</name></member>
-    <member refid="d0/d4b/class_teacher_handbook_1_1_properties_1_1_settings_1a7c06e1129e2b621773a8243e3ff15641" kind="property"><name>Default</name></member>
-  </compound>
-  <compound refid="d7/d4f/class_wpf_handler_1_1_properties_1_1_settings" kind="class"><name>WpfHandler::Properties::Settings</name>
-    <member refid="d7/d4f/class_wpf_handler_1_1_properties_1_1_settings_1a7b2e360d53ec59976635347e45223008" kind="variable"><name>defaultInstance</name></member>
-    <member refid="d7/d4f/class_wpf_handler_1_1_properties_1_1_settings_1a252db64811cbf5a2fccc03433c9566c3" kind="property"><name>Default</name></member>
   </compound>
   <compound refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings" kind="class"><name>THB_Plugin_Exams::Properties::Settings</name>
     <member refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings_1a9aa1e91ef757890464a72793f1eb73f5" kind="variable"><name>defaultInstance</name></member>
     <member refid="dc/d5b/class_t_h_b___plugin___exams_1_1_properties_1_1_settings_1a66f1b0647e31c1a4ca44a07101154767" kind="property"><name>Default</name></member>
   </compound>
-  <compound refid="d2/d6c/class_t_h_b___plugin___lesson_1_1_properties_1_1_settings" kind="class"><name>THB_Plugin_Lesson::Properties::Settings</name>
-    <member refid="d2/d6c/class_t_h_b___plugin___lesson_1_1_properties_1_1_settings_1a3468ef1e17fceecd069556491bd2fd4d" kind="variable"><name>defaultInstance</name></member>
-    <member refid="d2/d6c/class_t_h_b___plugin___lesson_1_1_properties_1_1_settings_1a62c075a5b387e28e65836510eb611744" kind="property"><name>Default</name></member>
+  <compound refid="d0/d4b/class_teacher_handbook_1_1_properties_1_1_settings" kind="class"><name>TeacherHandbook::Properties::Settings</name>
+    <member refid="d0/d4b/class_teacher_handbook_1_1_properties_1_1_settings_1a0ab4c8518be984ba2f07b4553ab289f2" kind="variable"><name>defaultInstance</name></member>
+    <member refid="d0/d4b/class_teacher_handbook_1_1_properties_1_1_settings_1a7c06e1129e2b621773a8243e3ff15641" kind="property"><name>Default</name></member>
+  </compound>
+  <compound refid="d5/dbf/class_t_h_b___plugin___social_1_1_properties_1_1_settings" kind="class"><name>THB_Plugin_Social::Properties::Settings</name>
+    <member refid="d5/dbf/class_t_h_b___plugin___social_1_1_properties_1_1_settings_1ad13b332c3b0bb32f646f60e018fb93cd" kind="variable"><name>defaultInstance</name></member>
+    <member refid="d5/dbf/class_t_h_b___plugin___social_1_1_properties_1_1_settings_1a561f116fda9ea9e2cee13c36295a5a8a" kind="property"><name>Default</name></member>
+  </compound>
+  <compound refid="d7/d4f/class_wpf_handler_1_1_properties_1_1_settings" kind="class"><name>WpfHandler::Properties::Settings</name>
+    <member refid="d7/d4f/class_wpf_handler_1_1_properties_1_1_settings_1a7b2e360d53ec59976635347e45223008" kind="variable"><name>defaultInstance</name></member>
+    <member refid="d7/d4f/class_wpf_handler_1_1_properties_1_1_settings_1a252db64811cbf5a2fccc03433c9566c3" kind="property"><name>Default</name></member>
   </compound>
   <compound refid="db/dce/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_subject" kind="class"><name>TeacherHandbook::Core::Containers::Schedule::Subject</name>
     <member refid="db/dce/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_subject_1a464bb371a4d6eb0eb9bd0e0e096a5434" kind="variable"><name>key</name></member>
@@ -435,51 +593,42 @@
   </compound>
   <compound refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor" kind="class"><name>THB_Plugin_Exams::TestConstructor</name>
     <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a1eaeb6477f25dff83c567410511fad08" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a85cefaa72576228ed78d6c8702efcc1d" kind="property"><name>Meta</name></member>
     <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1ad70275bbde2d37af9f1a5c16ee51ebdc" kind="function"><name>InitializeComponent</name></member>
     <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1ad70275bbde2d37af9f1a5c16ee51ebdc" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1ad70275bbde2d37af9f1a5c16ee51ebdc" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1ad70275bbde2d37af9f1a5c16ee51ebdc" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1aace6b5247031bfb0e7b0dbb9a90873b2" kind="function"><name>TestConstructor</name></member>
-    <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a63e4366632dc3a521527366b5c28dffc" kind="function"><name>OnStart</name></member>
     <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a22d27f93166ca180758b1aea7adcf6e0" kind="function"><name>Connect</name></member>
     <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a22d27f93166ca180758b1aea7adcf6e0" kind="function"><name>Connect</name></member>
-    <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a22d27f93166ca180758b1aea7adcf6e0" kind="function"><name>Connect</name></member>
-    <member refid="d4/d8d/class_t_h_b___plugin___exams_1_1_test_constructor_1a22d27f93166ca180758b1aea7adcf6e0" kind="function"><name>Connect</name></member>
-  </compound>
-  <compound refid="dd/d5d/class_wpf_handler_1_1_user_control1" kind="class"><name>WpfHandler::UserControl1</name>
-    <member refid="dd/d5d/class_wpf_handler_1_1_user_control1_1a5205c49dc7ecde88eb8ed4a0f3468b47" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="dd/d5d/class_wpf_handler_1_1_user_control1_1a4be9da09a92a3fd301a67bf224d2f3d5" kind="function"><name>InitializeComponent</name></member>
-    <member refid="dd/d5d/class_wpf_handler_1_1_user_control1_1aa7f1658efb648be3e096fdb65e9d9573" kind="function"><name>Connect</name></member>
-  </compound>
-  <compound refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1" kind="class"><name>THB_Plugin_Exams::UserControl1</name>
-    <member refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1_1a0af4bcadce35594e7decef2aca6ae954" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1_1a00b30a8b0179c27805d9f9565070adba" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1_1adcd9edc13c61ced201761f6b90e32ab4" kind="function"><name>Connect</name></member>
-  </compound>
-  <compound refid="d2/dc6/class_t_h_b___plugin___orders_1_1_user_control1" kind="class"><name>THB_Plugin_Orders::UserControl1</name>
-    <member refid="d2/dc6/class_t_h_b___plugin___orders_1_1_user_control1_1a7d0a1a76f48fc70682dd70cdbfdcf690" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="d2/dc6/class_t_h_b___plugin___orders_1_1_user_control1_1ab6bf9301231de03e2f7bad2f7d436c3f" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d2/dc6/class_t_h_b___plugin___orders_1_1_user_control1_1a96d56e40e84ca08b117dea6b74b5545a" kind="function"><name>Connect</name></member>
-  </compound>
-  <compound refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1" kind="class"><name>TeacherHandbook::Controls::UserControl1</name>
-    <member refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1a57070769f7910e144693661a022177be" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1afbcb7046a6000b1f69c161bb9e5c69b2" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1ae5076c67f52166ebffbcdd33f5270a6c" kind="function"><name>Connect</name></member>
-  </compound>
-  <compound refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1" kind="class"><name>THB_Plugin_Lesson::UserControl1</name>
-    <member refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1_1ad58ace768113ee37aa177bfbf97bf7cf" kind="variable"><name>_contentLoaded</name></member>
-    <member refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1_1a6b157c1dad624766c5da2c984c9b1368" kind="function"><name>InitializeComponent</name></member>
-    <member refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1_1a052591678edd4a1701981778548968cf" kind="function"><name>Connect</name></member>
   </compound>
   <compound refid="d1/d79/class_t_h_b___plugin___social_1_1_user_control1" kind="class"><name>THB_Plugin_Social::UserControl1</name>
     <member refid="d1/d79/class_t_h_b___plugin___social_1_1_user_control1_1a3f1b09bbced6d4b895eff4b6a376601e" kind="variable"><name>_contentLoaded</name></member>
     <member refid="d1/d79/class_t_h_b___plugin___social_1_1_user_control1_1a25fbdc8418a5a7c4054d91d6aeb14fcf" kind="function"><name>InitializeComponent</name></member>
     <member refid="d1/d79/class_t_h_b___plugin___social_1_1_user_control1_1ae3f433a2f257e1f3ebec48d3b1d5365f" kind="function"><name>Connect</name></member>
   </compound>
-  <compound refid="de/d25/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_week" kind="class"><name>TeacherHandbook::Core::Containers::Schedule::Week</name>
+  <compound refid="d2/dc6/class_t_h_b___plugin___orders_1_1_user_control1" kind="class"><name>THB_Plugin_Orders::UserControl1</name>
+    <member refid="d2/dc6/class_t_h_b___plugin___orders_1_1_user_control1_1a7d0a1a76f48fc70682dd70cdbfdcf690" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="d2/dc6/class_t_h_b___plugin___orders_1_1_user_control1_1ab6bf9301231de03e2f7bad2f7d436c3f" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d2/dc6/class_t_h_b___plugin___orders_1_1_user_control1_1a96d56e40e84ca08b117dea6b74b5545a" kind="function"><name>Connect</name></member>
   </compound>
-  <compound refid="d2/d6a/namespace_pipes_provider_1_1_server" kind="namespace"><name>PipesProvider::Server</name>
+  <compound refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1" kind="class"><name>THB_Plugin_Exams::UserControl1</name>
+    <member refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1_1a0af4bcadce35594e7decef2aca6ae954" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1_1a00b30a8b0179c27805d9f9565070adba" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d4/ddd/class_t_h_b___plugin___exams_1_1_user_control1_1adcd9edc13c61ced201761f6b90e32ab4" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="dd/d5d/class_wpf_handler_1_1_user_control1" kind="class"><name>WpfHandler::UserControl1</name>
+    <member refid="dd/d5d/class_wpf_handler_1_1_user_control1_1a5205c49dc7ecde88eb8ed4a0f3468b47" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="dd/d5d/class_wpf_handler_1_1_user_control1_1a4be9da09a92a3fd301a67bf224d2f3d5" kind="function"><name>InitializeComponent</name></member>
+    <member refid="dd/d5d/class_wpf_handler_1_1_user_control1_1aa7f1658efb648be3e096fdb65e9d9573" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1" kind="class"><name>THB_Plugin_Lesson::UserControl1</name>
+    <member refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1_1ad58ace768113ee37aa177bfbf97bf7cf" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1_1a6b157c1dad624766c5da2c984c9b1368" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d4/dec/class_t_h_b___plugin___lesson_1_1_user_control1_1a052591678edd4a1701981778548968cf" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1" kind="class"><name>TeacherHandbook::Controls::UserControl1</name>
+    <member refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1a57070769f7910e144693661a022177be" kind="variable"><name>_contentLoaded</name></member>
+    <member refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1afbcb7046a6000b1f69c161bb9e5c69b2" kind="function"><name>InitializeComponent</name></member>
+    <member refid="d6/dc1/class_teacher_handbook_1_1_controls_1_1_user_control1_1ae5076c67f52166ebffbcdd33f5270a6c" kind="function"><name>Connect</name></member>
+  </compound>
+  <compound refid="de/d25/class_teacher_handbook_1_1_core_1_1_containers_1_1_schedule_1_1_week" kind="class"><name>TeacherHandbook::Core::Containers::Schedule::Week</name>
   </compound>
   <compound refid="d8/dd0/namespace_system" kind="namespace"><name>System</name>
   </compound>
@@ -580,6 +729,8 @@
   </compound>
   <compound refid="d9/d79/namespace_teacher_handbook_1_1_core_1_1_orders" kind="namespace"><name>TeacherHandbook::Core::Orders</name>
   </compound>
+  <compound refid="d7/dfb/namespace_teacher_handbook_1_1_networking" kind="namespace"><name>TeacherHandbook::Networking</name>
+  </compound>
   <compound refid="db/d63/namespace_teacher_handbook_1_1_plugins" kind="namespace"><name>TeacherHandbook::Plugins</name>
   </compound>
   <compound refid="dc/d95/namespace_teacher_handbook_1_1_plugins_1_1_feed" kind="namespace"><name>TeacherHandbook::Plugins::Feed</name>
@@ -587,6 +738,10 @@
   <compound refid="db/db0/namespace_teacher_handbook_1_1_plugins_1_1_schedule" kind="namespace"><name>TeacherHandbook::Plugins::Schedule</name>
   </compound>
   <compound refid="d3/d7d/namespace_teacher_handbook_1_1_properties" kind="namespace"><name>TeacherHandbook::Properties</name>
+  </compound>
+  <compound refid="d9/dc4/namespace_teacher_handbook_1_1_u_i" kind="namespace"><name>TeacherHandbook::UI</name>
+  </compound>
+  <compound refid="d5/d0b/namespace_teacher_handbook_1_1_u_i_1_1_windows" kind="namespace"><name>TeacherHandbook::UI::Windows</name>
   </compound>
   <compound refid="df/d5d/namespace_t_h_b___data___server" kind="namespace"><name>THB_Data_Server</name>
   </compound>
@@ -596,13 +751,33 @@
   </compound>
   <compound refid="da/d44/namespace_t_h_b___plugin___exams" kind="namespace"><name>THB_Plugin_Exams</name>
   </compound>
+  <compound refid="d7/d27/namespace_t_h_b___plugin___exams_1_1_exam_planner" kind="namespace"><name>THB_Plugin_Exams::ExamPlanner</name>
+  </compound>
+  <compound refid="d3/d3c/namespace_t_h_b___plugin___exams_1_1_exams_monitor" kind="namespace"><name>THB_Plugin_Exams::ExamsMonitor</name>
+  </compound>
+  <compound refid="dd/dfe/namespace_t_h_b___plugin___exams_1_1_exams_planner" kind="namespace"><name>THB_Plugin_Exams::ExamsPlanner</name>
+  </compound>
   <compound refid="d1/d7f/namespace_t_h_b___plugin___exams_1_1_properties" kind="namespace"><name>THB_Plugin_Exams::Properties</name>
+  </compound>
+  <compound refid="d6/dff/namespace_t_h_b___plugin___exams_1_1_tests_constructor" kind="namespace"><name>THB_Plugin_Exams::TestsConstructor</name>
   </compound>
   <compound refid="df/d41/namespace_t_h_b___plugin___lesson" kind="namespace"><name>THB_Plugin_Lesson</name>
   </compound>
+  <compound refid="de/dd1/namespace_t_h_b___plugin___lesson_1_1_assesments" kind="namespace"><name>THB_Plugin_Lesson::Assesments</name>
+  </compound>
+  <compound refid="d3/dc7/namespace_t_h_b___plugin___lesson_1_1_attendance_log" kind="namespace"><name>THB_Plugin_Lesson::AttendanceLog</name>
+  </compound>
+  <compound refid="d2/dce/namespace_t_h_b___plugin___lesson_1_1_lesson_board" kind="namespace"><name>THB_Plugin_Lesson::LessonBoard</name>
+  </compound>
   <compound refid="d9/dd0/namespace_t_h_b___plugin___lesson_1_1_properties" kind="namespace"><name>THB_Plugin_Lesson::Properties</name>
   </compound>
+  <compound refid="d5/d3c/namespace_t_h_b___plugin___lesson_1_1_repository" kind="namespace"><name>THB_Plugin_Lesson::Repository</name>
+  </compound>
   <compound refid="d7/d5a/namespace_t_h_b___plugin___orders" kind="namespace"><name>THB_Plugin_Orders</name>
+  </compound>
+  <compound refid="dc/d6b/namespace_t_h_b___plugin___orders_1_1_add_order" kind="namespace"><name>THB_Plugin_Orders::AddOrder</name>
+  </compound>
+  <compound refid="db/d8f/namespace_t_h_b___plugin___orders_1_1_orders_board" kind="namespace"><name>THB_Plugin_Orders::OrdersBoard</name>
   </compound>
   <compound refid="d1/d57/namespace_t_h_b___plugin___orders_1_1_properties" kind="namespace"><name>THB_Plugin_Orders::Properties</name>
   </compound>
@@ -620,7 +795,11 @@
   </compound>
   <compound refid="d4/daa/namespace_uniform_queries" kind="namespace"><name>UniformQueries</name>
   </compound>
+  <compound refid="dd/dba/namespace_uniform_queries_1_1_executable" kind="namespace"><name>UniformQueries::Executable</name>
+  </compound>
   <compound refid="da/d93/namespace_wpf_handler" kind="namespace"><name>WpfHandler</name>
+  </compound>
+  <compound refid="d6/df3/namespace_wpf_handler_1_1_localization" kind="namespace"><name>WpfHandler::Localization</name>
   </compound>
   <compound refid="d3/dfd/namespace_wpf_handler_1_1_plugins" kind="namespace"><name>WpfHandler::Plugins</name>
   </compound>
@@ -628,25 +807,17 @@
   </compound>
   <compound refid="d7/de3/namespace_xaml_generated_namespace" kind="namespace"><name>XamlGeneratedNamespace</name>
   </compound>
-  <compound refid="df/d5d/_exam_planner_8xaml_8cs" kind="file"><name>ExamPlanner.xaml.cs</name>
+  <compound refid="df/d29/_localization_2_a_p_i_8cs" kind="file"><name>API.cs</name>
   </compound>
-  <compound refid="df/d51/_monitor_8xaml_8cs" kind="file"><name>Monitor.xaml.cs</name>
+  <compound refid="d0/d64/_plugins_2_a_p_i_8cs" kind="file"><name>API.cs</name>
   </compound>
-  <compound refid="d1/d66/_debug_2_exam_planner_8g_8cs" kind="file"><name>ExamPlanner.g.cs</name>
+  <compound refid="df/dbf/_domain_container_8cs" kind="file"><name>DomainContainer.cs</name>
   </compound>
-  <compound refid="de/d40/_release_2_exam_planner_8g_8cs" kind="file"><name>ExamPlanner.g.cs</name>
+  <compound refid="dd/daa/_addons_2_wpf_handler_2obj_2_debug_2_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs" kind="file"><name>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
   </compound>
-  <compound refid="d1/dc3/_debug_2_exam_planner_8g_8i_8cs" kind="file"><name>ExamPlanner.g.i.cs</name>
+  <compound refid="d4/d86/_apps_2_clients_2_teacher_handbook_2obj_2_debug_2_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs" kind="file"><name>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
   </compound>
-  <compound refid="d1/da8/_release_2_exam_planner_8g_8i_8cs" kind="file"><name>ExamPlanner.g.i.cs</name>
-  </compound>
-  <compound refid="d3/d7c/_debug_2_monitor_8g_8cs" kind="file"><name>Monitor.g.cs</name>
-  </compound>
-  <compound refid="db/d35/_release_2_monitor_8g_8cs" kind="file"><name>Monitor.g.cs</name>
-  </compound>
-  <compound refid="dd/d98/_debug_2_monitor_8g_8i_8cs" kind="file"><name>Monitor.g.i.cs</name>
-  </compound>
-  <compound refid="d8/d4b/_release_2_monitor_8g_8i_8cs" kind="file"><name>Monitor.g.i.cs</name>
+  <compound refid="d8/d12/_apps_2_servers_2_t_h_b_01_data_01_server_2obj_2_debug_2_temporary_generated_file__036_c0_b5_b-1f1411576535cbe4b456a58934a07025b" kind="file"><name>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
   </compound>
   <compound refid="d7/d3b/_plugins_2_t_h_b_01_plugin_01_exams_2obj_2_debug_2_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs" kind="file"><name>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
   </compound>
@@ -656,11 +827,11 @@
   </compound>
   <compound refid="d9/df1/_plugins_2_t_h_b_01_plugin_01_social_2obj_2_debug_2_temporary_generated_file__036_c0_b5_b-1481-4c8955bf648095f87616dfc6cdca37423" kind="file"><name>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
   </compound>
-  <compound refid="d5/d03/_teacher_handbook_2obj_2_debug_2_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs" kind="file"><name>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
+  <compound refid="de/d3c/_addons_2_wpf_handler_2obj_2_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs" kind="file"><name>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
   </compound>
-  <compound refid="d7/dbe/_t_h_b_01_data_01_server_2obj_2_debug_2_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs" kind="file"><name>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
+  <compound refid="d4/dae/_apps_2_clients_2_teacher_handbook_2obj_2_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs" kind="file"><name>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
   </compound>
-  <compound refid="d4/daa/_wpf_handler_2obj_2_debug_2_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs" kind="file"><name>TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs</name>
+  <compound refid="d4/d8d/_apps_2_servers_2_t_h_b_01_data_01_server_2obj_2_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs" kind="file"><name>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
   </compound>
   <compound refid="d7/d0c/_plugins_2_t_h_b_01_plugin_01_exams_2obj_2_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs" kind="file"><name>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
   </compound>
@@ -670,11 +841,11 @@
   </compound>
   <compound refid="dd/db6/_plugins_2_t_h_b_01_plugin_01_social_2obj_2_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs" kind="file"><name>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
   </compound>
-  <compound refid="df/d66/_teacher_handbook_2obj_2_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs" kind="file"><name>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
+  <compound refid="dc/dca/_addons_2_wpf_handler_2obj_2_debug_2_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs" kind="file"><name>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
   </compound>
-  <compound refid="d5/dde/_t_h_b_01_data_01_server_2obj_2_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs" kind="file"><name>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
+  <compound refid="d4/dcf/_apps_2_clients_2_teacher_handbook_2obj_2_debug_2_temporary_generated_file___e7_a71_f73-0_f8_d-45eaaaa070952cc06ebeaed71d4e21d5a" kind="file"><name>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
   </compound>
-  <compound refid="d6/dff/_wpf_handler_2obj_2_debug_2_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs" kind="file"><name>TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs</name>
+  <compound refid="d8/ded/_apps_2_servers_2_t_h_b_01_data_01_server_2obj_2_debug_2_temporary_generated_file___e7_a71_f73-081d4aa22b9df1257550b856dfb4636da" kind="file"><name>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
   </compound>
   <compound refid="df/df8/_plugins_2_t_h_b_01_plugin_01_exams_2obj_2_debug_2_temporary_generated_file___e7_a71_f73-0_f8_d-5db61dc0c4309ad2bb9072f211da86b0" kind="file"><name>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
   </compound>
@@ -684,19 +855,9 @@
   </compound>
   <compound refid="d4/d2b/_plugins_2_t_h_b_01_plugin_01_social_2obj_2_debug_2_temporary_generated_file___e7_a71_f73-0_f8_dcea73add7945bb421120f50cc9aea4c1" kind="file"><name>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
   </compound>
-  <compound refid="d1/d31/_teacher_handbook_2obj_2_debug_2_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs" kind="file"><name>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
+  <compound refid="d1/d47/_addons_2_wpf_handler_2obj_2_debug_2_user_control1_8g_8i_8cs" kind="file"><name>UserControl1.g.i.cs</name>
   </compound>
-  <compound refid="dc/d55/_t_h_b_01_data_01_server_2obj_2_debug_2_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs" kind="file"><name>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
-  </compound>
-  <compound refid="d4/d5e/_wpf_handler_2obj_2_debug_2_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs" kind="file"><name>TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs</name>
-  </compound>
-  <compound refid="d5/d2c/_debug_2_test_constructor_8g_8cs" kind="file"><name>TestConstructor.g.cs</name>
-  </compound>
-  <compound refid="db/d55/_release_2_test_constructor_8g_8cs" kind="file"><name>TestConstructor.g.cs</name>
-  </compound>
-  <compound refid="d7/da1/_debug_2_test_constructor_8g_8i_8cs" kind="file"><name>TestConstructor.g.i.cs</name>
-  </compound>
-  <compound refid="d4/d29/_release_2_test_constructor_8g_8i_8cs" kind="file"><name>TestConstructor.g.i.cs</name>
+  <compound refid="d2/d9b/_apps_2_clients_2_teacher_handbook_2obj_2_debug_2_controls_2_user_control1_8g_8i_8cs" kind="file"><name>UserControl1.g.i.cs</name>
   </compound>
   <compound refid="d2/d31/_plugins_2_t_h_b_01_plugin_01_exams_2obj_2_debug_2_user_control1_8g_8i_8cs" kind="file"><name>UserControl1.g.i.cs</name>
   </compound>
@@ -706,9 +867,11 @@
   </compound>
   <compound refid="d2/dbb/_plugins_2_t_h_b_01_plugin_01_social_2obj_2_debug_2_user_control1_8g_8i_8cs" kind="file"><name>UserControl1.g.i.cs</name>
   </compound>
-  <compound refid="db/d09/_teacher_handbook_2obj_2_debug_2_controls_2_user_control1_8g_8i_8cs" kind="file"><name>UserControl1.g.i.cs</name>
+  <compound refid="d6/da1/_addons_2_wpf_handler_2_properties_2_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
   </compound>
-  <compound refid="d7/d54/_wpf_handler_2obj_2_debug_2_user_control1_8g_8i_8cs" kind="file"><name>UserControl1.g.i.cs</name>
+  <compound refid="dd/dcd/_apps_2_clients_2_teacher_handbook_2_properties_2_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
+  </compound>
+  <compound refid="d1/dc3/_apps_2_servers_2_t_h_b_01_data_01_server_2_properties_2_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
   </compound>
   <compound refid="d3/df7/_plugins_2_t_h_b_01_plugin_01_exams_2_properties_2_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
   </compound>
@@ -718,11 +881,11 @@
   </compound>
   <compound refid="d0/d92/_plugins_2_t_h_b_01_plugin_01_social_2_properties_2_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
   </compound>
-  <compound refid="de/df3/_teacher_handbook_2_properties_2_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
+  <compound refid="d7/d57/_addons_2_wpf_handler_2_properties_2_resources_8_designer_8cs" kind="file"><name>Resources.Designer.cs</name>
   </compound>
-  <compound refid="d7/ddf/_t_h_b_01_data_01_server_2_properties_2_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
+  <compound refid="d9/d0a/_apps_2_clients_2_teacher_handbook_2_properties_2_resources_8_designer_8cs" kind="file"><name>Resources.Designer.cs</name>
   </compound>
-  <compound refid="db/d25/_wpf_handler_2_properties_2_assembly_info_8cs" kind="file"><name>AssemblyInfo.cs</name>
+  <compound refid="d0/de8/_apps_2_servers_2_t_h_b_01_data_01_server_2_properties_2_resources_8_designer_8cs" kind="file"><name>Resources.Designer.cs</name>
   </compound>
   <compound refid="d2/ddf/_plugins_2_t_h_b_01_plugin_01_exams_2_properties_2_resources_8_designer_8cs" kind="file"><name>Resources.Designer.cs</name>
   </compound>
@@ -732,11 +895,9 @@
   </compound>
   <compound refid="df/dd7/_plugins_2_t_h_b_01_plugin_01_social_2_properties_2_resources_8_designer_8cs" kind="file"><name>Resources.Designer.cs</name>
   </compound>
-  <compound refid="df/d4b/_teacher_handbook_2_properties_2_resources_8_designer_8cs" kind="file"><name>Resources.Designer.cs</name>
+  <compound refid="d0/d83/_addons_2_wpf_handler_2_properties_2_settings_8_designer_8cs" kind="file"><name>Settings.Designer.cs</name>
   </compound>
-  <compound refid="dc/d6d/_t_h_b_01_data_01_server_2_properties_2_resources_8_designer_8cs" kind="file"><name>Resources.Designer.cs</name>
-  </compound>
-  <compound refid="d2/d6d/_wpf_handler_2_properties_2_resources_8_designer_8cs" kind="file"><name>Resources.Designer.cs</name>
+  <compound refid="d4/d71/_apps_2_clients_2_teacher_handbook_2_properties_2_settings_8_designer_8cs" kind="file"><name>Settings.Designer.cs</name>
   </compound>
   <compound refid="d9/db1/_plugins_2_t_h_b_01_plugin_01_exams_2_properties_2_settings_8_designer_8cs" kind="file"><name>Settings.Designer.cs</name>
   </compound>
@@ -746,141 +907,9 @@
   </compound>
   <compound refid="de/d7c/_plugins_2_t_h_b_01_plugin_01_social_2_properties_2_settings_8_designer_8cs" kind="file"><name>Settings.Designer.cs</name>
   </compound>
-  <compound refid="d0/dfb/_teacher_handbook_2_properties_2_settings_8_designer_8cs" kind="file"><name>Settings.Designer.cs</name>
-  </compound>
-  <compound refid="d8/dc5/_wpf_handler_2_properties_2_settings_8_designer_8cs" kind="file"><name>Settings.Designer.cs</name>
-  </compound>
-  <compound refid="db/d46/_test_constructor_8xaml_8cs" kind="file"><name>TestConstructor.xaml.cs</name>
-  </compound>
-  <compound refid="d8/dd1/_assesments_8xaml_8cs" kind="file"><name>Assesments.xaml.cs</name>
-  </compound>
-  <compound refid="d9/d4f/_attendance_log_8xaml_8cs" kind="file"><name>AttendanceLog.xaml.cs</name>
-  </compound>
-  <compound refid="d2/d79/_lesson_board_8xaml_8cs" kind="file"><name>LessonBoard.xaml.cs</name>
-  </compound>
-  <compound refid="d8/d4c/_debug_2_assesments_8g_8cs" kind="file"><name>Assesments.g.cs</name>
-  </compound>
-  <compound refid="de/dd7/_release_2_assesments_8g_8cs" kind="file"><name>Assesments.g.cs</name>
-  </compound>
-  <compound refid="d2/ddb/_debug_2_assesments_8g_8i_8cs" kind="file"><name>Assesments.g.i.cs</name>
-  </compound>
-  <compound refid="da/dcd/_release_2_assesments_8g_8i_8cs" kind="file"><name>Assesments.g.i.cs</name>
-  </compound>
-  <compound refid="d4/d27/_debug_2_attendance_log_8g_8cs" kind="file"><name>AttendanceLog.g.cs</name>
-  </compound>
-  <compound refid="d5/d9f/_release_2_attendance_log_8g_8cs" kind="file"><name>AttendanceLog.g.cs</name>
-  </compound>
-  <compound refid="d3/d50/_debug_2_attendance_log_8g_8i_8cs" kind="file"><name>AttendanceLog.g.i.cs</name>
-  </compound>
-  <compound refid="d8/dc8/_release_2_attendance_log_8g_8i_8cs" kind="file"><name>AttendanceLog.g.i.cs</name>
-  </compound>
-  <compound refid="d6/d0e/_debug_2_lesson_board_8g_8cs" kind="file"><name>LessonBoard.g.cs</name>
-  </compound>
-  <compound refid="d3/d9a/_release_2_lesson_board_8g_8cs" kind="file"><name>LessonBoard.g.cs</name>
-  </compound>
-  <compound refid="d6/d46/_debug_2_lesson_board_2_lesson_board_8g_8i_8cs" kind="file"><name>LessonBoard.g.i.cs</name>
-  </compound>
-  <compound refid="d1/d38/_debug_2_lesson_board_8g_8i_8cs" kind="file"><name>LessonBoard.g.i.cs</name>
-  </compound>
-  <compound refid="d5/d5c/_release_2_lesson_board_8g_8i_8cs" kind="file"><name>LessonBoard.g.i.cs</name>
-  </compound>
-  <compound refid="db/d86/_debug_2_repository_8g_8cs" kind="file"><name>Repository.g.cs</name>
-  </compound>
-  <compound refid="da/d58/_release_2_repository_8g_8cs" kind="file"><name>Repository.g.cs</name>
-  </compound>
-  <compound refid="d2/d60/_debug_2_repository_8g_8i_8cs" kind="file"><name>Repository.g.i.cs</name>
-  </compound>
-  <compound refid="d5/d1f/_release_2_repository_8g_8i_8cs" kind="file"><name>Repository.g.i.cs</name>
-  </compound>
-  <compound refid="d2/d11/_repository_8xaml_8cs" kind="file"><name>Repository.xaml.cs</name>
-  </compound>
-  <compound refid="da/d15/_add_order_8xaml_8cs" kind="file"><name>AddOrder.xaml.cs</name>
-  </compound>
-  <compound refid="d1/d3c/_debug_2_add_order_8g_8cs" kind="file"><name>AddOrder.g.cs</name>
-  </compound>
-  <compound refid="dc/d16/_release_2_add_order_8g_8cs" kind="file"><name>AddOrder.g.cs</name>
-  </compound>
-  <compound refid="de/da0/_debug_2_add_order_8g_8i_8cs" kind="file"><name>AddOrder.g.i.cs</name>
-  </compound>
-  <compound refid="da/da3/_release_2_add_order_8g_8i_8cs" kind="file"><name>AddOrder.g.i.cs</name>
-  </compound>
-  <compound refid="d8/d41/_debug_2_orders_board_8g_8cs" kind="file"><name>OrdersBoard.g.cs</name>
-  </compound>
-  <compound refid="db/db0/_release_2_orders_board_8g_8cs" kind="file"><name>OrdersBoard.g.cs</name>
-  </compound>
-  <compound refid="d8/da9/_debug_2_orders_board_8g_8i_8cs" kind="file"><name>OrdersBoard.g.i.cs</name>
-  </compound>
-  <compound refid="d9/df6/_release_2_orders_board_8g_8i_8cs" kind="file"><name>OrdersBoard.g.i.cs</name>
-  </compound>
-  <compound refid="d5/d39/_orders_board_8xaml_8cs" kind="file"><name>OrdersBoard.xaml.cs</name>
-  </compound>
-  <compound refid="d9/d8b/_achivments_8xaml_8cs" kind="file"><name>Achivments.xaml.cs</name>
-  </compound>
-  <compound refid="d2/dfb/_advices_8xaml_8cs" kind="file"><name>Advices.xaml.cs</name>
-  </compound>
-  <compound refid="d3/d10/_feed_8xaml_8cs" kind="file"><name>Feed.xaml.cs</name>
-  </compound>
-  <compound refid="dc/dd4/_debug_2_achivments_2_achivments_8g_8cs" kind="file"><name>Achivments.g.cs</name>
-  </compound>
-  <compound refid="d3/dba/_release_2_achivments_2_achivments_8g_8cs" kind="file"><name>Achivments.g.cs</name>
-  </compound>
-  <compound refid="df/d84/_debug_2_achivments_2_achivments_8g_8i_8cs" kind="file"><name>Achivments.g.i.cs</name>
-  </compound>
-  <compound refid="d9/dc4/_release_2_achivments_2_achivments_8g_8i_8cs" kind="file"><name>Achivments.g.i.cs</name>
-  </compound>
-  <compound refid="d6/d0f/_debug_2_advices_2_advices_8g_8cs" kind="file"><name>Advices.g.cs</name>
-  </compound>
-  <compound refid="df/d34/_release_2_advices_2_advices_8g_8cs" kind="file"><name>Advices.g.cs</name>
-  </compound>
-  <compound refid="d9/d30/_debug_2_advices_2_advices_8g_8i_8cs" kind="file"><name>Advices.g.i.cs</name>
-  </compound>
-  <compound refid="d1/dbb/_release_2_advices_2_advices_8g_8i_8cs" kind="file"><name>Advices.g.i.cs</name>
-  </compound>
-  <compound refid="d7/d3c/_plugins_2_t_h_b_01_plugin_01_social_2obj_2_debug_2_feed_2_feed_8g_8cs" kind="file"><name>Feed.g.cs</name>
-  </compound>
-  <compound refid="d6/db8/_plugins_2_t_h_b_01_plugin_01_social_2obj_2_release_2_feed_2_feed_8g_8cs" kind="file"><name>Feed.g.cs</name>
-  </compound>
-  <compound refid="d5/d62/_teacher_handbook_2obj_2_release_2_plugins_2_feed_2_feed_8g_8cs" kind="file"><name>Feed.g.cs</name>
-  </compound>
-  <compound refid="d9/dcc/_plugins_2_t_h_b_01_plugin_01_social_2obj_2_debug_2_feed_2_feed_8g_8i_8cs" kind="file"><name>Feed.g.i.cs</name>
-  </compound>
-  <compound refid="d0/dc2/_plugins_2_t_h_b_01_plugin_01_social_2obj_2_release_2_feed_2_feed_8g_8i_8cs" kind="file"><name>Feed.g.i.cs</name>
-  </compound>
-  <compound refid="de/dfa/_teacher_handbook_2obj_2_debug_2_plugins_2_feed_2_feed_8g_8i_8cs" kind="file"><name>Feed.g.i.cs</name>
-  </compound>
-  <compound refid="dd/d3d/_teacher_handbook_2obj_2_release_2_plugins_2_feed_2_feed_8g_8i_8cs" kind="file"><name>Feed.g.i.cs</name>
-  </compound>
-  <compound refid="d3/d7b/_debug_2_personal_statistic_2_personal_statistic_8g_8cs" kind="file"><name>PersonalStatistic.g.cs</name>
-  </compound>
-  <compound refid="d6/d03/_release_2_personal_statistic_2_personal_statistic_8g_8cs" kind="file"><name>PersonalStatistic.g.cs</name>
-  </compound>
-  <compound refid="d4/d36/_debug_2_personal_statistic_2_personal_statistic_8g_8i_8cs" kind="file"><name>PersonalStatistic.g.i.cs</name>
-  </compound>
-  <compound refid="d6/dc2/_release_2_personal_statistic_2_personal_statistic_8g_8i_8cs" kind="file"><name>PersonalStatistic.g.i.cs</name>
-  </compound>
-  <compound refid="d1/d1e/_debug_2_schedule_2_schedule_8g_8cs" kind="file"><name>Schedule.g.cs</name>
-  </compound>
-  <compound refid="da/da3/_release_2_schedule_2_schedule_8g_8cs" kind="file"><name>Schedule.g.cs</name>
-  </compound>
-  <compound refid="de/d90/_plugins_2_t_h_b_01_plugin_01_social_2obj_2_debug_2_schedule_2_schedule_8g_8i_8cs" kind="file"><name>Schedule.g.i.cs</name>
-  </compound>
-  <compound refid="d8/d8b/_plugins_2_t_h_b_01_plugin_01_social_2obj_2_release_2_schedule_2_schedule_8g_8i_8cs" kind="file"><name>Schedule.g.i.cs</name>
-  </compound>
-  <compound refid="da/dcf/_teacher_handbook_2obj_2_debug_2_plugins_2_schedule_2_schedule_8g_8i_8cs" kind="file"><name>Schedule.g.i.cs</name>
-  </compound>
-  <compound refid="d2/d51/_personal_statistic_8xaml_8cs" kind="file"><name>PersonalStatistic.xaml.cs</name>
-  </compound>
-  <compound refid="dd/ded/_schedule_8xaml_8cs" kind="file"><name>Schedule.xaml.cs</name>
-  </compound>
-  <compound refid="d9/dd6/_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
-  </compound>
   <compound refid="db/da1/_app_8xaml_8cs" kind="file"><name>App.xaml.cs</name>
   </compound>
   <compound refid="db/d43/_client_8cs" kind="file"><name>Client.cs</name>
-  </compound>
-  <compound refid="dd/d6d/_catalog_button_8xaml_8cs" kind="file"><name>CatalogButton.xaml.cs</name>
-  </compound>
-  <compound refid="d6/d57/_main_window_8xaml_8cs" kind="file"><name>MainWindow.xaml.cs</name>
   </compound>
   <compound refid="d5/d62/_debug_2_app_8g_8cs" kind="file"><name>App.g.cs</name>
   </compound>
@@ -894,11 +923,11 @@
   </compound>
   <compound refid="d3/df5/_debug_2_controls_2_catalog_button_8g_8i_8cs" kind="file"><name>CatalogButton.g.i.cs</name>
   </compound>
+  <compound refid="d9/d33/_debug_2_u_i_2_controls_2_catalog_button_8g_8i_8cs" kind="file"><name>CatalogButton.g.i.cs</name>
+  </compound>
   <compound refid="d9/d38/_release_2_controls_2_catalog_button_8g_8i_8cs" kind="file"><name>CatalogButton.g.i.cs</name>
   </compound>
-  <compound refid="d2/d9f/_debug_2_controls_2_catalog_button_8g_8cs" kind="file"><name>CatalogButton.g.cs</name>
-  </compound>
-  <compound refid="d8/d26/_release_2_controls_2_catalog_button_8g_8cs" kind="file"><name>CatalogButton.g.cs</name>
+  <compound refid="d2/d19/_release_2_u_i_2_controls_2_catalog_button_8g_8i_8cs" kind="file"><name>CatalogButton.g.i.cs</name>
   </compound>
   <compound refid="df/dde/_debug_2_generated_internal_type_helper_8g_8cs" kind="file"><name>GeneratedInternalTypeHelper.g.cs</name>
   </compound>
@@ -908,21 +937,57 @@
   </compound>
   <compound refid="df/d66/_release_2_generated_internal_type_helper_8g_8i_8cs" kind="file"><name>GeneratedInternalTypeHelper.g.i.cs</name>
   </compound>
-  <compound refid="de/d02/_debug_2_main_window_8g_8cs" kind="file"><name>MainWindow.g.cs</name>
+  <compound refid="d8/d80/_debug_2_main_window_8g_8i_8cs" kind="file"><name>MainWindow.g.i.cs</name>
+  </compound>
+  <compound refid="d0/de6/_debug_2_u_i_2_main_window_8g_8i_8cs" kind="file"><name>MainWindow.g.i.cs</name>
+  </compound>
+  <compound refid="d9/d90/_debug_2_u_i_2_windows_2_main_window_8g_8i_8cs" kind="file"><name>MainWindow.g.i.cs</name>
+  </compound>
+  <compound refid="d8/dab/_debug_2_windows_2_main_window_8g_8i_8cs" kind="file"><name>MainWindow.g.i.cs</name>
+  </compound>
+  <compound refid="dd/db5/_release_2_main_window_8g_8i_8cs" kind="file"><name>MainWindow.g.i.cs</name>
+  </compound>
+  <compound refid="dd/dd3/_release_2_u_i_2_windows_2_main_window_8g_8i_8cs" kind="file"><name>MainWindow.g.i.cs</name>
+  </compound>
+  <compound refid="d2/d17/_apps_2_clients_2_teacher_handbook_2obj_2_debug_2_plugins_2_feed_2_feed_8g_8i_8cs" kind="file"><name>Feed.g.i.cs</name>
+  </compound>
+  <compound refid="de/de5/_apps_2_clients_2_teacher_handbook_2obj_2_release_2_plugins_2_feed_2_feed_8g_8i_8cs" kind="file"><name>Feed.g.i.cs</name>
+  </compound>
+  <compound refid="d9/dcc/_plugins_2_t_h_b_01_plugin_01_social_2obj_2_debug_2_feed_2_feed_8g_8i_8cs" kind="file"><name>Feed.g.i.cs</name>
+  </compound>
+  <compound refid="d0/dc2/_plugins_2_t_h_b_01_plugin_01_social_2obj_2_release_2_feed_2_feed_8g_8i_8cs" kind="file"><name>Feed.g.i.cs</name>
+  </compound>
+  <compound refid="df/d61/_apps_2_clients_2_teacher_handbook_2obj_2_debug_2_plugins_2_schedule_2_schedule_8g_8i_8cs" kind="file"><name>Schedule.g.i.cs</name>
+  </compound>
+  <compound refid="de/d90/_plugins_2_t_h_b_01_plugin_01_social_2obj_2_debug_2_schedule_2_schedule_8g_8i_8cs" kind="file"><name>Schedule.g.i.cs</name>
+  </compound>
+  <compound refid="d8/d8b/_plugins_2_t_h_b_01_plugin_01_social_2obj_2_release_2_schedule_2_schedule_8g_8i_8cs" kind="file"><name>Schedule.g.i.cs</name>
+  </compound>
+  <compound refid="dd/d97/_debug_2_u_i_2_controls_2_catalog_button_8g_8cs" kind="file"><name>CatalogButton.g.cs</name>
+  </compound>
+  <compound refid="d8/d26/_release_2_controls_2_catalog_button_8g_8cs" kind="file"><name>CatalogButton.g.cs</name>
+  </compound>
+  <compound refid="dc/d86/_release_2_u_i_2_controls_2_catalog_button_8g_8cs" kind="file"><name>CatalogButton.g.cs</name>
+  </compound>
+  <compound refid="d0/dff/_debug_2_u_i_2_windows_2_main_window_8g_8cs" kind="file"><name>MainWindow.g.cs</name>
   </compound>
   <compound refid="d3/d8d/_release_2_main_window_8g_8cs" kind="file"><name>MainWindow.g.cs</name>
   </compound>
-  <compound refid="d8/d80/_debug_2_main_window_8g_8i_8cs" kind="file"><name>MainWindow.g.i.cs</name>
+  <compound refid="dd/d23/_release_2_u_i_2_windows_2_main_window_8g_8cs" kind="file"><name>MainWindow.g.cs</name>
   </compound>
-  <compound refid="dd/db5/_release_2_main_window_8g_8i_8cs" kind="file"><name>MainWindow.g.i.cs</name>
+  <compound refid="d6/d10/_feed_8g_8cs" kind="file"><name>Feed.g.cs</name>
+  </compound>
+  <compound refid="dd/d6d/_catalog_button_8xaml_8cs" kind="file"><name>CatalogButton.xaml.cs</name>
+  </compound>
+  <compound refid="d6/d57/_main_window_8xaml_8cs" kind="file"><name>MainWindow.xaml.cs</name>
+  </compound>
+  <compound refid="d8/dba/_server_8cs" kind="file"><name>Server.cs</name>
   </compound>
   <compound refid="da/d9d/_g_e_t___d_a_y_s___r_a_n_g_e_8cs" kind="file"><name>GET_DAYS_RANGE.cs</name>
   </compound>
   <compound refid="d7/d59/_debug_2netstandard2_80_2_t_h_b_01_data_01_server_01_queries_8_assembly_info_8cs" kind="file"><name>THB Data Server Queries.AssemblyInfo.cs</name>
   </compound>
   <compound refid="d6/dd0/_release_2netstandard2_80_2_t_h_b_01_data_01_server_01_queries_8_assembly_info_8cs" kind="file"><name>THB Data Server Queries.AssemblyInfo.cs</name>
-  </compound>
-  <compound refid="d8/dba/_server_8cs" kind="file"><name>Server.cs</name>
   </compound>
   <compound refid="db/d64/_name_container_8cs" kind="file"><name>NameContainer.cs</name>
   </compound>
@@ -960,7 +1025,217 @@
   </compound>
   <compound refid="dc/dfd/_release_2netstandard2_80_2_t_h_b_01_data_01_types_8_assembly_info_8cs" kind="file"><name>THB Data Types.AssemblyInfo.cs</name>
   </compound>
-  <compound refid="de/d31/_a_p_i_8cs" kind="file"><name>API.cs</name>
+  <compound refid="d4/daf/_t_h_b_01_plugin_01_exams_2_exams_monitor_2_page_8xaml_8cs" kind="file"><name>Page.xaml.cs</name>
+  </compound>
+  <compound refid="d1/de8/_t_h_b_01_plugin_01_exams_2_exams_planner_2_page_8xaml_8cs" kind="file"><name>Page.xaml.cs</name>
+  </compound>
+  <compound refid="da/df9/_t_h_b_01_plugin_01_exams_2_tests_constructor_2_page_8xaml_8cs" kind="file"><name>Page.xaml.cs</name>
+  </compound>
+  <compound refid="d6/d1b/_t_h_b_01_plugin_01_lesson_2_assesments_2_page_8xaml_8cs" kind="file"><name>Page.xaml.cs</name>
+  </compound>
+  <compound refid="d9/d41/_t_h_b_01_plugin_01_lesson_2_attendance_log_2_page_8xaml_8cs" kind="file"><name>Page.xaml.cs</name>
+  </compound>
+  <compound refid="d9/d5a/_t_h_b_01_plugin_01_lesson_2_lesson_board_2_page_8xaml_8cs" kind="file"><name>Page.xaml.cs</name>
+  </compound>
+  <compound refid="d6/d93/_t_h_b_01_plugin_01_lesson_2_repository_2_page_8xaml_8cs" kind="file"><name>Page.xaml.cs</name>
+  </compound>
+  <compound refid="d0/dec/_t_h_b_01_plugin_01_orders_2_add_order_2_page_8xaml_8cs" kind="file"><name>Page.xaml.cs</name>
+  </compound>
+  <compound refid="dd/df2/_t_h_b_01_plugin_01_orders_2_orders_board_2_page_8xaml_8cs" kind="file"><name>Page.xaml.cs</name>
+  </compound>
+  <compound refid="d8/ddd/_t_h_b_01_plugin_01_social_2_achivments_2_page_8xaml_8cs" kind="file"><name>Page.xaml.cs</name>
+  </compound>
+  <compound refid="d5/d3c/_t_h_b_01_plugin_01_social_2_advices_2_page_8xaml_8cs" kind="file"><name>Page.xaml.cs</name>
+  </compound>
+  <compound refid="d5/d16/_t_h_b_01_plugin_01_social_2_feed_2_page_8xaml_8cs" kind="file"><name>Page.xaml.cs</name>
+  </compound>
+  <compound refid="dc/dd5/_t_h_b_01_plugin_01_social_2_personal_statistic_2_page_8xaml_8cs" kind="file"><name>Page.xaml.cs</name>
+  </compound>
+  <compound refid="dd/dd0/_t_h_b_01_plugin_01_social_2_schedule_2_page_8xaml_8cs" kind="file"><name>Page.xaml.cs</name>
+  </compound>
+  <compound refid="d8/d44/_debug_2_exam_monitor_2_monitor_8g_8i_8cs" kind="file"><name>Monitor.g.i.cs</name>
+  </compound>
+  <compound refid="d1/d2d/_debug_2_exams_monitor_2_monitor_8g_8i_8cs" kind="file"><name>Monitor.g.i.cs</name>
+  </compound>
+  <compound refid="dd/d98/_debug_2_monitor_8g_8i_8cs" kind="file"><name>Monitor.g.i.cs</name>
+  </compound>
+  <compound refid="d8/d4b/_release_2_monitor_8g_8i_8cs" kind="file"><name>Monitor.g.i.cs</name>
+  </compound>
+  <compound refid="d5/d57/_debug_2_exam_planner_2_exam_planner_8g_8i_8cs" kind="file"><name>ExamPlanner.g.i.cs</name>
+  </compound>
+  <compound refid="d1/dc3/_debug_2_exam_planner_8g_8i_8cs" kind="file"><name>ExamPlanner.g.i.cs</name>
+  </compound>
+  <compound refid="d1/da8/_release_2_exam_planner_8g_8i_8cs" kind="file"><name>ExamPlanner.g.i.cs</name>
+  </compound>
+  <compound refid="d9/d1f/_t_h_b_01_plugin_01_exams_2obj_2_debug_2_exam_planner_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d6/df6/_t_h_b_01_plugin_01_exams_2obj_2_debug_2_exams_monitor_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d4/d8a/_t_h_b_01_plugin_01_exams_2obj_2_debug_2_exams_planner_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d0/dca/_t_h_b_01_plugin_01_exams_2obj_2_debug_2_tests_constructor_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="df/d26/_t_h_b_01_plugin_01_exams_2obj_2_release_2_exams_monitor_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="df/d9b/_t_h_b_01_plugin_01_exams_2obj_2_release_2_exams_planner_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="dd/d6d/_t_h_b_01_plugin_01_exams_2obj_2_release_2_tests_constructor_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d3/d00/_t_h_b_01_plugin_01_lesson_2obj_2_debug_2_assesments_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="da/dbe/_t_h_b_01_plugin_01_lesson_2obj_2_debug_2_attendance_log_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d5/d3a/_t_h_b_01_plugin_01_lesson_2obj_2_debug_2_lesson_board_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d5/d85/_t_h_b_01_plugin_01_lesson_2obj_2_debug_2_repository_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d8/d6d/_t_h_b_01_plugin_01_lesson_2obj_2_release_2_assesments_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d5/d20/_t_h_b_01_plugin_01_lesson_2obj_2_release_2_attendance_log_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d1/d84/_t_h_b_01_plugin_01_lesson_2obj_2_release_2_lesson_board_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d0/dc1/_t_h_b_01_plugin_01_lesson_2obj_2_release_2_repository_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d6/d4b/_t_h_b_01_plugin_01_orders_2obj_2_debug_2_add_order_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="dc/df4/_t_h_b_01_plugin_01_orders_2obj_2_debug_2_orders_board_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d1/da7/_t_h_b_01_plugin_01_orders_2obj_2_release_2_add_order_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d6/da4/_t_h_b_01_plugin_01_orders_2obj_2_release_2_orders_board_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d7/db6/_t_h_b_01_plugin_01_social_2obj_2_debug_2_achivments_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d7/d07/_t_h_b_01_plugin_01_social_2obj_2_debug_2_advices_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="df/d75/_t_h_b_01_plugin_01_social_2obj_2_debug_2_feed_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="de/dc8/_t_h_b_01_plugin_01_social_2obj_2_debug_2_personal_statistic_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="db/d6f/_t_h_b_01_plugin_01_social_2obj_2_debug_2_schedule_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d7/ddd/_t_h_b_01_plugin_01_social_2obj_2_release_2_achivments_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d0/df8/_t_h_b_01_plugin_01_social_2obj_2_release_2_advices_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d8/daa/_t_h_b_01_plugin_01_social_2obj_2_release_2_feed_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="da/d05/_t_h_b_01_plugin_01_social_2obj_2_release_2_personal_statistic_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="d3/de4/_t_h_b_01_plugin_01_social_2obj_2_release_2_schedule_2_page_8g_8i_8cs" kind="file"><name>Page.g.i.cs</name>
+  </compound>
+  <compound refid="dc/d3a/_t_h_b_01_plugin_01_exams_2obj_2_debug_2_exams_monitor_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="d3/dc7/_t_h_b_01_plugin_01_exams_2obj_2_debug_2_exams_planner_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="d0/d4c/_t_h_b_01_plugin_01_exams_2obj_2_debug_2_tests_constructor_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="db/de8/_t_h_b_01_plugin_01_exams_2obj_2_release_2_exams_monitor_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="da/dc7/_t_h_b_01_plugin_01_exams_2obj_2_release_2_exams_planner_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="d9/d0c/_t_h_b_01_plugin_01_exams_2obj_2_release_2_tests_constructor_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="d2/d9a/_t_h_b_01_plugin_01_lesson_2obj_2_debug_2_assesments_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="d0/d82/_t_h_b_01_plugin_01_lesson_2obj_2_debug_2_attendance_log_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="d4/d47/_t_h_b_01_plugin_01_lesson_2obj_2_debug_2_lesson_board_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="d4/d1a/_t_h_b_01_plugin_01_lesson_2obj_2_debug_2_repository_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="d5/d9e/_t_h_b_01_plugin_01_lesson_2obj_2_release_2_assesments_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="d9/ddb/_t_h_b_01_plugin_01_lesson_2obj_2_release_2_attendance_log_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="d7/df0/_t_h_b_01_plugin_01_lesson_2obj_2_release_2_lesson_board_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="de/d20/_t_h_b_01_plugin_01_lesson_2obj_2_release_2_repository_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="df/df1/_t_h_b_01_plugin_01_orders_2obj_2_debug_2_add_order_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="d0/de0/_t_h_b_01_plugin_01_orders_2obj_2_debug_2_orders_board_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="d1/d3f/_t_h_b_01_plugin_01_orders_2obj_2_release_2_add_order_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="d7/d45/_t_h_b_01_plugin_01_orders_2obj_2_release_2_orders_board_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="da/dff/_t_h_b_01_plugin_01_social_2obj_2_debug_2_achivments_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="db/db5/_t_h_b_01_plugin_01_social_2obj_2_debug_2_advices_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="d5/dc8/_t_h_b_01_plugin_01_social_2obj_2_debug_2_feed_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="d0/d95/_t_h_b_01_plugin_01_social_2obj_2_debug_2_personal_statistic_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="d6/d16/_t_h_b_01_plugin_01_social_2obj_2_debug_2_schedule_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="dc/d46/_t_h_b_01_plugin_01_social_2obj_2_release_2_achivments_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="dc/d33/_t_h_b_01_plugin_01_social_2obj_2_release_2_advices_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="de/d36/_t_h_b_01_plugin_01_social_2obj_2_release_2_feed_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="db/d62/_t_h_b_01_plugin_01_social_2obj_2_release_2_personal_statistic_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="da/dbc/_t_h_b_01_plugin_01_social_2obj_2_release_2_schedule_2_page_8g_8cs" kind="file"><name>Page.g.cs</name>
+  </compound>
+  <compound refid="d7/da1/_debug_2_test_constructor_8g_8i_8cs" kind="file"><name>TestConstructor.g.i.cs</name>
+  </compound>
+  <compound refid="da/dc0/_debug_2_tests_constructor_2_test_constructor_8g_8i_8cs" kind="file"><name>TestConstructor.g.i.cs</name>
+  </compound>
+  <compound refid="d4/d29/_release_2_test_constructor_8g_8i_8cs" kind="file"><name>TestConstructor.g.i.cs</name>
+  </compound>
+  <compound refid="d2/dfe/_debug_2_assesments_2_assesments_8g_8i_8cs" kind="file"><name>Assesments.g.i.cs</name>
+  </compound>
+  <compound refid="d2/ddb/_debug_2_assesments_8g_8i_8cs" kind="file"><name>Assesments.g.i.cs</name>
+  </compound>
+  <compound refid="da/dcd/_release_2_assesments_8g_8i_8cs" kind="file"><name>Assesments.g.i.cs</name>
+  </compound>
+  <compound refid="d6/da9/_debug_2_attendance_log_2_attendance_log_8g_8i_8cs" kind="file"><name>AttendanceLog.g.i.cs</name>
+  </compound>
+  <compound refid="d3/d50/_debug_2_attendance_log_8g_8i_8cs" kind="file"><name>AttendanceLog.g.i.cs</name>
+  </compound>
+  <compound refid="d8/dc8/_release_2_attendance_log_8g_8i_8cs" kind="file"><name>AttendanceLog.g.i.cs</name>
+  </compound>
+  <compound refid="d6/d46/_debug_2_lesson_board_2_lesson_board_8g_8i_8cs" kind="file"><name>LessonBoard.g.i.cs</name>
+  </compound>
+  <compound refid="d1/d38/_debug_2_lesson_board_8g_8i_8cs" kind="file"><name>LessonBoard.g.i.cs</name>
+  </compound>
+  <compound refid="d5/d5c/_release_2_lesson_board_8g_8i_8cs" kind="file"><name>LessonBoard.g.i.cs</name>
+  </compound>
+  <compound refid="d5/d35/_debug_2_repository_2_repository_8g_8i_8cs" kind="file"><name>Repository.g.i.cs</name>
+  </compound>
+  <compound refid="d2/d60/_debug_2_repository_8g_8i_8cs" kind="file"><name>Repository.g.i.cs</name>
+  </compound>
+  <compound refid="d5/d1f/_release_2_repository_8g_8i_8cs" kind="file"><name>Repository.g.i.cs</name>
+  </compound>
+  <compound refid="d4/d0d/_debug_2_add_order_2_add_order_8g_8i_8cs" kind="file"><name>AddOrder.g.i.cs</name>
+  </compound>
+  <compound refid="de/da0/_debug_2_add_order_8g_8i_8cs" kind="file"><name>AddOrder.g.i.cs</name>
+  </compound>
+  <compound refid="da/da3/_release_2_add_order_8g_8i_8cs" kind="file"><name>AddOrder.g.i.cs</name>
+  </compound>
+  <compound refid="de/d0c/_debug_2_orders_board_2_orders_board_8g_8i_8cs" kind="file"><name>OrdersBoard.g.i.cs</name>
+  </compound>
+  <compound refid="d8/da9/_debug_2_orders_board_8g_8i_8cs" kind="file"><name>OrdersBoard.g.i.cs</name>
+  </compound>
+  <compound refid="d9/df6/_release_2_orders_board_8g_8i_8cs" kind="file"><name>OrdersBoard.g.i.cs</name>
+  </compound>
+  <compound refid="df/d84/_debug_2_achivments_2_achivments_8g_8i_8cs" kind="file"><name>Achivments.g.i.cs</name>
+  </compound>
+  <compound refid="d9/dc4/_release_2_achivments_2_achivments_8g_8i_8cs" kind="file"><name>Achivments.g.i.cs</name>
+  </compound>
+  <compound refid="d9/d30/_debug_2_advices_2_advices_8g_8i_8cs" kind="file"><name>Advices.g.i.cs</name>
+  </compound>
+  <compound refid="d1/dbb/_release_2_advices_2_advices_8g_8i_8cs" kind="file"><name>Advices.g.i.cs</name>
+  </compound>
+  <compound refid="d4/d36/_debug_2_personal_statistic_2_personal_statistic_8g_8i_8cs" kind="file"><name>PersonalStatistic.g.i.cs</name>
+  </compound>
+  <compound refid="d6/dc2/_release_2_personal_statistic_2_personal_statistic_8g_8i_8cs" kind="file"><name>PersonalStatistic.g.i.cs</name>
+  </compound>
+  <compound refid="d9/dd6/_r_e_a_d_m_e_8md" kind="file"><name>README.md</name>
   </compound>
   <compound refid="d8/d9e/md__d_1__work__git_hub_datum-point__r_e_a_d_m_e" kind="page"><name>md_D:_Work_GitHub_datum-point_README</name>
   </compound>
@@ -970,147 +1245,223 @@
   </compound>
   <compound refid="dir_9a1dd7fde4ad72f2764281303b8f3543" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Achivments</name>
   </compound>
+  <compound refid="dir_82be9164c06d4ae2c5ad1297186c566c" kind="dir"><name>D:/Work/GitHub/datum-point/Addons</name>
+  </compound>
+  <compound refid="dir_e2a445c36ae7fc2d865af8f3afdb0c18" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/AddOrder</name>
+  </compound>
+  <compound refid="dir_73629713b03c57a91416357c70cd7380" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/AddOrder</name>
+  </compound>
+  <compound refid="dir_91980adeaf390e7221a22478fe9b9a51" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release/AddOrder</name>
+  </compound>
   <compound refid="dir_9ebcd86fc9be2514b467fe82ccae6c9a" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Advices</name>
   </compound>
   <compound refid="dir_16b48716d1e7b4a81b16d645efae4a28" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Advices</name>
   </compound>
   <compound refid="dir_88cbc80a45f57d0edf0c6bbfd5312489" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Advices</name>
   </compound>
-  <compound refid="dir_49033eab1d854dbe4f013da03c22bac7" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/Core/Containers</name>
+  <compound refid="dir_6098f77c224c930825758694068d4cda" kind="dir"><name>D:/Work/GitHub/datum-point/Apps</name>
   </compound>
-  <compound refid="dir_2554cbb0596c5d39303ec6c2baa46fae" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Controls</name>
+  <compound refid="dir_ddae18d5b5e7d98994b15c0951be184a" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Assesments</name>
   </compound>
-  <compound refid="dir_f951477965820d8ebc2c00a856505c51" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/Controls</name>
+  <compound refid="dir_71b582968b5f4f87ab3f06ea67aa27ac" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Assesments</name>
   </compound>
-  <compound refid="dir_51f4e2ff08982bf4d6d2f1c2ac526de3" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/Controls</name>
+  <compound refid="dir_375422a329e3bebebadd8f356e25e5c7" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/Assesments</name>
   </compound>
-  <compound refid="dir_5e931e21c5690ec0e7458972494e2d21" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/Core</name>
+  <compound refid="dir_b574c9c5daca2b6486c1dfe75b421ab8" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/AttendanceLog</name>
   </compound>
-  <compound refid="dir_a68815291f9af2046b63da902791e0bd" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/CrossTypes</name>
+  <compound refid="dir_90cd5afa30470eae447f10bec7fe3059" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/AttendanceLog</name>
   </compound>
-  <compound refid="dir_007c9a3ec5c2060f1503ab1708596658" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug</name>
+  <compound refid="dir_165855a20f5cd253044f1e069a6d4c3e" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/AttendanceLog</name>
   </compound>
-  <compound refid="dir_a9b3c003ffd20a13c91d4a361d37380f" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug</name>
+  <compound refid="dir_83ab06a0fac8c9a178bccf4756e8502f" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients</name>
   </compound>
-  <compound refid="dir_60dd52520ab935105fefb935543e9aae" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/obj/Debug</name>
+  <compound refid="dir_5f8e237b1e0ef3f7109dbd0b224c99ea" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Types/Core/Containers</name>
   </compound>
-  <compound refid="dir_f4e0a24d4a35143575af5af7accd3641" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug</name>
+  <compound refid="dir_002abe5879e82bf3280aa5375fc8e7af" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Controls</name>
   </compound>
-  <compound refid="dir_ebfe815d2c705c00c0213592a085801f" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Server/obj/Debug</name>
+  <compound refid="dir_ddb96ab8d9d6ff48f863814aaee99e73" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/Controls</name>
   </compound>
-  <compound refid="dir_6cb68ed37af5e2b8bf6f2246a1561fdd" kind="dir"><name>D:/Work/GitHub/datum-point/WpfHandler/obj/Debug</name>
+  <compound refid="dir_3ee288076d1d44814cc35cec2e135a66" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/UI/Controls</name>
   </compound>
-  <compound refid="dir_b38a4e81e137a245edc909d8475c33ae" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug</name>
+  <compound refid="dir_fe252eff974f3cbde25d54aeb6f86821" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Controls</name>
+  </compound>
+  <compound refid="dir_969713d9a0311b3137fdc7206a27a660" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/UI/Controls</name>
+  </compound>
+  <compound refid="dir_922bcb6427260837dffe39fc591be615" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Types/Core</name>
+  </compound>
+  <compound refid="dir_c6310732a22f63c0c2fc5595561e68f1" kind="dir"><name>D:/Work/GitHub/datum-point/Core</name>
+  </compound>
+  <compound refid="dir_ea93cc70b5b87a39c09e3dbeaaa5d1ac" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Types/Core/Containers/CrossTypes</name>
   </compound>
   <compound refid="dir_68d9366f8e75163ec947993eb03f7807" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug</name>
   </compound>
-  <compound refid="dir_b31cc0ef005d498793b60a991675aa06" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Server Queries/obj/Debug</name>
+  <compound refid="dir_b9c4427aad2f4f079bae7772b72159c0" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Server Queries/obj/Debug</name>
   </compound>
-  <compound refid="dir_1d89606911edf520420600636428080f" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities</name>
+  <compound refid="dir_5c0d35483d1df10baa711338c77b3465" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Types/obj/Debug</name>
   </compound>
-  <compound refid="dir_cf5903973dc6be319295cba59620ac75" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/Core/Enums</name>
+  <compound refid="dir_0ddc832dbbda589c388a0817b3a5c4dc" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug</name>
+  </compound>
+  <compound refid="dir_a9b3c003ffd20a13c91d4a361d37380f" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug</name>
+  </compound>
+  <compound refid="dir_f4e0a24d4a35143575af5af7accd3641" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug</name>
+  </compound>
+  <compound refid="dir_b38a4e81e137a245edc909d8475c33ae" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug</name>
+  </compound>
+  <compound refid="dir_f4219077e5491a94c473f4afa68302fd" kind="dir"><name>D:/Work/GitHub/datum-point/Addons/WpfHandler/obj/Debug</name>
+  </compound>
+  <compound refid="dir_bed85342483628e1c6b3ebf8df0c8344" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Servers/THB Data Server/obj/Debug</name>
+  </compound>
+  <compound refid="dir_f4837f113d7f8f72d26b607efa4f1af9" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Types/Core/Containers/Entities</name>
+  </compound>
+  <compound refid="dir_8ab7c2e694e7354060d03aebb60bc39e" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Types/Core/Enums</name>
+  </compound>
+  <compound refid="dir_a890adbeaf38536727896b47d2cda821" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamMonitor</name>
+  </compound>
+  <compound refid="dir_9d62b2ca530054d05debfb3256fa02c3" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamPlanner</name>
+  </compound>
+  <compound refid="dir_945f0dd20f64eb89d3b02620834c4770" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/ExamsMonitor</name>
+  </compound>
+  <compound refid="dir_4d32d6bcd49b87235170ec5117a014f8" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamsMonitor</name>
+  </compound>
+  <compound refid="dir_8c7c597c42ff0abb7e45cf08657c4fc8" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamsMonitor</name>
+  </compound>
+  <compound refid="dir_7df90beca85e9e025a2347565fcb14d7" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/ExamsPlanner</name>
+  </compound>
+  <compound refid="dir_a418fc8ce67f2e4bfcae5844a25dd276" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/ExamsPlanner</name>
+  </compound>
+  <compound refid="dir_0863c03b8e21c3f170c3cc11c396bad3" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamsPlanner</name>
   </compound>
   <compound refid="dir_445d4e638072988fbfa0ad327fe0e9e3" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Feed</name>
   </compound>
-  <compound refid="dir_745eb98171660095f73dd48c48878016" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Feed</name>
+  <compound refid="dir_3d538431484ab965d0d008de0d60690c" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Plugins/Feed</name>
+  </compound>
+  <compound refid="dir_a1cf98abc3176fb2a78d521e15df1afd" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/Plugins/Feed</name>
   </compound>
   <compound refid="dir_d88bd695dcab445e581605c453f14e29" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Feed</name>
   </compound>
-  <compound refid="dir_0f97e3059dc46b0ab0cd59ebc32d3e11" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/Plugins/Feed</name>
+  <compound refid="dir_745eb98171660095f73dd48c48878016" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Feed</name>
   </compound>
-  <compound refid="dir_0a0e6c4866f73fa4dcf5039e6dc71ac5" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Plugins/Feed</name>
+  <compound refid="dir_d4d9ebf90067a127e4a9351c12da5bd2" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/LessonBoard</name>
   </compound>
   <compound refid="dir_fc73e58113fef615b4ab163e500c9b22" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/LessonBoard</name>
   </compound>
-  <compound refid="dir_0d6af4c17ae8c86f2c57a6f39b262849" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/Core/Localization</name>
+  <compound refid="dir_f50f7a7fb494f802692d2baa2c33a920" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/LessonBoard</name>
   </compound>
-  <compound refid="dir_fb139e6ed371f380190d331a7acae813" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Server Queries/obj/Release/netstandard2.0</name>
+  <compound refid="dir_0ef099453c69889471763b64080f02a3" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Types/Core/Localization</name>
   </compound>
-  <compound refid="dir_4b0ca53b55913bfff76b7cae2abf2618" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/obj/Release/netstandard2.0</name>
+  <compound refid="dir_8e565ea4eb1889c703c2eb99071b3ef2" kind="dir"><name>D:/Work/GitHub/datum-point/Addons/WpfHandler/Localization</name>
   </compound>
-  <compound refid="dir_44c0b9f2dc8d4dbf8eeda49598cf43e4" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/obj/Debug/netstandard2.0</name>
+  <compound refid="dir_7f8d7d716763ddadf5b2e80e583af00f" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Server Queries/obj/Debug/netstandard2.0</name>
   </compound>
-  <compound refid="dir_98ff69c7a756d7ad8599f220f2da76f1" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Server Queries/obj/Debug/netstandard2.0</name>
+  <compound refid="dir_9ceb557589adb0b1d401920cba27bb03" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Server Queries/obj/Release/netstandard2.0</name>
   </compound>
-  <compound refid="dir_2648235bfabdf2cfbc482137b8bc8120" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj</name>
+  <compound refid="dir_a4a30585c3004f2c0e3c519a188ed208" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Types/obj/Debug/netstandard2.0</name>
   </compound>
-  <compound refid="dir_8088bf23e9a3b1805263e477b59597ab" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/obj</name>
+  <compound refid="dir_0c21311d5be3667c93e75cb639c687c8" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Types/obj/Release/netstandard2.0</name>
   </compound>
-  <compound refid="dir_b1db848416afa29287c20bd37e2c3d2a" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj</name>
+  <compound refid="dir_c60df490840a276922ee4cd4a34d365f" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/Networking</name>
   </compound>
-  <compound refid="dir_a4fee1022b130ffb1420d4f30e95a4d1" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Server/obj</name>
-  </compound>
-  <compound refid="dir_a6535da8d13e5c56b7f983d6c840ee7a" kind="dir"><name>D:/Work/GitHub/datum-point/WpfHandler/obj</name>
+  <compound refid="dir_315527f1c5a2ea9f7a9f7a449e8e718a" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Servers/THB Data Server/Networking</name>
   </compound>
   <compound refid="dir_570164c0c63956201764123ed7810bba" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj</name>
   </compound>
-  <compound refid="dir_a0c7591d2a05453cbcc29af46e0e6897" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj</name>
+  <compound refid="dir_fa328c12e57e7238c4578bdb7d8e0ebb" kind="dir"><name>D:/Work/GitHub/datum-point/Addons/WpfHandler/obj</name>
+  </compound>
+  <compound refid="dir_2648235bfabdf2cfbc482137b8bc8120" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj</name>
+  </compound>
+  <compound refid="dir_0c6612ca85cc0603ee4e64bc0b5a0765" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Types/obj</name>
   </compound>
   <compound refid="dir_1c3ca9b4d75d703a8e054452029b21a2" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj</name>
   </compound>
-  <compound refid="dir_5840e1f4c5729ef220ab3ea45630876d" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Server Queries/obj</name>
+  <compound refid="dir_ffed0f19f7fbac3af96618481b94700c" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj</name>
   </compound>
-  <compound refid="dir_a1572d7f8f8e653d4dac362b7a4af60a" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/Core/Orders</name>
+  <compound refid="dir_a0c7591d2a05453cbcc29af46e0e6897" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj</name>
   </compound>
-  <compound refid="dir_010748947a0fa5f093ca1ae5d122ebb1" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic</name>
+  <compound refid="dir_58b02b874027e9e17e36ed2207005ab7" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Servers/THB Data Server/obj</name>
+  </compound>
+  <compound refid="dir_157d693da6e032cd8f18ec089246fc26" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Server Queries/obj</name>
+  </compound>
+  <compound refid="dir_4b4fbaeb1329cdbd8727963e8e649210" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Types/Core/Orders</name>
+  </compound>
+  <compound refid="dir_cf44b6044e7e8aa7d2c2c9d55aee650c" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release/OrdersBoard</name>
+  </compound>
+  <compound refid="dir_9245fe54b008ac0322aa1ae21e6ba1a0" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/OrdersBoard</name>
+  </compound>
+  <compound refid="dir_205fc6134b6f4a366707da6e26484701" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/OrdersBoard</name>
   </compound>
   <compound refid="dir_2d780dd0a71081273e3358dac60cc725" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/PersonalStatistic</name>
   </compound>
+  <compound refid="dir_010748947a0fa5f093ca1ae5d122ebb1" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/PersonalStatistic</name>
+  </compound>
   <compound refid="dir_9c4b3c310b9b5c8f662cd0213206d735" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/PersonalStatistic</name>
-  </compound>
-  <compound refid="dir_af5d15f8256a51d7807ca342b0319abd" kind="dir"><name>D:/Work/GitHub/datum-point/WpfHandler/Plugins</name>
-  </compound>
-  <compound refid="dir_3ff5a4157ad6258f3edbc0f9942468b6" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release/Plugins</name>
-  </compound>
-  <compound refid="dir_bb3d1150db60f28eb1d87cfa9b731b9f" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Plugins</name>
   </compound>
   <compound refid="dir_0b4eaef40a1fe20bedafe9e8e719ce66" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins</name>
   </compound>
-  <compound refid="dir_b83bf7ce3797d175ec08d61cf4776531" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/Properties</name>
+  <compound refid="dir_764e3a0122e5ffbc3ef0532df7a8e217" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/Plugins</name>
   </compound>
-  <compound refid="dir_55016a239489980b7527dcdcdfcbdd88" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Server/Properties</name>
+  <compound refid="dir_0ce493a61e80b3d35178879c39c40ee9" kind="dir"><name>D:/Work/GitHub/datum-point/Addons/WpfHandler/Plugins</name>
+  </compound>
+  <compound refid="dir_c905d27f491cc8c425f79988e626a2e9" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Plugins</name>
   </compound>
   <compound refid="dir_e572bb0e7de612f3f80556ff74a409be" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/Properties</name>
+  </compound>
+  <compound refid="dir_1123da69350a56e6e1e3f7f84677b7b4" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Servers/THB Data Server/Properties</name>
   </compound>
   <compound refid="dir_e438c529c8af60ade2ffa19ab80a589c" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Properties</name>
   </compound>
   <compound refid="dir_f776110637899bdc82985f907ec52540" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Properties</name>
   </compound>
-  <compound refid="dir_eca680429e4f7c39fe2dbe928f450aae" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/Properties</name>
+  <compound refid="dir_b83bf7ce3797d175ec08d61cf4776531" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/Properties</name>
   </compound>
-  <compound refid="dir_4367517d618885f3174662ad1dff82c8" kind="dir"><name>D:/Work/GitHub/datum-point/WpfHandler/Properties</name>
+  <compound refid="dir_629b1f8d9787bb929b56d95eae86ab2d" kind="dir"><name>D:/Work/GitHub/datum-point/Addons/WpfHandler/Properties</name>
   </compound>
-  <compound refid="dir_e757db1869597a596721ea43a2f3ee6b" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Server Queries/obj/Release</name>
+  <compound refid="dir_42efd13ab9b2a775f66bc0ed95bf5775" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/Properties</name>
   </compound>
-  <compound refid="dir_bedb1d38554d05f78369ecb94ef6de2a" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj/Release</name>
+  <compound refid="dir_3cc8a40be2eb955104a254ef0225ba2b" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Server Queries/obj/Release</name>
   </compound>
   <compound refid="dir_b214a4dbce77070e45bdfa29dc2aae55" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release</name>
   </compound>
-  <compound refid="dir_2e0bb01afeb32eefceb3003a6434a0b6" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release</name>
+  <compound refid="dir_498a35706611cc851c5ca6d767bf0c13" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release</name>
+  </compound>
+  <compound refid="dir_b64caa1818f6cf66613a337d64f70e0d" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Types/obj/Release</name>
   </compound>
   <compound refid="dir_9203302e7592b96d9540f8cff99d7099" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release</name>
   </compound>
-  <compound refid="dir_8d5b170423417a867aca133a58ea720e" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/obj/Release</name>
-  </compound>
   <compound refid="dir_6752f573bc751348b328be96d0493c0a" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release</name>
   </compound>
-  <compound refid="dir_8a0840ed80b2a3f300c779ec3895e941" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook/obj/Debug/Plugins/Schedule</name>
+  <compound refid="dir_2e0bb01afeb32eefceb3003a6434a0b6" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release</name>
+  </compound>
+  <compound refid="dir_154d0b34b90ca0e12cc1374fd61587a9" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/Repository</name>
+  </compound>
+  <compound refid="dir_6621f3ba2cd37517bb92aafafaa727b7" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Repository</name>
+  </compound>
+  <compound refid="dir_4dae95a3e5ed1d985f80ca34d2666f13" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Repository</name>
+  </compound>
+  <compound refid="dir_0bd7077f9e9578b00f60b639e75569a6" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Schedule</name>
+  </compound>
+  <compound refid="dir_e286da9f972d011e8ad25c738b3a5611" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Types/Core/Containers/Schedule</name>
   </compound>
   <compound refid="dir_082c9ed610a0416a01316141fe5c2855" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Release/Schedule</name>
   </compound>
   <compound refid="dir_2176c7245e6b03875bae5a747cc5625c" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/Schedule</name>
   </compound>
-  <compound refid="dir_88e4ba4784f94b7217c0dc6d41165979" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Schedule</name>
+  <compound refid="dir_634ac15b4af4aec61f10848cd380ecd0" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Plugins/Schedule</name>
   </compound>
-  <compound refid="dir_0bd7077f9e9578b00f60b639e75569a6" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social/obj/Debug/Schedule</name>
+  <compound refid="dir_90309e480e910621ef803daa36733b1d" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Servers</name>
   </compound>
-  <compound refid="dir_b22472b5468a6ee693d274a84faecfae" kind="dir"><name>D:/Work/GitHub/datum-point/TeacherHandbook</name>
+  <compound refid="dir_b02cadfcdb3c21cda7a613e756672edf" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook</name>
   </compound>
-  <compound refid="dir_d2c667ef8cce7ccf02fc7a545316468f" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Server</name>
+  <compound refid="dir_90bd5b3a15d40c08b3e3be4fafcef186" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/TestsConstructor</name>
   </compound>
-  <compound refid="dir_520f8d04352df695945a4b0ffe7d0774" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Server Queries</name>
+  <compound refid="dir_9a1a47632468b3ddd8786428c5ed7397" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/TestsConstructor</name>
   </compound>
-  <compound refid="dir_281fc228ffefa7f847b616ed25ebb668" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types</name>
+  <compound refid="dir_104caaa7e94b763e633c33f39bd17814" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/TestsConstructor</name>
+  </compound>
+  <compound refid="dir_5d3569a0329a9c1c676383e9263ba792" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Servers/THB Data Server</name>
+  </compound>
+  <compound refid="dir_87415dbaf52748428533cb989c2d3f5b" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Server Queries</name>
+  </compound>
+  <compound refid="dir_2fe91226cb38b0969dedb0c9d83a4f41" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Types</name>
   </compound>
   <compound refid="dir_c3d622d94916962847bdf3eba2f4134f" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams</name>
   </compound>
@@ -1120,8 +1471,22 @@
   </compound>
   <compound refid="dir_7ef839b0b5ed3e67f22654a309d1bf91" kind="dir"><name>D:/Work/GitHub/datum-point/Plugins/THB Plugin Social</name>
   </compound>
-  <compound refid="dir_087eb35656684f3a07d83aae8bb98865" kind="dir"><name>D:/Work/GitHub/datum-point/THB Data Types/Core/Containers/Entities/Users</name>
+  <compound refid="dir_79ca037ba05d2303d1a46358e868c607" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/UI</name>
   </compound>
-  <compound refid="dir_dda0f4bc268945ae8156392032bb1641" kind="dir"><name>D:/Work/GitHub/datum-point/WpfHandler</name>
+  <compound refid="dir_57ea19c1bfa8b2b89405c0ecfa2960ef" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/UI</name>
+  </compound>
+  <compound refid="dir_0947a8d9b72c756ccb3889263789ea41" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI</name>
+  </compound>
+  <compound refid="dir_48b8ef2377de686ebc652d5c84cd0e35" kind="dir"><name>D:/Work/GitHub/datum-point/Core/THB Data Types/Core/Containers/Entities/Users</name>
+  </compound>
+  <compound refid="dir_7f7fa9f984551d4c43442364cc87c482" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Release/UI/Windows</name>
+  </compound>
+  <compound refid="dir_b5902a7f466a1762961ffd08b36ca7a8" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/Windows</name>
+  </compound>
+  <compound refid="dir_d69f9836c6f20d7cc44c9e3781291332" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/obj/Debug/UI/Windows</name>
+  </compound>
+  <compound refid="dir_715cd170db47bbbb724188f862ccf8ad" kind="dir"><name>D:/Work/GitHub/datum-point/Apps/Clients/TeacherHandbook/UI/Windows</name>
+  </compound>
+  <compound refid="dir_d80c213ba580432c07fcf70e5358171e" kind="dir"><name>D:/Work/GitHub/datum-point/Addons/WpfHandler</name>
   </compound>
 </doxygenindex>

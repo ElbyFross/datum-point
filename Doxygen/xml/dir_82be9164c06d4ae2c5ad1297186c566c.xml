@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dir_82be9164c06d4ae2c5ad1297186c566c" kind="dir">
+    <compoundname>D:/Work/GitHub/datum-point/Addons</compoundname>
+    <innerdir refid="dir_d80c213ba580432c07fcf70e5358171e">D:/Work/GitHub/datum-point/Addons/WpfHandler</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/Addons/"/>
+  </compounddef>
+</doxygen>

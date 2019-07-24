@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/THB Data Server Queries/GET_DAYS_RANGE.cs" line="24" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="24" bodyend="37"/>
+        <location file="D:/Work/GitHub/datum-point/Core/THB Data Server Queries/GET_DAYS_RANGE.cs" line="25" column="1" bodyfile="D:/Work/GitHub/datum-point/Core/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="25" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1a6c1884577a045fad484de904dc0da636" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -36,7 +36,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/THB Data Server Queries/GET_DAYS_RANGE.cs" line="39" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="39" bodyend="42"/>
+        <location file="D:/Work/GitHub/datum-point/Core/THB Data Server Queries/GET_DAYS_RANGE.cs" line="40" column="1" bodyfile="D:/Work/GitHub/datum-point/Core/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="40" bodyend="43"/>
       </memberdef>
       <memberdef kind="function" id="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1a1f27cee6dbc3ba3fdfad0590a75d239b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -53,7 +53,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/THB Data Server Queries/GET_DAYS_RANGE.cs" line="44" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="44" bodyend="58"/>
+        <location file="D:/Work/GitHub/datum-point/Core/THB Data Server Queries/GET_DAYS_RANGE.cs" line="45" column="1" bodyfile="D:/Work/GitHub/datum-point/Core/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="45" bodyend="59"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -61,28 +61,28 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="119">
+      <node id="93">
         <label>IQueryHandler</label>
       </node>
-      <node id="118">
+      <node id="92">
         <label>THB_Data_Server_Queries.GET_DAYS_RANGE</label>
         <link refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e"/>
-        <childnode refid="119" relation="public-inheritance">
+        <childnode refid="93" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="121">
+      <node id="95">
         <label>IQueryHandler</label>
       </node>
-      <node id="120">
+      <node id="94">
         <label>THB_Data_Server_Queries.GET_DAYS_RANGE</label>
         <link refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e"/>
-        <childnode refid="121" relation="public-inheritance">
+        <childnode refid="95" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/GitHub/datum-point/THB Data Server Queries/GET_DAYS_RANGE.cs" line="23" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="22" bodyend="59"/>
+    <location file="D:/Work/GitHub/datum-point/Core/THB Data Server Queries/GET_DAYS_RANGE.cs" line="24" column="1" bodyfile="D:/Work/GitHub/datum-point/Core/THB Data Server Queries/GET_DAYS_RANGE.cs" bodystart="23" bodyend="60"/>
     <listofallmembers>
       <member refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1aa91ce7c90a325c70aab9aaf112fe49f3" prot="public" virt="non-virtual"><scope>THB_Data_Server_Queries::GET_DAYS_RANGE</scope><name>Description</name></member>
       <member refid="de/de2/class_t_h_b___data___server___queries_1_1_g_e_t___d_a_y_s___r_a_n_g_e_1a6c1884577a045fad484de904dc0da636" prot="public" virt="non-virtual"><scope>THB_Data_Server_Queries::GET_DAYS_RANGE</scope><name>Execute</name></member>

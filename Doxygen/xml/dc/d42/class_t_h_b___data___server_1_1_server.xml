@@ -27,7 +27,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
 <para>Draw line</para><para>Draw line</para><para>Show help. </para>        </inbodydescription>
-        <location file="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" line="34" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" bodystart="34" bodyend="154"/>
+        <location file="D:/Work/GitHub/datum-point/Apps/Servers/THB Data Server/Networking/Server.cs" line="32" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Servers/THB Data Server/Networking/Server.cs" bodystart="32" bodyend="152"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -35,28 +35,28 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="238">
+      <node id="341">
         <label>THB_Data_Server.Server</label>
         <link refid="dc/d42/class_t_h_b___data___server_1_1_server"/>
-        <childnode refid="239" relation="public-inheritance">
+        <childnode refid="342" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="239">
+      <node id="342">
         <label>UniformServer::BaseServer</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="240">
+      <node id="343">
         <label>THB_Data_Server.Server</label>
         <link refid="dc/d42/class_t_h_b___data___server_1_1_server"/>
-        <childnode refid="241" relation="public-inheritance">
+        <childnode refid="344" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="241">
+      <node id="344">
         <label>UniformServer::BaseServer</label>
       </node>
     </collaborationgraph>
-    <location file="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" line="29" column="1" bodyfile="D:/Work/GitHub/datum-point/THB Data Server/Server.cs" bodystart="28" bodyend="155"/>
+    <location file="D:/Work/GitHub/datum-point/Apps/Servers/THB Data Server/Networking/Server.cs" line="27" column="1" bodyfile="D:/Work/GitHub/datum-point/Apps/Servers/THB Data Server/Networking/Server.cs" bodystart="26" bodyend="153"/>
     <listofallmembers>
       <member refid="dc/d42/class_t_h_b___data___server_1_1_server_1a87515fb7b3422af002d33dd3fbe8f4e9" prot="private" virt="non-virtual"><scope>THB_Data_Server::Server</scope><name>Main</name></member>
     </listofallmembers>

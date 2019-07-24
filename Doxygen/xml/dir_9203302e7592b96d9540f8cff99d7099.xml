@@ -2,11 +2,11 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
   <compounddef id="dir_9203302e7592b96d9540f8cff99d7099" kind="dir">
     <compoundname>D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release</compoundname>
-    <innerfile refid="de/d40/_release_2_exam_planner_8g_8cs">ExamPlanner.g.cs</innerfile>
+    <innerdir refid="dir_8c7c597c42ff0abb7e45cf08657c4fc8">D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamsMonitor</innerdir>
+    <innerdir refid="dir_0863c03b8e21c3f170c3cc11c396bad3">D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/ExamsPlanner</innerdir>
+    <innerdir refid="dir_9a1a47632468b3ddd8786428c5ed7397">D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Release/TestsConstructor</innerdir>
     <innerfile refid="d1/da8/_release_2_exam_planner_8g_8i_8cs">ExamPlanner.g.i.cs</innerfile>
-    <innerfile refid="db/d35/_release_2_monitor_8g_8cs">Monitor.g.cs</innerfile>
     <innerfile refid="d8/d4b/_release_2_monitor_8g_8i_8cs">Monitor.g.i.cs</innerfile>
-    <innerfile refid="db/d55/_release_2_test_constructor_8g_8cs">TestConstructor.g.cs</innerfile>
     <innerfile refid="d4/d29/_release_2_test_constructor_8g_8i_8cs">TestConstructor.g.i.cs</innerfile>
     <briefdescription>
     </briefdescription>

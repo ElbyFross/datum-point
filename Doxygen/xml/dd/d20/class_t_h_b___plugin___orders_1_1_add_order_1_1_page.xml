@@ -1,0 +1,363 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page" kind="class" language="C#" prot="public">
+    <compoundname>THB_Plugin_Orders::AddOrder::Page</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IPlugin</basecompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1ab7841683b29aaf53241443e78a823f17" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>MenuItemMeta</type>
+        <definition>MenuItemMeta THB_Plugin_Orders.AddOrder.Page.Meta</definition>
+        <argsstring></argsstring>
+        <name>Meta</name>
+        <initializer>= new MenuItemMeta()
+        {
+            domain = &quot;40_orders.10_addOrder&quot;,
+            titleDictionaryCode = &quot;p_podshyvalov_ordersAdd_menuTitle&quot;,
+            defaultTitle = &quot;Add order&quot;
+        }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/AddOrder/Page.xaml.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/AddOrder/Page.xaml.cs" bodystart="43" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a4dae85c81c2e5206fc91fb46afc0cbe7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool THB_Plugin_Orders.AddOrder.Page::_contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/AddOrder/AddOrder.g.i.cs" line="45" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/AddOrder/AddOrder.g.i.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a6791870e67093c280d4f00b7696d618b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>THB_Plugin_Orders.AddOrder.Page.Page</definition>
+        <argsstring>()</argsstring>
+        <name>Page</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/AddOrder/Page.xaml.cs" line="38" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/AddOrder/Page.xaml.cs" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a4cd50e3faab81e2317e5f527b49f1992" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Orders.AddOrder.Page.OnStart</definition>
+        <argsstring>(object sender)</argsstring>
+        <name>OnStart</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/AddOrder/Page.xaml.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/AddOrder/Page.xaml.cs" bodystart="50" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a3585721cfa534b8bd5800af7ec8df98d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Orders.AddOrder.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/AddOrder/AddOrder.g.i.cs" line="52" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/AddOrder/AddOrder.g.i.cs" bodystart="52" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a3585721cfa534b8bd5800af7ec8df98d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Orders.AddOrder.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/AddOrder/Page.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/AddOrder/Page.g.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a3585721cfa534b8bd5800af7ec8df98d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Orders.AddOrder.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/AddOrder/Page.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/AddOrder/Page.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a3585721cfa534b8bd5800af7ec8df98d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Orders.AddOrder.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release/AddOrder/Page.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release/AddOrder/Page.g.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a3585721cfa534b8bd5800af7ec8df98d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Orders.AddOrder.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release/AddOrder/Page.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release/AddOrder/Page.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a6b720097b2ed11b0f52ddcda8bed8c1b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Orders.AddOrder.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/AddOrder/AddOrder.g.i.cs" line="74" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/AddOrder/AddOrder.g.i.cs" bodystart="74" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a6b720097b2ed11b0f52ddcda8bed8c1b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Orders.AddOrder.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/AddOrder/Page.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/AddOrder/Page.g.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a6b720097b2ed11b0f52ddcda8bed8c1b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Orders.AddOrder.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/AddOrder/Page.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Debug/AddOrder/Page.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a6b720097b2ed11b0f52ddcda8bed8c1b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Orders.AddOrder.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release/AddOrder/Page.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release/AddOrder/Page.g.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a6b720097b2ed11b0f52ddcda8bed8c1b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Orders.AddOrder.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release/AddOrder/Page.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/obj/Release/AddOrder/Page.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interaction logic for AddOrder.xaml </para>    </briefdescription>
+    <detaileddescription>
+<para><ref refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page" kindref="compound">Page</ref> </para><para><ref refid="d4/d17/class_t_h_b___plugin___orders_1_1_add_order" kindref="compound">AddOrder</ref> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="282">
+        <label>THB_Plugin_Orders.AddOrder.Page</label>
+        <link refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page"/>
+        <childnode refid="283" relation="public-inheritance">
+        </childnode>
+        <childnode refid="284" relation="public-inheritance">
+        </childnode>
+        <childnode refid="283" relation="public-inheritance">
+        </childnode>
+        <childnode refid="284" relation="public-inheritance">
+        </childnode>
+        <childnode refid="283" relation="public-inheritance">
+        </childnode>
+        <childnode refid="284" relation="public-inheritance">
+        </childnode>
+        <childnode refid="283" relation="public-inheritance">
+        </childnode>
+        <childnode refid="284" relation="public-inheritance">
+        </childnode>
+        <childnode refid="283" relation="public-inheritance">
+        </childnode>
+        <childnode refid="284" relation="public-inheritance">
+        </childnode>
+        <childnode refid="285" relation="public-inheritance">
+        </childnode>
+        <childnode refid="286" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="286">
+        <label>IPlugin</label>
+      </node>
+      <node id="283">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="284">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+      <node id="285">
+        <label>UserControl</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="287">
+        <label>THB_Plugin_Orders.AddOrder.Page</label>
+        <link refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page"/>
+        <childnode refid="288" relation="public-inheritance">
+        </childnode>
+        <childnode refid="289" relation="public-inheritance">
+        </childnode>
+        <childnode refid="288" relation="public-inheritance">
+        </childnode>
+        <childnode refid="289" relation="public-inheritance">
+        </childnode>
+        <childnode refid="288" relation="public-inheritance">
+        </childnode>
+        <childnode refid="289" relation="public-inheritance">
+        </childnode>
+        <childnode refid="288" relation="public-inheritance">
+        </childnode>
+        <childnode refid="289" relation="public-inheritance">
+        </childnode>
+        <childnode refid="288" relation="public-inheritance">
+        </childnode>
+        <childnode refid="289" relation="public-inheritance">
+        </childnode>
+        <childnode refid="290" relation="public-inheritance">
+        </childnode>
+        <childnode refid="291" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="291">
+        <label>IPlugin</label>
+      </node>
+      <node id="288">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="289">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+      <node id="290">
+        <label>UserControl</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/AddOrder/Page.xaml.cs" line="37" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Orders/AddOrder/Page.xaml.cs" bodystart="36" bodyend="55"/>
+    <listofallmembers>
+      <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a4dae85c81c2e5206fc91fb46afc0cbe7" prot="private" virt="non-virtual"><scope>THB_Plugin_Orders::AddOrder::Page</scope><name>_contentLoaded</name></member>
+      <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a6b720097b2ed11b0f52ddcda8bed8c1b" prot="private" virt="non-virtual"><scope>THB_Plugin_Orders::AddOrder::Page</scope><name>Connect</name></member>
+      <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a6b720097b2ed11b0f52ddcda8bed8c1b" prot="private" virt="non-virtual"><scope>THB_Plugin_Orders::AddOrder::Page</scope><name>Connect</name></member>
+      <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a6b720097b2ed11b0f52ddcda8bed8c1b" prot="private" virt="non-virtual"><scope>THB_Plugin_Orders::AddOrder::Page</scope><name>Connect</name></member>
+      <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a6b720097b2ed11b0f52ddcda8bed8c1b" prot="private" virt="non-virtual"><scope>THB_Plugin_Orders::AddOrder::Page</scope><name>Connect</name></member>
+      <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a6b720097b2ed11b0f52ddcda8bed8c1b" prot="private" virt="non-virtual"><scope>THB_Plugin_Orders::AddOrder::Page</scope><name>Connect</name></member>
+      <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a3585721cfa534b8bd5800af7ec8df98d" prot="public" virt="non-virtual"><scope>THB_Plugin_Orders::AddOrder::Page</scope><name>InitializeComponent</name></member>
+      <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a3585721cfa534b8bd5800af7ec8df98d" prot="public" virt="non-virtual"><scope>THB_Plugin_Orders::AddOrder::Page</scope><name>InitializeComponent</name></member>
+      <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a3585721cfa534b8bd5800af7ec8df98d" prot="public" virt="non-virtual"><scope>THB_Plugin_Orders::AddOrder::Page</scope><name>InitializeComponent</name></member>
+      <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a3585721cfa534b8bd5800af7ec8df98d" prot="public" virt="non-virtual"><scope>THB_Plugin_Orders::AddOrder::Page</scope><name>InitializeComponent</name></member>
+      <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a3585721cfa534b8bd5800af7ec8df98d" prot="public" virt="non-virtual"><scope>THB_Plugin_Orders::AddOrder::Page</scope><name>InitializeComponent</name></member>
+      <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1ab7841683b29aaf53241443e78a823f17" prot="public" virt="non-virtual"><scope>THB_Plugin_Orders::AddOrder::Page</scope><name>Meta</name></member>
+      <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a4cd50e3faab81e2317e5f527b49f1992" prot="public" virt="non-virtual"><scope>THB_Plugin_Orders::AddOrder::Page</scope><name>OnStart</name></member>
+      <member refid="dd/d20/class_t_h_b___plugin___orders_1_1_add_order_1_1_page_1a6791870e67093c280d4f00b7696d618b" prot="public" virt="non-virtual"><scope>THB_Plugin_Orders::AddOrder::Page</scope><name>Page</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

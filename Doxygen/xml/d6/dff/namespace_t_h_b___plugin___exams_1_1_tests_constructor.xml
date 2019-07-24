@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="d6/dff/namespace_t_h_b___plugin___exams_1_1_tests_constructor" kind="namespace" language="C#">
+    <compoundname>THB_Plugin_Exams::TestsConstructor</compoundname>
+    <innerclass refid="d7/d6e/class_t_h_b___plugin___exams_1_1_tests_constructor_1_1_page" prot="public">THB_Plugin_Exams::TestsConstructor::Page</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Exams/obj/Debug/TestsConstructor/Page.g.cs" line="35" column="1"/>
+  </compounddef>
+</doxygen>

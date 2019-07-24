@@ -1,0 +1,363 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.14">
+  <compounddef id="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page" kind="class" language="C#" prot="public">
+    <compoundname>THB_Plugin_Lesson::Repository::Page</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IPlugin</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">UserControl</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">IComponentConnector</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a01aac514897da5ee55bb5b76a27717c6" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool THB_Plugin_Lesson.Repository.Page::_contentLoaded</definition>
+        <argsstring></argsstring>
+        <name>_contentLoaded</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Repository/Page.g.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Repository/Page.g.cs" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a976e23f558d00631ed9d0c7f0e815363" prot="public" static="no" readable="no" writable="no" gettable="yes" privategettable="no" protectedgettable="no" settable="yes" privatesettable="no" protectedsettable="no">
+        <type>MenuItemMeta</type>
+        <definition>MenuItemMeta THB_Plugin_Lesson.Repository.Page.Meta</definition>
+        <argsstring></argsstring>
+        <name>Meta</name>
+        <initializer>= new MenuItemMeta()
+        {
+            domain = &quot;20_lesson.30_repository&quot;,
+            titleDictionaryCode = &quot;p_podshyvalov_lbRepository_menuTitle&quot;,
+            defaultTitle = &quot;Repository&quot;
+        }</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Repository/Page.xaml.cs" line="43" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Repository/Page.xaml.cs" bodystart="43" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a0c8baa1110fb4c37104c1d037270c38b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.Repository.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Repository/Page.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Repository/Page.g.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a0c8baa1110fb4c37104c1d037270c38b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.Repository.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Repository/Page.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Repository/Page.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a0c8baa1110fb4c37104c1d037270c38b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.Repository.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Repository/Repository.g.i.cs" line="52" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Repository/Repository.g.i.cs" bodystart="52" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a0c8baa1110fb4c37104c1d037270c38b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.Repository.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/Repository/Page.g.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/Repository/Page.g.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a0c8baa1110fb4c37104c1d037270c38b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.Repository.Page.InitializeComponent</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeComponent</name>
+        <briefdescription>
+<para>InitializeComponent </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/Repository/Page.g.i.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/Repository/Page.g.i.cs" bodystart="50" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a45ad374efc955d41451bd3e34b0abf01" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>THB_Plugin_Lesson.Repository.Page.Page</definition>
+        <argsstring>()</argsstring>
+        <name>Page</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Repository/Page.xaml.cs" line="38" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Repository/Page.xaml.cs" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1ab41ec7648f4c5878e58f74c25cbe9b70" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void THB_Plugin_Lesson.Repository.Page.OnStart</definition>
+        <argsstring>(object sender)</argsstring>
+        <name>OnStart</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Repository/Page.xaml.cs" line="50" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/Repository/Page.xaml.cs" bodystart="50" bodyend="54"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1ade8122690e0bf257a26b3b6f1c6ebe8d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.Repository.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Repository/Page.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Repository/Page.g.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1ade8122690e0bf257a26b3b6f1c6ebe8d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.Repository.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Repository/Page.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Repository/Page.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1ade8122690e0bf257a26b3b6f1c6ebe8d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.Repository.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Repository/Repository.g.i.cs" line="74" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Repository/Repository.g.i.cs" bodystart="74" bodyend="77"/>
+      </memberdef>
+      <memberdef kind="function" id="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1ade8122690e0bf257a26b3b6f1c6ebe8d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.Repository.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/Repository/Page.g.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/Repository/Page.g.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      <memberdef kind="function" id="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1ade8122690e0bf257a26b3b6f1c6ebe8d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void System.Windows.Markup.IComponentConnector.</type>
+        <definition>void System.Windows.Markup.IComponentConnector. THB_Plugin_Lesson.Repository.Page.Connect</definition>
+        <argsstring>(int connectionId, object target)</argsstring>
+        <name>Connect</name>
+        <param>
+          <type>int</type>
+          <declname>connectionId</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>target</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/Repository/Page.g.i.cs" line="70" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Release/Repository/Page.g.i.cs" bodystart="70" bodyend="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para><ref refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page" kindref="compound">Page</ref> </para>    </briefdescription>
+    <detaileddescription>
+<para>Interaction logic for Repository.xaml </para><para><ref refid="d1/df2/class_t_h_b___plugin___lesson_1_1_repository" kindref="compound">Repository</ref> </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="274">
+        <label>IPlugin</label>
+      </node>
+      <node id="275">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="272">
+        <label>THB_Plugin_Lesson.Repository.Page</label>
+        <link refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page"/>
+        <childnode refid="273" relation="public-inheritance">
+        </childnode>
+        <childnode refid="274" relation="public-inheritance">
+        </childnode>
+        <childnode refid="275" relation="public-inheritance">
+        </childnode>
+        <childnode refid="276" relation="public-inheritance">
+        </childnode>
+        <childnode refid="275" relation="public-inheritance">
+        </childnode>
+        <childnode refid="276" relation="public-inheritance">
+        </childnode>
+        <childnode refid="275" relation="public-inheritance">
+        </childnode>
+        <childnode refid="276" relation="public-inheritance">
+        </childnode>
+        <childnode refid="275" relation="public-inheritance">
+        </childnode>
+        <childnode refid="276" relation="public-inheritance">
+        </childnode>
+        <childnode refid="275" relation="public-inheritance">
+        </childnode>
+        <childnode refid="276" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="276">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+      <node id="273">
+        <label>UserControl</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="279">
+        <label>IPlugin</label>
+      </node>
+      <node id="280">
+        <label>System::Windows::Controls::UserControl</label>
+      </node>
+      <node id="277">
+        <label>THB_Plugin_Lesson.Repository.Page</label>
+        <link refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page"/>
+        <childnode refid="278" relation="public-inheritance">
+        </childnode>
+        <childnode refid="279" relation="public-inheritance">
+        </childnode>
+        <childnode refid="280" relation="public-inheritance">
+        </childnode>
+        <childnode refid="281" relation="public-inheritance">
+        </childnode>
+        <childnode refid="280" relation="public-inheritance">
+        </childnode>
+        <childnode refid="281" relation="public-inheritance">
+        </childnode>
+        <childnode refid="280" relation="public-inheritance">
+        </childnode>
+        <childnode refid="281" relation="public-inheritance">
+        </childnode>
+        <childnode refid="280" relation="public-inheritance">
+        </childnode>
+        <childnode refid="281" relation="public-inheritance">
+        </childnode>
+        <childnode refid="280" relation="public-inheritance">
+        </childnode>
+        <childnode refid="281" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="281">
+        <label>System::Windows::Markup::IComponentConnector</label>
+      </node>
+      <node id="278">
+        <label>UserControl</label>
+      </node>
+    </collaborationgraph>
+    <location file="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Repository/Page.g.cs" line="41" column="1" bodyfile="D:/Work/GitHub/datum-point/Plugins/THB Plugin Lesson/obj/Debug/Repository/Page.g.cs" bodystart="41" bodyend="73"/>
+    <listofallmembers>
+      <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a01aac514897da5ee55bb5b76a27717c6" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::Repository::Page</scope><name>_contentLoaded</name></member>
+      <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1ade8122690e0bf257a26b3b6f1c6ebe8d" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::Repository::Page</scope><name>Connect</name></member>
+      <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1ade8122690e0bf257a26b3b6f1c6ebe8d" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::Repository::Page</scope><name>Connect</name></member>
+      <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1ade8122690e0bf257a26b3b6f1c6ebe8d" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::Repository::Page</scope><name>Connect</name></member>
+      <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1ade8122690e0bf257a26b3b6f1c6ebe8d" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::Repository::Page</scope><name>Connect</name></member>
+      <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1ade8122690e0bf257a26b3b6f1c6ebe8d" prot="private" virt="non-virtual"><scope>THB_Plugin_Lesson::Repository::Page</scope><name>Connect</name></member>
+      <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a0c8baa1110fb4c37104c1d037270c38b" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::Repository::Page</scope><name>InitializeComponent</name></member>
+      <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a0c8baa1110fb4c37104c1d037270c38b" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::Repository::Page</scope><name>InitializeComponent</name></member>
+      <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a0c8baa1110fb4c37104c1d037270c38b" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::Repository::Page</scope><name>InitializeComponent</name></member>
+      <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a0c8baa1110fb4c37104c1d037270c38b" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::Repository::Page</scope><name>InitializeComponent</name></member>
+      <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a0c8baa1110fb4c37104c1d037270c38b" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::Repository::Page</scope><name>InitializeComponent</name></member>
+      <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a976e23f558d00631ed9d0c7f0e815363" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::Repository::Page</scope><name>Meta</name></member>
+      <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1ab41ec7648f4c5878e58f74c25cbe9b70" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::Repository::Page</scope><name>OnStart</name></member>
+      <member refid="de/da5/class_t_h_b___plugin___lesson_1_1_repository_1_1_page_1a45ad374efc955d41451bd3e34b0abf01" prot="public" virt="non-virtual"><scope>THB_Plugin_Lesson::Repository::Page</scope><name>Page</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
