@@ -96,16 +96,14 @@
     <None Include="App.config" />
     <None Include="Properties\app.manifest" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\THB Data Server Queries\THB Data Server Queries.csproj">
-      <Project>{70a0fefd-86f5-4cde-98f9-e9cdaa6f3f90}</Project>
+    <ProjectReference Include="..\..\..\Core\THB Data Server Queries\THB Data Server Queries.csproj">
+      <Project>{81edf4b2-6755-483b-8422-9bd10eea09c9}</Project>
       <Name>THB Data Server Queries</Name>
     </ProjectReference>
-    <ProjectReference Include="..\THB Data Types\THB Data Types.csproj">
-      <Project>{0958e0cd-408e-4f04-a22f-67753dfca5e3}</Project>
+    <ProjectReference Include="..\..\..\Core\THB Data Types\THB Data Types.csproj">
+      <Project>{51dacea7-a2be-4be2-82e8-8f6d9532f6d3}</Project>
       <Name>THB Data Types</Name>
-      <Private>True</Private>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

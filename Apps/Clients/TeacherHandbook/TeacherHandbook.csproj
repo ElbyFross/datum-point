@@ -132,13 +132,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\THB Data Types\THB Data Types.csproj">
-      <Project>{0958e0cd-408e-4f04-a22f-67753dfca5e3}</Project>
-      <Name>THB Data Types</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\WpfHandler\WpfHandler.csproj">
+    <ProjectReference Include="..\..\..\Addons\WpfHandler\WpfHandler.csproj">
       <Project>{9a1f206b-1f7a-43df-8a08-d86f26b8fc81}</Project>
       <Name>WpfHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Servers\THB Data Server\THB Data Server.csproj">
+      <Project>{82899374-eef2-4dcf-a1a4-9c46d1081966}</Project>
+      <Name>THB Data Server</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <Reference Include="UniformQueries">
-      <HintPath>..\doloro-networking-framework\libs\UniformQueries.dll</HintPath>
+      <HintPath>..\..\doloro-networking-framework\libs\UniformQueries.dll</HintPath>
     </Reference>
   </ItemGroup>
 
