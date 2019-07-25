@@ -2,13 +2,13 @@
 -Implement entertainment in educational process.
 -Provide short-time goals:
 -Implement competitive atmosphere by rules:
-	1) Motivate to compete with nearby by level classmates. Not with top leader that has to huge gap.
-	2) Avoid top table, that can't motivate to move forward ones who further than 1-2 page. 
+	1. Motivate to compete with nearby by level classmates. Not with top leader that has to huge gap.
+	2. Avoid top table, that can't motivate to move forward ones who further than 1-2 page. 
 
 ### MODULES:
 #### WPF - provide achivment visualization in WPF.
 - AchievementUIControoller - provide UI item that could display achievement data.
-- 
+
 #### Controller
 - AchievementContainer - data container that provide achievement's data.
 	- MetaData - code, default data, state, level
