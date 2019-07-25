@@ -1,11 +1,11 @@
-### IDEA:
+### Idea
 - Implement entertainment in educational process.
 - Provide short-time goals:
 - Implement competitive atmosphere by rules:
 	1. Motivate to compete with nearby by level classmates. Not with top leader that has to huge gap.
 	2. Avoid top table, that can't motivate to move forward ones who further than 1-2 page. 
 
-### MODULES:
+### Modules
 #### WPF - provide achivment visualization in WPF.
 - AchievementUIControoller - provide UI item that could display achievement data.
 
@@ -24,8 +24,8 @@
 	- SetAchievementState - send new achievement to validation.
 
 ### Processing
-1) Client load local data
-2) Client analyse data and coclude does user have new achievement.
-3) Client informs server about new achievements.
-4) Server add achievement's validation to schedule.
-5) Server validate achievement and conclude is it deserved?
+1. Client load local data
+2. Client analyse data and coclude does user have new achievement.
+3. Client informs server about new achievements.
+4. Server add achievement's validation to schedule.
+5. Server validate achievement and conclude is it deserved?
