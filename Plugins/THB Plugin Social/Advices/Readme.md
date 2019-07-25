@@ -1,4 +1,4 @@
-﻿### Idea
+﻿## Idea
 - Master might not note changes in young padavan's behavior.
 This plugin must help by highlighting ones who falling in dark side of power or reaching success following jedi path.
 	- Abnormally changing of assessments to decrease side can inform about problem in student's life. Maybe he need some help.
@@ -16,30 +16,35 @@ That's plugin can improve the future of students and save someones from failed l
 Possible effect is lower crime statistic, higher economics level, moving science forward.
 Destiny of human mostly selecting by environment in childhood.
 
-### Modules
-#### Analytics - scalable coollection of scripts with integration to sheduler, that provide data monitoring.
-- AbnormallyWeakSubject - script that detect an abnormally low success of student in subject relative to success in others.
-- SubjectClassActivity - script that detect if class has some significant less active students.
-- AssessmentsTrend - scipt that monitor common course of student's essesments and inform about changes and abnormally peaks.
 
-#### Highend algorithm
+
+## Modules
+### Analytics - scalable coollection of scripts with integration to sheduler, that provide data monitoring.
+- `AbnormallyWeakSubject` - script that detect an abnormally low success of student in subject relative to success in others.
+- `SubjectClassActivity` - script that detect if class has some significant less active students.
+- `AssessmentsTrend` - scipt that monitor common course of student's essesments and inform about changes and abnormally peaks.
+
+### Highend algorithm
 1. Client react on action and place analisys to server's task shedule.
 2. Server making analisys.
 3. If server detect abnormal situation it place event handler to user's advices journal.
 4. Authorized users via client can select how to react on this event.
 5. If situation ignored server can share warning to superiors and coworkers.
 
-#### Protection levels
-##### I. Normal level (Base frequency of profile analisys).
 
-##### II. Low protection level. 
+
+## Protection levels
+### I. Normal level 
+Base frequency of profile analisys.
+
+### II. Low protection level. 
 ###### Caused by: 
 - Abnormal user's statistic.
 
 ###### Reaction: 
 - Informate nearst authority about changes in behavior.
 
-##### III. Middle protection level. 	
+### III. Middle protection level. 	
 ###### Caused by: 
 - Behavior not has detected reasons, but not had confirmation of the problem.
 
@@ -49,7 +54,7 @@ Destiny of human mostly selecting by environment in childhood.
 - Informs parents' accaunts about problem and warn about consequences of child abussing or domestic violence. 
 Recommending to talk with child about bullying or mental healthiness.
 
-##### IV. High protection level.
+### IV. High protection level.
 ###### Caused by: 
 - Athorities answer that all in normal without confirming the reasons, such as sickness.
 
@@ -64,7 +69,7 @@ Recommending to talk with child about bullying or mental healthiness.
 - Analisys use short time statistic  during last month to detect peaks. 
 If detected decreasing then autorize Level 5.
 
-##### V. Forced protection level.
+### V. Forced protection level.
 
 ###### Caused by:
 - Authority confirm domestic violence\abussing\bullying.
@@ -81,8 +86,9 @@ If detected decreasing then autorize Level 5.
 - Level can be decreased only by social service's account.
 
 
-### Possible users' stories
-##### Story #1
+
+## Possible users' stories
+### Story #1
 - Emily has a positive essestments, but after hollidays she was absent during few days, 
 and after this his essesmsnts start drop down.
 - Server detect abnormaly situation. 
@@ -95,5 +101,6 @@ and after this his essesmsnts start drop down.
 - Server increase protection to 3th level and update security protection up to 4 months.	
 - Server get answers from all autority that all is ok. (In case of confirmation increase protection level to 5th level)
 - Increase protection level to 4th level. 
+- Emily skip half of weak. She's lessons activity have decreased during short time.
 - Registred abnormal situation based on rule of 4th protection level.
 - Increase protection level to 5th level. 
