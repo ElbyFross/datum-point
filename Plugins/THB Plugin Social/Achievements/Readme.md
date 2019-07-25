@@ -1,7 +1,7 @@
-﻿### IDEA:
--Implement entertainment in educational process.
--Provide short-time goals:
--Implement competitive atmosphere by rules:
+### IDEA:
+- Implement entertainment in educational process.
+- Provide short-time goals:
+- Implement competitive atmosphere by rules:
 	1. Motivate to compete with nearby by level classmates. Not with top leader that has to huge gap.
 	2. Avoid top table, that can't motivate to move forward ones who further than 1-2 page. 
 
