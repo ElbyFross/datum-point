@@ -28,11 +28,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfHandler.Plugins;
 
-namespace THB_Plugin_Social.Achivments
+namespace THB_Plugin_Social.Achievements
 {
-    /// <summary>
-    /// Interaction logic for Achivments.xaml
-    /// </summary>
     public partial class Page : UserControl, IPlugin
     {
         public Page()
@@ -42,9 +39,9 @@ namespace THB_Plugin_Social.Achivments
 
         public MenuItemMeta Meta { get; set; } = new MenuItemMeta()
         {
-            domain = "0_main.30_achivments",
-            titleDictionaryCode = "p_podshyvalov_achivments_menuTitle",
-            defaultTitle = "Achivments"
+            domain = "0_main.30_achievements",
+            titleDictionaryCode = "p_podshyvalov_achievements_menuTitle",
+            defaultTitle = "Achievements"
         };
 
         public void OnStart(object sender)
