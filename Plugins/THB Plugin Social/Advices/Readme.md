@@ -11,7 +11,7 @@ This plugin must help by highlighting ones who falling in dark side of power or 
 	- Detecting abnormally low success of certain person in subject against to stastisic in other subjects can mean that teacher hate this student.
 	Such situation need to be shared to department head for receiving conclusion about this employee and situation.
 
-#####Jokes away. 
+##### Jokes away. 
 That's plugin can improve the future of students and save someones from failed life.
 Possible effect is lower crime statistic, higher economics level, moving science forward.
 Destiny of human mostly selecting by environment in childhood.
@@ -22,7 +22,6 @@ Destiny of human mostly selecting by environment in childhood.
 - SubjectClassActivity - script that detect if class has some significant less active students.
 - AssessmentsTrend - scipt that monitor common course of student's essesments and inform about changes and abnormally peaks.
 
-### Processing
 #### Highend algorithm
 1. Client react on action and place analisys to server's task shedule.
 2. Server making analisys.
@@ -31,63 +30,58 @@ Destiny of human mostly selecting by environment in childhood.
 5. If situation ignored server can share warning to superiors and coworkers.
 
 #### Protection levels
-1. Normal level. 
-	
-	Base frequency of profile analisys.
+##### I. Normal level (Base frequency of profile analisys).
 
-2. Low protection level. 
+##### II. Low protection level. 
+###### Caused by: 
+- Abnormal user's statistic.
 
-	Caused by: 
-	- Abnormal user's statistic.
+###### Reaction: 
+- Informate nearst authority about changes in behavior.
 
-	Reaction: 
-	- Informate nearst authority about changes in behavior.
+##### III. Middle protection level. 	
+###### Caused by: 
+- Behavior not has detected reasons, but not had confirmation of the problem.
 
-3. Middle protection level. 
-	
-	Caused by: 
-	- Behavior not has detected reasons, but not had confirmation of the problem.
+###### Reaction:
+- Server deciding that this can be violence and inform about that not only a classroom teacher but also psychologist and head teacher users.
+- Server spawn notification in child's terminal that family violence is unacceptable and inform about authorized users that can help. 
+- Informs parents' accaunts about problem and warn about consequences of child abussing or domestic violence. 
+Recommending to talk with child about bullying or mental healthiness.
 
-	Reaction:
-	- Server deciding that this can be violence and inform about that not only a classroom teacher but also psychologist and head teacher users.
-	- Server spawn notification in child's terminal that family violence is unacceptable and inform about authorized users that can help. 
-	- Informs parents' accaunts about problem and warn about consequences of child abussing or domestic violence. 
-	Recommending to talk with child about bullying or mental healthiness.
+##### IV. High protection level.
+###### Caused by: 
+- Athorities answer that all in normal without confirming the reasons, such as sickness.
 
-4. High protection level.
+###### Reaction:
+- Prolonging protection time.
+- Informs user that server warring about this situation. 
+- Surveying user about causes of lowering assessments\activity\absent.
+- Informs authority in case if survey show the problem.
+- Activate "HELP ME" banner in user's profile that immediately inform every authority user after request.
 
-	Caused by: 
-	- Athorities answer that all in normal without confirming the reasons, such as sickness.
+###### Analysis' algorithm changes:
+- Analisys use short time statistic  during last month to detect peaks. 
+If detected decreasing then autorize Level 5.
 
-	Reaction:
-	- Prolonging protection time.
-	- Informs user that server warring about this situation. 
-	- Surveying user about causes of lowering assessments\activity\absent.
-	- Informs authority in case if survey show the problem.
-	- Activate "HELP ME" banner in user's profile that immediately inform every authority user after request.
+##### V. Forced protection level.
 
-	Analisys algorithm changes:
-	- Analisys use short time statistic  during last month to detect peaks. 
-	If detected decreasing then autorize Level 5.
+###### Caused by:
+- Authority confirm domestic violence\abussing\bullying.
+- System detect problems on 4th level.
 
-5. Forced protection level.
+###### Reaction:
+- Server informing previous authorities about considering that there possible dangerous situation.
+- Activate warning banner for every authority user familiar to user.
+- Informs social service's account about .
+- Informs parents' accaunts about highest prtection level. Provide contacts of from social service's account.
 
-	Caused by:
-	- Authority confirm domestic violence\abussing\bullying.
-	- System detect problems on 4th level.
-
-	Reaction:
-	- Server informing previous authorities about considering that there possible dangerous situation.
-	- Activate warning banner for every authority user familiar to user.
-	- Informs social service's account about .
-	- Informs parents' accaunts about highest prtection level. Provide contacts of from social service's account.
-	
-	Analisys algorithm changes:
-	- Analysis disabled and just collect statistic with high frequency.
-	- Level can be decreased only by social service's account.
+###### Analysis' algorithm changes:
+- Analysis disabled and just collect statistic with high frequency.
+- Level can be decreased only by social service's account.
 
 
-#### Possible users' stories
+### Possible users' stories
 ##### Story #1
 - Emily has a positive essestments, but after hollidays she was absent during few days, 
 and after this his essesmsnts start drop down.
