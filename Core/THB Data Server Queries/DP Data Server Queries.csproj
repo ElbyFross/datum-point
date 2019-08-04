@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>DatumPoint.Queries</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath></OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\THB Data Types\DP Data Types.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="UniformQueries">
+      <HintPath>..\..\Frameworks\doloro-networking-framework\libs\UniformQueries.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

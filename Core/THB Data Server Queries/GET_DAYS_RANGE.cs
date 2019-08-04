@@ -18,7 +18,7 @@ using System.Text;
 using UniformQueries;
 using UniformQueries.Executable;
 
-namespace THB_Data_Server_Queries
+namespace DatumPoint.Queries
 {
     public class GET_DAYS_RANGE : IQueryHandler
     {
