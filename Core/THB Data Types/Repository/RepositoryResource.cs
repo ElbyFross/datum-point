@@ -13,6 +13,8 @@
 //limitations under the License.
 
 using System;
+using System.Data.Common;
+using UniformDataOperator.SQL.Tables;
 
 namespace DatumPoint.Types.Repository
 {
@@ -20,7 +22,7 @@ namespace DatumPoint.Types.Repository
     /// Object that contain data that would stored in database or file system like and object container.
     /// </summary>
     [System.Serializable]
-    public class RepositoryResource
+    public class RepositoryResource : ISQLTable, ISQLDataReadCompatible
     {
         /// <summary>
         /// Unique if of this container in repository.
@@ -71,5 +73,17 @@ namespace DatumPoint.Types.Repository
         /// When resource was called at last time.
         /// </summary>
         public DateTime lastCallAt;
+
+        // TODO Implement required
+        public string TableName => throw new NotImplementedException();
+
+        // TODO Implement required
+        public TableFieldMeta[] TableFields => throw new NotImplementedException();
+
+        // TODO Implement required
+        public void ReadSQLObject(DbDataReader reader)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -14,7 +14,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Globalization;
+using UniformDataOperator.SQL.Tables;
 
 namespace DatumPoint.Types.Schedule
 {
@@ -22,7 +24,7 @@ namespace DatumPoint.Types.Schedule
     /// Object that contains data that describing group.
     /// </summary>
     [System.Serializable]
-    public class Group
+    public class Group : ISQLTable, ISQLDataReadCompatible
     {
         /// <summary>
         /// Unique id of this group.
@@ -50,5 +52,17 @@ namespace DatumPoint.Types.Schedule
         /// Detailed history can be gained via orders.
         /// </summary>
         public int superviserid = -1;
+
+        // TODO Implement required
+        public string TableName => throw new NotImplementedException();
+
+        // TODO Implement required
+        public TableFieldMeta[] TableFields => throw new NotImplementedException();
+
+        // TODO Implement required
+        public void ReadSQLObject(DbDataReader reader)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -12,13 +12,16 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
+using System.Data.Common;
+using UniformDataOperator.SQL.Tables;
+
 namespace DatumPoint.Types.Orders
 {
     /// <summary>
     /// Class that can be stored as query data's block to data base or file system.
     /// </summary>
     [System.Serializable]
-    public class Order
+    public class Order : ISQLTable, ISQLDataReadCompatible
     {
         /// <summary>
         /// Unique id of this order.
@@ -56,5 +59,17 @@ namespace DatumPoint.Types.Orders
         /// Max size 8196 bytes.
         /// </summary>
         public object sharedData = null;
+
+        // TODO Implement required
+        public string TableName => throw new System.NotImplementedException();
+
+        // TODO Implement required
+        public TableFieldMeta[] TableFields => throw new System.NotImplementedException();
+
+        // TODO Implement required
+        public void ReadSQLObject(DbDataReader reader)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

@@ -12,13 +12,16 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
+using System.Data.Common;
+using UniformDataOperator.SQL.Tables;
+
 namespace DatumPoint.Types.Schedule
 {
     /// <summary>
     /// Attomar object that descibe min block of the schedule - a lesson.
     /// </summary>
     [System.Serializable]
-    public class Lesson
+    public class Lesson : ISQLDataReadCompatible
     {
         /// <summary>
         /// Id of subject that would be on this lesson.
@@ -39,5 +42,11 @@ namespace DatumPoint.Types.Schedule
         /// Array that contains IDs of resources in repository that binded to this lesson.
         /// </summary>
         public int[] resourceIds;
+
+        // TODO Implement required
+        public void ReadSQLObject(DbDataReader reader)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

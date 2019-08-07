@@ -14,14 +14,16 @@
 
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Text;
+using UniformDataOperator.SQL.Tables;
 
 namespace AuthorityController.Data.Personal
 {
     /// <summary>
     /// Additive fields and API suiteble for AC users in Datum Point.
     /// </summary>
-    public partial class User
+    public partial class User : ISQLTable, ISQLDataReadCompatible
     {
         /// <summary>
         /// Middle name of user if applicable.
@@ -61,5 +63,17 @@ namespace AuthorityController.Data.Personal
         /// Useful in multicultural environment like universities.
         /// </summary>
         public List<string> culturePreferences = new List<string>();
+
+        // TODO Implement required
+        public string TableName => throw new NotImplementedException();
+
+        // TODO Implement required
+        public TableFieldMeta[] TableFields => throw new NotImplementedException();
+
+        // TODO Implement required
+        public void ReadSQLObject(DbDataReader reader)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
