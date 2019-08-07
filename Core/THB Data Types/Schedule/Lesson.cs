@@ -12,25 +12,32 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-using System;
-
-namespace DatumPoint.Types.Containers.Schedule
+namespace DatumPoint.Types.Schedule
 {
     /// <summary>
-    /// Sigle data that contain shedule.
+    /// Attomar object that descibe min block of the schedule - a lesson.
     /// </summary>
-    [Serializable]
-    public class Day
+    [System.Serializable]
+    public class Lesson
     {
         /// <summary>
-        /// Unitye key of this day in logbook.
-        /// format dd.mm.yyyy
+        /// Id of subject that would be on this lesson.
         /// </summary>
-        public string key = null;
+        public int subjectId;
 
         /// <summary>
-        /// List of sessions during this day.
+        /// Id of user that would be a teacher on this lesson.
         /// </summary>
-        public Session[] sessions = null;
+        public int teacherId;
+
+        /// <summary>
+        /// Array that contains IDs of groups.
+        /// </summary>
+        public int[] groupIds;
+
+        /// <summary>
+        /// Array that contains IDs of resources in repository that binded to this lesson.
+        /// </summary>
+        public int[] resourceIds;
     }
 }

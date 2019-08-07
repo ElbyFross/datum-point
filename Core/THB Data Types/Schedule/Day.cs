@@ -13,31 +13,35 @@
 //limitations under the License.
 
 using System;
-using System.Collections;
 
-namespace DatumPoint.Types.Containers.Entities
+namespace DatumPoint.Types.Schedule
 {
     /// <summary>
-    /// Group of students.
+    /// Object that describe day's time block as part of schedule.
     /// </summary>
-    [Serializable]
-    public class Group
+    [System.Serializable]
+    public class Day
     {
         /// <summary>
-        /// Unique DB key of this group.
+        /// Date of this day.
         /// </summary>
-        public string key = null;
+        public DateTime date;
 
         /// <summary>
-        /// Title that will be displayed into UI.
+        /// When will has been starting the firts lesson.
+        /// Require to back log of shedule, cause start time can'be changed by orders.
         /// </summary>
-        public string title = "New group";
+        public DateTime startTime;
 
         /// <summary>
-        /// Hashtable that contrain descriptions of group. 
-        /// Key (string) - language key;
-        /// Value (string) - description relative to language.
+        /// How many minuts take one lesson.
         /// </summary>
-        public Hashtable descriptions = new Hashtable();
+        public int lessonDuration;
+
+        /// <summary>
+        /// Array that contain lessons binded to this day.
+        /// Index equal the row nomber of lesson at that day.
+        /// </summary>
+        public Lesson[] lessonIds;
     }
 }

@@ -13,32 +13,22 @@
 //limitations under the License.
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Controls;
 
-namespace DatumPoint.Types.Orders
+namespace WpfHandler.Plugins
 {
     /// <summary>
-    /// Interface that devlare the base properties fo orders.
+    /// Provide possibility to implement setting ui block in application.
     /// </summary>
-    public interface IOrder
+    public interface IPluginSettings : IPlugin
     {
         /// <summary>
-        /// Date and session whe order will started.
+        /// Return control that can be displayed as block of settings menu.
         /// </summary>
-        OrderDate StartDate { get; set; }
-
-        /// <summary>
-        /// Date and session when order will expire inpact.
-        /// </summary>
-        OrderDate ExpireDate { get; set; }
-
-        /// <summary>
-        /// User that place this order.
-        /// </summary>
-        string OrderPublisher { get; }
-
-        /// <summary>
-        /// When this order was pooled to stack.
-        /// </summary>
-        DateTime PooledTime { get; }
+        UserControl GUI { get; }
     }
 }

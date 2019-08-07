@@ -13,20 +13,25 @@
 //limitations under the License.
 
 using System;
-using System.Collections;
+using System.Collections.Generic;
+using System.Text;
 
-namespace DatumPoint.Types.Containers.Schedule
+namespace WpfHandler.Plugins
 {
     /// <summary>
-    /// Single session binded to the groups and teacher.
+    /// Interface that allow to create a plugin that can be connect to client application.
     /// </summary>
-    [Serializable]
-    public class Session
+    public interface IPlugin
     {
         /// <summary>
-        /// Hashtable that contain data pairs: 
-        /// subject (string key) -> groups (string key)
+        /// Meta data that contains description for main menu integration.
         /// </summary>
-        public Hashtable subjects = new Hashtable();
+        MenuItemMeta Meta{ get; set; }
+
+        /// <summary>
+        /// Method that will has been calling when menu item would press.
+        /// Use to apply executable part of the plugin.
+        /// </summary>
+        void OnStart(object sender);
     }
 }

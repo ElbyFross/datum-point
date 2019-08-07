@@ -5,4 +5,14 @@
     <RootNamespace>DatumPoint.Types</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Frameworks\WpfHandler\WpfHandler.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AuthorityController">
+      <HintPath>..\..\Frameworks\doloro-networking-framework\libs\AuthorityController.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

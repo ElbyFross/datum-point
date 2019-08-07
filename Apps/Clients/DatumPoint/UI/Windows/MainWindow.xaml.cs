@@ -161,7 +161,7 @@ namespace DatumPoint.UI.Windows
 
         #region Callbacks
         /// <summary>
-        /// Callback that will be called when widow size will be changed.
+        /// Callback that will has been calling when widow size will be changed.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

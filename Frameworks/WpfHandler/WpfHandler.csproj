@@ -56,7 +56,8 @@
     <Compile Include="Localization\DomainContainer.cs" />
     <Compile Include="Plugins\API.cs" />
     <Compile Include="Plugins\Constants.cs" />
-    <Compile Include="Plugins\IPlugin.cs" />
+    <Compile Include="Plugins\Interfaces\IPlugin.cs" />
+    <Compile Include="Plugins\Interfaces\IPluginSettings.cs" />
     <Compile Include="Plugins\MenuItemMeta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

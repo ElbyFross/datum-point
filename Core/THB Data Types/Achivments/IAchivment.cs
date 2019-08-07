@@ -12,28 +12,27 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DatumPoint.Types.Containers.Entities
-{
+namespace DatumPoint.Types.Achivments
+{        
     /// <summary>
-    /// Base class implemented the API for users.
+    /// Implementing of this interface provide possiblity to add achivment handler to your users.
     /// </summary>
-    [Serializable]
-    public abstract class BaseUser : IUser
+    public interface IAchivment : WpfHandler.Plugins.IPlugin
     {
-        #region Public properties
         /// <summary>
-        /// Hashtable that contain names relative to languages.
-        /// Key (string) -> language key
-        /// Value (NameContainer) -> localized data.
+        /// Current state of achivment. (Achived or not).
         /// </summary>
-        public Hashtable Name { get; set; } = new System.Collections.Hashtable();
-        #endregion
+        bool State { get; }
+
+        /// <summary>
+        /// Current progress of this achivment.
+        /// [0.0f, 1.0f]
+        /// </summary>
+        float Progress { get; }
+
+        /// <summary>
+        /// Async check of currnet state.
+        /// </summary>
+        void CheckAsync();
     }
 }

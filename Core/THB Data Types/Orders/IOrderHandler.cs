@@ -12,23 +12,24 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DatumPoint.Types.Containers.Entities
+namespace DatumPoint.Types.Orders
 {
     /// <summary>
-    /// Data about teacher.
+    /// Interface that can be implemented by order's handler that would process data received from database.
     /// </summary>
-    [Serializable]
-    public class Teacher : BaseUser
+    public interface IOrderHandler
     {
-        public Teacher()
-        {
-        }
+        /// <summary>
+        /// Checking does this handler suitable to processign of order.
+        /// </summary>
+        /// <param name="order">Target order.</param>
+        /// <returns></returns>
+        bool IsTarget(Order order);
+
+        /// <summary>
+        /// Execute order via this handler.
+        /// </summary>
+        /// <param name="order"></param>
+        void Execute(Order order);
     }
 }

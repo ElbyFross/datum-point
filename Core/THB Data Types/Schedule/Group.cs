@@ -13,29 +13,42 @@
 //limitations under the License.
 
 using System;
+using System.Collections.Generic;
+using System.Globalization;
 
-namespace DatumPoint.Types.Orders
+namespace DatumPoint.Types.Schedule
 {
-    public abstract class BaseOrder : IOrder
+    /// <summary>
+    /// Object that contains data that describing group.
+    /// </summary>
+    [System.Serializable]
+    public class Group
     {
         /// <summary>
-        /// Date and session whe order will started.
+        /// Unique id of this group.
         /// </summary>
-        public OrderDate StartDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public int id = -1;
 
         /// <summary>
-        /// Date and session when order will expire inpact.
+        /// Title of this group.
         /// </summary>
-        public OrderDate ExpireDate { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string title = null;
 
         /// <summary>
-        /// User that place this order.
+        /// Primari language of this group.
         /// </summary>
-        public string OrderPublisher => throw new NotImplementedException();
+        public CultureInfo language;
 
         /// <summary>
-        /// When this order was pooled to stack.
+        /// Id of president of this group.
+        /// Detailed history can be gained via orders.
         /// </summary>
-        public DateTime PooledTime => throw new NotImplementedException();
+        public int presidentId = -1;
+
+        /// <summary>
+        /// Id of group's superviser user.
+        /// Detailed history can be gained via orders.
+        /// </summary>
+        public int superviserid = -1;
     }
 }

@@ -81,7 +81,7 @@ namespace DatumPoint.Controls
         public Brush TextColor { get; set; } = Brushes.White;
 
         /// <summary>
-        /// Method that will be called during click on button.
+        /// Method that will has been calling during click on button.
         /// </summary>
         public System.Action<object> ClickCallback { get; set; }
         #endregion
@@ -97,7 +97,7 @@ namespace DatumPoint.Controls
         }
 
         /// <summary>
-        /// Callback that will be called when button will be clicked.
+        /// Callback that will has been calling when button will be clicked.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
