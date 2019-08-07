@@ -22,7 +22,7 @@ using System.Threading.Tasks;
 namespace UniformDataOperator.SQL.MySQL
 {
     /// <summary>
-    /// Operator that provides possibility to operate data on MySQL data base server.
+    /// TODO Operator that provides possibility to operate data on MySQL data base server.
     /// </summary>
     public class MySQLDataOperator : ISQLOperator
     {

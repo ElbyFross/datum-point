@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Frameworks\UniformDataOperator\UniformDataOperator.csproj" />
     <ProjectReference Include="..\..\Frameworks\WpfHandler\WpfHandler.csproj" />
   </ItemGroup>
 
