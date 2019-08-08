@@ -26,11 +26,6 @@ namespace UniformDataOperator.SQL
     public interface ISQLOperator
     {
         /// <summary>
-        /// Active single tone instance of SQL data operator.
-        /// </summary>
-        ISQLOperator Active { get; }
-
-        /// <summary>
         /// Server's ip.
         /// </summary>
         string Server { get; set; }
@@ -53,20 +48,19 @@ namespace UniformDataOperator.SQL
         /// <summary>
         /// Opening connection to SQL server.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Result of connection.</returns>
         bool OpenConnection();
 
         /// <summary>
         /// Closing connection to SQL server.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Result of connection closing.</returns>
         bool CloseConnection();
 
         /// <summary>
         /// Sending SQL query to server.
         /// </summary>
         /// <param name="query"></param>
-        /// <returns></returns>
         void ExecuteNonQuery(string query);
 
         /// <summary>
