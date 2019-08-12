@@ -50,6 +50,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AuthorityController">
+      <HintPath>..\..\..\Frameworks\doloro-networking-framework\libs\AuthorityController.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -76,10 +79,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="UI\Controls\CatalogButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="UI\Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -89,9 +88,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Networking\Client.cs" />
-    <Compile Include="UI\Controls\CatalogButton.xaml.cs">
-      <DependentUpon>CatalogButton.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UI\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -132,6 +128,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\THB Data Types\DP Data Types.csproj">
+      <Project>{51dacea7-a2be-4be2-82e8-8f6d9532f6d3}</Project>
+      <Name>DP Data Types</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Frameworks\UniformDataOperator\UniformDataOperator.csproj">
+      <Project>{98bd25ca-0338-405b-a1ca-1a63ce9da34d}</Project>
+      <Name>UniformDataOperator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Frameworks\WpfHandler\WpfHandler.csproj">
       <Project>{9a1f206b-1f7a-43df-8a08-d86f26b8fc81}</Project>
       <Name>WpfHandler</Name>

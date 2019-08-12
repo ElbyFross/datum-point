@@ -17,23 +17,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
 
-namespace WpfHandler.Plugins
+namespace WpfHandler.UI.Controls
 {
     /// <summary>
-    /// Provide possibility to implement setting ui block in application.
+    /// Interaction logic for LogonScreen.xaml
     /// </summary>
-    public interface IPluginSettings
+    public partial class LogonScreen : UserControl
     {
-        /// <summary>
-        /// Meta data that contains description for main menu integration.
-        /// </summary>
-        MenuItemMeta Meta { get; set; }
-
-        /// <summary>
-        /// Return control that can be displayed as block of settings menu.
-        /// </summary>
-        UserControl GUI { get; }
+        public LogonScreen()
+        {
+            InitializeComponent();
+        }
     }
 }

@@ -13,57 +13,58 @@
 //limitations under the License.
 
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Data.Common;
 using UniformDataOperator.SQL.Tables;
 
-namespace DatumPoint.Types.Orders
+namespace StatisticsProvider.Types
 {
     /// <summary>
-    /// Class that can be stored as query data's block to data base or file system.
+    /// Statistic block that contain recorded data about time period.
     /// </summary>
     [System.Serializable]
-    public class Order : ISQLTable, ISQLDataReadCompatible
+    public class StatBlock : ISQLTable, ISQLDataReadCompatible
     {
         /// <summary>
-        /// Unique id of this order.
+        /// Unique ID of statistic block registred in DB.
         /// </summary>
-        public int orderId = -1;
+        public int blockId = -1;
 
         /// <summary>
-        /// ID of user that had posted this order.
+        /// ID of user that is a target for that statistic data.
         /// </summary>
-        public int postedUserId = -1;
+        public int targetUserId = -1;
 
         /// <summary>
-        /// Time when will had been created.
+        /// Assessment of this session. In case of not atomar session it would be average value.
         /// </summary>
-        public DateTime createdAt;
+        public int assessment;
 
         /// <summary>
-        /// Title of this order.
+        /// Difference between highest and lowes assessment during session. Zero for atomar session.
         /// </summary>
-        public string title = "New order";
+        public int assessmentsDelta;
 
         /// <summary>
-        /// Description added by user to this order.
+        /// Mask that show behevior in skiping of sessions frequency of sessions leveng during one period. 
+        /// Example: 16+7+3+3+2+4+9+14 - this mask show that student has strong tend to skip first and last two lessons.
         /// </summary>
-        public string description = null;
+        public string abcencesDayScaleMask;
 
         /// <summary>
-        /// Command descriptor that could be decomposed by regex to determine of high end instructions.
+        /// Mask that show behevior in skiping of sessions frequency of sessions leveng during one period. 
+        /// Example: 3+1+2+3+4+8+0+0 - The mask of absence relative to week's days. It showing that student has tend to absent at friday.
         /// </summary>
-        public string command;
+        public string abcencesWeekScaleMask;
 
-        /// <summary>
-        /// Data attached to this command.
-        /// Can be binary or serizlised object.
-        /// Max size 8196 bytes.
-        /// </summary>
-        public byte[] sharedData = null;
+
 
         public string TableName
         {
-            get { return "order"; }
+            get { return "stat_block"; }
         }
 
         public string SchemaName
@@ -87,7 +88,7 @@ namespace DatumPoint.Types.Orders
                     {
                         new TableColumnMeta()
                         {
-                            name = "orderid",
+                            name = "blockid",
                             type = "INT",
                             isPrimaryKey = true,
                             isNotNull = true,
@@ -105,29 +106,24 @@ namespace DatumPoint.Types.Orders
                         },
                         new TableColumnMeta()
                         {
-                            name = "created_at",
-                            type = "DATETIME",
+                            name = "assessment",
+                            type = "INT"
+                        },
+                        new TableColumnMeta()
+                        {
+                            name = "assessments_delta",
+                            type = "INT"
+                        },
+                        new TableColumnMeta()
+                        {
+                            name = "abcences_day_scale_mask",
+                            type = "VARCHAR(45)",
                             isNotNull = true
                         },
                         new TableColumnMeta()
                         {
-                            name = "title",
-                            type = "VARCHAR(150)",
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "description",
-                            type = "VARCHAR(1024)"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "command",
-                            type = "VARCHAR(128)"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "shared_data",
-                            type = "BLOB(8196)"
+                            name = "abcences_week_scale_mask",
+                            type = "VARCHAR(45)"
                         }
                     };
                 }
@@ -138,15 +134,14 @@ namespace DatumPoint.Types.Orders
 
         public void ReadSQLObject(DbDataReader reader)
         {
-            try { orderId = reader.GetInt32(reader.GetOrdinal("orderid")); } catch { };
-            try { postedUserId = reader.GetInt32(reader.GetOrdinal("user_userid")); } catch { };
-            try { createdAt = reader.GetDateTime(reader.GetOrdinal("created_at")); } catch { };
+            try { blockId = reader.GetInt32(reader.GetOrdinal("blockId")); } catch { };
+            try { targetUserId = reader.GetInt32(reader.GetOrdinal("user_userid")); } catch { };
 
-            try { title = reader.GetString(reader.GetOrdinal("title")); } catch { };
-            try { description = reader.GetString(reader.GetOrdinal("description")); } catch { };
-            try { command = reader.GetString(reader.GetOrdinal("command")); } catch { };
+            try { assessment = reader.GetInt32(reader.GetOrdinal("assessment")); } catch { };
+            try { assessmentsDelta = reader.GetInt32(reader.GetOrdinal("assessments_delta")); } catch { };
 
-            try { byte[] sharedData = reader["shared_data"] as byte[]; } catch { };
+            try { abcencesDayScaleMask = reader.GetString(reader.GetOrdinal("abcences_day_scale_mask")); } catch { };
+            try { abcencesWeekScaleMask = reader.GetString(reader.GetOrdinal("abcences_week_scale_mask")); } catch { };
         }
     }
 }

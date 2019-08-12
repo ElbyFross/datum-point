@@ -20,13 +20,24 @@ namespace UniformDataOperator.SQL.Tables
     public interface ISQLTable
     {
         /// <summary>
+        /// Name of the target schema.
+        /// </summary>
+        string SchemaName { get; }
+
+        /// <summary>
         /// Name of the table.
         /// </summary>
         string TableName { get; }
 
         /// <summary>
+        /// Engine of this table.
+        /// InnoDB by default.
+        /// </summary>
+        string TableEngine { get; }
+
+        /// <summary>
         /// Array of table fields names.
         /// </summary>
-        TableFieldMeta[] TableFields { get; }
+        TableColumnMeta[] TableFields { get; }
     }
 }

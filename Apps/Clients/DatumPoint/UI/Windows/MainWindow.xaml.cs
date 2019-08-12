@@ -132,7 +132,7 @@ namespace DatumPoint.UI.Windows
 
                     // Create button by meta.
                     MenuButtons.Add(
-                    new Controls.CatalogButton()
+                    new WpfHandler.UI.Controls.CatalogButton()
                     {
                         Text = title,
                         // Set uniformed text offset in hierarchy tree.

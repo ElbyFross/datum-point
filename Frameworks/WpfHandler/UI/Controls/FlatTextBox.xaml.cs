@@ -12,22 +12,31 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-namespace UniformDataOperator.SQL.Tables
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace WpfHandler.UI.Controls
 {
     /// <summary>
-    /// Describe requirments to field in SQL table.
+    /// Interaction logic for FlatTextBox.xaml
     /// </summary>
-    [System.Serializable]
-    public struct TableFieldMeta
+    public partial class FlatTextBox : UserControl
     {
-        /// <summary>
-        /// Name of field.
-        /// </summary>
-        public string name;
-
-        /// <summary>
-        /// SQL like type of the field.
-        /// </summary>
-        public string type;
+        public FlatTextBox()
+        {
+            InitializeComponent();
+        }
     }
 }

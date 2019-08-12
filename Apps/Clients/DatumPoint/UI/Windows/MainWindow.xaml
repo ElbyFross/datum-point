@@ -5,12 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
         xmlns:local="clr-namespace:DatumPoint.UI.Windows"
-        xmlns:controls="clr-namespace:DatumPoint.Controls"
+        xmlns:controls="clr-namespace:WpfHandler.UI.Controls;assembly=WpfHandler"
         mc:Ignorable="d"
         Title="MainWindow" MinHeight="480" Height="600" MinWidth="640" Width="1067"
         Loaded="Window_Loaded">
     <Window.Resources>
-        <BitmapImage x:Key="logoutIcon" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="/TeacherHandbook;component/Resources/Images/logout-24.png"/>
+        <BitmapImage x:Key="logoutIcon" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="/DatumPointClient;component/Resources/Images/logout-24.png"/>
     </Window.Resources>
     <Grid >
 
@@ -22,24 +22,7 @@
             <ColumnDefinition x:Name="controlPanelColumn" Width="{Binding ControlPanelWidth, UpdateSourceTrigger=Explicit}"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
-        <Grid  Style="{DynamicResource Header}" Grid.ColumnSpan="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-                <ColumnDefinition Width="280"></ColumnDefinition>
-                <ColumnDefinition Width="50"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
 
-            <Label Grid.Column="0" FontSize="21.5" FontWeight="Heavy" HorizontalAlignment="Left" Margin="10,6" Foreground="#003459" Content="TEACHER'S HANDBOOK"/>
-            <StackPanel Grid.Column="1" Orientation="Vertical">
-                <Label FontSize="15" FontWeight="DemiBold" HorizontalAlignment="Right" Foreground="#FFFFFF" Content="VOLODYMYR PODSHYVALOV" />
-                <Label FontSize="15" FontWeight="Light" HorizontalAlignment="Right" Foreground="#FFFFFF" Margin="0,-10" Content="Administrator"/>
-            </StackPanel>
-            <Button Grid.Column="2" Background="Transparent" BorderThickness="0">
-                <Image Source="{DynamicResource logoutIcon}" Width="24"/>
-            </Button>
-        </Grid>
-        
         <Grid x:Name="controlPanel" Grid.Row="1" HorizontalAlignment="Left" Background="#00171F" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="0"></RowDefinition>
@@ -72,6 +55,82 @@
             </Grid>
         </Grid>
 
-        <Grid x:Name="canvas" Grid.Column="1" Grid.Row="1"/>
+        <Grid x:Name="canvas" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="1"/>
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" Margin="0,-0.5,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="350"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Background="#FFFFFF"  Margin="0,-0.5,0,0">
+                <StackPanel Orientation="Vertical" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,220" Width="224">
+                    <Label  Grid.Column="0" FontSize="30.5" FontWeight="Light" HorizontalAlignment="Center" Margin="-0.5,0.5" Foreground="#003459" Content="WELCOME BACK" />
+                    <Grid Background="#FFFFFF">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75"></ColumnDefinition>
+                            <ColumnDefinition Width="0.5"/>
+                            <ColumnDefinition Width="4"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="4"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" FontSize="15" FontWeight="Light" HorizontalAlignment="Right" Foreground="#003459" Content="Login" />
+                        <Grid Grid.Column="1"  Background="#00171f" />
+                        <Grid Grid.Column="3"  Background="#00a9e9" VerticalAlignment="Center" Margin="1.5,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Grid.Column="1" FontSize="15" FontWeight="Light" BorderThickness="0" Background="Transparent" Foreground="#FFFFFF" Text="UserLogin" />
+                        </Grid>
+                    </Grid>
+
+                    <!--<Grid Height="0.5" />-->
+                    
+                    <Grid Background="#FFFFFF">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75"></ColumnDefinition>
+                            <ColumnDefinition Width="0.5"/>
+                            <ColumnDefinition Width="4"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="4"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" FontSize="15" FontWeight="Light" HorizontalAlignment="Right" Foreground="#003459" Content="Password" />
+                        <Grid Grid.Column="1"  Background="#00171f" />
+                        <Grid Grid.Column="3"  Background="#00a9e9" VerticalAlignment="Center" Margin="1.5,0,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBox Grid.Column="1" FontSize="15" FontWeight="Light" BorderThickness="0" Background="Transparent" Foreground="#FFFFFF" Text="UserPassword" />
+                        </Grid>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+
+
+            <Grid Grid.Column="1" Background="#00171f" Margin="0.5,-0.5,0,0">
+            </Grid>
+        </Grid>
+
+        <Grid  Style="{DynamicResource Header}" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="280"></ColumnDefinition>
+                <ColumnDefinition Width="50"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Column="0" FontSize="21.5" FontWeight="Heavy" HorizontalAlignment="Left" Margin="10,6" Foreground="#003459" Content="DATUM POINT"/>
+            <StackPanel Grid.Column="1" Orientation="Vertical">
+                <Label FontSize="15" FontWeight="DemiBold" HorizontalAlignment="Right" Foreground="#FFFFFF" Content="VOLODYMYR PODSHYVALOV" />
+                <Label FontSize="15" FontWeight="Light" HorizontalAlignment="Right" Foreground="#FFFFFF" Margin="0,-10" Content="Administrator"/>
+            </StackPanel>
+            <Button Grid.Column="2" Background="Transparent" BorderThickness="0">
+                <Image Source="{DynamicResource logoutIcon}" Width="24"/>
+            </Button>
+        </Grid>
+
     </Grid>
 </Window>

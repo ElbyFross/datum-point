@@ -32,7 +32,7 @@ namespace DatumPoint.Types.Repository
         /// <summary>
         /// Data shared via container.
         /// </summary>
-        public object data = null;
+        public byte[] data = null;
 
         /// <summary>
         /// Name of this resource.
@@ -52,7 +52,12 @@ namespace DatumPoint.Types.Repository
         /// <summary>
         /// Time when object loaded at server.
         /// </summary>
-        public DateTime postTime;
+        public DateTime createdAt;
+
+        /// <summary>
+        /// When resource was called at last time.
+        /// </summary>
+        public DateTime usedAt;
 
         /// <summary>
         /// Who can access to this file:
@@ -69,21 +74,110 @@ namespace DatumPoint.Types.Repository
         /// </summary>
         public int views = 0;
 
-        /// <summary>
-        /// When resource was called at last time.
-        /// </summary>
-        public DateTime lastCallAt;
 
-        // TODO Implement required
-        public string TableName => throw new NotImplementedException();
+        public string TableName
+        {
+            get { return "repository"; }
+        }
 
-        // TODO Implement required
-        public TableFieldMeta[] TableFields => throw new NotImplementedException();
+        public string SchemaName
+        {
+            get { return "datum-point"; }
+        }
 
-        // TODO Implement required
+        public string TableEngine
+        {
+            get { return "InnoDB"; }
+        }
+
+        public TableColumnMeta[] TableFields
+        {
+            get
+            {
+                // Init field if not init.
+                if (_TableFields == null)
+                {
+                    _TableFields = new TableColumnMeta[]
+                    {
+                        new TableColumnMeta()
+                        {
+                            name = "resourceid",
+                            type = "INT",
+                            isPrimaryKey = true,
+                            isNotNull = true,
+                            isAutoIncrement = true
+                        },
+                        new TableColumnMeta()
+                        {
+                            name = "data",
+                            type = "LONGBLOB",
+                        },
+                        new TableColumnMeta()
+                        {
+                            name = "name",
+                            type = "VARCHAR(45)",
+                            isNotNull = true
+                        },
+                        new TableColumnMeta()
+                        {
+                            name = "description",
+                            type = "VARCHAR(500)"
+                        },
+                        new TableColumnMeta()
+                        {
+                            name = "user_ownerid",
+                            type = "int",
+                            isNotNull = true,
+                            isForeignKey = true,
+                            refSchema = "datum-point",
+                            refTable = "user",
+                            refColumn = "userid"
+                        },
+                        new TableColumnMeta()
+                        {
+                            name = "created_at",
+                            type = "DATETIME",
+                            isNotNull = true
+                        },
+                        new TableColumnMeta()
+                        {
+                            name = "sharing_rule",
+                            type = "INT",
+                            isNotNull = true
+                        },
+                        new TableColumnMeta()
+                        {
+                            name = "views",
+                            type = "INT",
+                            isNotNull = true
+                        },
+                        new TableColumnMeta()
+                        {
+                            name = "used_at",
+                            type = "DATETIME",
+                            isNotNull = true
+                        }
+                    };
+                }
+                return _TableFields;
+            }
+        }
+        protected TableColumnMeta[] _TableFields;
+
         public void ReadSQLObject(DbDataReader reader)
         {
-            throw new NotImplementedException();
+            try { resourceId = reader.GetInt32(reader.GetOrdinal("resourceid")); } catch { };
+            try { ownerID = reader.GetInt32(reader.GetOrdinal("user_ownerid")); } catch { };
+            try { sharingRule = reader.GetInt32(reader.GetOrdinal("sharing_rule")); } catch { };
+            try { views = reader.GetInt32(reader.GetOrdinal("views")); } catch { };
+
+            try { name = reader.GetString(reader.GetOrdinal("name")); } catch { };
+            try { description = reader.GetString(reader.GetOrdinal("description")); } catch { };
+
+            try { byte[] data = reader["data"] as byte[]; } catch { };
+
+            try { createdAt = reader.GetDateTime(reader.GetOrdinal("created_at")); } catch { };
+            try { usedAt = reader.GetDateTime(reader.GetOrdinal("used_at")); } catch { };
         }
     }
 }

@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DatumPoint.Controls
+namespace WpfHandler.UI.Controls
 {
     /// <summary>
     /// Interaction logic for CatalogButton.xaml

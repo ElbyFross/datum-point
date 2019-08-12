@@ -38,10 +38,13 @@ namespace UniformDataOperator.SQL.MySQL
             get
             {
                 // Create new instence of MySQL data operator.
-                if(_Active == null)
+                if(!(_Active is MySQLDataOperator))
                 {
                     _Active = new MySQLDataOperator();
                 }
+
+                // Set current as active.
+                SQLOperatorHandler.Active = _Active;
                 return _Active;
             }
         }

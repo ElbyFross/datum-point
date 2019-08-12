@@ -52,6 +52,9 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UI\Controls\CatalogButton.xaml.cs">
+      <DependentUpon>CatalogButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Localization\API.cs" />
     <Compile Include="Localization\DomainContainer.cs" />
     <Compile Include="Plugins\API.cs" />
@@ -81,8 +84,12 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="GUI\" />
+    <Page Include="UI\Controls\CatalogButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
