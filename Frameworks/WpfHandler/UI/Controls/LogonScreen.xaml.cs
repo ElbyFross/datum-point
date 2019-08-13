@@ -34,9 +34,44 @@ namespace WpfHandler.UI.Controls
     /// </summary>
     public partial class LogonScreen : UserControl
     {
+
+        public static readonly DependencyProperty LogonFormMarginProperty = DependencyProperty.Register(
+          "LogonFormMargin", typeof(Thickness), typeof(FlatTextBox));
+
+        public Thickness LogonFormMargin
+        {
+            get
+            {
+                return new Thickness(0,0,0, ActualHeight / 2 - logonPanel_FormBlock.ActualHeight / 2);
+            }
+        }
+
         public LogonScreen()
         {
+            #region WPF Init
             InitializeComponent();
+            DataContext = this;
+
+            // Subscribe on events
+            SizeChanged += MainWindow_SizeChanged;
+            #endregion
+        }
+
+        ~LogonScreen()
+        {
+            // Unsubscribe from events.
+            SizeChanged -= MainWindow_SizeChanged;
+        }
+
+        /// <summary>
+        /// Callback that will has been calling when widow size will be changed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MainWindow_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            // Update size of control panel.
+            BindingOperations.GetBindingExpression(logonPanel_FormBlock, MarginProperty).UpdateTarget();
         }
     }
 }

@@ -81,6 +81,18 @@ namespace UniformDataOperator.SQL.MySQL
         #endregion
 
 
+        /// <summary>
+        /// Initialize MySqlConnection.
+        /// </summary>
+        public void Initialize()
+        {
+            string connectionString;
+            connectionString = "SERVER=" + Server + ";" + "DATABASE=" +
+            Database + ";" + "UID=" + UserId + ";" + "PASSWORD=" + Password + ";";
+
+            connection = new MySqlConnection(connectionString);
+        }
+
         #region Connection API
         /// <summary>
         /// Opening connection to SQL server.
@@ -242,15 +254,13 @@ namespace UniformDataOperator.SQL.MySQL
             }
             #endregion
 
-            int Count = -1;
-
             //Create Mysql Command
             MySqlCommand cmd = new MySqlCommand(query, connection);
 
             //ExecuteScalar will return one value
-            Count = int.Parse(cmd.ExecuteScalar() + "");
+            int count = int.Parse(cmd.ExecuteScalar() + "");
 
-            return Count;
+            return count;
         }
         #endregion
 
@@ -278,13 +288,15 @@ namespace UniformDataOperator.SQL.MySQL
 
 
             #region Start MySQL Dump utilit
-            ProcessStartInfo psi = new ProcessStartInfo();
-            psi.FileName = "mysqldump";
-            psi.RedirectStandardInput = false;
-            psi.RedirectStandardOutput = true;
-            psi.Arguments = string.Format(@"-u{0} -p{1} -h{2} {3}",
-                UserId, Password, Server, Database);
-            psi.UseShellExecute = false;
+            ProcessStartInfo psi = new ProcessStartInfo
+            {
+                FileName = "mysqldump",
+                RedirectStandardInput = false,
+                RedirectStandardOutput = true,
+                Arguments = string.Format(@"-u{0} -p{1} -h{2} {3}",
+                UserId, Password, Server, Database),
+                UseShellExecute = false
+            };
             Process process = Process.Start(psi);
             #endregion
 
@@ -317,13 +329,15 @@ namespace UniformDataOperator.SQL.MySQL
             file.Close();
 
             // Prepere process info.
-            ProcessStartInfo psi = new ProcessStartInfo();
-            psi.FileName = "mysql";
-            psi.RedirectStandardInput = true;
-            psi.RedirectStandardOutput = false;
-            psi.Arguments = string.Format(@"-u{0} -p{1} -h{2} {3}",
-                UserId, Password, Server, Database);
-            psi.UseShellExecute = false;
+            ProcessStartInfo psi = new ProcessStartInfo
+            {
+                FileName = "mysql",
+                RedirectStandardInput = true,
+                RedirectStandardOutput = false,
+                Arguments = string.Format(@"-u{0} -p{1} -h{2} {3}",
+                UserId, Password, Server, Database),
+                UseShellExecute = false
+            };
 
             // Starting process that would restore data from backup file.
             Process process = Process.Start(psi);

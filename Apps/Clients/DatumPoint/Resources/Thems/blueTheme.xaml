@@ -13,5 +13,17 @@
         <Setter Property="FocusedBackgroundColor" Value="#00A8E8" />
         <Setter Property="TextColor" Value="#FFFFFF" />
     </Style>
-    
+
+    <Style x:Key="FlatTextBox" TargetType="controls:FlatTextBox">
+        <Setter Property="Background" Value="#FFFFFF" />
+        <Setter Property="TextBoxForeground" Value="#FFFFFF" />
+        <Setter Property="TextBoxBackground" Value="#00a9e9" />
+    </Style>
+
+    <Style x:Key="FlatButton" TargetType="controls:FlatButton">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Foreground" Value="#003459" />
+    </Style>
+
 </ResourceDictionary>
+    

@@ -75,6 +75,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="UI\Controls\FlatButton.xaml.cs">
+      <DependentUpon>FlatButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\FlatTextBox.xaml.cs">
+      <DependentUpon>FlatTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\LogonScreen.xaml.cs">
+      <DependentUpon>LogonScreen.xaml</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -89,6 +98,18 @@
     <Page Include="UI\Controls\CatalogButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Controls\FlatButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controls\FlatTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controls\LogonScreen.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

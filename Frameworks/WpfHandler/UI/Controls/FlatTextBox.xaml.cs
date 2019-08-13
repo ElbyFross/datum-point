@@ -34,9 +34,68 @@ namespace WpfHandler.UI.Controls
     /// </summary>
     public partial class FlatTextBox : UserControl
     {
+        #region Dependency properties
+        public static readonly DependencyProperty LableProperty = DependencyProperty.Register(
+          "Lable", typeof(string), typeof(FlatTextBox));
+
+        public static readonly DependencyProperty LableWidthProperty = DependencyProperty.Register(
+          "LableWidth", typeof(float), typeof(FlatTextBox));
+
+        public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
+          "Text", typeof(string), typeof(FlatTextBox));
+        
+        public static readonly DependencyProperty TextBoxForegroundProperty = DependencyProperty.Register(
+          "TextBoxForeground", typeof(Brush), typeof(FlatTextBox));
+
+        public static readonly DependencyProperty TextBoxBackgroundProperty = DependencyProperty.Register(
+          "TextBoxBackground", typeof(Brush), typeof(FlatTextBox));
+        #endregion
+
+        #region Properties
+        /// <summary>
+        /// Text in lable field.
+        /// </summary>
+        public string Lable { get; set; } = "Title";
+
+        /// <summary>
+        /// Width of lable field.
+        /// </summary>
+        public float LableWidth { get; set; }
+
+        /// <summary>
+        /// Text in textbox.
+        /// </summary>
+        public string Text { get; set; } = "Text";
+
+        /// <summary>
+        /// Color of the text in textbox.
+        /// </summary>
+        public Brush TextBoxForeground { get; set; }
+
+        /// <summary>
+        /// Collor of the text box backplate.
+        /// </summary>
+        public Brush TextBoxBackground { get; set; }
+
+        #endregion
+
         public FlatTextBox()
         {
             InitializeComponent();
+            DataContext = this;
+
+            // Try to load default style
+            try
+            {
+                if (Application.Current.FindResource("FlatTextBox") is Style style)
+                {
+                    this.Style = style;
+                }
+            }
+            catch
+            {
+                // Not found in dictionary. Not important.}
+            }
         }
     }
 }

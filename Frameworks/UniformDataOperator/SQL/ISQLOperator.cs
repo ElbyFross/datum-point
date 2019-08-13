@@ -46,6 +46,11 @@ namespace UniformDataOperator.SQL
         string Password { get; set; }
 
         /// <summary>
+        /// Initialize operator.
+        /// </summary>
+        void Initialize();
+
+        /// <summary>
         /// Opening connection to SQL server.
         /// </summary>
         /// <returns>Result of connection.</returns>

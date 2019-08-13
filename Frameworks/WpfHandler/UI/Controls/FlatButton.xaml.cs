@@ -23,37 +23,20 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace WpfHandler.UI.Controls
 {
     /// <summary>
-    /// Interaction logic for CatalogButton.xaml
+    /// Interaction logic for FlatButton.xaml
     /// </summary>
-    public partial class CatalogButton : UserControl
+    public partial class FlatButton : UserControl
     {
-        #region Dependency properties
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
-          "Text", typeof(string), typeof(CatalogButton));
-
-        //public static readonly DependencyProperty HierarchyLevelProperty = DependencyProperty.Register(
-        //  "HierarchyLevel", typeof(int), typeof(CatalogButton));
-
-        public static readonly DependencyProperty UnfocusedBackgroundColorProperty = DependencyProperty.Register(
-          "UnfocusedBackgroundColor", typeof(Brush), typeof(CatalogButton));
-
-        public static readonly DependencyProperty FocusedBackgroundColorProperty = DependencyProperty.Register(
-          "FocusedBackgroundColor", typeof(Brush), typeof(CatalogButton));
-
-        public static readonly DependencyProperty TextColorProperty = DependencyProperty.Register(
-          "TextColor", typeof(Brush), typeof(CatalogButton));
-
-        public static readonly DependencyProperty ClickCallbackProperty = DependencyProperty.Register(
-          "Click", typeof(RoutedEventHandler), typeof(CatalogButton));
-        #endregion
-
-        #region Properties
+          "Text", typeof(string), typeof(FlatButton));
+        
         /// <summary>
         /// Text that will be displayed on the button.
         /// </summary>
@@ -64,43 +47,11 @@ namespace WpfHandler.UI.Controls
         }
 
         /// <summary>
-        /// Define offset of the button text. 
-        /// </summary>
-        public int HierarchyLevel { get; set; } = 1;                
-
-        /// <summary>
-        /// Compute margine relative to hierarchy level.
-        /// </summary>
-        public System.Windows.Thickness AutoMargin
-        {
-            get
-            {
-                return new Thickness(HierarchyLevel * 20, Margin.Top - 5, Margin.Right, Margin.Bottom - 5);
-            }
-        }
-
-        /// <summary>
-        /// Collor of button when it unfocused.
-        /// </summary>
-        public Brush UnfocusedBackgroundColor { get; set; } = Brushes.Transparent;
-
-        /// <summary>
-        /// Color of button when it focused.
-        /// </summary>
-        public Brush FocusedBackgroundColor { get; set; } = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#00A8E8"));
-        
-        /// <summary>
-        /// Collor of the text.
-        /// </summary>
-        public Brush TextColor { get; set; } = Brushes.White;
-
-        /// <summary>
         /// Method that will has been calling during click on button.
         /// </summary>
         public System.Action<object> ClickCallback { get; set; }
-        #endregion
 
-        public CatalogButton()
+        public FlatButton()
         {
             InitializeComponent();
             DataContext = this;
@@ -108,7 +59,7 @@ namespace WpfHandler.UI.Controls
             // Try to load default style
             try
             {
-                if (Application.Current.FindResource("MenuButton") is Style style)
+                if (Application.Current.FindResource("FlatButton") is Style style)
                 {
                     this.Style = style;
                 }

@@ -47,7 +47,7 @@ namespace UniformDataOperator.SQL
             string command = "";
 
             // Creating shema if not exist.
-            command += "CREATE SCHEMA IF NOT EXISTS `datum-point` DEFAULT CHARACTER SET utf8 ;\n";
+            command += "CREATE SCHEMA IF NOT EXISTS `" + shemaName + "` DEFAULT CHARACTER SET utf8 ;\n";
 
             // Setting schema as target.
             command += "USE `datum-point` ;";
