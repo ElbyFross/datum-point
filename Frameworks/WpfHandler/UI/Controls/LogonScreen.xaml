@@ -20,13 +20,18 @@ limitations under the License.-->
              xmlns:local="clr-namespace:WpfHandler.UI.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid x:Name="main" Background="#FFFFFF">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="38*"/>
             <ColumnDefinition Width="62*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid x:Name="logonPanel" Grid.Column="0" Background="#FFFFFF"  Margin="0,-0.5,0,0">            
+        <Grid  Name="logonScreenBackplate" 
+               IsHitTestVisible="False"
+               Background="{Binding Background, ElementName=main}" />
+
+        <Grid x:Name="logonPanel" Grid.Column="0" Background="{Binding Background, ElementName=main}"  Margin="0,-0.5,0,0" Loaded="LogonPanel_Loaded">            
+
             <StackPanel x:Name="logonPanel_FormBlock" 
                         Orientation="Vertical" 
                         VerticalAlignment="Bottom" 
@@ -64,7 +69,7 @@ limitations under the License.-->
                     </Grid.ColumnDefinitions>
                     
                     <!--Login button-->
-                    <local:FlatButton x:Name="loginButtong"
+                    <local:FlatButton x:Name="loginButton"
                                       Text="ENTER" 
                                       HorizontalAlignment="Right" 
                                       FontSize="15"

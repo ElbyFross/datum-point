@@ -20,12 +20,15 @@ limitations under the License.-->
         xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
         xmlns:local="clr-namespace:DatumPoint.UI.Windows"
         xmlns:controls="clr-namespace:WpfHandler.UI.Controls;assembly=WpfHandler"
+        xmlns:effects="clr-namespace:WpfHandler.UI.Effects;assembly=WpfHandler"
         mc:Ignorable="d"
         Title="MainWindow" MinHeight="480" Height="600" MinWidth="640" Width="1067"
         Loaded="Window_Loaded">
     <Window.Resources>
         <BitmapImage x:Key="logoutIcon" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="/DatumPointClient;component/Resources/Images/logout-24.png"/>
+        <effects:RectBlurEffect x:Key="rectBlurEffect"/>
     </Window.Resources>
+
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="50.5"></RowDefinition>
@@ -92,9 +95,17 @@ limitations under the License.-->
         <controls:LogonScreen Name="logonScreen" 
                               Grid.Row="1" 
                               Grid.ColumnSpan="2" 
-                              Margin="0,-0.5,0,0"/>
+                              Margin="0,-0.5,0,0">
 
-        <Grid  Style="{DynamicResource Header}" Grid.ColumnSpan="2">
+            <controls:LogonScreen.Effect>
+                <effects:RectBlurEffect FrameworkElement="{Binding ElementName=lockScreen, Mode=OneTime}" />
+            </controls:LogonScreen.Effect>
+        </controls:LogonScreen>
+
+        <controls:LockScreen x:Name="lockScreen" Grid.ColumnSpan="15" Grid.RowSpan="5">
+        </controls:LockScreen>
+
+        <Grid x:Name="header" Style="{DynamicResource Header}" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="330"></ColumnDefinition>
@@ -113,6 +124,7 @@ limitations under the License.-->
             <!--Profile context panel-->
             <Grid x:Name="profileContextPanel" 
                   Opacity="0"
+                  IsHitTestVisible="False"
                   Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="280"></ColumnDefinition>

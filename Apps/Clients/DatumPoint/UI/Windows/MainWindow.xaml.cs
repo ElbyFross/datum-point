@@ -30,6 +30,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DatumPoint.Networking;
 using WpfHandler.Plugins;
+using System.Windows.Media.Animation;
+using System.Windows.Media.Effects;
 
 namespace DatumPoint.UI.Windows
 {
@@ -77,12 +79,13 @@ namespace DatumPoint.UI.Windows
         #region Constructors & destructors
         public MainWindow()
         {
-            #region WPF Init
+            #region WPF Init            
             InitializeComponent();
             DataContext = this;
 
             // Subscribe on events
-            SizeChanged += MainWindow_SizeChanged;
+            SizeChanged += MainWindow_SizeChanged; // Window size changing.
+            logonScreen.LoginCallback += LogonScreen_LoginButton; // Login button
             #endregion
 
             #region UniformClient Init
@@ -156,6 +159,7 @@ namespace DatumPoint.UI.Windows
         {
             // Unsubscribe from events.
             SizeChanged -= MainWindow_SizeChanged;
+            logonScreen.LoginCallback -= LogonScreen_LoginButton;
         }
         #endregion
 
@@ -175,6 +179,36 @@ namespace DatumPoint.UI.Windows
         {
             // Open first plugin.
             WpfHandler.Plugins.API.OpenGUI(Plugins[0]);
+        }        
+
+        private void LogonScreen_LoginButton(object sender)
+        {
+            DateTime start = DateTime.Now;
+
+            lockScreen.Lock("Authorization");//, controlPanel, canvas, logonScreen);
+
+            return;
+
+            //WpfHandler.UI.Animations.Blur.BlurApply(logonScreen, 10, new TimeSpan(0,0,0,0,500), TimeSpan.Zero);
+            //WpfHandler.UI.Animations.Blur.BlurApply(canvas, 5, new TimeSpan(0), TimeSpan.Zero);
+            //WpfHandler.UI.Animations.Blur.BlurApply(controlPanel, 5, new TimeSpan(0), TimeSpan.Zero);
+
+            while (start.AddMilliseconds(5000) > DateTime.Now)
+            {
+                System.Threading.Thread.Sleep(5);
+            }
+
+            TimeSpan duration = new TimeSpan(0, 0, 0, 0, 200);
+
+            // Disable hits for logon screen.
+            logonScreen.IsHitTestVisible = false;
+
+            // Enable profile panel.
+            profileContextPanel.IsHitTestVisible = true;
+
+            PropertyPath opacityPath = new PropertyPath(Control.OpacityProperty);
+            WpfHandler.UI.Animations.Float.FloatAniamtion(this, logonScreen.Name, opacityPath, duration, 1, 0);
+            WpfHandler.UI.Animations.Float.FloatAniamtion(this, profileContextPanel.Name, opacityPath, duration, 0, 1);
         }
         #endregion
     }

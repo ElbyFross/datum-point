@@ -50,7 +50,7 @@ namespace WpfHandler.UI.Controls
           "TextColor", typeof(Brush), typeof(CatalogButton));
 
         public static readonly DependencyProperty ClickCallbackProperty = DependencyProperty.Register(
-          "Click", typeof(RoutedEventHandler), typeof(CatalogButton));
+          "ClickCallback", typeof(System.Action<object>), typeof(CatalogButton));
         #endregion
 
         #region Properties

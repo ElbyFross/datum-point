@@ -38,6 +38,9 @@ namespace WpfHandler.UI.Controls
         public static readonly DependencyProperty LogonFormMarginProperty = DependencyProperty.Register(
           "LogonFormMargin", typeof(Thickness), typeof(FlatTextBox));
 
+        public static readonly DependencyProperty LoginCallbackProperty = DependencyProperty.Register(
+          "LoginCallback", typeof(System.Action<object>), typeof(CatalogButton));
+
         public Thickness LogonFormMargin
         {
             get
@@ -46,11 +49,24 @@ namespace WpfHandler.UI.Controls
             }
         }
 
+        /// <summary>
+        /// Method that will has been calling during click on button.
+        /// </summary>
+        public System.Action<object> LoginCallback { get; set; }
+
+        /// <summary>
+        /// Method that will has been calling during click on operation cancel button.
+        /// </summary>
+        public System.Action<object> OperationCancelCallback { get; set; }
+
         public LogonScreen()
         {
             #region WPF Init
             InitializeComponent();
             DataContext = this;
+
+            // Cubscribe delegate on login click button.
+            loginButton.ClickCallback += LoginCallbackHandler;
 
             // Subscribe on events
             SizeChanged += MainWindow_SizeChanged;
@@ -61,6 +77,8 @@ namespace WpfHandler.UI.Controls
         {
             // Unsubscribe from events.
             SizeChanged -= MainWindow_SizeChanged;
+
+            loginButton.ClickCallback -= LoginCallbackHandler;
         }
 
         /// <summary>
@@ -72,6 +90,17 @@ namespace WpfHandler.UI.Controls
         {
             // Update size of control panel.
             BindingOperations.GetBindingExpression(logonPanel_FormBlock, MarginProperty).UpdateTarget();
+        }
+
+        private void LogonPanel_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Update size of control panel.
+            BindingOperations.GetBindingExpression(logonPanel_FormBlock, MarginProperty).UpdateTarget();
+        }
+        
+        private void LoginCallbackHandler(object sender)
+        {
+            LoginCallback?.Invoke(sender);
         }
     }
 }
