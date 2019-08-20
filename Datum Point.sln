@@ -41,9 +41,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatumPoint", "Apps\Clients\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniformDataOperator", "Frameworks\UniformDataOperator\UniformDataOperator.csproj", "{98BD25CA-0338-405B-A1CA-1A63CE9DA34D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Local", "Local", "{F56CAA6A-7EB9-4719-B24F-EE71627F98A1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GLSL", "GLSL", "{F56CAA6A-7EB9-4719-B24F-EE71627F98A1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WPFShaders", "Local\WPFShaders\WPFShaders.vcxproj", "{36C1214F-5E63-4BA2-8C10-DD04DA5633BB}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WPFShaders", "GLSL\WPFShaders\WPFShaders.vcxproj", "{36C1214F-5E63-4BA2-8C10-DD04DA5633BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

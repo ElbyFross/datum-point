@@ -13,6 +13,7 @@
 //limitations under the License.
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,6 +36,10 @@ namespace WpfHandler.UI.Controls
     /// </summary>
     public partial class LockScreen : UserControl
     {
+        /// <summary>
+        /// Elements that would locked.
+        /// </summary>
+        protected FrameworkElement[] lockedEllements;
 
         /// <summary>
         /// How many time will take blur animation.
@@ -58,11 +63,21 @@ namespace WpfHandler.UI.Controls
         }
 
         /// <summary>
-        /// Lock scren and enable loading animation. 
+        /// Lock screen and enable loading animation. 
         /// </summary>
         /// <param name="message">Message that wold be showed up during lock.</param>
+        /// <param name="controls">elements that would be locked.</param>
         public void Lock(string message, params FrameworkElement[] controls)
         {
+            if(lockedEllements != null)
+            {
+                throw new OperationCanceledException("Already locked. Unlock before using.");
+            }
+
+            // Buferize shared controls.
+            lockedEllements = controls;
+
+            // path to opacity property.
             PropertyPath opacityPropertyPath = new PropertyPath(Control.OpacityProperty);
 
             // Lock input.
@@ -86,15 +101,24 @@ namespace WpfHandler.UI.Controls
                 0, 1);
             #endregion
 
-            // Blur
-            foreach(FrameworkElement c in controls)
+            // Blur locked elements.
+            foreach (FrameworkElement c in controls)
+            {
                 WpfHandler.UI.Animations.Blur.BlurApply(c, blurSize, lockAnimationDuration, TimeSpan.Zero);
-
-            // Activate loading screen.
+            }
         }
 
-        public void Unlock(params FrameworkElement[] controls)
+        /// <summary>
+        /// Unlock screen.
+        /// </summary>
+        public void Unlock()
         {
+            if (lockedEllements == null)
+            {
+                throw new OperationCanceledException("Panel isn't locked. Lock before using.");
+            }
+            
+            // Path to opacity property.
             PropertyPath opacityPropertyPath = new PropertyPath(Control.OpacityProperty);
 
             // Unlock input.
@@ -117,16 +141,20 @@ namespace WpfHandler.UI.Controls
                 1, 0);
             #endregion
 
-            // Unblur logon panel.
-            foreach (FrameworkElement c in controls)
+            // Unlock elements.
+            foreach (FrameworkElement c in lockedEllements)
+            {
                 WpfHandler.UI.Animations.Blur.BlurDisable(c, lockAnimationDuration, TimeSpan.Zero);
+            }
 
+            // Drop buffer.
+            lockedEllements = null;
         }
 
         private void LockCancelCallbackHandler(object sender)
         {
-            Unlock();
             OperationCancelCallback?.Invoke(sender);
+            Unlock();
         }
     }
 }

@@ -39,12 +39,8 @@ limitations under the License.-->
             <RowDefinition Height="40"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Grid.Effect>
-            <BlurEffect Radius="20"></BlurEffect>
-        </Grid.Effect>
 
         <Grid x:Name="backplate" 
-              IsHitTestVisible="False"
               Background="White" 
               Opacity="0" 
               Grid.RowSpan="6"

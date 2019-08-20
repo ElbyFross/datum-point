@@ -185,7 +185,7 @@ namespace DatumPoint.UI.Windows
         {
             DateTime start = DateTime.Now;
 
-            lockScreen.Lock("Authorization");//, controlPanel, canvas, logonScreen);
+            overlay.Lock("Authorization", main);//, controlPanel, canvas, logonScreen);
 
             return;
 

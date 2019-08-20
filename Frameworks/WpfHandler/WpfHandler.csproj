@@ -91,7 +91,7 @@
       <DependentUpon>LogonScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Effects\RectBlurEffect.cs" />
-    <Resource Include="Shaders\rectblureffect.ps">
+    <Resource Include="Shaders\RectBlurEffect.ps">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <EmbeddedResource Include="Properties\Resources.resx">
