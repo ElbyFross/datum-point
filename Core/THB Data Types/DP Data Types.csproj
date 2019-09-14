@@ -6,13 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Frameworks\UniformDataOperator\UniformDataOperator.csproj" />
     <ProjectReference Include="..\..\Frameworks\WpfHandler\WpfHandler.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="AuthorityController">
       <HintPath>..\..\Frameworks\doloro-networking-framework\libs\AuthorityController.dll</HintPath>
+    </Reference>
+    <Reference Include="UniformDataOperator">
+      <HintPath>..\..\Frameworks\uniform-data-operator\UniformDataOperator.dll</HintPath>
     </Reference>
   </ItemGroup>
 

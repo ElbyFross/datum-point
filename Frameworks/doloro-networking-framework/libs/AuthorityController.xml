@@ -1,0 +1,1013 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AuthorityController</name>
+    </assembly>
+    <members>
+        <member name="T:AuthorityController.API.Collections">
+            <summary>
+            Provide API to work with collection situable to authority control.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.API.Collections.IsHasEnoughRigths(System.String[],System.String[])">
+            <summary>
+            Compare two arrays that contain rights code.
+            Prefix '!' before rquired right will work like "not contain this right."
+            </summary>
+            <param name="providedRights">Rights that provided to user.</param>
+            <param name="requiredRights">Rights that required to get permisssion.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AuthorityController.API.Collections.TyGetPropertyValue(System.String,System.String@,System.String[])">
+            <summary>
+            Loging for propery value by requested name.
+            </summary>
+            <param name="name"></param>
+            <param name="value">Value that stored to that property by using "PROP_NAME=PROP_VALUE" format. 
+            NULL if empty.</param>
+            <param name="properties">Array that contain properties' collection.</param>
+            <returns>Result of the seeking.</returns>
+        </member>
+        <member name="T:AuthorityController.API.LocalUsers">
+            <summary>
+            API that provide operation with authority data stored on local machine out of UniformDataOperator storage.
+            </summary>
+        </member>
+        <member name="E:AuthorityController.API.LocalUsers.DirectoryLoadingFinished">
+            <summary>
+            Event that will be called when loading of users from directory will be finished.
+            Int - count of loaded files.
+            Int - count of corupted files.
+            </summary>
+        </member>
+        <member name="E:AuthorityController.API.LocalUsers.UserProfileStored">
+            <summary>
+            Event that will be called when profile will be setted to storage.
+            </summary>
+        </member>
+        <member name="E:AuthorityController.API.LocalUsers.UserProfileNotStored">
+            <summary>
+            Event that will be called when profile will be fail adding to storage.
+            </summary>
+        </member>
+        <member name="P:AuthorityController.API.LocalUsers.HasAsyncLoadings">
+            <summary>
+            Does async processes started at the moment?
+            </summary>
+        </member>
+        <member name="F:AuthorityController.API.LocalUsers.UsersByLogin">
+            <summary>
+            Table that provide aaccess to user data by login.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.API.LocalUsers.UsersById">
+            <summary>
+            Table that provide access to user by unique ID.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.API.LocalUsers.LoadingLockedDirectories">
+            <summary>
+            Contains directories that has users loading process and blocked for new ones.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.API.LocalUsers.LoadProfilesAsync(System.String)">
+            <summary>
+            Loading users data from directory.
+            </summary>
+            <param name="directory"></param>
+        </member>
+        <member name="M:AuthorityController.API.LocalUsers.SetProfile(AuthorityController.Data.Personal.User)">
+            <summary>
+            Adding\updating user's profile by directory sete up via config file.
+            </summary>
+            <param name="user">User profile.</param>
+        </member>
+        <member name="M:AuthorityController.API.LocalUsers.SetProfileAsync(AuthorityController.Data.Personal.User,System.String)">
+            <summary>
+            Adding\updating user's profile by directory.
+            </summary>
+            <param name="user">User profile.</param>
+            <param name="directory">Users storage.</param>
+        </member>
+        <member name="M:AuthorityController.API.LocalUsers.SetProfile(AuthorityController.Data.Personal.User,System.String)">
+            <summary>
+            Adding\updating user's profile by directory.
+            </summary>
+            <param name="user">User profile.</param>
+            <param name="directory">Users storage.</param>
+        </member>
+        <member name="M:AuthorityController.API.LocalUsers.RemoveProfile(AuthorityController.Data.Personal.User)">
+            <summary>
+            Remove user profile from directory seted up via Config file.
+            </summary>
+            <param name="user"></param>
+        </member>
+        <member name="M:AuthorityController.API.LocalUsers.RemoveProfile(AuthorityController.Data.Personal.User,System.String)">
+            <summary>
+            Remove user profile from directory.
+            </summary>
+            <param name="user"></param>
+            <param name="directory"></param>
+        </member>
+        <member name="M:AuthorityController.API.LocalUsers.GenerateID(AuthorityController.Data.Personal.User)">
+            <summary>
+            Looking for free id.
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AuthorityController.API.LocalUsers.AddToLoadedData(AuthorityController.Data.Personal.User)">
+            <summary>
+            Registrate user in tables by id and login.
+            </summary>
+            <param name="user"></param>
+        </member>
+        <member name="M:AuthorityController.API.LocalUsers.ClearUsersLoadedData">
+            <summary>
+            Remove all loaded users data.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.API.LocalUsers.TryToFindUser(System.UInt32,AuthorityController.Data.Personal.User@)">
+            <summary>
+            Try to find user by ID in loaded users table.
+            </summary>
+            <param name="id">Unique user's id.</param>
+            <param name="user">Reference on loaded user profile.</param>
+            <returns>Result of operation.</returns>
+        </member>
+        <member name="M:AuthorityController.API.LocalUsers.TryToFindUser(System.String,AuthorityController.Data.Personal.User@)">
+            <summary>
+            Try to find user by ID in loaded users table.
+            </summary>
+            <param name="login">Unique user's login.</param>
+            <param name="user">Reference on loaded user profile.</param>
+            <returns>Result of operation.</returns>
+        </member>
+        <member name="M:AuthorityController.API.LocalUsers.TryToFindUserUniform(System.String,AuthorityController.Data.Personal.User@,System.String@)">
+            <summary>
+            Seeking for user.
+            </summary>
+            <param name="uniformValue">ID or login in string format.</param>
+            <param name="userProfile">Field that will contain user's profile in case of found.</param>
+            <param name="error">Error that describe a reasone of fail. Could be send backward to client.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AuthorityController.API.LocalUsers.GetUserFileName(AuthorityController.Data.Personal.User)">
+            <summary>
+            Return unified name based on user's profile.
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AuthorityController.API.Validation">
+            <summary>
+            Provides API for data validation.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.API.Validation.PasswordFormat(System.String,System.String@)">
+            <summary>
+            Validate password before converting to salted hash.
+            </summary>
+            <param name="password">Open password.</param>
+            <param name="error">Error string that will be situable in case of validation fail.</param>
+            <returns>Result of validation.</returns>
+        </member>
+        <member name="M:AuthorityController.API.Validation.NameFormat(System.String@,System.String@)">
+            <summary>
+            Validate name part format.
+            </summary>
+            <param name="namePart">First\second\middle part of the name that need to be validated</param>
+            <param name="error">Error string that will be situable in case of validation fail.</param>
+            <returns>Result of validation.</returns>
+        </member>
+        <member name="T:AuthorityController.API.Tokens">
+            <summary>
+            Provides API for work with security tokens.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.API.Tokens.IsHasEnoughRigths(System.String,System.String[]@,System.String@,System.String[])">
+            <summary>
+            Check does this token has all requested rights.
+            If token is not registred on this server then will throw UnauthorizedAccessException.
+            </summary>
+            <param name="token">Unitque token of the user.</param>
+            <param name="error">Error that describe a reasone of fail. Could be send backward to client.</param>
+            <param name="requesterRights">Rights detected to that token.</param>
+            <param name="requiredRights">Array that contain the rights that need to by existed.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AuthorityController.API.Tokens.IsHasEnoughRigths(System.String,System.String[]@,System.String[])">
+            <summary>
+            Check does this token has all requested rights.
+            If token is not registred on this server then will throw UnauthorizedAccessException.
+            </summary>
+            <param name="token"></param>
+            <param name="requiredRights"></param>
+            <param name="requesterRights">Rights detected to that token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AuthorityController.API.Tokens.AuthorizeNewGuestToken(PipesProvider.Server.TransmissionControllers.BroadcastingServerTransmissionController)">
+            <summary>
+            Authorizing new token with guest's rights, and return information in query format.
+            </summary>
+            <param name="_">Droped param not relative to this broadcasting.</param>
+            <returns>Token that can be used by client in queries.</returns>
+        </member>
+        <member name="M:AuthorityController.API.Tokens.AuthorizeNewGuestToken">
+            <summary>
+            Authorizing new token with guest's rights, and return information in query format.
+            </summary>
+            <returns>Token that can be used by client in queries.</returns>
+        </member>
+        <member name="T:AuthorityController.Data.Personal.BanInformation">
+            <summary>
+            Provide information about user bans.
+            </summary>
+        </member>
+        <member name="T:AuthorityController.Data.Personal.BanInformation.Duration">
+            <summary>
+            Ban's duration mode.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Personal.BanInformation.Duration.Temporary">
+            <summary>
+            Ban that would auto exired when the time will pass.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Personal.BanInformation.Duration.Permanent">
+            <summary>
+            Ban that can't be exipred. Only diactivated.
+            </summary>
+        </member>
+        <member name="P:AuthorityController.Data.Personal.BanInformation.Permanent">
+            <summary>
+            Return information for permanent ban.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Personal.BanInformation.id">
+            <summary>
+            Unique identifier of this ban.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Personal.BanInformation.userId">
+            <summary>
+            Id of banned user.
+            </summary> 
+        </member>
+        <member name="F:AuthorityController.Data.Personal.BanInformation.bannedByUserId">
+            <summary>
+            Id of user who signed ban.
+            </summary> 
+        </member>
+        <member name="F:AuthorityController.Data.Personal.BanInformation.active">
+            <summary>
+            If ban is active?
+            </summary>
+        </member>
+        <member name="P:AuthorityController.Data.Personal.BanInformation.DurationInt">
+            <summary>
+            Duration in int format that can be stored to the SQL server.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Personal.BanInformation.duration">
+            <summary>
+            Duration mode of this ban.
+            
+            Permanent will no have expiry time.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Personal.BanInformation.expiryTime">
+            <summary>
+            Date Time when this bun will be expired.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Personal.BanInformation.commentary">
+            <summary>
+            Resones for ban.
+            </summary>
+        </member>
+        <member name="P:AuthorityController.Data.Personal.BanInformation.BlockedRightsBlob">
+            <summary>
+            Blocked rights array in binnary format.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Personal.BanInformation.blockedRights">
+            <summary>
+            Rights that was blocked for this user.
+            
+            Recommend:
+            logon - block possibility to logon.
+            commenting - block possibility to post commentaries.
+            etc.
+            </summary>
+        </member>
+        <member name="P:AuthorityController.Data.Personal.BanInformation.IsExpired">
+            <summary>
+            Check is this ban still actual.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AuthorityController.Data.Personal.BanInformation.IsBanned(AuthorityController.Data.Personal.User,System.String)">
+            <summary>
+            Check permition for action.
+            </summary>
+            <param name="user">Target user.</param>
+            <param name="rightCode">Code of right that required for action.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AuthorityController.Data.Personal.BanInformation.RecieveServerDataAsync(AuthorityController.Data.Personal.User,System.Action{AuthorityController.Data.Personal.BanInformation})">
+            <summary>
+            Recieving data from connected SQL server based on user profile meta.
+            </summary>
+            <param name="user">Profile that contains core meta like id, login, etc.</param>
+            <param name="callback">Delegate that would be called after finishing of operation. 
+            Return ban information. Null if not exist or failed.</param>
+            <returns></returns>
+        </member>
+        <member name="T:AuthorityController.Data.Personal.User">
+            <summary>
+            Object that contain relevant data about user.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Personal.User.GlobalType">
+            <summary>
+            Type of user. Apply your castom user to this field to instinate required one.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Personal.User.id">
+            <summary>
+            Unique id of this user to allow services access.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Personal.User.login">
+            <summary>
+            Login of this user to access the system.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Personal.User.password">
+            <summary>
+            ON CLIENT: Open password. Situable only if user provides profile as new.
+            ON SERVER: Hashed and salted password that confirm user rights to use this account.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Personal.User.firstName">
+            <summary>
+            Name of the user that will displayed in profile.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Personal.User.lastName">
+            <summary>
+            Last name that will be displayed in profile.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Personal.User.rights">
+            <summary>
+            Array of rigts' codes provided to this user.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Personal.User.bans">
+            <summary>
+            List of bans that would received by user.
+            </summary>
+        </member>
+        <member name="P:AuthorityController.Data.Personal.User.RightsStringFormat">
+            <summary>
+            Rights array as formated string.
+            Compatible with UDO.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Personal.User.tokens">
+            <summary>
+            List that cont tokens provided to this user.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.Data.Personal.User.IsOpenPasswordCorrect(System.String)">
+            <summary>
+            Compare recived open password with stored to user.
+            </summary>
+            <param name="recivedPassword"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AuthorityController.Data.Personal.User.IsHashedPasswordCorrect(System.Byte[])">
+            <summary>
+            Check does the recived password is the same as stored to user.
+            </summary>
+            <param name="recivedHashedPassword"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AuthorityController.Data.Application.Config">
+            <summary>
+            Object that contain data for setup of authority controller.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.DIRECTORY">
+            <summary>
+            Directory that will contain serialized instance of this class.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.CONFIG_FILE_NAME">
+            <summary>
+            Name of the file that will be loaded as config.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.UsersStorageDirectory">
+            <summary>
+            Directory to folder that will contain users data.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.LoginMinSize">
+            <summary>
+            How many character will be required in password.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.LoginMaxSize">
+            <summary>
+            How many character will be allowed in password.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.UserNameRegexPattern">
+            <summary>
+            Define a format of allowed name.
+            By default provide possibility to make a names like:
+            XXXXX
+            Xxxx-Xxxx
+            Xx'Xxx
+            etc.
+            
+            For creating your own please use a Regex sinaxis.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.UserDefaultRights">
+            <summary>
+            List of user rights that will profided to every new user.
+            Any extra rights will require aditional query from authorised user.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.PasswordSaltFileName">
+            <summary>
+            Name of the file that will contain salt.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.PasswordSaltSize">
+            <summary>
+            How many bytes will contain salt.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.PasswordMinAllowedLength">
+            <summary>
+            How many character will be required in password.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.PasswordMaxAllowedLength">
+            <summary>
+            How many character will be allowed in password.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.PasswordRequireSpecialSymbol">
+            <summary>
+            If true then will requre at leas one symbol like !@$% etc.
+            Application will provide valid mask without your involving.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.PasswordRequireUpperSymbol">
+            <summary>
+            If true then will require at least one symbol in high register.
+            Application will provide valid mask without your involving.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.PasswordRequireDigitSymbol">
+            <summary>
+            If true then will require at least one digit.
+            Application will provide valid mask without your involving.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.TokenValidTimeMinutes">
+            <summary>
+            How many minutes token is valid.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.QUERY_UserBan_RIGHTS">
+            <summary>
+            Rights code required for requester to proceed this action.
+            
+            bannhammer - allow user set bans to others.
+            >rank=2 - wil requre at least moderators level. 
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.QUERY_UserNewPassword_RIGHTS">
+            <summary>
+            Rights code required for requester to proceed this action.
+            
+            passwordManaging - user can change them passwords.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.QUERY_UserPasswordModeration_RIGHTS">
+            <summary>
+            What a rights will required to user that try to change the password of other user.
+            Also system auto add instruction where user need to have hieghest rank the target.
+            
+            ">rank=2 - ata least moderator level.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.Config.QUERY_SetTokenRights_RIGHTS">
+            <summary>
+            Rights code required for requester to proceed this action.
+            >rank=4 - will requre at least admin level.
+            </summary>
+        </member>
+        <member name="P:AuthorityController.Data.Application.Config.Active">
+            <summary>
+            Reference to current configs.
+            Auto load one from resources if exist by DIRECTORY.
+            </summary>
+        </member>
+        <member name="P:AuthorityController.Data.Application.Config.Salt">
+            <summary>
+            Salt loaded from file.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.Data.Application.Config.#ctor">
+            <summary>
+            Insiniate Config object and set in to Active property.
+            </summary>
+        </member>
+        <member name="T:AuthorityController.Data.Application.SaltContainer">
+            <summary>
+            Provides salt container that increase entropy during generation of secret keys.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.SaltContainer.key">
+            <summary>
+            Bytes array that can be added to information before hashing to increase entropy.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Application.SaltContainer.validationStamp">
+            <summary>
+            Stamp that provide confirmation that salt is valid.
+            During loading salt will applied to test string and this stamp need to be the same as result.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.Data.Application.SaltContainer.#ctor">
+            <summary>
+            Instiniate default salt container.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.Data.Application.SaltContainer.#ctor(System.Int32)">
+            <summary>
+            Create salt container with requested salt size.
+            </summary>
+            <param name="keySize"></param>
+        </member>
+        <member name="M:AuthorityController.Data.Application.SaltContainer.GenerateNewKey(System.Int32)">
+            <summary>
+            Generate new key for container with requiered size.
+            </summary>
+            <param name="keySize"></param>
+        </member>
+        <member name="M:AuthorityController.Data.Application.SaltContainer.GetStamp">
+            <summary>
+            Create a stamp related to current salt.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AuthorityController.Data.Application.SaltContainer.Validate">
+            <summary>
+            Call base operation and compare results.
+            Relevant result must be equal to stamp.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AuthorityController.Data.Application.SaltContainer.GetHashedPassword(System.String,AuthorityController.Data.Application.SaltContainer)">
+            <summary>
+            Convert password to heshed and salted.
+            </summary>
+            <param name="input">Password recived from user.</param>
+            <param name="salt">Salt that would be used to increase entropy.</param>
+            <returns></returns>
+        </member>
+        <member name="T:AuthorityController.Data.Handler">
+            <summary>
+            Provide metods that simplifying work with data.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.Data.Handler.TryXMLSerialize``1(``0,System.String@)">
+            <summary>
+            Trying to serialize obkject to XML format.
+            </summary>
+            <param name="data">Object to serizlization.</param>
+            <param name="xml">Object in string format.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AuthorityController.Data.Handler.TryXMLDeserizlize``1(System.String,``0@)">
+            <summary>
+            Trying to convert XML string to object instance.
+            </summary>
+            <param name="xml">XML string format of object.</param>
+            <param name="data">Instiniated object.</param>
+            <returns>Does convertation passed success.</returns>
+        </member>
+        <member name="M:AuthorityController.Data.Handler.SaveAs``1(System.Object,System.String,System.String)">
+            <summary>
+            Saving config file to directory.
+            </summary>
+            <param name="obj">Object that contains data.</param>
+            <param name="directory">Target folder directory.</param>
+            <param name="fileName">Name of the file that would created \ rewrited.</param>
+        </member>
+        <member name="M:AuthorityController.Data.Handler.TryToLoad``1(System.String,``0@)">
+            <summary>
+            Trying to deserialize object from XML file.
+            </summary>
+            <typeparam name="T">Required type</typeparam>
+            <param name="path">Full path to file.</param>
+            <param name="result">Deserizlised object.</param>
+            <returns></returns>
+        </member>
+        <member name="T:AuthorityController.Data.Temporal.TokenInfo">
+            <summary>
+            Container that contain data about token.
+            </summary>
+        </member>
+        <member name="P:AuthorityController.Data.Temporal.TokenInfo.Anonymous">
+            <summary>
+            Return empty info.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Temporal.TokenInfo.token">
+            <summary>
+            Token string.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Temporal.TokenInfo.operationSystem">
+            <summary>
+            Operation system that request this token.
+            Using for machine stamp.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Temporal.TokenInfo.machineMac">
+            <summary>
+            Mac adress of machine that request access.
+            Using for machine stamp.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Temporal.TokenInfo.userId">
+            <summary>
+            Id of user that recive this token.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Temporal.TokenInfo.allocationTime">
+            <summary>
+            Time when token was allocated in system.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Temporal.TokenInfo.rights">
+            <summary>
+            Array that contain rights provided to this token.
+            </summary>
+        </member>
+        <member name="T:AuthorityController.Queries.SET_TOKEN_RIGHTS">
+            <summary>
+            Change rights list to provided token.
+            Require admin rights.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.Queries.SET_TOKEN_RIGHTS.Description(System.String)">
+            <summary>
+            Return the description relative to the lenguage code or default if not found.
+            </summary>
+            <param name="cultureKey">Key of target culture.</param>
+            <returns>Description for relative culture.</returns>
+        </member>
+        <member name="M:AuthorityController.Queries.SET_TOKEN_RIGHTS.Execute(UniformQueries.QueryPart[])">
+            <summary>
+            Methods that process query.
+            </summary>
+            <param name="queryParts">Recived query parts.</param>
+        </member>
+        <member name="M:AuthorityController.Queries.SET_TOKEN_RIGHTS.IsTarget(UniformQueries.QueryPart[])">
+            <summary>
+            Check by the entry params does it target Query Handler.
+            </summary>
+            <param name="queryParts">Recived query parts.</param>
+            <returns>Result of comparation.</returns>
+        </member>
+        <member name="T:AuthorityController.Queries.USER_BAN">
+            <summary>
+            Set temporaly or permanent ban for user.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_BAN.Description(System.String)">
+            <summary>
+            Return the description relative to the lenguage code or default if not found.
+            </summary>
+            <param name="cultureKey">Key of target culture.</param>
+            <returns>Description for relative culture.</returns>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_BAN.Execute(UniformQueries.QueryPart[])">
+            <summary>
+            Methods that process query.
+            </summary>
+            <param name="queryParts">Recived query parts.</param>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_BAN.IsTarget(UniformQueries.QueryPart[])">
+            <summary>
+            Check by the entry params does it target Query Handler.
+            </summary>
+            <param name="queryParts">Recived query parts.</param>
+            <returns>Result of comparation.</returns>
+        </member>
+        <member name="T:AuthorityController.Queries.USER_LOGOFF">
+            <summary>
+            Log out user.
+            Expire shared token.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_LOGOFF.Description(System.String)">
+            <summary>
+            Return the description relative to the lenguage code or default if not found.
+            </summary>
+            <param name="cultureKey">Key of target culture.</param>
+            <returns>Description for relative culture.</returns>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_LOGOFF.Execute(UniformQueries.QueryPart[])">
+            <summary>
+            Methods that process query.
+            </summary>
+            <param name="queryParts">Recived query parts.</param>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_LOGOFF.LogoffToken(System.String)">
+            <summary>
+            Request token expiring that equal to logoff operation.
+            </summary>
+            <param name="token"></param>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_LOGOFF.IsTarget(UniformQueries.QueryPart[])">
+            <summary>
+            Check by the entry params does it target Query Handler.
+            </summary>
+            <param name="queryParts">Recived query parts.</param>
+            <returns>Result of comparation.</returns>
+        </member>
+        <member name="T:AuthorityController.Queries.USER_LOGON">
+            <summary>
+            Logon user in system.
+            Provide token as result.
+            
+            USER&amp;LOGON&amp;login=...&amp;password=...&amp;mac=...&amp;os=....&amp;
+            </summary>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_LOGON.Description(System.String)">
+            <summary>
+            Return the description relative to the lenguage code or default if not found.
+            </summary>
+            <param name="cultureKey">Key of target culture.</param>
+            <returns>Description for relative culture.</returns>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_LOGON.Execute(UniformQueries.QueryPart[])">
+            <summary>
+            Methods that process query.
+            </summary>
+            <param name="queryParts">Recived query parts.</param>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_LOGON.IsTarget(UniformQueries.QueryPart[])">
+            <summary>
+            Check by the entry params does it target Query Handler.
+            </summary>
+            <param name="queryParts">Recived query parts.</param>
+            <returns>Result of comparation.</returns>
+        </member>
+        <member name="T:AuthorityController.Queries.USER_LOGON.LogonProcessor">
+            <summary>
+            Handler that provide logogn process.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_LOGON.LogonProcessor.TryToLogonAsync(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Logon on routing target server.
+            </summary>
+            <param name="guestToken">Token that would be able to get guest access on target server.</param>
+            <param name="login">User's login that would impersonate this server on related server.</param>
+            <param name="password">User's password.</param>
+            <param name="serverIP">IP address of name of server.</param>
+            <param name="pipeName">Named pipe that started on server.</param>
+        </member>
+        <member name="T:AuthorityController.Queries.USER_NEW">
+            <summary>
+            Create new user.
+            
+            Storing profile in local dile system by default via UsersLocal API.
+            Storing profile to SQL server in case if `UniformDataOperator.Sql.SqlOperatorHandler.Active` not null.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_NEW.Description(System.String)">
+            <summary>
+            Return the description relative to the lenguage code or default if not found.
+            </summary>
+            <param name="cultureKey">Key of target culture.</param>
+            <returns>Description for relative culture.</returns>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_NEW.Execute(UniformQueries.QueryPart[])">
+            <summary>
+            Methods that process query.
+            </summary>
+            <param name="queryParts">Recived query parts.</param>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_NEW.IsTarget(UniformQueries.QueryPart[])">
+            <summary>
+            Check by the entry params does it target Query Handler.
+            </summary>
+            <param name="queryParts">Recived query parts.</param>
+            <returns>Result of comparation.</returns>
+        </member>
+        <member name="T:AuthorityController.Queries.USER_NEW_PASSWORD">
+            <summary>
+            Set new password for user.
+            Require admin or certen user rights.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_NEW_PASSWORD.Description(System.String)">
+            <summary>
+            Return the description relative to the lenguage code or default if not found.
+            </summary>
+            <param name="cultureKey">Key of target culture.</param>
+            <returns>Description for relative culture.</returns>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_NEW_PASSWORD.Execute(UniformQueries.QueryPart[])">
+            <summary>
+            Methods that process query.
+            </summary>
+            <param name="queryParts">Recived query parts.</param>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_NEW_PASSWORD.IsTarget(UniformQueries.QueryPart[])">
+            <summary>
+            Check by the entry params does it target Query Handler.
+            </summary>
+            <param name="queryParts">Recived query parts.</param>
+            <returns>Result of comparation.</returns>
+        </member>
+        <member name="T:AuthorityController.Session">
+            <summary>
+            Object that control data relative to current authority session.
+            </summary>
+        </member>
+        <member name="P:AuthorityController.Session.Current">
+            <summary>
+            Current active session.
+            </summary>
+        </member>
+        <member name="P:AuthorityController.Session.AuthorityFollowers">
+            <summary>
+            Routing table that contain instructions to access reletive servers
+            that need to be informed about token events.
+            
+            Before sharing query still will check is the query stituable for that routing instruction.
+            If you no need any filtring then just leave query patterns empty.
+            </summary>
+        </member>
+        <member name="P:AuthorityController.Session.TerminationToken">
+            <summary>
+            Token that provide possibility to terminate all stated tasks in this session.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.Session.#ctor">
+            <summary>
+            Instiniate session object.
+            Set it to Current property.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Session._current">
+            Object that contain current session.
+        </member>
+        <member name="F:AuthorityController.Session.tokensInfo">
+             <summary>
+             Table that contains rights provided to token.
+            
+             Key - string token
+             Value - TokenInfo
+             </summary>
+        </member>
+        <member name="M:AuthorityController.Session.AsignTokenToUser(AuthorityController.Data.Personal.User,System.String)">
+            <summary>
+            Create token registration binded for user profile.
+            Not profided fields would filled like anonymous.
+            Time stamp will contain the time of method call.
+            </summary>
+            <param name="user"></param>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AuthorityController.Session.AsignTokenToUser(AuthorityController.Data.Personal.User,System.String,System.String,System.String,System.String)">
+            <summary>
+            Create token registration binded for user profile.
+            </summary>
+            <param name="user">User profile that contain core data.</param>
+            <param name="token">Token provided to that user.</param>
+            <param name="mac">Mac adress of user machine.</param>
+            <param name="os">OS of user.</param>
+            <param name="stamp">Time stamp that show when the session was started.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AuthorityController.Session.SetTokenRights(System.String,System.String[])">
+             <summary>
+             Set rights' codes array as relative to token.
+            
+             Make and share SET TOKEN RIGHTS query to every related server.
+             Share only anonymous format of information. Personal data would be droped.
+             </summary>
+             <param name="targetToken">Token that need to change rights.</param>
+             <param name="rights">List of new rights allowed to target toekn.</param>
+        </member>
+        <member name="M:AuthorityController.Session.TryGetTokenRights(System.String,System.String[]@)">
+            <summary>
+            Trying to load rights registred for token.
+            </summary>
+            <param name="token">Session token.</param>
+            <param name="rights">Array of rights' codes relative to token.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AuthorityController.Session.SetExpired(System.String)">
+             <summary>
+            Removing of token from table and inform relative servers about that.
+             </summary>
+             <param name="token"></param>
+        </member>
+        <member name="M:AuthorityController.Session.TryGetTokenInfo(System.String,AuthorityController.Data.Temporal.TokenInfo@)">
+            <summary>
+            Try to find registred token info.
+            </summary>
+            <param name="token"></param>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AuthorityController.Session.InformAuthorityFollowers(System.String)">
+            <summary>
+            Sanding the message to all authority following servers descibed in 
+            AuthorityFollowers table.
+            </summary>
+            <param name="message">Message that would be shared.</param>
+        </member>
+        <member name="M:AuthorityController.Session.RemoveToken(System.String)">
+            <summary>
+            Removing token from table.
+            </summary>
+            <param name="token"></param>
+            <returns>Is removed successful?</returns>
+        </member>
+        <member name="M:AuthorityController.Session.ShareTokenRights_MessageProcessor(System.String,System.String[])">
+            <summary>
+            Sending new rights of token to related servers.
+            </summary>
+            <param name="targetToken"></param>
+            <param name="rights"></param>
+        </member>
+        <member name="T:PipesProvider.Networking.Routing.AuthorizedInstruction">
+            <summary>
+            Provide data and API required for connections that require authorization as Authority Controller user.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Networking.Routing.AuthorizedInstruction.authLogin">
+            <summary>
+            Login for user authentification in AuthorityController on instruction's target server.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Networking.Routing.AuthorizedInstruction.authPassword">
+            <summary>
+            Password for user authentification in AuthorityController on instruction's target server.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Networking.Routing.AuthorizedInstruction.AuthorizedToken">
+            <summary>
+            Return token authorized on target server by using provided data.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Networking.Routing.AuthorizedInstruction.TryToLogonAsync(System.Action{PipesProvider.Networking.Routing.AuthorizedInstruction},System.Threading.CancellationToken)">
+            <summary>
+            Tring to recive token authorized in authority controller of target server.
+            </summary>
+            <param name="callback">Delegate that will be called when logon operation would be finished.</param>
+            <param name="cancellationToken">Using this token you can terminate task.</param>
+        </member>
+        <member name="M:PipesProvider.Networking.Routing.AuthorizedInstruction.TryToLogon">
+            <summary>
+            Tring to recive token authorized in authority controller of target server.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Networking.Routing.AuthorizedInstruction.TryToLogon(System.Threading.CancellationToken)">
+            <summary>
+            Tring to recive token authorized in authority controller of target server.
+            </summary>
+            <param name="cancellationToken">Token that can be used to termination of the logon process.</param>
+            <returns></returns>
+        </member>
+        <member name="P:PipesProvider.Networking.Routing.AuthorizedInstruction.LogonHandler">
+            <summary>
+            Handler that take full control on logon process.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Networking.Routing.AuthorizedInstruction._LogonHandler">
+            <summary>
+            Handler that take full control on logon process.
+            </summary>
+        </member>
+    </members>
+</doc>

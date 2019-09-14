@@ -14,7 +14,8 @@
 
 using System;
 using System.Data.Common;
-using UniformDataOperator.SQL.Tables;
+using UniformDataOperator.Sql.Attributes;
+using UniformDataOperator.Sql.MySql.Attributes;
 
 namespace DatumPoint.Types.Repository
 {
@@ -22,41 +23,49 @@ namespace DatumPoint.Types.Repository
     /// Object that contain data that would stored in database or file system like and object container.
     /// </summary>
     [System.Serializable]
-    public class RepositoryResource : ISQLTable, ISQLDataReadCompatible
+    [Table("datum-point", "repository")]
+    public class RepositoryResource
     {
         /// <summary>
         /// Unique if of this container in repository.
         /// </summary>
+        [Column("resourceid", System.Data.DbType.Int32), IsPrimaryKey, IsNotNull, IsAutoIncrement]
         public int resourceId = -1;
 
         /// <summary>
         /// Data shared via container.
         /// </summary>
+        [Column("data", System.Data.DbType.Binary)]
         public byte[] data = null;
 
         /// <summary>
         /// Name of this resource.
         /// </summary>
+        [Column("name", System.Data.DbType.String), IsNotNull]
         public string name = "New resource";
 
         /// <summary>
         /// Description of stored resource.
         /// </summary>
+        [Column("description", System.Data.DbType.String)]
         public string description = null;
 
         /// <summary>
         /// Id of user owner.
         /// </summary>
+        [Column("user_ownerid", System.Data.DbType.Int32), IsNotNull, IsForeignKey("datum-point", "user", "userid")]
         public int ownerID = -1;
 
         /// <summary>
         /// Time when object loaded at server.
         /// </summary>
+        [Column("created_at", System.Data.DbType.DateTime), IsNotNull]
         public DateTime createdAt;
 
         /// <summary>
         /// When resource was called at last time.
         /// </summary>
+        [Column("used_at", System.Data.DbType.DateTime), IsNotNull]
         public DateTime usedAt;
 
         /// <summary>
@@ -67,117 +76,13 @@ namespace DatumPoint.Types.Repository
         /// 3 - everyone by access link.
         /// 4 - everyone.
         /// </summary>
+        [Column("sharing_rule", System.Data.DbType.Int32), IsNotNull]
         public int sharingRule = 0;
 
         /// <summary>
         /// How many times this resource would called.
         /// </summary>
+        [Column("views", System.Data.DbType.Int32), IsNotNull]
         public int views = 0;
-
-
-        public string TableName
-        {
-            get { return "repository"; }
-        }
-
-        public string SchemaName
-        {
-            get { return "datum-point"; }
-        }
-
-        public string TableEngine
-        {
-            get { return "InnoDB"; }
-        }
-
-        public TableColumnMeta[] TableFields
-        {
-            get
-            {
-                // Init field if not init.
-                if (_TableFields == null)
-                {
-                    _TableFields = new TableColumnMeta[]
-                    {
-                        new TableColumnMeta()
-                        {
-                            name = "resourceid",
-                            type = "INT",
-                            isPrimaryKey = true,
-                            isNotNull = true,
-                            isAutoIncrement = true
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "data",
-                            type = "LONGBLOB",
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "name",
-                            type = "VARCHAR(45)",
-                            isNotNull = true
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "description",
-                            type = "VARCHAR(500)"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "user_ownerid",
-                            type = "int",
-                            isNotNull = true,
-                            isForeignKey = true,
-                            refSchema = "datum-point",
-                            refTable = "user",
-                            refColumn = "userid"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "created_at",
-                            type = "DATETIME",
-                            isNotNull = true
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "sharing_rule",
-                            type = "INT",
-                            isNotNull = true
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "views",
-                            type = "INT",
-                            isNotNull = true
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "used_at",
-                            type = "DATETIME",
-                            isNotNull = true
-                        }
-                    };
-                }
-                return _TableFields;
-            }
-        }
-        protected TableColumnMeta[] _TableFields;
-
-        public void ReadSQLObject(DbDataReader reader)
-        {
-            try { resourceId = reader.GetInt32(reader.GetOrdinal("resourceid")); } catch { };
-            try { ownerID = reader.GetInt32(reader.GetOrdinal("user_ownerid")); } catch { };
-            try { sharingRule = reader.GetInt32(reader.GetOrdinal("sharing_rule")); } catch { };
-            try { views = reader.GetInt32(reader.GetOrdinal("views")); } catch { };
-
-            try { name = reader.GetString(reader.GetOrdinal("name")); } catch { };
-            try { description = reader.GetString(reader.GetOrdinal("description")); } catch { };
-
-            try { byte[] data = reader["data"] as byte[]; } catch { };
-
-            try { createdAt = reader.GetDateTime(reader.GetOrdinal("created_at")); } catch { };
-            try { usedAt = reader.GetDateTime(reader.GetOrdinal("used_at")); } catch { };
-        }
     }
 }

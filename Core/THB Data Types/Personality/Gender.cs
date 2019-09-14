@@ -16,7 +16,8 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Data.Common;
-using UniformDataOperator.SQL.Tables;
+using UniformDataOperator.Sql.Attributes;
+using UniformDataOperator.Sql.MySql.Attributes;
 
 namespace DatumPoint.Types.Personality
 {

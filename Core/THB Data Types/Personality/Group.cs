@@ -16,7 +16,8 @@ using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Globalization;
-using UniformDataOperator.SQL.Tables;
+using UniformDataOperator.Sql.Attributes;
+using UniformDataOperator.Sql.MySql.Attributes;
 
 namespace DatumPoint.Types.Personality
 {
@@ -24,7 +25,7 @@ namespace DatumPoint.Types.Personality
     /// Object that contains data that describing group.
     /// </summary>
     [System.Serializable]
-    public class Group : ISQLTable, ISQLDataReadCompatible
+    public class Group
     {
         /// <summary>
         /// Unique id of this group.

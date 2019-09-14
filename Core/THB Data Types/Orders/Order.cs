@@ -14,7 +14,8 @@
 
 using System;
 using System.Data.Common;
-using UniformDataOperator.SQL.Tables;
+using UniformDataOperator.Sql.Attributes;
+using UniformDataOperator.Sql.MySql.Attributes;
 
 namespace DatumPoint.Types.Orders
 {
@@ -22,7 +23,7 @@ namespace DatumPoint.Types.Orders
     /// Class that can be stored as query data's block to data base or file system.
     /// </summary>
     [System.Serializable]
-    public class Order : ISQLTable, ISQLDataReadCompatible
+    public class Order
     {
         /// <summary>
         /// Unique id of this order.

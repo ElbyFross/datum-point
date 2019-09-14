@@ -1,0 +1,1238 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>PipesProvider</name>
+    </assembly>
+    <members>
+        <member name="T:PipesProvider.Client.ClientAPI">
+            <summary>
+            Class that provide common methods for easy work with pipes' tasks.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Client.ClientAPI.openedClients">
+            <summary>
+            Hashtable thast contain references to oppened pipes.
+            Key (string) server_name.pipe_name;
+            Value (LineProcessor) meta data about transmition.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Client.ClientAPI.ClientLoop(PipesProvider.Client.TransmissionLine,System.IO.Pipes.PipeDirection,System.IO.Pipes.PipeOptions)">
+            <summary>
+            Provide stable client loop controlled by data of LineProcessor.
+            </summary>
+            <param name="line"></param>
+            <param name="pipeDirection"></param>
+            <param name="pipeOptions"></param>
+        </member>
+        <member name="M:PipesProvider.Client.ClientAPI.TryGetTransmissionLineByGUID(System.String,PipesProvider.Client.TransmissionLine@)">
+            <summary>
+            Try to find out registred transmission line by GUID.
+            If client not strted then return false.
+            </summary>
+            <param name="guid"></param>
+            <param name="lineProcessor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Client.ClientAPI.TryToRegisterTransmissionLine(PipesProvider.Client.TransmissionLine)">
+            <summary>
+            Trying to register transmission line in common table by key:
+            ServerName.PipeLine
+            
+            If exist return false.
+            Retrun sycces if added to table.
+            </summary>
+            <param name="lineProcessor"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Client.ClientAPI.TryToUnregisterTransmissionLine(System.String)">
+            <summary>
+            Remove line from table if this line closed.
+            In other keys this operation not available due to security amd stability purposes.
+            </summary>
+            <param name="guid"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Client.ClientAPI.CloseAllTransmissionLines">
+            <summary>
+            Closing all lines registred in table.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Client.ClientAPI.ConnectToServerAsync(System.IO.Pipes.NamedPipeClientStream)">
+            <summary>
+            Start saftely async waiting connection operation.
+            </summary>
+            <param name="pipeClient"></param>
+        </member>
+        <member name="M:PipesProvider.Client.ClientAPI.ConnectToServer(System.IO.Pipes.NamedPipeClientStream)">
+            <summary>
+            Connecting to server's pipe.
+            If connection failed them stop thread.
+            
+            Suspend caller thread.
+            </summary>
+            <param name="pipeClient"></param>
+        </member>
+        <member name="T:PipesProvider.Client.TransmissionLine">
+            <summary>
+            Class that provide information about line between client and server.
+            Provide API to easy control.
+            Provide automatic services.
+            </summary>
+        </member>
+        <member name="T:PipesProvider.Client.TransmissionLine.TransmissionDirection">
+            <summary>
+            Difines direction of transmission.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Client.TransmissionLine.TransmissionDirection.In">
+            <summary>
+            Transmission would recive message from sender.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Client.TransmissionLine.TransmissionDirection.Out">
+            <summary>
+            Trasmission would emmite messages.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Client.TransmissionLine.GUID">
+            <summary>
+            Unique GUID for this pipe.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Client.TransmissionLine.ServerPipeName">
+            <summary>
+            Name of server pipe that will be using for transmission via current processor.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Client.TransmissionLine.ServerName">
+            <summary>
+            Name of server pipe that will be using for transmission via current processor.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Client.TransmissionLine.Closed">
+            <summary>
+            If true then this line will be closed on the next client tick.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Client.TransmissionLine.Processing">
+            <summary>
+            True if async operation started and not finished.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Client.TransmissionLine.LastQuery">
+            <summary>
+            Return tthe query that was dequeue at last.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Client.TransmissionLine.accessToken">
+            <summary>
+            Token that will used to autorizing on the server.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Client.TransmissionLine.RoutingInstruction">
+            <summary>
+            Contain logon config to remote machine access.
+            Contain RSA encryption keys data reklative to this line.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Client.TransmissionLine.LogonFinished">
+            <summary>
+            Marker that show does logon already finished.
+            By default is true, cause default logon is anonymous.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Client.TransmissionLine.Direction">
+            <summary>
+            Define bihavior of the client loop.
+            
+            In - will connect to target pipe as soon as possible.
+            Out - will wait for query in queue.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Client.TransmissionLine.pipeClient">
+            <summary>
+            Reference to the current oppened pipe.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Client.TransmissionLine.queryProcessor">
+            <summary>
+            This delegate will be callback when connection wfor qury will be established.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Client.TransmissionLine.lastQuery">
+            <summary>
+            Field that contain last dequeued query.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Client.TransmissionLine.queries">
+            <summary>
+            List of queries that will wait its order to access transmission via this line.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Client.TransmissionLine.#ctor(System.String,System.String,System.Action{PipesProvider.Client.TransmissionLine},Microsoft.Win32.SafeHandles.SafeAccessTokenHandle@)">
+            <summary>
+            Create new instance of LineProcessor taht can be registread in static services.
+            Contain information about transmission between client and server.
+            </summary>
+            <param name="serverName">Name of server into the network. If local than place "."</param>
+            <param name="serverPipeName">Name of the pipe that will be used for transmitiong.</param>
+            <param name="queryProcessor">Delegate that will be called when connection will be established.</param>
+            <param name="token">Reference to token that provide authority to work with remote server.</param>
+        </member>
+        <member name="M:PipesProvider.Client.TransmissionLine.#ctor(PipesProvider.Networking.Routing.Instruction@,System.Action{PipesProvider.Client.TransmissionLine})">
+            <summary>
+            Create instance using routing instruction.
+            </summary>
+            <param name="instruction">Routing insturuction that contain all data about target srver.</param>
+            <param name="queryProcessor">Delegate that will be called when connection will be established.</param>
+        </member>
+        <member name="M:PipesProvider.Client.TransmissionLine.op_Increment(PipesProvider.Client.TransmissionLine)">
+            <summary>
+            Incremet of attempts count.
+            </summary>
+            <param name="line">Target line.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Client.TransmissionLine.EnqueueQuery(System.String)">
+            <summary>
+            Enqueue query to order. Query will be posted to server as soon as will possible.
+            </summary>
+            <param name="query"></param>
+        </member>
+        <member name="M:PipesProvider.Client.TransmissionLine.EnqueueQuery(PipesProvider.Client.QueryContainer)">
+            <summary>
+            Enqueue query to order. Query will be posted to server as soon as will possible.
+            </summary>
+            <param name="query"></param>
+        </member>
+        <member name="M:PipesProvider.Client.TransmissionLine.TryDequeQuery(PipesProvider.Client.QueryContainer@)">
+            <summary>
+            Try to get a new query in turn.
+            
+            Will return false if query not found.
+            Will return false in case if LineProccessor has status InProgress.
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="P:PipesProvider.Client.TransmissionLine.HasQueries">
+            <summary>
+            Return true if queue contain queries.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Client.TransmissionLine.Close">
+            <summary>
+            Mark line as closed. Thread will be terminated on the next client tick.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Client.TransmissionLine.DropMeta">
+            <summary>
+            Drop meta data relative only per one session.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Client.TransmissionLine.TryLogonAs(PipesProvider.Security.LogonConfig)">
+            <summary>
+            Trying to logon using provided information.
+            In case failed - close line.
+            </summary>
+            <param name="logonMeta"></param>
+            <returns>Result of logon.</returns>
+        </member>
+        <member name="M:PipesProvider.Client.TransmissionLine.SetInstructionAsKey(PipesProvider.Networking.Routing.Instruction@)">
+            <summary>
+            Set routing instruction to line.
+            Provide access to auto messages encryption with control of keys expiring.
+            
+            ATTENTION: Line will not change logon config or server data. 
+            If you want get full sync with routing instruction then user relative constructor.
+            </summary>
+            <param name="instruction">Instruction that will ocntain valid RSA key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Client.TransmissionLine.ThreadLoop(System.Object)">
+            <summary>
+            Method that can be started as thread. Will start client loop.
+            </summary>
+            <param name="lineProcessor"></param>
+        </member>
+        <member name="M:PipesProvider.Client.TransmissionLine.GenerateGUID(System.String,System.String)">
+            <summary>
+            Generate GUID of this transmission line relative to pipe params.
+            </summary>
+            <param name="serverName"></param>
+            <param name="pipeName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PipesProvider.Client.QueryContainer">
+            <summary>
+            Privide invormation about query.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Client.QueryContainer.Query">
+            <summary>
+            Query that will be shared.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Client.QueryContainer.IsEmpty">
+            <summary>
+            Validate container.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Client.QueryContainer.Attempts">
+            <summary>
+            How many attemts was applied to this query processing.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Client.QueryContainer.AnswerHandler">
+            <summary>
+            Delegate that will be called when anser transmition will be recived.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Client.QueryContainer.Empty">
+            <summary>
+            Return empty contaier.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Client.QueryContainer.#ctor(System.String)">
+            <summary>
+            Constructor that provide single way query.
+            </summary>
+            <param name="query"></param>
+        </member>
+        <member name="M:PipesProvider.Client.QueryContainer.#ctor(System.String,System.Action{PipesProvider.Client.TransmissionLine,System.String})">
+            <summary>
+            Constructor of contaier that provide ability to create duplex query.
+            </summary>
+            <param name="query"></param>
+            <param name="AnswerHandler"></param>
+        </member>
+        <member name="M:PipesProvider.Client.QueryContainer.Copy(PipesProvider.Client.QueryContainer)">
+            <summary>
+            Return copy of source container.
+            </summary>
+            <param name="source"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Client.QueryContainer.ToString">
+            <summary>
+            Convert object to string for\mat.
+            </summary>
+            <returns>Returns Query property.</returns>
+        </member>
+        <member name="M:PipesProvider.Client.QueryContainer.op_Increment(PipesProvider.Client.QueryContainer)">
+            <summary>
+            Incremet of attempts count.
+            </summary>
+            <param name="contaier"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Client.QueryContainer.op_Explicit(PipesProvider.Client.QueryContainer)~System.String">
+            <summary>
+            Convert container to string.
+            </summary>
+            <param name="container"></param>
+        </member>
+        <member name="T:PipesProvider.Handlers.DNS">
+            <summary>
+            Handlers that provide transmission between serve and clients.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Handlers.DNS.ClientToServerAsync(PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController)">
+            <summary>
+            Code that will work on server loop when connection will be established.
+            Recoomended to using as default DNS Handler for queries reciving.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Handlers.DNS.ServerToClientAsync(PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController)">
+            <summary>
+            Code that will work on server loop when connection will be established.
+            Recoomended to using as default DNS Handler for message sending.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Handlers.DNS.ServerBroadcasting(PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController)">
+            <summary>
+            Code that will work on server loop when connection will be established.
+            Recoomended to using as default DNS Handler for message sending.
+            
+            Provide broadcasting to client by useing GetMessage delegate of BroadcastingServerTC controller.
+            </summary>
+        </member>
+        <member name="T:PipesProvider.Handlers.Query">
+            <summary>
+            Class that provides handlers for working with network queries.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Handlers.Query.ProcessingAsync(PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController,System.String)">
+            <summary>
+            Handler that can be connected as callback to default PipesProvides DNS Handler.
+            Will validate and decompose querie on parts and send it to target Executable.QueryProcessor.
+            </summary>
+            <param name="_">Droped param that unnesessary in that method.</param>
+            <param name="query"></param>
+        </member>
+        <member name="T:PipesProvider.Handlers.Service">
+            <summary>
+            Service handlers that provide core processing and stability.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Handlers.Service.ConnectionEstablishedCallbackRetranslator(System.IAsyncResult)">
+            <summary>
+            Callback that will react on connection esstablishing.
+            Will close waiting async operation and call shared delegate with server loop's code.
+            </summary>
+            <param name="result"></param>
+        </member>
+        <member name="T:PipesProvider.NativeMethods">
+            <summary>
+            Class that provide access to native methods.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.NativeMethods.DoesNamedPipeExist(System.String,System.String)">
+            <summary>
+            Method to test if Windows considers that a named pipe of a certain name exists or not.
+            </summary>
+        </member>
+        <member name="T:PipesProvider.Networking.Info">
+            <summary>
+            Class that provide API for network information.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Networking.Info.TryGetHostName(System.String,System.String@)">
+            <summary>
+            Conver ip adress of server to host name.
+            </summary>
+            <param name="ipAddress">Ip adress of host.</param>
+            <param name="output">Host name.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Networking.Info.PingHost(System.String,System.Int32,System.Action{System.String,System.Int32})">
+            <summary>
+            Ping server by URI via requested port.
+            In case if cooecntion established will call callback where:
+            </summary>
+            <param name="hostUri">Server uri.</param>
+            <param name="portNumber">Port for connection. Must be oppend.</param>
+            <param name="callback">Method that will be called as callback when cooection will be established. 
+            string: uri
+            int: port</param>
+        </member>
+        <member name="M:PipesProvider.Networking.Info.ServerNames">
+            <summary>
+            Looking for current available hosts.
+            </summary>
+            <returns>Arrays with hosts' names.</returns>
+        </member>
+        <member name="M:PipesProvider.Networking.Info.DisplayIPAddresses">
+            <summary>
+            Provide IP addresses for every relevant network interface.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:PipesProvider.Networking.Info.MacAdsress">
+            <summary>
+            Mac adress of current device.
+            </summary>
+        </member>
+        <member name="T:PipesProvider.Networking.Routing.RoutingTable">
+            <summary>
+            Object that contain routing instgructions.
+            Provide API to work with file system.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Networking.Routing.RoutingTable.intructions">
+            <summary>
+            List that contain routing instructions.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Networking.Routing.RoutingTable.SourcePath">
+            <summary>
+            Path from was loaded tis table.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Networking.Routing.RoutingTable.TryGetRoutingInstruction(System.String,PipesProvider.Networking.Routing.Instruction@)">
+            <summary>
+            Trying to find target routing instruction.
+            </summary>
+            <param name="query"></param>
+            <param name="instruction"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Networking.Routing.RoutingTable.LoadRoutingTables(System.String,System.IO.SearchOption)">
+            <summary>
+            Trying to load all routing tables from durectory.
+            You could have several XML serialized routing tables. This way allow to share it via plugins.
+            </summary>
+            <param name="directory">Root folder.</param>
+            <param name="searchOption">Defind does search will applied to child foldeers.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Networking.Routing.RoutingTable.SaveRoutingTable(PipesProvider.Networking.Routing.RoutingTable)">
+            <summary>
+            Save routing table by default directory 
+            %app/resources/routing/ROUTING.xml
+            </summary>
+            <param name="table">Source with instructions.</param>
+        </member>
+        <member name="M:PipesProvider.Networking.Routing.RoutingTable.SaveRoutingTable(PipesProvider.Networking.Routing.RoutingTable,System.String)">
+            <summary>
+            Save routing table by default directory 
+            %app/resources/routing
+            </summary>
+            <param name="table">Source with instructions.</param>
+            <param name="name">Name of the file.</param>
+        </member>
+        <member name="M:PipesProvider.Networking.Routing.RoutingTable.SaveRoutingTable(PipesProvider.Networking.Routing.RoutingTable,System.String,System.String)">
+            <summary>
+            Save routing table by directory.
+            </summary>
+            <param name="table">Source with instructions.</param>
+            <param name="directory">Target directory.</param>
+            <param name="name">Name of the file.</param>
+        </member>
+        <member name="M:PipesProvider.Networking.Routing.RoutingTable.op_Addition(PipesProvider.Networking.Routing.RoutingTable,PipesProvider.Networking.Routing.RoutingTable)">
+            <summary>
+            Adding instruction from second table to first one.
+            </summary>
+            <param name="table0"></param>
+            <param name="table1"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PipesProvider.Networking.Routing.Instruction">
+            <summary>
+            Struct that contain instruction about target adress by relative query params.
+            Allow using of several servers via one public.
+            
+            Example:
+                                     -- Authification server
+            Client -- Query server -- Data server 1
+                                     -- Data server 2
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Networking.Routing.Instruction.PublicKey">
+            <summary>
+            RSA public key that was recived from this server.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Networking.Routing.Instruction.PublicKeyExpireTime">
+            <summary>
+            Time when public key will become expired.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Networking.Routing.Instruction.IsValid">
+            <summary>
+            Check does loading was failed or key was expired.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Networking.Routing.Instruction.title">
+            <summary>
+            Title of this instruction that can be showed in applications.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Networking.Routing.Instruction.commentary">
+            <summary>
+            Commentary added to this instruction.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Networking.Routing.Instruction.routingIP">
+            <summary>
+            Address that will be ised for routing
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Networking.Routing.Instruction.pipeName">
+            <summary>
+            neme of the named pipe for server access.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Networking.Routing.Instruction.logonConfig">
+            <summary>
+            Logon config recuired to server connection.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Networking.Routing.Instruction.queryPatterns">
+            <summary>
+            Array that contain querie's body that need to be routed by this instruction.
+            
+            Format:
+            property=value&amp;property=value&amp;... etc.
+            Encount all properties that need to be a part of query by splitting with UniformQueries.API.SPLITTING_SYMBOL ('&amp;' by default).
+            !property - this property must be out of query.
+            $property - this property must exist in query.
+            
+            targetQueries[0] = "q=GET&amp;sq="PUBLICKEY";   // All queries that contain GET query and PUBLICKEY sub-query will routed.
+            targetQueries[1] = "q=GET&amp;!pk";             // All queries that request data from server but has no RSA public keys for backward encription will wouted.
+            targetQueries[1] = "$customProp";               // All queries that have "customProp" property in query will be routed.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Networking.Routing.Instruction.RSAEncryption">
+            <summary>
+            Does this chanel has RSA encryption?
+            If true then client can ask for server's Public Key and encrypt message before send.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Networking.Routing.Instruction.Default">
+            <summary>
+            Return default instruction.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Networking.Routing.Instruction.Empty">
+            <summary>
+            Return empty instruction.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Networking.Routing.Instruction.IsRoutingTarget(System.String)">
+            <summary>
+            Check doest this query must be routed using this server instruction.
+            </summary>
+            <param name="recivedQuery"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Networking.Routing.Instruction.TryUpdatePublicKey(System.Object)">
+            <summary>
+            Try to update Public RSA key by query recived from server as reply to GET PUBLICKEY query.
+            </summary>
+            <param name="recivedQuery"></param>
+            <returns></returns>
+        </member>
+        <member name="P:PipesProvider.Networking.Routing.Instruction.DerivedTypes">
+            <summary>
+            Return array of Instruction's types derived from Instruction.
+            If you need to rescan solution then set value to null and call again.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Networking.Routing.Instruction._DerivedTypes">
+            <summary>
+            Cashed array with found derived types.
+            </summary>
+        </member>
+        <member name="T:PipesProvider.Security.Crypto">
+            <summary>
+            Class that provide metods for providing server transmission sequrity.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Security.Crypto.encoder">
+            <summary>
+            Encoder that provide  concertation query from string to byte array.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Security.Crypto.DoOAEPPadding">
+            <summary>
+            Padding messages.
+            </summary>
+        </member>
+        <member name="T:PipesProvider.Security.Crypto.SHATypes">
+            <summary>
+            Enum  that describe type of SHA hash algorithm.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Security.Crypto.SHATypes.SHA1">
+            <summary>
+            SHA1 encryption algorithm.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Security.Crypto.SHATypes.SHA256">
+            <summary>
+            SHA256 encryption algorithm.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Security.Crypto.SHATypes.SHA384">
+            <summary>
+            SHA384 encryption algorithm.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Security.Crypto.SHATypes.SHA512">
+            <summary>
+            SHA512 encryption algorithm.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Security.Crypto.CryptoServiceProvider_RSA">
+            <summary>
+            Current crypto service provider. Using RSA algortihm with 2048 bit key.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Security.Crypto.PublicKey">
+            <summary>
+            Public RSA key that must b used to encrypt of message befor send.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Security.Crypto.SerializePublicKey">
+            <summary>
+            Serialize public key to XML.
+            </summary>
+            <returns>Convert pubic key to string format.</returns>
+        </member>
+        <member name="M:PipesProvider.Security.Crypto.TryDeserializeRSAKey(System.String,System.Security.Cryptography.RSAParameters@)">
+            <summary>
+            Trying to deserialize xml to RSAParameters.
+            </summary>
+            <param name="xml"></param>
+            <param name="result"></param>
+            <returns>Result of operation. Return false if was failed.</returns>
+        </member>
+        <member name="P:PipesProvider.Security.Crypto.PrivateKey">
+            <summary>
+            Return private RSA key that can be used to decode message.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Security.Crypto.RSAKeyExpireTime">
+            <summary>
+            Time when rsa keys will expired.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Security.Crypto.DecryptString(System.String)">
+            <summary>
+            Decrypt string message that was recived from other source and was encrypted by local public key.
+            In case of fail will return entry message.
+            </summary>
+            <param name="message">Message that will be decrypted.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Security.Crypto.RSADecrypt(System.Byte[],System.Boolean)">
+            <summary>
+            Decrypt byte array using private key.
+            </summary>
+            <param name="DataToDecrypt"></param>
+            <param name="DoOAEPPadding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Security.Crypto.EncryptString(System.String,System.Security.Cryptography.RSAParameters)">
+            <summary>
+            Encrypt string message and make it ready to trasmition to the server.
+            </summary>
+            <param name="message">Message that will be encrypted.</param>
+            <param name="serverPublicKey">Public encrypt key that was shered by target server.</param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Security.Crypto.RSAEncrypt(System.Byte[],System.Security.Cryptography.RSAParameters,System.Boolean)">
+            <summary>
+            Encrypt byte array by public server RSA key.
+            </summary>
+            <param name="DataToEncrypt">Data that will be encrypted.</param>
+            <param name="serverPublicKey">Public encrypt key of target server.</param>
+            <param name="DoOAEPPadding"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Security.Crypto.StringToSHA(System.String)">
+            <summary>
+            Return the hash of the string.
+            Use SHA256 as default.
+            </summary>
+            <param name="input">Input string for encoding.</param>
+            <returns>Encoded string.</returns>
+        </member>
+        <member name="M:PipesProvider.Security.Crypto.StringToSHA(System.String,PipesProvider.Security.Crypto.SHATypes)">
+            <summary>
+            Return hash of string.
+            </summary>
+            <param name="input">Input string for encoding.</param>
+            <param name="type">Encoding algorithm's type.</param>
+            <returns>Encoded string.</returns>
+        </member>
+        <member name="T:PipesProvider.Security.General">
+            <summary>
+            Class that contain methods for working with sequrity systems.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Security.General.GetRulesForLevels(PipesProvider.Security.SecurityLevel)">
+             <summary>
+             Configurate pipe squrity relative to requested level.
+            
+             You can request more then one level via using format:
+             SecurityLevel | SecurityLevel | ...
+             
+             Internal level will applyed by default to allow system and application control created pipes.
+             </summary>
+             <param name="level"></param>
+             <returns></returns>
+        </member>
+        <member name="P:PipesProvider.Security.General.DefaultInternalPipeScurity">
+            <summary>
+            Return pipe security situable for internal use.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Security.General.SetLocalSecurityAuthority(PipesProvider.Security.SecurityLevel)">
+            <summary>
+            Change local security authority of machine to allow requested security level.
+            Require admin rights.
+            </summary>
+            <param name="level"></param>
+        </member>
+        <member name="M:PipesProvider.Security.General.TryLogon(PipesProvider.Security.LogonConfig,Microsoft.Win32.SafeHandles.SafeAccessTokenHandle@)">
+            <summary>
+            Trying to get access token for remote user.
+            In case if requested anonymous connection then return anonymous token without permission check.
+            </summary>
+            <param name="config">Fields required for remote logon with impersonation.</param>
+            <param name="token">Token authorized in system with required rights.</param>
+            <returns></returns>
+        </member>
+        <member name="T:PipesProvider.Security.LogonConfig">
+            <summary>
+            Contaier that contain logon data for remote machine.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Security.LogonConfig.userName">
+            <summary>
+            Name of user for remote logon.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Security.LogonConfig.password">
+            <summary>
+            Password to remote user.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Security.LogonConfig.domain">
+            <summary>
+            Domain name of target machine.
+            "Workgroup" as example.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Security.LogonConfig.IsAnonymous">
+            <summary>
+            Validate data and decide is this user has enought information to impersonate.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Security.LogonConfig.Anonymous">
+            <summary>
+            Return anonymous logon params.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Security.LogonConfig.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Instiniate logon config settings.
+            </summary>
+            <param name="userName">Name of the registred user.</param>
+            <param name="password">user's password.</param>
+            <param name="domain">Machine's network domain.</param>
+        </member>
+        <member name="T:PipesProvider.Security.LSA.LsaSecurityWrapper">
+            <summary>
+            Provide warped way to Add and Rmove rights for user\groups\domains from LSA.
+            </summary>
+        </member>
+        <member name="T:PipesProvider.Security.LSA.LsaSecurityWrapper.LSA_OBJECT_ATTRIBUTES">
+            <summary>
+            Struct that contains data according to LSA attribute format.
+            </summary>
+        </member>
+        <member name="T:PipesProvider.Security.LSA.LsaSecurityWrapper.LSA_UNICODE_STRING">
+            
+            LSA_UNICODE_STRING structure
+            
+        </member>
+        <member name="M:PipesProvider.Security.LSA.LsaSecurityWrapper.AddAccountRights(System.Security.Principal.SecurityIdentifier,System.String)">
+            <summary>
+            Add rights for requested user or group to LSA.
+            https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/user-rights-assignment
+            </summary>
+            <param name="sid"></param>
+            <param name="rights"></param>        
+        </member>
+        <member name="M:PipesProvider.Security.LSA.LsaSecurityWrapper.RemoveAccountRights(System.Security.Principal.SecurityIdentifier,System.String)">
+            <summary>
+            Remove rights for requested user or group from LSA.
+            https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/user-rights-assignment
+            </summary>
+            <param name="sid"></param>
+            <param name="rights"></param>
+        </member>
+        <member name="M:PipesProvider.Security.LSA.LsaSecurityWrapper.AccountRightsController(System.Security.Principal.SecurityIdentifier,System.String,System.Boolean)">
+            <summary>
+            Provide access and overriding of accaunt rights in LSA.
+            </summary>
+            <param name="sid"></param>
+            <param name="rights"></param>
+            <param name="allow"></param>
+        </member>
+        <member name="T:PipesProvider.Security.NativeMethods">
+            <summary>
+            Provide access to native metods used in security namespace.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Security.NativeMethods.LogonUser(System.String,System.String,System.String,System.Int32,System.Int32,Microsoft.Win32.SafeHandles.SafeAccessTokenHandle@)">
+            <summary>
+            Native method that implement logon on NT machine.
+            </summary>
+            <param name="lpszUsername"></param>
+            <param name="lpszDomain"></param>
+            <param name="lpszPassword"></param>
+            <param name="dwLogonType"></param>
+            <param name="dwLogonProvider"></param>
+            <param name="phToken"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Security.NativeMethods.LsaOpenPolicy(PipesProvider.Security.LSA.LsaSecurityWrapper.LSA_UNICODE_STRING[],PipesProvider.Security.LSA.LsaSecurityWrapper.LSA_OBJECT_ATTRIBUTES@,System.Int32,System.IntPtr@)">
+            <summary>
+            Return local sequirity authority policy.
+            </summary>
+            <param name="SystemName"></param>
+            <param name="ObjectAttributes"></param>
+            <param name="AccessMask"></param>
+            <param name="PolicyHandle"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Security.NativeMethods.LsaAddAccountRights(System.IntPtr,System.IntPtr,PipesProvider.Security.LSA.LsaSecurityWrapper.LSA_UNICODE_STRING[],System.Int32)">
+            <summary>
+            Adding rights to LSA.
+            </summary>
+            <param name="PolicyHandle"></param>
+            <param name="pSID"></param>
+            <param name="UserRights"></param>
+            <param name="CountOfRights"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Security.NativeMethods.LsaRemoveAccountRights(System.IntPtr,System.IntPtr,System.Boolean,PipesProvider.Security.LSA.LsaSecurityWrapper.LSA_UNICODE_STRING[],System.Int32)">
+            <summary>
+            Removing rights from LSA.
+            </summary>
+            <param name="PolicyHandle"></param>
+            <param name="AccountSid"></param>
+            <param name="AllRights"></param>
+            <param name="UserRights"></param>
+            <param name="CountOfRights"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Security.NativeMethods.LsaClose(System.IntPtr)">
+            <summary>
+            Close LSA session.
+            </summary>
+            <param name="PolicyHandle"></param>
+            <returns></returns>
+        </member>
+        <member name="T:PipesProvider.Security.SecurityLevel">
+            <summary>
+            Define requirement to connection.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Security.SecurityLevel.Anonymous">
+            <summary>
+            Not require logon.
+            Require Guest user on server.
+            Require allownce to network access via Guest accounts.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Security.SecurityLevel.RemoteLogon">
+            <summary>
+            Require authentication via one of the profile on server.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Security.SecurityLevel.Local">
+            <summary>
+            Pipe will be accessed only on the local machine.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Security.SecurityLevel.Administrator">
+            <summary>
+            access to pipe will provided only for administrators. By default allowed via remote authentication.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Security.SecurityLevel.Internal">
+            <summary>
+            pipe will controlled only be server application and system. Any external coonection will be blocked.
+            </summary>
+        </member>
+        <member name="T:PipesProvider.Server.TransmissionControllers.BroadcastingServerTransmissionController">
+            <summary>
+            Transmission controller that situable for broadcasting.
+            Every connection will call Message handler that can share scripted or constant data.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Server.TransmissionControllers.BroadcastingServerTransmissionController.GetMessage">
+            <summary>
+            Handler that contain delegate that generate message for every broadcasting session.
+            </summary>
+        </member>
+        <member name="T:PipesProvider.Server.TransmissionControllers.BroadcastingServerTransmissionController.MessageHandeler">
+            <summary>
+            Delegate that allow to share message via brodcasting controller and handler.
+            </summary>
+            <param name="transmissionController"></param>
+            <returns></returns>
+        </member>
+        <member name="M:PipesProvider.Server.TransmissionControllers.BroadcastingServerTransmissionController.#ctor(System.IAsyncResult,System.Action{PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController},System.IO.Pipes.NamedPipeServerStream,System.String)">
+            <summary>
+            Instiniate broadcasting transmission controller.
+            </summary>
+            <param name="connectionMarker">Async marker that can be userd to controll of operation.</param>
+            <param name="connectionCallback">Delegate that would be called when connection will established.</param>
+            <param name="pipe">Named pipe stream established on the server.</param>
+            <param name="pipeName">Name of the pipe.</param>
+        </member>
+        <member name="M:PipesProvider.Server.TransmissionControllers.BroadcastingServerTransmissionController.ServerLoop(System.String@,System.String,PipesProvider.Security.SecurityLevel,PipesProvider.Server.TransmissionControllers.BroadcastingServerTransmissionController.MessageHandeler)">
+            <summary>
+            Start server loop that provide server pipe.
+            </summary>
+            <param name="guid">Id signed to connection. Will generated authomaticly and returned to </param>
+            <param name="pipeName">Name of the pipe that will be started.</param>
+            <param name="securityLevel">Pipes security levels that will be applied to pipe.</param>
+            <param name="getMessageHanler">Handler that generate brodcasting message for every connected client.</param>
+        </member>
+        <member name="M:PipesProvider.Server.TransmissionControllers.BroadcastingServerTransmissionController.ServerLoop(System.String,System.String,PipesProvider.Security.SecurityLevel,PipesProvider.Server.TransmissionControllers.BroadcastingServerTransmissionController.MessageHandeler)">
+            <summary>
+            
+            Start server loop that provide server pipe.
+            </summary>
+            <param name="guid">Id signed to connection.</param>
+            <param name="pipeName">Name of the pipe that will be started.</param>
+            <param name="securityLevel">Pipes security levels that will be applied to pipe.</param>
+            <param name="getMessageHanler">Handler that generate brodcasting message for every connected client.</param>
+        </member>
+        <member name="T:PipesProvider.Server.TransmissionControllers.ClientToServerTransmissionController">
+            <summary>
+            Controller that provide message's transmisssion from client to server.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Server.TransmissionControllers.ClientToServerTransmissionController.queryHandlerCallback">
+            <summary>
+            Delegate that will be called when server will recive query.
+            ServerTransmissionMeta - meta data of transmission.
+            string - shared query.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Server.TransmissionControllers.ClientToServerTransmissionController.#ctor(System.IAsyncResult,System.Action{PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController},System.IO.Pipes.NamedPipeServerStream,System.String)">
+            <summary>
+            Instiniate client to server transmission controller.
+            </summary>
+            <param name="connectionMarker">Async marker that can be userd to controll of operation.</param>
+            <param name="connectionCallback">Delegate that would be called when connection will established.</param>
+            <param name="pipe">Named pipe stream established on the server.</param>
+            <param name="pipeName">Name of the pipe.</param>
+        </member>
+        <member name="M:PipesProvider.Server.TransmissionControllers.ClientToServerTransmissionController.ServerLoop(System.Action{PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController,System.String},System.String,System.String@,PipesProvider.Security.SecurityLevel)">
+            <summary>
+            Automaticly create server's pipe that will recive queries from clients.
+            </summary>
+            <param name="queryHandlerCallback">Callback that will be called when server will recive query from clinet.</param>
+            <param name="guid">Generated GUID of this loop.</param>
+            <param name="pipeName">Name of pipe that will created. Client will access this server using that name.</param>
+            <param name="securityLevel">Sercruity that would be applied to pipe's server.</param>
+        </member>
+        <member name="M:PipesProvider.Server.TransmissionControllers.ClientToServerTransmissionController.ServerLoop(System.String,System.Action{PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController,System.String},System.String,PipesProvider.Security.SecurityLevel)">
+            <summary>
+            Automaticly create server's pipe.
+            Allows to customise GUID.
+            </summary>
+            <param name="queryHandlerCallback">Callback that will be called when server will recive query from clinet.</param>
+            <param name="guid">GUID of this loop.</param>
+            <param name="pipeName">Name of pipe that will created. Client will access this server using that name.</param>
+            <param name="securityLevel">Sercruity that would be applied to pipe's server.</param>
+        </member>
+        <member name="M:PipesProvider.Server.TransmissionControllers.ClientToServerTransmissionController.ServerLoop(System.String,System.Action{PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController,System.String},System.String,System.Int32,PipesProvider.Security.SecurityLevel)">
+            <summary>
+            Automaticly create server's pipe.
+            Allows to customise GUID.
+            </summary>
+            <param name="guid">GUID of this loop.</param>
+            <param name="queryHandlerCallback">Callback that will be called when server will recive query from clinet.</param>
+            <param name="pipeName">Name of pipe that will created. Client will access this server using that name.</param>
+            <param name="allowedServerInstances">How many server instances can beestablished for that pipe.</param>
+            <param name="securityLevel">Sercruity that would be applied to pipe's server.</param>
+        </member>
+        <member name="M:PipesProvider.Server.TransmissionControllers.ClientToServerTransmissionController.ServerLoop(System.String,System.Action{PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController,System.String},System.String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode,System.IO.Pipes.PipeOptions,PipesProvider.Security.SecurityLevel)">
+            <summary>
+            Automaticly create server's pipe.
+            Allows to customise GUID.
+            </summary>
+            <summary>
+            Base server loop that allow full controll of settings.
+            </summary>
+            <param name="guid">GUID of this loop.</param>
+            <param name="queryHandlerCallback">Callback that will be called when server will recive query from clinet.</param>
+            <param name="pipeName">Name of pipe that will created. Client will access this server using that name.</param>
+            <param name="pipeDirection">Direction of transmission allowed via this pipe.</param>
+            <param name="allowedServerInstances">How many server instances can beestablished for that pipe.</param>
+            <param name="transmissionMode">Define transmission mode that would applied to pipe.</param>
+            <param name="pipeOptions">Define pipe's option.</param>
+            <param name="securityLevel">Sercruity that would be applied to pipe's server.</param>
+        </member>
+        <member name="T:PipesProvider.Server.TransmissionControllers.ServerToClientTransmissionController">
+            <summary>
+            Controller that provide message's transmisssion from server to client.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Server.TransmissionControllers.ServerToClientTransmissionController.ProcessingQuery">
+            <summary>
+            Query that actualy in processing. 
+            
+            Attention: Value can be changed if some of handlers will call disconecction or transmission error. 
+            This situation will lead to establishing new connection that lead to changing of this value.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Server.TransmissionControllers.ServerToClientTransmissionController.#ctor(System.IAsyncResult,System.Action{PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController},System.IO.Pipes.NamedPipeServerStream,System.String)">
+            <summary>
+            Instiniate server to client transmission controller.
+            </summary>
+            <param name="connectionMarker">Async marker that can be userd to controll of operation.</param>
+            <param name="connectionCallback">Delegate that would be called when connection will established.</param>
+            <param name="pipe">Named pipe stream established on the server.</param>
+            <param name="pipeName">Name of the pipe.</param>
+        </member>
+        <member name="M:PipesProvider.Server.TransmissionControllers.ServerToClientTransmissionController.ServerLoop(System.String,System.String@,PipesProvider.Security.SecurityLevel)">
+            <summary>
+            Automaticly create server's pipe that will send message to client.
+            </summary>
+            <param name="pipeName">Name of pipe that will created. Client will access this server using that name.</param>
+            <param name="guid">Generated GUID of this loop.</param>
+            <param name="securityLevel">Sercruity that would be applied to pipe's server.</param>
+        </member>
+        <member name="M:PipesProvider.Server.TransmissionControllers.ServerToClientTransmissionController.ServerLoop(System.String,System.String,PipesProvider.Security.SecurityLevel)">
+            <summary>
+            Automaticly create server's pipe that will send message to client.
+            </summary>
+            <param name="pipeName">Name of pipe that will created. Client will access this server using that name.</param>
+            <param name="guid">GUID of this loop.</param>
+            <param name="securityLevel">Sercruity that would be applied to pipe's server.</param>
+        </member>
+        <member name="T:PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController">
+            <summary>
+            Container that contains meta data about server instance.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController.connectionMarker">
+            <summary>
+            Object that provide access to async connection.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController.connectionCallback">
+            <summary>
+            Delegate that will be called when connection will be established.
+            ServerTransmissionMeta - meta data of transmission.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController.pipeServer">
+            <summary>
+            Reference to created pipe.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController.pipeName">
+            <summary>
+            Name of this connection.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController.Expired">
+            <summary>
+            Marker that show does current transmission is relevant.
+            When it'll become true this pipe connection will be desconected.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController.Stoped">
+            <summary>
+            Marker that show does this transmition stoped.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController.#ctor">
+            <summary>
+            instiniate default server trnasmission controller.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController.#ctor(System.IAsyncResult,System.Action{PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController},System.IO.Pipes.NamedPipeServerStream,System.String)">
+            <summary>
+            Instiniate base transmission controller.
+            </summary>
+            <param name="connectionMarker">Async marker that can be userd to controll of operation.</param>
+            <param name="connectionCallback">Delegate that would be called when connection will established.</param>
+            <param name="pipe">Named pipe stream established on the server.</param>
+            <param name="pipeName">Name of the pipe.</param>
+        </member>
+        <member name="P:PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController.None">
+            <summary>
+            Return instance that not contain initialized fields.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController.SetExpired">
+            <summary>
+            Maeking transmission as expired. Line will be remaked.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController.SetStoped">
+            <summary>
+            Marking transmission as expired and stoped for full exclusion 
+            from automatic server operations.
+            </summary>
+        </member>
+        <member name="T:PipesProvider.Server.ServerAPI">
+            <summary>
+            Class that provide common methods for easy work with pipes' tasks.
+            </summary>
+        </member>
+        <member name="E:PipesProvider.Server.ServerAPI.ServerTransmissionMeta_InProcessing">
+            <summary>
+            Event that will be called when server transmission will be registred or updated.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Server.ServerAPI.openedServers">
+            <summary>
+            Hashtable thast contain references to oppened pipes.
+            Key (string) pipe_name;
+            Value (ServerTransmissionMeta) meta data about transmition.
+            </summary>
+        </member>
+        <member name="P:PipesProvider.Server.ServerAPI.SeversThreadsCount">
+            <summary>
+            Return count of started threads.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Server.ServerAPI.ServerLoop``1(System.String,System.Action{PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController},System.String,System.IO.Pipes.PipeDirection,System.Int32,System.IO.Pipes.PipeTransmissionMode,System.IO.Pipes.PipeOptions,PipesProvider.Security.SecurityLevel,System.Action{PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController})">
+            <summary>
+            Provide base server loop that control pipe.
+            Have ability to full controll all handlers.
+            
+            Warrning: Use only if undersend how it work. Overwise use simplived ClientToServerLoop or ServerToClientLoop
+            </summary>
+            <param name="guid">GUID that would be used to registration of that pipe.</param>
+            <param name="connectionCallback">Delegate that will be called when connection will be established.</param>
+            <param name="pipeName">Name of pipe that will be used to acces by client.</param>
+            <param name="pipeDirection">Dirrection of the possible transmission.</param>
+            <param name="allowedServerInstances">How many server pipes can be started with the same name.</param>
+            <param name="transmissionMode">Type of transmission.</param>
+            <param name="pipeOptions">Configuration of the pipe.</param>
+            <param name="securityLevel">Security options that would be applied to this pipe.</param>
+            <param name="initHandler">Handler that will be called in case if transmisssion still not registred.
+            Provide possibility to castom initialization for every type of controller.</param>
+        </member>
+        <member name="M:PipesProvider.Server.ServerAPI.SetExpired(System.String)">
+            <summary>
+            Marking pipe as expired. 
+            On the next loop tick connections will be disconnect and pipe will close.
+            </summary>
+            <param name="pipeName"></param>
+        </member>
+        <member name="M:PipesProvider.Server.ServerAPI.SetExpired(PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController)">
+            <summary>
+            Marking pipe as expired. 
+            On the next loop tick connections will be disconnect and pipe will close.
+            </summary>
+            <param name="meta">Object that contains information about transmission.</param>
+        </member>
+        <member name="M:PipesProvider.Server.ServerAPI.SetExpiredAll">
+            <summary>
+            Markin all pipes as expired. 
+            Connection will be terminated.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Server.ServerAPI.StopServer(System.String)">
+            <summary>
+            Stop server by pipe name.
+            </summary>
+            <param name="pipeName"></param>
+        </member>
+        <member name="M:PipesProvider.Server.ServerAPI.StopServer(PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController)">
+            <summary>
+            Stop server by relative meta data.
+            </summary>
+            <param name="meta"></param>
+        </member>
+        <member name="M:PipesProvider.Server.ServerAPI.StopAllServers">
+            <summary>
+            Stoping all regirated servers.
+            </summary>
+        </member>
+        <member name="M:PipesProvider.Server.ServerAPI.TryGetServerTransmissionController(System.String,PipesProvider.Server.TransmissionControllers.BaseServerTransmissionController@)">
+            <summary>
+            Try to find opened servert to client transmisssion meta data in common table.
+            </summary>
+            <param name="guid"></param>
+            <param name="meta"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

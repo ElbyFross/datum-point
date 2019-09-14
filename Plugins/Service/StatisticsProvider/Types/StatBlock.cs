@@ -18,7 +18,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Common;
-using UniformDataOperator.SQL.Tables;
+using UniformDataOperator.Sql.Attributes;
+using UniformDataOperator.Sql.MySql.Attributes;
 
 namespace StatisticsProvider.Types
 {
@@ -26,122 +27,45 @@ namespace StatisticsProvider.Types
     /// Statistic block that contain recorded data about time period.
     /// </summary>
     [System.Serializable]
-    public class StatBlock : ISQLTable, ISQLDataReadCompatible
+    [Table("datum-point", "stat_block")]
+    public class StatBlock
     {
         /// <summary>
         /// Unique ID of statistic block registred in DB.
         /// </summary>
+        [Column("blockid", System.Data.DbType.Int32), IsPrimaryKey, IsNotNull, IsAutoIncrement]
         public int blockId = -1;
 
         /// <summary>
         /// ID of user that is a target for that statistic data.
         /// </summary>
+        [Column("user_userid", System.Data.DbType.Int32), IsForeignKey("datum-point", "user", "userid")]
         public int targetUserId = -1;
 
         /// <summary>
         /// Assessment of this session. In case of not atomar session it would be average value.
         /// </summary>
+        [Column("assessment", System.Data.DbType.Int32)]
         public int assessment;
 
         /// <summary>
         /// Difference between highest and lowes assessment during session. Zero for atomar session.
         /// </summary>
+        [Column("assessments_delta", System.Data.DbType.Int32)]
         public int assessmentsDelta;
 
         /// <summary>
         /// Mask that show behevior in skiping of sessions frequency of sessions leveng during one period. 
         /// Example: 16+7+3+3+2+4+9+14 - this mask show that student has strong tend to skip first and last two lessons.
         /// </summary>
+        [Column("abcences_day_scale_mask", System.Data.DbType.String)]
         public string abcencesDayScaleMask;
 
         /// <summary>
         /// Mask that show behevior in skiping of sessions frequency of sessions leveng during one period. 
         /// Example: 3+1+2+3+4+8+0+0 - The mask of absence relative to week's days. It showing that student has tend to absent at friday.
         /// </summary>
+        [Column("abcences_week_scale_mask", System.Data.DbType.String)]
         public string abcencesWeekScaleMask;
-
-
-
-        public string TableName
-        {
-            get { return "stat_block"; }
-        }
-
-        public string SchemaName
-        {
-            get { return "datum-point"; }
-        }
-
-        public string TableEngine
-        {
-            get { return "InnoDB"; }
-        }
-
-        public TableColumnMeta[] TableFields
-        {
-            get
-            {
-                // Init field if not init.
-                if (_TableFields == null)
-                {
-                    _TableFields = new TableColumnMeta[]
-                    {
-                        new TableColumnMeta()
-                        {
-                            name = "blockid",
-                            type = "INT",
-                            isPrimaryKey = true,
-                            isNotNull = true,
-                            isAutoIncrement = true
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "user_userid",
-                            type = "int",
-                            isNotNull = true,
-                            isForeignKey = true,
-                            refSchema = "datum-point",
-                            refTable = "user",
-                            refColumn = "userid"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "assessment",
-                            type = "INT"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "assessments_delta",
-                            type = "INT"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "abcences_day_scale_mask",
-                            type = "VARCHAR(45)",
-                            isNotNull = true
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "abcences_week_scale_mask",
-                            type = "VARCHAR(45)"
-                        }
-                    };
-                }
-                return _TableFields;
-            }
-        }
-        protected TableColumnMeta[] _TableFields;
-
-        public void ReadSQLObject(DbDataReader reader)
-        {
-            try { blockId = reader.GetInt32(reader.GetOrdinal("blockId")); } catch { };
-            try { targetUserId = reader.GetInt32(reader.GetOrdinal("user_userid")); } catch { };
-
-            try { assessment = reader.GetInt32(reader.GetOrdinal("assessment")); } catch { };
-            try { assessmentsDelta = reader.GetInt32(reader.GetOrdinal("assessments_delta")); } catch { };
-
-            try { abcencesDayScaleMask = reader.GetString(reader.GetOrdinal("abcences_day_scale_mask")); } catch { };
-            try { abcencesWeekScaleMask = reader.GetString(reader.GetOrdinal("abcences_week_scale_mask")); } catch { };
-        }
     }
 }

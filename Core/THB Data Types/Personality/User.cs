@@ -16,7 +16,8 @@ using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Text;
-using UniformDataOperator.SQL.Tables;
+using UniformDataOperator.Sql.Attributes;
+using UniformDataOperator.Sql.MySql.Attributes;
 using AuthorityController.Data.Personal;
 
 namespace DatumPoint.Types.Personality
@@ -25,36 +26,43 @@ namespace DatumPoint.Types.Personality
     /// Additive fields and API suiteble for AC users in Datum Point.
     /// </summary>
     [System.Serializable]
-    public partial class DPUser : User, ISQLTable, ISQLDataReadCompatible
+    [Table("datum-point", "user")]
+    public partial class DPUser : User
     {
         /// <summary>
         /// Middle name of user if applicable.
         /// </summary>
+        [Column("middlename", System.Data.DbType.String)]
         public string middleName = null;
 
         /// <summary>
         /// Birthday of user.
         /// </summary>
+        [Column("birthday", System.Data.DbType.Date)]
         public DateTime birthday;
 
         /// <summary>
         /// Personal phone number of the user.
         /// </summary>
+        [Column("phone", System.Data.DbType.String)]
         public string phone = null;
 
         /// <summary>
         /// Personal e-mail of user.
         /// </summary>
+        [Column("email", System.Data.DbType.String)]
         public string email = null;
 
         /// <summary>
         /// Id of current group.
         /// </summary>
+        [Column("gender_idgender", System.Data.DbType.Int32)]
         public int groupId = -1;
 
         /// <summary>
         /// Id of gender.
         /// </summary>
+        [Column("group_idgroup", System.Data.DbType.Int32)]
         public int genderId = -1;
 
         /// <summary>
@@ -67,172 +75,39 @@ namespace DatumPoint.Types.Personality
         public List<string> culturePreferences = new List<string>();
 
         /// <summary>
-        /// When profile created.
+        /// Culture preferences of user in string format suitable to duplex exchange with database.
         /// </summary>
-        public DateTime createdAt;
-
-        #region SQL handlers
-        public string TableName
-        {
-            get { return "user"; }
-        }
-
-        public TableColumnMeta[] TableFields
+        [Column("culture_preferences_order", System.Data.DbType.String)]
+        public string CulturePreferencesString
         {
             get
             {
-                // Init field if not init.
-                if (_TableFields == null)
+                string output = "";
+                // Add all codes to string.
+                foreach(string code in culturePreferences)
                 {
-                    _TableFields = new TableColumnMeta[]
+                    // Add spliter if not first one.
+                    if(!string.IsNullOrEmpty(output))
                     {
-                        new TableColumnMeta()
-                        {
-                            name = "userid",
-                            type = "INT",
-                            isPrimaryKey = true,
-                            isNotNull = true,
-                            isAutoIncrement = true
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "login",
-                            type = "VARCHAR(45)",
-                            isNotNull = true
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "password",
-                            type = "BLOB(512)",
-                            isNotNull = true
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "firstname",
-                            type = "VARCHAR(45)",
-                            isNotNull = true
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "middlename",
-                            type = "VARCHAR(45)"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "lastname",
-                            type = "VARCHAR(45)",
-                            isNotNull = true
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "birthday",
-                            type = "DATE"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "phone",
-                            type = "VARCHAR(15)"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "email",
-                            type = "VARCHAR(45)"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "culture_preferences_order",
-                            type = "VARCHAR(15)"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "gender_idgender",
-                            type = "INT",
-                            isNotNull = true,
-                            isForeignKey = true,
-                            refSchema = "datum-point",
-                            refTable = "gender",
-                            refColumn = "genderid"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "group_idgroup",
-                            type = "INT",
-                            isNotNull = true,
-                            isForeignKey = true,
-                            refSchema = "datum-point",
-                            refTable = "group",
-                            refColumn = "groupid"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "rights",
-                            type = "VARCHAR(1000)"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "bans",
-                            type = "TYNYBLOB"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "created_at",
-                            type = "DATETIME"
-                        }
-                    };
+                        output += "+";
+                    }
+
+                    // Add code to string.
+                    output += code;
                 }
-                return _TableFields;
+                return output;
             }
-        }
-        protected TableColumnMeta[] _TableFields;
-
-        public string SchemaName
-        {
-            get { return "datum-point"; }
-        }
-
-        public string TableEngine
-        {
-            get { return "InnoDB"; }
+            set
+            {
+                // Create list with string splited by special symbol.
+                culturePreferences = new List<string>(value?.Split('+'));
+            }
         }
 
         /// <summary>
-        /// Read object data from DB data reader.
+        /// When profile created.
         /// </summary>
-        /// <param name="reader"></param>
-        public void ReadSQLObject(DbDataReader reader)
-        {
-            try { id = (uint)reader.GetInt32(reader.GetOrdinal("userid")); } catch { };
-
-            try { login = reader.GetString(reader.GetOrdinal("login")); } catch { };
-            try { password = reader["password"] as byte[]; } catch { };
-
-            try { firstName = reader.GetString(reader.GetOrdinal("firstname")); } catch { };
-            try { middleName = reader.GetString(reader.GetOrdinal("middlename")); } catch { };
-            try { secondName = reader.GetString(reader.GetOrdinal("lastname")); } catch { };
-
-            try { phone = reader.GetString(reader.GetOrdinal("phone")); } catch { };
-            try { email = reader.GetString(reader.GetOrdinal("email")); } catch { };
-
-            try { culturePreferences = new List<string>(((string)reader["culture_preferences_order"]).Split('+')); } catch { };
-
-            try { genderId = reader.GetInt32(reader.GetOrdinal("gender_idgender")); } catch { };
-            try { groupId = reader.GetInt32(reader.GetOrdinal("group_idgroup")); } catch { };
-
-            try { rights = reader.GetString(reader.GetOrdinal("rights")).Split('+'); } catch { };
-
-            try
-            {
-                byte[] bansBinary = reader["bans"] as byte[];
-                if (bansBinary != null)
-                {
-                    bans = UniformDataOperator.Binary.BinaryHandler.FromByteArray<List<BanInformation>>(bansBinary);
-                }
-            }
-            catch { };
-
-            try { birthday = reader.GetDateTime(reader.GetOrdinal("birthday")); } catch { };
-            try { createdAt = reader.GetDateTime(reader.GetOrdinal("created_at")); } catch { };
-        }
-        #endregion
+        [Column("created_at", System.Data.DbType.DateTime)]
+        public DateTime createdAt;
     }
 }

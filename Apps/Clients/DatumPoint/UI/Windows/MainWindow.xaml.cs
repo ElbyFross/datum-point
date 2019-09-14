@@ -32,6 +32,8 @@ using DatumPoint.Networking;
 using WpfHandler.Plugins;
 using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
+using PipesProvider.Client;
+using UniformClient;
 
 namespace DatumPoint.UI.Windows
 {
@@ -179,37 +181,46 @@ namespace DatumPoint.UI.Windows
         {
             // Open first plugin.
             WpfHandler.Plugins.API.OpenGUI(Plugins[0]);
+
+            Client.ReceiveGuestToken();
         }        
 
+        /// <summary>
+        /// Handle logon process.
+        /// </summary>
+        /// <param name="sender"></param>
         private void LogonScreen_LoginButton(object sender)
         {
-            DateTime start = DateTime.Now;
-
+            // Lock screen until lockon confiramtion. 
             overlay.Lock("Authorization", main);//, controlPanel, canvas, logonScreen);
 
-            return;
-
-            //WpfHandler.UI.Animations.Blur.BlurApply(logonScreen, 10, new TimeSpan(0,0,0,0,500), TimeSpan.Zero);
-            //WpfHandler.UI.Animations.Blur.BlurApply(canvas, 5, new TimeSpan(0), TimeSpan.Zero);
-            //WpfHandler.UI.Animations.Blur.BlurApply(controlPanel, 5, new TimeSpan(0), TimeSpan.Zero);
-
-            while (start.AddMilliseconds(5000) > DateTime.Now)
+            // Init clent-server routing instruction.
+            PipesProvider.Networking.Routing.Instruction tlInstruction = new PipesProvider.Networking.Routing.Instruction()
             {
-                System.Threading.Thread.Sleep(5);
-            }
+                routingIP = "SERVERNAME",
+                pipeName = "PIPENAME",
+                logonConfig = PipesProvider.Security.LogonConfig.Anonymous,
+                queryPatterns = new string[0],
+                RSAEncryption = true
+            };
+            
+            // Building query.
+            string query = "";
 
-            TimeSpan duration = new TimeSpan(0, 0, 0, 0, 200);
-
-            // Disable hits for logon screen.
-            logonScreen.IsHitTestVisible = false;
-
-            // Enable profile panel.
-            profileContextPanel.IsHitTestVisible = true;
-
-            PropertyPath opacityPath = new PropertyPath(Control.OpacityProperty);
-            WpfHandler.UI.Animations.Float.FloatAniamtion(this, logonScreen.Name, opacityPath, duration, 1, 0);
-            WpfHandler.UI.Animations.Float.FloatAniamtion(this, profileContextPanel.Name, opacityPath, duration, 0, 1);
+            // Enqueue logon.
+            BaseClient.EnqueueDuplexQueryViaPP(
+                tlInstruction.routingIP,
+                tlInstruction.pipeName,
+                query, 
+                LogonAnswer).
+                SetInstructionAsKey(ref tlInstruction);
         }
+
+        private void LogonAnswer(TransmissionLine line, object sharedObject)
+        {
+
+        }
+
         #endregion
     }
 }
