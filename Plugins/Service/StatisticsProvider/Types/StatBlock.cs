@@ -34,24 +34,28 @@ namespace StatisticsProvider.Types
         /// Unique ID of statistic block registred in DB.
         /// </summary>
         [Column("blockid", System.Data.DbType.Int32), IsPrimaryKey, IsNotNull, IsAutoIncrement]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.Int32, "INT")]
         public int blockId = -1;
 
         /// <summary>
         /// ID of user that is a target for that statistic data.
         /// </summary>
         [Column("user_userid", System.Data.DbType.Int32), IsForeignKey("datum-point", "user", "userid")]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.Int32, "INT")]
         public int targetUserId = -1;
 
         /// <summary>
         /// Assessment of this session. In case of not atomar session it would be average value.
         /// </summary>
         [Column("assessment", System.Data.DbType.Int32)]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.Int32, "INT")]
         public int assessment;
 
         /// <summary>
         /// Difference between highest and lowes assessment during session. Zero for atomar session.
         /// </summary>
         [Column("assessments_delta", System.Data.DbType.Int32)]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.Int32, "INT")]
         public int assessmentsDelta;
 
         /// <summary>
@@ -59,6 +63,7 @@ namespace StatisticsProvider.Types
         /// Example: 16+7+3+3+2+4+9+14 - this mask show that student has strong tend to skip first and last two lessons.
         /// </summary>
         [Column("abcences_day_scale_mask", System.Data.DbType.String)]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAR(45)")]
         public string abcencesDayScaleMask;
 
         /// <summary>
@@ -66,6 +71,7 @@ namespace StatisticsProvider.Types
         /// Example: 3+1+2+3+4+8+0+0 - The mask of absence relative to week's days. It showing that student has tend to absent at friday.
         /// </summary>
         [Column("abcences_week_scale_mask", System.Data.DbType.String)]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAR(45)")]
         public string abcencesWeekScaleMask;
     }
 }

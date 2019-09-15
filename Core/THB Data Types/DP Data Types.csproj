@@ -13,6 +13,9 @@
     <Reference Include="AuthorityController">
       <HintPath>..\..\Frameworks\doloro-networking-framework\libs\AuthorityController.dll</HintPath>
     </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\Frameworks\uniform-data-operator\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="UniformDataOperator">
       <HintPath>..\..\Frameworks\uniform-data-operator\UniformDataOperator.dll</HintPath>
     </Reference>

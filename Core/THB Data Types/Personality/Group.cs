@@ -25,20 +25,43 @@ namespace DatumPoint.Types.Personality
     /// Object that contains data that describing group.
     /// </summary>
     [System.Serializable]
+    [Table("datum-point", "group")]
     public class Group
     {
         /// <summary>
         /// Unique id of this group.
         /// </summary>
+        [Column("groupid", System.Data.DbType.Int32), IsPrimaryKey, IsNotNull, IsAutoIncrement]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.Int32, "INT")]
         public int groupId = -1;
 
         /// <summary>
         /// Title of this group.
         /// </summary>
+        [Column("title", System.Data.DbType.String), IsNotNull]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAT(45)")]
         public string title = null;
 
         /// <summary>
-        /// Primari language of this group.
+        /// Language culture code in string format suitable for data base duplex data exchange.
+        /// </summary>
+        [Column("language", System.Data.DbType.String)]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAT(7)")]
+        [System.Xml.Serialization.XmlIgnore]
+        public string LanguageCode
+        {
+            get
+            {
+                return language?.Name;
+            }
+            set
+            {
+                language = new CultureInfo(value);
+            }
+        }
+
+        /// <summary>
+        /// Primary language of this group.
         /// </summary>
         public CultureInfo language;
 
@@ -46,92 +69,18 @@ namespace DatumPoint.Types.Personality
         /// Id of president of this group.
         /// Detailed history can be gained via orders.
         /// </summary>
+        [Column("presidentid", System.Data.DbType.String), IsNotNull]
+        [IsForeignKey("datum-point", "user", "userid")]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.Int32, "INT")]
         public int presidentId = -1;
 
         /// <summary>
         /// Id of group's superviser user.
         /// Detailed history can be gained via orders.
         /// </summary>
+        [Column("superviserid", System.Data.DbType.String), IsNotNull]
+        [IsForeignKey("datum-point", "user", "userid")]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.Int32, "INT")]
         public int superviserid = -1;
-
-        public string TableName
-        {
-            get { return "group"; }
-        }
-
-        public string SchemaName
-        {
-            get { return "datum-point"; }
-        }
-
-        public string TableEngine
-        {
-            get { return "InnoDB"; }
-        }
-
-        public TableColumnMeta[] TableFields
-        {
-            get
-            {
-                // Init field if not init.
-                if (_TableFields == null)
-                {
-                    _TableFields = new TableColumnMeta[]
-                    {
-                        new TableColumnMeta()
-                        {
-                            name = "groupid",
-                            type = "INT",
-                            isPrimaryKey = true,
-                            isNotNull = true
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "title",
-                            type = "VARCHAR(150)",
-                            isNotNull = true
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "language",
-                            type = "VARCHAR(7)",
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "presidentid",
-                            type = "int",
-                            isNotNull = true,
-                            isForeignKey = true,
-                            refSchema = "datum-point",
-                            refTable = "user",
-                            refColumn = "userid"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "superviserid",
-                            type = "int",
-                            isNotNull = true,
-                            isForeignKey = true,
-                            refSchema = "datum-point",
-                            refTable = "user",
-                            refColumn = "userid"
-                        }
-                    };
-                }
-                return _TableFields;
-            }
-        }
-        protected TableColumnMeta[] _TableFields;
-
-        public void ReadSQLObject(DbDataReader reader)
-        {
-            try { groupId = reader.GetInt32(reader.GetOrdinal("groupid")); } catch { };
-            try { title = reader.GetString(reader.GetOrdinal("title")); } catch { };
-
-            try { language = new CultureInfo(reader.GetString(reader.GetOrdinal("language"))); } catch { };
-
-            try { presidentId = reader.GetInt32(reader.GetOrdinal("presidentid")); } catch { };
-            try { superviserid = reader.GetInt32(reader.GetOrdinal("superviserid")); } catch { };
-        }
     }
 }

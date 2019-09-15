@@ -30,6 +30,7 @@ namespace DatumPoint.Types.Schedule
         /// Row index of lesson.
         /// </summary>
         [Column("lessonindex", System.Data.DbType.Int32), IsPrimaryKey, IsNotNull]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.Int32, "INT")]
         public int index;
 
         /// <summary>
@@ -42,12 +43,15 @@ namespace DatumPoint.Types.Schedule
         /// Id of subject that would be on this lesson.
         /// </summary>
         [Column("subjectId", System.Data.DbType.Int32), IsNotNull]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.Int32, "INT")]
         public int subjectId;
 
         /// <summary>
         /// Id of statistic block applied to that lesson.
         /// </summary>
-        [Column("day_date", System.Data.DbType.Date), IsForeignKey("datum-point", "day", "date", IsForeignKey.Action.Cascade, IsForeignKey.Action.Cascade)]
+        [Column("stat_block_blockid", System.Data.DbType.Int32)]
+        [IsForeignKey("datum-point", "stat_block", "blockid", IsForeignKey.Action.Cascade, IsForeignKey.Action.Cascade)]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.Int32, "INT")]
         public int statBlockId;
 
         /// <summary>

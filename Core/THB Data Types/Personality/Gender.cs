@@ -25,12 +25,15 @@ namespace DatumPoint.Types.Personality
     /// User gender descriptor.
     /// </summary>
     [System.Serializable]
-    public class Gender : ISQLTable, ISQLDataReadCompatible
+    [Table("datum-point", "gender")]
+    public class Gender
     {
         /// <summary>
         /// Id of gender in collection.
         /// </summary>
-        public int genderId = 0;
+        [Column("genderid", System.Data.DbType.Int32), IsPrimaryKey, IsNotNull, IsAutoIncrement]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.Int32, "INT")]
+        public int genderId = -1;
 
         /// <summary>
         /// Title that would displayed in application.
@@ -38,6 +41,8 @@ namespace DatumPoint.Types.Personality
         /// Atention: Recommend to use name of field in XAML dictionary to provide localization possibility.
         /// Example: gender_id0
         /// </summary>
+        [Column("title", System.Data.DbType.String), IsNotNull]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAT(45)")]
         public string title = "Undefined";
 
         /// <summary>
@@ -46,65 +51,8 @@ namespace DatumPoint.Types.Personality
         /// Atention: Recommend to use name of field in XAML dictionary to provide localization possibility.
         /// Example: gender_id0_prefix
         /// </summary>
+        [Column("prefix", System.Data.DbType.String), IsNotNull]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAT(45)")]
         public string prefix = "";
-
-
-
-        public string TableName
-        {
-            get { return "gender"; }
-        }
-
-        public string SchemaName
-        {
-            get { return "datum-point"; }
-        }
-
-        public string TableEngine
-        {
-            get { return "InnoDB"; }
-        }
-
-        public TableColumnMeta[] TableFields
-        {
-            get
-            {
-                // Init field if not init.
-                if (_TableFields == null)
-                {
-                    _TableFields = new TableColumnMeta[]
-                    {
-                        new TableColumnMeta()
-                        {
-                            name = "genderid",
-                            type = "INT",
-                            isPrimaryKey = true,
-                            isNotNull = true
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "title",
-                            type = "VARCHAR(45)",
-                            isNotNull = true
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "prefix",
-                            type = "VARCHAR(5)",
-                            isNotNull = true
-                        }
-                    };
-                }
-                return _TableFields;
-            }
-        }
-        protected TableColumnMeta[] _TableFields;
-
-        public void ReadSQLObject(DbDataReader reader)
-        {
-            try { genderId = reader.GetInt32(reader.GetOrdinal("genderid")); } catch { };
-            try { title = reader.GetString(reader.GetOrdinal("title")); } catch { };
-            try { prefix = reader.GetString(reader.GetOrdinal("prefix")); } catch { };
-        }
     }
 }

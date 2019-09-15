@@ -33,6 +33,7 @@ namespace DatumPoint.Types.Personality
         /// Middle name of user if applicable.
         /// </summary>
         [Column("middlename", System.Data.DbType.String)]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAR(45)")]
         public string middleName = null;
 
         /// <summary>
@@ -45,24 +46,28 @@ namespace DatumPoint.Types.Personality
         /// Personal phone number of the user.
         /// </summary>
         [Column("phone", System.Data.DbType.String)]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAR(15)")]
         public string phone = null;
 
         /// <summary>
         /// Personal e-mail of user.
         /// </summary>
         [Column("email", System.Data.DbType.String)]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAR(45)")]
         public string email = null;
 
         /// <summary>
         /// Id of current group.
         /// </summary>
         [Column("gender_idgender", System.Data.DbType.Int32)]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.Int32, "INT")]
         public int groupId = -1;
 
         /// <summary>
         /// Id of gender.
         /// </summary>
         [Column("group_idgroup", System.Data.DbType.Int32)]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.Int32, "INT")]
         public int genderId = -1;
 
         /// <summary>
@@ -78,6 +83,8 @@ namespace DatumPoint.Types.Personality
         /// Culture preferences of user in string format suitable to duplex exchange with database.
         /// </summary>
         [Column("culture_preferences_order", System.Data.DbType.String)]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAR(15)")]
+        [System.Xml.Serialization.XmlIgnore]
         public string CulturePreferencesString
         {
             get

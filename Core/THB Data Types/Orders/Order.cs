@@ -28,31 +28,43 @@ namespace DatumPoint.Types.Orders
         /// <summary>
         /// Unique id of this order.
         /// </summary>
+        [Column("orderid", System.Data.DbType.Int32), IsPrimaryKey, IsNotNull, IsAutoIncrement]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.Int32, "INT")]
         public int orderId = -1;
 
         /// <summary>
         /// ID of user that had posted this order.
         /// </summary>
+        [Column("user_userid", System.Data.DbType.String), IsNotNull]
+        [IsForeignKey("datum-point", "user", "userid")]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.Int32, "INT")]
         public int postedUserId = -1;
 
         /// <summary>
         /// Time when will had been created.
         /// </summary>
+        [Column("created_at", System.Data.DbType.DateTime), IsNotNull]
         public DateTime createdAt;
 
         /// <summary>
         /// Title of this order.
         /// </summary>
+        [Column("title", System.Data.DbType.String)]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAR(150)")]
         public string title = "New order";
 
         /// <summary>
         /// Description added by user to this order.
         /// </summary>
+        [Column("description", System.Data.DbType.String)]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAR(1024)")]
         public string description = null;
 
         /// <summary>
         /// Command descriptor that could be decomposed by regex to determine of high end instructions.
         /// </summary>
+        [Column("command", System.Data.DbType.String)]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAR(128)")]
         public string command;
 
         /// <summary>
@@ -60,94 +72,8 @@ namespace DatumPoint.Types.Orders
         /// Can be binary or serizlised object.
         /// Max size 8196 bytes.
         /// </summary>
+        [Column("shared_data", System.Data.DbType.Binary)]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.Blob, "BLOB(8196)")]
         public byte[] sharedData = null;
-
-        public string TableName
-        {
-            get { return "order"; }
-        }
-
-        public string SchemaName
-        {
-            get { return "datum-point"; }
-        }
-
-        public string TableEngine
-        {
-            get { return "InnoDB"; }
-        }
-
-        public TableColumnMeta[] TableFields
-        {
-            get
-            {
-                // Init field if not init.
-                if (_TableFields == null)
-                {
-                    _TableFields = new TableColumnMeta[]
-                    {
-                        new TableColumnMeta()
-                        {
-                            name = "orderid",
-                            type = "INT",
-                            isPrimaryKey = true,
-                            isNotNull = true,
-                            isAutoIncrement = true
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "user_userid",
-                            type = "int",
-                            isNotNull = true,
-                            isForeignKey = true,
-                            refSchema = "datum-point",
-                            refTable = "user",
-                            refColumn = "userid"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "created_at",
-                            type = "DATETIME",
-                            isNotNull = true
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "title",
-                            type = "VARCHAR(150)",
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "description",
-                            type = "VARCHAR(1024)"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "command",
-                            type = "VARCHAR(128)"
-                        },
-                        new TableColumnMeta()
-                        {
-                            name = "shared_data",
-                            type = "BLOB(8196)"
-                        }
-                    };
-                }
-                return _TableFields;
-            }
-        }
-        protected TableColumnMeta[] _TableFields;
-
-        public void ReadSQLObject(DbDataReader reader)
-        {
-            try { orderId = reader.GetInt32(reader.GetOrdinal("orderid")); } catch { };
-            try { postedUserId = reader.GetInt32(reader.GetOrdinal("user_userid")); } catch { };
-            try { createdAt = reader.GetDateTime(reader.GetOrdinal("created_at")); } catch { };
-
-            try { title = reader.GetString(reader.GetOrdinal("title")); } catch { };
-            try { description = reader.GetString(reader.GetOrdinal("description")); } catch { };
-            try { command = reader.GetString(reader.GetOrdinal("command")); } catch { };
-
-            try { byte[] sharedData = reader["shared_data"] as byte[]; } catch { };
-        }
     }
 }
