@@ -49,13 +49,15 @@ limitations under the License.-->
                         Content="WELCOME BACK" />
                 
                 <!--Login field-->
-                <local:FlatTextBox Lable="Login"
+                <local:FlatTextBox x:Name="loginField"
+                                   Lable="Login"
                                    Text="login@mail.com"
                                    LableWidth="75"
                                    FontSize="15"/>
                 
                 <!--Password field-->
-                <local:FlatTextBox Lable="Password" 
+                <local:FlatPasswordBox x:Name="passwordField"
+                                   Lable="Password" 
                                    Text="password"
                                    LableWidth="75"
                                    FontSize="15"

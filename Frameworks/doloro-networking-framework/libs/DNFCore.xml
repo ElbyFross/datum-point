@@ -112,6 +112,21 @@
             If true then will stop main loop.
             </summary>
         </member>
+        <member name="F:UniformClient.BaseClient._AppTerminated">
+            <summary>
+            Pufer that contains state of app.
+            </summary>
+        </member>
+        <member name="P:UniformClient.BaseClient.TerminationTokenSource">
+            <summary>
+            Object that can be used to mange global treads.
+            </summary>
+        </member>
+        <member name="F:UniformClient.BaseClient._TerminationToken">
+            <summary>
+            Buferr that contains token controller.
+            </summary>
+        </member>
         <member name="F:UniformClient.BaseClient.thread">
             <summary>
             Reference to thread that host this server.
@@ -157,7 +172,7 @@
             <param name="guid"></param>
             <param name="trnsLine"></param>
         </member>
-        <member name="M:UniformClient.BaseClient.GetValidPublicKeyViaPP(PipesProvider.Networking.Routing.Instruction)">
+        <member name="M:UniformClient.BaseClient.GetValidPublicKeyViaPPAsync(PipesProvider.Networking.Routing.Instruction)">
             <summary>
             Provide valid public key for target server encryption.
             Auto update key if was expired.
@@ -361,6 +376,21 @@
             Instruction that allow retranslate broadcasting via servers chain.
             </summary>
         </member>
+        <member name="T:PipesProvider.Networking.Routing.RelayInstruction.RelayBehavior">
+            <summary>
+            Define relay behavior.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Networking.Routing.RelayInstruction.RelayBehavior.Duplex">
+            <summary>
+            Target is allow duplex transmission.
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Networking.Routing.RelayInstruction.RelayBehavior.Broadcasting">
+            <summary>
+            Target is broadcasting server.
+            </summary>
+        </member>
         <member name="F:PipesProvider.Networking.Routing.RelayInstruction.entryPipeName">
             <summary>
             Name of pipe started on server that would relay broadcasting from target server.
@@ -368,6 +398,11 @@
             
             Shame:
             client -> relay-server-ip.entryPipeName -> routingIp.pipeName
+            </summary>
+        </member>
+        <member name="F:PipesProvider.Networking.Routing.RelayInstruction.behavior">
+            <summary>
+            Define behavior of relay server.
             </summary>
         </member>
         <member name="M:PipesProvider.Networking.Routing.RelayInstruction.TryToDetectTarget(System.Collections.Generic.IEnumerable{PipesProvider.Networking.Routing.Instruction},System.String,PipesProvider.Networking.Routing.RelayInstruction@)">
@@ -586,11 +621,18 @@
             Instiniate relay server.
             </summary>
         </member>
+        <member name="M:UniformServer.Standard.RelayServer.EstablishAutoRelayServer(PipesProvider.Networking.Routing.RelayInstruction)">
+            <summary>
+            Auto detect behavior of instruction and start relative relay server.
+            </summary>
+            <param name="instruction">Instruction that contain relay params.</param>
+            <returns>Established server.</returns>
+        </member>
         <member name="M:UniformServer.Standard.RelayServer.EstablishBroadcastingRelayServer(PipesProvider.Networking.Routing.RelayInstruction)">
             <summary>
             Establish server suitable provided instruction that would retranslate broadcasting from target server.
             </summary>
-            <param name="isntruction">Instruction that contain relay params.</param>
+            <param name="instruction">Instruction that contain relay params.</param>
             <returns>Established server.</returns>
         </member>
         <member name="M:UniformServer.Standard.RelayServer.ThreadingServerLoop_BroadcastingRelay(System.Object)">
@@ -608,7 +650,7 @@
             <summary>
             Establishing server that would recive client's server and forwarding it to target servers by using routing table.
             </summary>
-            <param name="isntruction">Instruction that contain relay params.</param>
+            <param name="instruction">Instruction that contain relay params.</param>
             <returns>Established server.</returns>
         </member>
         <member name="M:UniformServer.Standard.RelayServer.ThreadingServerLoop_DuplexRelay(System.Object)">

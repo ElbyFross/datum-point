@@ -59,6 +59,36 @@ namespace WpfHandler.UI.Controls
         /// </summary>
         public System.Action<object> OperationCancelCallback { get; set; }
 
+        /// <summary>
+        /// Entered login value.
+        /// </summary>
+        public string Login
+        {
+            get
+            {
+                return loginField.Text;
+            }
+            set
+            {
+                loginField.Text = value;
+            }
+        }
+
+        /// <summary>
+        /// Entered password value.
+        /// </summary>
+        public string Password
+        {
+            get
+            {
+                return passwordField.Text;
+            }
+            set
+            {
+                passwordField.Text = value;
+            }
+        }
+
         public LogonScreen()
         {
             #region WPF Init

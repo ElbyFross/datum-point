@@ -34,6 +34,8 @@ using System.Windows.Media.Animation;
 using System.Windows.Media.Effects;
 using PipesProvider.Client;
 using UniformClient;
+using PipesProvider.Networking.Routing;
+using AuthorityController.Queries;
 
 namespace DatumPoint.UI.Windows
 {
@@ -177,13 +179,16 @@ namespace DatumPoint.UI.Windows
             BindingOperations.GetBindingExpression(controlPanelColumn, ColumnDefinition.WidthProperty).UpdateTarget();
         }
 
+        /// <summary>
+        /// Callback that will has been calling when main window would be loaded.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Open first plugin.
             WpfHandler.Plugins.API.OpenGUI(Plugins[0]);
-
-            Client.ReceiveGuestToken();
-        }        
+        }
 
         /// <summary>
         /// Handle logon process.
@@ -194,33 +199,56 @@ namespace DatumPoint.UI.Windows
             // Lock screen until lockon confiramtion. 
             overlay.Lock("Authorization", main);//, controlPanel, canvas, logonScreen);
 
-            // Init clent-server routing instruction.
-            PipesProvider.Networking.Routing.Instruction tlInstruction = new PipesProvider.Networking.Routing.Instruction()
+            // Detecting routing instruction suitable for user's queries.
+            Client.Active.RoutingTable.TryGetRoutingInstruction("token&guid&user&logon", out Instruction instruction);
+            if (!(instruction is PartialAuthorizedInstruction queriesChanelInstruction))
             {
-                routingIP = "SERVERNAME",
-                pipeName = "PIPENAME",
-                logonConfig = PipesProvider.Security.LogonConfig.Anonymous,
-                queryPatterns = new string[0],
-                RSAEncryption = true
+                // Enable routing error message.
+                MessageBox.Show("Routing instruction for LOGON query not found.\n" +
+                    "Please bw sure that you has PartialAuthorizedInstruction that allow to share queries with user&logon parts");
+                return;
+            }
+
+            // Create new processor that provide logon operation.
+            USER_LOGON.LogonProcessor processor = new USER_LOGON.LogonProcessor();
+
+            // Sign up on callback that would be called when logon operation would be passed.
+            processor.ProcessingFinished += LogonCallback;
+
+            // Request logon.
+            processor.TryToLogonAsync(
+                queriesChanelInstruction.GuestToken,
+                logonScreen.Login,
+                logonScreen.Password,
+                queriesChanelInstruction.routingIP,
+                queriesChanelInstruction.pipeName);
+
+            // Callback that would be called when server returns answer.
+            void LogonCallback(
+                UniformQueries.Executable.QueryProcessor _,
+                bool result,
+                object message)
+            {
+                // Unsubscribe.
+                processor.ProcessingFinished -= LogonCallback;
+
+                // Unlock overlay.
+                overlay.Unlock();
+
+                // If success logoned.
+                if (result)
+                {
+                    //message as string;
+
+
+                    // TODO Disable logon menu.
+                }
+                else
+                {
+                    // TODO Show up error message.
+                }
             };
-            
-            // Building query.
-            string query = "";
-
-            // Enqueue logon.
-            BaseClient.EnqueueDuplexQueryViaPP(
-                tlInstruction.routingIP,
-                tlInstruction.pipeName,
-                query, 
-                LogonAnswer).
-                SetInstructionAsKey(ref tlInstruction);
         }
-
-        private void LogonAnswer(TransmissionLine line, object sharedObject)
-        {
-
-        }
-
         #endregion
     }
 }

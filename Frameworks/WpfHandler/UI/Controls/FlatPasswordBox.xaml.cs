@@ -30,25 +30,25 @@ using System.Windows.Shapes;
 namespace WpfHandler.UI.Controls
 {
     /// <summary>
-    /// Interaction logic for FlatTextBox.xaml
+    /// Interaction logic for FlatPasswordBox.xaml
     /// </summary>
-    public partial class FlatTextBox : UserControl
+    public partial class FlatPasswordBox : UserControl
     {
         #region Dependency properties
         public static readonly DependencyProperty LableProperty = DependencyProperty.Register(
-          "Lable", typeof(string), typeof(FlatTextBox));
+          "Lable", typeof(string), typeof(FlatPasswordBox));
 
         public static readonly DependencyProperty LableWidthProperty = DependencyProperty.Register(
-          "LableWidth", typeof(float), typeof(FlatTextBox));
+          "LableWidth", typeof(float), typeof(FlatPasswordBox));
 
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
-          "Text", typeof(string), typeof(FlatTextBox));
+          "Text", typeof(string), typeof(FlatPasswordBox));
         
         public static readonly DependencyProperty TextBoxForegroundProperty = DependencyProperty.Register(
-          "TextBoxForeground", typeof(Brush), typeof(FlatTextBox));
+          "TextBoxForeground", typeof(Brush), typeof(FlatPasswordBox));
 
         public static readonly DependencyProperty TextBoxBackgroundProperty = DependencyProperty.Register(
-          "TextBoxBackground", typeof(Brush), typeof(FlatTextBox));
+          "TextBoxBackground", typeof(Brush), typeof(FlatPasswordBox));
         #endregion
 
         #region Properties
@@ -75,8 +75,8 @@ namespace WpfHandler.UI.Controls
         /// </summary>
         public string Text
         {
-            get { return (string)this.GetValue(TextProperty); }
-            set { this.SetValue(TextProperty, value); }
+            get { return passwordBox.Password; }
+            set { passwordBox.Password = value; }
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace WpfHandler.UI.Controls
 
         #endregion
 
-        public FlatTextBox()
+        public FlatPasswordBox()
         {
             InitializeComponent();
 
@@ -108,7 +108,7 @@ namespace WpfHandler.UI.Controls
             // Try to load default style
             try
             {
-                if (Application.Current.FindResource("FlatTextBox") is Style style)
+                if (Application.Current.FindResource("FlatPasswordBox") is Style style)
                 {
                     this.Style = style;
                 }

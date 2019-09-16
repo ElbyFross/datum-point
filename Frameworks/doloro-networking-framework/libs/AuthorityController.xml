@@ -864,9 +864,9 @@
             If you no need any filtring then just leave query patterns empty.
             </summary>
         </member>
-        <member name="P:AuthorityController.Session.TerminationToken">
+        <member name="P:AuthorityController.Session.TerminationTokenSource">
             <summary>
-            Token that provide possibility to terminate all stated tasks in this session.
+            Token source that provide possibility to terminate all stated tasks in this session.
             </summary>
         </member>
         <member name="M:AuthorityController.Session.#ctor">

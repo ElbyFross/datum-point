@@ -27,6 +27,7 @@ using System.Text.RegularExpressions;
 using System.Globalization;
 using System.Threading;
 using UniformQueries;
+using PipesProvider.Networking.Routing;
 
 namespace DatumPoint.Networking
 {
@@ -50,15 +51,25 @@ namespace DatumPoint.Networking
 
             protected set { active = value; }
         }
-
+        /// <summary>
+        /// Bufer that contains reference to current active client.
+        /// </summary>
         protected static Client active;
-
+        
+        /// <summary>
+        /// Routing tables loaded to that client.
+        /// </summary>
+        public RoutingTable RoutingTable
+        {
+            get
+            {
+                return routingTable;
+            }
+        }
 
         /// <summary>
-        /// Is guest token required.
+        /// Instiniate client object. Loadign dlls and plugins.
         /// </summary>
-        public bool GuestTokenRequired { get; protected set; }
-
         public Client()
         {
             // Set as active.
@@ -72,77 +83,59 @@ namespace DatumPoint.Networking
 
             // Load translation for plugins relative to thread culture.
             WpfHandler.Localization.API.LoadXAML_LangDicts(CultureInfo.CurrentCulture, new CultureInfo("en-US"));
+
+            // Loading routing data.
+            InitRoutingTables();
         }
 
         /// <summary>
-        /// Trying to receive guest token from server.
+        /// Instiniate client object. Loadign dlls and plugins.
+        /// Initialize client with routing table shared from diferent obejct.
         /// </summary>
-        /// <param name="serverIP">Ip of server.</param>
-        /// <param name="pipeName">Name of the broadcasting pipe that would share tokent for this client.</param>
-        /// <param name="timeout">Milisecond before connection terminating.</param>
-        public void ReceiveGuestToken(string serverIP, string pipeName, float timeout = 2000)
+        /// <param name="table">Pre-initialized routing table.</param>
+        public Client(RoutingTable table)
         {
-            // Time when connection would terminated.
-            DateTime terminationTime = DateTime.Now.AddMilliseconds(timeout);
+            // Set as active.
+            Active = this;
 
-            // Open client that will listen server guest chanel broadcasting.
-            PipesProvider.Client.TransmissionLine broadcastingLine =
-                UniformClient.Standard.SimpleClient.ReciveAnonymousBroadcastMessage(
-                serverIP,
-                pipeName,
-                (PipesProvider.Client.TransmissionLine line, object obj) =>
-                {
-                    // Validate answer.
-                    if (obj is string answer)
-                    {
-                        Console.WriteLine("GUSET BROAADCASTING CHANEL ANSWER RECIVED: {0}", answer);
-                        // Unlock finish blocker.
-                        GuestTokenRequired = false;
+            // Loading assemblies from lib direcroty.
+            LoadAssemblies(AppDomain.CurrentDomain.BaseDirectory + "libs\\");
 
-                        QueryPart[] recivedQuery = UniformQueries.API.DetectQueryParts(answer);
+            // Loading assemblies from plugins direcroty.
+            LoadAssemblies(AppDomain.CurrentDomain.BaseDirectory + "plugins\\");
 
-                        // Check token.
-                        if (UniformQueries.API.TryGetParamValue("token", out QueryPart tokenQP, recivedQuery) &&
-                        !string.IsNullOrEmpty(tokenQP.propertyValue))
-                        {
-                            token = tokenQP.propertyValue;
-                            Console.WriteLine("Guest token: {0}", token);
-                        }
-                        else
-                        {
-                            Console.WriteLine("Guest token not detected. Authorization not possible.");
-                            return;
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Guest token not recived. Incorrect answer format.");
-                        return;
-                    }
-                });
+            // Load translation for plugins relative to thread culture.
+            WpfHandler.Localization.API.LoadXAML_LangDicts(CultureInfo.CurrentCulture, new CultureInfo("en-US"));
 
-            // Log
-            Console.WriteLine("Witing forguest token from server autority system...");
-
-            // Wait for guest token.
-            while (GuestTokenRequired)
-            {
-                // If timeout is reached.
-                bool timeoutPassed = DateTime.Compare(DateTime.Now, terminationTime) > 0;
-                if (timeoutPassed)
-                {
-                    // Close trasmission line.
-                    broadcastingLine.Close();
-                    
-                    Console.WriteLine("Connection is out of timeout. Guest token not recived.");
-                    return;
-                }
-
-                // Whait
-                Thread.Sleep(5);
-            }
+            // Aplly routing data.
+            routingTable = table;
         }
 
+        /// <summary>
+        /// Inisitalize interanal routing table. 
+        /// 
+        /// Loading data from local filesystem.
+        /// Trying to logon if reuqires partial authorization.
+        /// </summary>
+        public void InitRoutingTables()
+        {
+            // Loading roting tables to detect servers.
+            LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "plugins\\");
+
+            // Logon all partial authorized instruction.
+            foreach (Instruction instruction in routingTable.intructions)
+            {
+                // If instruction require guest token.
+                if (instruction is PartialAuthorizedInstruction pai)
+                {
+                    // Trying to recive guest token from server.
+                    pai.TryToGetGuestTokenAsync(null,
+                        AuthorityController.Session.Current.TerminationTokenSource.Token); // Using Seestion termination token as uniform 
+                                                                               //to provide possibility to stop all async operation before application exit.
+                }
+            }
+        }
+        
         /// <summary>
         /// Make first start of client.
         /// </summary>

@@ -20,6 +20,12 @@
         <Setter Property="TextBoxBackground" Value="#00a9e9" />
     </Style>
 
+    <Style x:Key="FlatPasswordBox" TargetType="controls:FlatPasswordBox">
+        <Setter Property="Background" Value="#FFFFFF" />
+        <Setter Property="TextBoxForeground" Value="#FFFFFF" />
+        <Setter Property="TextBoxBackground" Value="#00a9e9" />
+    </Style>
+
     <Style x:Key="FlatButton" TargetType="controls:FlatButton">
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="Foreground" Value="#003459" />

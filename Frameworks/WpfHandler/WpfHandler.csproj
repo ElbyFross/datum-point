@@ -77,6 +77,9 @@
     <Compile Include="UI\Controls\FlatButton.xaml.cs">
       <DependentUpon>FlatButton.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Controls\FlatPasswordBox.xaml.cs">
+      <DependentUpon>FlatPasswordBox.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Controls\FlatTextBox.xaml.cs">
       <DependentUpon>FlatTextBox.xaml</DependentUpon>
     </Compile>
@@ -108,6 +111,10 @@
     <Page Include="UI\Controls\FlatButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controls\FlatPasswordBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="UI\Controls\FlatTextBox.xaml">
       <SubType>Designer</SubType>
