@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SessionProvider</name>
+    </assembly>
+    <members>
+        <member name="T:SessionProvider.Server">
+            <summary>
+            Server tasks:
+            - Provide session token to clients.
+            - User data managment.
+            - Control rights.
+            </summary>
+        </member>
+    </members>
+</doc>

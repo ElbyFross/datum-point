@@ -36,7 +36,10 @@ namespace WpfHandler.UI.Controls
     {
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
           "Text", typeof(string), typeof(FlatButton));
-        
+
+        public static readonly DependencyProperty ClickCallbackProperty = DependencyProperty.Register(
+          "ClickCallback", typeof(Action<object>), typeof(FlatButton));
+
         /// <summary>
         /// Text that will be displayed on the button.
         /// </summary>
@@ -49,7 +52,11 @@ namespace WpfHandler.UI.Controls
         /// <summary>
         /// Method that will has been calling during click on button.
         /// </summary>
-        public System.Action<object> ClickCallback { get; set; }
+        public Action<object> ClickCallback
+        {
+            get { return (Action<object>)this.GetValue(ClickCallbackProperty); }
+            set { this.SetValue(ClickCallbackProperty, value); }
+        }
 
         public FlatButton()
         {

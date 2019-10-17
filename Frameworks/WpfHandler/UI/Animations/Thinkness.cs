@@ -24,88 +24,101 @@ using System.Windows.Controls;
 
 namespace WpfHandler.UI.Animations
 {
-    /// <summary>
-    /// Provide base float animations operations.
-    /// </summary>
-    public static class Float
+    public class Thinkness
     {
         /// <summary>
-        /// Start float animation.
+        /// Start thinkness animation.
         /// </summary>
         /// <param name="parent">Object that contains property.</param>
         /// <param name="propertyName">A name of the property.</param>
         /// <param name="propertyPath">A path that describe the dependency property to be animated.</param>
         /// <param name="duration">How many time would take transit.</param>
+        /// <param name="from">Start value.</param>
+        /// <param name="to">Finish value.</param>
         /// <param name="fillBehavior">
         /// Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
         /// its active period but its parent is inside its active or hold period.</param>
-        /// <param name="from">Start value.</param>
-        /// <param name="to">Finish value.</param>
         /// <returns>Created storyboard.</returns>
-        public static Storyboard FloatAniamtion(
+        public static Storyboard ThinknessAniamtion(
             FrameworkElement parent,
             string propertyName,
             PropertyPath propertyPath,
             TimeSpan duration,
-            FillBehavior fillBehavior,
-            float from, float to)
+            Thickness from, 
+            Thickness to,
+            FillBehavior fillBehavior)
         {
-            return FloatAniamtion(
-               parent,
-               propertyName,
-               propertyPath,
-               duration,
-               fillBehavior,
-               from, to,
-               null);
+            return ThinknessAniamtion(
+                parent,
+                propertyName, propertyPath,
+                duration,
+                from, to, fillBehavior,
+                null);
         }
 
         /// <summary>
-        /// Start float animation.
+        /// Start thinkness animation.
         /// </summary>
         /// <param name="parent">Object that contains property.</param>
         /// <param name="propertyName">A name of the property.</param>
         /// <param name="propertyPath">A path that describe the dependency property to be animated.</param>
         /// <param name="duration">How many time would take transit.</param>
+        /// <param name="from">Start value.</param>
+        /// <param name="to">Finish value.</param>
         /// <param name="fillBehavior">
         /// Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
         /// its active period but its parent is inside its active or hold period.</param>
-        /// <param name="from">Start value.</param>
-        /// <param name="to">Finish value.</param>
         /// <param name="initHandler">Handler that would be called before animation start.
         /// There you can subscrube on events or reconfigurate settigns.</param>
         /// <returns>Created storyboard.</returns>
-        public static Storyboard FloatAniamtion(
-            FrameworkElement parent, 
-            string propertyName, 
+        public static Storyboard ThinknessAniamtion(
+            FrameworkElement parent,
+            string propertyName,
             PropertyPath propertyPath,
             TimeSpan duration,
+            Thickness from, 
+            Thickness to,
             FillBehavior fillBehavior,
-            float from, float to,
-            Action<Storyboard> initHandler)
+            System.Action<Storyboard> initHandler)
         {
-            // Create a storyboard to contain the animations.
+            // Create a storyboard to contains the animations.
             Storyboard storyboard = new Storyboard
             {
                 FillBehavior = fillBehavior
             };
 
-            // Create a DoubleAnimation to fade the not selected option control
-            DoubleAnimation animation = new DoubleAnimation
-            {
-                From = from,
-                To = to,
-                Duration = new Duration(duration)
-            };
+            // Add the animation to the storyboard
+            ThicknessAnimationUsingKeyFrames animation = new ThicknessAnimationUsingKeyFrames();
+            storyboard.Children.Add(animation);
+            animation.Duration = new Duration(duration);
+            animation.AccelerationRatio = 1.0f;
+
+            // Set start position.
+            SplineThicknessKeyFrame startKey = new SplineThicknessKeyFrame(
+                from,
+                KeyTime.FromPercent(0));
+
+            //// Set start position.
+            //SplineThicknessKeyFrame middleKey = new SplineThicknessKeyFrame(
+            //    new Thickness(Lerp(from.Left, to.Right, ),
+            //    KeyTime.FromPercent(0.62));
+
+            // Set finish position.
+            SplineThicknessKeyFrame finishKey = new SplineThicknessKeyFrame(
+                to,
+                KeyTime.FromPercent(1));
 
             // Configure the animation to target de property Opacity
             Storyboard.SetTargetName(animation, propertyName);
             Storyboard.SetTargetProperty(animation, propertyPath);
-            
-            // Add the animation to the storyboard
-            storyboard.Children.Add(animation);
 
-            // Inform subscribers
+
+            // Add keys.
+            animation.KeyFrames.Add(startKey);
+            //animation.KeyFrames.Add(middleKey);
+            animation.KeyFrames.Add(finishKey);
+
+            // Inform subscribers.
             initHandler?.Invoke(storyboard);
 
             // Begin the storyboard
@@ -119,6 +132,18 @@ namespace WpfHandler.UI.Animations
             }
 
             return storyboard;
+        }
+
+        /// <summary>
+        /// Lerping values by ratio.
+        /// </summary>
+        /// <param name="firstFloat">Left border.</param>
+        /// <param name="secondFloat">Right border.</param>
+        /// <param name="by">Ration.</param>
+        /// <returns></returns>
+        float Lerp(float firstFloat, float secondFloat, float by)
+        {
+            return firstFloat * (1 - by) + secondFloat * by;
         }
     }
 }

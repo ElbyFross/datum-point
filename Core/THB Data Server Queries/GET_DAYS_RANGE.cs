@@ -37,21 +37,21 @@ namespace DatumPoint.Queries
             }
         }
 
-        public void Execute(QueryPart[] queryParts)
+        public void Execute(object sender, Query query)
         {
             throw new NotImplementedException();
         }
 
-        public bool IsTarget(QueryPart[] queryParts)
+        public bool IsTarget(Query query)
         {
-            if (API.TryGetParamValue("q", out QueryPart query, queryParts)) return false;
+            if (!query.TryGetParamValue("q", out QueryPart queryBlock)) return false;
 
             // Save the time and avoid if query even not hace subquery.
-            if (!API.TryGetParamValue("sq", out QueryPart subQuery, queryParts)) return false;
+            if (!query.TryGetParamValue("sq", out QueryPart subQuery)) return false;
 
             // Comare q and sq with target.
             bool comparison =
-                query.ParamNameEqual("GET") &&
+                queryBlock.ParamNameEqual("GET") &&
                 subQuery.ParamNameEqual("DAYSRANGE");
 
             // Return result of compression.

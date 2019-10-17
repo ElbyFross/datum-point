@@ -20,6 +20,7 @@ limitations under the License.-->
         xmlns:diag="clr-namespace:System.Diagnostics;assembly=WindowsBase"
         xmlns:local="clr-namespace:DatumPoint.UI.Windows"
         xmlns:controls="clr-namespace:WpfHandler.UI.Controls;assembly=WpfHandler"
+        xmlns:logon="clr-namespace:WpfHandler.UI.Controls.Logon;assembly=WpfHandler"
         xmlns:effects="clr-namespace:WpfHandler.UI.Effects;assembly=WpfHandler"
         mc:Ignorable="d"
         Title="MainWindow" MinHeight="480" Height="600" MinWidth="640" Width="1067"
@@ -93,9 +94,9 @@ limitations under the License.-->
                   Grid.Row="1"/>
 
             <!--Logon screen-->
-            <controls:LogonScreen Name="logonScreen" 
-                                  Grid.ColumnSpan="2" 
-                                  Margin="0,-0.5,0,0"/>
+            <logon:LogonScreen Name="logonScreen" 
+                               Grid.ColumnSpan="2" 
+                               Margin="0,-0.5,0,0"/>
 
         </Grid>
 

@@ -27,38 +27,48 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfHandler.UI.Controls
+namespace WpfHandler.UI.Controls.Logon
 {
     /// <summary>
-    /// Interaction logic for LogonScreen.xaml
+    /// Interaction logic for LogonPanel.xaml
     /// </summary>
-    public partial class LogonScreen : UserControl
+    public partial class LogonPanel : UserControl
     {
-
-        public static readonly DependencyProperty LogonFormMarginProperty = DependencyProperty.Register(
-          "LogonFormMargin", typeof(Thickness), typeof(FlatTextBox));
-
         public static readonly DependencyProperty LoginCallbackProperty = DependencyProperty.Register(
-          "LoginCallback", typeof(System.Action<object>), typeof(CatalogButton));
+          "LoginCallback", typeof(Action<object>), typeof(LogonPanel));
 
-        public Thickness LogonFormMargin
+        public static readonly DependencyProperty SingUpCallbackProperty = DependencyProperty.Register(
+          "SingUpCallback", typeof(Action<object>), typeof(LogonPanel));
+
+        /// <summary>
+        /// Method that will has been calling during click on button.
+        /// </summary>
+        public Action<object> SingUpCallback
         {
-            get
-            {
-                return new Thickness(0,0,0, ActualHeight / 2 - logonPanel_FormBlock.ActualHeight / 2);
-            }
+            get { return (Action<object>)this.GetValue(SingUpCallbackProperty); }
+            set { this.SetValue(SingUpCallbackProperty, value); }
         }
 
         /// <summary>
         /// Method that will has been calling during click on button.
         /// </summary>
-        public System.Action<object> LoginCallback { get; set; }
+        public Action<object> LoginCallback
+        {
+            get { return (Action<object>)this.GetValue(LoginCallbackProperty); }
+            set { this.SetValue(LoginCallbackProperty, value); }
+        }
 
         /// <summary>
-        /// Method that will has been calling during click on operation cancel button.
+        /// Margine of internal form.
         /// </summary>
-        public System.Action<object> OperationCancelCallback { get; set; }
-
+        public Thickness LogonFormMargin
+        {
+            get
+            {
+                return new Thickness(0, 0, 0, ActualHeight / 2 - logonPanel_FormBlock.ActualHeight / 2);
+            }
+        }
+        
         /// <summary>
         /// Entered login value.
         /// </summary>
@@ -89,28 +99,30 @@ namespace WpfHandler.UI.Controls
             }
         }
 
-        public LogonScreen()
+        #region Constructor\destructor
+        public LogonPanel()
         {
-            #region WPF Init
             InitializeComponent();
             DataContext = this;
 
+            SizeChanged += MainWindow_SizeChanged;
+
             // Cubscribe delegate on login click button.
             loginButton.ClickCallback += LoginCallbackHandler;
-
-            // Subscribe on events
-            SizeChanged += MainWindow_SizeChanged;
-            #endregion
+            singupButton.ClickCallback += SingUpCallbackHandler;
         }
 
-        ~LogonScreen()
+        ~LogonPanel()
         {
             // Unsubscribe from events.
             SizeChanged -= MainWindow_SizeChanged;
 
-            loginButton.ClickCallback -= LoginCallbackHandler;
+            try { loginButton.ClickCallback -= LoginCallbackHandler; }catch { }
+            try { singupButton.ClickCallback -= SingUpCallbackHandler; } catch { }
         }
+        #endregion
 
+        #region Callbacks
         /// <summary>
         /// Callback that will has been calling when widow size will be changed.
         /// </summary>
@@ -122,15 +134,34 @@ namespace WpfHandler.UI.Controls
             BindingOperations.GetBindingExpression(logonPanel_FormBlock, MarginProperty).UpdateTarget();
         }
 
+        /// <summary>
+        /// Callback that will caling when panel will loaded.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void LogonPanel_Loaded(object sender, RoutedEventArgs e)
         {
-            // Update size of control panel.
-            BindingOperations.GetBindingExpression(logonPanel_FormBlock, MarginProperty).UpdateTarget();
+            // Call recomputing of size.
+            MainWindow_SizeChanged(sender, null);
         }
-        
+
+        /// <summary>
+        /// Callback to login button.
+        /// </summary>
+        /// <param name="sender"></param>
         private void LoginCallbackHandler(object sender)
         {
             LoginCallback?.Invoke(sender);
         }
+
+        /// <summary>
+        /// Callback to sing up button.
+        /// </summary>
+        /// <param name="sender"></param>
+        private void SingUpCallbackHandler(object sender)
+        {
+            SingUpCallback?.Invoke(sender);
+        }
+        #endregion
     }
 }

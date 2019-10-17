@@ -27,6 +27,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 
 namespace WpfHandler.UI.Controls
@@ -78,7 +79,7 @@ namespace WpfHandler.UI.Controls
             lockedEllements = controls;
 
             // path to opacity property.
-            PropertyPath opacityPropertyPath = new PropertyPath(Control.OpacityProperty);
+            PropertyPath opacityPropertyPath = new PropertyPath(OpacityProperty);
 
             // Lock input.
             lockScreen.IsHitTestVisible = true;
@@ -86,25 +87,27 @@ namespace WpfHandler.UI.Controls
             #region Unblock lock UI
             // Cancel button
             lockCancelButton.IsHitTestVisible = true;
-            WpfHandler.UI.Animations.Float.FloatAniamtion(
+            Animations.Float.FloatAniamtion(
                 this, lockCancelButton.Name,
                 opacityPropertyPath,
                 lockAnimationDuration,
+                FillBehavior.HoldEnd,
                 0, 1);
 
             // Lable
             lockLable.Content = message;
-            WpfHandler.UI.Animations.Float.FloatAniamtion(
+            Animations.Float.FloatAniamtion(
                 this, lockLable.Name,
                 opacityPropertyPath,
                 lockAnimationDuration,
+                FillBehavior.HoldEnd,
                 0, 1);
             #endregion
 
             // Blur locked elements.
             foreach (FrameworkElement c in controls)
             {
-                WpfHandler.UI.Animations.Blur.BlurApply(c, blurSize, lockAnimationDuration, TimeSpan.Zero);
+                Animations.Blur.BlurApply(c, blurSize, lockAnimationDuration, TimeSpan.Zero, FillBehavior.HoldEnd);
             }
         }
 
@@ -131,6 +134,7 @@ namespace WpfHandler.UI.Controls
                 lockCancelButton.Name,
                 opacityPropertyPath,
                 lockAnimationDuration,
+                FillBehavior.HoldEnd,
                 1, 0);
 
             // Lock lable
@@ -138,6 +142,7 @@ namespace WpfHandler.UI.Controls
                 lockLable.Name,
                 opacityPropertyPath,
                 lockAnimationDuration,
+                FillBehavior.HoldEnd,
                 1, 0);
             #endregion
 

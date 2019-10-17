@@ -97,7 +97,7 @@ namespace WpfHandler.UI.Controls
         /// <summary>
         /// Method that will has been calling during click on button.
         /// </summary>
-        public System.Action<object> ClickCallback { get; set; }
+        public Action<object> ClickCallback { get; set; }
         #endregion
 
         public CatalogButton()

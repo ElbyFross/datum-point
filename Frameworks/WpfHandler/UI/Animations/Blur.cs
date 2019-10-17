@@ -28,6 +28,7 @@ namespace WpfHandler.UI.Animations
     /// </summary>
     public static class Blur
     {
+
         /// <summary>
         /// Turning blur on.
         /// </summary>
@@ -35,14 +36,92 @@ namespace WpfHandler.UI.Animations
         /// <param name="blurRadius">blur radius</param>
         /// <param name="duration">blur animation duration</param>
         /// <param name="beginTime">blur animation delay</param>
-        public static void BlurApply(UIElement element,
-            double blurRadius, TimeSpan duration, TimeSpan beginTime)
+        /// <param name="fillBehavior">
+        /// Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
+        /// its active period but its parent is inside its active or hold period.</param>
+        /// <returns>Created animation.</returns>
+        public static DoubleAnimation BlurApply(
+            UIElement element,
+            double blurRadius,
+            TimeSpan duration,
+            TimeSpan beginTime,
+            FillBehavior fillBehavior)
         {
-            BlurEffect blur = new BlurEffect() { Radius = 0 };
+            return BlurApply(
+                element,
+                blurRadius,
+                duration,
+                beginTime,
+                fillBehavior,
+                null);
+        }
+
+        /// <summary>
+        /// Turning blur on.
+        /// </summary>
+        /// <param name="element">bluring element</param>
+        /// <param name="blurRadius">blur radius</param>
+        /// <param name="duration">blur animation duration</param>
+        /// <param name="beginTime">blur animation delay</param>
+        /// <param name="fillBehavior">
+        /// Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
+        /// its active period but its parent is inside its active or hold period.</param>
+        /// <param name="initHandler">Handler that would be called before animation start.
+        /// There you can subscrube on events or reconfigurate settigns.</param>
+        /// <returns>Created animation.</returns>
+        public static DoubleAnimation BlurApply(
+            UIElement element,
+            double blurRadius,
+            TimeSpan duration, 
+            TimeSpan beginTime,
+            FillBehavior fillBehavior,
+            Action<DoubleAnimation> initHandler)
+        {
+            // Configuration g animation.
             DoubleAnimation blurEnable = new DoubleAnimation(0, blurRadius, duration)
-            { BeginTime = beginTime };
+            {
+                BeginTime = beginTime,
+                FillBehavior = fillBehavior
+            };
+
+            // Applying effect.
+            BlurEffect blur = new BlurEffect() { Radius = 0 };
             element.Effect = blur;
-            blur.BeginAnimation(BlurEffect.RadiusProperty, blurEnable);
+
+            // Inform subscribers.
+            initHandler?.Invoke(blurEnable);
+
+            // Start animation.
+            try
+            {
+                blur.BeginAnimation(BlurEffect.RadiusProperty, blurEnable);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return blurEnable;
+        }
+
+
+        /// <summary>
+        /// Turning blur off.
+        /// </summary>
+        /// <param name="element">bluring element</param>
+        /// <param name="duration">blur animation duration</param>
+        /// <param name="beginTime">blur animation delay</param>
+        /// <returns>Created animation.</returns>
+        public static DoubleAnimation BlurDisable(
+            UIElement element,
+            TimeSpan duration,
+            TimeSpan beginTime)
+        {
+            return BlurDisable(
+                element,
+                duration,
+                beginTime,
+                null);
         }
 
         /// <summary>
@@ -51,15 +130,39 @@ namespace WpfHandler.UI.Animations
         /// <param name="element">bluring element</param>
         /// <param name="duration">blur animation duration</param>
         /// <param name="beginTime">blur animation delay</param>
-        public static void BlurDisable(UIElement element, TimeSpan duration, TimeSpan beginTime)
+        /// <param name="initHandler">Handler that would be called before animation start.
+        /// There you can subscrube on events or reconfigurate settigns.</param>
+        /// <returns>Created animation.</returns>
+        public static DoubleAnimation BlurDisable(
+            UIElement element,
+            TimeSpan duration, 
+            TimeSpan beginTime,
+            Action<DoubleAnimation> initHandler)
         {
-            BlurEffect blur = element.Effect as BlurEffect;
-            if (blur == null || blur.Radius == 0)
+            // Validate requirments.
+            if (!(element.Effect is BlurEffect blur) || blur.Radius == 0)
             {
-                return;
+                return null;
             }
+
+            // Configurating animation.
             DoubleAnimation blurDisable = new DoubleAnimation(blur.Radius, 0, duration) { BeginTime = beginTime };
-            blur.BeginAnimation(BlurEffect.RadiusProperty, blurDisable);
+            //blurDisable.FillBehavior = FillBehavior.Stop;
+
+            // Inform subscribers.
+            initHandler?.Invoke(blurDisable);
+
+            // Start animation
+            try
+            {
+                blur.BeginAnimation(BlurEffect.RadiusProperty, blurDisable);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return blurDisable;
         }
     }
 }

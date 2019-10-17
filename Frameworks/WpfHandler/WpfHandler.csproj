@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="UI\Animations\Blur.cs" />
     <Compile Include="UI\Animations\Float.cs" />
+    <Compile Include="UI\Animations\Thinkness.cs" />
     <Compile Include="UI\Controls\CatalogButton.xaml.cs">
       <DependentUpon>CatalogButton.xaml</DependentUpon>
     </Compile>
@@ -86,8 +87,17 @@
     <Compile Include="UI\Controls\LockScreen.xaml.cs">
       <DependentUpon>LockScreen.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Controls\LogonScreen.xaml.cs">
+    <Compile Include="UI\Controls\Logon\LogonPanel.xaml.cs">
+      <DependentUpon>LogonPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\Logon\LogonScreen.xaml.cs">
       <DependentUpon>LogonScreen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\Logon\RegistrationPanel.xaml.cs">
+      <DependentUpon>RegistrationPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\SwitchPanel.xaml.cs">
+      <DependentUpon>SwitchPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Effects\RectBlurEffect.cs" />
     <Resource Include="Shaders\RectBlurEffect.ps">
@@ -124,7 +134,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\Controls\LogonScreen.xaml">
+    <Page Include="UI\Controls\Logon\LogonPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controls\Logon\LogonScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UI\Controls\Logon\RegistrationPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controls\SwitchPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

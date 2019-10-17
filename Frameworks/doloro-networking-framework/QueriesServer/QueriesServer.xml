@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>QueriesServer</name>
+    </assembly>
+    <members>
+        <member name="T:QueriesServer.Server">
+            <summary>
+            Public servers that allow anonimous connection.
+            Reciving clients' queries and redirect in to target infrastructure servers by the comutation table.
+            Reciving answer from servers and redirect it to target clients.
+            </summary>
+        </member>
+        <member name="F:QueriesServer.Server.OPEN_CHANEL">
+            <summary>
+            Main public pipe that will listen queries.
+            </summary>
+        </member>
+        <member name="M:QueriesServer.Server.SetDefaultRoutingTable">
+            <summary>
+            Set default routing table's draft to resources\routing\ROUTING.xml file.
+            </summary>
+        </member>
+    </members>
+</doc>

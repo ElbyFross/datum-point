@@ -57,17 +57,6 @@ namespace DatumPoint.Networking
         protected static Client active;
         
         /// <summary>
-        /// Routing tables loaded to that client.
-        /// </summary>
-        public RoutingTable RoutingTable
-        {
-            get
-            {
-                return routingTable;
-            }
-        }
-
-        /// <summary>
         /// Instiniate client object. Loadign dlls and plugins.
         /// </summary>
         public Client()
@@ -119,9 +108,21 @@ namespace DatumPoint.Networking
         /// </summary>
         public void InitRoutingTables()
         {
+            #region Routing
             // Loading roting tables to detect servers.
             LoadRoutingTables(AppDomain.CurrentDomain.BaseDirectory + "plugins\\");
 
+            // If routing tables not found.
+            if(routingTable.intructions.Count == 0)
+            {
+                // Generate new rt draft.
+                routingTable = DefaultRoutingTable();
+                // Set to storage.
+                RoutingTable.SaveRoutingTable(routingTable);
+            }
+            #endregion
+
+            #region Logon as guest
             // Logon all partial authorized instruction.
             foreach (Instruction instruction in routingTable.intructions)
             {
@@ -129,19 +130,44 @@ namespace DatumPoint.Networking
                 if (instruction is PartialAuthorizedInstruction pai)
                 {
                     // Trying to recive guest token from server.
-                    pai.TryToGetGuestTokenAsync(null,
-                        AuthorityController.Session.Current.TerminationTokenSource.Token); // Using Seestion termination token as uniform 
-                                                                               //to provide possibility to stop all async operation before application exit.
+                    _ = pai.TryToGetGuestTokenAsync(AuthorityController.Session.Current.TerminationTokenSource.Token); 
+                    // Using Seestion termination token as uniform 
+                    // to provide possibility to stop all async operation before application exit.
                 }
             }
+            #endregion
         }
-        
+
         /// <summary>
         /// Make first start of client.
         /// </summary>
         public static void Init()
         {
             _ = Active;
+        }
+
+        /// <summary>
+        /// Fenerate default routing table draft.
+        /// Use in case if table not found after loading.
+        /// </summary>
+        /// <returns>Generated table.</returns>
+        public RoutingTable DefaultRoutingTable()
+        {
+            RoutingTable rt = new RoutingTable();
+            rt.intructions.Add(new AuthorizedInstruction()
+            {
+                title = "QueriesServer",
+                commentary = "Routing instruction to server that would be a queries' hub of all commands from client.",
+                encryption = true, 
+                pipeName = "THB_QUERY_SERVER", 
+                logonConfig = new PipesProvider.Security.LogonConfig("", "", "WORKGROUP"),
+                routingIP = "localhost",
+                queryPatterns = new string[0],
+                guestChanel = "publicGuests",
+                authLogin = "",
+                authPassword = ""
+            });
+            return rt;
         }
     }
 }

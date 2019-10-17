@@ -89,7 +89,7 @@ namespace DatumPoint.UI.Windows
 
             // Subscribe on events
             SizeChanged += MainWindow_SizeChanged; // Window size changing.
-            logonScreen.LoginCallback += LogonScreen_LoginButton; // Login button
+            logonScreen.LogonPanel_LoginCallback += LogonScreen_LoginButton; // Login button
             #endregion
 
             #region UniformClient Init
@@ -163,7 +163,7 @@ namespace DatumPoint.UI.Windows
         {
             // Unsubscribe from events.
             SizeChanged -= MainWindow_SizeChanged;
-            logonScreen.LoginCallback -= LogonScreen_LoginButton;
+            try { logonScreen.LogonPanel_LoginCallback -= LogonScreen_LoginButton; } catch { }
         }
         #endregion
 
@@ -194,14 +194,20 @@ namespace DatumPoint.UI.Windows
         /// Handle logon process.
         /// </summary>
         /// <param name="sender"></param>
-        private void LogonScreen_LoginButton(object sender)
+        private async void LogonScreen_LoginButton(object sender)
         {
             // Lock screen until lockon confiramtion. 
             overlay.Lock("Authorization", main);//, controlPanel, canvas, logonScreen);
 
             // Detecting routing instruction suitable for user's queries.
-            Client.Active.RoutingTable.TryGetRoutingInstruction("token&guid&user&logon", out Instruction instruction);
-            if (!(instruction is PartialAuthorizedInstruction queriesChanelInstruction))
+            BaseClient.routingTable.TryGetRoutingInstruction(
+                new UniformQueries.Query(
+                    new UniformQueries.QueryPart("logon"),
+                    new UniformQueries.QueryPart("user"),
+                    new UniformQueries.QueryPart("token"),
+                    new UniformQueries.QueryPart("guid")),
+                out Instruction instruction);
+            if (!(instruction is AuthorizedInstruction queriesChanelInstruction))
             {
                 // Enable routing error message.
                 MessageBox.Show("Routing instruction for LOGON query not found.\n" +
@@ -209,45 +215,57 @@ namespace DatumPoint.UI.Windows
                 return;
             }
 
-            // Create new processor that provide logon operation.
-            USER_LOGON.LogonProcessor processor = new USER_LOGON.LogonProcessor();
+            // Set entry data.
+            queriesChanelInstruction.authLogin = logonScreen.logonPanel.Login;
+            queriesChanelInstruction.authPassword = logonScreen.logonPanel.Password;
 
-            // Sign up on callback that would be called when logon operation would be passed.
-            processor.ProcessingFinished += LogonCallback;
+            // Request logon
+            queriesChanelInstruction.TryToLogonAsync(LogonCallback, AuthorityController.Session.Current.TerminationTokenSource.Token);
 
-            // Request logon.
-            processor.TryToLogonAsync(
-                queriesChanelInstruction.GuestToken,
-                logonScreen.Login,
-                logonScreen.Password,
-                queriesChanelInstruction.routingIP,
-                queriesChanelInstruction.pipeName);
+            bool answerReceived = false;
 
             // Callback that would be called when server returns answer.
-            void LogonCallback(
-                UniformQueries.Executable.QueryProcessor _,
-                bool result,
-                object message)
+            void LogonCallback(AuthorizedInstruction ai)
             {
-                // Unsubscribe.
-                processor.ProcessingFinished -= LogonCallback;
-
-                // Unlock overlay.
-                overlay.Unlock();
-
-                // If success logoned.
-                if (result)
-                {
-                    //message as string;
-
-
-                    // TODO Disable logon menu.
-                }
-                else
-                {
-                    // TODO Show up error message.
-                }
+                // Unlocking thread.
+                answerReceived = true;
             };
+
+            // Waiting thread.
+            while(!answerReceived)
+            {
+                await Task.Delay(5);
+                //System.Threading.Thread.Sleep(5);
+            }
+
+            // Unlock overlay.
+            overlay.Unlock();
+
+            // Clear data.
+            queriesChanelInstruction.authLogin = null;
+            queriesChanelInstruction.authPassword = null;
+
+            // If success logoned.
+            if (queriesChanelInstruction.IsFullAuthorized)
+            {
+                //message as string;
+
+
+                // TODO Disable logon menu.
+                logonScreen.IsHitTestVisible = false;
+
+                WpfHandler.UI.Animations.Float.FloatAniamtion(
+                    logonScreen,
+                    "Opacity",
+                    new PropertyPath(Control.OpacityProperty),
+                    new TimeSpan(0, 0, 0, 1),
+                    FillBehavior.HoldEnd,
+                    1, 0);
+            }
+            else
+            {
+                // TODO Show up error message.
+            }
         }
         #endregion
     }
