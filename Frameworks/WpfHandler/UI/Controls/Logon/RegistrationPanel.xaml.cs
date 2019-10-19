@@ -34,7 +34,6 @@ namespace WpfHandler.UI.Controls.Logon
     /// </summary>
     public partial class RegistrationPanel : UserControl
     {
-
         public static readonly DependencyProperty ContinueCallbackProperty = DependencyProperty.Register(
           "ContinueCallback", typeof(Action<object>), typeof(RegistrationPanel));
 
@@ -79,6 +78,115 @@ namespace WpfHandler.UI.Controls.Logon
             get
             {
                 return Math.Min(Math.Max(150, ActualWidth - 20), 400);
+            }
+        }
+
+        /// <summary>
+        /// Current login value in the field.
+        /// </summary>
+        public string Login
+        {
+            get { return regLoginField.Text; }
+            set { regLoginField.Text = value; }
+        }
+
+        /// <summary>
+        /// Current password value in the field.
+        /// </summary>
+        public string Password
+        {
+            get { return regPasswordField.Text; }
+            set { regPasswordField.Text = value; }
+        }
+
+        /// <summary>
+        /// Current password's confirmation value in the field.
+        /// </summary>
+        public string PasswordConfirmation
+        {
+            get { return regPasswordField2.Text; }
+            set { regPasswordField2.Text = value; }
+        }
+        
+        /// <summary>
+        /// Current first name value in the field.
+        /// </summary>
+        public string FirstName
+        {
+            get { return regFNameField.Text; }
+            set { regFNameField.Text = value; }
+        }
+
+        /// <summary>
+        /// Current first name value in the field.
+        /// </summary>
+        public string MiddleName
+        {
+            get { return regMNameField.Text; }
+            set { regMNameField.Text = value; }
+        }
+
+        /// <summary>
+        /// Current first name value in the field.
+        /// </summary>
+        public string LastName
+        {
+            get { return regLNameField.Text; }
+            set { regLNameField.Text = value; }
+        }
+
+        /// <summary>
+        /// Does "password not match" error lable is enabled.
+        /// </summary>
+        public bool PasswordNotMatchErrorLable
+        {
+            get { return regPanel_error_lPNM.Visibility == Visibility.Visible; }
+            set { regPanel_error_lPNM.Visibility = value ? Visibility.Visible : Visibility.Collapsed; }
+        }
+
+        /// <summary>
+        /// Does "fiill all field" error lable is enabled.
+        /// </summary>
+        public bool FillAllFieldErrorLable
+        {
+            get { return regPanel_error_lFAF.Visibility == Visibility.Visible; }
+            set { regPanel_error_lFAF.Visibility = value ? Visibility.Visible : Visibility.Collapsed; }
+        }
+        
+        /// <summary>
+        /// Error message tha twould displayed at UI's lable.
+        /// </summary>
+        public string ErrorMessage
+        {
+            set
+            {
+                // Hide message if null.
+                if (value == null)
+                {
+                    regPanel_error_server.Visibility = Visibility.Collapsed;
+                    return;
+                }
+
+                // Show message.
+                regPanel_error_server.Visibility = Visibility.Visible;
+                regPanel_error_server.Content = value;
+            }
+        }
+
+        /// <summary>
+        /// Check if passwords is the same and not null.
+        /// </summary>
+        public bool IsPasswordsTheSame
+        {
+            get
+            {
+                if (regPasswordField.Text == null ||
+                   regPasswordField2.Text == null)
+                {
+                    return false;
+                }
+
+                return string.Equals(regPasswordField.Text, regPasswordField2.Text);
             }
         }
         #endregion
@@ -153,7 +261,6 @@ namespace WpfHandler.UI.Controls.Logon
         {
             BackCallback?.Invoke(sender);
         }
-
         #endregion
     }
 }

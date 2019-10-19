@@ -133,17 +133,5 @@ namespace WpfHandler.UI.Animations
 
             return storyboard;
         }
-
-        /// <summary>
-        /// Lerping values by ratio.
-        /// </summary>
-        /// <param name="firstFloat">Left border.</param>
-        /// <param name="secondFloat">Right border.</param>
-        /// <param name="by">Ration.</param>
-        /// <returns></returns>
-        float Lerp(float firstFloat, float secondFloat, float by)
-        {
-            return firstFloat * (1 - by) + secondFloat * by;
-        }
     }
 }

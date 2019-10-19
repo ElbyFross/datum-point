@@ -99,6 +99,26 @@ namespace WpfHandler.UI.Controls.Logon
             }
         }
 
+        /// <summary>
+        /// Error message tha twould displayed at UI's lable.
+        /// </summary>
+        public string ErrorMessage
+        {
+            set
+            {
+                // Hide message if null.
+                if(value == null)
+                {
+                    errorMessage.Visibility = Visibility.Collapsed;
+                    return;
+                }
+
+                // Show message.
+                errorMessage.Visibility = Visibility.Visible;
+                errorMessage.Content = value;
+            }
+        }
+
         #region Constructor\destructor
         public LogonPanel()
         {

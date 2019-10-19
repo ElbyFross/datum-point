@@ -24,13 +24,17 @@ limitations under the License.-->
         xmlns:effects="clr-namespace:WpfHandler.UI.Effects;assembly=WpfHandler"
         mc:Ignorable="d"
         Title="MainWindow" MinHeight="480" Height="600" MinWidth="640" Width="1067"
-        Loaded="Window_Loaded">
+        Loaded="Window_Loaded"
+        Closing="Window_Closing">
     <Window.Resources>
-        <BitmapImage x:Key="logoutIcon" CreateOptions="IgnoreImageCache" CacheOption="OnLoad" UriSource="/DatumPointClient;component/Resources/Images/logout-24.png"/>
+        <BitmapImage x:Key="logoutIcon" 
+                     CreateOptions="IgnoreImageCache" 
+                     CacheOption="OnLoad" 
+                     UriSource="/DatumPointClient;component/Resources/Images/logout-24.png"/>
         <effects:RectBlurEffect x:Key="rectBlurEffect"/>
     </Window.Resources>
 
-    <Grid >
+    <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50.5"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>

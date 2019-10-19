@@ -147,7 +147,12 @@ namespace WpfHandler.UI.Animations
 
             // Configurating animation.
             DoubleAnimation blurDisable = new DoubleAnimation(blur.Radius, 0, duration) { BeginTime = beginTime };
-            //blurDisable.FillBehavior = FillBehavior.Stop;
+            blurDisable.FillBehavior = FillBehavior.HoldEnd;
+
+            blurDisable.Completed += delegate (object sender, EventArgs e)
+            {
+                element.Effect = null;
+            };
 
             // Inform subscribers.
             initHandler?.Invoke(blurDisable);

@@ -53,7 +53,8 @@ namespace DatumPoint.UI.Windows
         /// <summary>
         /// List that contain menu's controls.
         /// </summary>
-        public ObservableCollection<FrameworkElement> MenuButtons { get; set; } = new ObservableCollection<FrameworkElement>();
+        public ObservableCollection<FrameworkElement> MenuButtons { get; set; } = 
+            new ObservableCollection<FrameworkElement>();
 
         /// <summary>
         /// Compute panel width relative to thw window's size.
@@ -90,6 +91,7 @@ namespace DatumPoint.UI.Windows
             // Subscribe on events
             SizeChanged += MainWindow_SizeChanged; // Window size changing.
             logonScreen.LogonPanel_LoginCallback += LogonScreen_LoginButton; // Login button
+            logonScreen.RegPanel_ContinueCallback += LogonScreen_RegistrationButton; // Registration button
             #endregion
 
             #region UniformClient Init
@@ -158,16 +160,9 @@ namespace DatumPoint.UI.Windows
             MainMenu.ItemsSource = MenuButtons;
             #endregion
         }
-
-        ~MainWindow()
-        {
-            // Unsubscribe from events.
-            SizeChanged -= MainWindow_SizeChanged;
-            try { logonScreen.LogonPanel_LoginCallback -= LogonScreen_LoginButton; } catch { }
-        }
         #endregion
 
-        #region Callbacks
+        #region Winsow callbacks
         /// <summary>
         /// Callback that will has been calling when widow size will be changed.
         /// </summary>
@@ -190,6 +185,31 @@ namespace DatumPoint.UI.Windows
             WpfHandler.Plugins.API.OpenGUI(Plugins[0]);
         }
 
+        /// <summary>
+        /// Callback that will has been calling during widow closing.
+        /// Will terminate all registred async operations, stop transmissions, stop server instances.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            // Unsubscribe from events.
+            SizeChanged -= MainWindow_SizeChanged;
+            try { logonScreen.LogonPanel_LoginCallback -= LogonScreen_LoginButton; } catch { }
+            try { logonScreen.RegPanel_ContinueCallback -= LogonScreen_RegistrationButton; } catch { }
+
+            // Close lines.
+            ClientAPI.CloseAllTransmissionLines();
+            // Close servers.
+            PipesProvider.Server.ServerAPI.StopAllServers();
+
+            // Terminate async operations.
+            AuthorityController.Session.Current.TerminationTokenSource.Cancel();
+            BaseClient.TerminationTokenSource.Cancel();
+        }
+        #endregion
+
+        #region Logon screen callbacks
         /// <summary>
         /// Handle logon process.
         /// </summary>
@@ -220,16 +240,27 @@ namespace DatumPoint.UI.Windows
             queriesChanelInstruction.authPassword = logonScreen.logonPanel.Password;
 
             // Request logon
-            queriesChanelInstruction.TryToLogonAsync(LogonCallback, AuthorityController.Session.Current.TerminationTokenSource.Token);
+            queriesChanelInstruction.TryToLogonAsync(null, AuthorityController.Session.Current.TerminationTokenSource.Token);
+            queriesChanelInstruction.LogonHandler.ProcessingFinished += LogonFinishedCallback;
 
             bool answerReceived = false;
+            bool logonResult = false;
+            object sharedMessage = null;
 
             // Callback that would be called when server returns answer.
-            void LogonCallback(AuthorizedInstruction ai)
+            void LogonFinishedCallback(UniformQueries.Executable.QueryProcessor _, bool result, object message)
             {
+                // Unsubscribe from events.
+                queriesChanelInstruction.LogonHandler.ProcessingFinished -= LogonFinishedCallback;
+
+                // Buferize result.
+                logonResult = result;
+                sharedMessage = message;
+
                 // Unlocking thread.
                 answerReceived = true;
-            };
+
+            }
 
             // Waiting thread.
             while(!answerReceived)
@@ -239,7 +270,15 @@ namespace DatumPoint.UI.Windows
             }
 
             // Unlock overlay.
-            overlay.Unlock();
+            try
+            {
+                overlay.Unlock();
+            }
+            catch
+            {
+                // Drop if operation was canceled.
+                return;
+            }
 
             // Clear data.
             queriesChanelInstruction.authLogin = null;
@@ -248,9 +287,6 @@ namespace DatumPoint.UI.Windows
             // If success logoned.
             if (queriesChanelInstruction.IsFullAuthorized)
             {
-                //message as string;
-
-
                 // TODO Disable logon menu.
                 logonScreen.IsHitTestVisible = false;
 
@@ -264,8 +300,183 @@ namespace DatumPoint.UI.Windows
             }
             else
             {
-                // TODO Show up error message.
+               
             }
+
+            if (sharedMessage != null)
+            {
+                #region Try to convert message to string
+                string stringMessage = null;
+                if (sharedMessage is UniformQueries.QueryPart messageQP)
+                {
+                    stringMessage = messageQP.PropertyValueString;
+                }
+                else if(sharedMessage is string messageS)
+                {
+                    stringMessage = messageS;
+                }
+                #endregion
+
+                #region Log message
+                if (!string.IsNullOrEmpty(stringMessage))
+                {
+                    // If received error.
+                    if (stringMessage.StartsWith("error", StringComparison.OrdinalIgnoreCase))
+                    {
+                        int messageStartIndex = stringMessage.IndexOf(':');
+                        if (messageStartIndex != -1 && stringMessage.Length > messageStartIndex + 1)
+                        {
+                            logonScreen.logonPanel.ErrorMessage = stringMessage.Substring(messageStartIndex + 1).Trim();
+                        }
+                        else
+                        {
+                            logonScreen.logonPanel.ErrorMessage = stringMessage;
+                        }
+                    }
+                }
+                #endregion
+            }
+        }
+
+        /// <summary>
+        /// Handle registration process.
+        /// </summary>
+        /// <param name="sender"></param>
+        private async void LogonScreen_RegistrationButton(object sender)
+        {
+            #region Validate data
+            bool IsFieledsFilled = true; // Marker that contain surfacly data validation to prevent braking of base rules.
+
+            if (string.IsNullOrEmpty(logonScreen.registrationPanel.Login)) IsFieledsFilled = false;
+            if (string.IsNullOrEmpty(logonScreen.registrationPanel.Password)) IsFieledsFilled = false;
+            if (string.IsNullOrEmpty(logonScreen.registrationPanel.PasswordConfirmation)) IsFieledsFilled = false;
+            if (string.IsNullOrEmpty(logonScreen.registrationPanel.FirstName)) IsFieledsFilled = false;
+            if (string.IsNullOrEmpty(logonScreen.registrationPanel.LastName)) IsFieledsFilled = false;
+
+            // Enable/disable fields fill error.
+            logonScreen.registrationPanel.FillAllFieldErrorLable = !IsFieledsFilled;
+
+            // Enable/disable passwords matching error.
+            bool passwordsValid = logonScreen.registrationPanel.IsPasswordsTheSame;
+            logonScreen.registrationPanel.PasswordNotMatchErrorLable = !passwordsValid;
+
+            // Drop if invalid.
+            if(!passwordsValid || !IsFieledsFilled) return;
+            #endregion
+
+            #region Registrate user
+            // Lock screen until lockon confiramtion. 
+            overlay.Lock("Authorization", main);//, controlPanel, canvas, logonScreen);
+
+            // Detecting routing instruction suitable for user's queries.
+            BaseClient.routingTable.TryGetRoutingInstruction(
+                new UniformQueries.Query(
+                    new UniformQueries.QueryPart("new"),
+                    new UniformQueries.QueryPart("user"),
+                    new UniformQueries.QueryPart("token"),
+                    new UniformQueries.QueryPart("guid")),
+                out Instruction instruction);
+            if (!(instruction is AuthorizedInstruction queriesChanelInstruction))
+            {
+                // Enable routing error message.
+                MessageBox.Show("Routing instruction for LOGON query not found.\n" +
+                    "Please bw sure that you has PartialAuthorizedInstruction that allow to share queries with user&logon parts");
+                return;
+            }
+
+            // Check if instruction is has authorized guest token.
+            if (!queriesChanelInstruction.IsPartialAuthorized)
+            {
+                // Try to logon.
+                if (await queriesChanelInstruction.TryToGetGuestTokenAsync(
+                   AuthorityController.Session.Current.TerminationTokenSource.Token))
+                {
+                    await SendRegistrationCallback();
+                }
+            }
+            else
+            {
+                await SendRegistrationCallback();
+            }
+
+            // Unlock overlay.
+            overlay.Unlock();
+            #endregion
+            
+            #region Send registration query
+            // Method that build and send query with registration data to server.
+            async Task SendRegistrationCallback()
+            {
+                // bufer that would contain received answer from server.
+                UniformQueries.Query receivedAnswer = null;
+
+                try
+                {
+                    // Send query to server.
+                    BaseClient.EnqueueDuplexQueryViaPP(
+                        queriesChanelInstruction.routingIP,
+                        queriesChanelInstruction.pipeName,
+                        new UniformQueries.Query(
+                            // Enable encryption
+                            new UniformQueries.Query.EncryptionInfo(),
+
+                            // Add query stamp.
+                            new UniformQueries.QueryPart("token", queriesChanelInstruction.GuestToken),
+                            new UniformQueries.QueryPart("guid", "logScr_RegReq"),
+
+                            // Add core data.
+                            new UniformQueries.QueryPart("new"),
+                            new UniformQueries.QueryPart("user"),
+                            new UniformQueries.QueryPart("login", logonScreen.registrationPanel.Login),
+                            new UniformQueries.QueryPart("password", logonScreen.registrationPanel.Password),
+
+                            // Add personal info.
+                            new UniformQueries.QueryPart("fn", logonScreen.registrationPanel.FirstName),
+                            new UniformQueries.QueryPart("ln", logonScreen.registrationPanel.LastName),
+
+                            // Add device stamp.
+                            new UniformQueries.QueryPart("os", Environment.OSVersion.VersionString),
+                            new UniformQueries.QueryPart("mac", PipesProvider.Networking.Info.MacAdsress),
+                            new UniformQueries.QueryPart("stamp", DateTime.Now.ToBinary().ToString())
+                        ),
+                        delegate (TransmissionLine line, UniformQueries.Query answer)
+                        {
+                            receivedAnswer = answer;
+                        });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+
+                // Waiting for server answer.
+                while (receivedAnswer == null)
+                {
+                    await Task.Delay(5);
+                }
+
+                #region Log error
+                // Check if error received.
+                string errorMessage = null;
+                try { errorMessage = receivedAnswer.First.PropertyValueString; } catch { }
+
+                // If received error.
+                if (errorMessage != null &&
+                    errorMessage.StartsWith("error", StringComparison.OrdinalIgnoreCase))
+                {
+                    int messageStartIndex = errorMessage.IndexOf(':');
+                    if (messageStartIndex != -1 && errorMessage.Length > messageStartIndex + 1)
+                    {
+                        logonScreen.registrationPanel.ErrorMessage = errorMessage.Substring(messageStartIndex + 1);
+                    }
+                    else
+                    {
+                        logonScreen.registrationPanel.ErrorMessage = errorMessage;
+                    }
+                }
+                #endregion
+            }
+            #endregion
         }
         #endregion
     }

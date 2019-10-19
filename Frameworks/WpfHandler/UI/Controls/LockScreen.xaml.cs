@@ -55,7 +55,7 @@ namespace WpfHandler.UI.Controls
         /// <summary>
         /// Method that will has been calling during click on operation cancel button.
         /// </summary>
-        public System.Action<object> OperationCancelCallback { get; set; }
+        public Action<object> OperationCancelCallback { get; set; }
 
         public LockScreen()
         {
@@ -130,7 +130,7 @@ namespace WpfHandler.UI.Controls
             #region Block lock UI
             // Cancel button
             lockCancelButton.IsHitTestVisible = false;
-            WpfHandler.UI.Animations.Float.FloatAniamtion(this,
+            Animations.Float.FloatAniamtion(this,
                 lockCancelButton.Name,
                 opacityPropertyPath,
                 lockAnimationDuration,
@@ -138,7 +138,7 @@ namespace WpfHandler.UI.Controls
                 1, 0);
 
             // Lock lable
-            WpfHandler.UI.Animations.Float.FloatAniamtion(this,
+            Animations.Float.FloatAniamtion(this,
                 lockLable.Name,
                 opacityPropertyPath,
                 lockAnimationDuration,
@@ -149,14 +149,14 @@ namespace WpfHandler.UI.Controls
             // Unlock elements.
             foreach (FrameworkElement c in lockedEllements)
             {
-                WpfHandler.UI.Animations.Blur.BlurDisable(c, lockAnimationDuration, TimeSpan.Zero);
+                Animations.Blur.BlurDisable(c, lockAnimationDuration, TimeSpan.Zero);
             }
 
             // Drop buffer.
             lockedEllements = null;
         }
 
-        private void LockCancelCallbackHandler(object sender)
+        public void LockCancelCallbackHandler(object sender)
         {
             OperationCancelCallback?.Invoke(sender);
             Unlock();

@@ -153,7 +153,7 @@ namespace WpfHandler.UI.Controls.Logon
 
         private void RegPanel_ContinueCallbackHandler(object sender)
         {
-            MessageBox.Show("Operation indefined.");
+            //MessageBox.Show("Operation indefined.");
         }
     }
 }
