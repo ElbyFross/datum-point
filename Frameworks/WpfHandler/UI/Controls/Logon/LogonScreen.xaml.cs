@@ -103,7 +103,14 @@ namespace WpfHandler.UI.Controls.Logon
             }
         }
 
+        /// <summary>
+        /// Instance of logon panel.
+        /// </summary>
         public readonly LogonPanel logonPanel = new LogonPanel();
+
+        /// <summary>
+        /// Instance of refistration panel.
+        /// </summary>
         public readonly RegistrationPanel registrationPanel = new RegistrationPanel();
 
         public LogonScreen()
@@ -127,6 +134,15 @@ namespace WpfHandler.UI.Controls.Logon
 
             try { RegPanel_BackCallback -= RegPanel_BackCallbackHandler; } catch { };
             try { RegPanel_ContinueCallback -= RegPanel_ContinueCallbackHandler; } catch { };
+        }
+
+        /// <summary>
+        /// Clear all temporal data and the data from forms.
+        /// </summary>
+        public void Clear()
+        {
+            logonPanel.Clear();
+            registrationPanel.Clear();
         }
 
         private void LogonPanel_Loaded(object sender, RoutedEventArgs e)

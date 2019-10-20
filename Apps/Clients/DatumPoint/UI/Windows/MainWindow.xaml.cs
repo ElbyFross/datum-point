@@ -269,40 +269,31 @@ namespace DatumPoint.UI.Windows
                 //System.Threading.Thread.Sleep(5);
             }
 
-            // Unlock overlay.
-            try
-            {
-                overlay.Unlock();
-            }
-            catch
-            {
-                // Drop if operation was canceled.
-                return;
-            }
-
+           
             // Clear data.
             queriesChanelInstruction.authLogin = null;
             queriesChanelInstruction.authPassword = null;
+            
+            // Unlock overlay. Drop if operation was canceled
+            try { overlay.Unlock(); } catch { return; }
+
+            // Wait till end of blue animation.
+            await Task.Delay(overlay.lockAnimationDuration.Add(overlay.lockAnimationDuration));
 
             // If success logoned.
             if (queriesChanelInstruction.IsFullAuthorized)
             {
-                // TODO Disable logon menu.
-                logonScreen.IsHitTestVisible = false;
+                await DisableLogonScreenAsync();
 
-                WpfHandler.UI.Animations.Float.FloatAniamtion(
-                    logonScreen,
-                    "Opacity",
-                    new PropertyPath(Control.OpacityProperty),
-                    new TimeSpan(0, 0, 0, 1),
-                    FillBehavior.HoldEnd,
-                    1, 0);
+                // TODO Impersionate like authorized user.
             }
             else
             {
-               
-            }
+                // Drop auth data.
+                logonScreen.logonPanel.Password = "";
+            }            
 
+            // Operate shared message if exist.
             if (sharedMessage != null)
             {
                 #region Try to convert message to string
@@ -380,7 +371,7 @@ namespace DatumPoint.UI.Windows
             {
                 // Enable routing error message.
                 MessageBox.Show("Routing instruction for LOGON query not found.\n" +
-                    "Please bw sure that you has PartialAuthorizedInstruction that allow to share queries with user&logon parts");
+                    "Please be sure that you has PartialAuthorizedInstruction that allow to share queries with user&logon parts");
                 return;
             }
 
@@ -475,9 +466,49 @@ namespace DatumPoint.UI.Windows
                     }
                 }
                 #endregion
+                else
+                {
+                    // Disable logon screen.
+                    await DisableLogonScreenAsync();
+
+                    // TODO Impersionate like authorized user.
+                }
             }
             #endregion
         }
         #endregion
+
+        /// <summary>
+        /// Disabling logen screen and open acess to main window.
+        /// </summary>
+        protected async Task DisableLogonScreenAsync()
+        {
+            // Drop auth data.
+            logonScreen.Clear();
+
+            //Disable logon menu.
+            //logonScreen.IsHitTestVisible = false;
+
+            // Hide panel.
+            WpfHandler.UI.Animations.Thinkness.ThinknessAniamtion(
+                this,
+                logonScreen.Name,
+                new PropertyPath(Control.MarginProperty),
+                new TimeSpan(0, 0, 0, 0, 500),
+                new Thickness(0, -0.5f, 0, 0),
+                new Thickness(0, -0.5f - main.ActualHeight - 5, 0, main.ActualHeight + 5),
+                FillBehavior.HoldEnd);
+
+            await Task.Delay(new TimeSpan(0, 0, 0, 0, 250));
+
+            // Hide curtain
+            WpfHandler.UI.Animations.Float.FloatAniamtion(
+                this,
+                curtain.Name,
+                new PropertyPath(Control.OpacityProperty),
+                new TimeSpan(0, 0, 0, 0, 350),
+                FillBehavior.HoldEnd,
+                1, 0);
+        }
     }
 }

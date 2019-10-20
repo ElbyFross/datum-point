@@ -218,6 +218,22 @@ namespace WpfHandler.UI.Controls.Logon
         }
         #endregion
 
+        /// <summary>
+        /// Clear all data filled to form.
+        /// </summary>
+        public void Clear()
+        {
+            Login = "";
+            Password = "";
+            PasswordConfirmation = "";
+            FirstName = "";
+            MiddleName = "";
+            LastName = "";
+            PasswordNotMatchErrorLable = false;
+            FillAllFieldErrorLable = false;
+            ErrorMessage = null;
+        }
+
         #region Callbacks
         /// <summary>
         /// Callback that will has been calling when widow size will be changed.

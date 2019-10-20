@@ -33,7 +33,7 @@ namespace WpfHandler.UI.Animations
         /// Start float animation.
         /// </summary>
         /// <param name="parent">Object that contains property.</param>
-        /// <param name="propertyName">A name of the property.</param>
+        /// <param name="controlName">A name of the UI Elemnt.</param>
         /// <param name="propertyPath">A path that describe the dependency property to be animated.</param>
         /// <param name="duration">How many time would take transit.</param>
         /// <param name="fillBehavior">
@@ -44,7 +44,7 @@ namespace WpfHandler.UI.Animations
         /// <returns>Created storyboard.</returns>
         public static Storyboard FloatAniamtion(
             FrameworkElement parent,
-            string propertyName,
+            string controlName,
             PropertyPath propertyPath,
             TimeSpan duration,
             FillBehavior fillBehavior,
@@ -52,7 +52,7 @@ namespace WpfHandler.UI.Animations
         {
             return FloatAniamtion(
                parent,
-               propertyName,
+               controlName,
                propertyPath,
                duration,
                fillBehavior,
@@ -64,7 +64,7 @@ namespace WpfHandler.UI.Animations
         /// Start float animation.
         /// </summary>
         /// <param name="parent">Object that contains property.</param>
-        /// <param name="propertyName">A name of the property.</param>
+        /// <param name="controlName">A name of the UI element.</param>
         /// <param name="propertyPath">A path that describe the dependency property to be animated.</param>
         /// <param name="duration">How many time would take transit.</param>
         /// <param name="fillBehavior">
@@ -77,7 +77,7 @@ namespace WpfHandler.UI.Animations
         /// <returns>Created storyboard.</returns>
         public static Storyboard FloatAniamtion(
             FrameworkElement parent, 
-            string propertyName, 
+            string controlName, 
             PropertyPath propertyPath,
             TimeSpan duration,
             FillBehavior fillBehavior,
@@ -99,7 +99,7 @@ namespace WpfHandler.UI.Animations
             };
 
             // Configure the animation to target de property Opacity
-            Storyboard.SetTargetName(animation, propertyName);
+            Storyboard.SetTargetName(animation, controlName);
             Storyboard.SetTargetProperty(animation, propertyPath);
             
             // Add the animation to the storyboard
