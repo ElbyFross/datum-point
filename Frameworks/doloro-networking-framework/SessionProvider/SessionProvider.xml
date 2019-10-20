@@ -12,5 +12,23 @@
             - Control rights.
             </summary>
         </member>
+        <member name="M:SessionProvider.Server.CustomArgsReactor(System.String[])">
+            <summary>
+            Processing arguments suitable to that server.
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:SessionProvider.Server.InitSqlOperator">
+            <summary>
+            Requiesting all required dat afor SQL operator work.
+            </summary>
+        </member>
+        <member name="M:SessionProvider.Server.CustomComands(System.String)">
+            <summary>
+            Perform command suitable for that server.
+            </summary>
+            <param name="command"></param>
+            <returns>Is command executed.</returns>
+        </member>
     </members>
 </doc>

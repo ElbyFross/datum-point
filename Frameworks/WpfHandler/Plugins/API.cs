@@ -31,7 +31,7 @@ namespace WpfHandler.Plugins
         /// Load plugins from assembly and instiniate them to list.
         /// </summary>
         /// <returns></returns>
-        public static System.Collections.Generic.IEnumerable<IPlugin> LoadPluginsEnumerable()
+        public static IEnumerable<IPlugin> LoadPluginsEnumerable()
         {
             // Load query's processors.
             System.Reflection.Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
@@ -60,7 +60,8 @@ namespace WpfHandler.Plugins
         /// <param name="list"></param>
         public static System.Collections.ObjectModel.ObservableCollection<IPlugin> LoadPluginsCollection()
         {
-            System.Collections.ObjectModel.ObservableCollection<Plugins.IPlugin> collection = new System.Collections.ObjectModel.ObservableCollection<Plugins.IPlugin>();
+            System.Collections.ObjectModel.ObservableCollection<IPlugin> collection = 
+                new System.Collections.ObjectModel.ObservableCollection<IPlugin>();
 
             // Load query's processors.
             System.Reflection.Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
@@ -69,13 +70,13 @@ namespace WpfHandler.Plugins
             foreach (System.Reflection.Assembly assembly in assemblies)
             {
                 // Get all types for assembly.
-                foreach (System.Type type in assembly.GetTypes())
+                foreach (Type type in assembly.GetTypes())
                 {
                     // Check if this type is subclass of query.
                     if (type.GetInterface("IPlugin") != null)
                     {
                         // Instiniating querie processor.
-                        Plugins.IPlugin instance = (Plugins.IPlugin)Activator.CreateInstance(type);
+                        IPlugin instance = (IPlugin)Activator.CreateInstance(type);
                         collection.Add(instance);
                         Console.WriteLine("{0}", type.Name);
                     }
