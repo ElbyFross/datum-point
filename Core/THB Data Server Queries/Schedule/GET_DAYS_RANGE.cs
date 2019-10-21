@@ -18,8 +18,11 @@ using System.Text;
 using UniformQueries;
 using UniformQueries.Executable;
 
-namespace DatumPoint.Queries
+namespace DatumPoint.Queries.Schedule
 {
+    /// <summary>
+    /// Returns data relative to the certen period in days.
+    /// </summary>
     public class GET_DAYS_RANGE : IQueryHandler
     {
         public string Description(string cultureKey)
@@ -44,18 +47,9 @@ namespace DatumPoint.Queries
 
         public bool IsTarget(Query query)
         {
-            if (!query.TryGetParamValue("q", out QueryPart queryBlock)) return false;
-
-            // Save the time and avoid if query even not hace subquery.
-            if (!query.TryGetParamValue("sq", out QueryPart subQuery)) return false;
-
-            // Comare q and sq with target.
-            bool comparison =
-                queryBlock.ParamNameEqual("GET") &&
-                subQuery.ParamNameEqual("DAYSRANGE");
-
-            // Return result of compression.
-            return comparison;
+            if (!query.QueryParamExist("GET")) return false;
+            if (!query.QueryParamExist("DAYSRANGE")) return false;
+            return true;
         }
     }
 }

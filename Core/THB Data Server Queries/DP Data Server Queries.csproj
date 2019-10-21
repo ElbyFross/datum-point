@@ -14,6 +14,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="DNFCore">
+      <HintPath>..\..\Frameworks\doloro-networking-framework\libs\DNFCore.dll</HintPath>
+    </Reference>
+    <Reference Include="UniformDataOperator">
+      <HintPath>..\..\Frameworks\doloro-networking-framework\libs\UniformDataOperator.dll</HintPath>
+    </Reference>
     <Reference Include="UniformQueries">
       <HintPath>..\..\Frameworks\doloro-networking-framework\libs\UniformQueries.dll</HintPath>
     </Reference>
