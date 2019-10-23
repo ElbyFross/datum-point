@@ -23,19 +23,24 @@ namespace DatumPoint.Queries.Groups
     /// <summary>
     /// Set the group's profile.
     /// </summary>
-    public class GROUP_SET : IQueryHandler
+    public class GROUP_SET : UniformedSqlSetQueryHandler
     {
-        public string Description(string cultureKey)
+        public override UserRank RankUperThen { get; set; } = UserRank.User;
+        public override string SharedObjectProperty { get; set; } = "set";
+        public override Type TableType { get; set; } = typeof(Types.Personality.Group);
+        public override string[] RequiredRights { get; set; } = new string[] { "groupsManagment" };
+
+        public override string Description(string cultureKey)
         {
-            throw new NotImplementedException();
+            return "GROUP SET=[binary]\n" +
+                "\tDESCRIPTION:" +
+                "Set new or update existed group.\n" +
+                "\tQUERY FORMAT: group property must contain binary serialized " +
+                "`" + TableType.FullName + "` object that will applied to the database ot local storage.\n" +
+                "\tREQUIRMENTS: User must has at least `PrivilegedUser` right.";
         }
 
-        public void Execute(object sender, Query query)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool IsTarget(Query query)
+        public override bool IsTarget(Query query)
         {
             if (!query.QueryParamExist("group")) return false;
             if (!query.QueryParamExist("set")) return false;

@@ -13,6 +13,9 @@
 //limitations under the License.
 
 using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using UniformQueries;
@@ -23,19 +26,50 @@ namespace DatumPoint.Queries.Gender
     /// <summary>
     /// Returns the gender settigns by gender's id.
     /// </summary>
-    public class GENDER_GET : IQueryHandler
+    public class GENDER_GET : UniformedSqlGetQueryHandler
     {
-        public string Description(string cultureKey)
+        public override UserRank RankUperThen { get; set; } = UserRank.Moderator;
+        public override string SharedObjectProperty { get; set; } = "get";
+        public override Type TableType { get; set; } = typeof(Types.Personality.Gender);
+        public override string[] RequiredRights { get; set; } = null;
+
+        /// <summary>
+        /// Returns array of properties for where bloc of sql query.
+        /// </summary>
+        public override ObjectHander Where
         {
-            throw new NotImplementedException();
+            get
+            {
+                // Configurate where property in sql query.
+                string[] SqlWhereConfiguration(object sharedData, QueryMeta meta)
+                {
+                    if (sharedData is Types.Personality.Gender gender)
+                    {
+                        return new string[] { gender.genderId >= 0 ? "genderid" : "title" };
+                    }
+                    else
+                    {
+                        Console.WriteLine("ERROR : GENDER GET | Shared data miscast.");
+                        return null;
+                    }
+                }
+                return SqlWhereConfiguration;
+            }
         }
 
-        public void Execute(object sender, Query query)
+        public override string Description(string cultureKey)
         {
-            throw new NotImplementedException();
+            switch (cultureKey)
+            {
+                case "en-US":
+                default:
+                    return "GENDER GET=[binary]\n" +
+                            "\tDESCRIPTION: Return data for specified Gender." +
+                            "In case if specified id then lookin using it. Use title field in other case.\n";
+            }
         }
-
-        public bool IsTarget(Query query)
+        
+        public override bool IsTarget(Query query)
         {
             if (!query.QueryParamExist("gender")) return false;
             if (!query.QueryParamExist("get")) return false;

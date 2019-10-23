@@ -14,6 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="AuthorityController">
+      <HintPath>..\..\Frameworks\doloro-networking-framework\libs\AuthorityController.dll</HintPath>
+    </Reference>
     <Reference Include="DNFCore">
       <HintPath>..\..\Frameworks\doloro-networking-framework\libs\DNFCore.dll</HintPath>
     </Reference>

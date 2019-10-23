@@ -23,19 +23,23 @@ namespace DatumPoint.Queries.Repository
     /// <summary>
     /// Setting a data to repository.
     /// </summary>
-    public class REP_SET : IQueryHandler
+    public class REP_SET : UniformedSqlSetQueryHandler
     {
-        public string Description(string cultureKey)
+        public override UserRank RankUperThen { get; set; } = UserRank.Guest;
+        public override string SharedObjectProperty { get; set; } = "set";
+        public override Type TableType { get; set; } = typeof(Types.Repository.RepositoryResource);
+
+        public override string Description(string cultureKey)
         {
-            throw new NotImplementedException();
+            return "SET=[binary] REP\n" +
+                "\tDESCRIPTION:" +
+                "Set new or update existed order.\n" +
+                "\tQUERY FORMAT: order property must contain binary serialized " +
+                "`" + TableType.FullName + "` object that will applied to the database ot local storage.\n" +
+                "\tREQUIRMENTS: User must has `PrivilegedUser` right.";
         }
 
-        public void Execute(object sender, Query query)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool IsTarget(Query query)
+        public override bool IsTarget(Query query)
         {
             if (!query.QueryParamExist("rep")) return false;
             if (!query.QueryParamExist("set")) return false;

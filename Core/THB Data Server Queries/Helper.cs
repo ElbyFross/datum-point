@@ -15,31 +15,13 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using UniformQueries;
-using UniformQueries.Executable;
 
-namespace DatumPoint.Queries.Schedule
+namespace DatumPoint.Queries
 {
     /// <summary>
-    /// TODO Set information about the lesson.
+    /// Class that provides besa methods or uniform callbacks to operate queries.
     /// </summary>
-    public class SET_LESSON : IQueryHandler
+    public static class Helper
     {
-        public string Description(string cultureKey)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void Execute(object sender, Query query)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool IsTarget(Query query)
-        {
-            if (!query.QueryParamExist("lesson")) return false;
-            if (!query.QueryParamExist("set")) return false;
-            return true;
-        }
     }
 }

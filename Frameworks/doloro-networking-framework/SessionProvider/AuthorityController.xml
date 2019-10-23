@@ -18,7 +18,7 @@
             <param name="requiredRights">Rights that required to get permisssion.</param>
             <returns></returns>
         </member>
-        <member name="M:AuthorityController.API.Collections.TyGetPropertyValue(System.String,System.String@,System.String[])">
+        <member name="M:AuthorityController.API.Collections.TryGetPropertyValue(System.String,System.String@,System.String[])">
             <summary>
             Loging for propery value by requested name.
             </summary>
@@ -185,18 +185,18 @@
             Provides API for work with security tokens.
             </summary>
         </member>
-        <member name="M:AuthorityController.API.Tokens.IsHasEnoughRigths(System.String,System.String[]@,System.String@,System.String[])">
+        <member name="M:AuthorityController.API.Tokens.IsHasEnoughRigths(System.String,AuthorityController.Data.Temporal.TokenInfo@,System.String@,System.String[])">
             <summary>
             Check does this token has all requested rights.
             If token is not registred on this server then will throw UnauthorizedAccessException.
             </summary>
             <param name="token">Unitque token of the user.</param>
             <param name="error">Error that describe a reasone of fail. Could be send backward to client.</param>
-            <param name="requesterRights">Rights detected to that token.</param>
+            <param name="tokenInfo">Rights detected to that token.</param>
             <param name="requiredRights">Array that contain the rights that need to by existed.</param>
             <returns></returns>
         </member>
-        <member name="M:AuthorityController.API.Tokens.IsHasEnoughRigths(System.String,System.String[]@,System.String[])">
+        <member name="M:AuthorityController.API.Tokens.IsHasEnoughRigths(System.String,AuthorityController.Data.Temporal.TokenInfo@,System.String[])">
             <summary>
             Check does this token has all requested rights.
             If token is not registred on this server then will throw UnauthorizedAccessException.
@@ -665,6 +665,31 @@
             Array that contain rights provided to this token.
             </summary>
         </member>
+        <member name="T:AuthorityController.Queries.Handler">
+            <summary>
+            Class that allow to simplify base operations with queries specified to AuthorityController.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.Queries.Handler.ValidateUserRights(UniformQueries.Query,System.String[],System.String@,AuthorityController.Data.Personal.User@)">
+            <summary>
+            Check does the token has enought rights to perform query.
+            
+            Attention:
+            Requerster must has higher rank.
+            Requester must be at least moderator to affect other users. (rank=2+).
+            </summary>
+            <param name="entryQuery">
+            Query received by server. 
+            Must contain the token and user property.
+            </param>
+            <param name="requiredRights">Rights required to operation.</param>
+            <param name="error">Eroor message in case if received.</param>
+            <param name="targetUser">Profile of target user in case if detected.</param>
+            <returns>
+            Is token authorized to operation. 
+            In case of fail server auto send answer with error to the client by using the entryQuery.
+            </returns>
+        </member>
         <member name="T:AuthorityController.Queries.SET_TOKEN_RIGHTS">
             <summary>
             Change rights list to provided token.
@@ -705,6 +730,13 @@
             <returns>Description for relative culture.</returns>
         </member>
         <member name="M:AuthorityController.Queries.USER_BAN.Execute(System.Object,UniformQueries.Query)">
+            <summary>
+            Methods that process query.
+            </summary>
+            <param name="sender">Operator that call that operation</param>
+            <param name="query">Recived query.</param>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_BAN.Execute2(System.Object,UniformQueries.Query)">
             <summary>
             Methods that process query.
             </summary>
@@ -824,27 +856,34 @@
             <param name="query">Recived query.</param>
             <returns>Result of comparation.</returns>
         </member>
-        <member name="T:AuthorityController.Queries.USER_NEW_PASSWORD">
+        <member name="T:AuthorityController.Queries.USER_UPDATE_PASSWORD">
             <summary>
             Set new password for user.
             Require admin or certen user rights.
             </summary>
         </member>
-        <member name="M:AuthorityController.Queries.USER_NEW_PASSWORD.Description(System.String)">
+        <member name="M:AuthorityController.Queries.USER_UPDATE_PASSWORD.Description(System.String)">
             <summary>
             Return the description relative to the lenguage code or default if not found.
             </summary>
             <param name="cultureKey">Key of target culture.</param>
             <returns>Description for relative culture.</returns>
         </member>
-        <member name="M:AuthorityController.Queries.USER_NEW_PASSWORD.Execute(System.Object,UniformQueries.Query)">
+        <member name="M:AuthorityController.Queries.USER_UPDATE_PASSWORD.Execute(System.Object,UniformQueries.Query)">
             <summary>
             Methods that process query.
             </summary>
             <param name="serverTL">Operator that call that operation</param>
             <param name="query">Recived query.</param>
         </member>
-        <member name="M:AuthorityController.Queries.USER_NEW_PASSWORD.IsTarget(UniformQueries.Query)">
+        <member name="M:AuthorityController.Queries.USER_UPDATE_PASSWORD.Execute2(System.Object,UniformQueries.Query)">
+            <summary>
+            Methods that process query.
+            </summary>
+            <param name="serverTL">Operator that call that operation</param>
+            <param name="query">Recived query.</param>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_UPDATE_PASSWORD.IsTarget(UniformQueries.Query)">
             <summary>
             Check by the entry params does it target Query Handler.
             </summary>

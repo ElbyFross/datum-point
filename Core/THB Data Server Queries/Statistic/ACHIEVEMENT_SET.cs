@@ -21,22 +21,27 @@ using UniformQueries.Executable;
 namespace DatumPoint.Queries.Statistic
 {
     /// <summary>
-    /// Set an achievment request to analysis processor.
+    /// TODO Set an achievment request to analysis processor.
     /// In case if achievment will valid then after processing it would registred.
     /// </summary>
-    public class ACHIEVEMENT_SET : IQueryHandler
+    public class ACHIEVEMENT_SET : UniformedSqlSetQueryHandler
     {
-        public string Description(string cultureKey)
+        public override UserRank RankUperThen { get; set; } = UserRank.Moderator;
+        public override string SharedObjectProperty { get; set; } = "set";
+        public override Type TableType { get; set; } = typeof(Types.Personality.Gender);
+        public override string[] RequiredRights { get; set; } = null;
+
+        public override string Description(string cultureKey)
         {
-            throw new NotImplementedException();
+            return "GENDER SET=[binary]\n" +
+                "\tDESCRIPTION:" +
+                "Set new or update existed gender settings.\n" +
+                "\tQUERY FORMAT: gender property must contain binary serialized " +
+                "`" + TableType.FullName + "` object that will applied to the database ot local storage.\n" +
+                "\tREQUIRMENTS: User must has at least `admin` right.";
         }
 
-        public void Execute(object sender, Query query)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool IsTarget(Query query)
+        public override bool IsTarget(Query query)
         {
             if (!query.QueryParamExist("achievement")) return false;
             if (!query.QueryParamExist("set")) return false;

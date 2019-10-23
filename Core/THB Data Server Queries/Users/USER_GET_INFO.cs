@@ -24,19 +24,59 @@ namespace DatumPoint.Queries.Users
     /// Getting an information from the certain user profile.
     /// Relative to token rights will return different list of data.
     /// </summary>
-    public class USER_GET_INFO : IQueryHandler
+    public class USER_GET_INFO : UniformedSqlGetQueryHandler
     {
-        public string Description(string cultureKey)
+        public override UserRank RankUperThen { get; set; } = UserRank.Moderator;
+        public override string SharedObjectProperty { get; set; } = "get";
+        public override Type TableType { get; set; } = typeof(Types.Personality.DPUser);
+        public override string[] RequiredRights { get; set; } = null;
+
+        public override ObjectHander Select
         {
-            throw new NotImplementedException();
+            get
+            {
+                // TODO Implemet validation of rights by rights and relations preferences of target token.
+                throw new NotImplementedException();
+            }
         }
 
-        public void Execute(object sender, Query query)
+        /// <summary>
+        /// Returns array of properties for where bloc of sql query.
+        /// </summary>
+        public override ObjectHander Where
         {
-            throw new NotImplementedException();
+            get
+            {
+                // Configurate where property in sql query.
+                string[] SqlWhereConfiguration(object sharedData, QueryMeta meta)
+                {
+                    if (sharedData is Types.Personality.DPUser user)
+                    {
+                        return new string[] { user.id >= 0 ? "userid" : "login" };
+                    }
+                    else
+                    {
+                        Console.WriteLine("ERROR : USER INFO GET | Shared data miscast.");
+                        return null;
+                    }
+                }
+                return SqlWhereConfiguration;
+            }
         }
 
-        public bool IsTarget(Query query)
+        public override string Description(string cultureKey)
+        {
+            switch (cultureKey)
+            {
+                case "en-US":
+                default:
+                    return "USER INFO GET=[binary]\n" +
+                            "\tDESCRIPTION: Return data for specified user." +
+                            "In case if specified id then lookin using it. Use login field in other case.\n";
+            }
+        }
+
+        public override bool IsTarget(Query query)
         {
             if (!query.QueryParamExist("info")) return false;
             if (!query.QueryParamExist("user")) return false;
