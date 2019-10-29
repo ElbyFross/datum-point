@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Text;
 using UniformQueries;
 using UniformQueries.Executable;
+using DatumPoint.Types.Personality;
 
 namespace DatumPoint.Queries.Gender
 {
@@ -24,7 +25,7 @@ namespace DatumPoint.Queries.Gender
     /// Set new or update already existed gender settings.
     /// Require at least admin rank level (rank=8).
     /// </summary>
-    class GENDER_SET : UniformedSqlSetQueryHandler
+    public class GENDER_SET : Handlers.UniformedSqlSetQueryHandler
     {
         public override UserRank RankUperThen { get; set; } = UserRank.Moderator;
         public override string SharedObjectProperty { get; set; } = "set";

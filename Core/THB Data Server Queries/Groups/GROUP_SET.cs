@@ -17,13 +17,14 @@ using System.Collections.Generic;
 using System.Text;
 using UniformQueries;
 using UniformQueries.Executable;
+using DatumPoint.Types.Personality;
 
 namespace DatumPoint.Queries.Groups
 {
     /// <summary>
     /// Set the group's profile.
     /// </summary>
-    public class GROUP_SET : UniformedSqlSetQueryHandler
+    public class GROUP_SET : Handlers.UniformedSqlSetQueryHandler
     {
         public override UserRank RankUperThen { get; set; } = UserRank.User;
         public override string SharedObjectProperty { get; set; } = "set";

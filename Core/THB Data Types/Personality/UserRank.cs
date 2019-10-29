@@ -12,7 +12,7 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-namespace DatumPoint.Queries
+namespace DatumPoint.Types.Personality
 {
     /// <summary>
     /// Rank of user rights.

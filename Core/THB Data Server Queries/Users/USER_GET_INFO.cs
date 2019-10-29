@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Text;
 using UniformQueries;
 using UniformQueries.Executable;
+using DatumPoint.Types.Personality;
 
 namespace DatumPoint.Queries.Users
 {
@@ -24,19 +25,48 @@ namespace DatumPoint.Queries.Users
     /// Getting an information from the certain user profile.
     /// Relative to token rights will return different list of data.
     /// </summary>
-    public class USER_GET_INFO : UniformedSqlGetQueryHandler
+    public class USER_GET_INFO : Handlers.UniformedSqlGetQueryHandler
     {
-        public override UserRank RankUperThen { get; set; } = UserRank.Moderator;
-        public override string SharedObjectProperty { get; set; } = "get";
-        public override Type TableType { get; set; } = typeof(Types.Personality.DPUser);
+        public override UserRank RankUperThen { get; set; } = UserRank.Guest;
+        public override string SharedObjectProperty { get; set; } = "user";
+        public override Type TableType { get; set; } = typeof(User);
         public override string[] RequiredRights { get; set; } = null;
 
         public override ObjectHander Select
         {
             get
             {
-                // TODO Implemet validation of rights by rights and relations preferences of target token.
-                throw new NotImplementedException();
+                // Configurate select property in sql query.
+                string[] SqlWhereConfiguration(object sharedData, QueryMeta meta)
+                {
+                    #region Get token rights
+                    if(!meta.entryQuery.TryGetParamValue("token", out QueryPart token))
+                    {
+                        Console.WriteLine("ERROR : USER INFO GET | Token not found.");
+                        return null;
+                    }
+
+                    if(!AuthorityController.Session.Current.TryGetTokenInfo(
+                        token.PropertyValueString, 
+                        out AuthorityController.Data.Temporal.TokenInfo tokenInfo))
+                    {
+                        Console.WriteLine("ERROR : USER INFO GET | Token infor not registred.");
+                        return null;
+                    }
+                    #endregion
+
+
+                    if (sharedData is User user)
+                    {
+                        return new string[] { user.id >= 0 ? "userid" : "login" };
+                    }
+                    else
+                    {
+                        Console.WriteLine("ERROR : USER INFO GET | Shared data miscast.");
+                        return null;
+                    }
+                }
+                return SqlWhereConfiguration;
             }
         }
 
@@ -50,7 +80,7 @@ namespace DatumPoint.Queries.Users
                 // Configurate where property in sql query.
                 string[] SqlWhereConfiguration(object sharedData, QueryMeta meta)
                 {
-                    if (sharedData is Types.Personality.DPUser user)
+                    if (sharedData is User user)
                     {
                         return new string[] { user.id >= 0 ? "userid" : "login" };
                     }
@@ -70,7 +100,7 @@ namespace DatumPoint.Queries.Users
             {
                 case "en-US":
                 default:
-                    return "USER INFO GET=[binary]\n" +
+                    return "USER=[binary] INFO GET\n" +
                             "\tDESCRIPTION: Return data for specified user." +
                             "In case if specified id then lookin using it. Use login field in other case.\n";
             }

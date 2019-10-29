@@ -39,14 +39,14 @@ namespace DatumPoint.Types.Personality
         /// Title of this group.
         /// </summary>
         [Column("title", System.Data.DbType.String), IsNotNull]
-        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAT(45)")]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAR(45)")]
         public string title = null;
 
         /// <summary>
         /// Language culture code in string format suitable for data base duplex data exchange.
         /// </summary>
         [Column("language", System.Data.DbType.String)]
-        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAT(7)")]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAR(7)")]
         [System.Xml.Serialization.XmlIgnore]
         public string LanguageCode
         {

@@ -42,7 +42,7 @@ namespace DatumPoint.Types.Personality
         /// Example: gender_id0
         /// </summary>
         [Column("title", System.Data.DbType.String), IsNotNull]
-        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAT(45)")]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAR(45)")]
         public string title = "Undefined";
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace DatumPoint.Types.Personality
         /// Example: gender_id0_prefix
         /// </summary>
         [Column("prefix", System.Data.DbType.String), IsNotNull]
-        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAT(45)")]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAR(45)")]
         public string prefix = "";
     }
 }

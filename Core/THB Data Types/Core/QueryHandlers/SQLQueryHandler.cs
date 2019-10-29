@@ -20,8 +20,9 @@ using System.Collections.Generic;
 using System.Text;
 using UniformQueries;
 using UniformQueries.Executable;
+using DatumPoint.Types.Personality;
 
-namespace DatumPoint.Queries
+namespace DatumPoint.Queries.Handlers
 {
     /// <summary>
     /// Query handler specified to processing queries focused on caoonecting SQL server.
@@ -133,7 +134,7 @@ namespace DatumPoint.Queries
             {
                 // Log error.
                 UniformServer.BaseServer.SendAnswerViaPP(
-                    "ERROR:Anuthorized. Details:" + error,
+                    "ERROR: Unauthorized. Details:" + error,
                     entryQuery);
                 return false;
             }
@@ -158,10 +159,12 @@ namespace DatumPoint.Queries
                 metaTable.Add(sqlSeed, meta);
                 return meta;
             }
-            catch(Exception ex)
+            catch//(Exception ex)
             {
-                Console.WriteLine("ERROR: SqlQueryHandler | Query not registred." +
-                    "Details: " + ex.Message);
+                // Commented because not all queries has implemented SQLQueryHandler, 
+                // so here will no registration of that query. That will cause a spam messages into console.
+                //Console.WriteLine("ERROR: SqlQueryHandler | Query not registred." +
+                //    "Details: " + ex.Message);
 
                 return null;
             }

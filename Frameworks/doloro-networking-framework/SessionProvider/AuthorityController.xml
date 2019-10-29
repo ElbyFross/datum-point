@@ -202,8 +202,8 @@
             If token is not registred on this server then will throw UnauthorizedAccessException.
             </summary>
             <param name="token"></param>
-            <param name="requiredRights"></param>
-            <param name="requesterRights">Rights detected to that token.</param>
+            <param name="requiredRights">Rights required from token to passing through.</param>
+            <param name="tokenInfo">Information about token. Including rights provided to token.</param>
             <returns></returns>
         </member>
         <member name="M:AuthorityController.API.Tokens.AuthorizeNewGuestToken(PipesProvider.Server.TransmissionControllers.BroadcastingServerTransmissionController)">
@@ -222,6 +222,11 @@
         <member name="T:AuthorityController.Data.Personal.BanInformation">
             <summary>
             Provide information about user bans.
+            </summary>
+        </member>
+        <member name="F:AuthorityController.Data.Personal.BanInformation.GlobalType">
+            <summary>
+            Type of ban information. Apply your custom ban info type to this field to instinate required one.
             </summary>
         </member>
         <member name="T:AuthorityController.Data.Personal.BanInformation.Duration">
@@ -329,11 +334,6 @@
             Object that contain relevant data about user.
             </summary>
         </member>
-        <member name="F:AuthorityController.Data.Personal.User.GlobalType">
-            <summary>
-            Type of user. Apply your castom user to this field to instinate required one.
-            </summary>
-        </member>
         <member name="F:AuthorityController.Data.Personal.User.id">
             <summary>
             Unique id of this user to allow services access.
@@ -398,6 +398,14 @@
         <member name="T:AuthorityController.Data.Application.Config">
             <summary>
             Object that contain data for setup of authority controller.
+            
+            rank=x where x is
+            0 - guest
+            1 - user 
+            2 - privileged user
+            4 - moderator
+            8 - admin
+            16 - superadmin
             </summary>
         </member>
         <member name="F:AuthorityController.Data.Application.Config.DIRECTORY">
@@ -670,7 +678,7 @@
             Class that allow to simplify base operations with queries specified to AuthorityController.
             </summary>
         </member>
-        <member name="M:AuthorityController.Queries.Handler.ValidateUserRights(UniformQueries.Query,System.String[],System.String@,AuthorityController.Data.Personal.User@)">
+        <member name="M:AuthorityController.Queries.Handler.ValidateUserRights(System.Type,UniformQueries.Query,System.String[],System.String@,AuthorityController.Data.Personal.User@)">
             <summary>
             Check does the token has enought rights to perform query.
             
@@ -682,6 +690,7 @@
             Query received by server. 
             Must contain the token and user property.
             </param>
+            <param name="userType">Type of user that will be used as table descriptor during sql queries.</param>
             <param name="requiredRights">Rights required to operation.</param>
             <param name="error">Eroor message in case if received.</param>
             <param name="targetUser">Profile of target user in case if detected.</param>
@@ -720,6 +729,17 @@
         <member name="T:AuthorityController.Queries.USER_BAN">
             <summary>
             Set temporaly or permanent ban for user.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_BAN.#ctor">
+            <summary>
+            Base constructor.
+            Defining operating type.
+            </summary>
+        </member>
+        <member name="P:AuthorityController.Queries.USER_BAN.OperatingType">
+            <summary>
+             Type that will be used in operations.
             </summary>
         </member>
         <member name="M:AuthorityController.Queries.USER_BAN.Description(System.String)">
@@ -791,6 +811,17 @@
             USER&amp;LOGON&amp;login=...&amp;password=...&amp;mac=...&amp;os=....&amp;
             </summary>
         </member>
+        <member name="M:AuthorityController.Queries.USER_LOGON.#ctor">
+            <summary>
+            Base constructor.
+            Defining operating type.
+            </summary>
+        </member>
+        <member name="P:AuthorityController.Queries.USER_LOGON.OperatingType">
+            <summary>
+             Type that will be used in operations.
+            </summary>
+        </member>
         <member name="M:AuthorityController.Queries.USER_LOGON.Description(System.String)">
             <summary>
             Return the description relative to the lenguage code or default if not found.
@@ -835,6 +866,17 @@
             Storing profile to SQL server in case if `UniformDataOperator.Sql.SqlOperatorHandler.Active` not null.
             </summary>
         </member>
+        <member name="M:AuthorityController.Queries.USER_NEW.#ctor">
+            <summary>
+            Base constructor.
+            Defining operating type.
+            </summary>
+        </member>
+        <member name="P:AuthorityController.Queries.USER_NEW.OperatingType">
+            <summary>
+             Type that will be used in operations.
+            </summary>
+        </member>
         <member name="M:AuthorityController.Queries.USER_NEW.Description(System.String)">
             <summary>
             Return the description relative to the lenguage code or default if not found.
@@ -860,6 +902,17 @@
             <summary>
             Set new password for user.
             Require admin or certen user rights.
+            </summary>
+        </member>
+        <member name="M:AuthorityController.Queries.USER_UPDATE_PASSWORD.#ctor">
+            <summary>
+            Base constructor.
+            Defining operating type.
+            </summary>
+        </member>
+        <member name="P:AuthorityController.Queries.USER_UPDATE_PASSWORD.OperatingType">
+            <summary>
+             Type that will be used in operations.
             </summary>
         </member>
         <member name="M:AuthorityController.Queries.USER_UPDATE_PASSWORD.Description(System.String)">

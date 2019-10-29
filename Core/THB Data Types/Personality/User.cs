@@ -18,16 +18,17 @@ using System.Data.Common;
 using System.Text;
 using UniformDataOperator.Sql.Attributes;
 using UniformDataOperator.Sql.MySql.Attributes;
-using AuthorityController.Data.Personal;
 
 namespace DatumPoint.Types.Personality
 {
     /// <summary>
     /// Additive fields and API suiteble for AC users in Datum Point.
     /// </summary>
-    [System.Serializable]
+    [Serializable]
     [Table("datum-point", "user")]
-    public partial class DPUser : User
+    // Override base user typ to prevent using.
+    [UniformDataOperator.Modifiers.TypeReplacer(typeof(AuthorityController.Data.Personal.User), typeof(User), 500)]
+    public partial class User : AuthorityController.Data.Personal.User
     {
         /// <summary>
         /// Middle name of user if applicable.

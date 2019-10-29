@@ -16,8 +16,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using UniformQueries;
+using DatumPoint.Types.Personality;
 
-namespace DatumPoint.Queries
+namespace DatumPoint.Queries.Handlers
 {
     public abstract class UniformedSqlGetQueryHandler : SQLQueryHandler
     {
@@ -67,11 +68,11 @@ namespace DatumPoint.Queries
             if (RankUperThen != UserRank.None)
             {
                 // Is has enought ritghts.
-                if (!ValidateTokenRights(query, ">rank=" + RankUperThen.ToString())) return;
+                if (!ValidateTokenRights(query, ">rank=" + (int)RankUperThen)) return;
             }
 
             // Check additive rights.
-            if (RequiredRights == null)
+            if (RequiredRights != null)
             {
                 if (!ValidateTokenRights(query, RequiredRights)) return;
             }
@@ -110,7 +111,7 @@ namespace DatumPoint.Queries
             // Look for gender in db by id if defined. Look by title in other case.
             WaitAsyncSqlServerAnswer(
                 UniformDataOperator.Sql.SqlOperatorHandler.Active.SetToObjectAsync(
-                    typeof(Types.Personality.Gender),
+                    TableType,
                     System.Threading.CancellationToken.None,
                     bufer,
                     selectProps ?? new string[0],
@@ -121,7 +122,14 @@ namespace DatumPoint.Queries
             UnregistrateSQLQuery(meta);
 
             // Drop if oepratio nfailed.
-            if (!meta.sqlDataOperationFailed) return;
+            if (!meta.sqlDataOperationFailed)
+            {
+                // Log error.
+                UniformServer.BaseServer.SendAnswerViaPP
+                    (new Query(new QueryPart("error 401", "Data not found.")),
+                    query);
+                return;
+            }
 
             // Send received gender data to client.
             UniformServer.BaseServer.SendAnswerViaPP

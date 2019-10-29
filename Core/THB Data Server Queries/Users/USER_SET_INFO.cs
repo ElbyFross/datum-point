@@ -17,22 +17,23 @@ using System.Collections.Generic;
 using System.Text;
 using UniformQueries;
 using UniformQueries.Executable;
+using DatumPoint.Types.Personality;
 
 namespace DatumPoint.Queries.Users
 {
     /// <summary>
     /// Updating the user's profile info.
     /// </summary>
-    public class USER_SET_INFO : UniformedSqlSetQueryHandler
+    public class USER_SET_INFO : Handlers.UniformedSqlSetQueryHandler
     {
         public override UserRank RankUperThen { get; set; } = UserRank.Guest;
-        public override string SharedObjectProperty { get; set; } = "set";
-        public override Type TableType { get; set; } = typeof(Types.Personality.DPUser);
+        public override string SharedObjectProperty { get; set; } = "user";
+        public override Type TableType { get; set; } = typeof(User);
         public override string[] RequiredRights { get; set; } = null;
 
         public override string Description(string cultureKey)
         {
-            return "USER INFO SET=[binary]\n" +
+            return "USER=[binary] INFO SET\n" +
                 "\tDESCRIPTION:" +
                 "Set new or update existed user info.\n" +
                 "\tQUERY FORMAT: order property must contain binary serialized " +

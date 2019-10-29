@@ -20,13 +20,14 @@ using System.Collections.Generic;
 using System.Text;
 using UniformQueries;
 using UniformQueries.Executable;
+using DatumPoint.Types.Personality;
 
 namespace DatumPoint.Queries.Gender
 {
     /// <summary>
     /// Returns the gender settigns by gender's id.
     /// </summary>
-    public class GENDER_GET : UniformedSqlGetQueryHandler
+    public class GENDER_GET : Handlers.UniformedSqlGetQueryHandler
     {
         public override UserRank RankUperThen { get; set; } = UserRank.Moderator;
         public override string SharedObjectProperty { get; set; } = "get";

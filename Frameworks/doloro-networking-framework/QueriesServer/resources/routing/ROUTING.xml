@@ -30,7 +30,7 @@
         <domain>ELBY-MEGAPC-II</domain>
       </logonConfig>
       <queryPatterns>
-        <string />
+        <string>user</string>
       </queryPatterns>
       <RSAEncryption>true</RSAEncryption>
       <guestChanel>guests</guestChanel>

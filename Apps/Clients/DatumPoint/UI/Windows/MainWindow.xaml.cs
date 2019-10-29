@@ -182,7 +182,10 @@ namespace DatumPoint.UI.Windows
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             // Open first plugin.
-            WpfHandler.Plugins.API.OpenGUI(Plugins[0]);
+            if (Plugins.Count > 0)
+            {
+                API.OpenGUI(Plugins[0]);
+            }
         }
 
         /// <summary>
@@ -231,7 +234,7 @@ namespace DatumPoint.UI.Windows
             {
                 // Enable routing error message.
                 MessageBox.Show("Routing instruction for LOGON query not found.\n" +
-                    "Please bw sure that you has PartialAuthorizedInstruction that allow to share queries with user&logon parts");
+                    "Please be sure that you has PartialAuthorizedInstruction that allow to share queries with user&logon parts");
                 return;
             }
 
@@ -271,7 +274,7 @@ namespace DatumPoint.UI.Windows
 
            
             // Clear data.
-            queriesChanelInstruction.authLogin = null;
+            //queriesChanelInstruction.authLogin = null;
             queriesChanelInstruction.authPassword = null;
             
             // Unlock overlay. Drop if operation was canceled
@@ -285,7 +288,8 @@ namespace DatumPoint.UI.Windows
             {
                 await DisableLogonScreenAsync();
 
-                // TODO Impersionate like authorized user.
+                // Impersionate like authorized user.
+                await ImpersonateUserAsync(queriesChanelInstruction.authLogin, queriesChanelInstruction);
             }
             else
             {
@@ -471,12 +475,54 @@ namespace DatumPoint.UI.Windows
                     // Disable logon screen.
                     await DisableLogonScreenAsync();
 
-                    // TODO Impersionate like authorized user.
+                    // Impersionate like authorized user.
+                    await ImpersonateUserAsync(queriesChanelInstruction.authLogin, queriesChanelInstruction);
                 }
             }
             #endregion
         }
         #endregion
+
+        protected async Task ImpersonateUserAsync(string login, PartialAuthorizedInstruction instruction)
+        {
+            #region Define token
+            string token = null;
+            // If instruction is full authorized.
+            if(instruction is AuthorizedInstruction authorizedInstruction && 
+                authorizedInstruction.IsFullAuthorized)
+            {
+                // Apply full authorized token.
+                token = authorizedInstruction.AuthorizedToken;
+            }
+            else
+            {
+                // Authorize if not authorized yet.
+                if(!instruction.IsPartialAuthorized)
+                {
+                    await instruction.TryToGetGuestTokenAsync(BaseClient.TerminationTokenSource.Token);
+                }
+                token = instruction.GuestToken;
+            }
+            #endregion
+            
+            // Requies user profile from server.
+            BaseClient.EnqueueDuplexQueryViaPP(
+                // Define routing.
+                instruction.routingIP, instruction.pipeName,
+                // Building query.
+                new UniformQueries.Query(
+                    new UniformQueries.Query.EncryptionInfo(),
+                    new UniformQueries.QueryPart("token", token),
+                    new UniformQueries.QueryPart("guid", "ImpersonateUser"),
+                    new UniformQueries.QueryPart("user", new Types.Personality.User() { login = login }),
+                    new UniformQueries.QueryPart("get"),
+                    new UniformQueries.QueryPart("info")),
+                // Managing answer from server.
+                delegate (TransmissionLine tl, UniformQueries.Query answer)
+                {
+
+                });
+        }
 
         /// <summary>
         /// Disabling logen screen and open acess to main window.

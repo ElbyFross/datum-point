@@ -14,14 +14,21 @@
 
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Text;
+using UniformDataOperator.Sql.Attributes;
+using UniformDataOperator.Sql.MySql.Attributes;
 
-namespace DatumPoint.Queries
+namespace DatumPoint.Types.Personality
 {
     /// <summary>
-    /// Class that provides besa methods or uniform callbacks to operate queries.
+    /// Class that redefining base BanInformation's sql table description.
     /// </summary>
-    public static class Helper
+    [Serializable]
+    [Table("datum-point", "bans")]
+    // Override base ban info type to prevent using of different databases.
+    [UniformDataOperator.Modifiers.TypeReplacer(typeof(AuthorityController.Data.Personal.BanInformation), typeof(BanInformation), 500)]
+    public class BanInformation : AuthorityController.Data.Personal.BanInformation
     {
     }
 }

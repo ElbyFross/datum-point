@@ -16,13 +16,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using UniformQueries;
+using DatumPoint.Types.Personality;
 
-namespace DatumPoint.Queries
+namespace DatumPoint.Queries.Handlers
 {
     /// <summary>
     /// Class that provides uniform vai to set data to table basing of simple uniformed format.
     /// </summary>
-    public class UniformedSqlSetQueryHandler : SQLQueryHandler
+    public abstract class UniformedSqlSetQueryHandler : SQLQueryHandler
     {
         public override string Description(string cultureKey)
         {
@@ -50,11 +51,11 @@ namespace DatumPoint.Queries
             if (RankUperThen != UserRank.None)
             {
                 // Is has enought ritghts.
-                if (!ValidateTokenRights(query, ">rank=" + RankUperThen.ToString())) return;
+                if (!ValidateTokenRights(query, ">rank=" + (int)RankUperThen)) return;
             }
 
             // Check additive rights.
-            if(RequiredRights == null)
+            if(RequiredRights != null)
             {
                 if (!ValidateTokenRights(query, RequiredRights)) return;
             }

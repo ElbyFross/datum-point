@@ -17,15 +17,16 @@ using System.Collections.Generic;
 using System.Text;
 using UniformQueries;
 using UniformQueries.Executable;
+using DatumPoint.Types.Personality;
 
 namespace DatumPoint.Queries.Orders
 {
     /// <summary>
     /// Setting the new order.
     /// </summary>
-    class ORDER_SET : UniformedSqlSetQueryHandler
+    public class ORDER_SET : Handlers.UniformedSqlSetQueryHandler
     {
-        public override UserRank RankUperThen { get; set; } = UserRank.User;
+        public override UserRank RankUperThen { get; set; } = UserRank.Guest;
         public override string SharedObjectProperty { get; set; } = "set";
         public override Type TableType { get; set; } = typeof(Types.Orders.Order);
         public override string[] RequiredRights { get; set; } = new string[] { "ordersManagment" };

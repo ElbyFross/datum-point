@@ -17,26 +17,28 @@ using System.Collections.Generic;
 using System.Text;
 using UniformQueries;
 using UniformQueries.Executable;
+using DatumPoint.Types.Personality;
 
 namespace DatumPoint.Queries.Repository
 {
     /// <summary>
     /// Setting a data to repository.
     /// </summary>
-    public class REP_SET : UniformedSqlSetQueryHandler
+    public class REP_SET : Handlers.UniformedSqlSetQueryHandler
     {
         public override UserRank RankUperThen { get; set; } = UserRank.Guest;
         public override string SharedObjectProperty { get; set; } = "set";
         public override Type TableType { get; set; } = typeof(Types.Repository.RepositoryResource);
+        public override string[] RequiredRights { get; set; } = new string[] { "repositoryPost" };
 
         public override string Description(string cultureKey)
         {
             return "SET=[binary] REP\n" +
                 "\tDESCRIPTION:" +
-                "Set new or update existed order.\n" +
-                "\tQUERY FORMAT: order property must contain binary serialized " +
+                "Set new or update existed repository file.\n" +
+                "\tQUERY FORMAT: rep property must contain binary serialized " +
                 "`" + TableType.FullName + "` object that will applied to the database ot local storage.\n" +
-                "\tREQUIRMENTS: User must has `PrivilegedUser` right.";
+                "\tREQUIRMENTS: User must has `User` right.";
         }
 
         public override bool IsTarget(Query query)

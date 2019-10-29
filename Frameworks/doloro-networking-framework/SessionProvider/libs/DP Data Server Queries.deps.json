@@ -1,0 +1,210 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.0/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.0": {},
+    ".NETStandard,Version=v2.0/": {
+      "DP Data Server Queries/1.0.0": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.3",
+          "AuthorityController": "1.1.0.0",
+          "DNFCore": "1.1.0.0",
+          "UniformDataOperator": "1.0.8.2",
+          "UniformQueries": "1.0.0.0"
+        },
+        "runtime": {
+          "DP Data Server Queries.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/1.1.0": {},
+      "NETStandard.Library/2.0.3": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.1.0"
+        }
+      },
+      "DP Data Types/1.0.0": {
+        "dependencies": {
+          "WpfHandler": "1.0.0",
+          "MySql.Data": "8.0.17.0",
+          "PipesProvider": "1.4.0.0",
+          "ConsoleDraw": "1.0.0.0",
+          "Google.Protobuf": "3.6.1.0",
+          "Renci.SshNet": "2016.1.0.0",
+          "BouncyCastle.Crypto": "1.8.3.0"
+        },
+        "runtime": {
+          "DP Data Types.dll": {}
+        }
+      },
+      "WpfHandler/1.0.0": {
+        "runtime": {
+          "WpfHandler.dll": {}
+        }
+      },
+      "AuthorityController/1.1.0.0": {
+        "runtime": {
+          "AuthorityController.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
+      "DNFCore/1.1.0.0": {
+        "runtime": {
+          "DNFCore.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
+          }
+        }
+      },
+      "UniformDataOperator/1.0.8.2": {
+        "runtime": {
+          "UniformDataOperator.dll": {
+            "assemblyVersion": "1.0.8.2",
+            "fileVersion": "1.1.0.1"
+          }
+        }
+      },
+      "UniformQueries/1.0.0.0": {
+        "runtime": {
+          "UniformQueries.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "MySql.Data.Reference/8.0.17.0": {
+        "runtime": {
+          "MySql.Data.dll": {
+            "assemblyVersion": "8.0.17.0",
+            "fileVersion": "8.0.17.0"
+          }
+        }
+      },
+      "PipesProvider.Reference/1.4.0.0": {
+        "runtime": {
+          "PipesProvider.dll": {
+            "assemblyVersion": "1.4.0.0",
+            "fileVersion": "1.4.0.0"
+          }
+        }
+      },
+      "ConsoleDraw.Reference/1.0.0.0": {
+        "runtime": {
+          "ConsoleDraw.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Google.Protobuf.Reference/3.6.1.0": {
+        "runtime": {
+          "Google.Protobuf.dll": {
+            "assemblyVersion": "3.6.1.0",
+            "fileVersion": "3.6.1.0"
+          }
+        }
+      },
+      "Renci.SshNet.Reference/2016.1.0.0": {
+        "runtime": {
+          "Renci.SshNet.dll": {
+            "assemblyVersion": "2016.1.0.0",
+            "fileVersion": "2016.1.0.0"
+          }
+        }
+      },
+      "BouncyCastle.Crypto.Reference/1.8.3.0": {
+        "runtime": {
+          "BouncyCastle.Crypto.dll": {
+            "assemblyVersion": "1.8.3.0",
+            "fileVersion": "1.8.18223.1"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DP Data Server Queries/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "path": "microsoft.netcore.platforms/1.1.0",
+      "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
+    },
+    "NETStandard.Library/2.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-st47PosZSHrjECdjeIzZQbzivYBJFv6P2nv4cj2ypdI204DO+vZ7l5raGMiX4eXMJ53RfOIg+/s4DHVZ54Nu2A==",
+      "path": "netstandard.library/2.0.3",
+      "hashPath": "netstandard.library.2.0.3.nupkg.sha512"
+    },
+    "DP Data Types/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "WpfHandler/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "AuthorityController/1.1.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DNFCore/1.1.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UniformDataOperator/1.0.8.2": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "UniformQueries/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MySql.Data.Reference/8.0.17.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PipesProvider.Reference/1.4.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ConsoleDraw.Reference/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Google.Protobuf.Reference/3.6.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Renci.SshNet.Reference/2016.1.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BouncyCastle.Crypto.Reference/1.8.3.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Text;
 using UniformQueries;
 using UniformQueries.Executable;
+using DatumPoint.Types.Personality;
 
 namespace DatumPoint.Queries.Statistic
 {
@@ -24,7 +25,7 @@ namespace DatumPoint.Queries.Statistic
     /// TODO Set an achievment request to analysis processor.
     /// In case if achievment will valid then after processing it would registred.
     /// </summary>
-    public class ACHIEVEMENT_SET : UniformedSqlSetQueryHandler
+    public class ACHIEVEMENT_SET : Handlers.UniformedSqlSetQueryHandler
     {
         public override UserRank RankUperThen { get; set; } = UserRank.Moderator;
         public override string SharedObjectProperty { get; set; } = "set";

@@ -44,14 +44,14 @@ namespace DatumPoint.Types.Repository
         /// Name of this resource.
         /// </summary>
         [Column("name", System.Data.DbType.String), IsNotNull]
-        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAT(45)")]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAR(45)")]
         public string name = "New resource";
 
         /// <summary>
         /// Description of stored resource.
         /// </summary>
         [Column("description", System.Data.DbType.String)]
-        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAT(500)")]
+        [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.VarChar, "VARCHAR(500)")]
         public string description = null;
 
         /// <summary>

@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Text;
 using UniformQueries;
 using UniformQueries.Executable;
+using DatumPoint.Types.Personality;
 
 namespace DatumPoint.Queries.Orders
 {
@@ -24,7 +25,7 @@ namespace DatumPoint.Queries.Orders
     /// TODO require processign by regex formated command.
     /// Looking for the details of order.
     /// </summary>
-    class ORDER_GET : UniformedSqlGetQueryHandler
+    public class ORDER_GET : Handlers.UniformedSqlGetQueryHandler
     {
         public override UserRank RankUperThen { get; set; } = UserRank.User;
         public override string SharedObjectProperty { get; set; } = "get";
