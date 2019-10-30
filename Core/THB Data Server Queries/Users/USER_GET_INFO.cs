@@ -18,6 +18,7 @@ using System.Text;
 using UniformQueries;
 using UniformQueries.Executable;
 using DatumPoint.Types.Personality;
+using DatumPoint.Queries.Handlers;
 
 namespace DatumPoint.Queries.Users
 {
@@ -31,45 +32,7 @@ namespace DatumPoint.Queries.Users
         public override string SharedObjectProperty { get; set; } = "user";
         public override Type TableType { get; set; } = typeof(User);
         public override string[] RequiredRights { get; set; } = null;
-
-        public override ObjectHander Select
-        {
-            get
-            {
-                // Configurate select property in sql query.
-                string[] SqlWhereConfiguration(object sharedData, QueryMeta meta)
-                {
-                    #region Get token rights
-                    if(!meta.entryQuery.TryGetParamValue("token", out QueryPart token))
-                    {
-                        Console.WriteLine("ERROR : USER INFO GET | Token not found.");
-                        return null;
-                    }
-
-                    if(!AuthorityController.Session.Current.TryGetTokenInfo(
-                        token.PropertyValueString, 
-                        out AuthorityController.Data.Temporal.TokenInfo tokenInfo))
-                    {
-                        Console.WriteLine("ERROR : USER INFO GET | Token infor not registred.");
-                        return null;
-                    }
-                    #endregion
-
-
-                    if (sharedData is User user)
-                    {
-                        return new string[] { user.id >= 0 ? "userid" : "login" };
-                    }
-                    else
-                    {
-                        Console.WriteLine("ERROR : USER INFO GET | Shared data miscast.");
-                        return null;
-                    }
-                }
-                return SqlWhereConfiguration;
-            }
-        }
-
+        
         /// <summary>
         /// Returns array of properties for where bloc of sql query.
         /// </summary>
@@ -82,7 +45,7 @@ namespace DatumPoint.Queries.Users
                 {
                     if (sharedData is User user)
                     {
-                        return new string[] { user.id >= 0 ? "userid" : "login" };
+                        return new string[] { user.id >= 1 ? "userid" : "login" };
                     }
                     else
                     {
@@ -91,6 +54,41 @@ namespace DatumPoint.Queries.Users
                     }
                 }
                 return SqlWhereConfiguration;
+            }
+        }
+
+        public override Action<object, QueryMeta> PreComplete
+        {
+            get
+            {
+                // Configurate select property in sql query.
+                return delegate (object sharedData, QueryMeta meta)
+                {
+                    if (meta.TokenInfo == null)
+                    {
+                        Console.WriteLine("ERROR : USER INFO GET | TOKEN not registred.");
+                        return;
+                    }
+
+                    if (sharedData is User user)
+                    {
+                        // Drop personal data.
+                        user.password = null;
+                        user.tokens = new List<string>();
+
+                        // Drop data allowed only to user themself.
+                        if (meta.TokenInfo.userId != user.id)
+                        {
+                            user.phone = null;
+                            user.email = null;
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("ERROR : USER INFO GET | Shared data miscast.");
+                        return;
+                    }
+                };
             }
         }
 

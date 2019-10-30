@@ -75,6 +75,10 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UniformDataOperator, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Frameworks\uniform-data-operator\UniformDataOperator.dll</HintPath>
+    </Reference>
     <Reference Include="UniformQueries, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Frameworks\doloro-networking-framework\libs\UniformQueries.dll</HintPath>

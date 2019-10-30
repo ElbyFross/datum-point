@@ -504,7 +504,10 @@ namespace DatumPoint.UI.Windows
                 token = instruction.GuestToken;
             }
             #endregion
-            
+
+            #region Request user info from server
+            UniformQueries.Query recevideAnswer = null;
+
             // Requies user profile from server.
             BaseClient.EnqueueDuplexQueryViaPP(
                 // Define routing.
@@ -520,12 +523,75 @@ namespace DatumPoint.UI.Windows
                 // Managing answer from server.
                 delegate (TransmissionLine tl, UniformQueries.Query answer)
                 {
-
+                    recevideAnswer = answer;
                 });
+
+            // Wait answer.
+            while(recevideAnswer == null)
+            {
+                await Task.Delay(5);
+            }
+            #endregion
+
+            #region Inpersonate user
+            // Activate control panel.
+            profileContextPanel.IsHitTestVisible = true;
+
+            // Drop current data.
+            userNameLable.Content = null;
+            userRoleLable.Content = null;
+
+            // If answer not contains error.
+            if (!recevideAnswer.First.PropertyValueString.StartsWith("error"))
+            {
+                // Get profile data.
+                var profile = UniformDataOperator.Binary.BinaryHandler.FromByteArray
+                <Types.Personality.User>(recevideAnswer.First.propertyValue);
+
+                // Set data to UI.
+                userNameLable.Content =
+                    profile.firstName +
+                    (string.IsNullOrEmpty(profile.middleName) ? "" : " " + profile.middleName) +
+                    " " + profile.lastName;
+
+                int rank = -1;
+                foreach (string right in profile.rights)
+                {
+                    if (right.StartsWith("rank"))
+                    {
+                        // Try to get rank.
+                        Int32.TryParse(right.Substring(5), out rank);
+                        break;
+                    }
+                }
+
+                try
+                {
+                    userRoleLable.Content = rank == -1 ? "Undefined role" : ((Types.Personality.UserRank)rank).ToString();
+                }
+                catch
+                {
+                    userRoleLable.Content = "Role:" + rank;
+                }
+            }
+            else
+            {
+                // User infor not found.
+                MessageBox.Show(recevideAnswer.First.PropertyValueString);
+            }
+
+            // Enable panel.
+            WpfHandler.UI.Animations.Float.FloatAniamtion(this,
+                profileContextPanel.Name,
+                 new PropertyPath(Control.OpacityProperty),
+                new TimeSpan(0, 0, 0, 0, 200),
+                FillBehavior.HoldEnd,
+                0, 1);
+            #endregion
         }
 
         /// <summary>
-        /// Disabling logen screen and open acess to main window.
+        /// Disabling logon screen and open access to main window.
         /// </summary>
         protected async Task DisableLogonScreenAsync()
         {
@@ -555,6 +621,90 @@ namespace DatumPoint.UI.Windows
                 new TimeSpan(0, 0, 0, 0, 350),
                 FillBehavior.HoldEnd,
                 1, 0);
+        }
+
+        /// <summary>
+        /// Enabling logon screen.
+        /// </summary>
+        protected async Task EnableLogonScreenAsync()
+        {
+            // Drop auth data.
+            logonScreen.Clear();
+
+            //Disable logon menu.
+            //logonScreen.IsHitTestVisible = false;
+
+            // Hide panel.
+            WpfHandler.UI.Animations.Thinkness.ThinknessAniamtion(
+                this,
+                logonScreen.Name,
+                new PropertyPath(Control.MarginProperty),
+                new TimeSpan(0, 0, 0, 0, 500),
+                new Thickness(0, -0.5f - main.ActualHeight - 5, 0, main.ActualHeight + 5),
+                new Thickness(0, -0.5f, 0, 0),
+                FillBehavior.HoldEnd);
+
+            //await Task.Delay(new TimeSpan(0, 0, 0, 0, 250));
+
+            // Hide curtain
+            WpfHandler.UI.Animations.Float.FloatAniamtion(
+                this,
+                curtain.Name,
+                new PropertyPath(Control.OpacityProperty),
+                new TimeSpan(0, 0, 0, 0, 350),
+                FillBehavior.HoldEnd,
+                0, 1);
+        }
+
+        /// <summary>
+        /// Will has been calling when user decide to logout from application.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void LogoutButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Disable panel.
+            profileContextPanel.IsHitTestVisible = false;
+
+            // Hide panel
+            WpfHandler.UI.Animations.Float.FloatAniamtion(this,
+                profileContextPanel.Name,
+                 new PropertyPath(Control.OpacityProperty),
+                new TimeSpan(0, 0, 0, 0, 200),
+                FillBehavior.HoldEnd,
+                1, 0);
+
+            // Detecting routing instruction suitable for user's queries.
+            BaseClient.routingTable.TryGetRoutingInstruction(
+                new UniformQueries.Query(
+                    new UniformQueries.QueryPart("logoff"),
+                    new UniformQueries.QueryPart("user"),
+                    new UniformQueries.QueryPart("token"),
+                    new UniformQueries.QueryPart("guid")),
+                out Instruction instruction);
+            if (!(instruction is AuthorizedInstruction toServerInst))
+            {
+                // Enable routing error message.
+                MessageBox.Show("Routing instruction for LOGOFF query not found.\n" +
+                    "Please be sure that you has PartialAuthorizedInstruction that allow to share queries with user&logoff parts");
+                return;
+            }
+
+            // Request user logoff.
+            BaseClient.OpenOutTransmissionLineViaPP(toServerInst.routingIP, toServerInst.pipeName).
+                SetInstructionAsKey(ref instruction).EnqueueQuery(
+                new UniformQueries.Query(
+                    true,
+                    new UniformQueries.QueryPart("token", toServerInst.AuthorizedToken),
+                    new UniformQueries.QueryPart("guid", "logoff"),
+                    new UniformQueries.QueryPart("user"),
+                    new UniformQueries.QueryPart("logoff")));
+
+            // Drop token.
+            toServerInst.AuthorizedToken = null;
+
+            // Enable logon screen.
+            await EnableLogonScreenAsync();
         }
     }
 }

@@ -42,6 +42,15 @@ namespace DatumPoint.Queries.Handlers
         /// </summary>
         public virtual ObjectHander Select { get; } = null;
 
+        /// <summary>
+        /// Delegate that will has calling before send success answer to client.
+        /// Use to modify data.
+        /// 
+        /// object - Received data.
+        /// QueryMeta - Meta that cotains information about query,
+        /// </summary>
+        public virtual Action<object, QueryMeta> PreComplete { get; } = null;
+
         public override string Description(string cultureKey)
         {
             throw new NotImplementedException();
@@ -121,8 +130,8 @@ namespace DatumPoint.Queries.Handlers
             // Drop metadata.
             UnregistrateSQLQuery(meta);
 
-            // Drop if oepratio nfailed.
-            if (!meta.sqlDataOperationFailed)
+            // Drop if oepration failed.
+            if (meta.sqlDataOperationFailed)
             {
                 // Log error.
                 UniformServer.BaseServer.SendAnswerViaPP
@@ -130,6 +139,9 @@ namespace DatumPoint.Queries.Handlers
                     query);
                 return;
             }
+
+            // Modify data if required.
+            PreComplete?.Invoke(bufer, meta);
 
             // Send received gender data to client.
             UniformServer.BaseServer.SendAnswerViaPP

@@ -155,7 +155,8 @@ limitations under the License.-->
                 <Button x:Name="logoutButton"
                         Grid.Column="1"
                         Background="Transparent" 
-                        BorderThickness="0">
+                        BorderThickness="0"
+                        Click="LogoutButton_Click">
                     <Image Source="{DynamicResource logoutIcon}" Width="24"/>
                 </Button>
             </Grid>

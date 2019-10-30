@@ -43,6 +43,46 @@ namespace DatumPoint.Queries.Handlers
             /// Query that was received by server.
             /// </summary>
             public Query entryQuery;
+
+            /// <summary>
+            /// Return token registration data.
+            /// </summary>
+            public AuthorityController.Data.Temporal.TokenInfo TokenInfo
+            {
+                get
+                {
+                    // Get token if not found before.
+                    if (tokenInfo == null)
+                    {
+                        // Looking for token in query.
+                        if (!entryQuery.TryGetParamValue("token", out QueryPart token))
+                        {
+                            Console.WriteLine("ERROR : USER INFO GET | Token not found.");
+                            return null;
+                        }
+
+                        // Getting token info.
+                        if (AuthorityController.Session.Current.TryGetTokenInfo(
+                            token.PropertyValueString,
+                            out AuthorityController.Data.Temporal.TokenInfo ti))
+                        {
+                            tokenInfo = ti;
+                        }
+                        else
+                        {
+                            Console.WriteLine("ERROR : USER INFO GET | Token infor not registred.");
+                            return null;
+                        }
+                    }
+
+                    return tokenInfo;
+                }
+            }
+
+            /// <summary>
+            /// Bufer that contains stored token info.
+            /// </summary>
+            private AuthorityController.Data.Temporal.TokenInfo tokenInfo;
         }
 
         /// <summary>
