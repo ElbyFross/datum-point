@@ -31,6 +31,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AuthorityController">
+      <HintPath>..\..\..\Frameworks\doloro-networking-framework\libs\AuthorityController.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DNFCore">
+      <HintPath>..\..\..\Frameworks\doloro-networking-framework\libs\DNFCore.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.0.17.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="PipesProvider">
+      <HintPath>..\..\..\Frameworks\doloro-networking-framework\libs\PipesProvider.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,13 +52,27 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="UniformDataOperator">
+      <HintPath>..\..\..\Frameworks\uniform-data-operator\UniformDataOperator.dll</HintPath>
+    </Reference>
+    <Reference Include="UniformQueries">
+      <HintPath>..\..\..\Frameworks\doloro-networking-framework\libs\UniformQueries.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuditoryPlanner\Auditory.cs" />
+    <Compile Include="AuditoryPlanner\Auditorium.cs" />
+    <Compile Include="AuditoryPlanner\Building.cs" />
     <Compile Include="AuditoryPlanner\Schema.cs" />
     <Compile Include="AuditoryPlanner\Seat.cs" />
-    <Compile Include="AuditoryPlanner\SeatsBlock.cs" />
+    <Compile Include="AuditoryPlanner\SeatReservation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\THB Data Types\DP Data Types.csproj">
+      <Project>{51dacea7-a2be-4be2-82e8-8f6d9532f6d3}</Project>
+      <Name>DP Data Types</Name>
+      <Private>False</Private>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
