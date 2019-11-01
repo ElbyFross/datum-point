@@ -26,30 +26,31 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfHandler.Plugins;
 
-namespace DatumPoint.Plugins.Schedule
+namespace DatumPoint.Plugins.Social.AuditoryPlanner
 {
     /// <summary>
-    /// Interaction logic for Schedule.xaml
+    /// Provides UI to certain seat managment.
     /// </summary>
-    public partial class Page : UserControl, IPlugin
+    public partial class Seat : UserControl
     {
-        public Page()
+        public Seat()
         {
             InitializeComponent();
             DataContext = this;
         }
 
-        public MenuItemMeta Meta { get; set; } = new MenuItemMeta() {
-            domain = "0_main.10_schedule",
-            titleDictionaryCode = "p_podshyvalov_schedule_menuTitle",
-            defaultTitle = "Schedule" };
-
-        public void OnStart(object sender)
+        /// <summary>
+        /// Callbeck that will be used when user click on seat.
+        /// Call interface of seat managment:
+        /// -Set place as occupied\free.
+        /// -Look who reserved occupied place.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SeatManagmentButton_Click(object sender, RoutedEventArgs e)
         {
-            // Request changing of GUI.
-            API.OpenGUI(this);
+
         }
     }
 }

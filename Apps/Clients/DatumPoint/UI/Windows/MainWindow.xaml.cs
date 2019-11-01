@@ -483,6 +483,12 @@ namespace DatumPoint.UI.Windows
         }
         #endregion
 
+        /// <summary>
+        /// Ipersonating active user by login.
+        /// </summary>
+        /// <param name="login">Login of logoned user.</param>
+        /// <param name="instruction">Routing instruction to target server.</param>
+        /// <returns></returns>
         protected async Task ImpersonateUserAsync(string login, PartialAuthorizedInstruction instruction)
         {
             #region Define token
@@ -626,13 +632,10 @@ namespace DatumPoint.UI.Windows
         /// <summary>
         /// Enabling logon screen.
         /// </summary>
-        protected async Task EnableLogonScreenAsync()
+        protected void EnableLogonScreen()
         {
             // Drop auth data.
             logonScreen.Clear();
-
-            //Disable logon menu.
-            //logonScreen.IsHitTestVisible = false;
 
             // Hide panel.
             WpfHandler.UI.Animations.Thinkness.ThinknessAniamtion(
@@ -661,7 +664,7 @@ namespace DatumPoint.UI.Windows
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void LogoutButton_Click(object sender, RoutedEventArgs e)
+        private void LogoutButton_Click(object sender, RoutedEventArgs e)
         {
             // Disable panel.
             profileContextPanel.IsHitTestVisible = false;
@@ -701,10 +704,10 @@ namespace DatumPoint.UI.Windows
                     new UniformQueries.QueryPart("logoff")));
 
             // Drop token.
-            toServerInst.AuthorizedToken = null;
+            toServerInst.LogonHandler.Token = null;
 
             // Enable logon screen.
-            await EnableLogonScreenAsync();
+            EnableLogonScreen();
         }
     }
 }

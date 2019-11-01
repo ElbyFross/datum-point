@@ -71,7 +71,7 @@ namespace WpfHandler.UI.Controls
         /// <summary>
         /// Compute margine relative to hierarchy level.
         /// </summary>
-        public System.Windows.Thickness AutoMargin
+        public Thickness AutoMargin
         {
             get
             {

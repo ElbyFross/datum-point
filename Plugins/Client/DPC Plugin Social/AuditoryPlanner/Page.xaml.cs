@@ -26,30 +26,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfHandler.Plugins;
 
-namespace DatumPoint.Plugins.Schedule
+namespace DatumPoint.Plugins.Social.AuditoryPlanner
 {
     /// <summary>
-    /// Interaction logic for Schedule.xaml
+    /// Interaction logic for Page.xaml
     /// </summary>
-    public partial class Page : UserControl, IPlugin
+    public partial class Page : UserControl
     {
         public Page()
         {
             InitializeComponent();
             DataContext = this;
-        }
-
-        public MenuItemMeta Meta { get; set; } = new MenuItemMeta() {
-            domain = "0_main.10_schedule",
-            titleDictionaryCode = "p_podshyvalov_schedule_menuTitle",
-            defaultTitle = "Schedule" };
-
-        public void OnStart(object sender)
-        {
-            // Request changing of GUI.
-            API.OpenGUI(this);
         }
     }
 }

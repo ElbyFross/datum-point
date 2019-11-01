@@ -26,30 +26,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfHandler.Plugins;
 
-namespace DatumPoint.Plugins.Schedule
+namespace DatumPoint.Plugins.Social.AuditoryPlanner
 {
     /// <summary>
-    /// Interaction logic for Schedule.xaml
+    /// Implement interface that allow to manage a some count of seats as a single block.
+    /// Configurating drawing grid.
+    /// Controlling indexes of places.
     /// </summary>
-    public partial class Page : UserControl, IPlugin
+    public partial class SeatsBlock : UserControl
     {
-        public Page()
+        public SeatsBlock()
         {
             InitializeComponent();
             DataContext = this;
-        }
-
-        public MenuItemMeta Meta { get; set; } = new MenuItemMeta() {
-            domain = "0_main.10_schedule",
-            titleDictionaryCode = "p_podshyvalov_schedule_menuTitle",
-            defaultTitle = "Schedule" };
-
-        public void OnStart(object sender)
-        {
-            // Request changing of GUI.
-            API.OpenGUI(this);
         }
     }
 }
