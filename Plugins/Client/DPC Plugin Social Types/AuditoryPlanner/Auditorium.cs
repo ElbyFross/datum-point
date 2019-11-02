@@ -24,7 +24,7 @@ using PipesProvider.Client;
 using PipesProvider.Networking.Routing;
 using UniformClient;
 
-namespace DatumPoint.Plugins.Social.AuditoryPlanner
+namespace DatumPoint.Plugins.Social.Types.AuditoryPlanner
 {
     /// <summary>
     /// Class that describe certain auditory settings.

@@ -21,7 +21,7 @@ using System.Xml.Serialization;
 using UniformDataOperator.Sql.Attributes;
 using UniformDataOperator.Sql.MySql.Attributes;
 
-namespace DatumPoint.Plugins.Social.AuditoryPlanner
+namespace DatumPoint.Plugins.Social.Types.AuditoryPlanner
 {
     /// <summary>
     /// Class that describe shema of auditorium.

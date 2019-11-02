@@ -19,7 +19,9 @@ limitations under the License.-->
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfHandler.UI.Controls"
              mc:Ignorable="d" 
-             d:DesignHeight="25" d:DesignWidth="70">
+             d:DesignHeight="25" d:DesignWidth="70"
+             Height="25"
+             Name="main">
 
     <Button x:Name="flatButton"
             FontWeight="Thin"
@@ -63,8 +65,24 @@ limitations under the License.-->
                 </Style.Triggers>
             </Style>
         </Button.Style>
-        
-        <Label Name="lable" Content="{Binding Text}" Opacity="0.5" FontSize="{Binding FontSize, ElementName=flatButton}">
+
+        <!--<Label Name="lable" 
+               Content="{Binding Text}"  
+               Margin="0,-10"
+               Height="{Binding Height, ElementName=main}" VerticalAlignment="Center"
+               Opacity="0.5" FontSize="{Binding FontSize, ElementName=flatButton}">-->
+
+        <Label Name="lable" 
+               Opacity="0.5" 
+               FontSize="{Binding FontSize, ElementName=flatButton}"
+               Height="{Binding Height, ElementName=main}"
+               VerticalAlignment="Center"
+               VerticalContentAlignment="Center">
+
+
+            <AccessText TextWrapping="NoWrap" Margin="{Binding LableMargin}"
+                        Text="{Binding Text, ElementName=main}"/>
+            
             <Label.Style>
                 <Style TargetType="{x:Type Label}">
                     <Style.Triggers>

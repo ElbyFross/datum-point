@@ -48,8 +48,8 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuditoryPlanner\Page.xaml.cs">
-      <DependentUpon>Page.xaml</DependentUpon>
+    <Compile Include="AuditoryPlanner\Editor.xaml.cs">
+      <DependentUpon>Editor.xaml</DependentUpon>
     </Compile>
     <Compile Include="AuditoryPlanner\Seat.xaml.cs">
       <DependentUpon>Seat.xaml</DependentUpon>
@@ -68,7 +68,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AuditoryPlanner\Page.xaml">
+    <Page Include="AuditoryPlanner\Editor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -148,6 +148,8 @@
     <ProjectReference Include="..\..\..\Frameworks\WpfHandler\WpfHandler.csproj">
       <Project>{9a1f206b-1f7a-43df-8a08-d86f26b8fc81}</Project>
       <Name>WpfHandler</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>False</Private>
     </ProjectReference>
     <ProjectReference Include="..\DPC Plugin Social Types\DPC Plugin Social Types.csproj">
       <Project>{53eb73f7-dcb0-4054-bbcf-c25f9e78f43b}</Project>

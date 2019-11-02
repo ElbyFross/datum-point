@@ -1,0 +1,323 @@
+﻿<!--Copyright 2019 Volodymyr Podshyvalov
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.-->
+
+<UserControl x:Class="DatumPoint.Plugins.Social.AuditoryPlanner.Editor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DatumPoint.Plugins.Social.AuditoryPlanner"
+             xmlns:wpfHandler="clr-namespace:WpfHandler.UI.Controls;assembly=WpfHandler"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800"
+             Name="main"
+             Background="White">
+
+    <!--<UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/WpfHandler;component/UI/Controls/FlatButton.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+             --><!--Local styles here--><!-- 
+        </ResourceDictionary>
+    </UserControl.Resources>-->
+
+    <Grid Margin="0.5,0,0,0">
+        <Grid x:Name="workspace">
+            <Grid.RowDefinitions>
+                <RowDefinition x:Name="controlPanelRow" Height="20"/>
+                <RowDefinition Height="0.5"/>
+                <!--<RowDefinition x:Name="configPanelRow" Height="15"/>
+                <RowDefinition Height="1"/>-->
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <!--
+            - Editing of existing schema
+            - Creating new schema
+            - Openning help overlay
+            -->            
+            <Grid x:Name="controlPanel">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition MinWidth="300"/>
+                    <ColumnDefinition MaxWidth="300"/>
+                </Grid.ColumnDefinitions>
+
+                <ComboBox Grid.Column="1" BorderThickness="0"></ComboBox>
+
+                <Grid Grid.Column="0">
+                    <StackPanel Orientation="Horizontal">
+                        <wpfHandler:FlatButton 
+                                      Text="Save" 
+                                      Background="Transparent"
+                                      HorizontalAlignment="Right" 
+                                      FontSize="15"
+                                      Grid.Column="2" />
+                        <Canvas Width="0.5" Background="Gray"/>
+                        <wpfHandler:FlatButton 
+                                      Text="New" 
+                                      Background="Transparent"
+                                      HorizontalAlignment="Right" 
+                                      FontSize="15"
+                                      Grid.Column="2"/>
+                        <Canvas Width="0.5" Background="Gray"/>
+                        <wpfHandler:FlatButton  
+                                      Text="Info" 
+                                      Background="Transparent"
+                                      HorizontalAlignment="Right" 
+                                      FontSize="15"
+                                      Grid.Column="2" 
+                                      ClickCallback="InfoCallback"/>
+                        <Canvas Width="0.5" Background="Gray"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Canvas Width="0.5" Background="Gray"/>
+                        <wpfHandler:FlatButton 
+                                      Text="Normal" 
+                                      Background="Transparent"
+                                      HorizontalAlignment="Right" 
+                                      FontSize="15"
+                                      Grid.Column="2" />
+                        <Canvas Width="0.5" Background="Gray"/>
+                        <wpfHandler:FlatButton 
+                                      Text="Hide" 
+                                      Background="Transparent"
+                                      HorizontalAlignment="Right" 
+                                      FontSize="15"
+                                      Grid.Column="2" />
+                        <Canvas Width="0.5" Background="Gray"/>
+                        <wpfHandler:FlatButton 
+                                      Text="Block" 
+                                      Background="Transparent"
+                                      HorizontalAlignment="Right" 
+                                      FontSize="15"
+                                      Grid.Column="2" />
+                    </StackPanel>
+
+                    <!--<StackPanel Orientation="Horizontal"  HorizontalAlignment="Right">
+                        <wpfHandler:FlatButton BorderThickness="0" Width="{Binding Height, ElementName=controlPanelRow}" Content="Normal"/>
+                        <Canvas Width="1"/>
+                        <wpfHandler:FlatButton BorderThickness="0" Width="{Binding Height, ElementName=controlPanelRow}" Content="Hide"/>
+                        <Canvas Width="1"/>
+                        <wpfHandler:FlatButton BorderThickness="0" Width="{Binding Height, ElementName=controlPanelRow}" Content="Block"/>
+                    </StackPanel>-->
+                </Grid>
+            </Grid>
+
+            <Grid Background="Gray" Grid.Row="1"/>
+            <Grid Background="Gray" Grid.Row="3"/>
+
+            <!--<Grid x:Name="configPanel" 
+                  Grid.Row="2" 
+                  Background="White">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="{Binding Height, ElementName=controlPanelRow}"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="2"
+                        BorderThickness="0"/>
+            </Grid>-->
+
+            <Grid x:Name="canvas"
+                  Grid.Row="5"
+                  Background="{Binding Background, ElementName=main}">
+
+                <Grid HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition MinHeight="30"/>
+                        <RowDefinition MinHeight="30"/>
+                        <RowDefinition Height="10"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition MinWidth="30"/>
+                        <ColumnDefinition MinWidth="30"/>
+                        <ColumnDefinition Width="10"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!--<Button Grid.Row="0" Grid.Column="0" IsHitTestVisible="False" BorderThickness="0"/>
+                    <Button Grid.Row="3" Grid.Column="0" IsHitTestVisible="False" BorderThickness="0"/>
+                    <Button Grid.Row="3" Grid.Column="3" IsHitTestVisible="False" BorderThickness="0"/>
+                    <Button Grid.Row="0" Grid.Column="3" IsHitTestVisible="False" BorderThickness="0"/>-->
+
+                    <!--<Button Grid.Row="1" Content="+" BorderThickness="0"/>
+                    <Button Grid.Row="2" Content="-" BorderThickness="0"/>
+
+                    <Button Grid.Row="1" Grid.Column="3" BorderThickness="0">
+                        <Label FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Center" Content="+"/>
+                    </Button>
+                    <Button Grid.Row="2" Grid.Column="3" Content="-" BorderThickness="0"/>
+
+                    <Button Grid.Row="0" Grid.Column="2" Content="+" BorderThickness="0"/>
+                    <Button Grid.Row="0" Grid.Column="1" Content="-" BorderThickness="0"/>
+
+                    <Button Grid.Row="3" Grid.Column="2" Content="+" BorderThickness="0"/>
+                    <Button Grid.Row="3" Grid.Column="1" Content="-" BorderThickness="0"/>-->
+
+                    <StackPanel Orientation="Vertical"
+                                Grid.Row="1" Grid.RowSpan="2" 
+                                Grid.Column="1" Grid.ColumnSpan="2">
+                        <StackPanel Orientation="Horizontal">
+                            <local:Seat Index="1"/>
+                            <local:Seat/>
+                            <local:Seat Opacity="0.1"/>
+                            <local:Seat/>
+                            <local:Seat/>
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal">
+                            <local:Seat/>
+                            <local:Seat/>
+                            <local:Seat Opacity="0.1"/>
+                            <local:Seat/>
+                            <local:Seat/>
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal">
+                            <local:Seat/>
+                            <local:Seat/>
+                            <local:Seat Opacity="0.1"/>
+                            <local:Seat/>
+                            <local:Seat/>
+                        </StackPanel>
+                        
+                        <StackPanel Orientation="Horizontal">
+                            <local:Seat/>
+                            <local:Seat/>
+                            <local:Seat Opacity="0.1"/>
+                            <local:Seat Opacity="0.1"/>
+                            <local:Seat Opacity="0.1"/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <local:Seat/>
+                            <local:Seat/>
+                            <local:Seat Opacity="0.1"/>
+                            <local:Seat/>
+                            <local:Seat/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <local:Seat/>
+                            <local:Seat/>
+                            <local:Seat Opacity="0.1"/>
+                            <local:Seat/>
+                            <local:Seat/>
+                        </StackPanel>
+
+                        <StackPanel Orientation="Horizontal">
+                            <local:Seat/>
+                            <local:Seat/>
+                            <local:Seat Opacity="0.1"/>
+                            <local:Seat/>
+                            <local:Seat/>
+                        </StackPanel>
+
+                    </StackPanel>
+                </Grid>
+                
+                
+            </Grid>
+        </Grid>
+
+        <!--Help overlay-->
+        <Grid x:Name="helpOverlayBackplate"
+              Background="Transparent" 
+              Opacity="0"
+              Grid.ColumnSpan="4" 
+              IsHitTestVisible="False"
+              Margin="-1.5"/>
+
+        <Grid x:Name="helpOverlay"
+              Margin="10,30,10,10" 
+              Opacity="0"
+              IsHitTestVisible="False">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition/>
+                <ColumnDefinition x:Name="instructionsColumn" Width="290"/>
+            </Grid.ColumnDefinitions>
+
+
+            <Grid x:Name="instructions"
+                       Grid.Column="2"
+                       Background="WhiteSmoke"
+                       VerticalAlignment="Bottom">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="27"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid Background="White" Margin="2,2,2,2"/>
+                <Label Content="How to use?" 
+                       FontWeight="Thin"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+
+                <ListBox Grid.Row="1" BorderThickness="0" Background="Transparent">
+                    <TextBlock TextWrapping="Wrap" 
+                               Width="278" 
+                               Text="-ExampleExampleExampleExampleExampleExample ExampleExampleExampleExampleExample"/>
+                    <TextBlock TextWrapping="Wrap" 
+                               Width="278" 
+                               Text="-ExampleExampleExampleExampleExampleExample ExampleExampleExampleExampleExample"/>
+                    <TextBlock TextWrapping="Wrap" 
+                               Width="278" 
+                               Text="-ExampleExampleExampleExampleExampleExample ExampleExampleExampleExampleExample"/>
+                    <TextBlock TextWrapping="Wrap" 
+                               Width="278" 
+                               Text="-ExampleExampleExampleExampleExampleExample ExampleExampleExampleExampleExample"/>
+                    <TextBlock TextWrapping="Wrap" 
+                               Width="278" 
+                               Text="-ExampleExampleExampleExampleExampleExample ExampleExampleExampleExampleExample"/>
+                    <TextBlock TextWrapping="Wrap" 
+                               Width="278" 
+                               Text="-ExampleExampleExampleExampleExampleExample ExampleExampleExampleExampleExample"/>
+                </ListBox>
+            </Grid>
+
+            <Grid x:Name="legend"
+                  Grid.Column="0"
+                  Background="WhiteSmoke"
+                  VerticalAlignment="Bottom">
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="27"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid Background="White" Margin="2,2,2,2"/>
+                <Label Content="Legend" 
+                       FontWeight="Thin"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"/>
+
+                <ListBox Grid.Row="1" BorderThickness="0" Background="Transparent">
+                    <Label Content="Example"/>
+                    <Label Content="Example"/>
+                    <Label Content="Example"/>
+                    <Label Content="Example"/>
+                </ListBox>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

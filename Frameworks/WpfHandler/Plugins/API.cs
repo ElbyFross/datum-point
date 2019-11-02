@@ -73,7 +73,9 @@ namespace WpfHandler.Plugins
                 foreach (Type type in assembly.GetTypes())
                 {
                     // Check if this type is subclass of query.
-                    if (type.GetInterface("IPlugin") != null)
+                    if (!type.IsAbstract && 
+                        !type.IsInterface &&
+                        type.GetInterface("IPlugin") != null)
                     {
                         // Instiniating querie processor.
                         IPlugin instance = (IPlugin)Activator.CreateInstance(type);

@@ -50,6 +50,18 @@ namespace WpfHandler.UI.Controls
         }
 
         /// <summary>
+        /// Offset applied to lable.
+        /// </summary>
+        public Thickness LableMargin
+        {
+            get
+            {
+                var offset = -main.Height / 2;
+                return new Thickness(0, offset, 0, offset);
+            }
+        }
+
+        /// <summary>
         /// Method that will has been calling during click on button.
         /// </summary>
         public Action<object> ClickCallback

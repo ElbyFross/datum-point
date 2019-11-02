@@ -18,7 +18,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DatumPoint.Plugins.Social.AuditoryPlanner
+namespace DatumPoint.Plugins.Social.Types.AuditoryPlanner
 {
     /// <summary>
     /// Class that describe certain seatt in the auditory or on the schema.
@@ -58,5 +58,10 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
         /// Current state of the place.
         /// </summary>
         public State state = State.Undefined;
+
+        /// <summary>
+        /// Index of the place in the auditorium.
+        /// </summary>
+        public int index = -1;
     }
 }
