@@ -39,38 +39,73 @@ namespace DatumPoint.Plugins.Social.Types.AuditoryPlanner
         public int id = -1;
 
         /// <summary>
-        /// Seats grid in binary format to storing in databases.
+        /// Seats blocls binary format to storing in databases.
         /// </summary>
-        [Column("grid", System.Data.DbType.Binary)]
+        [Column("blocks", System.Data.DbType.Binary)]
         [MySqlDBTypeOverride(MySql.Data.MySqlClient.MySqlDbType.TinyBlob, "TINYBLOB")]
         [XmlIgnore]
-        public byte[] GridBlob
+        public byte[] BlocksBlob
         { 
             get
             {
-                if (grid == null) return null;
-                return UniformDataOperator.Binary.BinaryHandler.ToByteArray(grid);
+                if (blocks == null) return null;
+                return UniformDataOperator.Binary.BinaryHandler.ToByteArray(blocks);
             }
             set
             {
                 try
                 {
-                    grid = UniformDataOperator.Binary.BinaryHandler.FromByteArray<Seat[,]>(value);
+                    // Trying to decode blocks from binary.
+                    blocks = UniformDataOperator.Binary.BinaryHandler.FromByteArray<SeatsBlock[]>(value);
                 }
                 catch(Exception ex)
                 {
                     Console.WriteLine("Auditorium schema's grid damaged. Details:" + ex.Message);
 
-                    // Set empty grid.
-                    grid = new Seat[0, 0];
+                    // Set base auditorium.
+                    blocks = new SeatsBlock[1];
+                    blocks[0].grid = new Seat[1, 1];
+                    blocks[0].grid[0, 0] = new Seat();
                 }
             }
         }
 
         /// <summary>
-        /// Grid of seats applied to the schema.
+        /// Bunch of blocks applied to the schema.
         /// </summary>
-        public Seat[,] grid;
+        public SeatsBlock[] blocks;
+
+        /// <summary>
+        /// Check if all indexes is valid.
+        /// </summary>
+        public bool IsIndexesValid
+        {
+            get
+            {
+                // Table that will contains all indexes
+                HashSet<int> usedIndexes = new HashSet<int>();
+                foreach(SeatsBlock block in blocks)
+                {
+                    // Check every registred index.
+                    for(int i = 0; i < block.grid.GetLength(0); i++)
+                        for (int k = 0; k < block.grid.GetLength(1); k++)
+                        {
+                            // Check if index alredy in hashset.
+                            if(!usedIndexes.Contains(block.grid[i,k].index))
+                            {
+                                // Add index to set.
+                                usedIndexes.Add(block.grid[i, k].index);
+                            }
+                            else
+                            {
+                                // Drop due conflict.
+                                return false;
+                            }
+                        }
+                }
+                return true;
+            }
+        }
         #endregion
 
         #region API

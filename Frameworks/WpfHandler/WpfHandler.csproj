@@ -55,8 +55,8 @@
     <Compile Include="UI\Controls\CatalogButton.xaml.cs">
       <DependentUpon>CatalogButton.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Localization\API.cs" />
-    <Compile Include="Localization\DomainContainer.cs" />
+    <Compile Include="Dictionaries\API.cs" />
+    <Compile Include="Dictionaries\DomainContainer.cs" />
     <Compile Include="Plugins\API.cs" />
     <Compile Include="Plugins\Constants.cs" />
     <Compile Include="Plugins\Interfaces\IPlugin.cs" />

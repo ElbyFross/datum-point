@@ -41,13 +41,16 @@ namespace WpfHandler.UI.Controls
         //  "HierarchyLevel", typeof(int), typeof(CatalogButton));
 
         public static readonly DependencyProperty UnfocusedBackgroundColorProperty = DependencyProperty.Register(
-          "UnfocusedBackgroundColor", typeof(Brush), typeof(CatalogButton));
+          "UnfocusedBackgroundColor", typeof(Brush), typeof(CatalogButton),
+          new PropertyMetadata(Brushes.Transparent));
 
         public static readonly DependencyProperty FocusedBackgroundColorProperty = DependencyProperty.Register(
-          "FocusedBackgroundColor", typeof(Brush), typeof(CatalogButton));
+          "FocusedBackgroundColor", typeof(Brush), typeof(CatalogButton),
+           new PropertyMetadata(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#00A8E8"))));
 
         public static readonly DependencyProperty TextColorProperty = DependencyProperty.Register(
-          "TextColor", typeof(Brush), typeof(CatalogButton));
+          "TextColor", typeof(Brush), typeof(CatalogButton),
+          new PropertyMetadata(Brushes.White));
 
         public static readonly DependencyProperty ClickCallbackProperty = DependencyProperty.Register(
           "ClickCallback", typeof(System.Action<object>), typeof(CatalogButton));
@@ -82,17 +85,17 @@ namespace WpfHandler.UI.Controls
         /// <summary>
         /// Collor of button when it unfocused.
         /// </summary>
-        public Brush UnfocusedBackgroundColor { get; set; } = Brushes.Transparent;
+        public Brush UnfocusedBackgroundColor { get; set; }
 
         /// <summary>
         /// Color of button when it focused.
         /// </summary>
-        public Brush FocusedBackgroundColor { get; set; } = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#00A8E8"));
+        public Brush FocusedBackgroundColor { get; set; }
         
         /// <summary>
         /// Collor of the text.
         /// </summary>
-        public Brush TextColor { get; set; } = Brushes.White;
+        public Brush TextColor { get; set; }
 
         /// <summary>
         /// Method that will has been calling during click on button.

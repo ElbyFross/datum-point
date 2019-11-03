@@ -21,7 +21,9 @@ limitations under the License.-->
              mc:Ignorable="d" 
              d:DesignHeight="25" d:DesignWidth="70"
              Height="25"
-             Name="main">
+             Name="main"
+             Background="Transparent"
+             Foreground="#FFFFFF">
 
     <Button x:Name="flatButton"
             FontWeight="Thin"

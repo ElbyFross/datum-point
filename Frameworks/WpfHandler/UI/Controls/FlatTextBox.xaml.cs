@@ -45,10 +45,12 @@ namespace WpfHandler.UI.Controls
           "Text", typeof(string), typeof(FlatTextBox));
         
         public static readonly DependencyProperty TextBoxForegroundProperty = DependencyProperty.Register(
-          "TextBoxForeground", typeof(Brush), typeof(FlatTextBox));
+          "TextBoxForeground", typeof(Brush), typeof(FlatTextBox), 
+          new PropertyMetadata(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"))));
 
         public static readonly DependencyProperty TextBoxBackgroundProperty = DependencyProperty.Register(
-          "TextBoxBackground", typeof(Brush), typeof(FlatTextBox));
+          "TextBoxBackground", typeof(Brush), typeof(FlatTextBox),
+          new PropertyMetadata(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#00a9e9"))));
         #endregion
 
         #region Properties

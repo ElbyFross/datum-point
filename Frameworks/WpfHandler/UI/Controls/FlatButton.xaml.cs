@@ -35,7 +35,7 @@ namespace WpfHandler.UI.Controls
     public partial class FlatButton : UserControl
     {
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
-          "Text", typeof(string), typeof(FlatButton));
+          "Text", typeof(string), typeof(FlatButton), new PropertyMetadata("Sample"));
 
         public static readonly DependencyProperty ClickCallbackProperty = DependencyProperty.Register(
           "ClickCallback", typeof(Action<object>), typeof(FlatButton));

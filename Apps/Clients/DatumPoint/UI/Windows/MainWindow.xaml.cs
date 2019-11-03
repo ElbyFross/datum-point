@@ -84,6 +84,7 @@ namespace DatumPoint.UI.Windows
         #region Constructors & destructors
         public MainWindow()
         {
+
             #region WPF Init            
             InitializeComponent();
             DataContext = this;
@@ -94,8 +95,8 @@ namespace DatumPoint.UI.Windows
             logonScreen.RegPanel_ContinueCallback += LogonScreen_RegistrationButton; // Registration button
             #endregion
 
-            #region UniformClient Init
-            // Initialize client. Also will load assemblies.
+            #region Plugins initializing.
+            // Initialize client. Also will load assemblies and XAML dictionaries.
             Client.Init();
 
             // Load plugins.

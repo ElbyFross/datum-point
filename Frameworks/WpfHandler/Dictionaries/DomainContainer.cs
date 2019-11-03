@@ -12,7 +12,7 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-namespace WpfHandler.Localization
+namespace WpfHandler.Dictionaries
 {
     /// <summary>
     /// Class that provide information about dictionary domain.
@@ -20,9 +20,9 @@ namespace WpfHandler.Localization
     public class DomainContainer
     {
         /// <summary>
-        /// Culture of this dictionary.
+        /// Key code of this dictionary.
         /// </summary>
-        public string cultureKey;
+        public string key;
 
         /// <summary>
         /// Full domain of plugin.

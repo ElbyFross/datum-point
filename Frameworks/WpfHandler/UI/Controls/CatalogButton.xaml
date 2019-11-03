@@ -22,7 +22,14 @@ limitations under the License.-->
              x:Class="WpfHandler.UI.Controls.CatalogButton"
              mc:Ignorable="d" 
              d:DesignHeight="25" d:DesignWidth="220">
-
+    <UserControl.Resources>
+        <Style x:Key="MenuButton" TargetType="local:CatalogButton">
+            <Setter Property="UnfocusedBackgroundColor" Value="{DynamicResource unfocusedButton}"/>
+            <Setter Property="FocusedBackgroundColor" Value="{DynamicResource focusedButton}"/>
+            <Setter Property="TextColor" Value="{DynamicResource textboxForeground}"/>
+        </Style>
+    </UserControl.Resources>
+    
     <Button x:Name="catalogButton" 
             Height="{Binding Height}"
             BorderThickness="0"

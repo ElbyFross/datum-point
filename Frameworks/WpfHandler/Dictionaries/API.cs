@@ -22,13 +22,35 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Globalization;
 
-namespace WpfHandler.Localization
+namespace WpfHandler.Dictionaries
 {
     /// <summary>
     /// Class that provide methods for controll WPF application localization.
     /// </summary>
     public static class API
     {
+        /// <summary>
+        /// Scaning for language dictionaries in XAML files, and load them to Merged dictionaries.
+        /// Loading new theme by code if found. Leave already loaded if overrided dictionary not found.
+        /// 
+        /// Require files format: *.theme.THEME_CODE.xaml, where theme code equal current theme selected on the app. 
+        /// Example: plugin.feed.theme.blueTheme.xaml
+        /// </summary>
+        /// <param name="themeCode"></param>
+        public static void LoadXAML_Thems(string themeCode)
+        {
+            #region Validate and fix base conditions
+            // Validate directory.
+            if (!Directory.Exists(Plugins.Constants.THEMES_DIR))
+            {
+                Directory.CreateDirectory(Plugins.Constants.THEMES_DIR);
+                Console.WriteLine("THEMES DIRECTORY NOT FOUND. NEW ONE WAS CREATED.");
+            }
+            #endregion
+            
+            UpdateDictionariesGroup(Plugins.Constants.THEMES_DIR, "theme", themeCode);
+        }
+
         /// <summary>
         /// Scaning for language dictionaries in XAML files, and load them to Merged dictionaries.
         /// Load relative to new culture if found. Leave previous culture if not.
@@ -42,17 +64,40 @@ namespace WpfHandler.Localization
         {
             #region Validate and fix base conditions
             // Validate directory.
-            if (!Directory.Exists(WpfHandler.Plugins.Constants.PLUGINS_DIR))
+            if (!Directory.Exists(Plugins.Constants.PLUGINS_DIR))
             {
-                Directory.CreateDirectory(WpfHandler.Plugins.Constants.PLUGINS_DIR);
+                Directory.CreateDirectory(Plugins.Constants.PLUGINS_DIR);
                 Console.WriteLine("PLUGINS DIRECTORY NOT FOUND. NEW ONE WAS CREATED.");
             }
             #endregion
 
+            // Request dictionaries update.
+            UpdateDictionariesGroup(Plugins.Constants.PLUGINS_DIR, "lang", targetCulture.Name, secondaryCulture.Name);
+            
+            // Update culture.
+            System.Threading.Thread.CurrentThread.CurrentUICulture = targetCulture;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="directory"></param>
+        /// <param name="groupCode"></param>
+        /// <param name="subCodes">Codes that will be required from group of plugins.
+        /// Will be looced in order of prefernces. Lower index - more prefered.
+        /// Will load any exist in case if any requested code not found.
+        /// 
+        /// Exmples: 
+        /// Culture code for localization plugins. 
+        /// Theme code for design plugins.
+        /// </param>
+        public static void UpdateDictionariesGroup(string directory, string groupCode, params string[] subCodes)
+        {
+
             #region Find localization files
             // Load all lang files.
-            Regex searchPattern = new Regex(@"\w*.lang.[0-9a-z-]*.xaml", RegexOptions.IgnoreCase);
-            var xamlDicts = Directory.EnumerateFiles(WpfHandler.Plugins.Constants.PLUGINS_DIR, "*.xaml", SearchOption.AllDirectories)
+            Regex searchPattern = new Regex(@"\w*."+ groupCode + ".[0-9a-z-]*.xaml", RegexOptions.IgnoreCase);
+            var xamlDicts = Directory.EnumerateFiles(directory, "*.xaml", SearchOption.AllDirectories)
                 .Where(s => searchPattern.IsMatch(s));
 
 
@@ -60,21 +105,21 @@ namespace WpfHandler.Localization
             Hashtable pluginDomainsMap = new Hashtable();
 
             string rootName = null; // Varaiable that avoid allocating of memmory on every loop's step.
-            string cultureBufer = null; // Variable that contain temporal culture code.
-            int langIndex = 0; // Bufer that avoid allocating for every loop's step.
+            string subPluginCodeBufer = null; // Variable that contain sub code of that dictionary (culture code, theme code, etc.).
+            int groupCodeIndex = 0; // Bufer that avoid allocating for every loop's step.
 
             // Register every found dictionary.
             foreach (string domain in xamlDicts)
             {
                 // Get plugin domain.
                 rootName = domain.Substring(domain.LastIndexOf('\\') + 1);
-                langIndex = rootName.LastIndexOf(".lang.");
+                groupCodeIndex = rootName.LastIndexOf("."+groupCode+ ".");
 
                 // Detect file culture.
-                cultureBufer = rootName.Substring(langIndex + 6);
-                cultureBufer = cultureBufer.Substring(0, cultureBufer.IndexOf('.'));
+                subPluginCodeBufer = rootName.Substring(groupCodeIndex + 6);
+                subPluginCodeBufer = subPluginCodeBufer.Substring(0, subPluginCodeBufer.IndexOf('.'));
 
-                rootName = rootName.Substring(0, langIndex);
+                rootName = rootName.Substring(0, groupCodeIndex);
 
                 // Load map list for this domain.
                 if (!(pluginDomainsMap[rootName] is List<DomainContainer> domainMap))
@@ -84,7 +129,8 @@ namespace WpfHandler.Localization
                     pluginDomainsMap.Add(rootName, domainMap);
                 }
                 // Add data to list.
-                domainMap.Add(new DomainContainer() { cultureKey = cultureBufer, pluginDomain = rootName, path = domain });
+                domainMap.Add(new DomainContainer() 
+                { key = subPluginCodeBufer, pluginDomain = rootName, path = domain });
             }
 
             // Select most relevant domains.
@@ -99,17 +145,27 @@ namespace WpfHandler.Localization
                     foreach (DomainContainer dc in domainMap)
                     {
                         // If target found.
-                        if (dc.cultureKey == targetCulture.Name)
+                        if (dc.key == subCodes[0])
                         {
                             detected = true;
                             relevantDomains.Add(dc);
                             break;
                         }
 
-                        // If found secondary culture contaier then save it.
-                        if (dc.cultureKey == secondaryCulture.Name)
+                        // If found secondary code contaier then save it.
+                        for (int i = 1; i < subCodes.Length; i++)
                         {
-                            reservContainer = dc;
+                            var request = subCodes[i];
+
+                            // Skip if previlaged one already found.
+                            if (reservContainer != null && reservContainer.key == request) break;
+
+                            // Set as most relevant reserve container.
+                            if (request == dc.key)
+                            {
+                                reservContainer = dc;
+                                break;
+                            }
                         }
                     }
 
@@ -123,7 +179,7 @@ namespace WpfHandler.Localization
                         continue;
                     }
 
-                    // Apply first detected localization file domain.
+                    // Apply first detected plugin dictionary domain if any specified not detected.
                     if (domainMap.Count > 0)
                     {
                         relevantDomains.Add(domainMap[0]);
@@ -137,7 +193,7 @@ namespace WpfHandler.Localization
             foreach (DomainContainer domain in relevantDomains)
             {
                 // Dict pattern.
-                Regex regex = new Regex(@"\w*" + domain.pluginDomain + ".lang.[0-9a-z-]*.xaml", RegexOptions.IgnoreCase);
+                Regex regex = new Regex(@"\w*" + domain.pluginDomain + "." + groupCode + ".[0-9a-z-]*.xaml", RegexOptions.IgnoreCase);
 
                 // Look for conflict dictionary among loaded.
                 ResourceDictionary rdForRemove = null;
@@ -170,14 +226,10 @@ namespace WpfHandler.Localization
                 else
                 {
                     Application.Current.Resources.MergedDictionaries.Add(myResourceDictionary);
-
-                    Collection<ResourceDictionary> col = Application.Current.Resources.MergedDictionaries;
+                    //Collection<ResourceDictionary> col = Application.Current.Resources.MergedDictionaries;
                 }
             }
             #endregion
-
-            // Update culture.
-            System.Threading.Thread.CurrentThread.CurrentUICulture = targetCulture;
         }
     }
 }

@@ -71,7 +71,10 @@ namespace DatumPoint.Networking
             LoadAssemblies(AppDomain.CurrentDomain.BaseDirectory + "plugins\\");
 
             // Load translation for plugins relative to thread culture.
-            WpfHandler.Localization.API.LoadXAML_LangDicts(CultureInfo.CurrentCulture, new CultureInfo("en-US"));
+            WpfHandler.Dictionaries.API.LoadXAML_LangDicts(CultureInfo.CurrentCulture, new CultureInfo("en-US"));
+
+            // Load default theme.
+            WpfHandler.Dictionaries.API.LoadXAML_Thems("blueTheme");
 
             // Loading routing data.
             InitRoutingTables();
@@ -94,7 +97,10 @@ namespace DatumPoint.Networking
             LoadAssemblies(AppDomain.CurrentDomain.BaseDirectory + "plugins\\");
 
             // Load translation for plugins relative to thread culture.
-            WpfHandler.Localization.API.LoadXAML_LangDicts(CultureInfo.CurrentCulture, new CultureInfo("en-US"));
+            WpfHandler.Dictionaries.API.LoadXAML_LangDicts(CultureInfo.CurrentCulture, new CultureInfo("en-US"));
+
+            // Load default theme.
+            WpfHandler.Dictionaries.API.LoadXAML_Thems("blueTheme");
 
             // Aplly routing data.
             routingTable = table;

@@ -19,7 +19,8 @@ limitations under the License.-->
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfHandler.UI.Controls"
              mc:Ignorable="d" 
-             d:DesignHeight="32" d:DesignWidth="300">
+             d:DesignHeight="32" d:DesignWidth="300"
+             Background="#FFFFFF">
     <Grid Background="{Binding Background}" x:Name="flatButton" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="{Binding LableWidth}"></ColumnDefinition>
@@ -36,7 +37,11 @@ limitations under the License.-->
                Foreground="#003459" 
                Content="{Binding Lable}" />
         <Grid Grid.Column="1"  Background="#00171f" />
-        <Grid Grid.Column="3"  Background="{Binding TextBoxBackground}" VerticalAlignment="Center" Margin="1.5,0,0,0">
+        <Grid Grid.Column="3"  
+              Background="{Binding TextBoxBackground}" 
+              VerticalAlignment="Center"
+              Margin="1.5,0,0,0">
+            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2"/>
                 <ColumnDefinition Width="*"/>
