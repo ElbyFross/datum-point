@@ -65,6 +65,7 @@
     <Compile Include="AuditoryPlanner\Schema.cs" />
     <Compile Include="AuditoryPlanner\Seat.cs" />
     <Compile Include="AuditoryPlanner\SeatReservation.cs" />
+    <Compile Include="AuditoryPlanner\SeatsBlock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
