@@ -135,7 +135,7 @@ namespace DatumPoint.Plugins.Social.Schedule
 
         }
 
-        private void reservedPlaceButton_Click(object sender, RoutedEventArgs e)
+        private void ReservedPlaceButton_Click(object sender, RoutedEventArgs e)
         {
 
         }

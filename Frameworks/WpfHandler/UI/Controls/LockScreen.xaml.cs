@@ -87,7 +87,7 @@ namespace WpfHandler.UI.Controls
             #region Unblock lock UI
             // Cancel button
             lockCancelButton.IsHitTestVisible = true;
-            Animations.Float.FloatAniamtion(
+            Animations.Float.StartStoryboard(
                 this, lockCancelButton.Name,
                 opacityPropertyPath,
                 lockAnimationDuration,
@@ -96,7 +96,7 @@ namespace WpfHandler.UI.Controls
 
             // Lable
             lockLable.Content = message;
-            Animations.Float.FloatAniamtion(
+            Animations.Float.StartStoryboard(
                 this, lockLable.Name,
                 opacityPropertyPath,
                 lockAnimationDuration,
@@ -130,7 +130,7 @@ namespace WpfHandler.UI.Controls
             #region Block lock UI
             // Cancel button
             lockCancelButton.IsHitTestVisible = false;
-            Animations.Float.FloatAniamtion(this,
+            Animations.Float.StartStoryboard(this,
                 lockCancelButton.Name,
                 opacityPropertyPath,
                 lockAnimationDuration,
@@ -138,7 +138,7 @@ namespace WpfHandler.UI.Controls
                 1, 0);
 
             // Lock lable
-            Animations.Float.FloatAniamtion(this,
+            Animations.Float.StartStoryboard(this,
                 lockLable.Name,
                 opacityPropertyPath,
                 lockAnimationDuration,

@@ -24,151 +24,149 @@ using System.Windows.Controls;
 
 namespace WpfHandler.UI.Animations
 {
-    /// <summary>
-    /// Provide base float animations operations.
-    /// </summary>
-    public static class Float
+    public static class Object
     {
+
         /// <summary>
-        /// Start float animation.
+        /// Start object animation.
         /// </summary>
         /// <param name="parent">Object that contains property.</param>
-        /// <param name="controlName">A name of the UI Elemnt.</param>
+        /// <param name="propertyName">A name of the property.</param>
         /// <param name="propertyPath">A path that describe the dependency property to be animated.</param>
         /// <param name="duration">How many time would take transit.</param>
+        /// <param name="from">Start value.</param>
+        /// <param name="to">Finish value.</param>
         /// <param name="fillBehavior">
         /// Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
         /// its active period but its parent is inside its active or hold period.</param>
-        /// <param name="from">Start value.</param>
-        /// <param name="to">Finish value.</param>
+        /// <param name="initHandler">Handler that would be called before animation start.
+        /// There you can subscrube on events or reconfigurate settigns.</param>
         /// <returns>Created storyboard.</returns>
         public static Storyboard StartStoryboard(
             FrameworkElement parent,
-            string controlName,
+            string propertyName,
             PropertyPath propertyPath,
             TimeSpan duration,
+            object from,
+            object to,
             FillBehavior fillBehavior,
-            float from, float to)
+            Action<Storyboard> initHandler)
         {
             return StartStoryboard(
-               parent,
-               controlName,
-               propertyPath,
-               duration,
-               fillBehavior,
-               from, to,
-               null);
+                parent,
+                propertyName,
+                null,
+                propertyPath,
+                duration, from,
+                to,
+                fillBehavior,
+                initHandler);
         }
 
         /// <summary>
-        /// Start float animation.
+        /// Start object animation.
         /// </summary>
         /// <param name="parent">Object that contains property.</param>
-        /// <param name="controlName">A name of the UI element.</param>
+        /// <param name="obj">object that will animated.</param>
         /// <param name="propertyPath">A path that describe the dependency property to be animated.</param>
         /// <param name="duration">How many time would take transit.</param>
+        /// <param name="from">Start value.</param>
+        /// <param name="to">Finish value.</param>
         /// <param name="fillBehavior">
         /// Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
         /// its active period but its parent is inside its active or hold period.</param>
-        /// <param name="from">Start value.</param>
-        /// <param name="to">Finish value.</param>
-        /// <param name="initHandler">Handler that would be called before animation start.
-        /// There you can subscrube on events or reconfigurate settigns.</param>
-        /// <returns>Created storyboard.</returns>
-        public static Storyboard StartStoryboard(
-            FrameworkElement parent, 
-            string controlName, 
-            PropertyPath propertyPath,
-            TimeSpan duration,
-            FillBehavior fillBehavior,
-            float from, float to,
-            Action<Storyboard> initHandler)
-        {
-            // Create a storyboard to contain the animations.
-            Storyboard storyboard = new Storyboard
-            {
-                FillBehavior = fillBehavior
-            };
-
-            // Create a DoubleAnimation to fade the not selected option control
-            DoubleAnimation animation = new DoubleAnimation
-            {
-                From = from,
-                To = to,
-                Duration = new Duration(duration),
-                AutoReverse = false
-            };
-
-            // Configure the animation to target de property Opacity
-            Storyboard.SetTargetName(animation, controlName);
-            Storyboard.SetTargetProperty(animation, propertyPath);
-            
-            // Add the animation to the storyboard
-            storyboard.Children.Add(animation);
-
-            // Inform subscribers
-            initHandler?.Invoke(storyboard);
-
-            // Begin the storyboard
-            try
-            {
-                storyboard.Begin(parent);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            return storyboard;
-        }
-
-
-        /// <summary>
-        /// Start float animation.
-        /// </summary>
-        /// <param name="parent">Object that contains target control.</param>
-        /// <param name="control">UI element that will be animated.</param>
-        /// <param name="propertyPath">A path that describe the dependency property to be animated.</param>
-        /// <param name="duration">How many time would take transit.</param>
-        /// <param name="fillBehavior">
-        /// Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
-        /// its active period but its parent is inside its active or hold period.</param>
-        /// <param name="from">Start value.</param>
-        /// <param name="to">Finish value.</param>
         /// <param name="initHandler">Handler that would be called before animation start.
         /// There you can subscrube on events or reconfigurate settigns.</param>
         /// <returns>Created storyboard.</returns>
         public static Storyboard StartStoryboard(
             FrameworkElement parent,
-            DependencyObject control,
+            DependencyObject obj,
             PropertyPath propertyPath,
             TimeSpan duration,
+            object from,
+            object to,
             FillBehavior fillBehavior,
-            float from, float to,
             Action<Storyboard> initHandler)
         {
-            // Create a storyboard to contain the animations.
+            return StartStoryboard(
+                parent,
+                null,
+                obj,
+                propertyPath,
+                duration, from,
+                to,
+                fillBehavior,
+                initHandler);
+        }
+
+        /// <summary>
+        /// Start object animation.
+        /// </summary>
+        /// <param name="parent">Object that contains property.</param>
+        /// <param name="propertyName">A name of the property.</param>
+        /// <param name="obj">Object that will animated. Using in case if @propertyName is null.</param>
+        /// <param name="propertyPath">A path that describe the dependency property to be animated.</param>
+        /// <param name="duration">How many time would take transit.</param>
+        /// <param name="from">Start value.</param>
+        /// <param name="to">Finish value.</param>
+        /// <param name="fillBehavior">
+        /// Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
+        /// its active period but its parent is inside its active or hold period.</param>
+        /// <param name="initHandler">Handler that would be called before animation start.
+        /// There you can subscrube on events or reconfigurate settigns.</param>
+        /// <returns>Created storyboard.</returns>
+        private static Storyboard StartStoryboard(
+            FrameworkElement parent,
+            string propertyName,
+            DependencyObject obj,
+            PropertyPath propertyPath,
+            TimeSpan duration,
+            object from,
+            object to,
+            FillBehavior fillBehavior,
+            Action<Storyboard> initHandler)
+        {
+            // Create a storyboard to contains the animations.
             Storyboard storyboard = new Storyboard
             {
                 FillBehavior = fillBehavior
             };
 
-            // Create a DoubleAnimation to fade the not selected option control
-            DoubleAnimation animation = new DoubleAnimation
-            {
-                From = from,
-                To = to,
-                Duration = new Duration(duration)
-            };
+            // Add the animation to the storyboard
+            ObjectAnimationUsingKeyFrames animation = new ObjectAnimationUsingKeyFrames();
+            storyboard.Children.Add(animation);
+            animation.Duration = new Duration(duration);
+            animation.AccelerationRatio = 1.0f;
+
+            // Set start position.
+            DiscreteObjectKeyFrame startKey = new DiscreteObjectKeyFrame(
+                from,
+                KeyTime.FromPercent(0));
+
+            // Set finish position.
+            DiscreteObjectKeyFrame finishKey = new DiscreteObjectKeyFrame(
+                to,
+                KeyTime.FromPercent(1));
 
             // Configure the animation to target de property Opacity
-            Storyboard.SetTarget(animation, control);
+
+            if (string.IsNullOrEmpty(propertyName))
+            {
+                Storyboard.SetTarget(animation, obj);
+            }
+            else
+            {
+                Storyboard.SetTargetName(animation, propertyName);
+            }
             Storyboard.SetTargetProperty(animation, propertyPath);
 
-            // Add the animation to the storyboard
-            storyboard.Children.Add(animation);
 
-            // Inform subscribers
+            // Add keys.
+            animation.KeyFrames.Add(startKey);
+            //animation.KeyFrames.Add(middleKey);
+            animation.KeyFrames.Add(finishKey);
+
+            // Inform subscribers.
             initHandler?.Invoke(storyboard);
 
             // Begin the storyboard

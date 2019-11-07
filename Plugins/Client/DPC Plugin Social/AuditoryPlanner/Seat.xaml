@@ -22,23 +22,36 @@ limitations under the License.-->
              d:DesignHeight="35" d:DesignWidth="35"
              Name="main"
              Height="26" Width="26">
-    <Button x:Name="seatManagmentButton" 
-            Background="Transparent" 
-            BorderThickness="0"
-            Click="SeatManagmentButton_Click">
-        <Grid HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                       Height="25" Width="25">
-            <Rectangle HorizontalAlignment="Center"
-                       VerticalAlignment="Center" 
-                       Stroke="Gray" 
-                       StrokeThickness="1.5"
-                       Fill="WhiteSmoke"
-                       RadiusX="3" 
-                       RadiusY="3"
-                       Height="25" Width="25"/>
+    
+    <Grid x:Name="seatManagmentButton"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Height="25" Width="25">
+        
+        <Rectangle x:Name="rect"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center" 
+                   Stroke="Gray" 
+                   StrokeThickness="1.5"
+                   Fill="WhiteSmoke"
+                   RadiusX="3" 
+                   RadiusY="3"
+                   Height="25" Width="25"/>
 
-            <Label Name="indexLable"
+        <Rectangle x:Name="onFocusOverlay"
+                   IsHitTestVisible="False"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center" 
+                   Stroke="Gray" 
+                   StrokeThickness="1.5"
+                   Fill="LightSkyBlue"
+                   Opacity="0"
+                   RadiusX="3" 
+                   RadiusY="3"
+                   Height="25" Width="25"/>
+
+        <Label Name="indexLable"
+                   IsHitTestVisible="False"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    HorizontalContentAlignment="Center"
@@ -46,6 +59,5 @@ limitations under the License.-->
                    Content="135" 
                    FontSize="13" FontWeight="Medium"
                    Width="35" Height="35"/>
-        </Grid>
-    </Button>
+    </Grid>
 </UserControl>

@@ -39,7 +39,7 @@ namespace WpfHandler.UI.Animations
         /// Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
         /// its active period but its parent is inside its active or hold period.</param>
         /// <returns>Created storyboard.</returns>
-        public static Storyboard ThinknessAniamtion(
+        public static Storyboard StartStoryboard(
             FrameworkElement parent,
             string propertyName,
             PropertyPath propertyPath,
@@ -48,7 +48,7 @@ namespace WpfHandler.UI.Animations
             Thickness to,
             FillBehavior fillBehavior)
         {
-            return ThinknessAniamtion(
+            return StartStoryboard(
                 parent,
                 propertyName, propertyPath,
                 duration,
@@ -71,7 +71,7 @@ namespace WpfHandler.UI.Animations
         /// <param name="initHandler">Handler that would be called before animation start.
         /// There you can subscrube on events or reconfigurate settigns.</param>
         /// <returns>Created storyboard.</returns>
-        public static Storyboard ThinknessAniamtion(
+        public static Storyboard StartStoryboard(
             FrameworkElement parent,
             string propertyName,
             PropertyPath propertyPath,
@@ -79,7 +79,7 @@ namespace WpfHandler.UI.Animations
             Thickness from, 
             Thickness to,
             FillBehavior fillBehavior,
-            System.Action<Storyboard> initHandler)
+            Action<Storyboard> initHandler)
         {
             // Create a storyboard to contains the animations.
             Storyboard storyboard = new Storyboard

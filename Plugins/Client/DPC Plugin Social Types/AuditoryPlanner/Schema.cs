@@ -108,6 +108,11 @@ namespace DatumPoint.Plugins.Social.Types.AuditoryPlanner
         }
         #endregion
 
+        public Schema()
+        {
+            blocks = new SeatsBlock[] { new SeatsBlock() };
+        }
+
         #region API
         #endregion
     }

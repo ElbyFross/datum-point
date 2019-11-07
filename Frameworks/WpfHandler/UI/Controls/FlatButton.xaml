@@ -23,11 +23,10 @@ limitations under the License.-->
              Height="25"
              Name="main"
              Background="Transparent"
-             Foreground="#FFFFFF">
+             Foreground="Black">
 
     <Button x:Name="flatButton"
             FontWeight="Thin"
-            Foreground="{Binding Foreground}" 
             BorderThickness="0"
             Click="CatalogButton_Click">
         <Button.Style>
@@ -79,7 +78,8 @@ limitations under the License.-->
                FontSize="{Binding FontSize, ElementName=flatButton}"
                Height="{Binding Height, ElementName=main}"
                VerticalAlignment="Center"
-               VerticalContentAlignment="Center">
+               VerticalContentAlignment="Center"
+               Foreground="{Binding Foreground}" >
 
 
             <AccessText TextWrapping="NoWrap" Margin="{Binding LableMargin}"

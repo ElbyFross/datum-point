@@ -158,7 +158,7 @@ namespace DatumPoint.Plugins.Social.Types.AuditoryPlanner
         /// <summary>
         /// Bufer that contains current value of the @StartIndex property.
         /// </summary>
-        protected int _StartIndex;
+        protected int _StartIndex = 1;
 
         /// <summary>
         /// Every raw wil start from @startIndex.
@@ -177,7 +177,7 @@ namespace DatumPoint.Plugins.Social.Types.AuditoryPlanner
             }
             set
             {
-                value = StartIndexForEveryRaw;
+                _StartIndexForEveryRaw = value;
                 RecomputeIndexes();
             }
         }
@@ -185,7 +185,7 @@ namespace DatumPoint.Plugins.Social.Types.AuditoryPlanner
         /// <summary>
         /// Bufer that contains current value of the @StartIndexForEveryRaw property.
         /// </summary>
-        protected int _StartIndexForEveryRaw;
+        protected bool _StartIndexForEveryRaw;
 
         /// <summary>
         /// H0w many indexes will be skiped between symmetric sub blocks in horizontal order.
@@ -244,6 +244,7 @@ namespace DatumPoint.Plugins.Social.Types.AuditoryPlanner
             // Set default seat.
             grid = new Seat[1, 1];
             grid[0, 0] = new Seat();
+            RecomputeIndexes();
         }
 
         #region API
@@ -317,13 +318,31 @@ namespace DatumPoint.Plugins.Social.Types.AuditoryPlanner
                 for (int y = 0; y < bH; y++)
                 {
                     var yOffset = StartIndexForEveryRaw ? 0 : y * bW;
-                    for (int x = 0; x < bW / 2; x++)
+                    for (int x = 0; x < bW; x++)
                     {
                         grid[x, y].index = yOffset + x + StartIndex;
                     }
                 }
             }
             #endregion
+        }
+
+        /// <summary>
+        /// Detecting the subblock that contains seat by requested coords.
+        /// </summary>
+        /// <param name="x">Horizontal coordinate of the seat in array grid.</param>
+        /// <returns>
+        /// 0 - left subblock. 1 - right subblock.
+        /// Return 0 in case if @HorizontalSymmetry not enabled.
+        /// </returns>
+        public int DetectSubBlock(int x)
+        {
+            // Drop if symmetric not enabled.
+            if (HorizontalSymmetry) return 0;
+
+            // Check if left then mediana.
+            if (x < grid.GetLength(0) / 2.0f) return 0;
+            else return 1; // By rights side from separator column or center.
         }
         #endregion
     }

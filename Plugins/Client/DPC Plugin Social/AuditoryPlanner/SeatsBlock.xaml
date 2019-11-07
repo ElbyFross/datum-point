@@ -17,10 +17,92 @@ limitations under the License.-->
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:wpfHandler="clr-namespace:WpfHandler.UI.Controls;assembly=WpfHandler"
+             xmlns:wpfHandlerAnim="clr-namespace:WpfHandler.UI.Animations;assembly=WpfHandler"
              xmlns:local="clr-namespace:DatumPoint.Plugins.Social.AuditoryPlanner"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid x:Name="canvas">
-            
-    </Grid>
+    <wpfHandler:SelectableGrid Name="seatsBlock" 
+                               SelectedBorderBackground="{DynamicResource ResourceKey=highlightsBackgroundT2}"
+                               SelectedGridBackground="{DynamicResource ResourceKey=highlightsBackgroundT!}"
+                               CellSize="{Binding CellSize}"
+                               CellsSpace="{Binding CellsSpace}"/>
+    <!--<Grid>
+        <Grid x:Name="canvas" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        
+        --><!--<Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition x:Name="SecondRow" Height="30"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+            <Grid.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ObjectAnimationUsingKeyFrames Duration="0:0:2.000" Storyboard.TargetName="SecondRow" Storyboard.TargetProperty="Height">
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.000">
+                                        <DiscreteObjectKeyFrame.Value>
+                                            <GridLength>30</GridLength>
+                                        </DiscreteObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:0.500">
+                                        <DiscreteObjectKeyFrame.Value>
+                                            <GridLength>32</GridLength>
+                                        </DiscreteObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:1.000">
+                                        <DiscreteObjectKeyFrame.Value>
+                                            <GridLength>50</GridLength>
+                                        </DiscreteObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:1.500">
+                                        <DiscreteObjectKeyFrame.Value>
+                                            <GridLength>60</GridLength>
+                                        </DiscreteObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                    <DiscreteObjectKeyFrame KeyTime="0:0:2.000">
+                                        <DiscreteObjectKeyFrame.Value>
+                                            <GridLength>60</GridLength>
+                                        </DiscreteObjectKeyFrame.Value>
+                                    </DiscreteObjectKeyFrame>
+                                </ObjectAnimationUsingKeyFrames>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Grid.Triggers>
+            <Rectangle Grid.Row="1" Fill="LightBlue"/>
+        </Grid>
+        
+        <Grid Width="150" HorizontalAlignment="Left">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*" Name="row1"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+
+            <Button Content="hello" Grid.Row="0">
+                <Button.Triggers>
+                    -->
+        <!--Click event of the button to resize-->
+        <!--
+                    <EventTrigger RoutedEvent="Button.Click">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <wpfHandlerAnim:GridLengthAnimation 
+                                                   Storyboard.TargetProperty="Height"
+                                                   Storyboard.TargetName="row1"
+                                                   From="5*"
+                                                   To="1*"
+                                                   Duration="0:0:0.4"
+                                                   ReverseValue="5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button Content="hello" Grid.Row="1"/>
+        </Grid>--><!--
+    </Grid>-->
 </UserControl>

@@ -34,6 +34,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
     /// </summary>
     public partial class Seat : UserControl
     {
+        #region Dependency properties
         public static readonly DependencyProperty MetaProperty = DependencyProperty.Register(
           "Meta", typeof(Types.AuditoryPlanner.Seat), typeof(Seat));
         
@@ -43,6 +44,12 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
         public static readonly DependencyProperty ReservationProperty = DependencyProperty.Register(
           "Reservation", typeof(Types.AuditoryPlanner.SeatReservation), typeof(Seat));
 
+        public static readonly DependencyProperty FocusedBacgroundProperty = DependencyProperty.Register(
+          "FocusedBacground", typeof(Brush), typeof(Seat),
+          new PropertyMetadata(Brushes.Blue));
+        #endregion
+
+        #region Public members
         /// <summary>
         /// Meta data of that place that contains such information like a number.
         /// </summary>
@@ -110,26 +117,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
                 }
             }
         }
-
-        public Seat()
-        {
-            InitializeComponent();
-            DataContext = this;
-        }
-
-        /// <summary>
-        /// Callbeck that will be used when user click on seat.
-        /// Call interface of seat managment:
-        /// -Set place as occupied\free.
-        /// -Look who reserved occupied place.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SeatManagmentButton_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+                
         /// <summary>
         /// Curernt state of the seat.
         /// In casde if defined Reservation object and it contains user id then mark place as reserved.
@@ -160,17 +148,53 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
                 if(Meta != null) Meta.state = value;
             }
         }
+
+        /// <summary>
+        /// Background color that will applied when seat element will be focused by mouse.
+        /// </summary>
+        public Brush FocusedBacground
+        {
+            get { return (Brush)this.GetValue(FocusedBacgroundProperty); }
+            set { this.SetValue(FocusedBacgroundProperty, value); }
+        }
+        #endregion
+
+        #region Private and protected members
         /// <summary>
         /// Bufer that contains custom step in ccase if user works not with reservation.
         /// </summary>
         private Types.AuditoryPlanner.Seat.State _State;
 
         /// <summary>
+        /// Current storyboard.
+        /// </summary>
+        private System.Windows.Media.Animation.Storyboard storyboard;
+        #endregion
+
+
+        #region Constructros & destructors
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
+        public Seat()
+        {
+            InitializeComponent();
+            DataContext = this;
+
+            // Subcribe on click event.
+            rect.MouseEnter += SeatManagmentButton_MouseEnter;
+            rect.MouseLeave += SeatManagmentButton_MouseLeave;
+            rect.MouseLeftButtonDown += SeatManagmentButton_Click;
+        }
+        #endregion
+
+        #region API
+        /// <summary>
         /// Updating lable that displaying index.
         /// </summary>
         protected void UpdateIndexLable()
         {
-            if(Index <= 0)
+            if (Index <= 0)
             {
                 indexLable.Content = "-";
             }
@@ -179,5 +203,57 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
                 indexLable.Content = Index.ToString();
             }
         }
+        #endregion
+
+        #region Callbacks
+        /// <summary>
+        /// Callback that will be used when user click on seat.
+        /// Call interface of seat managment:
+        /// -Set place as occupied\free.
+        /// -Look who reserved occupied place.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SeatManagmentButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        
+        /// <summary>
+        /// Callback that will be called when mouse will enter seat element.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SeatManagmentButton_MouseEnter(object sender, MouseEventArgs e)
+        {
+            if (storyboard != null) storyboard.Stop();
+
+            storyboard = WpfHandler.UI.Animations.Float.StartStoryboard(
+                this,
+                onFocusOverlay.Name,
+                new PropertyPath(Rectangle.OpacityProperty),
+                new TimeSpan(0, 0, 0, 0, 200),
+                System.Windows.Media.Animation.FillBehavior.Stop,
+                0.0f, 1.0f);
+        }
+
+        /// <summary>
+        /// Callback that will be called when mouse will leave seat element.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SeatManagmentButton_MouseLeave(object sender, MouseEventArgs e)
+        {
+            if (storyboard != null) storyboard.Stop();
+
+            storyboard = WpfHandler.UI.Animations.Float.StartStoryboard(
+                this,
+                onFocusOverlay.Name,
+                new PropertyPath(Rectangle.OpacityProperty),
+                new TimeSpan(0, 0, 0, 0, 200),
+                System.Windows.Media.Animation.FillBehavior.Stop,
+                1.0f, 0.0f);
+        }
+        #endregion
     }
 }

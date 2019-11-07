@@ -26,6 +26,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfHandler.UI.Controls;
 
 namespace DatumPoint.Plugins.Social.AuditoryPlanner
 {
@@ -34,8 +35,39 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
     /// Configurating drawing grid.
     /// Controlling indexes of places.
     /// </summary>
-    public partial class SeatsBlock : UserControl
+    public partial class SeatsBlock
     {
+        /// <summary>
+        /// Event that will be called when the grid's block will be activated.
+        /// </summary>
+        public event Action<SelectableGrid> BlockSelected
+        {
+            add
+            {
+                seatsBlock.GridSelected += value;
+            }
+            remove
+            {
+                seatsBlock.GridSelected -= value;
+            }
+        }
+
+        /// <summary>
+        /// Event that will be called when some border will selected.
+        /// </summary>
+        public event Action<SelectableGrid, SelectableGrid.ActiveBorder> BorderSelected
+        {
+            add
+            {
+                seatsBlock.BorderSelected += value;
+            }
+            remove
+            {
+                seatsBlock.BorderSelected -= value;
+            }
+        }
+
+        #region Dependency properties
         public static readonly DependencyProperty BlockProperty = DependencyProperty.Register(
             "Block", typeof(Types.AuditoryPlanner.SeatsBlock), typeof(SeatsBlock));
 
@@ -43,19 +75,28 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
             "EditorMode", typeof(bool), typeof(SeatsBlock));
 
         public static readonly DependencyProperty CellSizeProperty = DependencyProperty.Register(
-            "CellSize", typeof(float), typeof(SeatsBlock), new PropertyMetadata(25));
+            "CellSize", typeof(float), typeof(SeatsBlock), new PropertyMetadata(25.0f));
 
         public static readonly DependencyProperty CellsSpaceProperty = DependencyProperty.Register(
-            "CellSize", typeof(float), typeof(SeatsBlock), new PropertyMetadata(5));
+            "CellsSpace", typeof(float), typeof(SeatsBlock), new PropertyMetadata(5.0f));
+        #endregion
 
+        #region Static members
+        /// <summary>
+        /// Current active block.
+        /// </summary>
+        public static Types.AuditoryPlanner.SeatsBlock Current { get; set; }
+        #endregion
+
+        #region Public members
         /// <summary>
         /// Binded seats block data.
         /// </summary>
         public Types.AuditoryPlanner.SeatsBlock Block
         {
             get { return (Types.AuditoryPlanner.SeatsBlock)this.GetValue(BlockProperty); }
-            set 
-            { 
+            set
+            {
                 this.SetValue(BlockProperty, value);
 
                 // Update GUI
@@ -74,40 +115,15 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
                 this.SetValue(EditorModeProperty, value);
 
                 // Update GUI
-                UpdateGrid();
+                seatsBlock.SelectebleBlocks = value;
+                seatsBlock.SelectebleColumns = value;
+                seatsBlock.SelectebleRows = value;
+                seatsBlock.UpdateGrid();
             }
         }
-        
-        /// <summary>
-        /// Size of the grid's cell.
-        /// </summary>
-        public float CellSize
-        {
-            get { return (float)this.GetValue(CellSizeProperty); }
-            set
-            {
-                this.SetValue(CellSizeProperty, value);
+        #endregion
 
-                // Update GUI
-                UpdateGrid();
-            }
-        }
-
-        /// <summary>
-        /// Space between grid's cells.
-        /// </summary>
-        public float CellsSpace
-        {
-            get { return (float)this.GetValue(CellsSpaceProperty); }
-            set
-            {
-                this.SetValue(CellsSpaceProperty, value);
-
-                // Update GUI
-                UpdateGrid();
-            }
-        }
-
+        #region Constructors
         /// <summary>
         /// Default constructor.
         /// </summary>
@@ -115,83 +131,41 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
         {
             InitializeComponent();
             DataContext = this;
+
+            // Subscribe on data update events.
+            seatsBlock.OnElementIstiniation += UpdateDataElementHandler;
         }
 
+        ~SeatsBlock()
+        {
+            // Unsubscribe from data update events.
+            seatsBlock.OnElementIstiniation -= UpdateDataElementHandler;
+        }
+        #endregion
+
         /// <summary>
-        /// Updating grid of elements relative to that block.
+        /// Updating seats grid.
         /// </summary>
         public void UpdateGrid()
         {
-            #region Init & validation
-            // Prevent empty grid.
-            if (Block == null) Block = new Types.AuditoryPlanner.SeatsBlock();
+            seatsBlock.ColumnsCount = Block.grid.GetLength(0);
+            seatsBlock.RowsCount = Block.grid.GetLength(1);
 
-            var width = Block.grid.GetLength(0);
-            var height = Block.grid.GetLength(1);
-            #endregion
+            seatsBlock.UpdateGrid();
+        }
 
-            #region Clear current grid.
-            canvas.ColumnDefinitions.Clear();
-            canvas.RowDefinitions.Clear();
-            canvas.Children.Clear();
-            #endregion
-
-            #region Instiniating new grid.
-            // Define columns.
-            for (int i = 0; i < width; i++)
+        /// <summary>
+        /// Set a new data to UI element. 
+        /// </summary>
+        /// <param name="x">X coordinate of data element.</param>
+        /// <param name="y">Y coordinate of data element.</param>
+        /// <returns>instiniated element.</returns>
+        public UIElement UpdateDataElementHandler(int x, int y)
+        {
+            return new Seat()
             {
-                // Adding space between columns.
-                canvas.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(CellsSpace) });
-                // Adding rows.
-                canvas.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(CellSize) });
-            }
-            // Adding final space column.
-            canvas.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(CellsSpace) });
-
-            // Define rows.
-            for (int i = 0; i < height; i++)
-            {
-                // Adding space between rows.
-                canvas.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(CellsSpace) });
-                // Adding rows.
-                canvas.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(CellSize) });
-            }
-            // Adding final space row.
-            canvas.RowDefinitions.Add(new RowDefinition() { Height = new GridLength(CellsSpace) });
-            #endregion
-
-            // TODO FILL GRID
-            #region Fill grid by content
-            for (int y = 0; y < height; y++)
-                for (int x = 0; x < width; x++)
-                {
-                    // Compute x position for cell.
-                    var xOffset = (x + 1) * CellsSpace + x * CellSize;
-
-                    // Add editor interface if required.
-                    if (EditorMode)
-                    {
-                        // Add up active border.
-                        var yOffset = y * (CellsSpace + CellSize);
-
-                        var upActiveBorder = new Canvas();
-                        canvas.Children.Add(upActiveBorder);
-                        upActiveBorder.Width = CellSize;
-                        upActiveBorder.Height = CellsSpace;
-                        upActiveBorder.Margin = new Thickness(x, y, -x, -y);
-
-                        // React on mouse focusing
-                        upActiveBorder.MouseEnter += delegate (object sender, MouseEventArgs e)
-                        {
-
-                        };
-
-                        // Add left active border.
-                    }
-
-                    // Add set item.
-                }
-            #endregion;
+                Meta = Block.grid[x, y]
+            };
         }
     }
 }

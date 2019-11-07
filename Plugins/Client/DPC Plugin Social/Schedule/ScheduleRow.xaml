@@ -69,7 +69,7 @@ limitations under the License.-->
         <Button x:Name="reservedPlaceButton"
                 Grid.Column="4"
                 Background="Transparent"
-                Click="reservedPlaceButton_Click">
+                Click="ReservedPlaceButton_Click">
             <Label Content="-"
                    FontWeight="{Binding FontWeight, ElementName=main}"
                    FontSize="{Binding FontSize, ElementName=main}"/>

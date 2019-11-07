@@ -51,6 +51,8 @@
   <ItemGroup>
     <Compile Include="UI\Animations\Blur.cs" />
     <Compile Include="UI\Animations\Float.cs" />
+    <Compile Include="UI\Animations\GridLengthAnimation.cs" />
+    <Compile Include="UI\Animations\Object.cs" />
     <Compile Include="UI\Animations\Thinkness.cs" />
     <Compile Include="UI\Controls\CatalogButton.xaml.cs">
       <DependentUpon>CatalogButton.xaml</DependentUpon>
@@ -95,6 +97,12 @@
     </Compile>
     <Compile Include="UI\Controls\Logon\RegistrationPanel.xaml.cs">
       <DependentUpon>RegistrationPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\SelectableFlatButton.xaml.cs">
+      <DependentUpon>SelectableFlatButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Controls\SelectableGrid.xaml.cs">
+      <DependentUpon>SelectableGrid.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Controls\SwitchPanel.xaml.cs">
       <DependentUpon>SwitchPanel.xaml</DependentUpon>
@@ -143,6 +151,14 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UI\Controls\Logon\RegistrationPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controls\SelectableFlatButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controls\SelectableGrid.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
