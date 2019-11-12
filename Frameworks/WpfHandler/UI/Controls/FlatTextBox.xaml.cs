@@ -34,16 +34,63 @@ namespace WpfHandler.UI.Controls
     /// </summary>
     public partial class FlatTextBox : UserControl
     {
+        /// <summary>
+        /// Mode of value operating.
+        /// </summary>
+        public enum Mode
+        { 
+            /// <summary>
+            /// Allow any string value.
+            /// </summary>
+            String,
+            /// <summary>
+            /// Allow only int formated values.
+            /// </summary>
+            Int,
+            /// <summary>
+            /// Allow only formated values.
+            /// </summary>
+            Float,
+            /// <summary>
+            /// Use custom regex to define if value is valid.
+            /// </summary>
+            Regex
+        }
+
+        /// <summary>
+        /// Occurs when content changes in the text element.
+        /// </summary>
+        public event TextChangedEventHandler TextChanged
+        {
+            add
+            {
+                // добавление обработчика
+                base.AddHandler(TextBox.TextChangedEvent, value);
+            }
+            remove
+            {
+                // удаление обработчика
+                base.RemoveHandler(TextBox.TextChangedEvent, value);
+            }
+        }
+
         #region Dependency properties
+
+        public static readonly RoutedEvent TextChangedEvent = EventManager.RegisterRoutedEvent("TextChanged",
+            RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(FlatTextBox));
+
         public static readonly DependencyProperty LableProperty = DependencyProperty.Register(
           "Lable", typeof(string), typeof(FlatTextBox));
 
         public static readonly DependencyProperty LableWidthProperty = DependencyProperty.Register(
-          "LableWidth", typeof(float), typeof(FlatTextBox));
+          "LableWidth", typeof(float), typeof(FlatTextBox), new PropertyMetadata(120.0f));
 
         public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
           "Text", typeof(string), typeof(FlatTextBox));
-        
+
+        public static readonly DependencyProperty ValueModeProperty = DependencyProperty.Register(
+          "ValueMode", typeof(Mode), typeof(FlatTextBox));
+
         public static readonly DependencyProperty TextBoxForegroundProperty = DependencyProperty.Register(
           "TextBoxForeground", typeof(Brush), typeof(FlatTextBox), 
           new PropertyMetadata(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"))));
@@ -82,6 +129,15 @@ namespace WpfHandler.UI.Controls
         }
 
         /// <summary>
+        /// Text in textbox.
+        /// </summary>
+        public Mode ValueMode
+        {
+            get { return (Mode)this.GetValue(ValueModeProperty); }
+            set { this.SetValue(ValueModeProperty, value); }
+        }
+
+        /// <summary>
         /// Color of the text in textbox.
         /// </summary>
         public Brush TextBoxForeground
@@ -98,13 +154,15 @@ namespace WpfHandler.UI.Controls
             get { return (Brush)this.GetValue(TextBoxBackgroundProperty); }
             set { this.SetValue(TextBoxBackgroundProperty, value); }
         }
+        #endregion
 
+        #region Local members
+        private string textPropertyBufer;
         #endregion
 
         public FlatTextBox()
         {
             InitializeComponent();
-
             DataContext = this;
 
             // Try to load default style
@@ -119,6 +177,56 @@ namespace WpfHandler.UI.Controls
             {
                 // Not found in dictionary. Not important.}
             }
+
+            // Subscribe on events.
+            textBox.TextChanged += TextBox_TextChanged;
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            // Drop if the same value.
+            if (textBox.Text.Equals(textPropertyBufer))
+                return;
+
+            // Validate value.
+            switch (ValueMode)
+            {
+                case Mode.Int:
+                    if (!Int32.TryParse(textBox.Text, out _))
+                    {
+                        textBox.Text = textPropertyBufer;
+                    }
+                    break;
+
+                case Mode.Float:
+                    if (!float.TryParse(textBox.Text, out _))
+                    {
+                        textBox.Text = textPropertyBufer;
+                    }
+                    break;
+            }
+
+            // Buferize las valid value.
+            textPropertyBufer = textBox.Text;
+        }
+
+        /// <summary>
+        /// Init configs when all properties applied.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Set default value for numerical values.
+            switch (ValueMode)
+            {
+                case Mode.Int:
+                case Mode.Float:
+                    Text = 0.ToString();
+                    textPropertyBufer = Text;
+                    break;
+            }
+
         }
     }
 }

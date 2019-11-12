@@ -246,7 +246,7 @@ namespace WpfHandler.UI.Controls
         public void OnButtonClick(object sender)
         {
             // Call subscribed delegate.
-            ClickCallback?.Invoke(sender);
+            ClickCallback?.Invoke(this);
         }
         #endregion
     }

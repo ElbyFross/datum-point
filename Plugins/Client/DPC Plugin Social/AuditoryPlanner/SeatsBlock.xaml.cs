@@ -40,32 +40,12 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
         /// <summary>
         /// Event that will be called when the grid's block will be activated.
         /// </summary>
-        public event Action<SelectableGrid> BlockSelected
-        {
-            add
-            {
-                seatsBlock.GridSelected += value;
-            }
-            remove
-            {
-                seatsBlock.GridSelected -= value;
-            }
-        }
+        public event Action<SeatsBlock> BlockSelected;
 
         /// <summary>
         /// Event that will be called when some border will selected.
         /// </summary>
-        public event Action<SelectableGrid, SelectableGrid.ActiveBorder> BorderSelected
-        {
-            add
-            {
-                seatsBlock.BorderSelected += value;
-            }
-            remove
-            {
-                seatsBlock.BorderSelected -= value;
-            }
-        }
+        public event Action<SeatsBlock, SelectableGrid.ActiveBorder> BorderSelected;
 
         #region Dependency properties
         public static readonly DependencyProperty BlockProperty = DependencyProperty.Register(
@@ -85,7 +65,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
         /// <summary>
         /// Current active block.
         /// </summary>
-        public static Types.AuditoryPlanner.SeatsBlock Current { get; set; }
+        public static SeatsBlock Current { get; set; }
         #endregion
 
         #region Public members
@@ -134,12 +114,16 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
 
             // Subscribe on data update events.
             seatsBlock.OnElementIstiniation += UpdateDataElementHandler;
+            seatsBlock.GridSelected += SeatsBlock_GridSelected;
+            seatsBlock.BorderSelected += SeatsBlock_BorderSelected;
         }
-
+        
         ~SeatsBlock()
         {
             // Unsubscribe from data update events.
             seatsBlock.OnElementIstiniation -= UpdateDataElementHandler;
+            seatsBlock.GridSelected -= SeatsBlock_GridSelected;
+            seatsBlock.BorderSelected -= SeatsBlock_BorderSelected;
         }
         #endregion
 
@@ -166,6 +150,30 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
             {
                 Meta = Block.grid[x, y]
             };
+        }
+
+
+        /// <summary>
+        /// Ocures when block's grid wil lselected.
+        /// </summary>
+        /// <param name="obj"></param>
+        private void SeatsBlock_GridSelected(SelectableGrid obj)
+        {
+            // Set binded block as current.
+            Current = this;
+
+            // Inform subscribers.
+            BlockSelected?.Invoke(this);
+        }
+
+        /// <summary>
+        /// Occurs whwn any active border will selected.
+        /// </summary>
+        /// <param name="arg1"></param>
+        /// <param name="arg2"></param>
+        private void SeatsBlock_BorderSelected(SelectableGrid arg1, SelectableGrid.ActiveBorder arg2)
+        {
+            BorderSelected?.Invoke(this, arg2);
         }
     }
 }

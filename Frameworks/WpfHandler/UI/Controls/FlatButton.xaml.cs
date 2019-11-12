@@ -97,7 +97,7 @@ namespace WpfHandler.UI.Controls
         private void CatalogButton_Click(object sender, RoutedEventArgs e)
         {
             // Call target handler if avalaiable.
-            ClickCallback?.Invoke(sender);
+            ClickCallback?.Invoke(this);
         }
     }
 }

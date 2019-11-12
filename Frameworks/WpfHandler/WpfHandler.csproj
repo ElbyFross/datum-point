@@ -44,6 +44,9 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UniformDataOperator">
+      <HintPath>..\uniform-data-operator\UniformDataOperator.dll</HintPath>
+    </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -54,6 +57,20 @@
     <Compile Include="UI\Animations\GridLengthAnimation.cs" />
     <Compile Include="UI\Animations\Object.cs" />
     <Compile Include="UI\Animations\Thinkness.cs" />
+    <Compile Include="UI\Controls\AutoLayout\Attributes\BeginHorizontal.cs" />
+    <Compile Include="UI\Controls\AutoLayout\Attributes\BeginVertical.cs" />
+    <Compile Include="UI\Controls\AutoLayout\Attributes\EndHorizontal.cs" />
+    <Compile Include="UI\Controls\AutoLayout\Attributes\EndVertical.cs" />
+    <Compile Include="UI\Controls\AutoLayout\Attributes\Header.cs" />
+    <Compile Include="UI\Controls\AutoLayout\Attributes\Space.cs" />
+    <Compile Include="UI\Controls\AutoLayout\GUIContent.cs" />
+    <Compile Include="UI\Controls\AutoLayout\Interfaces\ILable.cs" />
+    <Compile Include="UI\Controls\AutoLayout\Interfaces\ILayerAttribute.cs" />
+    <Compile Include="UI\Controls\AutoLayout\Interfaces\ILayoutControl.cs" />
+    <Compile Include="UI\Controls\AutoLayout\Interfaces\ISelectableControl.cs" />
+    <Compile Include="UI\Controls\AutoLayout\LayoutAttribute.cs" />
+    <Compile Include="UI\Controls\AutoLayout\LayoutHandler.cs" />
+    <Compile Include="UI\Controls\AutoLayout\UIDescriptor.cs" />
     <Compile Include="UI\Controls\CatalogButton.xaml.cs">
       <DependentUpon>CatalogButton.xaml</DependentUpon>
     </Compile>

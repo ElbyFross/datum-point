@@ -56,8 +56,8 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
         public Types.AuditoryPlanner.Schema Schema
         {
             get { return (Types.AuditoryPlanner.Schema)this.GetValue(SchemaProperty); }
-            set 
-            { 
+            set
+            {
                 this.SetValue(SchemaProperty, value);
                 UpdateGUI();
             }
@@ -78,7 +78,6 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
 
             Meta.domain = "0_main.900_shemaEditor";
             Meta.titleDictionaryCode = "p_podshyvalov_shemaEditor_menuTitle";
-
 
             // Subscribe on events.
             canvasBackpalte.MouseLeftButtonDown += Canvas_MouseLeftButtonDown;
@@ -156,7 +155,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
 
             this.MouseDown += InfoOverlay_MouseDown;
         }
-        
+
         /// <summary>
         /// Updating gui relative to the data stored into Schema's object.
         /// </summary>
@@ -237,12 +236,12 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
         /// <param name="block">Selected block.</param>
         /// <param name="x">X coordinate selected in block.</param>
         /// <param name="y">Y coordinate selected in block.</param>
-        private void SeatsBlock_BlockAcivated(WpfHandler.UI.Controls.SelectableGrid grid)
+        private void SeatsBlock_BlockAcivated(SeatsBlock grid)
         {
             // Activate properties UI.
             blockProperties.Visibility = Visibility.Visible;
         }
-        
+
         /// <summary>
         /// Will be called when user drop selection.
         /// </summary>
@@ -252,6 +251,64 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
         {
             // Disactivate properties UI.
             blockProperties.Visibility = Visibility.Collapsed;
+        }
+
+        /// <summary>
+        /// Callback for that will be called when symmetry enable state will be changed.
+        /// </summary>
+        /// <param name="sender"></param>
+        public void Symmetric_StateChanged(object sender)
+        {
+            // Is state is On.
+            bool on = ((WpfHandler.UI.Controls.SelectableFlatButton)sender).Name == symmetricStateOn.Name;
+
+            // Enable UI visibility.
+            symmetricSettings.Visibility = on ? Visibility.Visible : Visibility.Collapsed;
+
+            // Modivy symmetry.
+            if (SeatsBlock.Current == null || SeatsBlock.Current.Block == null) return;
+
+            // Update data.
+            SeatsBlock.Current.Block.HorizontalSymmetry = on;
+            // Update UI.
+            SeatsBlock.Current.UpdateGrid();
+        }
+
+        /// <summary>
+        /// Occurs when symmetry's offset settings changed.
+        /// Apply relvand to backend data.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Symmetry_Offset_Changed(object sender, TextChangedEventArgs e)
+        {
+            if (SeatsBlock.Current == null || SeatsBlock.Current.Block == null) return;
+            SeatsBlock.Current.Block.anchorX = float.Parse(symmetry_offsetX.Text);
+            SeatsBlock.Current.Block.anchorY = float.Parse(symmetry_offsetY.Text);
+        }
+
+        /// <summary>
+        /// Occurs when subblocks distance parameter will changed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Symmetry_space_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (SeatsBlock.Current == null || SeatsBlock.Current.Block == null) return;
+
+            // Get value.
+            var distance = float.Parse(symmetry_space.Text);
+
+            // Validate
+            if (distance < 0)
+            {
+                // Set 0.
+                symmetry_space.Text = 0.ToString();
+            }
+
+            // Update UI.
+            SeatsBlock.Current.Block.SubblocksDistance = float.Parse(symmetry_space.Text);
+            SeatsBlock.Current.UpdateGrid();
         }
     }
 }

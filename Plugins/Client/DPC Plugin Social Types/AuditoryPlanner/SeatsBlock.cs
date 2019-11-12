@@ -303,8 +303,8 @@ namespace DatumPoint.Plugins.Social.Types.AuditoryPlanner
                 for (int y = 0; y < bH; y++)
                 {
                     var yOffset = StartIndexForEveryRaw ? 0 : y * (bW + SubBlockHorizontalSkip + SubBlockVerticalSkip);
-                    var xOffset = bW / 2 + SubBlockHorizontalSkip;
-                    for (int x = 0; x < bW / 2; x++)
+                    var xOffset = SubBlockHorizontalSkip;
+                    for (int x = bW / 2; x < bW; x++)
                     {
                         grid[x, y].index = xOffset + yOffset + StartIndex + x;
                     }

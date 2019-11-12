@@ -24,17 +24,7 @@ limitations under the License.-->
              Name="main"
              Background="White">
 
-    <!--<UserControl.Resources>
-        <ResourceDictionary>
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/WpfHandler;component/UI/Controls/FlatButton.xaml" />
-            </ResourceDictionary.MergedDictionaries>
-             --><!--Local styles here--><!-- 
-        </ResourceDictionary>
-    </UserControl.Resources>-->
-
-
-    <Grid Margin="0.5,0,0,0">
+    <Grid Margin="0.5,0,0,0">        
         <Grid Background="{DynamicResource ResourceKey=controlMenuBackground}" 
               HorizontalAlignment="Left" Width="120"
               IsHitTestVisible="False"/>
@@ -71,52 +61,121 @@ limitations under the License.-->
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"/>
 
-            <StackPanel Grid.Column="0" Grid.Row="0" Grid.RowSpan="20">
+            <StackPanel x:Name="controlPanel" Grid.Column="0" Grid.Row="0" Grid.RowSpan="20">
                 <Canvas Height="20"/>
 
                 <!--Panel thast contain modes UI-->
                 <StackPanel x:Name="modesPanel">
                     <Label Background="{DynamicResource ResourceKey=canvasForground}" Content="MODES" 
-                                               FontSize="15"/>
+                                               FontSize="12"/>
 
                     <Canvas Height="4.5" />
 
                     <wpfHandler:SelectableFlatButton Text="Normal" Group="DPC_PS_SE_MODE" Selected="True"
                                                      Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
-                                                     HightlightBackground="{DynamicResource ResourceKey=canvasForground}"/>
+                                                     HightlightBackground="{DynamicResource ResourceKey=canvasForground}"
+                                                     FontSize="12" Height="17"/>
                     <wpfHandler:SelectableFlatButton Text="Hide" Group="DPC_PS_SE_MODE" Selected="False"
                                                      Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
-                                                     HightlightBackground="{DynamicResource ResourceKey=canvasForground}"/>
+                                                     HightlightBackground="{DynamicResource ResourceKey=canvasForground}"
+                                                     FontSize="12" Height="17"/>
                     <wpfHandler:SelectableFlatButton Text="Block" Group="DPC_PS_SE_MODE" Selected="False"
                                                      Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
-                                                     HightlightBackground="{DynamicResource ResourceKey=canvasForground}"/>
+                                                     HightlightBackground="{DynamicResource ResourceKey=canvasForground}"
+                                                     FontSize="12" Height="17"/>
                 </StackPanel>
-                
-                <!--Panel that contains Layout settings-->
-                <StackPanel>
-                    <Label Background="{DynamicResource ResourceKey=canvasForground}" 
-                           Content="LAYOUT" 
-                           FontSize="15"/>
-                </StackPanel>
-                
+                                
                 <!--Panel that contain block settigns-->
                 <StackPanel x:Name="blockProperties" Visibility="Collapsed">
                     <Label Background="{DynamicResource ResourceKey=canvasForground}" 
                            Content="PROPERTIES" 
-                           FontSize="15"/>
+                           FontSize="12"/>
 
                     <Label Foreground="{DynamicResource ResourceKey=catalogButtonForeground}" 
                            Content="Symmetric" 
-                           FontSize="15"/>
-                    <StackPanel Orientation="Horizontal">
-                        <wpfHandler:SelectableFlatButton Text="Off" Group="DPC_PS_SE_BLOCK_SYMMETRY" Selected="True"
+                           FontSize="12"/>
+
+                    <Grid>
+                        <wpfHandler:SelectableFlatButton x:Name="symmetricStateOff"
+                                                     Text="Off" Group="DPC_PS_SE_BLOCK_SYMMETRY" Selected="True"
                                                      Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
-                                                     HightlightBackground="{DynamicResource ResourceKey=canvasForground}"/>
-                        <Canvas Width="10"/>
-                        <wpfHandler:SelectableFlatButton Text="On" Group="DPC_PS_SE_BLOCK_SYMMETRY" Selected="False"
+                                                     HightlightBackground="{DynamicResource ResourceKey=canvasForground}"
+                                                     ClickCallback="Symmetric_StateChanged"
+                                                     FontSize="12" Height="17"/>
+                        <wpfHandler:SelectableFlatButton  x:Name="symmetricStateOn"
+                                                     Text="On" Group="DPC_PS_SE_BLOCK_SYMMETRY" Selected="False"
+                                                     HorizontalAlignment="Right"
                                                      Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
-                                                     HightlightBackground="{DynamicResource ResourceKey=canvasForground}"/>
+                                                     HightlightBackground="{DynamicResource ResourceKey=canvasForground}"
+                                                     ClickCallback="Symmetric_StateChanged"
+                                                     FontSize="12" Height="17"/>
+                    </Grid>
+
+                    <!--Numeric properties-->
+                    <Label Background="{DynamicResource ResourceKey=canvasForground}" 
+                           Content="NUMERIC RIGHTS" 
+                           FontSize="12"/>
+
+                    <Label Foreground="{DynamicResource ResourceKey=catalogButtonForeground}" 
+                               Content="Skiped numbers per:" 
+                               FontSize="12"/>
+
+                    <StackPanel Orientation="Horizontal" Width="{Binding Width, ElementName=controlPanel}">
+                        <wpfHandler:FlatTextBox x:Name="numeric_skipX"
+                                                        ValueMode="Float" Lable="Col" 
+                                                        LableWidth="35" Width="60" 
+                                                        Background="Transparent"
+                                                        Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
+                                                        TextChanged="Symmetry_Offset_Changed"
+                                                        FontSize="12" Height="17"/>
+                        <wpfHandler:FlatTextBox x:Name="numeric_skipY"
+                                                        ValueMode="Float" Lable="Row" 
+                                                        LableWidth="35" Width="60" 
+                                                        Background="Transparent"
+                                                        Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
+                                                        TextChanged="Symmetry_Offset_Changed"
+                                                        FontSize="12" Height="17"/>
                     </StackPanel>
+                    <Canvas Height="5"/>
+
+                    <!--Layout settings-->
+                    <Label Background="{DynamicResource ResourceKey=canvasForground}" 
+                           Content="LAYOUT" 
+                           FontSize="12"/>
+                    <StackPanel>
+                        <!--Offset settings-->
+                        <StackPanel>
+                            <Label Foreground="{DynamicResource ResourceKey=catalogButtonForeground}" 
+                               Content="Offset" 
+                               FontSize="12"/>
+
+                            <StackPanel Orientation="Horizontal" Width="{Binding Width, ElementName=controlPanel}">
+                                <wpfHandler:FlatTextBox x:Name="symmetry_offsetX"
+                                                        ValueMode="Float" Lable="x" 
+                                                        LableWidth="20" Width="60" 
+                                                        Background="Transparent"
+                                                        Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
+                                                        TextChanged="Symmetry_Offset_Changed"
+                                                        FontSize="12" Height="17"/>
+                                <wpfHandler:FlatTextBox x:Name="symmetry_offsetY"
+                                                        ValueMode="Float" Lable="y" 
+                                                        LableWidth="20" Width="60" 
+                                                        Background="Transparent"
+                                                        Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
+                                                        TextChanged="Symmetry_Offset_Changed"
+                                                        FontSize="12" Height="17"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel x:Name="symmetricSettings" Visibility="Collapsed">
+                        <Canvas Height="5"/>
+                        <wpfHandler:FlatTextBox x:Name="symmetry_space"
+                                                ValueMode="Float" Lable="Block's space" LableWidth="80" 
+                                                Background="Transparent"
+                                                Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
+                                                TextChanged="Symmetry_space_TextChanged"
+                                                FontSize="12" Height="17"/>
+                    </StackPanel>                                                    
                 </StackPanel>
             </StackPanel>
 
@@ -256,5 +315,36 @@ limitations under the License.-->
             </Grid>
         </Grid>
 
+
+        <StackPanel>
+            <StackPanel Width="auto" Orientation="Horizontal">
+                <Button Content="32" Grid.Column="0"/>
+                <Button Content="32" Grid.Column="0"/>
+                
+            </StackPanel>
+            <Grid Height="60">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="32" Grid.Column="0"/>
+                <Canvas Width="60" Grid.Column="1"/>
+                <Button Content="32" Grid.Column="2"/>
+                <Button Content="32" Grid.Column="3"/>
+            </Grid>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Content="32" Grid.Column="0"/>
+                <Button Content="32" Grid.Column="1"/>
+                <Button Content="32" Grid.Column="2"/>
+            </Grid>
+        </StackPanel>
     </Grid>
 </UserControl>

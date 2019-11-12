@@ -24,13 +24,14 @@ limitations under the License.-->
              Name="main"
                           Loaded="UI_Loaded">
     
-    <StackPanel Orientation="Horizontal">
+    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
         
         <Grid Width="6.5"/>
         
-        <Grid x:Name="mark" Background="{Binding HightlightBackground}" Opacity="0" Width="5" Margin="0, 2, 0, 7"/>
+        <Grid x:Name="mark" Background="{Binding HightlightBackground}" Opacity="0" Width="5" Margin="0, 0, 0, 7"/>
         
         <local:FlatButton x:Name="button" VerticalAlignment="Center" 
+                          VerticalContentAlignment="Center"
                           Text="{Binding Text, ElementName=main}"  
                           FontSize="{Binding FontSize, ElementName=main}" 
                           FontWeight="{Binding FontWeight, ElementName=main}"

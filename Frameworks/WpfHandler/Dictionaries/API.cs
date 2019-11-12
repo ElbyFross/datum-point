@@ -30,6 +30,11 @@ namespace WpfHandler.Dictionaries
     public static class API
     {
         /// <summary>
+        /// Event that will occure when languages dictionary will be loaded.
+        /// </summary>
+        public static event Action LanguagesDictionariesUpdated;
+
+        /// <summary>
         /// Scaning for language dictionaries in XAML files, and load them to Merged dictionaries.
         /// Loading new theme by code if found. Leave already loaded if overrided dictionary not found.
         /// 
@@ -76,6 +81,9 @@ namespace WpfHandler.Dictionaries
             
             // Update culture.
             System.Threading.Thread.CurrentThread.CurrentUICulture = targetCulture;
+
+            // Inform subscribers.
+            LanguagesDictionariesUpdated?.Invoke();
         }
 
         /// <summary>

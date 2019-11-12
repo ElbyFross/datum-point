@@ -20,7 +20,10 @@ limitations under the License.-->
              xmlns:local="clr-namespace:WpfHandler.UI.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="32" d:DesignWidth="300"
-             Background="#FFFFFF">
+             Background="#FFFFFF"
+             Foreground="#003459"
+             FontSize="15"
+             Loaded="UserControl_Loaded">
     <Grid Background="{Binding Background}" x:Name="flatButton" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="{Binding LableWidth}"></ColumnDefinition>
@@ -34,8 +37,10 @@ limitations under the License.-->
                FontWeight="Light" 
                HorizontalAlignment="Right" 
                VerticalAlignment="Center"
-               Foreground="#003459" 
-               Content="{Binding Lable}" />
+               Margin="0,-10"
+               Foreground="{Binding Foreground}" 
+               Content="{Binding Lable}" 
+               IsHitTestVisible="False"/>
         <Grid Grid.Column="1"  Background="#00171f" />
         <Grid Grid.Column="3"  
               Background="{Binding TextBoxBackground}" 
@@ -47,7 +52,8 @@ limitations under the License.-->
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2"/>
             </Grid.ColumnDefinitions>
-            <TextBox Grid.Column="1" 
+            <TextBox x:Name="textBox"
+                     Grid.Column="1" 
                      FontSize="{Binding FontSize}" 
                      FontWeight="Light" 
                      BorderThickness="0" 
