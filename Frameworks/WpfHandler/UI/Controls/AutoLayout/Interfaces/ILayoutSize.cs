@@ -22,6 +22,6 @@ namespace WpfHandler.UI.Controls.AutoLayout.Interfaces
         /// <summary>
         /// Value applied to layout property.
         /// </summary>
-        double Value { get; set; }
+        double Size { get; set; }
     }
 }

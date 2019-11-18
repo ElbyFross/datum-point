@@ -12,18 +12,25 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-using System.Windows.Markup;
+using System;
+using System.Reflection;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace WpfHandler.UI.Controls.AutoLayout.Interfaces
 {
     /// <summary>
-    /// Define attribute like one that operate with layout layers.
+    /// Define memebers of all elemtes that affects layout layer's state.
     /// </summary>
-    public interface ILayerAttribute : IGUIElement
+    public interface IGUIElement
     {
         /// <summary>
-        /// Layer that opereted into the handler.
+        /// Modify current layer root according to GUI element requirments.
         /// </summary>
-        LayoutLayer Layer { get; }
+        /// <param name="layer">Target GUI layer.</param>
+        /// <param name="args">Shared arguments.</param>
+        void OnGUI(ref LayoutLayer layer, params object[] args);
     }
 }

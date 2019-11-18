@@ -1,4 +1,18 @@
-﻿using System;
+﻿//Copyright 2019 Volodymyr Podshyvalov
+//
+//Licensed under the Apache License, Version 2.0 (the "License");
+//you may not use this file except in compliance with the License.
+//You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+//Unless required by applicable law or agreed to in writing, software
+//distributed under the License is distributed on an "AS IS" BASIS,
+//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//See the License for the specific language governing permissions and
+//limitations under the License.
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,90 +30,9 @@ namespace WpfHandler.UI.Controls.AutoLayout
     public abstract class UIDescriptor
     {
         /// <summary>
-        /// Contains data about layout layer to relative element.
+        /// Cyrrent active UI layer.
         /// </summary>
-        private class LayoutLayer
-        {
-            /// <summary>
-            /// Element on that will contains child elements.
-            /// </summary>
-            public IAddChild root;
-
-            /// <summary>
-            /// Parent layer that contains that element.
-            /// </summary>
-            public LayoutLayer Parent
-            {
-                get { return _Parent; }
-                protected set
-                {
-                    // Drop recursive reference.
-                    if (value.Equals(this)) return;
-
-                    // update value,
-                    _Parent = value;
-                }
-            }
-
-            /// <summary>
-            /// Check does the layer has a parent.
-            /// </summary>
-            public bool HasParent
-            { 
-                get { return _Parent != null; }
-            }
-
-            /// <summary>
-            /// Bufer that containes reference to the parent layer.
-            /// </summary>
-            private LayoutLayer _Parent;
-
-            /// <summary>
-            /// Orientation of that UI layer.
-            /// </summary>
-            public Orientation orientation = Orientation.Vertical;
-
-            /// <summary>
-            /// Create next UI layer and set it as active.
-            /// </summary>
-            /// <param name="nextLayerRoot">Element that will be root of the new layer.</param>
-            public LayoutLayer GoDeeper(IAddChild nextLayerRoot)
-            {
-                // Validate shared reference.
-                if(nextLayerRoot == null)
-                {
-                    throw new NullReferenceException("Root element can't be null.");
-                }
-
-                // Add shared root as child on current layer.
-                root.AddChild(nextLayerRoot);
-
-                // Configurate new layer.
-                var newLayer = new LayoutLayer()
-                {
-                    root = nextLayerRoot, // Set shared element as root
-                    Parent = this // Set reference to current active layer like on the parent.
-                };
-
-                return newLayer;
-            }
-
-            /// <summary>
-            /// Change current layer to previous one.
-            /// </summary>
-            public LayoutLayer GoUpper()
-            {
-                // Check if current layout has a parent.
-                if (HasParent)
-                {
-                    // Return parent if exist.
-                    return Parent;
-                }
-
-                // Return this if that higher layer.
-                return this;
-            }
-        }
+        LayoutLayer activeLayer = new LayoutLayer();
 
         /// <summary>
         /// Insiniate UI by descriptor's attributes map and add it as child to parent element.
@@ -111,7 +44,7 @@ namespace WpfHandler.UI.Controls.AutoLayout
             var members = GetType().GetMembers();
 
             // Instiniate first UILayer.
-            var activeLayer = new LayoutLayer()
+            activeLayer = new LayoutLayer()
             {
                 root = parent // Thet binding target as root for cuurent layer.
             };
@@ -119,6 +52,35 @@ namespace WpfHandler.UI.Controls.AutoLayout
             // Perform all descriptor map.
             foreach (MemberInfo member in members)
             {
+                // Getting all attributes.
+                var attributes = member.GetCustomAttributes<Attribute>(true);
+
+                // Perform general attributes.
+                foreach(Attribute attr in attributes)
+                {
+                    // Skip if an option.
+                    if (attr is Interfaces.IGUILayoutOption) continue;
+
+                    // Apply layout control to GUI.
+                    if (attr is Interfaces.ILayoutControl control)
+                    {
+                        control.OnGUI(ref activeLayer, this, member);
+                    }
+                }
+
+                // Spawn UI field relative to member type.
+
+                // Perform options attributes.
+                foreach (Attribute attr in attributes)
+                {
+                    // Skip if not an option.
+                    if (!(attr is Interfaces.IGUILayoutOption)) continue;
+                }
+
+
+
+
+
                 // Try to get attribute that depends layer settings.
                 var layerAttr = member.GetCustomAttribute(typeof(Interfaces.ILayerAttribute), true);
 
@@ -134,7 +96,6 @@ namespace WpfHandler.UI.Controls.AutoLayout
                     {
                         // Create grid.
                         newGroup = new Grid();
-
                     }
                     // Start new vertical group.
                     else
@@ -149,13 +110,19 @@ namespace WpfHandler.UI.Controls.AutoLayout
                 }
                 #endregion
 
+                #region Header
                 // Perform header if requested.
-                var header = member.GetCustomAttribute(typeof(Attributes.Header), true);
-                if (header != null)
+                if (member.GetCustomAttribute(typeof(Attributes.Header), true) is Attributes.Header headerAttr)
                 {
-
+                    // Instiniate UI header.
+                    var header = new Header() { Content = headerAttr.Content };
+                    ControlSignUp(header, member, true);
                 }
+                #endregion
 
+                #region Init fields & properties
+
+                #endregion
 
                 #region End group
                 // Ending UI group if requested.
@@ -166,6 +133,75 @@ namespace WpfHandler.UI.Controls.AutoLayout
                 }
                 #endregion
             }
+        }
+
+        /// <summary>
+        /// Safely init layout control element and sighn up on internal hadler events.
+        /// </summary>
+        /// <param name="control">The GUI control that will be instiniated.</param>
+        /// <param name="member">The member that will be binded to the GUI.</param>
+        /// <param name="value">Value that will applied as default.</param>
+        public void ControlSignUp(Interfaces.ILayoutControl control, MemberInfo member, object value)
+        {
+            try
+            {
+                // Registrate member in auto layout handler.
+                control.RegistrateField(this, member, value);
+
+                // Adding herader to layout.
+                activeLayer?.ApplyControl(control as FrameworkElement);
+            }
+            catch { }
+        }
+
+
+        /// <summary>
+        /// Trying to bind control to the auto layout handler.
+        /// </summary>
+        /// <param name="control">Control that would be binded.</param>
+        /// <param name="args">Must contains @UIDescriptor and @MemberInfo for success performing.</param>
+        /// <returns>Is control was binded?</returns>
+        public static bool TryToBindControl(Interfaces.ILayoutControl control, params object[] args)
+        {
+            try
+            {
+                // Trying to bind.
+                ToBindControl(control, args);
+
+                // Success if esception not occured
+                return true;
+            }
+            catch
+            {
+                // Inform about binding fail.
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Bind control to the auto layout handler.
+        /// </summary>
+        /// <param name="control">Control that would be binded.</param>
+        /// <param name="args">Must contains @UIDescriptor and @MemberInfo.</param>
+        public static void ToBindControl(Interfaces.ILayoutControl control, params object[] args)
+        {
+            // Find required referendes.
+            UIDescriptor desc = null;
+            MemberInfo member = null;
+
+            // Trying to get shared properties.
+            foreach (object obj in args)
+            {
+                if (obj is UIDescriptor) desc = (UIDescriptor)obj;
+                if (obj is MemberInfo) member = (MemberInfo)obj;
+            }
+
+            // Drop control sign up in case if member not shared.
+            if (desc == null) throw new NullReferenceException("@UIDescriptor not shared with @args");
+            if (member == null) throw new NullReferenceException("@MemberInfo not shared with @args");
+
+            // Sing up this control on desctiptor events.
+            desc.ControlSignUp(control, member, true);
         }
     }
 }

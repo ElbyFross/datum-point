@@ -22,23 +22,31 @@ using System.Windows;
 namespace WpfHandler.UI.Controls.AutoLayout.Attributes.Options
 {
     /// <summary>
-    /// Define height of the GUI element.
+    /// Define GUI element's text font size.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class Height : Attribute, Interfaces.IGUILayoutOption, Interfaces.ILayoutSize
+    public class FontSize : Attribute, Interfaces.IGUILayoutOption, Interfaces.ILayoutSize
     {
         /// <summary>
-        /// Value that will be used in the element's propeties.
+        /// Size of the font in points.
         /// </summary>
-        public double Size { get; set; } = double.NaN;
+        public double Size { get; set; } = 14;
 
         /// <summary>
-        /// Define height of the GUI element.
+        /// Define GUI element's text font size.
         /// </summary>
-        /// <param name="element">Shared UI element.</param>
+        /// <param name="element">
+        /// Shared UI element. Must be inheirted from 
+        /// `System.Windows.Controls.Control` to affect the font properties.
+        /// </param>
         public void ApplyLayoutOption(FrameworkElement element)
         {
-            element.Height = Size;
+            // Try to cast into control.
+            if(element is System.Windows.Controls.Control control)
+            {
+                // Apply size if casted.
+                control.FontSize = Size;
+            }
         }
     }
 }

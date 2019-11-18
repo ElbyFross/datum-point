@@ -24,14 +24,21 @@ namespace WpfHandler.UI.Controls.AutoLayout.Attributes.Options
     /// <summary>
     /// Define vertical align of the GUI element.
     /// </summary>
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
     public class VerticalAlign : Attribute, Interfaces.IGUILayoutOption
     {
         /// <summary>
+        /// Alignment that will applied to GUI element.
+        /// </summary>
+        public VerticalAlignment Alignment { get; set; }
+
+        /// <summary>
         /// Define vertical align of the GUI element.
         /// </summary>
+        /// <param name="element">Shared UI element.</param>
         public void ApplyLayoutOption(FrameworkElement element)
         {
-            throw new NotImplementedException();
+            element.VerticalAlignment = Alignment;
         }
     }
 }

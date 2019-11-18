@@ -14,8 +14,29 @@
 
 namespace WpfHandler.UI.Controls.AutoLayout.Interfaces
 {
+    using System.Reflection;
+
     /// <summary>
     /// Implementation of that interface allow to use that control in auto layout user interfaces.
     /// </summary>
-    public interface ILayoutControl { }
+    public interface ILayoutControl : IGUIElement
+    {
+        /// <summary>
+        /// Event that will occure in case if value of the field will be changed.
+        /// Will cause updating of the BindedMember value.
+        /// 
+        /// ILayoutControl - sender.
+        /// </summary>
+        event System.Action<ILayoutControl> ValueChanged;
+
+        /// <summary>
+        /// Value of that control.
+        /// </summary>
+        object Value { get; set; }
+
+        /// <summary>
+        /// Memeber that will be used as source\target for the value into UI.
+        /// </summary>
+        MemberInfo BindedMember { get; set; }
+    }
 }

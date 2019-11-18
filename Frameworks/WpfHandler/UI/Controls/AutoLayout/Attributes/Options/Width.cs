@@ -24,19 +24,21 @@ namespace WpfHandler.UI.Controls.AutoLayout.Attributes.Options
     /// <summary>
     /// Define width of GUI element.
     /// </summary>
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
     public class Width : Attribute, Interfaces.IGUILayoutOption, Interfaces.ILayoutSize
     {
         /// <summary>
         /// Value that will be used in the element's propeties.
         /// </summary>
-        public double Value { get; set; } = double.NaN;
+        public double Size { get; set; } = double.NaN;
 
         /// <summary>
         /// Define width of GUI element.
         /// </summary>
+        /// <param name="element">Shared UI element.</param>
         public void ApplyLayoutOption(FrameworkElement element)
         {
-            element.Width = Value;
+            element.Width = Size;
         }
     }
 }

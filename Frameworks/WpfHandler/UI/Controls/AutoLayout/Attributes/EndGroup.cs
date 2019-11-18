@@ -17,11 +17,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Markup;
 
 namespace WpfHandler.UI.Controls.AutoLayout.Attributes
 {
     /// <summary>
     /// Close the last started layout group.
     /// </summary>
-    public class EndGroup : Attribute, Interfaces.ILayerEndAttribute { }
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
+    public class EndGroup : Attribute, Interfaces.ILayerEndAttribute
+    {
+        /// <summary>
+        /// Reference to the layer that had been got by handler doring GoUpper operation.
+        /// </summary>
+        public LayoutLayer Layer
+        {
+            get { return _Layer; }
+        }
+
+        /// <summary>
+        /// Bufer that contains operated layer.
+        /// </summary>
+        private LayoutLayer _Layer;
+
+        /// <summary>
+        /// Trying to go to the upper UI's layer.
+        /// </summary>
+        /// <param name="layer">Current layer. Reference will be changed on relevant one.</param>
+        /// <param name="args">Not using in that element.</param>
+        public void OnGUI(ref LayoutLayer layer, params object[] args)
+        {
+            // Trying to go to the upper UI's layer.
+            _Layer = layer.GoUpper();
+        }
+    }
 }

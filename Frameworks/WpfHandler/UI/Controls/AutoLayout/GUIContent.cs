@@ -28,6 +28,11 @@ namespace WpfHandler.UI.Controls.AutoLayout
     public class GUIContent : FrameworkElement
     {
         /// <summary>
+        /// Event that will occure when content properties will updated.
+        /// </summary>
+        public event Action<GUIContent> ContentUpdated;
+
+        /// <summary>
         /// Empty content.
         /// </summary>
         public static GUIContent None
@@ -56,22 +61,54 @@ namespace WpfHandler.UI.Controls.AutoLayout
         /// Title that would be used by default in case if dynamic dictionry not found.
         /// in case if null then would be automaticly generated from the name of the binded member.
         /// </summary>
-        public string defaultTitle = null;
+        public string DefaultTitle
+        {
+            get { return _DefaultTitle; }
+            set
+            {
+                _DefaultTitle = value;
+                ContentUpdated?.Invoke(this);
+            }
+        }
 
         /// <summary>
         /// Description that would be used by default in case if dynamic dictionry not found.
         /// </summary>
-        public string defaultDescription = null;
+        public string DefaultDescription
+        {
+            get { return _DefaultDescription; }
+            set
+            {
+                _DefaultDescription = value;
+                ContentUpdated?.Invoke(this);
+            }
+        }
 
         /// <summary>
         /// Key of resource from dynamic dictionary that would be used for loading of localized title.
         /// </summary>
-        public string titleLocalizationResourseKey = null;
+        public string TitleLocalizationResourseKey
+        {
+            get { return _TitleLocalizationResourseKey; }
+            set
+            {
+                _TitleLocalizationResourseKey = value;
+                ContentUpdated?.Invoke(this);
+            }
+        }
 
         /// <summary>
         /// Key of resource from dynamic dictionary that would be used for loading of localized description.
         /// </summary>
-        public string decriptionLocalizationResourseKey = null;
+        public string DecriptionLocalizationResourseKey
+        {
+            get { return _DecriptionLocalizationResourseKey; }
+            set
+            {
+                _DecriptionLocalizationResourseKey = value;
+                ContentUpdated?.Invoke(this);
+            }
+        }
 
         /// <summary>
         /// Is that conent is defult none.
@@ -97,6 +134,27 @@ namespace WpfHandler.UI.Controls.AutoLayout
         /// is that content is none.
         /// </summary>
         private bool _isNone = false;
+
+        /// <summary>
+        /// Title that would be used by default in case if dynamic dictionry not found.
+        /// in case if null then would be automaticly generated from the name of the binded member.
+        /// </summary>
+        private string _DefaultTitle = null;
+
+        /// <summary>
+        /// Description that would be used by default in case if dynamic dictionry not found.
+        /// </summary>
+        private string _DefaultDescription = null;
+
+        /// <summary>
+        /// Key of resource from dynamic dictionary that would be used for loading of localized title.
+        /// </summary>
+        private string _TitleLocalizationResourseKey = null;
+
+        /// <summary>
+        /// Key of resource from dynamic dictionary that would be used for loading of localized description.
+        /// </summary>
+        private string _DecriptionLocalizationResourseKey = null;
         #endregion
 
         #region Constructors & destructor
@@ -115,7 +173,10 @@ namespace WpfHandler.UI.Controls.AutoLayout
         /// <param name="title">Title of the element.</param>
         public GUIContent(string title) : base()
         {
-            defaultTitle = title;
+            DefaultTitle = title;
+
+            // Subscribe on events.
+            Dictionaries.API.LanguagesDictionariesUpdated += API_LanguagesDictionariesUpdated;
         }
 
         /// <summary>
@@ -125,8 +186,11 @@ namespace WpfHandler.UI.Controls.AutoLayout
         /// <param name="description">Description of that element.</param>
         public GUIContent(string title, string description) : base()
         {
-            defaultTitle = title;
-            defaultDescription = description;
+            DefaultTitle = title;
+            DefaultDescription = description;
+
+            // Subscribe on events.
+            Dictionaries.API.LanguagesDictionariesUpdated += API_LanguagesDictionariesUpdated;
         }
 
         /// <summary>
@@ -140,9 +204,12 @@ namespace WpfHandler.UI.Controls.AutoLayout
             string defaultDescription,
             string decriptionLocalizationResourseKey) : base()
         {
-            this.defaultTitle = defaultTitle;
-            this.defaultDescription = defaultDescription;
-            this.decriptionLocalizationResourseKey = decriptionLocalizationResourseKey;
+            this.DefaultTitle = defaultTitle;
+            this.DefaultDescription = defaultDescription;
+            this.DecriptionLocalizationResourseKey = decriptionLocalizationResourseKey;
+
+            // Subscribe on events.
+            Dictionaries.API.LanguagesDictionariesUpdated += API_LanguagesDictionariesUpdated;
         }
 
         /// <summary>
@@ -158,10 +225,13 @@ namespace WpfHandler.UI.Controls.AutoLayout
             string titleLocalizationResourseKey,
             string decriptionLocalizationResourseKey) : base()
         {
-            this.defaultTitle = defaultTitle;
-            this.defaultDescription = defaultDescription;
-            this.titleLocalizationResourseKey = titleLocalizationResourseKey;
-            this.decriptionLocalizationResourseKey = decriptionLocalizationResourseKey;
+            this.DefaultTitle = defaultTitle;
+            this.DefaultDescription = defaultDescription;
+            this.TitleLocalizationResourseKey = titleLocalizationResourseKey;
+            this.DecriptionLocalizationResourseKey = decriptionLocalizationResourseKey;
+
+            // Subscribe on events.
+            Dictionaries.API.LanguagesDictionariesUpdated += API_LanguagesDictionariesUpdated;
         }
 
         ~GUIContent()
@@ -175,6 +245,15 @@ namespace WpfHandler.UI.Controls.AutoLayout
         /// <summary>
         /// Define relevant title for certain member.
         /// </summary>
+        /// <returns>Relevant title based on internal data of content.</returns>
+        public string GetTitle()
+        {
+            return GetTitle(null);
+        }
+
+        /// <summary>
+        /// Define relevant title for certain member.
+        /// </summary>
         /// <param name="member">Binded member that would be used as source of auto generated member title.</param>
         /// <returns>Relevant title of the member.</returns>
         public string GetTitle(MemberInfo member)
@@ -184,12 +263,19 @@ namespace WpfHandler.UI.Controls.AutoLayout
                 try
                 {
                     // load title from dictionary.
-                    _Title = FindResource(titleLocalizationResourseKey) as string;
+                    _Title = FindResource(TitleLocalizationResourseKey) as string;
                 }
                 catch
                 {
-                    // Set default title or dict code if title not found.
-                    _Title = defaultTitle ?? Format(member.Name);
+                    if (member != null)
+                    {
+                        // Set default title or dict code if title not found.
+                        _Title = DefaultTitle ?? Format(member.Name);
+                    }
+                    else
+                    {
+                        _Title = DefaultTitle;
+                    }
                 }
             }
 
@@ -208,12 +294,12 @@ namespace WpfHandler.UI.Controls.AutoLayout
                 try
                 {
                     // load title from dictionary.
-                    _Description = FindResource(titleLocalizationResourseKey) as string;
+                    _Description = FindResource(TitleLocalizationResourseKey) as string;
                 }
                 catch
                 {
                     // Set default description or dict code if title not found.
-                    _Description = defaultDescription;
+                    _Description = DefaultDescription;
                 }
             }
 

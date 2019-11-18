@@ -17,6 +17,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Markup;
+using System.Windows.Controls;
 
 namespace WpfHandler.UI.Controls.AutoLayout.Attributes
 {
@@ -24,5 +26,36 @@ namespace WpfHandler.UI.Controls.AutoLayout.Attributes
     /// Starting horizontal layout group.
     /// Will wait EndHorizontal to over the last begined group.
     /// </summary>
-    public class BeginHorizontalGroup : Attribute, Interfaces.ILayerBeginAttribute { }
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
+    public class BeginHorizontalGroup : Attribute, Interfaces.ILayerBeginAttribute
+    {
+        /// <summary>
+        /// Layer that opereted into the handler.
+        /// </summary>
+        public LayoutLayer Layer
+        {
+            get { return _Layer; }
+        }
+
+        /// <summary>
+        /// Bufer that contains layer.
+        /// </summary>
+        private LayoutLayer _Layer;
+
+        /// <summary>
+        /// Going one layer deeper into UI layout.
+        /// All child element will be placed in horizontal order till calling of the EndGroup element.
+        /// </summary>
+        /// <param name="layer">Curent layer. Refernece eill be changed to the new layer after performing.</param>
+        /// <param name="args">Not using into that elelment.</param>
+        public void OnGUI(ref LayoutLayer layer, params object[] args)
+        {
+            // Create grid.
+            IAddChild root  = new Grid();
+
+            // Set new layer.
+            layer = layer.GoDeeper(root);
+            _Layer = layer;
+        }
+    }
 }

@@ -13,6 +13,8 @@
 //limitations under the License.
 
 using System;
+using System.Reflection;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,6 +29,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfHandler.UI.Controls.AutoLayout.Interfaces;
 
 namespace WpfHandler.UI.Controls.AutoLayout
 {
@@ -36,16 +39,23 @@ namespace WpfHandler.UI.Controls.AutoLayout
     public static class LayoutHandler
     {
         /// <summary>
+        /// Table that contains all registread value update callbacks.
+        /// 
+        /// Key = ILayoutControl
+        /// </summary>
+        private static readonly Hashtable RegistredCallbacks = new Hashtable();
+
+        /// <summary>
         /// Adding child to horizontal grid.
         /// </summary>
-        /// <param name="parent"></param>
-        /// <param name="element"></param>
+        /// <param name="parent">Grid that will contain child.</param>
+        /// <param name="element">Element that will be added to the grid as child.</param>
         public static void HorizontalLayoutAddChild(IAddChild parent, FrameworkElement element)
         {
             // Drop ivalid elelment.
             if(!(parent is Grid grid))
             {
-                throw new InvalidCastException("Parent must has `" + typeof(Grid).FullName + "` type.");
+                throw new InvalidCastException("Parent mast be `" + typeof(Grid).FullName + "`.");
             }
 
             // Add new column fo element.
@@ -65,45 +75,70 @@ namespace WpfHandler.UI.Controls.AutoLayout
         }
 
         /// <summary>
-        /// Initialize the int field into UI.
+        /// Adding child to the bertical layout group.
         /// </summary>
-        /// <param name="value">Default field's value.</param>
-        /// <returns>Current value from the field.</returns>
-        public static int IntField(int value)
+        /// <param name="parent">VerticalStackPanel that will contin child.</param>
+        /// <param name="element">Element that will be added to the panel as child.</param>
+        public static void VerticalLayoutAddChild(IAddChild parent, FrameworkElement element)
         {
-            return IntField(GUIContent.None, value);
+            // Validate type cast.
+            if(!(parent is StackPanel panel))
+            {
+                throw new InvalidCastException("Parent mast be `" + typeof(StackPanel).FullName + "`.");
+            }
+
+            // Set element to the parent panel.
+            panel.Children.Add(element);
         }
 
         /// <summary>
-        /// Initialize the int field into UI.
+        /// Registrating bool property into auto layout ui.
         /// </summary>
-        /// <param name="lable">Title that will be setted up to the lable.</param>
-        /// <param name="value">Default field's value.</param>
-        /// <returns>Current value from the field.</returns>
-        public static int IntField(string lable, int value)
+        /// <param name="control">Instiniated layout control.</param>
+        /// <param name="descriptor">Descriptor that hold fields or properties.</param>
+        /// <param name="member">Member in descriptor instance that will be used as target for value update.</param>
+        /// <param name="defautltValue">Value that will be setted by default.</param>
+        public static void RegistrateField(this ILayoutControl control, UIDescriptor descriptor, System.Reflection.MemberInfo member, object defautltValue)
         {
-            return IntField(new GUIContent(lable), value);
+            // Apply default value.
+            control.Value = defautltValue;
+
+            // instiniate UI field update callback.
+            Action<ILayoutControl> changeCallback = delegate (ILayoutControl _)
+            {
+                if (member is System.Reflection.PropertyInfo prop)
+                {
+                    // Try to set value.
+                    try { prop.SetValue(descriptor, control.Value); } catch { };
+                }
+            };
+
+            // To to registrate control into handler.
+            try { RegistredCallbacks.Add(control, changeCallback); }
+            catch { throw new NotSupportedException("@ILayoutControl could be registred only once."); }
+
+            // Subscribe on value change.
+            control.ValueChanged += changeCallback;
         }
 
         /// <summary>
-        /// Initialize the int field into UI.
+        /// Unbind layout control from auto layout handler.
         /// </summary>
-        /// <param name="lable">Lable content.</param>
-        /// <param name="value">Default field's value.</param>
-        /// <returns>Current value from the field.</returns>
-        public static int IntField(GUIContent lable, int value)
+        /// <param name="control">Target layout control.</param>
+        public static void UnregistrateField(this ILayoutControl control)
         {
-            throw new NotImplementedException();
-        }
-
-
-        /// <summary>
-        /// Set header to UI.
-        /// </summary>
-        /// <param name="content">Descriptor of the header contnent.</param>
-        public static void Header(GUIContent content)
-        {
-
+            try
+            {
+                // Unregistreting of registred callback.
+                control.ValueChanged -= (Action<ILayoutControl>)RegistredCallbacks[control];
+            }
+            catch
+            {
+                // Log error.
+                MessageBox.Show("You trying to unregistred layout control " +
+                    "that was not registred into the auto layout handler.\n" +
+                    "Use `LayoutHandler.RegistrateYOURTYPEField` before.");
+            }
         }
     }
 }

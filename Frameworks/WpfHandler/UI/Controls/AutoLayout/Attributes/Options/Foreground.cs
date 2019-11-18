@@ -22,23 +22,25 @@ using System.Windows;
 namespace WpfHandler.UI.Controls.AutoLayout.Attributes.Options
 {
     /// <summary>
-    /// Define height of the GUI element.
+    /// Define GUI element's foreground brush.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class Height : Attribute, Interfaces.IGUILayoutOption, Interfaces.ILayoutSize
+    public class Foreground : ColorAttribute, Interfaces.IGUILayoutOption
     {
         /// <summary>
-        /// Value that will be used in the element's propeties.
+        /// Define GUI element's foreground brush.
         /// </summary>
-        public double Size { get; set; } = double.NaN;
-
-        /// <summary>
-        /// Define height of the GUI element.
-        /// </summary>
-        /// <param name="element">Shared UI element.</param>
+        /// <param name="element">
+        /// Shared UI element. Must be inheirted from 
+        /// `System.Windows.Controls.Control` to affect the font properties.
+        /// </param>
         public void ApplyLayoutOption(FrameworkElement element)
         {
-            element.Height = Size;
+            // Try to cast into control.
+            if (element is System.Windows.Controls.Control control)
+            {
+                control.Foreground = Brush;
+            }
         }
     }
 }

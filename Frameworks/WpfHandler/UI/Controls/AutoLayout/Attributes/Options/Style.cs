@@ -20,6 +20,7 @@ namespace WpfHandler.UI.Controls.AutoLayout.Attributes.Options
     /// <summary>
     /// Define custom style from resources that would be applied to the GUI element.
     /// </summary>
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
     public class Style : Attribute, Interfaces.IGUILayoutOption
     {
         /// <summary>
@@ -35,7 +36,7 @@ namespace WpfHandler.UI.Controls.AutoLayout.Attributes.Options
         /// <summary>
         /// Trying to apply requested style.
         /// </summary>
-        /// <param name="element"></param>
+        /// <param name="element">Shared UI element.</param>
         public void ApplyLayoutOption(FrameworkElement element)
         {
             try

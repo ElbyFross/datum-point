@@ -42,7 +42,7 @@ namespace WpfHandler.UI.Controls.AutoLayout
         }
 
         /// <summary>
-        /// Occurs when would reloaded synamic dictionaries.
+        /// TODO: Occurs when would reloaded synamic dictionaries.
         /// </summary>
         private void API_LanguagesDictionariesUpdated()
         {

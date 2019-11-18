@@ -59,8 +59,12 @@
     <Compile Include="UI\Animations\Thinkness.cs" />
     <Compile Include="UI\Controls\AutoLayout\Attributes\BeginHorizontalGroup.cs" />
     <Compile Include="UI\Controls\AutoLayout\Attributes\BeginVerticalGroup.cs" />
+    <Compile Include="UI\Controls\AutoLayout\Attributes\CustomControl.cs" />
     <Compile Include="UI\Controls\AutoLayout\Attributes\EndGroup.cs" />
     <Compile Include="UI\Controls\AutoLayout\Attributes\Header.cs" />
+    <Compile Include="UI\Controls\AutoLayout\Attributes\Options\Background.cs" />
+    <Compile Include="UI\Controls\AutoLayout\Attributes\Options\FontSize.cs" />
+    <Compile Include="UI\Controls\AutoLayout\Attributes\Options\Foreground.cs" />
     <Compile Include="UI\Controls\AutoLayout\Attributes\Options\Height.cs" />
     <Compile Include="UI\Controls\AutoLayout\Attributes\Options\HorizontalAlign.cs" />
     <Compile Include="UI\Controls\AutoLayout\Attributes\Options\MaxHeight.cs" />
@@ -71,7 +75,9 @@
     <Compile Include="UI\Controls\AutoLayout\Attributes\Options\VerticalAlign.cs" />
     <Compile Include="UI\Controls\AutoLayout\Attributes\Options\Width.cs" />
     <Compile Include="UI\Controls\AutoLayout\Attributes\Space.cs" />
+    <Compile Include="UI\Controls\AutoLayout\ColorAttribute.cs" />
     <Compile Include="UI\Controls\AutoLayout\GUIContent.cs" />
+    <Compile Include="UI\Controls\AutoLayout\Interfaces\IGUIElement.cs" />
     <Compile Include="UI\Controls\AutoLayout\Interfaces\IGUILayoutOption.cs" />
     <Compile Include="UI\Controls\AutoLayout\Interfaces\ILable.cs" />
     <Compile Include="UI\Controls\AutoLayout\Interfaces\ILayerAttribute.cs" />
@@ -82,6 +88,7 @@
     <Compile Include="UI\Controls\AutoLayout\Interfaces\ISelectableControl.cs" />
     <Compile Include="UI\Controls\AutoLayout\LayoutAttribute.cs" />
     <Compile Include="UI\Controls\AutoLayout\LayoutHandler.cs" />
+    <Compile Include="UI\Controls\AutoLayout\LayoutLayer.cs" />
     <Compile Include="UI\Controls\AutoLayout\UIDescriptor.cs" />
     <Compile Include="UI\Controls\CatalogButton.xaml.cs">
       <DependentUpon>CatalogButton.xaml</DependentUpon>
@@ -115,6 +122,9 @@
     <Compile Include="UI\Controls\FlatTextBox.xaml.cs">
       <DependentUpon>FlatTextBox.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Controls\Header.xaml.cs">
+      <DependentUpon>Header.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Controls\LockScreen.xaml.cs">
       <DependentUpon>LockScreen.xaml</DependentUpon>
     </Compile>
@@ -137,6 +147,7 @@
       <DependentUpon>SwitchPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Effects\RectBlurEffect.cs" />
+    <Compile Include="UI\UniformTypes\TextFieldControl.cs" />
     <Resource Include="Shaders\RectBlurEffect.ps">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -164,6 +175,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UI\Controls\FlatTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controls\Header.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -24,19 +24,21 @@ namespace WpfHandler.UI.Controls.AutoLayout.Attributes.Options
     /// <summary>
     /// Define min height of the GUI element.
     /// </summary>
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
     public class MinHeight : Attribute, Interfaces.IGUILayoutOption, Interfaces.ILayoutSize
     {
         /// <summary>
         /// Value that will be used in the element's propeties.
         /// </summary>
-        public double Value { get; set; } = double.NaN;
+        public double Size { get; set; } = double.NaN;
 
         /// <summary>
         /// Define min height of the GUI element.
         /// </summary>
+        /// <param name="element">Shared UI element.</param>
         public void ApplyLayoutOption(FrameworkElement element)
         {
-            element.MinHeight = Value;
+            element.MinHeight = Size;
         }
     }
 }

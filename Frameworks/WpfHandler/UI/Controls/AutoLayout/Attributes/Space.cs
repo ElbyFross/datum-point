@@ -17,25 +17,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace WpfHandler.UI.Controls.AutoLayout.Attributes
 {
     /// <summary>
     /// Adding space between UI elements.
     /// </summary>
-    public class Space : Attribute, Interfaces.ILayoutSize
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
+    public class Space : Attribute, Interfaces.ILayoutSize, Interfaces.IGUIElement
     {
         /// <summary>
         /// Size of the space.
         /// </summary>
-        public double Value { get; set; } = double.NaN;
+        public double Size { get; set; } = double.NaN;
 
         /// <summary>
         /// Initialize space into 10 points.
         /// </summary>
         public Space()
         {
-            Value = 10;
+            Size = 10;
         }
 
         /// <summary>
@@ -44,7 +46,31 @@ namespace WpfHandler.UI.Controls.AutoLayout.Attributes
         /// <param name="space">Size of step.</param>
         public Space(float space)
         {
-            this.Value = space;
+            this.Size = space;
+        }
+
+        /// <summary>
+        /// Instiniating Space GUI lement.
+        /// </summary>
+        /// <param name="layer">Target GUI layer.</param>
+        /// <param name="args">Not using in that element.</param>
+        public void OnGUI(ref LayoutLayer layer, params object[] args)
+        {
+            // Instiniate GUI element.
+            var canvas = new Canvas();
+
+            // Convifurate layout's size.
+            if (layer.orientation == Orientation.Horizontal)
+            {
+                canvas.Width = Size;
+            }
+            else
+            {
+                canvas.Height = Size;
+            }
+
+            // Add element to the root.
+            layer.root.AddChild(canvas);
         }
     }
 }

@@ -23,7 +23,8 @@ namespace WpfHandler.UI.Controls.AutoLayout.Attributes
     /// <summary>
     /// Added header block element to UI.
     /// </summary>
-    public class Header : LayoutAttribute
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
+    public class Header : LayoutAttribute, Interfaces.IGUIElement
     {
         /// <summary>
         /// Content applied to that GUI element.
@@ -46,6 +47,20 @@ namespace WpfHandler.UI.Controls.AutoLayout.Attributes
         public Header(GUIContent content) : base()
         {
             Content = content;
+        }
+
+        /// <summary>
+        /// Spawning Header UI elements un shared layer. Connecting to the shared member.
+        /// </summary>
+        /// <param name="layer">Target UI layer.</param>
+        /// <param name="args">Must contains: @UIDescriptor and @MemberInfo</param>
+        public void OnGUI(ref LayoutLayer layer, params object[] args)
+        {
+            // Instiniate header UI.
+            var header = new Controls.Header();
+
+            // Call GUI processing.
+            header.OnGUI(ref layer, args);
         }
     }
 }

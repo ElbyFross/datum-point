@@ -242,8 +242,10 @@ namespace WpfHandler.UI.Controls
         /// <summary>
         /// Callback for button click.
         /// </summary>
-        /// <param name="sender"></param>
-        public void OnButtonClick(object sender)
+        /// <param name="sender">
+        /// Not using. Will be overided on `this` cause listener 
+        /// can't khow reference tp the child button control.</param>
+        public void OnButtonClick(object _)
         {
             // Call subscribed delegate.
             ClickCallback?.Invoke(this);

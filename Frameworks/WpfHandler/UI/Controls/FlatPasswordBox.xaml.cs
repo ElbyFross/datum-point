@@ -26,13 +26,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfHandler.UI.Controls.AutoLayout.Interfaces;
+using System.Reflection;
+using WpfHandler.UI.Controls.AutoLayout;
 
 namespace WpfHandler.UI.Controls
 {
     /// <summary>
     /// Interaction logic for FlatPasswordBox.xaml
     /// </summary>
-    public partial class FlatPasswordBox : UserControl
+    public partial class FlatPasswordBox : UserControl, ILayoutControl
     {
         #region Dependency properties
         public static readonly DependencyProperty LableProperty = DependencyProperty.Register(
@@ -52,6 +55,17 @@ namespace WpfHandler.UI.Controls
         #endregion
 
         #region Properties
+        /// <summary>
+        /// Event that will occure in case if value of the field will be changed.
+        /// Will cause updating of the BindedMember value.
+        /// </summary>
+        public event Action<ILayoutControl> ValueChanged;
+
+        /// <summary>
+        /// Memeber that will be used as source\target for the value into UI.
+        /// </summary>
+        public MemberInfo BindedMember { get; set; }
+
         /// <summary>
         /// Text in lable field.
         /// </summary>
@@ -97,12 +111,31 @@ namespace WpfHandler.UI.Controls
             set { this.SetValue(TextBoxBackgroundProperty, value); }
         }
 
+        /// <summary>
+        /// Uniformaed value of the field.
+        /// Allow only strings.
+        /// </summary>
+        public object Value
+        {
+            get { return Text; }
+            set
+            {
+                if (value is string s)
+                {
+                    Text = s;
+                }
+            }
+        }
         #endregion
 
+        /// <summary>
+        /// Defalut constructor.
+        /// 
+        /// Trying to load `FlatPasswordBox` as @Style resource.
+        /// </summary>
         public FlatPasswordBox()
         {
             InitializeComponent();
-
             DataContext = this;
 
             // Try to load default style
@@ -117,6 +150,22 @@ namespace WpfHandler.UI.Controls
             {
                 // Not found in dictionary. Not important.}
             }
+        }
+
+        /// <summary>
+        /// Callback that will occure when password will changed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            // Inform autolayout handler about changes.
+            ValueChanged?.Invoke(this);
+        }
+
+        public void OnGUI(ref LayoutLayer layer, params object[] args)
+        {
+            throw new NotImplementedException();
         }
     }
 }

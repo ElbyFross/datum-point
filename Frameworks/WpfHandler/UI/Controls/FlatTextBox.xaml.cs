@@ -15,6 +15,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -26,56 +27,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfHandler.UI.Controls.AutoLayout;
+using WpfHandler.UI.Controls.AutoLayout.Interfaces;
 
 namespace WpfHandler.UI.Controls
 {
     /// <summary>
     /// Interaction logic for FlatTextBox.xaml
     /// </summary>
-    public partial class FlatTextBox : UserControl
+    public partial class FlatTextBox : UniformTypes.TextFieldControl, ILayoutControl
     {
-        /// <summary>
-        /// Mode of value operating.
-        /// </summary>
-        public enum Mode
-        { 
-            /// <summary>
-            /// Allow any string value.
-            /// </summary>
-            String,
-            /// <summary>
-            /// Allow only int formated values.
-            /// </summary>
-            Int,
-            /// <summary>
-            /// Allow only formated values.
-            /// </summary>
-            Float,
-            /// <summary>
-            /// Use custom regex to define if value is valid.
-            /// </summary>
-            Regex
-        }
-
-        /// <summary>
-        /// Occurs when content changes in the text element.
-        /// </summary>
-        public event TextChangedEventHandler TextChanged
-        {
-            add
-            {
-                // добавление обработчика
-                base.AddHandler(TextBox.TextChangedEvent, value);
-            }
-            remove
-            {
-                // удаление обработчика
-                base.RemoveHandler(TextBox.TextChangedEvent, value);
-            }
-        }
-
         #region Dependency properties
-
         public static readonly RoutedEvent TextChangedEvent = EventManager.RegisterRoutedEvent("TextChanged",
             RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(FlatTextBox));
 
@@ -85,14 +47,8 @@ namespace WpfHandler.UI.Controls
         public static readonly DependencyProperty LableWidthProperty = DependencyProperty.Register(
           "LableWidth", typeof(float), typeof(FlatTextBox), new PropertyMetadata(120.0f));
 
-        public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
-          "Text", typeof(string), typeof(FlatTextBox));
-
-        public static readonly DependencyProperty ValueModeProperty = DependencyProperty.Register(
-          "ValueMode", typeof(Mode), typeof(FlatTextBox));
-
         public static readonly DependencyProperty TextBoxForegroundProperty = DependencyProperty.Register(
-          "TextBoxForeground", typeof(Brush), typeof(FlatTextBox), 
+          "TextBoxForeground", typeof(Brush), typeof(FlatTextBox),
           new PropertyMetadata(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFFFFF"))));
 
         public static readonly DependencyProperty TextBoxBackgroundProperty = DependencyProperty.Register(
@@ -102,12 +58,18 @@ namespace WpfHandler.UI.Controls
 
         #region Properties
         /// <summary>
+        /// Event that will occure in case if value of the field will be changed.
+        /// Will cause updating of the BindedMember value.
+        /// </summary>
+        public event Action<ILayoutControl> ValueChanged;
+
+        /// <summary>
         /// Text in lable field.
         /// </summary>
         public string Lable
         {
-            get { return (string)this.GetValue(LableProperty); }
-            set { this.SetValue(LableProperty, value); }
+            get { return (string)GetValue(LableProperty); }
+            set { SetValue(LableProperty, value); }
         }
 
         /// <summary>
@@ -115,26 +77,8 @@ namespace WpfHandler.UI.Controls
         /// </summary>
         public float LableWidth
         {
-            get { return (float)this.GetValue(LableWidthProperty); }
-            set { this.SetValue(LableWidthProperty, value); }
-        }
-
-        /// <summary>
-        /// Text in textbox.
-        /// </summary>
-        public string Text
-        {
-            get { return (string)this.GetValue(TextProperty); }
-            set { this.SetValue(TextProperty, value); }
-        }
-
-        /// <summary>
-        /// Text in textbox.
-        /// </summary>
-        public Mode ValueMode
-        {
-            get { return (Mode)this.GetValue(ValueModeProperty); }
-            set { this.SetValue(ValueModeProperty, value); }
+            get { return (float)GetValue(LableWidthProperty); }
+            set { SetValue(LableWidthProperty, value); }
         }
 
         /// <summary>
@@ -142,8 +86,8 @@ namespace WpfHandler.UI.Controls
         /// </summary>
         public Brush TextBoxForeground
         {
-            get { return (Brush)this.GetValue(TextBoxForegroundProperty); }
-            set { this.SetValue(TextBoxForegroundProperty, value); }
+            get { return (Brush)GetValue(TextBoxForegroundProperty); }
+            set { SetValue(TextBoxForegroundProperty, value); }
         }
 
         /// <summary>
@@ -151,16 +95,24 @@ namespace WpfHandler.UI.Controls
         /// </summary>
         public Brush TextBoxBackground
         {
-            get { return (Brush)this.GetValue(TextBoxBackgroundProperty); }
-            set { this.SetValue(TextBoxBackgroundProperty, value); }
+            get { return (Brush)GetValue(TextBoxBackgroundProperty); }
+            set { SetValue(TextBoxBackgroundProperty, value); }
         }
+
+        /// <summary>
+        /// Memeber that will be used as source\target for the value into UI.
+        /// </summary>
+        public MemberInfo BindedMember { get; set; }
         #endregion
 
         #region Local members
         private string textPropertyBufer;
         #endregion
 
-        public FlatTextBox()
+        /// <summary>
+        /// Defautl constructor.
+        /// </summary>
+        public FlatTextBox() : base()
         {
             InitializeComponent();
             DataContext = this;
@@ -170,7 +122,7 @@ namespace WpfHandler.UI.Controls
             {
                 if (Application.Current.FindResource("FlatTextBox") is Style style)
                 {
-                    this.Style = style;
+                    Style = style;
                 }
             }
             catch
@@ -182,6 +134,11 @@ namespace WpfHandler.UI.Controls
             textBox.TextChanged += TextBox_TextChanged;
         }
 
+        /// <summary>
+        /// Will occure when password will be changed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             // Drop if the same value.
@@ -191,14 +148,14 @@ namespace WpfHandler.UI.Controls
             // Validate value.
             switch (ValueMode)
             {
-                case Mode.Int:
+                case UniformTypes.TextFieldControl.Mode.Int:
                     if (!Int32.TryParse(textBox.Text, out _))
                     {
                         textBox.Text = textPropertyBufer;
                     }
                     break;
 
-                case Mode.Float:
+                case UniformTypes.TextFieldControl.Mode.Float:
                     if (!float.TryParse(textBox.Text, out _))
                     {
                         textBox.Text = textPropertyBufer;
@@ -208,6 +165,9 @@ namespace WpfHandler.UI.Controls
 
             // Buferize las valid value.
             textPropertyBufer = textBox.Text;
+
+            // Inform autolayout handler about changes.
+            ValueChanged?.Invoke(this);
         }
 
         /// <summary>
@@ -220,13 +180,27 @@ namespace WpfHandler.UI.Controls
             // Set default value for numerical values.
             switch (ValueMode)
             {
-                case Mode.Int:
-                case Mode.Float:
+                case UniformTypes.TextFieldControl.Mode.Int:
+                case UniformTypes.TextFieldControl.Mode.Float:
                     Text = 0.ToString();
                     textPropertyBufer = Text;
                     break;
             }
 
+        }
+
+        /// <summary>
+        /// Configurate GUI element and bind it to auto layout handler.
+        /// </summary>
+        /// <param name="layer">Target UI layer.</param>
+        /// <param name="args">Must contains: @UIDescriptor and @MemberInfo</param>
+        public void OnGUI(ref LayoutLayer layer, params object[] args)
+        {
+            // Trying to bind element to the member.
+            if(UIDescriptor.TryToBindControl(this, args))
+            {
+                // Configurate UI if binded.
+            }
         }
     }
 }
