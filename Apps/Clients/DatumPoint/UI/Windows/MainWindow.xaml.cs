@@ -144,7 +144,7 @@ namespace DatumPoint.UI.Windows
                     MenuButtons.Add(
                     new WpfHandler.UI.Controls.CatalogButton()
                     {
-                        Text = title,
+                        Lable = title,
                         // Set uniformed text offset in hierarchy tree.
                         HierarchyLevel = _hierarchyLevel,
                         // Set root level as bool, others as thin.

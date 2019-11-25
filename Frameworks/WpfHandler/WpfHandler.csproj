@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,6 +31,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationFramework.Classic" />
@@ -57,39 +59,50 @@
     <Compile Include="UI\Animations\GridLengthAnimation.cs" />
     <Compile Include="UI\Animations\Object.cs" />
     <Compile Include="UI\Animations\Thinkness.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Attributes\BeginHorizontalGroup.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Attributes\BeginVerticalGroup.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Attributes\CustomControl.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Attributes\EndGroup.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Attributes\Header.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Attributes\Options\Background.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Attributes\Options\FontSize.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Attributes\Options\Foreground.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Attributes\Options\Height.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Attributes\Options\HorizontalAlign.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Attributes\Options\MaxHeight.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Attributes\Options\MaxWidth.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Attributes\Options\MinHeight.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Attributes\Options\MinWidth.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Attributes\Options\Style.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Attributes\Options\VerticalAlign.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Attributes\Options\Width.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Attributes\Space.cs" />
-    <Compile Include="UI\Controls\AutoLayout\ColorAttribute.cs" />
-    <Compile Include="UI\Controls\AutoLayout\GUIContent.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Interfaces\IGUIElement.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Interfaces\IGUILayoutOption.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Interfaces\ILable.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Interfaces\ILayerAttribute.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Interfaces\ILayerBeginAttribute.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Interfaces\ILayerEndAttribute.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Interfaces\ILayoutControl.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Interfaces\ILayoutSize.cs" />
-    <Compile Include="UI\Controls\AutoLayout\Interfaces\ISelectableControl.cs" />
-    <Compile Include="UI\Controls\AutoLayout\LayoutAttribute.cs" />
-    <Compile Include="UI\Controls\AutoLayout\LayoutHandler.cs" />
-    <Compile Include="UI\Controls\AutoLayout\LayoutLayer.cs" />
-    <Compile Include="UI\Controls\AutoLayout\UIDescriptor.cs" />
+    <Compile Include="UI\Controls\AutoCollection.xaml.cs">
+      <DependentUpon>AutoCollection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AutoLayout\Attributes\Layout\BeginHorizontalGroup.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Layout\BeginVerticalGroup.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Configuration\CustomControl.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Layout\EndGroup.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Elements\Header.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Layout\HideInInspector.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Elements\Lable.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Options\Background.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Options\FontSize.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Options\Foreground.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Options\Height.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Options\HorizontalAlign.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Options\MaxHeight.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Options\MaxWidth.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Options\MinHeight.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Options\MinWidth.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Options\Orientation.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Options\Style.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Options\VerticalAlign.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Options\Width.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Elements\Space.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Configuration\TypesCompatible.cs" />
+    <Compile Include="UI\AutoLayout\AutoLayoutVeiw.xaml.cs">
+      <DependentUpon>AutoLayoutVeiw.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ECS\ColorAttribute.cs" />
+    <Compile Include="UI\AutoLayout\GUIContent.cs" />
+    <Compile Include="UI\AutoLayout\Interfaces\IGUIElement.cs" />
+    <Compile Include="UI\AutoLayout\Interfaces\IGUILayoutOption.cs" />
+    <Compile Include="UI\ECS\ILable.cs" />
+    <Compile Include="UI\AutoLayout\Interfaces\Layers\ILayerAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Interfaces\Layers\ILayerBeginAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Interfaces\Layers\ILayerEndAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Interfaces\IGUIField.cs" />
+    <Compile Include="UI\ECS\ILayoutOrientation.cs" />
+    <Compile Include="UI\ECS\ILayoutSize.cs" />
+    <Compile Include="UI\ECS\ISelectableControl.cs" />
+    <Compile Include="UI\ECS\LayoutAttribute.cs" />
+    <Compile Include="UI\AutoLayout\LayoutHandler.cs" />
+    <Compile Include="UI\AutoLayout\LayoutLayer.cs" />
+    <Compile Include="UI\AutoLayout\UIDescriptor.cs" />
     <Compile Include="UI\Controls\CatalogButton.xaml.cs">
       <DependentUpon>CatalogButton.xaml</DependentUpon>
     </Compile>
@@ -146,8 +159,16 @@
     <Compile Include="UI\Controls\SwitchPanel.xaml.cs">
       <DependentUpon>SwitchPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\Controls\TogglesGroup.xaml.cs">
+      <DependentUpon>TogglesGroup.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\Effects\RectBlurEffect.cs" />
-    <Compile Include="UI\UniformTypes\TextFieldControl.cs" />
+    <Compile Include="UI\ECS\GUIContentAttribute.cs" />
+    <Compile Include="UI\Controls\TextFieldControl.cs" />
+    <Page Include="UI\Styles\Thems\base.theme.blueTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Resource Include="Shaders\RectBlurEffect.ps">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -162,6 +183,14 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Page Include="UI\Controls\AutoCollection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\AutoLayout\AutoLayoutVeiw.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\Controls\CatalogButton.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -209,6 +238,18 @@
     <Page Include="UI\Controls\SwitchPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Controls\TogglesGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Styles\BlackAndWhite.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Styles\ControlsDescriptor.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

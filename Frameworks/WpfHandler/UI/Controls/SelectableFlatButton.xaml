@@ -32,7 +32,7 @@ limitations under the License.-->
         
         <local:FlatButton x:Name="button" VerticalAlignment="Center" 
                           VerticalContentAlignment="Center"
-                          Text="{Binding Text, ElementName=main}"  
+                          Lable="{Binding Text, ElementName=main}"  
                           FontSize="{Binding FontSize, ElementName=main}" 
                           FontWeight="{Binding FontWeight, ElementName=main}"
                           Foreground="{Binding Foreground, ElementName=main}"

@@ -26,23 +26,26 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfHandler.UI.Controls.AutoLayout.Interfaces;
 using System.Reflection;
 using WpfHandler.UI.Controls.AutoLayout;
+using WpfHandler.UI.ECS;
+using WpfHandler.UI.Controls.AutoLayout.Interfaces;
+using WpfHandler.UI.ECS;
 
 namespace WpfHandler.UI.Controls
 {
     /// <summary>
     /// Interaction logic for Header.xaml
     /// </summary>
-    public partial class Header : UserControl, ILayoutControl
+    [AutoLayout.Attributes.Configuration.TypesCompatible(typeof(bool))]
+    public partial class Header : UserControl, IGUIField, ILable
     {
         #region Dependency properties
         public static readonly DependencyProperty LableProperty = DependencyProperty.Register(
             "Lable", typeof(string), typeof(Header), new PropertyMetadata("Sample"));
 
         public static readonly DependencyProperty GUIContentProperty = DependencyProperty.Register(
-            "GUIContent", typeof(AutoLayout.GUIContent), typeof(Header), new PropertyMetadata(AutoLayout.GUIContent.None));
+            "GUIContent", typeof(GUIContent), typeof(Header));//, new PropertyMetadata(GUIContent.None));
 
         public static readonly DependencyProperty ActiveProperty = DependencyProperty.Register(
             "Active", typeof(bool), typeof(Header), new PropertyMetadata(true));
@@ -56,7 +59,7 @@ namespace WpfHandler.UI.Controls
         /// Event that will occure in case if value of the field will be changed.
         /// Will cause updating of the BindedMember value.
         /// </summary>
-        public event Action<ILayoutControl> ValueChanged;
+        public event Action<IGUIField> ValueChanged;
 
         /// <summary>
         /// Memeber that will be used as source\target for the value into UI.
@@ -120,7 +123,7 @@ namespace WpfHandler.UI.Controls
         /// </summary>
         public GUIContent GUIContent
         {
-            get { return (AutoLayout.GUIContent)this.GetValue(GUIContentProperty); }
+            get { return (GUIContent)GetValue(GUIContentProperty); }
             set
             {
                 // Update value into property.
@@ -171,7 +174,9 @@ namespace WpfHandler.UI.Controls
         /// <param name="layer">Target UI layer.</param>
         /// <param name="args">Must contains: @UIDescriptor and @MemberInfo</param>
         public void OnGUI(ref LayoutLayer layer, params object[] args)
-        {  
+        {
+            new AutoLayout.Attributes.Layout.BeginVerticalGroup().OnGUI(ref layer, args);
+
             // Find required referendes.
             UIDescriptor desc = null;
             MemberInfo member = null;
@@ -188,6 +193,11 @@ namespace WpfHandler.UI.Controls
 
             // Sing up this control on desctiptor events.
             desc.ControlSignUp(this, member, true);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Active = !Active;
         }
     }
 }

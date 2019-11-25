@@ -57,6 +57,8 @@
     <Compile Include="AuditoryPlanner\SeatsBlock.xaml.cs">
       <DependentUpon>SeatsBlock.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AuditoryPlanner\UIDescriptors\EditingModesPanel.cs" />
+    <Compile Include="AuditoryPlanner\UIDescriptors\LayoutPropertiesPanel.cs" />
     <Compile Include="Schedule\ScheduleRow.xaml.cs">
       <DependentUpon>ScheduleRow.xaml</DependentUpon>
     </Compile>

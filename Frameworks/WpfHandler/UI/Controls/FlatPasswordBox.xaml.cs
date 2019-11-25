@@ -35,97 +35,38 @@ namespace WpfHandler.UI.Controls
     /// <summary>
     /// Interaction logic for FlatPasswordBox.xaml
     /// </summary>
-    public partial class FlatPasswordBox : UserControl, ILayoutControl
+    public partial class FlatPasswordBox : TextFieldControl, IGUIField
     {
-        #region Dependency properties
-        public static readonly DependencyProperty LableProperty = DependencyProperty.Register(
-          "Lable", typeof(string), typeof(FlatPasswordBox));
-
-        public static readonly DependencyProperty LableWidthProperty = DependencyProperty.Register(
-          "LableWidth", typeof(float), typeof(FlatPasswordBox));
-
-        public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
-          "Text", typeof(string), typeof(FlatPasswordBox));
-        
-        public static readonly DependencyProperty TextBoxForegroundProperty = DependencyProperty.Register(
-          "TextBoxForeground", typeof(Brush), typeof(FlatPasswordBox));
-
-        public static readonly DependencyProperty TextBoxBackgroundProperty = DependencyProperty.Register(
-          "TextBoxBackground", typeof(Brush), typeof(FlatPasswordBox));
-        #endregion
-
         #region Properties
         /// <summary>
         /// Event that will occure in case if value of the field will be changed.
         /// Will cause updating of the BindedMember value.
         /// </summary>
-        public event Action<ILayoutControl> ValueChanged;
-
-        /// <summary>
-        /// Memeber that will be used as source\target for the value into UI.
-        /// </summary>
-        public MemberInfo BindedMember { get; set; }
-
-        /// <summary>
-        /// Text in lable field.
-        /// </summary>
-        public string Lable
-        {
-            get { return (string)this.GetValue(LableProperty); }
-            set { this.SetValue(LableProperty, value); }
-        }
-
-        /// <summary>
-        /// Width of lable field.
-        /// </summary>
-        public float LableWidth
-        {
-            get { return (float)this.GetValue(LableWidthProperty); }
-            set { this.SetValue(LableWidthProperty, value); }
-        }
+        public event Action<IGUIField> ValueChanged;
 
         /// <summary>
         /// Text in textbox.
         /// </summary>
-        public string Text
+        public override string Text
         {
             get { return passwordBox.Password; }
             set { passwordBox.Password = value; }
         }
 
         /// <summary>
-        /// Color of the text in textbox.
+        /// Member binded to that element by the auto layout handler.
         /// </summary>
-        public Brush TextBoxForeground
-        {
-            get { return (Brush)this.GetValue(TextBoxForegroundProperty); }
-            set { this.SetValue(TextBoxForegroundProperty, value); }
-        }
+        public MemberInfo BindedMember { get; set; }
 
         /// <summary>
-        /// Collor of the text box backplate.
+        /// Returns reference to the lable block of UI element.
         /// </summary>
-        public Brush TextBoxBackground
-        {
-            get { return (Brush)this.GetValue(TextBoxBackgroundProperty); }
-            set { this.SetValue(TextBoxBackgroundProperty, value); }
-        }
+        public override FrameworkElement LableElement { get { return lableElement; } }
 
         /// <summary>
-        /// Uniformaed value of the field.
-        /// Allow only strings.
+        /// Returns reference to the field block of UI element.
         /// </summary>
-        public object Value
-        {
-            get { return Text; }
-            set
-            {
-                if (value is string s)
-                {
-                    Text = s;
-                }
-            }
-        }
+        public override FrameworkElement FieldElement { get { return fieldElement; } }
         #endregion
 
         /// <summary>

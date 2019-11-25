@@ -310,5 +310,39 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
             SeatsBlock.Current.Block.SubblocksDistance = float.Parse(symmetry_space.Text);
             SeatsBlock.Current.UpdateGrid();
         }
+
+        private void ControlPanel_Loaded(object sender, RoutedEventArgs e)
+        {
+            //controlPanel.Children.Add(new WpfHandler.UI.Controls.FlatTextBox());
+            //controlPanel.Children.Add(new WpfHandler.UI.Controls.FlatTextBox()
+            //{
+            //    Lable = "11"
+            //});
+            //controlPanel.Children.Add(new WpfHandler.UI.Controls.FlatTextBox()
+            //{
+            //    Text = "sad"
+            //});
+            //controlPanel.Children.Add(new WpfHandler.UI.Controls.FlatTextBox()
+            //{
+            //    LableWidth = 25,
+            //    Lable = "Test"});
+            //controlPanel.Children.Add(new WpfHandler.UI.Controls.FlatTextBox()
+            //{
+            //    LableWidth = 0,
+            //    Text = "324aa "});
+            //controlPanel.Children.Add(new WpfHandler.UI.Controls.FlatTextBox()
+            //{
+            //    LableWidth = 25,
+            //    Lable = "das",
+            //    Text = "324aa "
+            //}); ;
+
+            //return;
+
+            var view = new WpfHandler.UI.Controls.AutoLayout.AutoLayoutVeiw();
+            controlPanel.Children.Add(view);
+            
+            view.Descriptor = new UIDescriptors.LayoutPropertiesPanel();
+        }
     }
 }

@@ -649,7 +649,11 @@ namespace WpfHandler.UI.Controls
                     // Inserting new column into the grid.
                     abm.OnClickHandler = delegate (object sender, MouseButtonEventArgs e)
                     {
-                        MessageBox.Show("Column " + abm.x + " inserting.");
+                        // Log
+                        //MessageBox.Show("Column " + abm.x + " inserting.");
+                        
+                        // Inform subscribers.
+                        BorderSelected?.Invoke(this, abm);
                     };
 
                     abm.UpdateLayout();
@@ -675,7 +679,11 @@ namespace WpfHandler.UI.Controls
                     // Instrting new row into the grid.
                     abm.OnClickHandler = delegate (object sender, MouseButtonEventArgs e)
                     {
-                        MessageBox.Show("Row " + abm.y + " inserting.");
+                        // Log
+                        //MessageBox.Show("Row " + abm.y + " inserting.");
+
+                        // Inform subscribers.
+                        BorderSelected?.Invoke(this, abm);
                     };
 
                     abm.UpdateLayout();

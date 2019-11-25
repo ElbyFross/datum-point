@@ -26,16 +26,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfHandler.UI.Controls.AutoLayout;
+using WpfHandler.UI.ECS;
+using WpfHandler.UI.Controls.AutoLayout.Interfaces;
+using WpfHandler.UI.ECS;
 
 namespace WpfHandler.UI.Controls
 {
     /// <summary>
     /// Interaction logic for FlatButton.xaml
     /// </summary>
-    public partial class FlatButton : UserControl
+    public partial class FlatButton : UserControl, ILable
     {
-        public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
-          "Text", typeof(string), typeof(FlatButton), new PropertyMetadata("Sample"));
+        public static readonly DependencyProperty LableProperty = DependencyProperty.Register(
+          "Lable", typeof(string), typeof(FlatButton), new PropertyMetadata("Sample"));
 
         public static readonly DependencyProperty ClickCallbackProperty = DependencyProperty.Register(
           "ClickCallback", typeof(Action<object>), typeof(FlatButton));
@@ -43,10 +47,10 @@ namespace WpfHandler.UI.Controls
         /// <summary>
         /// Text that will be displayed on the button.
         /// </summary>
-        public string Text
+        public string Lable
         {
-            get { return (string)this.GetValue(TextProperty); }
-            set { this.SetValue(TextProperty, value); }
+            get { return (string)this.GetValue(LableProperty); }
+            set { this.SetValue(LableProperty, value); }
         }
 
         /// <summary>
@@ -70,6 +74,9 @@ namespace WpfHandler.UI.Controls
             set { this.SetValue(ClickCallbackProperty, value); }
         }
 
+        /// <summary>
+        /// Default constuctor.
+        /// </summary>
         public FlatButton()
         {
             InitializeComponent();

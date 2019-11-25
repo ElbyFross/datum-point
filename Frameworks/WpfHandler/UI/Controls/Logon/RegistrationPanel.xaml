@@ -97,7 +97,6 @@ limitations under the License.-->
                 HorizontalAlignment="Right" 
                 VerticalAlignment="Center"
                 Foreground="#003459" 
-                Margin="0,-10,0,0"
                 Content="Fileds with * required" />
 
             <Grid>
@@ -109,7 +108,7 @@ limitations under the License.-->
 
                 <!--Back to login button-->
                 <local:FlatButton x:Name="regBack"
-                                      Text="Back"  
+                                      Lable="Back"  
                                       Background="Transparent"
                                       HorizontalAlignment="Left" 
                                       FontSize="15"
@@ -118,7 +117,7 @@ limitations under the License.-->
 
                 <!--Continue registration button-->
                 <local:FlatButton x:Name="regContinue"
-                                      Text="Continue" 
+                                      Lable="Continue" 
                                       Background="Transparent"
                                       HorizontalAlignment="Right" 
                                       FontSize="15"
@@ -138,7 +137,6 @@ limitations under the License.-->
                     HorizontalAlignment="Right" 
                     VerticalAlignment="Center"
                     Foreground="Red" 
-                    Margin="0,-10,0,0"
                     Content="Error received from server"/>
 
             <Label x:Name="regPanel_error_lPNM"
@@ -150,7 +148,6 @@ limitations under the License.-->
                     HorizontalAlignment="Right" 
                     VerticalAlignment="Center"
                     Foreground="Red" 
-                    Margin="0,-10,0,0"
                     Content="Passwords not match"/>
 
             <Label x:Name="regPanel_error_lFAF"
@@ -163,7 +160,6 @@ limitations under the License.-->
                     HorizontalAlignment="Right" 
                     VerticalAlignment="Center"
                     Foreground="Red" 
-                    Margin="0,-10,0,0"
                     Content="Fill all fields with *" />
         </StackPanel>
     </Grid>

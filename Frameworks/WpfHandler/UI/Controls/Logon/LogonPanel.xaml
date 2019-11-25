@@ -23,10 +23,10 @@ limitations under the License.-->
 
     <Grid x:Name="main" Loaded="LogonPanel_Loaded">
         <StackPanel x:Name="logonPanel_FormBlock" 
-                        Orientation="Vertical" 
-                        VerticalAlignment="Bottom" 
-                        HorizontalAlignment="Center" 
-                        Margin="{Binding LogonFormMargin}" >
+                    Orientation="Vertical" 
+                    VerticalAlignment="Bottom" 
+                    HorizontalAlignment="Center" 
+                    Margin="{Binding LogonFormMargin}" >
 
             <Label  
                 FontSize="30.5" 
@@ -42,6 +42,7 @@ limitations under the License.-->
                                 Text="login@mail.com" 
                                 Background="Transparent"
                                 LableWidth="75"
+                                Height="24"
                                 FontSize="15"/>
 
             <!--Password field-->
@@ -51,7 +52,8 @@ limitations under the License.-->
                                    Background="Transparent"
                                    LableWidth="75"
                                    FontSize="15"
-                                   Margin="0,-1,0,0" />
+                                   Height="24"
+                                   Margin="0,0,0,0" />
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -73,7 +75,7 @@ limitations under the License.-->
 
                 <!--Login button-->
                 <local:FlatButton x:Name="loginButton"
-                                      Text="ENTER" 
+                                      Lable="ENTER" 
                                       HorizontalAlignment="Right" 
                                       FontSize="15"
                                       Grid.Column="1" 
@@ -83,7 +85,7 @@ limitations under the License.-->
 
         <!--Sing up button-->
         <local:FlatButton x:Name="singupButton" 
-                              Text="Sing Up" 
+                              Lable="Sing Up" 
                               HorizontalAlignment="Left" 
                               VerticalAlignment="Bottom" 
                               FontSize="15"
@@ -91,7 +93,7 @@ limitations under the License.-->
 
         <!--Profile restore button-->
         <local:FlatButton x:Name="restoreButton"
-                              Text="Can't enter?"
+                              Lable="Can't enter?"
                               HorizontalAlignment="Right" 
                               VerticalAlignment="Bottom" 
                               FontSize="15" 

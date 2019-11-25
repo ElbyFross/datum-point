@@ -12,8 +12,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.-->
     
-<UserControl
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+<UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
@@ -71,7 +70,7 @@ limitations under the License.-->
                    HorizontalAlignment="{Binding HorizontalContentAlignment, ElementName=catalogButton}" 
                    FontWeight="{Binding FontWeight}" 
                    Foreground="{Binding TextColor}" 
-                   Content="{Binding Text}"
+                   Content="{Binding Lable}"
                    Margin="{Binding AutoMargin}">
                 <Label.Style>
                     <Style TargetType="{x:Type Label}">

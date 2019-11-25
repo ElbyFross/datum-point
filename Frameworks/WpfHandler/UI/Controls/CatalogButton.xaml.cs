@@ -25,17 +25,21 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfHandler.UI.Controls.AutoLayout;
+using WpfHandler.UI.ECS;
+using WpfHandler.UI.Controls.AutoLayout.Interfaces;
+using WpfHandler.UI.ECS;
 
 namespace WpfHandler.UI.Controls
 {
     /// <summary>
     /// Interaction logic for CatalogButton.xaml
     /// </summary>
-    public partial class CatalogButton : UserControl
+    public partial class CatalogButton : UserControl, ILable
     {
         #region Dependency properties
-        public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
-          "Text", typeof(string), typeof(CatalogButton));
+        public static readonly DependencyProperty LableProperty = DependencyProperty.Register(
+          "Lable", typeof(string), typeof(CatalogButton));
 
         //public static readonly DependencyProperty HierarchyLevelProperty = DependencyProperty.Register(
         //  "HierarchyLevel", typeof(int), typeof(CatalogButton));
@@ -60,10 +64,10 @@ namespace WpfHandler.UI.Controls
         /// <summary>
         /// Text that will be displayed on the button.
         /// </summary>
-        public string Text
+        public string Lable
         {
-            get { return (string)this.GetValue(TextProperty); }
-            set { this.SetValue(TextProperty, value); }
+            get { return (string)this.GetValue(LableProperty); }
+            set { this.SetValue(LableProperty, value); }
         }
 
         /// <summary>

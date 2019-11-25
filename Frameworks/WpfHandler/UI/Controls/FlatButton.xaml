@@ -84,7 +84,7 @@ limitations under the License.-->
 
 
             <AccessText TextWrapping="NoWrap" Margin="{Binding LableMargin}"
-                        Text="{Binding Text, ElementName=main}"/>
+                        Text="{Binding Lable, ElementName=main}"/>
             
             <Label.Style>
                 <Style TargetType="{x:Type Label}">

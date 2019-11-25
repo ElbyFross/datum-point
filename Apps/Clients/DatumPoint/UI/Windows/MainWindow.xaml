@@ -83,7 +83,7 @@ limitations under the License.-->
                                             Style="{DynamicResource MenuButton}" 
                                             Grid.Column="0" 
                                             HierarchyLevel="0" 
-                                            Text="Settings" 
+                                            Lable="Settings" 
                                             FontWeight="Thin" 
                                             HorizontalContentAlignment="Center"/>
 
@@ -91,7 +91,7 @@ limitations under the License.-->
                                             Style="{DynamicResource MenuButton}" 
                                             Grid.Column="2" 
                                             HierarchyLevel="0" 
-                                            Text="About"
+                                            Lable="About"
                                             FontWeight="Thin" 
                                             HorizontalContentAlignment="Center"/>
                 </Grid>
