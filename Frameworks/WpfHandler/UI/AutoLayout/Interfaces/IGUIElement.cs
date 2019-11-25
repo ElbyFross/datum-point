@@ -19,7 +19,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfHandler.UI.Controls.AutoLayout.Interfaces
+namespace WpfHandler.UI.AutoLayout.Interfaces
 {
     /// <summary>
     /// Implementing of that interface allow to modify current layout during calling.

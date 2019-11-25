@@ -12,7 +12,7 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-namespace WpfHandler.UI.Controls.AutoLayout.Interfaces
+namespace WpfHandler.UI.AutoLayout.Interfaces
 {
     using System.Reflection;
 

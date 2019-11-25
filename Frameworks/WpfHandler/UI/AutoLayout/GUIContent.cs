@@ -20,7 +20,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfHandler.UI.Controls.AutoLayout
+namespace WpfHandler.UI.AutoLayout
 {
     /// <summary>
     /// Define content of GUI lement.

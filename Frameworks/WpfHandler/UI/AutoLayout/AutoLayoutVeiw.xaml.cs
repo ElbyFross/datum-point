@@ -27,7 +27,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfHandler.UI.Controls.AutoLayout
+namespace WpfHandler.UI.AutoLayout
 {
     /// <summary>
     /// Allow to connect auto generated GUI to the XAML descriptor.

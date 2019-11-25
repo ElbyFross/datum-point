@@ -14,7 +14,7 @@
 
 using System.Windows;
 
-namespace WpfHandler.UI.Controls.AutoLayout.Interfaces
+namespace WpfHandler.UI.AutoLayout.Interfaces
 {
     /// <summary>
     /// Interface that implement custom layout options performing.

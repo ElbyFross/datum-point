@@ -17,11 +17,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WpfHandler.UI.Controls.AutoLayout;
+using WpfHandler.UI.AutoLayout;
 using WpfHandler.UI.ECS;
-using WpfHandler.UI.Controls.AutoLayout.Interfaces;
+using WpfHandler.UI.AutoLayout.Interfaces;
 
-namespace WpfHandler.UI.Controls.AutoLayout.Attributes.Elements
+namespace WpfHandler.UI.AutoLayout.Attributes.Elements
 {
     /// <summary>
     /// Added header block element to UI.

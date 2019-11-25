@@ -339,7 +339,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
 
             //return;
 
-            var view = new WpfHandler.UI.Controls.AutoLayout.AutoLayoutVeiw();
+            var view = new WpfHandler.UI.AutoLayout.AutoLayoutVeiw();
             controlPanel.Children.Add(view);
             
             view.Descriptor = new UIDescriptors.LayoutPropertiesPanel();

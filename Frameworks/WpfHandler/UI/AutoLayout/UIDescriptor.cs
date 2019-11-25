@@ -21,8 +21,10 @@ using System.Windows;
 using System.Windows.Markup;
 using System.Reflection;
 using System.Windows.Controls;
+using WpfHandler.UI.ECS;
+using WpfHandler.UI.AutoLayout.Interfaces;
 
-namespace WpfHandler.UI.Controls.AutoLayout
+namespace WpfHandler.UI.AutoLayout
 {
     /// <summary>
     /// Class that provides adopting of members by AutoLayout UI.
@@ -77,10 +79,10 @@ namespace WpfHandler.UI.Controls.AutoLayout
                 foreach(Attribute attr in attributes)
                 {
                     // Skip if an option.
-                    if (attr is Interfaces.IGUILayoutOption) continue;
+                    if (attr is IGUILayoutOption) continue;
 
                     // Apply layout control to GUI.
-                    if (attr is Interfaces.IGUIElement attrControl)
+                    if (attr is IGUIElement attrControl)
                     {
                         attrControl.OnGUI(ref activeLayer, this, member);
                     }
@@ -95,7 +97,7 @@ namespace WpfHandler.UI.Controls.AutoLayout
                 var customControlDesc = member.GetCustomAttribute<Attributes.Configuration.CustomControl>();
                 if (customControlDesc != null && // Is overriding requested?
                     customControlDesc.ControlType != null && // Is target type is not null?
-                    customControlDesc.ControlType.IsSubclassOf(typeof(Interfaces.IGUIField))) // Is target type has correct inherience
+                    customControlDesc.ControlType.IsSubclassOf(typeof(IGUIField))) // Is target type has correct inherience
                 {
                     // Set redefined control like target to instinitation.
                     controlType = customControlDesc.ControlType;
@@ -110,7 +112,7 @@ namespace WpfHandler.UI.Controls.AutoLayout
                 if (controlType != null)
                 {
                     // Instiniating target type.
-                    var control = (Interfaces.IGUIField)Activator.CreateInstance(controlType);
+                    var control = (IGUIField)Activator.CreateInstance(controlType);
 
                     // Sing up this control on desctiptor events.
                     ControlSignUp(control, member, true);
@@ -126,7 +128,7 @@ namespace WpfHandler.UI.Controls.AutoLayout
                         foreach (Attribute attr in attributes)
                         {
                             // Skip if not an option.
-                            if (!(attr is Interfaces.IGUILayoutOption option)) continue;
+                            if (!(attr is IGUILayoutOption option)) continue;
 
                             option.ApplyLayoutOption(fEl);
                         }
@@ -207,7 +209,7 @@ namespace WpfHandler.UI.Controls.AutoLayout
                 var child = root.Children[i];
 
                 // If child is layout control and has a binded memeber.
-                if (child is Interfaces.IGUIField control &&
+                if (child is IGUIField control &&
                     control.BindedMember != null)
                 {
                     #region Validation
@@ -264,7 +266,7 @@ namespace WpfHandler.UI.Controls.AutoLayout
         /// <param name="control">The GUI control that will be instiniated.</param>
         /// <param name="member">The member that will be binded to the GUI.</param>
         /// <param name="value">Value that will applied as default.</param>
-        public void ControlSignUp(Interfaces.IGUIField control, MemberInfo member, object value)
+        public void ControlSignUp(IGUIField control, MemberInfo member, object value)
         {
             try
             {
@@ -283,7 +285,7 @@ namespace WpfHandler.UI.Controls.AutoLayout
         /// <param name="control">Control that would be binded.</param>
         /// <param name="args">Must contains @UIDescriptor and @MemberInfo for success performing.</param>
         /// <returns>Is control was binded?</returns>
-        public static bool TryToBindControl(Interfaces.IGUIField control, params object[] args)
+        public static bool TryToBindControl(IGUIField control, params object[] args)
         {
             try
             {
@@ -305,7 +307,7 @@ namespace WpfHandler.UI.Controls.AutoLayout
         /// </summary>
         /// <param name="control">Control that would be binded.</param>
         /// <param name="args">Must contains @UIDescriptor and @MemberInfo.</param>
-        public static void ToBindControl(Interfaces.IGUIField control, params object[] args)
+        public static void ToBindControl(IGUIField control, params object[] args)
         {
             // Find required referendes.
             UIDescriptor desc = null;
@@ -329,7 +331,7 @@ namespace WpfHandler.UI.Controls.AutoLayout
         /// <param name="descriptor">Source descriptor.</param>
         /// <param name="member">Member from the descriptor.</param>
         public static void ToBindControl(
-            Interfaces.IGUIField control, 
+            IGUIField control, 
             UIDescriptor descriptor, 
             MemberInfo member)
         {

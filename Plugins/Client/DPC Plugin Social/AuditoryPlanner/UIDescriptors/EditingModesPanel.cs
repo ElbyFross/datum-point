@@ -17,9 +17,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WpfHandler.UI.Controls.AutoLayout;
-using WpfHandler.UI.Controls.AutoLayout.Attributes;
-using WpfHandler.UI.Controls.AutoLayout.Attributes.Elements;
+using WpfHandler.UI.AutoLayout;
+using WpfHandler.UI.AutoLayout.Attributes;
+using WpfHandler.UI.AutoLayout.Attributes.Elements;
 
 namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
 {

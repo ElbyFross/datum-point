@@ -4,13 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using WpfHandler.UI.AutoLayout;
+using WpfHandler.UI.ECS;
+using WpfHandler.UI.AutoLayout.Interfaces;
 
-namespace WpfHandler.UI.Controls.AutoLayout.Attributes.Elements
+
+namespace WpfHandler.UI.AutoLayout.Attributes.Elements
 {
     /// <summary>
     /// Allow to add custom lable element to the UI.
     /// </summary>
-    public class Lable : ECS.GUIContentAttribute
+    public class Lable : GUIContentAttribute
     {
         /// <summary>
         /// Auto initialize content with shared title value.
@@ -52,12 +56,13 @@ namespace WpfHandler.UI.Controls.AutoLayout.Attributes.Elements
             base(defaultTitle, defaultDescription, titleLocalizationResourseKey, decriptionLocalizationResourseKey) { }
 
         /// <summary>
-        /// Spawn lable element into the UI.
+        /// TODO: Spawn lable element into the UI.
         /// </summary>
         /// <param name="layer"></param>
         /// <param name="args"></param>
         public void OnGUI(ref LayoutLayer layer, params object[] args)
         {
+
         }
     }
 }

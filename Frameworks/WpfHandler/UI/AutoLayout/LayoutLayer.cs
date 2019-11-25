@@ -23,7 +23,7 @@ using System.Reflection;
 using System.Windows.Controls;
 
 
-namespace WpfHandler.UI.Controls.AutoLayout
+namespace WpfHandler.UI.AutoLayout
 {
     /// <summary>
     /// Contains data about layout layer to relative element.

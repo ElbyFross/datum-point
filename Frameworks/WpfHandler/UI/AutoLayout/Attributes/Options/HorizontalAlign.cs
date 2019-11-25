@@ -19,7 +19,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace WpfHandler.UI.Controls.AutoLayout.Attributes.Options
+namespace WpfHandler.UI.AutoLayout.Attributes.Options
 {
     /// <summary>
     /// Define horizontal align of the GUI element.

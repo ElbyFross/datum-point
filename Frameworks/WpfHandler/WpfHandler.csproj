@@ -59,6 +59,7 @@
     <Compile Include="UI\Animations\GridLengthAnimation.cs" />
     <Compile Include="UI\Animations\Object.cs" />
     <Compile Include="UI\Animations\Thinkness.cs" />
+    <Compile Include="UI\AutoLayout\Attributes\Layout\Order.cs" />
     <Compile Include="UI\Controls\AutoCollection.xaml.cs">
       <DependentUpon>AutoCollection.xaml</DependentUpon>
     </Compile>

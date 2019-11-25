@@ -17,8 +17,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfHandler.UI.AutoLayout;
+using WpfHandler.UI.AutoLayout.Attributes;
+using WpfHandler.UI.AutoLayout.Attributes.Elements;
 
-namespace WpfHandler.UI.Controls.AutoLayout.Attributes.Configuration
+namespace WpfHandler.UI.AutoLayout.Attributes.Configuration
 {
     /// <summary>
     /// Allow to override of default control for relative field type to custom one.

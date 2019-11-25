@@ -17,14 +17,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfHandler.UI.AutoLayout.Attributes.Elements;
+using WpfHandler.UI.AutoLayout.Attributes.Layout;
+using WpfHandler.UI.AutoLayout;
 
 namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
 {
-    public class LayoutPropertiesPanel : WpfHandler.UI.Controls.AutoLayout.UIDescriptor
+    public class LayoutPropertiesPanel : UIDescriptor
     {
-        [WpfHandler.UI.Controls.AutoLayout.Attributes.Elements.Header("Test header", "testheader")]
+        [Header("Test header", "testheader")]
         public string testString = "field one";
 
+        [Order(2)]
         public string TestStringProp { get; set; } = "prop test 2";
 
         public float testFloat = 4;

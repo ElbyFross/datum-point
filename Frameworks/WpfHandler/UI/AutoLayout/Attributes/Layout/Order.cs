@@ -12,10 +12,25 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-namespace WpfHandler.UI.AutoLayout.Interfaces
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.ComponentModel;
+
+namespace WpfHandler.UI.AutoLayout.Attributes.Layout
 {
     /// <summary>
-    /// Attribute that will cause end of work with current UI layer.
+    /// Defines order of member into auto-generated UI.
     /// </summary>
-    public interface ILayerEndAttribute :  ILayerAttribute { }
+    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field,
+    Inherited = true, AllowMultiple = false)]
+    [ImmutableObject(true)]
+    public sealed class OrderAttribute : Attribute
+    {
+        private readonly int order;
+        public int Order { get { return order; } }
+        public OrderAttribute(int order) { this.order = order; }
+    }
 }

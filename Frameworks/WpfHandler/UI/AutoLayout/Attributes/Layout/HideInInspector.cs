@@ -18,7 +18,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfHandler.UI.Controls.AutoLayout.Attributes.Layout
+namespace WpfHandler.UI.AutoLayout.Attributes.Layout
 {
     /// <summary>
     /// Exclude member from auto-builded inspector.

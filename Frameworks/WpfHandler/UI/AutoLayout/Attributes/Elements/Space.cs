@@ -18,12 +18,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
-using WpfHandler.UI.Controls.AutoLayout;
+using WpfHandler.UI.AutoLayout;
 using WpfHandler.UI.ECS;
-using WpfHandler.UI.Controls.AutoLayout.Interfaces;
-using WpfHandler.UI.ECS;
+using WpfHandler.UI.AutoLayout.Interfaces;
 
-namespace WpfHandler.UI.Controls.AutoLayout.Attributes.Elements
+namespace WpfHandler.UI.AutoLayout.Attributes.Elements
 {
     /// <summary>
     /// Adding space between UI elements.

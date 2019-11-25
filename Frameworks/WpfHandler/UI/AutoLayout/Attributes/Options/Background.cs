@@ -19,11 +19,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
-using WpfHandler.UI.Controls.AutoLayout;
+using WpfHandler.UI.AutoLayout;
 using WpfHandler.UI.ECS;
-using WpfHandler.UI.Controls.AutoLayout.Interfaces;
+using WpfHandler.UI.AutoLayout.Interfaces;
 
-namespace WpfHandler.UI.Controls.AutoLayout.Attributes.Options
+namespace WpfHandler.UI.AutoLayout.Attributes.Options
 {
     /// <summary>
     /// Define GUI element's background brush.

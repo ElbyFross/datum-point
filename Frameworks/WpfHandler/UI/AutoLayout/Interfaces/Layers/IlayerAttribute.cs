@@ -14,7 +14,7 @@
 
 using System.Windows.Markup;
 
-namespace WpfHandler.UI.Controls.AutoLayout.Interfaces
+namespace WpfHandler.UI.AutoLayout.Interfaces
 {
     /// <summary>
     /// Define attribute like one that operate with layout layers.

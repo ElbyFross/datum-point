@@ -18,7 +18,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfHandler.UI.Controls.AutoLayout.Attributes.Configuration
+namespace WpfHandler.UI.AutoLayout.Attributes.Configuration
 {
     /// <summary>
     /// Defines the types the compatible with the member.

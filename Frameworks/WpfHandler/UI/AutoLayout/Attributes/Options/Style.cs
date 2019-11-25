@@ -15,7 +15,7 @@
 using System;
 using System.Windows;
 
-namespace WpfHandler.UI.Controls.AutoLayout.Attributes.Options
+namespace WpfHandler.UI.AutoLayout.Attributes.Options
 {
     /// <summary>
     /// Define custom style from resources that would be applied to the GUI element.
