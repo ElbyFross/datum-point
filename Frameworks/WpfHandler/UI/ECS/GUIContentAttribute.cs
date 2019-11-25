@@ -24,7 +24,7 @@ namespace WpfHandler.UI.ECS
     /// <summary>
     /// Define members for attributes focused on managing GUIContent.
     /// </summary>
-    public abstract class GUIContentAttribute : LayoutAttribute
+    public abstract class GUIContentAttribute : LocalizableContentAttribute
     {
         /// <summary>
         /// Content applied to that GUI element.

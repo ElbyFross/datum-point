@@ -63,13 +63,23 @@ namespace WpfHandler.UI.AutoLayout.Attributes.Elements
         public virtual void OnGUI(ref LayoutLayer layer, params object[] args)
         {
             // Instiniate element.
-            var element = new System.Windows.Controls.Label();
-
-            // Set content.
-            element.Content = Content.GetTitle();
+            var element = new System.Windows.Controls.Label
+            {
+                // Set content.
+                Content = Content.GetTitle()
+            };
 
             // Attaching to layout.
             layer.root.AddChild(element);
+        }
+
+        /// <summary>
+        /// TODO: Callback that occurs when content dictionaries are reloaded.
+        /// Updating lable's content.
+        /// </summary>
+        public override void LanguagesDictionariesUpdated()
+        {
+            throw new NotImplementedException();
         }
     }
 }

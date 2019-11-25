@@ -21,32 +21,29 @@ using System.Threading.Tasks;
 namespace WpfHandler.UI.ECS
 {
     /// <summary>
-    /// Base attribute that bind UI element to common auto layout system.
+    /// Base attribute that bind UI element to common auto localization system.
     /// </summary>
-    public abstract class LayoutAttribute : Attribute
+    public abstract class LocalizableContentAttribute : Attribute
     {
         /// <summary>
         /// Default constructor.
         /// </summary>
-        public LayoutAttribute()
+        public LocalizableContentAttribute()
         {
-            Dictionaries.API.LanguagesDictionariesUpdated += API_LanguagesDictionariesUpdated;
+            Dictionaries.API.LanguagesDictionariesUpdated += LanguagesDictionariesUpdated;
         }
 
         /// <summary>
         /// Unsubscribe from events.
         /// </summary>
-        ~LayoutAttribute()
+        ~LocalizableContentAttribute()
         {
-            Dictionaries.API.LanguagesDictionariesUpdated -= API_LanguagesDictionariesUpdated;
+            Dictionaries.API.LanguagesDictionariesUpdated -= LanguagesDictionariesUpdated;
         }
 
         /// <summary>
-        /// TODO: Occurs when would reloaded synamic dictionaries.
+        /// Occurs when would reloaded dynamic dictionaries.
         /// </summary>
-        private void API_LanguagesDictionariesUpdated()
-        {
-            throw new NotImplementedException();
-        }
+        public abstract void LanguagesDictionariesUpdated();
     }
 }

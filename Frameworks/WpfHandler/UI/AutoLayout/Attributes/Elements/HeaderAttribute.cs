@@ -67,7 +67,7 @@ namespace WpfHandler.UI.AutoLayout.Attributes.Elements
             string titleLocalizationResourseKey,
             string decriptionLocalizationResourseKey) :
             base(defaultTitle, defaultDescription, titleLocalizationResourseKey, decriptionLocalizationResourseKey) { }
-
+        
         /// <summary>
         /// Spawning Header UI elements un shared layer. Connecting to the shared member.
         /// </summary>
@@ -83,6 +83,15 @@ namespace WpfHandler.UI.AutoLayout.Attributes.Elements
 
             // Call GUI processing.
             header.OnGUI(ref layer, args);
+        }
+        
+        /// <summary>
+        /// TODO: Callback that occurs when content dictionaries are reloaded.
+        /// Updating header's content.
+        /// </summary>
+        public override void LanguagesDictionariesUpdated()
+        {
+            throw new NotImplementedException();
         }
     }
 }

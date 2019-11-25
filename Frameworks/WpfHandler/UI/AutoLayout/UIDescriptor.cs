@@ -57,26 +57,27 @@ namespace WpfHandler.UI.AutoLayout
             // Perform all descriptor map.
             foreach (MemberInfo member in members)
             {
-                if(!MembersHandler.GetSpecifiedMemberInfo(member, out PropertyInfo prop, out FieldInfo field))
-                {
-                    // Skip if the member is not field or property.
+                #region Validation
+                // Skip if the member is not field or property.
+                if (!MembersHandler.GetSpecifiedMemberInfo(
+                    member, out PropertyInfo prop, out FieldInfo field))
                     continue;
-                }
-
-                Type memberType = MembersHandler.GetSpecifiedMemberType(member);
-
+                
                 // Skip if member excluded from instpector.
                 if (member.GetCustomAttribute<Attributes.Layout.HideInInspectorAttribute>() != null)
-                {
                     continue;
-                }
+                #endregion
 
                 // Getting all attributes.
                 var attributes = member.GetCustomAttributes<Attribute>(true);
 
+                // Allocating and defining types.
+                var memberType = MembersHandler.GetSpecifiedMemberType(member);
+                Type controlType = null;
+
                 #region Perform general layout attributes
                 // Perform general attributes.
-                foreach(Attribute attr in attributes)
+                foreach (Attribute attr in attributes)
                 {
                     // Skip if an option.
                     if (attr is IGUILayoutOption) continue;
@@ -89,10 +90,11 @@ namespace WpfHandler.UI.AutoLayout
                 }
                 #endregion
 
+
                 #region Spawn field to UI
                 // Spawn UI field relative to member type.
-                Type controlType = null;
 
+                #region Defining UI field type
                 // Check if default control was overrided by custom one.
                 var customControlDesc = member.GetCustomAttribute<Attributes.Configuration.CustomControlAttribute>();
                 if (customControlDesc != null && // Is overriding requested?
@@ -107,10 +109,12 @@ namespace WpfHandler.UI.AutoLayout
                     // Set binded type like target to instiniation.
                     controlType = LayoutHandler.GetBindedControl(memberType, true);
                 }
+                #endregion
 
                 // Is control defined to that member?
                 if (controlType != null)
                 {
+                    #region Insiniation UI field
                     // Instiniating target type.
                     var control = (IGUIField)Activator.CreateInstance(controlType);
 
@@ -119,6 +123,7 @@ namespace WpfHandler.UI.AutoLayout
 
                     // Initialize control.
                     control.OnGUI(ref activeLayer, this, member);
+                    #endregion
 
                     #region Perform Layout options
                     // Check if spawned control is framework element.
@@ -184,7 +189,7 @@ namespace WpfHandler.UI.AutoLayout
                         }
                         #endregion
 
-                        // Bind descriptor to the UI.
+                        // Binding descriptor to the UI.
                         subDesc.BindTo((Panel)activeLayer.root);
                     }
                 }
@@ -330,10 +335,7 @@ namespace WpfHandler.UI.AutoLayout
         /// <param name="control">Control that would be binded.</param>
         /// <param name="descriptor">Source descriptor.</param>
         /// <param name="member">Member from the descriptor.</param>
-        public static void ToBindControl(
-            IGUIField control, 
-            UIDescriptor descriptor, 
-            MemberInfo member)
+        public static void ToBindControl(IGUIField control, UIDescriptor descriptor, MemberInfo member)
         {
             // Drop control sign up in case if member not shared.
             if (descriptor == null) throw new NullReferenceException("@UIDescriptor not shared with @args");
@@ -408,6 +410,13 @@ namespace WpfHandler.UI.AutoLayout
                 }
             }
 
+            /// <summary>
+            /// Getting the type of the member.
+            /// </summary>
+            /// <param name="member">
+            /// Member for looking type. Allowed PropertyInfo or FieldInfo.
+            /// </param>
+            /// <returns>Type of the member.</returns>
             public static Type GetSpecifiedMemberType(MemberInfo member)
             {
                 // Trying to get specified memebers.

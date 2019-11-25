@@ -100,7 +100,7 @@
     <Compile Include="UI\ECS\ILayoutOrientation.cs" />
     <Compile Include="UI\ECS\ILayoutSize.cs" />
     <Compile Include="UI\ECS\ISelectableControl.cs" />
-    <Compile Include="UI\ECS\LayoutAttribute.cs" />
+    <Compile Include="UI\ECS\LocalizableContentAttribute.cs" />
     <Compile Include="UI\AutoLayout\LayoutHandler.cs" />
     <Compile Include="UI\AutoLayout\LayoutLayer.cs" />
     <Compile Include="UI\AutoLayout\UIDescriptor.cs" />

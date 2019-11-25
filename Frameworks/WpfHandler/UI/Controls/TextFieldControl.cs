@@ -59,7 +59,7 @@ namespace WpfHandler.UI.Controls
             /// </summary>
             Double,
             /// <summary>
-            /// Use custom regex to define if value is valid.
+            /// TODO: Use custom regex to define if value is valid.
             /// </summary>
             Regex
         }

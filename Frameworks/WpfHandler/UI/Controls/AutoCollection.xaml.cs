@@ -112,7 +112,7 @@ namespace WpfHandler.UI.Controls
         public event Action<IGUIField> ValueChanged;
 
         /// <summary>
-        /// Configurating collection and binding element to the descriptors handler.
+        /// TODO: Configurating collection and binding element to the descriptors handler.
         /// </summary>
         /// <param name="layer"></param>
         /// <param name="args"></param>
