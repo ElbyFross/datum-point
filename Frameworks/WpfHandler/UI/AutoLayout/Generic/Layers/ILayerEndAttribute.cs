@@ -12,18 +12,10 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-using System.Windows.Markup;
-
-namespace WpfHandler.UI.AutoLayout.Interfaces
+namespace WpfHandler.UI.AutoLayout.Generic
 {
     /// <summary>
-    /// Define attribute like one that operate with layout layers.
+    /// Attribute that will cause end of work with current UI layer.
     /// </summary>
-    public interface ILayerAttribute : IGUIElement
-    {
-        /// <summary>
-        /// Layer that opereted into the handler.
-        /// </summary>
-        LayoutLayer Layer { get; }
-    }
+    public interface ILayerEndAttribute :  ILayerAttribute { }
 }

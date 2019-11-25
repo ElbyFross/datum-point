@@ -1,46 +1,33 @@
-﻿//Copyright 2019 Volodymyr Podshyvalov
-//
-//Licensed under the Apache License, Version 2.0 (the "License");
-//you may not use this file except in compliance with the License.
-//You may obtain a copy of the License at
-//
-//    http://www.apache.org/licenses/LICENSE-2.0
-//
-//Unless required by applicable law or agreed to in writing, software
-//distributed under the License is distributed on an "AS IS" BASIS,
-//WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-//See the License for the specific language governing permissions and
-//limitations under the License.
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using WpfHandler.UI.AutoLayout;
 using WpfHandler.UI.ECS;
-using WpfHandler.UI.AutoLayout.Interfaces;
+using WpfHandler.UI.AutoLayout.Generic;
+
 
 namespace WpfHandler.UI.AutoLayout.Attributes.Elements
 {
     /// <summary>
-    /// Added header block element to UI.
+    /// Allow to add custom lable element to the UI.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class Header : GUIContentAttribute, IGUIElement
+    public class LabelAttribute : GUIContentAttribute
     {
         /// <summary>
         /// Auto initialize content with shared title value.
         /// </summary>
         /// <param name="title">Title that will be showed up into the lable.</param>
-        public Header(string title) : base(title) { }
+        public LabelAttribute(string title) : base(title) { }
 
         /// <summary>
         /// Constructor that allow to set title.
         /// </summary>
         /// <param name="title">Title of that element.</param>
         /// <param name="description">Description of that element.</param>
-        public Header(string title, string description) : base(title, description) { }
+        public LabelAttribute(string title, string description) : base(title, description) { }
 
         /// <summary>
         /// Initialize all allowed fields.
@@ -48,7 +35,7 @@ namespace WpfHandler.UI.AutoLayout.Attributes.Elements
         /// <param name="defaultTitle">Title that would be used by default if localization dictionary not found.</param>
         /// <param name="defaultDescription">Default description if localization dictionary not found.</param>
         /// <param name="decriptionLocalizationResourseKey">Key of description content in localized dynamic dictionary.</param>
-        public Header(
+        public LabelAttribute(
             string defaultTitle,
             string defaultDescription,
             string decriptionLocalizationResourseKey) :
@@ -61,28 +48,28 @@ namespace WpfHandler.UI.AutoLayout.Attributes.Elements
         /// <param name="defaultDescription">Default description if localization dictionary not found.</param>
         /// <param name="titleLocalizationResourseKey">Key of title content in localized dynamic dictionary.</param>
         /// <param name="decriptionLocalizationResourseKey">Key of description content in localized dynamic dictionary.</param>
-        public Header(
+        public LabelAttribute(
             string defaultTitle,
             string defaultDescription,
             string titleLocalizationResourseKey,
-            string decriptionLocalizationResourseKey) :
+            string decriptionLocalizationResourseKey) : 
             base(defaultTitle, defaultDescription, titleLocalizationResourseKey, decriptionLocalizationResourseKey) { }
 
         /// <summary>
-        /// Spawning Header UI elements un shared layer. Connecting to the shared member.
+        /// Spawn lable element into the UI.
         /// </summary>
-        /// <param name="layer">Target UI layer.</param>
-        /// <param name="args">Must contains: @UIDescriptor and @MemberInfo</param>
+        /// <param name="layer"></param>
+        /// <param name="args"></param>
         public virtual void OnGUI(ref LayoutLayer layer, params object[] args)
         {
-            // Instiniate header UI.
-            var header = new Controls.Header()
-            {
-                GUIContent = Content
-            };
+            // Instiniate element.
+            var element = new System.Windows.Controls.Label();
 
-            // Call GUI processing.
-            header.OnGUI(ref layer, args);
+            // Set content.
+            element.Content = Content.GetTitle();
+
+            // Attaching to layout.
+            layer.root.AddChild(element);
         }
     }
 }

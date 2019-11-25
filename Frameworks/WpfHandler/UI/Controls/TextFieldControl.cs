@@ -27,7 +27,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfHandler.UI.AutoLayout;
 using WpfHandler.UI.ECS;
-using WpfHandler.UI.AutoLayout.Interfaces;
+using WpfHandler.UI.AutoLayout.Generic;
 using WpfHandler.UI.ECS;
 
 namespace WpfHandler.UI.Controls

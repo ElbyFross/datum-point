@@ -20,16 +20,16 @@ using System.Threading.Tasks;
 using System.Windows;
 using WpfHandler.UI.AutoLayout;
 using WpfHandler.UI.ECS;
-using WpfHandler.UI.AutoLayout.Interfaces;
+using WpfHandler.UI.AutoLayout.Generic;
 using WpfHandler.UI.ECS;
 
 namespace WpfHandler.UI.AutoLayout.Attributes.Options
 {
     /// <summary>
-    /// Define min width of the GUI element.
+    /// Define max allowed height of the GUI element.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class MinWidth : Attribute, IGUILayoutOption, ILayoutSize
+    public class MaxHeightAttribute : Attribute, IGUILayoutOption, ILayoutSize
     {
         /// <summary>
         /// Value that will be used in the element's propeties.
@@ -37,12 +37,12 @@ namespace WpfHandler.UI.AutoLayout.Attributes.Options
         public double Size { get; set; } = double.NaN;
 
         /// <summary>
-        /// Define min width of the GUI element.
+        /// Define max allowed height of the GUI element.
         /// </summary>
         /// <param name="element">Shared UI element.</param>
         public void ApplyLayoutOption(FrameworkElement element)
         {
-            element.MinWidth = Size;
+            element.MaxHeight = Size;
         }
     }
 }

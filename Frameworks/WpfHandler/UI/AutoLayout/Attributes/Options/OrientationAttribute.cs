@@ -18,27 +18,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using WpfHandler.UI.AutoLayout;
+using WpfHandler.UI.ECS;
+using WpfHandler.UI.AutoLayout.Generic;
+using WpfHandler.UI.ECS;
 
 namespace WpfHandler.UI.AutoLayout.Attributes.Options
 {
     /// <summary>
-    /// Define horizontal align of the GUI element.
+    /// Define orentation of the UI element.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class HorizontalAlign : Attribute, Interfaces.IGUILayoutOption
+    public class OrientationAttribute : Attribute, IGUILayoutOption
     {
         /// <summary>
-        /// Alignment that will applied to GUI element.
+        /// Orientation 
         /// </summary>
-        public HorizontalAlignment Alignment { get; set; }
+        public System.Windows.Controls.Orientation Value = System.Windows.Controls.Orientation.Horizontal;
 
         /// <summary>
-        /// Define horizontal align of the GUI element.
+        /// Applying orientation to the UI element.
         /// </summary>
-        /// <param name="element">Shared UI element.</param>
+        /// <param name="element">Must implements Interfaces.ILayoutOrientation.</param>
         public void ApplyLayoutOption(FrameworkElement element)
         {
-            element.HorizontalAlignment = Alignment;
+            // Cast to valid type.
+            if(element is ILayoutOrientation control)
+            {
+                // Apply layout orientation.
+                control.Orientation = Value;
+            }
         }
     }
 }

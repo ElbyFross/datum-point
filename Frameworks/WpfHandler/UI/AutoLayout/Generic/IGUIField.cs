@@ -12,32 +12,31 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace WpfHandler.UI.AutoLayout.Attributes.Configuration
+namespace WpfHandler.UI.AutoLayout.Generic
 {
+    using System.Reflection;
+
     /// <summary>
-    /// Defines the types the compatible with the member.
+    /// Implementation of that interface allow to use that control in auto layout user interfaces.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, AllowMultiple = true, Inherited = true)]
-    public class TypesCompatible : Attribute
+    public interface IGUIField : IGUIElement
     {
         /// <summary>
-        /// Type that compatible with the member.
+        /// Event that will occure in case if value of the field will be changed.
+        /// Will cause updating of the BindedMember value.
+        /// 
+        /// ILayoutControl - sender.
         /// </summary>
-        public Type[] CompatibleWith;
+        event System.Action<IGUIField> ValueChanged;
 
         /// <summary>
-        /// Configurating types compatible with the memeber.
+        /// Value of that control.
         /// </summary>
-        /// <param name="types">COmpatible types.</param>
-        public TypesCompatible(params Type[] types)
-        {
-            CompatibleWith = types ?? new Type[0];
-        }
+        object Value { get; set; }
+
+        /// <summary>
+        /// Memeber that will be used as source\target for the value into UI.
+        /// </summary>
+        MemberInfo BindedMember { get; set; }
     }
 }

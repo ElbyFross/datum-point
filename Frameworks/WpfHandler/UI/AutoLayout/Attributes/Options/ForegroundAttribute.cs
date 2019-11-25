@@ -20,32 +20,29 @@ using System.Threading.Tasks;
 using System.Windows;
 using WpfHandler.UI.AutoLayout;
 using WpfHandler.UI.ECS;
-using WpfHandler.UI.AutoLayout.Interfaces;
-using WpfHandler.UI.ECS;
+using WpfHandler.UI.AutoLayout.Generic;
 
 namespace WpfHandler.UI.AutoLayout.Attributes.Options
 {
     /// <summary>
-    /// Define orentation of the UI element.
+    /// Define GUI element's foreground brush.
     /// </summary>
-    public class Orientation : Attribute, IGUILayoutOption
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
+    public class ForegroundAttribute : ColorAttribute, IGUILayoutOption
     {
         /// <summary>
-        /// Orientation 
+        /// Define GUI element's foreground brush.
         /// </summary>
-        public System.Windows.Controls.Orientation Value = System.Windows.Controls.Orientation.Horizontal;
-
-        /// <summary>
-        /// Applying orientation to the UI element.
-        /// </summary>
-        /// <param name="element">Must implements Interfaces.ILayoutOrientation.</param>
+        /// <param name="element">
+        /// Shared UI element. Must be inheirted from 
+        /// `System.Windows.Controls.Control` to affect the font properties.
+        /// </param>
         public void ApplyLayoutOption(FrameworkElement element)
         {
-            // Cast to valid type.
-            if(element is ILayoutOrientation control)
+            // Try to cast into control.
+            if (element is System.Windows.Controls.Control control)
             {
-                // Apply layout orientation.
-                control.Orientation = Value;
+                control.Foreground = Brush;
             }
         }
     }

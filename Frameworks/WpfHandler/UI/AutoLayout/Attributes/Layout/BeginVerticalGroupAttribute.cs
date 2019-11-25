@@ -17,63 +17,51 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Markup;
 using System.Windows.Controls;
 using WpfHandler.UI.AutoLayout;
 using WpfHandler.UI.ECS;
-using WpfHandler.UI.AutoLayout.Interfaces;
+using WpfHandler.UI.AutoLayout.Generic;
 
-namespace WpfHandler.UI.AutoLayout.Attributes.Elements
+namespace WpfHandler.UI.AutoLayout.Attributes.Layout
 {
     /// <summary>
-    /// Adding space between UI elements.
+    /// Starting vertical layout group.
+    /// Will wait EndVertical to over the last begined group.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class Space : Attribute, ILayoutSize, IGUIElement
+    public class BeginVerticalGroupAttribute : Attribute, ILayerBeginAttribute
     {
         /// <summary>
-        /// Size of the space.
+        /// Layer that opereted into the handler.
         /// </summary>
-        public double Size { get; set; } = double.NaN;
-
-        /// <summary>
-        /// Initialize space into 10 points.
-        /// </summary>
-        public Space()
+        public LayoutLayer Layer
         {
-            Size = 10;
+            get { return _Layer; }
         }
 
         /// <summary>
-        /// Set custom step value.
+        /// Bufer that contains layer.
         /// </summary>
-        /// <param name="space">Size of step.</param>
-        public Space(float space)
-        {
-            this.Size = space;
-        }
+        private LayoutLayer _Layer;
 
         /// <summary>
-        /// Instiniating Space GUI lement.
+        /// Going one layer deeper into UI layout.
+        /// All child element will be placed in vertical order till calling of the EndGroup element.
         /// </summary>
-        /// <param name="layer">Target GUI layer.</param>
-        /// <param name="args">Not using in that element.</param>
+        /// <param name="layer">Curent layer. Refernece eill be changed to the new layer after performing.</param>
+        /// <param name="args">Not using into that elelment.</param>
         public void OnGUI(ref LayoutLayer layer, params object[] args)
         {
-            // Instiniate GUI element.
-            var canvas = new Canvas();
-
-            // Convifurate layout's size.
-            if (layer.orientation == Orientation.Horizontal)
+            // Creating stack panel.
+            IAddChild root = new StackPanel()
             {
-                canvas.Width = Size;
-            }
-            else
-            {
-                canvas.Height = Size;
-            }
+                Orientation = Orientation.Vertical
+            };
 
-            // Add element to the root.
-            layer.root.AddChild(canvas);
+            // Set new layer.
+            layer = layer.GoDeeper(root);
+            _Layer = layer;
         }
     }
 }

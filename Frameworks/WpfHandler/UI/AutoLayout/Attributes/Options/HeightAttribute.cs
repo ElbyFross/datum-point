@@ -18,27 +18,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using WpfHandler.UI.AutoLayout;
+using WpfHandler.UI.ECS;
+using WpfHandler.UI.AutoLayout.Generic;
+using WpfHandler.UI.ECS;
 
 namespace WpfHandler.UI.AutoLayout.Attributes.Options
 {
     /// <summary>
-    /// Define vertical align of the GUI element.
+    /// Define height of the GUI element.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class VerticalAlign : Attribute, Interfaces.IGUILayoutOption
+    public class HeightAttribute : Attribute, IGUILayoutOption, ILayoutSize
     {
         /// <summary>
-        /// Alignment that will applied to GUI element.
+        /// Value that will be used in the element's propeties.
         /// </summary>
-        public VerticalAlignment Alignment { get; set; }
+        public double Size { get; set; } = double.NaN;
 
         /// <summary>
-        /// Define vertical align of the GUI element.
+        /// Define height of the GUI element.
         /// </summary>
         /// <param name="element">Shared UI element.</param>
         public void ApplyLayoutOption(FrameworkElement element)
         {
-            element.VerticalAlignment = Alignment;
+            element.Height = Size;
         }
     }
 }

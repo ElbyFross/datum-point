@@ -20,29 +20,37 @@ using System.Threading.Tasks;
 using System.Windows;
 using WpfHandler.UI.AutoLayout;
 using WpfHandler.UI.ECS;
-using WpfHandler.UI.AutoLayout.Interfaces;
+using WpfHandler.UI.AutoLayout.Generic;
 using WpfHandler.UI.ECS;
 
 namespace WpfHandler.UI.AutoLayout.Attributes.Options
 {
     /// <summary>
-    /// Define width of GUI element.
+    /// Define GUI element's text font size.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class Width : Attribute, IGUILayoutOption, ILayoutSize
+    public class FontSizeAttribute : Attribute, IGUILayoutOption, ILayoutSize
     {
         /// <summary>
-        /// Value that will be used in the element's propeties.
+        /// Size of the font in points.
         /// </summary>
-        public double Size { get; set; } = double.NaN;
+        public double Size { get; set; } = 14;
 
         /// <summary>
-        /// Define width of GUI element.
+        /// Define GUI element's text font size.
         /// </summary>
-        /// <param name="element">Shared UI element.</param>
+        /// <param name="element">
+        /// Shared UI element. Must be inheirted from 
+        /// `System.Windows.Controls.Control` to affect the font properties.
+        /// </param>
         public void ApplyLayoutOption(FrameworkElement element)
         {
-            element.Width = Size;
+            // Try to cast into control.
+            if(element is System.Windows.Controls.Control control)
+            {
+                // Apply size if casted.
+                control.FontSize = Size;
+            }
         }
     }
 }

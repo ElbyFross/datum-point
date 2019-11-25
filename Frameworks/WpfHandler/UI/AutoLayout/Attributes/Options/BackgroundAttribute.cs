@@ -18,26 +18,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using WpfHandler.UI.AutoLayout;
 using WpfHandler.UI.ECS;
-using WpfHandler.UI.AutoLayout.Interfaces;
-using WpfHandler.UI.ECS;
+using WpfHandler.UI.AutoLayout.Generic;
 
 namespace WpfHandler.UI.AutoLayout.Attributes.Options
 {
     /// <summary>
-    /// Define GUI element's text font size.
+    /// Define GUI element's background brush.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class FontSize : Attribute, IGUILayoutOption, ILayoutSize
+    public class BackgroundAttribute : ColorAttribute, IGUILayoutOption
     {
         /// <summary>
-        /// Size of the font in points.
-        /// </summary>
-        public double Size { get; set; } = 14;
-
-        /// <summary>
-        /// Define GUI element's text font size.
+        /// Define GUI element's background brush.
         /// </summary>
         /// <param name="element">
         /// Shared UI element. Must be inheirted from 
@@ -46,10 +41,9 @@ namespace WpfHandler.UI.AutoLayout.Attributes.Options
         public void ApplyLayoutOption(FrameworkElement element)
         {
             // Try to cast into control.
-            if(element is System.Windows.Controls.Control control)
+            if (element is System.Windows.Controls.Control control)
             {
-                // Apply size if casted.
-                control.FontSize = Size;
+                control.Background = Brush;
             }
         }
     }

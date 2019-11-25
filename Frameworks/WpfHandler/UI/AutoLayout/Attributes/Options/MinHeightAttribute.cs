@@ -17,42 +17,32 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Markup;
+using System.Windows;
 using WpfHandler.UI.AutoLayout;
 using WpfHandler.UI.ECS;
-using WpfHandler.UI.AutoLayout.Interfaces;
+using WpfHandler.UI.AutoLayout.Generic;
 using WpfHandler.UI.ECS;
 
-namespace WpfHandler.UI.AutoLayout.Attributes.Layout
+namespace WpfHandler.UI.AutoLayout.Attributes.Options
 {
     /// <summary>
-    /// Close the last started layout group.
+    /// Define min height of the GUI element.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class EndGroup : Attribute, ILayerEndAttribute
+    public class MinHeightAttribute : Attribute, IGUILayoutOption, ILayoutSize
     {
         /// <summary>
-        /// Reference to the layer that had been got by handler doring GoUpper operation.
+        /// Value that will be used in the element's propeties.
         /// </summary>
-        public LayoutLayer Layer
-        {
-            get { return _Layer; }
-        }
+        public double Size { get; set; } = double.NaN;
 
         /// <summary>
-        /// Bufer that contains operated layer.
+        /// Define min height of the GUI element.
         /// </summary>
-        private LayoutLayer _Layer;
-
-        /// <summary>
-        /// Trying to go to the upper UI's layer.
-        /// </summary>
-        /// <param name="layer">Current layer. Reference will be changed on relevant one.</param>
-        /// <param name="args">Not using in that element.</param>
-        public void OnGUI(ref LayoutLayer layer, params object[] args)
+        /// <param name="element">Shared UI element.</param>
+        public void ApplyLayoutOption(FrameworkElement element)
         {
-            // Trying to go to the upper UI's layer.
-            _Layer = layer.GoUpper();
+            element.MinHeight = Size;
         }
     }
 }

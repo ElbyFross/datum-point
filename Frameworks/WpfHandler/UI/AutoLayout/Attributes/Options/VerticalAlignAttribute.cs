@@ -18,31 +18,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using WpfHandler.UI.AutoLayout;
-using WpfHandler.UI.ECS;
-using WpfHandler.UI.AutoLayout.Interfaces;
-using WpfHandler.UI.ECS;
+using WpfHandler.UI.AutoLayout.Generic;
 
 namespace WpfHandler.UI.AutoLayout.Attributes.Options
 {
     /// <summary>
-    /// Define max allowed height of the GUI element.
+    /// Define vertical align of the GUI element.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class MaxHeight : Attribute, IGUILayoutOption, ILayoutSize
+    public class VerticalAlignAttribute : Attribute, IGUILayoutOption
     {
         /// <summary>
-        /// Value that will be used in the element's propeties.
+        /// Alignment that will applied to GUI element.
         /// </summary>
-        public double Size { get; set; } = double.NaN;
+        public VerticalAlignment Alignment { get; set; }
 
         /// <summary>
-        /// Define max allowed height of the GUI element.
+        /// Define vertical align of the GUI element.
         /// </summary>
         /// <param name="element">Shared UI element.</param>
         public void ApplyLayoutOption(FrameworkElement element)
         {
-            element.MaxHeight = Size;
+            element.VerticalAlignment = Alignment;
         }
     }
 }

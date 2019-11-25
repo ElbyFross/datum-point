@@ -13,19 +13,25 @@
 //limitations under the License.
 
 using System;
+using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfHandler.UI.AutoLayout.Attributes.Layout
+namespace WpfHandler.UI.AutoLayout.Generic
 {
     /// <summary>
-    /// Exclude member from auto-builded inspector.
+    /// Implementing of that interface allow to modify current layout during calling.
     /// </summary>
-    [AttributeUsage(
-        AttributeTargets.Class | AttributeTargets.Struct | 
-        AttributeTargets.Field | AttributeTargets.Property,
-        AllowMultiple = false, Inherited = true)]
-    public class HideInInspector : Attribute { }
+    public interface IGUIElement
+    {
+        /// <summary>
+        /// Modify current layer's layout according to GUI element requirments.
+        /// Calls once during UI spawn.
+        /// </summary>
+        /// <param name="layer">Target GUI layer.</param>
+        /// <param name="args">Shared arguments.</param>
+        void OnGUI(ref LayoutLayer layer, params object[] args);
+    }
 }

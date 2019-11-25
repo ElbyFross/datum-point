@@ -12,19 +12,10 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-using System.Windows;
-
-namespace WpfHandler.UI.AutoLayout.Interfaces
+namespace WpfHandler.UI.AutoLayout.Generic
 {
     /// <summary>
-    /// Interface that implement custom layout options performing.
+    /// Attribute that cause new layer.
     /// </summary>
-    public interface IGUILayoutOption
-    {
-        /// <summary>
-        /// Aplying option to the element.
-        /// </summary>
-        /// <param name="element">Target GUI element.</param>
-        void ApplyLayoutOption(FrameworkElement element);
-    }
+    public interface ILayerBeginAttribute : ILayerAttribute { }
 }

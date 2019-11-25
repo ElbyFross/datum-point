@@ -14,6 +14,7 @@
 
 using System;
 using System.Windows;
+using WpfHandler.UI.AutoLayout.Generic;
 
 namespace WpfHandler.UI.AutoLayout.Attributes.Options
 {
@@ -21,7 +22,7 @@ namespace WpfHandler.UI.AutoLayout.Attributes.Options
     /// Define custom style from resources that would be applied to the GUI element.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class Style : Attribute, Interfaces.IGUILayoutOption
+    public class StyleAttribute : Attribute, IGUILayoutOption
     {
         /// <summary>
         /// Resource key that would be looking for style loading.

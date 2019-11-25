@@ -17,7 +17,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WpfHandler.UI.AutoLayout;
+using WpfHandler.UI.AutoLayout.Generic;
 using WpfHandler.UI.AutoLayout.Attributes;
 using WpfHandler.UI.AutoLayout.Attributes.Elements;
 
@@ -27,7 +27,7 @@ namespace WpfHandler.UI.AutoLayout.Attributes.Configuration
     /// Allow to override of default control for relative field type to custom one.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class CustomControl : Attribute
+    public class CustomControlAttribute : Attribute
     {
         /// <summary>
         /// Control's type that would be instiniated into GUI.
@@ -38,7 +38,7 @@ namespace WpfHandler.UI.AutoLayout.Attributes.Configuration
             set
             {
                 // Check if type has implementation of ILayoutControl
-                if (value is Interfaces.IGUIField)
+                if (value is IGUIField)
                 {
                     _ControlType = value;
                 }
@@ -46,7 +46,7 @@ namespace WpfHandler.UI.AutoLayout.Attributes.Configuration
                 {
                     // Log error.
                     throw new InvalidCastException("Allowed only types with implemented `"
-                        + typeof(Interfaces.IGUIField).FullName + "` interface.");
+                        + typeof(IGUIField).FullName + "` interface.");
                 }
             }
         }
@@ -60,7 +60,7 @@ namespace WpfHandler.UI.AutoLayout.Attributes.Configuration
         /// Configurating attribute.
         /// </summary>
         /// <param name="controlType">Type that would be instiniated during GUI spawn.</param>
-        public CustomControl(Type controlType)
+        public CustomControlAttribute(Type controlType)
         {
             // Try to set value to the bufer.
             ControlType = controlType;

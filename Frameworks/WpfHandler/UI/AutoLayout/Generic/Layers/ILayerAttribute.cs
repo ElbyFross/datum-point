@@ -12,10 +12,18 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-namespace WpfHandler.UI.AutoLayout.Interfaces
+using System.Windows.Markup;
+
+namespace WpfHandler.UI.AutoLayout.Generic
 {
     /// <summary>
-    /// Attribute that cause new layer.
+    /// Define attribute like one that operate with layout layers.
     /// </summary>
-    public interface ILayerBeginAttribute : ILayerAttribute { }
+    public interface ILayerAttribute : IGUIElement
+    {
+        /// <summary>
+        /// Layer that opereted into the handler.
+        /// </summary>
+        LayoutLayer Layer { get; }
+    }
 }

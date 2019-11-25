@@ -21,7 +21,7 @@ using System.Windows.Markup;
 using System.Windows.Controls;
 using WpfHandler.UI.AutoLayout;
 using WpfHandler.UI.ECS;
-using WpfHandler.UI.AutoLayout.Interfaces;
+using WpfHandler.UI.AutoLayout.Generic;
 
 namespace WpfHandler.UI.AutoLayout.Attributes.Layout
 {
@@ -30,7 +30,7 @@ namespace WpfHandler.UI.AutoLayout.Attributes.Layout
     /// Will wait EndHorizontal to over the last begined group.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class BeginHorizontalGroup : Attribute, ILayerBeginAttribute
+    public class BeginHorizontalGroupAttribute : Attribute, ILayerBeginAttribute
     {
         /// <summary>
         /// Layer that opereted into the handler.

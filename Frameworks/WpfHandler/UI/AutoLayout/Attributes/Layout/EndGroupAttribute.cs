@@ -17,33 +17,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
+using System.Windows.Markup;
 using WpfHandler.UI.AutoLayout;
 using WpfHandler.UI.ECS;
-using WpfHandler.UI.AutoLayout.Interfaces;
+using WpfHandler.UI.AutoLayout.Generic;
 
-namespace WpfHandler.UI.AutoLayout.Attributes.Options
+namespace WpfHandler.UI.AutoLayout.Attributes.Layout
 {
     /// <summary>
-    /// Define GUI element's foreground brush.
+    /// Close the last started layout group.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class Foreground : ColorAttribute, IGUILayoutOption
+    public class EndGroupAttribute : Attribute, ILayerEndAttribute
     {
         /// <summary>
-        /// Define GUI element's foreground brush.
+        /// Reference to the layer that had been got by handler doring GoUpper operation.
         /// </summary>
-        /// <param name="element">
-        /// Shared UI element. Must be inheirted from 
-        /// `System.Windows.Controls.Control` to affect the font properties.
-        /// </param>
-        public void ApplyLayoutOption(FrameworkElement element)
+        public LayoutLayer Layer
         {
-            // Try to cast into control.
-            if (element is System.Windows.Controls.Control control)
-            {
-                control.Foreground = Brush;
-            }
+            get { return _Layer; }
+        }
+
+        /// <summary>
+        /// Bufer that contains operated layer.
+        /// </summary>
+        private LayoutLayer _Layer;
+
+        /// <summary>
+        /// Trying to go to the upper UI's layer.
+        /// </summary>
+        /// <param name="layer">Current layer. Reference will be changed on relevant one.</param>
+        /// <param name="args">Not using in that element.</param>
+        public void OnGUI(ref LayoutLayer layer, params object[] args)
+        {
+            // Trying to go to the upper UI's layer.
+            _Layer = layer.GoUpper();
         }
     }
 }

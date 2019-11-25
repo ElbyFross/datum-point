@@ -18,33 +18,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Media;
-using WpfHandler.UI.AutoLayout;
-using WpfHandler.UI.ECS;
-using WpfHandler.UI.AutoLayout.Interfaces;
+using WpfHandler.UI.AutoLayout.Generic;
 
 namespace WpfHandler.UI.AutoLayout.Attributes.Options
 {
     /// <summary>
-    /// Define GUI element's background brush.
+    /// Define horizontal align of the GUI element.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class Background : ColorAttribute, IGUILayoutOption
+    public class HorizontalAlignAttribute : Attribute, IGUILayoutOption
     {
         /// <summary>
-        /// Define GUI element's background brush.
+        /// Alignment that will applied to GUI element.
         /// </summary>
-        /// <param name="element">
-        /// Shared UI element. Must be inheirted from 
-        /// `System.Windows.Controls.Control` to affect the font properties.
-        /// </param>
+        public HorizontalAlignment Alignment { get; set; }
+
+        /// <summary>
+        /// Define horizontal align of the GUI element.
+        /// </summary>
+        /// <param name="element">Shared UI element.</param>
         public void ApplyLayoutOption(FrameworkElement element)
         {
-            // Try to cast into control.
-            if (element is System.Windows.Controls.Control control)
-            {
-                control.Background = Brush;
-            }
+            element.HorizontalAlignment = Alignment;
         }
     }
 }

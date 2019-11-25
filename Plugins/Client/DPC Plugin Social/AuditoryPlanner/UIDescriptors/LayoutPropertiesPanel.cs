@@ -17,7 +17,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WpfHandler.UI.AutoLayout.Attributes.Configuration;
 using WpfHandler.UI.AutoLayout.Attributes.Elements;
+using WpfHandler.UI.AutoLayout.Attributes.Options;
 using WpfHandler.UI.AutoLayout.Attributes.Layout;
 using WpfHandler.UI.AutoLayout;
 
@@ -25,7 +27,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
 {
     public class LayoutPropertiesPanel : UIDescriptor
     {
-        [Header("Test header", "testheader")]
+        [HeaderAttribute("Test header", "testheader")]
         public string testString = "field one";
 
         [Order(2)]

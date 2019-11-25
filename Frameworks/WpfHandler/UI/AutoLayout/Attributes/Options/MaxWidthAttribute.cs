@@ -20,7 +20,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using WpfHandler.UI.AutoLayout;
 using WpfHandler.UI.ECS;
-using WpfHandler.UI.AutoLayout.Interfaces;
+using WpfHandler.UI.AutoLayout.Generic;
 using WpfHandler.UI.ECS;
 
 namespace WpfHandler.UI.AutoLayout.Attributes.Options
@@ -29,7 +29,7 @@ namespace WpfHandler.UI.AutoLayout.Attributes.Options
     /// Define max width of the GUI element.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class MaxWidth : Attribute, IGUILayoutOption, ILayoutSize
+    public class MaxWidthAttribute : Attribute, IGUILayoutOption, ILayoutSize
     {
         /// <summary>
         /// Value that will be used in the element's propeties.
