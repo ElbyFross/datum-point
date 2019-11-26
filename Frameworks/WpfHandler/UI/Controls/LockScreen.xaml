@@ -46,7 +46,7 @@ limitations under the License.-->
               Grid.RowSpan="6"
               Grid.ColumnSpan="5"/>
 
-        <Label x:Name="lockLable"
+        <Label x:Name="lockLabel"
                    Grid.Column="1"
                    Grid.Row="1"
                    FontSize="25"
@@ -56,7 +56,7 @@ limitations under the License.-->
 
         <local:FlatButton x:Name="lockCancelButton"
                               ClickCallback="LockCancelCallbackHandler"
-                              Lable="CANCEL" 
+                              Label="CANCEL" 
                               Grid.Column="1"
                               Grid.Row="3"
                               FontSize="20"

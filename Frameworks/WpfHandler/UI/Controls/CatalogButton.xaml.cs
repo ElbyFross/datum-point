@@ -32,11 +32,11 @@ namespace WpfHandler.UI.Controls
     /// <summary>
     /// Interaction logic for CatalogButton.xaml
     /// </summary>
-    public partial class CatalogButton : UserControl, ILable
+    public partial class CatalogButton : UserControl, ILabel
     {
         #region Dependency properties
-        public static readonly DependencyProperty LableProperty = DependencyProperty.Register(
-          "Lable", typeof(string), typeof(CatalogButton));
+        public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
+          "Label", typeof(string), typeof(CatalogButton));
 
         //public static readonly DependencyProperty HierarchyLevelProperty = DependencyProperty.Register(
         //  "HierarchyLevel", typeof(int), typeof(CatalogButton));
@@ -61,10 +61,10 @@ namespace WpfHandler.UI.Controls
         /// <summary>
         /// Text that will be displayed on the button.
         /// </summary>
-        public string Lable
+        public string Label
         {
-            get { return (string)this.GetValue(LableProperty); }
-            set { this.SetValue(LableProperty, value); }
+            get { return (string)this.GetValue(LabelProperty); }
+            set { this.SetValue(LabelProperty, value); }
         }
 
         /// <summary>

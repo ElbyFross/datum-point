@@ -50,7 +50,7 @@ limitations under the License.-->
                    RadiusY="3"
                    Height="25" Width="25"/>
 
-        <Label Name="indexLable"
+        <Label Name="indexLabel"
                    IsHitTestVisible="False"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"

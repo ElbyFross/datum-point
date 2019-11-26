@@ -33,10 +33,10 @@ namespace WpfHandler.UI.Controls
     /// <summary>
     /// Interaction logic for FlatButton.xaml
     /// </summary>
-    public partial class FlatButton : UserControl, ILable
+    public partial class FlatButton : UserControl, ILabel
     {
-        public static readonly DependencyProperty LableProperty = DependencyProperty.Register(
-          "Lable", typeof(string), typeof(FlatButton), new PropertyMetadata("Sample"));
+        public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
+          "Label", typeof(string), typeof(FlatButton), new PropertyMetadata("Sample"));
 
         public static readonly DependencyProperty ClickCallbackProperty = DependencyProperty.Register(
           "ClickCallback", typeof(Action<object>), typeof(FlatButton));
@@ -44,16 +44,16 @@ namespace WpfHandler.UI.Controls
         /// <summary>
         /// Text that will be displayed on the button.
         /// </summary>
-        public string Lable
+        public string Label
         {
-            get { return (string)this.GetValue(LableProperty); }
-            set { this.SetValue(LableProperty, value); }
+            get { return (string)this.GetValue(LabelProperty); }
+            set { this.SetValue(LabelProperty, value); }
         }
 
         /// <summary>
-        /// Offset applied to lable.
+        /// Offset applied to label.
         /// </summary>
-        public Thickness LableMargin
+        public Thickness LabelMargin
         {
             get
             {

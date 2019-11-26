@@ -100,7 +100,7 @@ namespace WpfHandler.UI.Controls.Logon
         }
 
         /// <summary>
-        /// Error message tha twould displayed at UI's lable.
+        /// Error message tha twould displayed at UI's label.
         /// </summary>
         public string ErrorMessage
         {

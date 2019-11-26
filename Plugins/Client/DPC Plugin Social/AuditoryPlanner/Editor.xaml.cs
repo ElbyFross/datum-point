@@ -316,7 +316,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
             //controlPanel.Children.Add(new WpfHandler.UI.Controls.FlatTextBox());
             //controlPanel.Children.Add(new WpfHandler.UI.Controls.FlatTextBox()
             //{
-            //    Lable = "11"
+            //    Label = "11"
             //});
             //controlPanel.Children.Add(new WpfHandler.UI.Controls.FlatTextBox()
             //{
@@ -324,16 +324,16 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
             //});
             //controlPanel.Children.Add(new WpfHandler.UI.Controls.FlatTextBox()
             //{
-            //    LableWidth = 25,
-            //    Lable = "Test"});
+            //    LabelWidth = 25,
+            //    Label = "Test"});
             //controlPanel.Children.Add(new WpfHandler.UI.Controls.FlatTextBox()
             //{
-            //    LableWidth = 0,
+            //    LabelWidth = 0,
             //    Text = "324aa "});
             //controlPanel.Children.Add(new WpfHandler.UI.Controls.FlatTextBox()
             //{
-            //    LableWidth = 25,
-            //    Lable = "das",
+            //    LabelWidth = 25,
+            //    Label = "das",
             //    Text = "324aa "
             //}); ;
 

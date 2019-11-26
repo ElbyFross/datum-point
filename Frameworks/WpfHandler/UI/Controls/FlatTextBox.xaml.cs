@@ -50,9 +50,9 @@ namespace WpfHandler.UI.Controls
         public MemberInfo BindedMember { get; set; }
 
         /// <summary>
-        /// Returns reference to the lable block of UI element.
+        /// Returns reference to the label block of UI element.
         /// </summary>
-        public override FrameworkElement LableElement { get { return lableElement; } }
+        public override FrameworkElement LabelElement { get { return lableElement; } }
 
         /// <summary>
         /// Returns reference to the field block of UI element.

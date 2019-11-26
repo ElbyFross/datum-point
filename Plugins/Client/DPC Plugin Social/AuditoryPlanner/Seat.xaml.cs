@@ -61,8 +61,8 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
                 // Updating value.
                 this.SetValue(MetaProperty, value);
 
-                // Updating displayed lable.
-                UpdateIndexLable();
+                // Updating displayed label.
+                UpdateIndexLabel();
             }
         }
 
@@ -90,8 +90,8 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
                 // Update index.
                 Meta.index = value;
 
-                // Update lable.
-                UpdateIndexLable();
+                // Update label.
+                UpdateIndexLabel();
             }
         }
 
@@ -190,17 +190,17 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
 
         #region API
         /// <summary>
-        /// Updating lable that displaying index.
+        /// Updating label that displaying index.
         /// </summary>
-        protected void UpdateIndexLable()
+        protected void UpdateIndexLabel()
         {
             if (Index <= 0)
             {
-                indexLable.Content = "-";
+                indexLabel.Content = "-";
             }
             else
             {
-                indexLable.Content = Index.ToString();
+                indexLabel.Content = Index.ToString();
             }
         }
         #endregion

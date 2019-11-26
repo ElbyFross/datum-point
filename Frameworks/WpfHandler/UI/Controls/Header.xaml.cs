@@ -35,11 +35,11 @@ namespace WpfHandler.UI.Controls
     /// Interaction logic for Header.xaml
     /// </summary>
     [AutoLayout.Configuration.TypesCompatibleAttribute(typeof(bool))]
-    public partial class Header : UserControl, IGUIField, ILable
+    public partial class Header : UserControl, IGUIField, ILabel
     {
         #region Dependency properties
-        public static readonly DependencyProperty LableProperty = DependencyProperty.Register(
-            "Lable", typeof(string), typeof(Header), new PropertyMetadata("Sample"));
+        public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
+            "Label", typeof(string), typeof(Header), new PropertyMetadata("Sample"));
 
         public static readonly DependencyProperty GUIContentProperty = DependencyProperty.Register(
             "GUIContent", typeof(GUIContent), typeof(Header));//, new PropertyMetadata(GUIContent.None));
@@ -64,12 +64,12 @@ namespace WpfHandler.UI.Controls
         public MemberInfo BindedMember { get; set; }
 
         /// <summary>
-        /// Text in lable field.
+        /// Text in label field.
         /// </summary>
-        public string Lable
+        public string Label
         {
-            get { return (string)this.GetValue(LableProperty); }
-            set { this.SetValue(LableProperty, value); }
+            get { return (string)this.GetValue(LabelProperty); }
+            set { this.SetValue(LabelProperty, value); }
         }
 
         /// <summary>
@@ -129,11 +129,11 @@ namespace WpfHandler.UI.Controls
                 // Update UI.
                 if (value != null)
                 {
-                    this.Lable = value.GetTitle();
+                    this.Label = value.GetTitle();
                 }
                 else
                 {
-                    this.Lable = "Undefined";
+                    this.Label = "Undefined";
                 }
             }
         }

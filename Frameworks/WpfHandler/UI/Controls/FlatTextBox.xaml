@@ -28,7 +28,7 @@ limitations under the License.-->
              Width="Auto" Height="24">
     <Grid Background="{Binding Background}" x:Name="flatButton" Margin="0,0.1">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="{Binding LableWidth}"></ColumnDefinition>
+            <ColumnDefinition Width="{Binding LabelWidth}"></ColumnDefinition>
             <ColumnDefinition Width="0.5"/>
             <ColumnDefinition Width="*" MinWidth="20"/>
         </Grid.ColumnDefinitions>
@@ -40,7 +40,7 @@ limitations under the License.-->
                VerticalAlignment="Center"
                Margin="0,-10"
                Foreground="{Binding Foreground}" 
-               Content="{Binding Lable}" 
+               Content="{Binding Label}" 
                IsHitTestVisible="False"/>
         <Grid Grid.Column="1"  Background="#00171f"/>
         <Grid x:Name="fieldElement" Grid.Column="2" Grid.ColumnSpan="3"

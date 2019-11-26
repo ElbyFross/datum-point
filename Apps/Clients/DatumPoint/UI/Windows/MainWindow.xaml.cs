@@ -144,7 +144,7 @@ namespace DatumPoint.UI.Windows
                     MenuButtons.Add(
                     new WpfHandler.UI.Controls.CatalogButton()
                     {
-                        Lable = title,
+                        Label = title,
                         // Set uniformed text offset in hierarchy tree.
                         HierarchyLevel = _hierarchyLevel,
                         // Set root level as bool, others as thin.
@@ -350,11 +350,11 @@ namespace DatumPoint.UI.Windows
             if (string.IsNullOrEmpty(logonScreen.registrationPanel.LastName)) IsFieledsFilled = false;
 
             // Enable/disable fields fill error.
-            logonScreen.registrationPanel.FillAllFieldErrorLable = !IsFieledsFilled;
+            logonScreen.registrationPanel.FillAllFieldErrorLabel = !IsFieledsFilled;
 
             // Enable/disable passwords matching error.
             bool passwordsValid = logonScreen.registrationPanel.IsPasswordsTheSame;
-            logonScreen.registrationPanel.PasswordNotMatchErrorLable = !passwordsValid;
+            logonScreen.registrationPanel.PasswordNotMatchErrorLabel = !passwordsValid;
 
             // Drop if invalid.
             if(!passwordsValid || !IsFieledsFilled) return;
@@ -545,8 +545,8 @@ namespace DatumPoint.UI.Windows
             profileContextPanel.IsHitTestVisible = true;
 
             // Drop current data.
-            userNameLable.Content = null;
-            userRoleLable.Content = null;
+            userNameLabel.Content = null;
+            userRoleLabel.Content = null;
 
             // If answer not contains error.
             if (!recevideAnswer.First.PropertyValueString.StartsWith("error"))
@@ -556,7 +556,7 @@ namespace DatumPoint.UI.Windows
                 <Types.Personality.User>(recevideAnswer.First.propertyValue);
 
                 // Set data to UI.
-                userNameLable.Content =
+                userNameLabel.Content =
                     profile.firstName +
                     (string.IsNullOrEmpty(profile.middleName) ? "" : " " + profile.middleName) +
                     " " + profile.lastName;
@@ -574,11 +574,11 @@ namespace DatumPoint.UI.Windows
 
                 try
                 {
-                    userRoleLable.Content = rank == -1 ? "Undefined role" : ((Types.Personality.UserRank)rank).ToString();
+                    userRoleLabel.Content = rank == -1 ? "Undefined role" : ((Types.Personality.UserRank)rank).ToString();
                 }
                 catch
                 {
-                    userRoleLable.Content = "Role:" + rank;
+                    userRoleLabel.Content = "Role:" + rank;
                 }
             }
             else

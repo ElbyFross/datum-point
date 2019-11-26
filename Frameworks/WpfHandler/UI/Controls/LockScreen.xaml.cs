@@ -94,10 +94,10 @@ namespace WpfHandler.UI.Controls
                 FillBehavior.HoldEnd,
                 0, 1);
 
-            // Lable
-            lockLable.Content = message;
+            // Label
+            lockLabel.Content = message;
             Animations.FloatAnimation.StartStoryboard(
-                this, lockLable.Name,
+                this, lockLabel.Name,
                 opacityPropertyPath,
                 lockAnimationDuration,
                 FillBehavior.HoldEnd,
@@ -137,9 +137,9 @@ namespace WpfHandler.UI.Controls
                 FillBehavior.HoldEnd,
                 1, 0);
 
-            // Lock lable
+            // Lock label
             Animations.FloatAnimation.StartStoryboard(this,
-                lockLable.Name,
+                lockLabel.Name,
                 opacityPropertyPath,
                 lockAnimationDuration,
                 FillBehavior.HoldEnd,

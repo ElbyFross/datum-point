@@ -37,14 +37,14 @@ namespace DatumPoint.Plugins.Social.Schedule
         public static readonly DependencyProperty StartTimeProperty = DependencyProperty.Register(
          "FontSize", typeof(TimeSpan), typeof(ScheduleRow));
 
-        public static readonly DependencyProperty SubjectLableProperty = DependencyProperty.Register(
-         "SubjectLable", typeof(string), typeof(ScheduleRow));
+        public static readonly DependencyProperty SubjectLabelProperty = DependencyProperty.Register(
+         "SubjectLabel", typeof(string), typeof(ScheduleRow));
 
-        public static readonly DependencyProperty BuildingLableProperty = DependencyProperty.Register(
-         "BuildingLable", typeof(string), typeof(ScheduleRow));
+        public static readonly DependencyProperty BuildingLabelProperty = DependencyProperty.Register(
+         "BuildingLabel", typeof(string), typeof(ScheduleRow));
 
-        public static readonly DependencyProperty AuditoryLableProperty = DependencyProperty.Register(
-         "AuditoryLable", typeof(string), typeof(ScheduleRow));
+        public static readonly DependencyProperty AuditoryLabelProperty = DependencyProperty.Register(
+         "AuditoryLabel", typeof(string), typeof(ScheduleRow));
 
         /// <summary>
         /// Time when lesson will start.
@@ -58,28 +58,28 @@ namespace DatumPoint.Plugins.Social.Schedule
         /// <summary>
         /// Title of subject.
         /// </summary>
-        public string SubjectLable
+        public string SubjectLabel
         {
-            get { return (string)this.GetValue(SubjectLableProperty); }
-            set { this.SetValue(SubjectLableProperty, value); }
+            get { return (string)this.GetValue(SubjectLabelProperty); }
+            set { this.SetValue(SubjectLabelProperty, value); }
         }
 
         /// <summary>
         /// Name of building.
         /// </summary>
-        public string BuildingLable
+        public string BuildingLabel
         {
-            get { return (string)this.GetValue(BuildingLableProperty); }
-            set { this.SetValue(BuildingLableProperty, value); }
+            get { return (string)this.GetValue(BuildingLabelProperty); }
+            set { this.SetValue(BuildingLabelProperty, value); }
         }
 
         /// <summary>
         /// Name of room\auditory.
         /// </summary>
-        public string AuditoryLable
+        public string AuditoryLabel
         {
-            get { return (string)this.GetValue(AuditoryLableProperty); }
-            set { this.SetValue(AuditoryLableProperty, value); }
+            get { return (string)this.GetValue(AuditoryLabelProperty); }
+            set { this.SetValue(AuditoryLabelProperty, value); }
         }
 
 

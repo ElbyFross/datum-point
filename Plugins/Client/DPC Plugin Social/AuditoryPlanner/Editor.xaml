@@ -122,15 +122,15 @@ limitations under the License.-->
 
                     <StackPanel Orientation="Horizontal" Width="{Binding Width, ElementName=controlPanel}">
                         <wpfHandler:FlatTextBox x:Name="numeric_skipX"
-                                                        ValueMode="Float" Lable="Col" 
-                                                        LableWidth="35" Width="60" 
+                                                        ValueMode="Float" Label="Col" 
+                                                        LabelWidth="35" Width="60" 
                                                         Background="Transparent"
                                                         Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
                                                         TextChanged="Symmetry_Offset_Changed"
                                                         FontSize="12" Height="17"/>
                         <wpfHandler:FlatTextBox x:Name="numeric_skipY"
-                                                        ValueMode="Float" Lable="Row" 
-                                                        LableWidth="35" Width="60" 
+                                                        ValueMode="Float" Label="Row" 
+                                                        LabelWidth="35" Width="60" 
                                                         Background="Transparent"
                                                         Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
                                                         TextChanged="Symmetry_Offset_Changed"
@@ -151,15 +151,15 @@ limitations under the License.-->
 
                             <StackPanel Orientation="Horizontal" Width="{Binding Width, ElementName=controlPanel}">
                                 <wpfHandler:FlatTextBox x:Name="symmetry_offsetX"
-                                                        ValueMode="Float" Lable="x" 
-                                                        LableWidth="20" Width="60" 
+                                                        ValueMode="Float" Label="x" 
+                                                        LabelWidth="20" Width="60" 
                                                         Background="Transparent"
                                                         Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
                                                         TextChanged="Symmetry_Offset_Changed"
                                                         FontSize="12" Height="17"/>
                                 <wpfHandler:FlatTextBox x:Name="symmetry_offsetY"
-                                                        ValueMode="Float" Lable="y" 
-                                                        LableWidth="20" Width="60" 
+                                                        ValueMode="Float" Label="y" 
+                                                        LabelWidth="20" Width="60" 
                                                         Background="Transparent"
                                                         Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
                                                         TextChanged="Symmetry_Offset_Changed"
@@ -170,7 +170,7 @@ limitations under the License.-->
                     <StackPanel x:Name="symmetricSettings" Visibility="Collapsed">
                         <Canvas Height="5"/>
                         <wpfHandler:FlatTextBox x:Name="symmetry_space"
-                                                ValueMode="Float" Lable="Block's space" LableWidth="80" 
+                                                ValueMode="Float" Label="Block's space" LabelWidth="80" 
                                                 Background="Transparent"
                                                 Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
                                                 TextChanged="Symmetry_space_TextChanged"
@@ -183,14 +183,14 @@ limitations under the License.-->
                 <Canvas Width="10.5" />
                 <Canvas Width="0.5" Background="{DynamicResource ResourceKey=controlMenuBackground}"/>
                 <wpfHandler:FlatButton 
-                                      Lable="Save" 
+                                      Label="Save" 
                                       Background="Transparent"
                                       FontSize="15"
                                       Grid.Column="2"
                                       Foreground="{DynamicResource ResourceKey=textButtonForground}"/>
                 <Canvas Width="0.5" Background="{DynamicResource ResourceKey=controlMenuBackground}"/>
                 <wpfHandler:FlatButton 
-                                      Lable="Load" 
+                                      Label="Load" 
                                       HorizontalAlignment="Right"
                                       Background="Transparent"
                                       FontSize="15"
@@ -200,7 +200,7 @@ limitations under the License.-->
                 <Canvas Width="10.5" />
                 <Canvas Width="0.5" Background="{DynamicResource ResourceKey=controlMenuBackground}"/>
                 <wpfHandler:FlatButton 
-                                      Lable="New" 
+                                      Label="New" 
                                       Background="Transparent"
                                       FontSize="15"
                                       Grid.Column="2"
@@ -210,7 +210,7 @@ limitations under the License.-->
             <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right">
             <Canvas Width="0.5" Background="{DynamicResource ResourceKey=controlMenuBackground}"/>
             <wpfHandler:FlatButton 
-                                      Lable="Info" 
+                                      Label="Info" 
                                       HorizontalAlignment="Right"
                                       Background="Transparent"
                                       FontSize="15"

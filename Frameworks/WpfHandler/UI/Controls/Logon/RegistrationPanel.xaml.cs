@@ -136,25 +136,25 @@ namespace WpfHandler.UI.Controls.Logon
         }
 
         /// <summary>
-        /// Does "password not match" error lable is enabled.
+        /// Does "password not match" error label is enabled.
         /// </summary>
-        public bool PasswordNotMatchErrorLable
+        public bool PasswordNotMatchErrorLabel
         {
             get { return regPanel_error_lPNM.Visibility == Visibility.Visible; }
             set { regPanel_error_lPNM.Visibility = value ? Visibility.Visible : Visibility.Collapsed; }
         }
 
         /// <summary>
-        /// Does "fiill all field" error lable is enabled.
+        /// Does "fiill all field" error label is enabled.
         /// </summary>
-        public bool FillAllFieldErrorLable
+        public bool FillAllFieldErrorLabel
         {
             get { return regPanel_error_lFAF.Visibility == Visibility.Visible; }
             set { regPanel_error_lFAF.Visibility = value ? Visibility.Visible : Visibility.Collapsed; }
         }
         
         /// <summary>
-        /// Error message tha twould displayed at UI's lable.
+        /// Error message tha twould displayed at UI's label.
         /// </summary>
         public string ErrorMessage
         {
@@ -229,8 +229,8 @@ namespace WpfHandler.UI.Controls.Logon
             FirstName = "";
             MiddleName = "";
             LastName = "";
-            PasswordNotMatchErrorLable = false;
-            FillAllFieldErrorLable = false;
+            PasswordNotMatchErrorLabel = false;
+            FillAllFieldErrorLabel = false;
             ErrorMessage = null;
         }
 

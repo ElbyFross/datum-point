@@ -33,7 +33,7 @@ limitations under the License.-->
 
         <Button x:Name="timeButton" Grid.Column="0"
                 Background="Transparent">
-            <Label Name="timeLable" Content="8:30" 
+            <Label Name="timeLabel" Content="8:30" 
                HorizontalAlignment="Center" 
                VerticalAlignment="Center"
                FontWeight="{Binding FontWeight, ElementName=main}"

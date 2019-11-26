@@ -33,7 +33,7 @@ namespace WpfHandler.UI.Controls
     /// <summary>
     /// TODO: Operating by group of the toggles.
     /// </summary>
-    public partial class TogglesGroup : UserControl, ILayoutOrientation, ILable
+    public partial class TogglesGroup : UserControl, ILayoutOrientation, ILabel
     {
         /// <summary>
         /// Descriptor of the auto generated GUI for toogle group items.
@@ -57,9 +57,9 @@ namespace WpfHandler.UI.Controls
         public Orientation Orientation { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         /// <summary>
-        /// TODO: Provides acess to the lable of the list.
+        /// TODO: Provides acess to the label of the list.
         /// </summary>
-        public string Lable { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public string Label { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         /// <summary>
         /// Auto-generated content builded by UI descriptor.

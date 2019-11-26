@@ -32,7 +32,7 @@ namespace WpfHandler.UI.Controls
     /// <summary>
     /// Defines base members for all text field for providing uniform way to operate with GUI elemetns.
     /// </summary>
-    public abstract class TextFieldControl : UserControl, ILable
+    public abstract class TextFieldControl : UserControl, ILabel
     {
         /// <summary>
         /// Mode of value operating.
@@ -83,14 +83,14 @@ namespace WpfHandler.UI.Controls
         /// <summary>
         /// Property that bridging control's property between XAML and code.
         /// </summary>
-        public static readonly DependencyProperty LableProperty = DependencyProperty.Register(
-          "Lable", typeof(string), typeof(TextFieldControl));
+        public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
+          "Label", typeof(string), typeof(TextFieldControl));
 
         /// <summary>
         /// Property that bridging control's property between XAML and code.
         /// </summary>
-        public static readonly DependencyProperty LableWidthProperty = DependencyProperty.Register(
-          "LableWidth", typeof(float), typeof(TextFieldControl), new PropertyMetadata(120.0f));
+        public static readonly DependencyProperty LabelWidthProperty = DependencyProperty.Register(
+          "LabelWidth", typeof(float), typeof(TextFieldControl), new PropertyMetadata(120.0f));
 
         /// <summary>
         /// Property that bridging control's property between XAML and code.
@@ -187,37 +187,37 @@ namespace WpfHandler.UI.Controls
         }
 
         /// <summary>
-        /// Text in lable field.
+        /// Text in label field.
         /// </summary>
-        public string Lable
+        public string Label
         {
-            get { return (string)GetValue(LableProperty); }
-            set { SetValue(LableProperty, value); }
+            get { return (string)GetValue(LabelProperty); }
+            set { SetValue(LabelProperty, value); }
         }
 
         /// <summary>
-        /// Width of lable field.
+        /// Width of label field.
         /// </summary>
-        public float LableWidth
+        public float LabelWidth
         {
-            get { return (float)GetValue(LableWidthProperty); }
+            get { return (float)GetValue(LabelWidthProperty); }
             set
             {
                 // Buferize requested value.
-                _LableWidth = value;
+                _LabelWidth = value;
 
                 // Set value but apply at least 25 point to input field.
-                float appliedSize = (float)Math.Min(_LableWidth, ActualWidth - 25);
+                float appliedSize = (float)Math.Min(_LabelWidth, ActualWidth - 25);
 
                 // Appling value.
-                SetValue(LableWidthProperty, appliedSize);
+                SetValue(LabelWidthProperty, appliedSize);
             }
         }
 
         /// <summary>
-        /// Bufer that contains las requested lable width.
+        /// Bufer that contains las requested label width.
         /// </summary>
-        protected float _LableWidth;
+        protected float _LabelWidth;
 
         /// <summary>
         /// Color of the text in textbox.
@@ -240,9 +240,9 @@ namespace WpfHandler.UI.Controls
 
         #region Customization block
         /// <summary>
-        /// Returns reference to the lable block of UI element.
+        /// Returns reference to the label block of UI element.
         /// </summary>
-        public abstract FrameworkElement LableElement { get; }
+        public abstract FrameworkElement LabelElement { get; }
 
         /// <summary>
         /// Returns reference to the field block of UI element.
@@ -278,27 +278,27 @@ namespace WpfHandler.UI.Controls
         /// </summary>
         public virtual void RecomputeLayout()
         {
-            var lableExist = !string.IsNullOrEmpty(Lable);
+            var lableExist = !string.IsNullOrEmpty(Label);
 
             if (lableExist)
             {
-                // Show lable.
-                LableElement.Visibility = Visibility.Visible;
+                // Show label.
+                LabelElement.Visibility = Visibility.Visible;
 
                 // Warping the input field.
                 Grid.SetColumn(FieldElement, 2);
             }
             else
             {
-                // Hide lable.
-                LableElement.Visibility = Visibility.Collapsed;
+                // Hide label.
+                LabelElement.Visibility = Visibility.Collapsed;
 
                 // Spreading the input field.
                 Grid.SetColumn(FieldElement, 0);
             }
 
             // Reqcomputing width.
-            LableWidth = _LableWidth;
+            LabelWidth = _LabelWidth;
         }
         #endregion
 
@@ -310,8 +310,8 @@ namespace WpfHandler.UI.Controls
         /// <param name="e"></param>
         private void TextFieldControl_Loaded(object sender, RoutedEventArgs e)
         {
-            // Update default request lable size.
-            _LableWidth = LableWidth;
+            // Update default request label size.
+            _LabelWidth = LabelWidth;
 
             // Recomputing dinamic layout.
             RecomputeLayout();

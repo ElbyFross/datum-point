@@ -15,13 +15,13 @@
 namespace WpfHandler.UI.Controls
 {
     /// <summary>
-    /// Implement that interface for controls with existed text lable.
+    /// Implement that interface for controls with existed text label.
     /// </summary>
-    public interface ILable
+    public interface ILabel
     {
         /// <summary>
-        /// Text of the lable.
+        /// Text of the label.
         /// </summary>
-        string Lable { get; set; }
+        string Label { get; set; }
     }
 }

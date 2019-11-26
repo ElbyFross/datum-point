@@ -54,6 +54,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="UI\AutoLayout\Configuration\ContentAttribute.cs" />
     <Compile Include="UI\Effects\BlurEffect.cs" />
     <Compile Include="UI\Animations\FloatAnimation.cs" />
     <Compile Include="UI\Animations\GridLengthAnimation.cs" />
@@ -92,7 +93,7 @@
     <Compile Include="UI\GUIContent.cs" />
     <Compile Include="UI\AutoLayout\Interfaces\IGUIElement.cs" />
     <Compile Include="UI\AutoLayout\Interfaces\IGUILayoutOption.cs" />
-    <Compile Include="UI\Controls\ILable.cs" />
+    <Compile Include="UI\Controls\ILabel.cs" />
     <Compile Include="UI\AutoLayout\Interfaces\Layers\ILayerAttribute.cs" />
     <Compile Include="UI\AutoLayout\Interfaces\Layers\ILayerBeginAttribute.cs" />
     <Compile Include="UI\AutoLayout\Interfaces\Layers\ILayerEndAttribute.cs" />

@@ -70,7 +70,7 @@ limitations under the License.-->
                    HorizontalAlignment="{Binding HorizontalContentAlignment, ElementName=catalogButton}" 
                    FontWeight="{Binding FontWeight}" 
                    Foreground="{Binding TextColor}" 
-                   Content="{Binding Lable}"
+                   Content="{Binding Label}"
                    Margin="{Binding AutoMargin}">
                 <Label.Style>
                     <Style TargetType="{x:Type Label}">

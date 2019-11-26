@@ -30,7 +30,7 @@ namespace WpfHandler.UI.AutoLayout.Controls
         /// <summary>
         /// Auto initialize content with shared title value.
         /// </summary>
-        /// <param name="title">Title that will be showed up into the lable.</param>
+        /// <param name="title">Title that will be showed up into the label.</param>
         public HeaderAttribute(string title) : base(title) { }
 
         /// <summary>

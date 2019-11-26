@@ -83,7 +83,7 @@ limitations under the License.-->
                                             Style="{DynamicResource MenuButton}" 
                                             Grid.Column="0" 
                                             HierarchyLevel="0" 
-                                            Lable="Settings" 
+                                            Label="Settings" 
                                             FontWeight="Thin" 
                                             HorizontalContentAlignment="Center"/>
 
@@ -91,7 +91,7 @@ limitations under the License.-->
                                             Style="{DynamicResource MenuButton}" 
                                             Grid.Column="2" 
                                             HierarchyLevel="0" 
-                                            Lable="About"
+                                            Label="About"
                                             FontWeight="Thin" 
                                             HorizontalContentAlignment="Center"/>
                 </Grid>
@@ -115,8 +115,8 @@ limitations under the License.-->
                 <ColumnDefinition Width="330"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <!--Main lable-->
-            <Label Name="logoLable"
+            <!--Main label-->
+            <Label Name="logoLabel"
                    Grid.Column="0" 
                    FontSize="21.5" 
                    FontWeight="Heavy" 
@@ -136,14 +136,14 @@ limitations under the License.-->
                 </Grid.ColumnDefinitions>
                 
                 <StackPanel Grid.Column="0" Orientation="Vertical">
-                    <Label Name="userNameLable" 
+                    <Label Name="userNameLabel" 
                            FontSize="15" 
                            FontWeight="DemiBold" 
                            HorizontalAlignment="Right" 
                            Foreground="#FFFFFF"
                            Content="VOLODYMYR PODSHYVALOV" />
                     
-                    <Label Name="userRoleLable" 
+                    <Label Name="userRoleLabel" 
                            FontSize="15" 
                            FontWeight="Light" 
                            HorizontalAlignment="Right"

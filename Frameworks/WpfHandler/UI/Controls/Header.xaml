@@ -57,12 +57,12 @@ limitations under the License.-->
                              Opacity="1"/>
                 </Canvas>
 
-                <Label x:Name="lable"
+                <Label x:Name="label"
                        Margin="0,-10"
                        VerticalContentAlignment="Center"
                        VerticalAlignment="Center"
                        IsHitTestVisible="False"
-                       Content="{Binding Lable}" 
+                       Content="{Binding Label}" 
                        Grid.Column="1"
                        FontWeight="{Binding FontWeight, ElementName=main}"
                        FontSize="{Binding FontSize, ElementName=main}"

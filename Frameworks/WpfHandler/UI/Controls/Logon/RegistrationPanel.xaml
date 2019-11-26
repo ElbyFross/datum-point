@@ -43,53 +43,53 @@ limitations under the License.-->
 
             <!--Login field-->
             <local:FlatTextBox x:Name="regLoginField"
-                                   Lable="Login *" 
+                                   Label="Login *" 
                                    Background="Transparent"
                                    Text="login@mail.com"
-                                   LableWidth="120"
+                                   LabelWidth="120"
                                    FontSize="15"/>
 
             <!--Password field-->
             <local:FlatPasswordBox x:Name="regPasswordField"
-                                   Lable="Password *" 
+                                   Label="Password *" 
                                    Background="Transparent" 
                                    Text="password"
-                                   LableWidth="120"
+                                   LabelWidth="120"
                                    FontSize="15"/>
 
             <!--Password field-->
             <local:FlatPasswordBox x:Name="regPasswordField2"
-                                   Lable="Repeat passord *" 
+                                   Label="Repeat passord *" 
                                    Background="Transparent"
                                    Text="password"
-                                   LableWidth="120"
+                                   LabelWidth="120"
                                    FontSize="15"/>
 
             <!--First name-->
             <local:FlatTextBox x:Name="regFNameField"
-                                   Lable="First name *" 
+                                   Label="First name *" 
                                    Background="Transparent"
                                    Text=""
-                                   LableWidth="120"
+                                   LabelWidth="120"
                                    FontSize="15"/>
 
             <!--Optional middle name-->
             <local:FlatTextBox x:Name="regMNameField"
-                                   Lable="Middle name" 
+                                   Label="Middle name" 
                                    Background="Transparent"
                                    Text=""
-                                   LableWidth="120"
+                                   LabelWidth="120"
                                    FontSize="15"/>
 
             <!--Last name-->
             <local:FlatTextBox x:Name="regLNameField"
-                                   Lable="Last name *" 
+                                   Label="Last name *" 
                                    Background="Transparent"
                                    Text=""
-                                   LableWidth="120"
+                                   LabelWidth="120"
                                    FontSize="15"/>
 
-            <!--Tip lable-->
+            <!--Tip label-->
             <Label Grid.Column="0" 
                 FontSize="{Binding FontSize}" 
                 IsHitTestVisible="False"
@@ -108,7 +108,7 @@ limitations under the License.-->
 
                 <!--Back to login button-->
                 <local:FlatButton x:Name="regBack"
-                                      Lable="Back"  
+                                      Label="Back"  
                                       Background="Transparent"
                                       HorizontalAlignment="Left" 
                                       FontSize="15"
@@ -117,7 +117,7 @@ limitations under the License.-->
 
                 <!--Continue registration button-->
                 <local:FlatButton x:Name="regContinue"
-                                      Lable="Continue" 
+                                      Label="Continue" 
                                       Background="Transparent"
                                       HorizontalAlignment="Right" 
                                       FontSize="15"

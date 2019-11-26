@@ -156,10 +156,10 @@ namespace WpfHandler.UI.Controls
                         // React on mouse focusing
                         UI.MouseEnter += delegate (object sender, MouseEventArgs e)
                         {
-                            // Set logs to debug lable.
-                            if (DebugLable != null)
+                            // Set logs to debug label.
+                            if (DebugLabel != null)
                             {
-                                DebugLable.Content = "Selected: " + direction + " " + x + "," + y;
+                                DebugLabel.Content = "Selected: " + direction + " " + x + "," + y;
                             }
 
                             // Drop previous completed status.
@@ -211,9 +211,9 @@ namespace WpfHandler.UI.Controls
                         // Delegate that will be called when mouse leave active border.
                         UI.MouseLeave += delegate (object sender, MouseEventArgs e)
                         {
-                            if (DebugLable != null)
+                            if (DebugLabel != null)
                             {
-                                DebugLable.Content = "Leaved: " + direction + " " + x + "," + y;
+                                DebugLabel.Content = "Leaved: " + direction + " " + x + "," + y;
                             }
 
                             // Disable visibility.
@@ -268,9 +268,9 @@ namespace WpfHandler.UI.Controls
             protected Canvas _UI;
 
             /// <summary>
-            /// Lable that will be used to debug logs.
+            /// Label that will be used to debug logs.
             /// </summary>
-            public Label DebugLable { get; set; }
+            public Label DebugLabel { get; set; }
 
 
             /// <summary>
@@ -595,7 +595,7 @@ namespace WpfHandler.UI.Controls
                 var activeBackplate = new ActiveBorder()
                 {
                     Parent = grid,
-                    //DebugLable = debugLog,
+                    //DebugLabel = debugLog,
                     direction = ActiveBorder.Direction.Horizontal,
                     x = startX,
                     y = startY,
