@@ -3,12 +3,41 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
+using WpfHandler.UI.Controls;
 
 namespace WpfHandler.UI.AutoLayout.Configuration
 {
-    public class ContentAttribute : GUIContentAttribute, IGUIElement
+    public class ContentAttribute : GUIContentAttribute
     {
-        public UI.Controls.ILabel BindedLabel { get; protected set; }
+        /// <summary>
+        /// Return new attribute instance with None content.
+        /// </summary>
+        public static ContentAttribute Empty
+        {
+            get
+            {
+                return new ContentAttribute()
+                {
+                    Content = GUIContent.None
+                };
+            }
+        }
+
+        /// <summary>
+        /// Instiniated control with a label.
+        /// </summary>
+        public ILabel BindedLabel { get; protected set; }
+
+        /// <summary>
+        /// Member info that will be used to auto generation of the field's label content.
+        /// </summary>
+        public MemberInfo BindedMember { get; protected set; }
+
+        /// <summary>
+        /// Instiniate new atribute with null GUI content.
+        /// </summary>
+        public ContentAttribute() : base() { }
 
         /// <summary>
         /// Auto initialize content with shared title value.
@@ -33,8 +62,7 @@ namespace WpfHandler.UI.AutoLayout.Configuration
             string defaultTitle,
             string defaultDescription,
             string decriptionLocalizationResourseKey) :
-            base(defaultTitle, defaultDescription, decriptionLocalizationResourseKey)
-        { }
+            base(defaultTitle, defaultDescription, decriptionLocalizationResourseKey) { }
 
         /// <summary>
         /// Initialize all allowed fields.
@@ -48,37 +76,44 @@ namespace WpfHandler.UI.AutoLayout.Configuration
             string defaultDescription,
             string titleLocalizationResourseKey,
             string decriptionLocalizationResourseKey) :
-            base(defaultTitle, defaultDescription, titleLocalizationResourseKey, decriptionLocalizationResourseKey)
-        { }
+            base(defaultTitle, defaultDescription, titleLocalizationResourseKey, decriptionLocalizationResourseKey) { }
 
+        /// <summary>
+        /// Callback that will occurs in case of updating of the language dictionaries.
+        /// </summary>
         public override void LanguagesDictionariesUpdated()
         {
-            throw new NotImplementedException();
+            // Updating label.
+            BindedLabel.Label = Content.GetTitle(BindedMember);
         }
 
         /// <summary>
         /// Connecting instiniated control with label to localization updates.
         /// </summary>
-        /// <param name="layer">Current layout layer.</param>
-        /// <param name="args">Must contains ILabel object reference.</param>
-        public void OnGUI(ref LayoutLayer layer, params object[] args)
+        /// <param name="lable">UI control that has a lable to content bridging.</param>
+        public void BindToLable(ILabel lable)
         {
-            // Intiniated label.
-            UI.Controls.ILabel label = null;
-            foreach(object obj in args)
-            {
-                // Check if argument is label.
-                if(obj is UI.Controls.ILabel bufer)
-                {
-                    label = bufer;
-                    break;
-                }
-            }
+            // Forwarding request.
+            BindToLable(lable, null);
+        }
+
+        /// <summary>
+        /// Connecting instiniated control with label to localization updates.
+        /// </summary>
+        /// <param name="lable">UI control that has a lable to content bridging.</param>
+        /// <param name="sourceMember">
+        /// Member infor that could be used as source for auto generated 
+        /// title in case if GUIContent not provided in resources.</param>
+        public void BindToLable(ILabel lable, MemberInfo sourceMember)
+        {
+            // Store shared references as binded.
+            BindedLabel = lable;
+            BindedMember = sourceMember;
 
             // Throw exception if control not shared.
-            if (label == null) 
+            if (BindedLabel == null) 
                 throw new NotSupportedException( "Require `" + 
-                    typeof(UI.Controls.ILabel).FullName + "` UI control shared via args[].");
+                    typeof(ILabel).FullName + "` UI control shared via args[].");
 
             // Udate content.
             LanguagesDictionariesUpdated();

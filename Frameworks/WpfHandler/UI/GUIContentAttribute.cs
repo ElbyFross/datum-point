@@ -32,6 +32,14 @@ namespace WpfHandler.UI
         public GUIContent Content { get; set; }
 
         /// <summary>
+        /// Instiniate new atribute with null GUI content.
+        /// </summary>
+        public GUIContentAttribute() : base()
+        {
+            Content = null;
+        }
+
+        /// <summary>
         /// Auto initialize content with shared title value.
         /// </summary>
         /// <param name="title">Title that will be showed up into the label.</param>

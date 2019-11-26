@@ -35,27 +35,19 @@ namespace WpfHandler.UI
 
         /// <summary>
         /// Empty content.
+        /// Can't change none state after instiniation.
         /// </summary>
         public static GUIContent None
         {
             get
             {
                 // Create new instance if not created yet.
-                if(_None == null)
+                return new GUIContent()
                 {
-                    _None = new GUIContent()
-                    {
-                        _isNone = true // Mark as none.
-                    };
-                }
-                return _None;
+                    _isNone = true // Mark as none.
+                };
             }
         }
-
-        /// <summary>
-        /// Bufer that contains instiniated none contnent.
-        /// </summary>
-        private static GUIContent _None;
 
         #region Public members
         /// <summary>
@@ -319,7 +311,7 @@ namespace WpfHandler.UI
             if (!Char.IsUpper(firstSymbol))
             {
                 var upperEntrySymbol = Char.ToUpper(firstSymbol); // Get up case symbool.
-                memberName = upperEntrySymbol + memberName.Substring(1, memberName.Length - 2); // Replace symbol.
+                memberName = upperEntrySymbol + memberName.Substring(1, memberName.Length - 1); // Replace symbol.
             }
 
             // Bufers.
@@ -332,10 +324,11 @@ namespace WpfHandler.UI
                 var c = memberName[i];
 
                 // Add space before new word.
-                if (Char.IsUpper(c) && i < length - 2)
+                if (Char.IsUpper(c) && i < length - 1)
                 {
                     // If next symbol has no up case.
-                    if (!Char.IsUpper(memberName[i + 1]))
+                    if (!Char.IsUpper(memberName[i + 1]) &&
+                        i > 0 )
                     {
                         result += " ";
                     }

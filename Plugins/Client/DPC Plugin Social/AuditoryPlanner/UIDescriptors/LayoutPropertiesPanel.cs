@@ -27,9 +27,10 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
     public class LayoutPropertiesPanel : UIDescriptor
     {
         [Header("Test header", "testheader")]
-        public string testString = "field one";
+        public string testString2 = "field one";
 
         [Order(2)]
+        [Content("TEST CUSTOM")]
         public string TestStringProp { get; set; } = "prop test 2";
 
         public float testFloat = 4;

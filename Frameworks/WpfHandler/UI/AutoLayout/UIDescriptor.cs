@@ -21,7 +21,7 @@ using System.Windows;
 using System.Windows.Markup;
 using System.Reflection;
 using System.Windows.Controls;
-using WpfHandler.UI.AutoLayout;
+using WpfHandler.UI.AutoLayout.Configuration;
 
 namespace WpfHandler.UI.AutoLayout
 {
@@ -90,9 +90,6 @@ namespace WpfHandler.UI.AutoLayout
                 #endregion
 
 
-                #region Spawn field to UI
-                // Spawn UI field relative to member type.
-
                 #region Defining UI field type
                 // Check if default control was overrided by custom one.
                 var customControlDesc = member.GetCustomAttribute<Configuration.CustomControlAttribute>();
@@ -122,6 +119,32 @@ namespace WpfHandler.UI.AutoLayout
 
                     // Initialize control.
                     control.OnGUI(ref activeLayer, this, member);
+                    #endregion
+
+                    #region Set prefix label
+                    // Is spawned elelment has a label.
+                    if (control is UI.Controls.ILabel label)
+                    {
+                        // Instiniating handle that will provide managmend of the control.
+                        ContentAttribute localizationHandler = null;
+
+                        // Try to get described one.
+                        if(UniformDataOperator.AttributesHandler.
+                            TryToGetAttribute<ContentAttribute>
+                            (member, out ContentAttribute attribute))
+                        {
+                            // Buferize if found.
+                            localizationHandler = attribute;
+                        }
+                        else
+                        {
+                            // Initialize new one.
+                            localizationHandler = ContentAttribute.Empty;
+                        }
+
+                        // Binding spawned element to the conent.
+                        localizationHandler.BindToLable(label, member);
+                    }
                     #endregion
 
                     #region Perform Layout options
@@ -192,7 +215,6 @@ namespace WpfHandler.UI.AutoLayout
                         subDesc.BindTo((Panel)activeLayer.root);
                     }
                 }
-                #endregion
             }
         }
 
