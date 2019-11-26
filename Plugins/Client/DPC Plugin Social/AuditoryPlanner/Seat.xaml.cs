@@ -228,7 +228,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
         {
             if (storyboard != null) storyboard.Stop();
 
-            storyboard = WpfHandler.UI.Animations.Float.StartStoryboard(
+            storyboard = WpfHandler.UI.Animations.FloatAnimation.StartStoryboard(
                 this,
                 onFocusOverlay.Name,
                 new PropertyPath(Rectangle.OpacityProperty),
@@ -246,7 +246,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
         {
             if (storyboard != null) storyboard.Stop();
 
-            storyboard = WpfHandler.UI.Animations.Float.StartStoryboard(
+            storyboard = WpfHandler.UI.Animations.FloatAnimation.StartStoryboard(
                 this,
                 onFocusOverlay.Name,
                 new PropertyPath(Rectangle.OpacityProperty),

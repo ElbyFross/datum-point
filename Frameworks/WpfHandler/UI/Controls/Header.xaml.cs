@@ -27,16 +27,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Reflection;
-using WpfHandler.UI.ECS;
 using WpfHandler.UI.AutoLayout;
-using WpfHandler.UI.AutoLayout.Generic;
 
 namespace WpfHandler.UI.Controls
 {
     /// <summary>
     /// Interaction logic for Header.xaml
     /// </summary>
-    [AutoLayout.Attributes.Configuration.TypesCompatibleAttribute(typeof(bool))]
+    [AutoLayout.Configuration.TypesCompatibleAttribute(typeof(bool))]
     public partial class Header : UserControl, IGUIField, ILable
     {
         #region Dependency properties
@@ -174,7 +172,7 @@ namespace WpfHandler.UI.Controls
         /// <param name="args">Must contains: @UIDescriptor and @MemberInfo</param>
         public void OnGUI(ref LayoutLayer layer, params object[] args)
         {
-            new AutoLayout.Attributes.Layout.BeginVerticalGroupAttribute().OnGUI(ref layer, args);
+            new AutoLayout.Configuration.BeginVerticalGroupAttribute().OnGUI(ref layer, args);
 
             // Find required referendes.
             UIDescriptor desc = null;

@@ -30,8 +30,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfHandler.UI.AutoLayout;
-using WpfHandler.UI.ECS;
-using WpfHandler.UI.AutoLayout.Generic;
 
 namespace WpfHandler.UI.AutoLayout
 {
@@ -233,7 +231,7 @@ namespace WpfHandler.UI.AutoLayout
 
                     #region Performing all existing descriptors.
                     // Trying to find descriptor to types binding.
-                    var bindingDescriptors = type.GetCustomAttributes<Attributes.Configuration.TypesCompatibleAttribute>();
+                    var bindingDescriptors = type.GetCustomAttributes<Configuration.TypesCompatibleAttribute>();
 
                     foreach (var desc in bindingDescriptors)
                     {

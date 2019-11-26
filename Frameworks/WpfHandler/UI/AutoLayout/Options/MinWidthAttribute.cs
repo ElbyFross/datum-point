@@ -17,24 +17,30 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using WpfHandler.UI.AutoLayout;
-using WpfHandler.UI.AutoLayout.Controls;
+using WpfHandler.UI.Controls;
 
-namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
+namespace WpfHandler.UI.AutoLayout.Options
 {
     /// <summary>
-    /// Class that describe UI member of Auditory members panel.
+    /// Define min width of the GUI element.
     /// </summary>
-    public class EditingModesPanel : UIDescriptor
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
+    public class MinWidthAttribute : Attribute, IGUILayoutOption, ILayoutSize
     {
-        public enum EditingModes
-        { 
-            Normal,
-            Hide,
-            Block
-        }
+        /// <summary>
+        /// Value that will be used in the element's propeties.
+        /// </summary>
+        public double Size { get; set; } = double.NaN;
 
-        [HeaderAttribute("MODES", "p_podshyvalov_shemaEditor_editingModesPanel_Header")]
-        public EditingModes mode;
+        /// <summary>
+        /// Define min width of the GUI element.
+        /// </summary>
+        /// <param name="element">Shared UI element.</param>
+        public void ApplyLayoutOption(FrameworkElement element)
+        {
+            element.MinWidth = Size;
+        }
     }
 }

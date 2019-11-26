@@ -12,29 +12,18 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WpfHandler.UI.AutoLayout;
-using WpfHandler.UI.AutoLayout.Controls;
+using System.Windows.Markup;
 
-namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
+namespace WpfHandler.UI.AutoLayout
 {
     /// <summary>
-    /// Class that describe UI member of Auditory members panel.
+    /// Define attribute like one that operate with layout layers.
     /// </summary>
-    public class EditingModesPanel : UIDescriptor
+    public interface ILayerAttribute : IGUIElement
     {
-        public enum EditingModes
-        { 
-            Normal,
-            Hide,
-            Block
-        }
-
-        [HeaderAttribute("MODES", "p_podshyvalov_shemaEditor_editingModesPanel_Header")]
-        public EditingModes mode;
+        /// <summary>
+        /// Layer that opereted into the handler.
+        /// </summary>
+        LayoutLayer Layer { get; }
     }
 }

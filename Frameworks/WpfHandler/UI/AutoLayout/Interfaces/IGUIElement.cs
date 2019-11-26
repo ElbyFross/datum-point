@@ -13,25 +13,25 @@
 //limitations under the License.
 
 using System;
+using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WpfHandler.UI.AutoLayout.Configuration;
-using WpfHandler.UI.AutoLayout.Controls;
-using WpfHandler.UI.AutoLayout.Options;
-using WpfHandler.UI.AutoLayout;
 
-namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
+namespace WpfHandler.UI.AutoLayout
 {
-    public class LayoutPropertiesPanel : UIDescriptor
+    /// <summary>
+    /// Implementing of that interface allow to modify current layout during calling.
+    /// </summary>
+    public interface IGUIElement
     {
-        [Header("Test header", "testheader")]
-        public string testString = "field one";
-
-        [Order(2)]
-        public string TestStringProp { get; set; } = "prop test 2";
-
-        public float testFloat = 4;
+        /// <summary>
+        /// Modify current layer's layout according to GUI element requirments.
+        /// Calls once during UI spawn.
+        /// </summary>
+        /// <param name="layer">Target GUI layer.</param>
+        /// <param name="args">Shared arguments.</param>
+        void OnGUI(ref LayoutLayer layer, params object[] args);
     }
 }

@@ -54,53 +54,53 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UI\Animations\Blur.cs" />
-    <Compile Include="UI\Animations\Float.cs" />
+    <Compile Include="UI\Effects\BlurEffect.cs" />
+    <Compile Include="UI\Animations\FloatAnimation.cs" />
     <Compile Include="UI\Animations\GridLengthAnimation.cs" />
-    <Compile Include="UI\Animations\Object.cs" />
-    <Compile Include="UI\Animations\Thinkness.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Layout\OrderAttribute.cs" />
+    <Compile Include="UI\Animations\ObjectAnimation.cs" />
+    <Compile Include="UI\Animations\ThinknessAnimation.cs" />
+    <Compile Include="UI\AutoLayout\Configuration\OrderAttribute.cs" />
     <Compile Include="UI\Controls\AutoCollection.xaml.cs">
       <DependentUpon>AutoCollection.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\AutoLayout\Attributes\Layout\BeginHorizontalGroupAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Layout\BeginVerticalGroupAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Configuration\CustomControlAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Layout\EndGroupAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Elements\HeaderAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Layout\HideInInspectorAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Elements\LabelAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Options\BackgroundAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Options\FontSizeAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Options\ForegroundAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Options\HeightAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Options\HorizontalAlignAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Options\MaxHeightAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Options\MaxWidthAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Options\MinHeightAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Options\MinWidthAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Options\OrientationAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Options\StyleAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Options\VerticalAlignAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Options\WidthAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Elements\SpaceAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Attributes\Configuration\TypesCompatibleAttribute.cs" />
-    <Compile Include="UI\AutoLayout\AutoLayoutVeiw.xaml.cs">
+    <Compile Include="UI\AutoLayout\Configuration\BeginHorizontalGroupAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Configuration\BeginVerticalGroupAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Configuration\CustomControlAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Configuration\EndGroupAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Controls\HeaderAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Configuration\HideInInspectorAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Controls\LabelAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Options\BackgroundAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Options\FontSizeAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Options\ForegroundAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Options\HeightAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Options\HorizontalAlignAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Options\MaxHeightAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Options\MaxWidthAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Options\MinHeightAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Options\MinWidthAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Options\OrientationAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Options\StyleAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Options\VerticalAlignAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Options\WidthAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Controls\SpaceAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Configuration\TypesCompatibleAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Controls\AutoLayoutVeiw.xaml.cs">
       <DependentUpon>AutoLayoutVeiw.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\ECS\ColorAttribute.cs" />
-    <Compile Include="UI\AutoLayout\GUIContent.cs" />
-    <Compile Include="UI\AutoLayout\Generic\IGUIElement.cs" />
-    <Compile Include="UI\AutoLayout\Generic\IGUILayoutOption.cs" />
-    <Compile Include="UI\ECS\ILable.cs" />
-    <Compile Include="UI\AutoLayout\Generic\Layers\ILayerAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Generic\Layers\ILayerBeginAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Generic\Layers\ILayerEndAttribute.cs" />
-    <Compile Include="UI\AutoLayout\Generic\IGUIField.cs" />
-    <Compile Include="UI\ECS\ILayoutOrientation.cs" />
-    <Compile Include="UI\ECS\ILayoutSize.cs" />
-    <Compile Include="UI\ECS\ISelectableControl.cs" />
-    <Compile Include="UI\ECS\LocalizableContentAttribute.cs" />
+    <Compile Include="UI\ColorAttribute.cs" />
+    <Compile Include="UI\GUIContent.cs" />
+    <Compile Include="UI\AutoLayout\Interfaces\IGUIElement.cs" />
+    <Compile Include="UI\AutoLayout\Interfaces\IGUILayoutOption.cs" />
+    <Compile Include="UI\Controls\ILable.cs" />
+    <Compile Include="UI\AutoLayout\Interfaces\Layers\ILayerAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Interfaces\Layers\ILayerBeginAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Interfaces\Layers\ILayerEndAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Interfaces\IGUIField.cs" />
+    <Compile Include="UI\Controls\ILayoutOrientation.cs" />
+    <Compile Include="UI\Controls\ILayoutSize.cs" />
+    <Compile Include="UI\Controls\ISelectableControl.cs" />
+    <Compile Include="Dictionaries\LocalizableContentAttribute.cs" />
     <Compile Include="UI\AutoLayout\LayoutHandler.cs" />
     <Compile Include="UI\AutoLayout\LayoutLayer.cs" />
     <Compile Include="UI\AutoLayout\UIDescriptor.cs" />
@@ -164,7 +164,7 @@
       <DependentUpon>TogglesGroup.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Effects\RectBlurEffect.cs" />
-    <Compile Include="UI\ECS\GUIContentAttribute.cs" />
+    <Compile Include="UI\GUIContentAttribute.cs" />
     <Compile Include="UI\Controls\TextFieldControl.cs" />
     <Page Include="UI\Styles\Thems\base.theme.blueTheme.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -188,7 +188,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\AutoLayout\AutoLayoutVeiw.xaml">
+    <Page Include="UI\AutoLayout\Controls\AutoLayoutVeiw.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

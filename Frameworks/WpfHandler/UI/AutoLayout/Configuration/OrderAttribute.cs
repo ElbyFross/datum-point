@@ -17,21 +17,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WpfHandler.UI.AutoLayout.Configuration;
-using WpfHandler.UI.AutoLayout.Controls;
-using WpfHandler.UI.AutoLayout.Options;
-using WpfHandler.UI.AutoLayout;
+using System.ComponentModel;
 
-namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
+namespace WpfHandler.UI.AutoLayout.Configuration
 {
-    public class LayoutPropertiesPanel : UIDescriptor
+    /// <summary>
+    /// Defines order of member into auto-generated UI.
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field,
+    Inherited = true, AllowMultiple = false)]
+    [ImmutableObject(true)]
+    public sealed class OrderAttribute : Attribute
     {
-        [Header("Test header", "testheader")]
-        public string testString = "field one";
-
-        [Order(2)]
-        public string TestStringProp { get; set; } = "prop test 2";
-
-        public float testFloat = 4;
+        private readonly int order;
+        public int Order { get { return order; } }
+        public OrderAttribute(int order) { this.order = order; }
     }
 }

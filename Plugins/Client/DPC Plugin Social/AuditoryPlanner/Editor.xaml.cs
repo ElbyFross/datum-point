@@ -135,7 +135,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
             //    System.Windows.Media.Animation.FillBehavior.HoldEnd);
 
             // Activate backplate
-            WpfHandler.UI.Animations.Float.StartStoryboard(
+            WpfHandler.UI.Animations.FloatAnimation.StartStoryboard(
                 this,
                 helpOverlayBackplate.Name,
                 new PropertyPath(Control.OpacityProperty),
@@ -144,7 +144,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
                 0, 0.6f);
 
             // Activate UI.
-            WpfHandler.UI.Animations.Float.StartStoryboard(
+            WpfHandler.UI.Animations.FloatAnimation.StartStoryboard(
                 this,
                 helpOverlay.Name,
                 new PropertyPath(Control.OpacityProperty),
@@ -210,7 +210,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
             //    workspace, duration, new TimeSpan(), null);
 
             // Activate backplate
-            WpfHandler.UI.Animations.Float.StartStoryboard(
+            WpfHandler.UI.Animations.FloatAnimation.StartStoryboard(
                 this,
                 helpOverlayBackplate.Name,
                 new PropertyPath(Control.OpacityProperty),
@@ -219,7 +219,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
                 0.6f, 0);
 
             // Activate UI.
-            WpfHandler.UI.Animations.Float.StartStoryboard(
+            WpfHandler.UI.Animations.FloatAnimation.StartStoryboard(
                 this,
                 helpOverlay.Name,
                 new PropertyPath(Control.OpacityProperty),
@@ -339,7 +339,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
 
             //return;
 
-            var view = new WpfHandler.UI.AutoLayout.AutoLayoutVeiw();
+            var view = new WpfHandler.UI.AutoLayout.Controls.AutoLayoutVeiw();
             controlPanel.Children.Add(view);
             
             view.Descriptor = new UIDescriptors.LayoutPropertiesPanel();

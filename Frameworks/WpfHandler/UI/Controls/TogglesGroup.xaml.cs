@@ -27,8 +27,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfHandler.UI.AutoLayout;
-using WpfHandler.UI.ECS;
-using WpfHandler.UI.ECS;
 
 namespace WpfHandler.UI.Controls
 {

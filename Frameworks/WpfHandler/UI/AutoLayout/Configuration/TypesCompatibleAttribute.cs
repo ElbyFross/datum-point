@@ -17,24 +17,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WpfHandler.UI.AutoLayout;
-using WpfHandler.UI.AutoLayout.Controls;
 
-namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
+namespace WpfHandler.UI.AutoLayout.Configuration
 {
     /// <summary>
-    /// Class that describe UI member of Auditory members panel.
+    /// Defines the types the compatible with the member.
     /// </summary>
-    public class EditingModesPanel : UIDescriptor
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Struct, AllowMultiple = true, Inherited = true)]
+    public class TypesCompatibleAttribute : Attribute
     {
-        public enum EditingModes
-        { 
-            Normal,
-            Hide,
-            Block
-        }
+        /// <summary>
+        /// Type that compatible with the member.
+        /// </summary>
+        public Type[] CompatibleWith;
 
-        [HeaderAttribute("MODES", "p_podshyvalov_shemaEditor_editingModesPanel_Header")]
-        public EditingModes mode;
+        /// <summary>
+        /// Configurating types compatible with the memeber.
+        /// </summary>
+        /// <param name="types">COmpatible types.</param>
+        public TypesCompatibleAttribute(params Type[] types)
+        {
+            CompatibleWith = types ?? new Type[0];
+        }
     }
 }

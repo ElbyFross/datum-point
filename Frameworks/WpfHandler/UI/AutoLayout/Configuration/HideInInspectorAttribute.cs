@@ -17,21 +17,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WpfHandler.UI.AutoLayout.Configuration;
-using WpfHandler.UI.AutoLayout.Controls;
-using WpfHandler.UI.AutoLayout.Options;
-using WpfHandler.UI.AutoLayout;
 
-namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
+namespace WpfHandler.UI.AutoLayout.Configuration
 {
-    public class LayoutPropertiesPanel : UIDescriptor
-    {
-        [Header("Test header", "testheader")]
-        public string testString = "field one";
-
-        [Order(2)]
-        public string TestStringProp { get; set; } = "prop test 2";
-
-        public float testFloat = 4;
-    }
+    /// <summary>
+    /// Exclude member from auto-builded inspector.
+    /// </summary>
+    [AttributeUsage(
+        AttributeTargets.Class | AttributeTargets.Struct | 
+        AttributeTargets.Field | AttributeTargets.Property,
+        AllowMultiple = false, Inherited = true)]
+    public class HideInInspectorAttribute : Attribute { }
 }

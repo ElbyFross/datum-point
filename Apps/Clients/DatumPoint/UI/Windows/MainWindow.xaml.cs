@@ -588,7 +588,7 @@ namespace DatumPoint.UI.Windows
             }
 
             // Enable panel.
-            WpfHandler.UI.Animations.Float.StartStoryboard(this,
+            WpfHandler.UI.Animations.FloatAnimation.StartStoryboard(this,
                 profileContextPanel.Name,
                  new PropertyPath(Control.OpacityProperty),
                 new TimeSpan(0, 0, 0, 0, 200),
@@ -609,7 +609,7 @@ namespace DatumPoint.UI.Windows
             //logonScreen.IsHitTestVisible = false;
 
             // Hide panel.
-            WpfHandler.UI.Animations.Thinkness.StartStoryboard(
+            WpfHandler.UI.Animations.ThinknessAnimation.StartStoryboard(
                 this,
                 logonScreen.Name,
                 new PropertyPath(Control.MarginProperty),
@@ -621,7 +621,7 @@ namespace DatumPoint.UI.Windows
             await Task.Delay(new TimeSpan(0, 0, 0, 0, 250));
 
             // Hide curtain
-            WpfHandler.UI.Animations.Float.StartStoryboard(
+            WpfHandler.UI.Animations.FloatAnimation.StartStoryboard(
                 this,
                 curtain.Name,
                 new PropertyPath(Control.OpacityProperty),
@@ -639,7 +639,7 @@ namespace DatumPoint.UI.Windows
             logonScreen.Clear();
 
             // Hide panel.
-            WpfHandler.UI.Animations.Thinkness.StartStoryboard(
+            WpfHandler.UI.Animations.ThinknessAnimation.StartStoryboard(
                 this,
                 logonScreen.Name,
                 new PropertyPath(Control.MarginProperty),
@@ -651,7 +651,7 @@ namespace DatumPoint.UI.Windows
             //await Task.Delay(new TimeSpan(0, 0, 0, 0, 250));
 
             // Hide curtain
-            WpfHandler.UI.Animations.Float.StartStoryboard(
+            WpfHandler.UI.Animations.FloatAnimation.StartStoryboard(
                 this,
                 curtain.Name,
                 new PropertyPath(Control.OpacityProperty),
@@ -671,7 +671,7 @@ namespace DatumPoint.UI.Windows
             profileContextPanel.IsHitTestVisible = false;
 
             // Hide panel
-            WpfHandler.UI.Animations.Float.StartStoryboard(this,
+            WpfHandler.UI.Animations.FloatAnimation.StartStoryboard(this,
                 profileContextPanel.Name,
                  new PropertyPath(Control.OpacityProperty),
                 new TimeSpan(0, 0, 0, 0, 200),

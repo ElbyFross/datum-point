@@ -21,8 +21,7 @@ using System.Windows;
 using System.Windows.Markup;
 using System.Reflection;
 using System.Windows.Controls;
-using WpfHandler.UI.ECS;
-using WpfHandler.UI.AutoLayout.Generic;
+using WpfHandler.UI.AutoLayout;
 
 namespace WpfHandler.UI.AutoLayout
 {
@@ -64,7 +63,7 @@ namespace WpfHandler.UI.AutoLayout
                     continue;
                 
                 // Skip if member excluded from instpector.
-                if (member.GetCustomAttribute<Attributes.Layout.HideInInspectorAttribute>() != null)
+                if (member.GetCustomAttribute<Configuration.HideInInspectorAttribute>() != null)
                     continue;
                 #endregion
 
@@ -96,7 +95,7 @@ namespace WpfHandler.UI.AutoLayout
 
                 #region Defining UI field type
                 // Check if default control was overrided by custom one.
-                var customControlDesc = member.GetCustomAttribute<Attributes.Configuration.CustomControlAttribute>();
+                var customControlDesc = member.GetCustomAttribute<Configuration.CustomControlAttribute>();
                 if (customControlDesc != null && // Is overriding requested?
                     customControlDesc.ControlType != null && // Is target type is not null?
                     customControlDesc.ControlType.IsSubclassOf(typeof(IGUIField))) // Is target type has correct inherience
@@ -147,11 +146,11 @@ namespace WpfHandler.UI.AutoLayout
                     {
                         #region Configurating layout
                         // Add horizontal shift for sub descriptor.
-                        new Attributes.Layout.BeginHorizontalGroupAttribute().OnGUI(ref activeLayer);
-                        new Attributes.Elements.SpaceAttribute(10).OnGUI(ref activeLayer);
+                        new Configuration.BeginHorizontalGroupAttribute().OnGUI(ref activeLayer);
+                        new Controls.SpaceAttribute(10).OnGUI(ref activeLayer);
 
                         // Add vertical group.
-                        var vertGroup = new Attributes.Layout.BeginVerticalGroupAttribute();
+                        var vertGroup = new Configuration.BeginVerticalGroupAttribute();
                         vertGroup.OnGUI(ref activeLayer);
                         #endregion
 

@@ -166,7 +166,7 @@ namespace WpfHandler.UI.Controls
                             isCompleted = false;
 
                             // Enable visibility.
-                            WpfHandler.UI.Animations.Float.StartStoryboard(
+                            WpfHandler.UI.Animations.FloatAnimation.StartStoryboard(
                                 Parent,
                                 _UI,
                                 new PropertyPath(Control.OpacityProperty),
@@ -217,7 +217,7 @@ namespace WpfHandler.UI.Controls
                             }
 
                             // Disable visibility.
-                            WpfHandler.UI.Animations.Float.StartStoryboard(
+                            WpfHandler.UI.Animations.FloatAnimation.StartStoryboard(
                                 Parent,
                                 _UI,
                                 new PropertyPath(Control.OpacityProperty),

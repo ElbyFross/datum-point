@@ -17,24 +17,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using WpfHandler.UI.AutoLayout;
-using WpfHandler.UI.AutoLayout.Controls;
 
-namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
+namespace WpfHandler.UI.AutoLayout.Options
 {
     /// <summary>
-    /// Class that describe UI member of Auditory members panel.
+    /// Define horizontal align of the GUI element.
     /// </summary>
-    public class EditingModesPanel : UIDescriptor
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
+    public class HorizontalAlignAttribute : Attribute, IGUILayoutOption
     {
-        public enum EditingModes
-        { 
-            Normal,
-            Hide,
-            Block
-        }
+        /// <summary>
+        /// Alignment that will applied to GUI element.
+        /// </summary>
+        public HorizontalAlignment Alignment { get; set; }
 
-        [HeaderAttribute("MODES", "p_podshyvalov_shemaEditor_editingModesPanel_Header")]
-        public EditingModes mode;
+        /// <summary>
+        /// Define horizontal align of the GUI element.
+        /// </summary>
+        /// <param name="element">Shared UI element.</param>
+        public void ApplyLayoutOption(FrameworkElement element)
+        {
+            element.HorizontalAlignment = Alignment;
+        }
     }
 }

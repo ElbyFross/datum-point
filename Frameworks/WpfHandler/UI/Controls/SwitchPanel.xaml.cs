@@ -156,7 +156,7 @@ namespace WpfHandler.UI.Controls
             switchPanel.Opacity = 1;
 
             // Activate opacity drop.
-            Animations.Float.StartStoryboard(
+            Animations.FloatAnimation.StartStoryboard(
                 current,
                 current.Name,
                 new PropertyPath(Control.OpacityProperty),
@@ -165,7 +165,7 @@ namespace WpfHandler.UI.Controls
                 1, 0);
 
             // Moving current UI out of grid.
-            Animations.Thinkness.StartStoryboard(
+            Animations.ThinknessAnimation.StartStoryboard(
                 current,
                 current.Name,
                 new PropertyPath(Control.MarginProperty),
@@ -186,7 +186,7 @@ namespace WpfHandler.UI.Controls
                 current.Opacity = 0;
 
                 // Activate opacity drop.
-                Animations.Float.StartStoryboard(
+                Animations.FloatAnimation.StartStoryboard(
                     switchPanel,
                     switchPanel.Name,
                     new PropertyPath(Control.OpacityProperty),

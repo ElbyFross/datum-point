@@ -12,29 +12,10 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WpfHandler.UI.AutoLayout;
-using WpfHandler.UI.AutoLayout.Controls;
-
-namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
+namespace WpfHandler.UI.AutoLayout
 {
     /// <summary>
-    /// Class that describe UI member of Auditory members panel.
+    /// Attribute that will cause end of work with current UI layer.
     /// </summary>
-    public class EditingModesPanel : UIDescriptor
-    {
-        public enum EditingModes
-        { 
-            Normal,
-            Hide,
-            Block
-        }
-
-        [HeaderAttribute("MODES", "p_podshyvalov_shemaEditor_editingModesPanel_Header")]
-        public EditingModes mode;
-    }
+    public interface ILayerEndAttribute :  ILayerAttribute { }
 }

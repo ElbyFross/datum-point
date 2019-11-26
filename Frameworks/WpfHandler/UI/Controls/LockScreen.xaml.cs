@@ -87,7 +87,7 @@ namespace WpfHandler.UI.Controls
             #region Unblock lock UI
             // Cancel button
             lockCancelButton.IsHitTestVisible = true;
-            Animations.Float.StartStoryboard(
+            Animations.FloatAnimation.StartStoryboard(
                 this, lockCancelButton.Name,
                 opacityPropertyPath,
                 lockAnimationDuration,
@@ -96,7 +96,7 @@ namespace WpfHandler.UI.Controls
 
             // Lable
             lockLable.Content = message;
-            Animations.Float.StartStoryboard(
+            Animations.FloatAnimation.StartStoryboard(
                 this, lockLable.Name,
                 opacityPropertyPath,
                 lockAnimationDuration,
@@ -107,7 +107,7 @@ namespace WpfHandler.UI.Controls
             // Blur locked elements.
             foreach (FrameworkElement c in controls)
             {
-                Animations.Blur.BlurApply(c, blurSize, lockAnimationDuration, TimeSpan.Zero, FillBehavior.HoldEnd);
+                Effects.BlurEffect.BlurApply(c, blurSize, lockAnimationDuration, TimeSpan.Zero, FillBehavior.HoldEnd);
             }
         }
 
@@ -130,7 +130,7 @@ namespace WpfHandler.UI.Controls
             #region Block lock UI
             // Cancel button
             lockCancelButton.IsHitTestVisible = false;
-            Animations.Float.StartStoryboard(this,
+            Animations.FloatAnimation.StartStoryboard(this,
                 lockCancelButton.Name,
                 opacityPropertyPath,
                 lockAnimationDuration,
@@ -138,7 +138,7 @@ namespace WpfHandler.UI.Controls
                 1, 0);
 
             // Lock lable
-            Animations.Float.StartStoryboard(this,
+            Animations.FloatAnimation.StartStoryboard(this,
                 lockLable.Name,
                 opacityPropertyPath,
                 lockAnimationDuration,
@@ -149,7 +149,7 @@ namespace WpfHandler.UI.Controls
             // Unlock elements.
             foreach (FrameworkElement c in lockedEllements)
             {
-                Animations.Blur.BlurDisable(c, lockAnimationDuration, TimeSpan.Zero);
+                Effects.BlurEffect.BlurDisable(c, lockAnimationDuration, TimeSpan.Zero);
             }
 
             // Drop buffer.

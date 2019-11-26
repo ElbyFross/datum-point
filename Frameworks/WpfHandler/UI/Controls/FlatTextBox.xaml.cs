@@ -27,16 +27,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WpfHandler.UI.ECS;
 using WpfHandler.UI.AutoLayout;
-using WpfHandler.UI.AutoLayout.Generic;
 
 namespace WpfHandler.UI.Controls
 {
     /// <summary>
     /// Interaction logic for FlatTextBox.xaml
     /// </summary>
-    [AutoLayout.Attributes.Configuration.TypesCompatibleAttribute(typeof(int), typeof(float), typeof(double), typeof(string))]
+    [AutoLayout.Configuration.TypesCompatibleAttribute(typeof(int), typeof(float), typeof(double), typeof(string))]
     public partial class FlatTextBox : TextFieldControl, IGUIField
     {
         #region Properties

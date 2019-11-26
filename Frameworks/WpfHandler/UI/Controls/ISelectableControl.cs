@@ -12,29 +12,26 @@
 //See the License for the specific language governing permissions and
 //limitations under the License.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using WpfHandler.UI.AutoLayout;
-using WpfHandler.UI.AutoLayout.Controls;
-
-namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
+namespace WpfHandler.UI.Controls
 {
     /// <summary>
-    /// Class that describe UI member of Auditory members panel.
+    /// Provides uinform way to operate selecteble elements.
     /// </summary>
-    public class EditingModesPanel : UIDescriptor
+    public interface ISelectableControl
     {
-        public enum EditingModes
-        { 
-            Normal,
-            Hide,
-            Block
-        }
+        /// <summary>
+        /// Is that elemet selected.
+        /// </summary>
+        bool Selected { get; set; }
 
-        [HeaderAttribute("MODES", "p_podshyvalov_shemaEditor_editingModesPanel_Header")]
-        public EditingModes mode;
+        /// <summary>
+        /// Group of buttons that will allow auto deselect other buttons from that group.
+        /// </summary>
+        string Group { get; set; }
+
+        /// <summary>
+        /// Is group allow few selected buttons in one group.
+        /// </summary>
+        bool MultiSelection { get; set; }
     }
 }
