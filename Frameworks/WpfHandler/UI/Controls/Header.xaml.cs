@@ -188,6 +188,7 @@ namespace WpfHandler.UI.Controls
             // Drop control sign up in case if member not shared.
             if (desc == null || member == null) return;
 
+            // TODO: connecting to the wrong member. Must connect tot ht virtual bool one.
             // Sing up this control on desctiptor events.
             desc.ControlSignUp(this, member, true);
         }

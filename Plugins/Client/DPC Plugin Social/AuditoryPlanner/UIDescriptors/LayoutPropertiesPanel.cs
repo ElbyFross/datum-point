@@ -26,6 +26,8 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
 {
     public class LayoutPropertiesPanel : UIDescriptor
     {
+        public string a = "abs";
+
         [Header("Test header", "testheader")]
         public string testString2 = "field one";
 

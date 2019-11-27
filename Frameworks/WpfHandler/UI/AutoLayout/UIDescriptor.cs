@@ -115,7 +115,7 @@ namespace WpfHandler.UI.AutoLayout
                     var control = (IGUIField)Activator.CreateInstance(controlType);
 
                     // Sing up this control on desctiptor events.
-                    ControlSignUp(control, member, true);
+                    TryToBindControl(control, this, member);
 
                     // Initialize control.
                     control.OnGUI(ref activeLayer, this, member);
@@ -412,7 +412,7 @@ namespace WpfHandler.UI.AutoLayout
             }
 
             /// <summary>
-            /// Set value to the member.
+            /// Setingt value to the member.
             /// </summary>
             /// <param name="member">PropertyInfo ot FieldInfo instance.</param>
             /// <param name="target">Object that contains member.</param>
@@ -424,6 +424,25 @@ namespace WpfHandler.UI.AutoLayout
                 {
                     if (pi != null) pi.SetValue(target, value); // Operate as property.
                     else fi.SetValue(target, value); // Operate as field.
+                }
+                else
+                {
+                    throw new NotSupportedException("SetValue can be applied only to peopreties and fields.");
+                }
+            }
+
+            /// <summary>
+            /// Getting value to the member.
+            /// </summary>
+            /// <param name="member">PropertyInfo ot FieldInfo instance.</param>
+            /// <param name="target">Object that contains member.</param>
+            public static void GetValue(MemberInfo member, object target)
+            {
+                // Trying to get specified memebers.
+                if (GetSpecifiedMemberInfo(member, out PropertyInfo pi, out FieldInfo fi))
+                {
+                    if (pi != null) pi.GetValue(target); // Operate as property.
+                    else fi.GetValue(target); // Operate as field.
                 }
                 else
                 {

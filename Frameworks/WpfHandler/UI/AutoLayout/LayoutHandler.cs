@@ -150,13 +150,15 @@ namespace WpfHandler.UI.AutoLayout
             void PropChangeCallback(IGUIField _)
             {
                 // Try to set value.
-                try { propMember.SetValue(descriptor, control.Value); } catch { };
+                try { propMember.SetValue(descriptor, control.Value); } catch(Exception ex)
+                { MessageBox.Show("Backward member binding corupted.\n\nDetails:\n" + ex.Message); }
             }
             // Instiniate UI field update callback for fields members.
             void FieldChangeCallback(IGUIField _)
             {
                 // Try to set value.
-                try { fieldMember.SetValue(descriptor, control.Value); } catch { };
+                try { fieldMember.SetValue(descriptor, control.Value); } catch(Exception ex)
+                { MessageBox.Show("Backward member binding corupted.\n\nDetails:\n" + ex.Message); }
             }
             #endregion
 
@@ -180,7 +182,7 @@ namespace WpfHandler.UI.AutoLayout
             catch { throw new NotSupportedException("@ILayoutControl could be registred only once."); }
 
             // Subscribe on value change.
-            control.ValueChanged += PropChangeCallback;
+            control.ValueChanged += handler;
             #endregion
         }
 

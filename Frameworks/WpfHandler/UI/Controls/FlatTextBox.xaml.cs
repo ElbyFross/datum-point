@@ -89,6 +89,18 @@ namespace WpfHandler.UI.Controls
             textBox.TextChanged += TextBox_TextChanged;
         }
 
+        //public override string Text
+        //{
+        //    get
+        //    {
+        //        return textBox.Text;
+        //    }
+        //    set
+        //    {
+        //        textBox.Text = value;
+        //    }
+        //}
+
         #region API
         /// <summary>
         /// Configurate GUI element and bind it to auto layout handler.
@@ -136,30 +148,33 @@ namespace WpfHandler.UI.Controls
         /// <param name="e"></param>
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            // Copying value from internal sub-control.
+            Text = textBox.Text;
+
             // Drop if the same value.
-            if (textBox.Text.Equals(textPropertyBufer))
+            if (Text.Equals(textPropertyBufer))
                 return;
 
             // Validate value.
             switch (ValueMode)
             {
                 case TextFieldControl.Mode.Int:
-                    if (!Int32.TryParse(textBox.Text, out _))
+                    if (!Int32.TryParse(Text, out _))
                     {
-                        textBox.Text = textPropertyBufer;
+                        Text = textPropertyBufer;
                     }
                     break;
 
                 case TextFieldControl.Mode.Float:
-                    if (!float.TryParse(textBox.Text, out _))
+                    if (!float.TryParse(Text, out _))
                     {
-                        textBox.Text = textPropertyBufer;
+                        Text = textPropertyBufer;
                     }
                     break;
             }
 
             // Buferize las valid value.
-            textPropertyBufer = textBox.Text;
+            textPropertyBufer = Text;
 
             // Inform autolayout handler about changes.
             ValueChanged?.Invoke(this);
@@ -176,8 +191,16 @@ namespace WpfHandler.UI.Controls
             switch (ValueMode)
             {
                 case Mode.Int:
+                    if (string.IsNullOrEmpty(Text) || // Is empty
+                        !int.TryParse(Text, out int _)) // Is invalid
+                        Text = 0.ToString();
+                    textPropertyBufer = Text;
+                    break;
+
                 case Mode.Float:
-                    Text = 0.ToString();
+                    if(string.IsNullOrEmpty(Text) || // Is empty
+                        !float.TryParse(Text, out float _)) // Is invalid
+                        Text = 0.ToString();
                     textPropertyBufer = Text;
                     break;
             }

@@ -174,7 +174,7 @@ namespace WpfHandler.UI.Controls
                     if (ValueMode != Mode.Regex)
                     {
                         // Trying to conver value to the string.
-                        Text = (string)value;
+                        Text = value.ToString();
                     }
                     else
                     {
