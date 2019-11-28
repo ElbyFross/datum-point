@@ -44,8 +44,15 @@ namespace WpfHandler.UI.AutoLayout
             // Get all memebers.
             var members = GetType().GetMembers();
 
+            // Sorting by order.
+            var orderedMembers = members.Where(f => f.GetCustomAttribute<OrderAttribute>() != null).
+                OrderBy(f => f.GetCustomAttribute<OrderAttribute>().Order);
+            // Sorting disordered members by metadata.
+            var disorderedMembers = members.Where(f => f.GetCustomAttribute<OrderAttribute>() == null).
+                OrderBy(f => f.MetadataToken).ToArray<MemberInfo>();
+
             // Sort in declaretion order.
-            members = members.OrderBy(f => f.MetadataToken).ToArray<MemberInfo>();
+            members = orderedMembers.Concat(disorderedMembers).ToArray();
 
             // Instiniate first UILayer.
             activeLayer = new LayoutLayer()

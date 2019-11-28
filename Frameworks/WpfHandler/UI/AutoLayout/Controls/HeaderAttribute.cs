@@ -28,6 +28,16 @@ namespace WpfHandler.UI.AutoLayout.Controls
     public class HeaderAttribute : GUIContentAttribute, IGUIElement
     {
         /// <summary>
+        /// Default state that will applied to the spawned UI element.
+        /// </summary>
+        public bool DefaultState { get; set; } = true;
+
+        /// <summary>
+        /// Instiniated UI element.
+        /// </summary>
+        public UI.Controls.Header BindedUI { get; protected set; }
+
+        /// <summary>
         /// Auto initialize content with shared title value.
         /// </summary>
         /// <param name="title">Title that will be showed up into the label.</param>
@@ -65,24 +75,43 @@ namespace WpfHandler.UI.AutoLayout.Controls
             string titleLocalizationResourseKey,
             string decriptionLocalizationResourseKey) :
             base(defaultTitle, defaultDescription, titleLocalizationResourseKey, decriptionLocalizationResourseKey) { }
-        
+
         /// <summary>
         /// Spawning Header UI elements un shared layer. Connecting to the shared member.
         /// </summary>
         /// <param name="layer">Target UI layer.</param>
-        /// <param name="args">Must contains: @UIDescriptor and @MemberInfo</param>
+        /// <param name="args">
+        /// Must contains: @UIDescriptor. 
+        /// @MemberInfo will excluded from array. Use UI.Controls.Header.OnGUI instead if you want to bind member to the field.</param>
         public virtual void OnGUI(ref LayoutLayer layer, params object[] args)
         {
             // Instiniate header UI.
-            var header = new UI.Controls.Header()
+            BindedUI = new UI.Controls.Header()
             {
                 GUIContent = Content
             };
 
+            // Remove reference to the member.
+            // In other case header value would connected to meber that just describe UI view.
+            for(int i = 0; i < args.Length; i++)
+            {
+                // Checking if the target argument.
+                if(args[i] is System.Reflection.MemberInfo)
+                {
+                    // Drop reference.
+                    args[i] = null;
+                    break;
+                }
+            }
+
             // Call GUI processing.
-            header.OnGUI(ref layer, args);
+            BindedUI.OnGUI(ref layer, args);
+
+            // Apply state to the element.
+            BindedUI.Active = DefaultState;
+
         }
-        
+
         /// <summary>
         /// TODO: Callback that occurs when content dictionaries are reloaded.
         /// Updating header's content.

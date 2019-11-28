@@ -49,7 +49,8 @@ namespace WpfHandler.UI.AutoLayout.Configuration
         public void OnGUI(ref LayoutLayer layer, params object[] args)
         {
             // Trying to go to the upper UI's layer.
-            _Layer = layer.GoUpper();
+            layer = layer.GoUpper();
+            _Layer = layer;
         }
     }
 }

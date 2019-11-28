@@ -26,15 +26,26 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
 {
     public class LayoutPropertiesPanel : UIDescriptor
     {
+        public string disorderedField = "s-ad2";
+
+        [Order(0)]
         public string a = "abs";
 
+        [Order(10)]
         [Header("Test header", "testheader")]
         public string testString2 = "field one";
 
-        [Order(2)]
+        [Order(20)]
         [Content("TEST CUSTOM")]
         public string TestStringProp { get; set; } = "prop test 2";
 
+        [Order(30)]
         public float testFloat = 4;
+
+
+        [Order(110)]
+        [EndGroup]
+        [Header("TEST HEADER 2", "testheader2")]
+        public float testFloat223sd = 4;
     }
 }

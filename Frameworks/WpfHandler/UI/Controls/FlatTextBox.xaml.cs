@@ -61,6 +61,9 @@ namespace WpfHandler.UI.Controls
         #endregion
 
         #region Local members
+        /// <summary>
+        /// Bufer that contains last valid stored text from textbox.
+        /// </summary>
         private string textPropertyBufer;
         #endregion
 

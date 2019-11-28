@@ -64,6 +64,11 @@ namespace WpfHandler.UI.Controls
         public MemberInfo BindedMember { get; set; }
 
         /// <summary>
+        /// Layer thst will be managed by that header.
+        /// </summary>
+        public LayoutLayer ChildLayer { get; set; }
+
+        /// <summary>
         /// Text in label field.
         /// </summary>
         public string Label
@@ -87,12 +92,23 @@ namespace WpfHandler.UI.Controls
                 {
                     listControlUi_Hided.Visibility = Visibility.Collapsed;
                     listControlUi_Showed.Visibility = Visibility.Visible;
+
+                    if (ChildLayer != null)
+                    {
+                        // Update child layer visibility.
+                        ((FrameworkElement)ChildLayer.root).Visibility = Visibility.Visible;
+                    }
                 }
                 // Activate hidded state UI.
                 else
                 {
                     listControlUi_Hided.Visibility = Visibility.Visible;
                     listControlUi_Showed.Visibility = Visibility.Collapsed;
+                    if (ChildLayer != null)
+                    {
+                        // Update child layer visibility.
+                        ((FrameworkElement)ChildLayer.root).Visibility = Visibility.Collapsed;
+                    }
                 }
             }
         }
@@ -172,29 +188,54 @@ namespace WpfHandler.UI.Controls
         /// <param name="args">Must contains: @UIDescriptor and @MemberInfo</param>
         public void OnGUI(ref LayoutLayer layer, params object[] args)
         {
-            new AutoLayout.Configuration.BeginVerticalGroupAttribute().OnGUI(ref layer, args);
-
+            #region Looking for shared data
             // Find required referendes.
             UIDescriptor desc = null;
             MemberInfo member = null;
-
+             
             // Trying to get shared properties.
             foreach(object obj in args)
             {
                 if (obj is UIDescriptor) desc = (UIDescriptor)obj;
                 if (obj is MemberInfo) member = (MemberInfo)obj;
             }
+            #endregion
 
+            #region Adding element to the GUI
             // Drop control sign up in case if member not shared.
-            if (desc == null || member == null) return;
+            if (desc == null || member == null)
+            {
+                // Adding herader to layout.
+                layer?.ApplyControl(this as FrameworkElement);
 
-            // TODO: connecting to the wrong member. Must connect tot ht virtual bool one.
-            // Sing up this control on desctiptor events.
-            desc.ControlSignUp(this, member, true);
+                // Set active as default.
+                Active = true;
+            }
+            else
+            {
+                // Connecting to the wrong member. Must connect tot ht virtual bool one.
+                // Sing up this control on desctiptor events.
+                desc.ControlSignUp(this, member, true);
+            }
+            #endregion
+
+            #region Start child managment group
+            // Starting new vertical layout group.
+            new AutoLayout.Configuration.BeginVerticalGroupAttribute().OnGUI(ref layer, args);
+
+            // Store new layer as child.
+            ChildLayer = layer;
+            #endregion
         }
 
+        /// <summary>
+        /// Occurs when layer state button was clicked.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            // Toggle current state.
             Active = !Active;
         }
     }
