@@ -49,6 +49,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
 
         [Order(30)]
         [Height(40)]
+        [LabelWidth(50)]
         public float testFloat = 4;
 
 

@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="UI\AutoLayout\Configuration\ContentAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Options\LabelWidthAttribute.cs" />
     <Compile Include="UI\Controls\LayoutSizeAttribute.cs" />
     <Compile Include="UI\Effects\BlurEffect.cs" />
     <Compile Include="UI\Animations\FloatAnimation.cs" />
