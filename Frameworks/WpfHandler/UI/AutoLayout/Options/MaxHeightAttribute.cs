@@ -27,12 +27,19 @@ namespace WpfHandler.UI.AutoLayout.Options
     /// Define max allowed height of the GUI element.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class MaxHeightAttribute : Attribute, IGUILayoutOption, ILayoutSize
+    public class MaxHeightAttribute : LayoutSizeAttribute, IGUILayoutOption
     {
         /// <summary>
-        /// Value that will be used in the element's propeties.
+        /// Default constructor.
+        /// Using auto height.
         /// </summary>
-        public double Size { get; set; } = double.NaN;
+        public MaxHeightAttribute() : base() { }
+
+        /// <summary>
+        /// Set requested maximum height as Size.
+        /// </summary>
+        /// <param name="height">Element's maximum height.</param>
+        public MaxHeightAttribute(double height) : base(height) { }
 
         /// <summary>
         /// Define max allowed height of the GUI element.

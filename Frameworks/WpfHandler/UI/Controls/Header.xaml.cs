@@ -170,6 +170,11 @@ namespace WpfHandler.UI.Controls
                 }
             }
         }
+
+        /// <summary>
+        /// Not supported.
+        /// </summary>
+        public float LabelWidth { get => throw new NotSupportedException(); set => throw new NotSupportedException(); }
         #endregion
 
         /// <summary>

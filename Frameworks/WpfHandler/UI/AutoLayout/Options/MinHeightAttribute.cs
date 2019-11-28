@@ -27,12 +27,19 @@ namespace WpfHandler.UI.AutoLayout.Options
     /// Define min height of the GUI element.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class MinHeightAttribute : Attribute, IGUILayoutOption, ILayoutSize
+    public class MinHeightAttribute : LayoutSizeAttribute, IGUILayoutOption
     {
         /// <summary>
-        /// Value that will be used in the element's propeties.
+        /// Default constructor.
+        /// Using auto height.
         /// </summary>
-        public double Size { get; set; } = double.NaN;
+        public MinHeightAttribute() : base() { }
+
+        /// <summary>
+        /// Set requested min height as Size.
+        /// </summary>
+        /// <param name="height">Element's min height.</param>
+        public MinHeightAttribute(double height) : base(height) { }
 
         /// <summary>
         /// Define min height of the GUI element.

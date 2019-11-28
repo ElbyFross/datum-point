@@ -27,12 +27,19 @@ namespace WpfHandler.UI.AutoLayout.Options
     /// Define max width of the GUI element.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class MaxWidthAttribute : Attribute, IGUILayoutOption, ILayoutSize
+    public class MaxWidthAttribute : LayoutSizeAttribute, IGUILayoutOption
     {
         /// <summary>
-        /// Value that will be used in the element's propeties.
+        /// Default constructor.
+        /// Using auto width.
         /// </summary>
-        public double Size { get; set; } = double.NaN;
+        public MaxWidthAttribute() : base() { }
+
+        /// <summary>
+        /// Set requested max height as Size.
+        /// </summary>
+        /// <param name="width">Element's maximum width.</param>
+        public MaxWidthAttribute(double width) : base(width) { }
 
         /// <summary>
         /// Define max width of the GUI element.

@@ -26,6 +26,13 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
 {
     public class LayoutPropertiesPanel : UIDescriptor
     {
+        public enum Modes
+        { 
+            Normal,
+            Advanced,
+            Pro
+        }
+
         public string disorderedField = "s-ad2";
 
         [Order(0)]
@@ -36,10 +43,12 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
         public string testString2 = "field one";
 
         [Order(20)]
+        [Space]
         [Content("TEST CUSTOM")]
         public string TestStringProp { get; set; } = "prop test 2";
 
         [Order(30)]
+        [Height(40)]
         public float testFloat = 4;
 
 
@@ -47,5 +56,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
         [EndGroup]
         [Header("TEST HEADER 2", "testheader2")]
         public float testFloat223sd = 4;
+
+        public Modes enumField;
     }
 }

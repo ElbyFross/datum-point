@@ -27,13 +27,20 @@ namespace WpfHandler.UI.AutoLayout.Options
     /// Define width of GUI element.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class WidthAttribute : Attribute, IGUILayoutOption, ILayoutSize
+    public class WidthAttribute : LayoutSizeAttribute, IGUILayoutOption
     {
         /// <summary>
-        /// Value that will be used in the element's propeties.
+        /// Default constructor.
+        /// Using auto width.
         /// </summary>
-        public double Size { get; set; } = double.NaN;
+        public WidthAttribute() : base() { }
 
+        /// <summary>
+        /// Set requested width as Size.
+        /// </summary>
+        /// <param name="width">Element's width.</param>
+        public WidthAttribute(double width) : base(width) { }
+        
         /// <summary>
         /// Define width of GUI element.
         /// </summary>

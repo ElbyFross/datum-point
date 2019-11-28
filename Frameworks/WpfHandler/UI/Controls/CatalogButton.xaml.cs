@@ -102,6 +102,11 @@ namespace WpfHandler.UI.Controls
         /// Method that will has been calling during click on button.
         /// </summary>
         public Action<object> ClickCallback { get; set; }
+
+        /// <summary>
+        /// Not supported.
+        /// </summary>
+        public float LabelWidth { get => throw new NotSupportedException(); set => throw new NotSupportedException(); }
         #endregion
 
         public CatalogButton()

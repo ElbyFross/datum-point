@@ -27,12 +27,19 @@ namespace WpfHandler.UI.AutoLayout.Options
     /// Define height of the GUI element.
     /// </summary>
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
-    public class HeightAttribute : Attribute, IGUILayoutOption, ILayoutSize
+    public class HeightAttribute : LayoutSizeAttribute, IGUILayoutOption
     {
         /// <summary>
-        /// Value that will be used in the element's propeties.
+        /// Default constructor.
+        /// Using auto height.
         /// </summary>
-        public double Size { get; set; } = double.NaN;
+        public HeightAttribute() : base() { }
+
+        /// <summary>
+        /// Set requested height as Size.
+        /// </summary>
+        /// <param name="height"></param>
+        public HeightAttribute(double height) : base(height) { }
 
         /// <summary>
         /// Define height of the GUI element.

@@ -23,5 +23,10 @@ namespace WpfHandler.UI.Controls
         /// Text of the label.
         /// </summary>
         string Label { get; set; }
+
+        /// <summary>
+        /// Width of label field.
+        /// </summary>
+        float LabelWidth { get; set; }
     }
 }

@@ -62,6 +62,11 @@ namespace WpfHandler.UI.Controls
         public string Label { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         /// <summary>
+        /// Width of the prefix lable.
+        /// </summary>
+        public float LabelWidth { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+
+        /// <summary>
         /// Auto-generated content builded by UI descriptor.
         /// </summary>
         protected ContentDescriptor Descriptor = new ContentDescriptor();
