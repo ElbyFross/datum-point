@@ -30,12 +30,15 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfHandler.UI.AutoLayout;
+using WpfHandler.UI.AutoLayout.Configuration;
 
 namespace WpfHandler.UI.Controls
 {
     /// <summary>
     /// Creating UI element for work with binded collections.
     /// </summary>
+    [TypesCompatible(typeof(Object))]
+    [EnumerableCompatible]
     public partial class AutoCollection : UserControl, IGUIField
     {
         /// <summary>

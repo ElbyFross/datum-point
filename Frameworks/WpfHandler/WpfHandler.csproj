@@ -55,6 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="UI\AutoLayout\Configuration\ContentAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Configuration\EnumerableCompatibleAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Configuration\EnumsCompatibleAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Configuration\IGUIElementBindingAttribute.cs" />
     <Compile Include="UI\AutoLayout\Options\LabelWidthAttribute.cs" />
     <Compile Include="UI\Controls\LayoutSizeAttribute.cs" />
     <Compile Include="UI\Effects\BlurEffect.cs" />
@@ -163,8 +166,8 @@
     <Compile Include="UI\Controls\SwitchPanel.xaml.cs">
       <DependentUpon>SwitchPanel.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UI\Controls\TogglesGroup.xaml.cs">
-      <DependentUpon>TogglesGroup.xaml</DependentUpon>
+    <Compile Include="UI\Controls\FlatTogglesGroup.xaml.cs">
+      <DependentUpon>FlatTogglesGroup.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\Effects\RectBlurEffect.cs" />
     <Compile Include="UI\GUIContentAttribute.cs" />
@@ -243,7 +246,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UI\Controls\TogglesGroup.xaml">
+    <Page Include="UI\Controls\FlatTogglesGroup.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

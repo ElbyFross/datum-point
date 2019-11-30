@@ -25,7 +25,7 @@ namespace WpfHandler.UI.AutoLayout
         /// Event that will occure in case if value of the field will be changed.
         /// Will cause updating of the BindedMember value.
         /// 
-        /// ILayoutControl - sender.
+        /// IGUIField - sender.
         /// </summary>
         event System.Action<IGUIField> ValueChanged;
 

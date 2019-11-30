@@ -13,6 +13,7 @@
 //limitations under the License.
 
 using System;
+using System.Reflection;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -81,8 +82,8 @@ namespace WpfHandler.UI.AutoLayout.Controls
         /// </summary>
         /// <param name="layer">Target UI layer.</param>
         /// <param name="args">
-        /// Must contains: @UIDescriptor. 
-        /// @MemberInfo will excluded from array. Use UI.Controls.Header.OnGUI instead if you want to bind member to the field.</param>
+        /// Must contains: <see cref="UIDescriptor"/>. 
+        /// <see cref="MemberInfo"/> will excluded from array. Use UI.Controls.Header.OnGUI instead if you want to bind member to the field.</param>
         public virtual void OnGUI(ref LayoutLayer layer, params object[] args)
         {
             // Instiniate header UI.
@@ -96,7 +97,7 @@ namespace WpfHandler.UI.AutoLayout.Controls
             for(int i = 0; i < args.Length; i++)
             {
                 // Checking if the target argument.
-                if(args[i] is System.Reflection.MemberInfo)
+                if(args[i] is MemberInfo)
                 {
                     // Drop reference.
                     args[i] = null;

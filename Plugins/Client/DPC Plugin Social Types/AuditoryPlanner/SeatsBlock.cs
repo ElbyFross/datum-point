@@ -63,7 +63,7 @@ namespace DatumPoint.Plugins.Social.Types.AuditoryPlanner
         }
 
         /// <summary>
-        /// Bufer that contains current value of the @SubblocksDistance property.
+        /// Bufer that contains current value of the <see cref="SubblocksDistance"/> property.
         /// </summary>
         protected float _SubblocksDistance;
 
@@ -132,7 +132,7 @@ namespace DatumPoint.Plugins.Social.Types.AuditoryPlanner
         }
 
         /// <summary>
-        /// Bufer that contains current value of the @HorizontalSymmetry property.
+        /// Bufer that contains current value of the <see cref="HorizontalSymmetry"/> property.
         /// </summary>
         protected bool _HorizontalSymmetry;
         #endregion
@@ -156,16 +156,16 @@ namespace DatumPoint.Plugins.Social.Types.AuditoryPlanner
         }
 
         /// <summary>
-        /// Bufer that contains current value of the @StartIndex property.
+        /// Bufer that contains current value of the <see cref="StartIndex"/> property.
         /// </summary>
         protected int _StartIndex = 1;
 
         /// <summary>
-        /// Every raw wil start from @startIndex.
-        /// @subBlockVerticalSkip still can be applied. 
+        /// Every raw wil start from <see cref="startIndex"/>.
+        /// <see cref="subBlockVerticalSkip"/> still can be applied. 
         /// 
         /// Example:
-        /// Enable that toggle, @startIndex on 10 and set @startIndexForEveryRaw to 10 for get result like
+        /// Enable that toggle, <see cref="startIndex"/> on 10 and set <see cref="startIndexForEveryRaw"/> to 10 for get result like
         /// 10|11|12|...
         /// 20|21|22|...
         /// </summary>
@@ -183,7 +183,7 @@ namespace DatumPoint.Plugins.Social.Types.AuditoryPlanner
         }
 
         /// <summary>
-        /// Bufer that contains current value of the @StartIndexForEveryRaw property.
+        /// Bufer that contains current value of the <see cref="StartIndexForEveryRaw"/> property.
         /// </summary>
         protected bool _StartIndexForEveryRaw;
 
@@ -333,7 +333,7 @@ namespace DatumPoint.Plugins.Social.Types.AuditoryPlanner
         /// <param name="x">Horizontal coordinate of the seat in array grid.</param>
         /// <returns>
         /// 0 - left subblock. 1 - right subblock.
-        /// Return 0 in case if @HorizontalSymmetry not enabled.
+        /// Return 0 in case if <see cref="HorizontalSymmetry"/> not enabled.
         /// </returns>
         public int DetectSubBlock(int x)
         {

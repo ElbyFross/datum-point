@@ -31,7 +31,9 @@ namespace WpfHandler.Plugins
         /// Domain fragment format: [prority]_domainPart.
         /// Priority will be used for sorting of plugins in menu. 
         /// If not defined then will be auto changed to SUBDOMAIN.GetHashcode().
+        /// </summary>
         /// 
+        /// <remarks>
         /// Attention: 
         /// 0_DomainName != DomainName
         /// 0_DomainName.SubdomainName != 10_DomainName.SubdomainName
@@ -48,13 +50,15 @@ namespace WpfHandler.Plugins
         ///     big_plugin_3.p_3
         ///     
         /// big_plugin_3 // Dublicated plugin's domain. Will be added to menu but all childs will applied to first entry plugin.
-        /// </summary>
+        /// </remarks>
         public string domain = "0_main.0_new_plugin";
 
         /// <summary>
         /// Code of resource in language xaml dictionary that will contain translated title.
-        /// For avoidance of conflicts recommended naming format is: "p_" + author + "_" + plugin_name + "_" + title.
         /// </summary>
+        /// <remarks>
+        /// For avoidance of conflicts recommended naming format is: "p_" + author + "_" + plugin_name + "_" + title.
+        /// </remarks>
         public string titleDictionaryCode = "p_author_myPlugin_title";
 
         /// <summary>

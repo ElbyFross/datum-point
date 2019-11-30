@@ -109,7 +109,7 @@ namespace WpfHandler.UI.Controls
         /// Configurate GUI element and bind it to auto layout handler.
         /// </summary>
         /// <param name="layer">Target UI layer.</param>
-        /// <param name="args">Must contains: @UIDescriptor and @MemberInfo</param>
+        /// <param name="args">Must contains: <see cref="UIDescriptor"/> and <see cref="MemberInfo"/></param>
         public void OnGUI(ref LayoutLayer layer, params object[] args)
         {
             // Configurate UI if binded.

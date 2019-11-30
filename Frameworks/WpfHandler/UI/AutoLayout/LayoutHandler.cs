@@ -38,17 +38,38 @@ namespace WpfHandler.UI.AutoLayout
     /// </summary>
     public static class LayoutHandler
     {
+
         /// <summary>
         /// Contains declared bindings from types to default layout controls.
-        /// Key - Source System.Type
-        /// Value - Binded System.Type of suitable ILayoutControl.
         /// </summary>
-        private static readonly Hashtable DefaultControlBindings = new Hashtable();
+        /// <remarks>
+        /// Key - The source <see cref="Type"/>
+        /// Value - The binded <see cref="Type"/> of the <see cref="IGUIField"/> suitable for displaing a source data.
+        /// </remarks>
+        private static readonly Hashtable DefaultControlsBindings = new Hashtable();
+               
+        /// <summary>
+        /// Contains declared bindings from types to default layout controls comaptible with a enum members.
+        /// </summary>
+        /// <remarks>
+        /// Key - The source <see cref="Type"/>
+        /// Value - The binded <see cref="Type"/> of the <see cref="IGUIField"/> suitable for displaing a source data.
+        /// </remarks>
+        private static readonly Hashtable EnumControlsBindings = new Hashtable();
+
+        /// <summary>
+        /// Contains declared bindings from types to default layout controls comaptible with an enumerable types.
+        /// </summary>
+        /// <remarks>
+        /// Key - The source <see cref="Type"/>
+        /// Value - The binded <see cref="Type"/> of the <see cref="IGUIField"/> suitable for displaing a source data.
+        /// </remarks>
+        private static readonly Hashtable EnumerableControlsBindings = new Hashtable();
 
         /// <summary>
         /// Table that contains all registread value update callbacks.
         /// 
-        /// Key = Type of the binded @ILayoutControl
+        /// Key = Type of the binded <see cref="IGUIField"/>
         /// </summary>
         private static readonly Hashtable RegistredCallbacks = new Hashtable();
 
@@ -120,7 +141,7 @@ namespace WpfHandler.UI.AutoLayout
 
         //    // To to registrate control into handler.
         //    try { RegistredCallbacks.Add(control, handler); }
-        //    catch { throw new NotSupportedException("@ILayoutControl could be registred only once."); }
+        //    catch { throw new NotSupportedException("Instance of the IGUIField could be registred only once."); }
             
         //    // Subscribe on value change.
         //    control.ValueChanged += propChangeCallback;
@@ -179,7 +200,7 @@ namespace WpfHandler.UI.AutoLayout
             #region Registration
             // To to registrate control into handler.
             try { RegistredCallbacks.Add(control, handler); }
-            catch { throw new NotSupportedException("@ILayoutControl could be registred only once."); }
+            catch { throw new NotSupportedException("Instance of the ILayoutControl could be registred only once."); }
 
             // Subscribe on value change.
             control.ValueChanged += handler;
@@ -211,8 +232,10 @@ namespace WpfHandler.UI.AutoLayout
         /// </summary>
         public static void RescanAssemblies()
         {
-            // Clearign current meta.
-            DefaultControlBindings.Clear();
+            // Clearing current meta.
+            DefaultControlsBindings.Clear();
+            EnumControlsBindings.Clear();
+            EnumerableControlsBindings.Clear();
 
             // Load query's processors.
             Assembly[] assemblies = AppDomain.CurrentDomain.GetAssemblies();
@@ -227,21 +250,39 @@ namespace WpfHandler.UI.AutoLayout
                     if (type.IsAbstract) continue;
                     // Skip if it's interface.
                     if (type.IsInterface) continue;
-                    // Skip if not Implement @ILayoutControl.
+                    // Skip if not implement <see cref="IGUIField"/>.
                     if (type.GetInterface(typeof(IGUIField).FullName) == null) continue;
+                    #endregion
+                    
+                    #region Define target binding table
+                    // Table that will contain link to the type.
+                    Hashtable targetTable = null;
+
+                    // Looking for complex elements.
+                    // Is element defied to the displaing enums.
+                    var isEnum = type.GetCustomAttribute<Configuration.EnumsCompatibleAttribute>();
+                    if (isEnum != null) targetTable = EnumControlsBindings;
+                    else
+                    {
+                        // Is focused on work with collections.
+                        var isEnumerable = type.GetCustomAttribute<Configuration.EnumerableCompatibleAttribute>();
+                        if (isEnumerable != null) targetTable = EnumerableControlsBindings;
+                        else targetTable = DefaultControlsBindings; // Not specified.
+                    }
                     #endregion
 
                     #region Performing all existing descriptors.
                     // Trying to find descriptor to types binding.
                     var bindingDescriptors = type.GetCustomAttributes<Configuration.TypesCompatibleAttribute>();
-
+                    
+                    // Perform binding for all descriptors.
                     foreach (var desc in bindingDescriptors)
                     {
                         // Applying all shared bindings.
                         foreach (var bindedType in desc.CompatibleWith)
                         {
                             // Bind type to control.
-                            BindLayoutControlToType(type, bindedType);
+                            BindLayoutControlToType(targetTable, type, bindedType);
                         }
                     }
                     #endregion
@@ -251,21 +292,21 @@ namespace WpfHandler.UI.AutoLayout
         }
 
         /// <summary>
-        /// Binds @ILayoutControl to the source type to using into auto generate ui panels based on @UIDescriptor content.
+        /// Binds <see cref="IGUIField"/> to the source type to using into auto generate ui panels based on <see cref="UIDescriptor"/> content.
         /// </summary>
-        /// <param name="controlType">Type with implemented @ILayoutControl interface.</param>
-        /// <param name="sourceType">Type that will cause spawning of binded @ILayoutControl during building of auto-generated UIs.</param>
-        public static void BindLayoutControlToType(Type controlType, Type sourceType)
+        /// <param name="controlType">Type with implemented <see cref="IGUIField"/> interface.</param>
+        /// <param name="sourceType">Type that will cause spawning of binded <see cref="IGUIField"/> during building of auto-generated UIs.</param>
+        public static void BindLayoutControlToType(Hashtable table, Type controlType, Type sourceType)
         {
-            if (DefaultControlBindings[sourceType] is IGUIField)
+            if (table[sourceType] is IGUIField)
             {
                 // If control already defined for that type then override it.
-                DefaultControlBindings[sourceType] = controlType;
+                table[sourceType] = controlType;
             }
             else
             {
                 // Registrate new binding if not registred yet.
-                DefaultControlBindings.Add(sourceType, controlType);
+                table.Add(sourceType, controlType);
             }
         }
 
@@ -276,27 +317,52 @@ namespace WpfHandler.UI.AutoLayout
         /// <param name="isInherited">Should it look into entire inheritance hierarchy of the source type till not found the binded one?</param>
         /// <returns>Type of found control. Null if not found.</returns>
         public static Type GetBindedControl(Type sourceType, bool isInherited)
-        { 
-            // Check if requested type has binding.
-            if(DefaultControlBindings[sourceType] is Type control)
+        {
+            #region Enums
+            // Is source type is enum?
+            if (sourceType.IsEnum  &&
+                // Check if requested type has binding into enum compatibe table.
+                EnumControlsBindings[sourceType] is Type enumControl)
+                {
+                    // Return binded control if found.
+                    return enumControl;
+                }
+            #endregion
+
+            #region Collections
+            // If has implemented IEnumerable type then will auto applied to collections GUI elements.
+            if (sourceType.GetInterface(typeof(IEnumerable).FullName) != null &&
+                // Check if requested type has binding into enumerable collections compatibe table.
+                EnumerableControlsBindings[sourceType] is Type collectionControl)
             {
                 // Return binded control if found.
-                return control;
+                return collectionControl;
+            }
+            #endregion
+
+            #region Direct types binding
+            // Check if requested type has binding by direct binding.
+            if (DefaultControlsBindings[sourceType] is Type baseControl)
+            {
+                // Return binded control if found.
+                return baseControl;
+            }
+            #endregion
+
+            #region Deep search
+            // The source type has no a binding.
+            // Looking deeply into the assembly hierarchy.
+            if (isInherited && // Is looking in depth requested.
+                sourceType.BaseType != null) // is still not on the ground level.
+            {
+                return GetBindedControl(sourceType.BaseType, true);
             }
             else
             {
-                // Looking into hierarchy.
-                if (isInherited && // Is looking in depth requested.
-                    sourceType.BaseType != null) // is still not on the ground level.
-                {
-                    
-                    return GetBindedControl(sourceType.BaseType, true);
-                }
-                else
-                {
-                    return null;
-                }
+                // Grouon of hierarchy reached and compatible type not found.
+                return null;
             }
+            #endregion
         }
     }
 }

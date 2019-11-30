@@ -190,7 +190,7 @@ namespace WpfHandler.UI.Controls
         /// Connecting element to the UI handler.
         /// </summary>
         /// <param name="layer">Target UI layer.</param>
-        /// <param name="args">Must contains: @UIDescriptor and @MemberInfo</param>
+        /// <param name="args">Must contains: <see cref="UIDescriptor"/> and <see cref="MemberInfo"/></param>
         public void OnGUI(ref LayoutLayer layer, params object[] args)
         {
             #region Looking for shared data

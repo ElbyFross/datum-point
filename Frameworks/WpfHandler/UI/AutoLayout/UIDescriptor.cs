@@ -49,7 +49,7 @@ namespace WpfHandler.UI.AutoLayout
                 OrderBy(f => f.GetCustomAttribute<OrderAttribute>().Order);
             // Sorting disordered members by metadata.
             var disorderedMembers = members.Where(f => f.GetCustomAttribute<OrderAttribute>() == null).
-                OrderBy(f => f.MetadataToken).ToArray<MemberInfo>();
+                OrderBy(f => f.MetadataToken);
 
             // Sort in declaretion order.
             members = orderedMembers.Concat(disorderedMembers).ToArray();
@@ -70,7 +70,7 @@ namespace WpfHandler.UI.AutoLayout
                     continue;
                 
                 // Skip if member excluded from instpector.
-                if (member.GetCustomAttribute<Configuration.HideInInspectorAttribute>() != null)
+                if (member.GetCustomAttribute<HideInInspectorAttribute>() != null)
                     continue;
                 #endregion
 
@@ -99,7 +99,7 @@ namespace WpfHandler.UI.AutoLayout
 
                 #region Defining UI field type
                 // Check if default control was overrided by custom one.
-                var customControlDesc = member.GetCustomAttribute<Configuration.CustomControlAttribute>();
+                var customControlDesc = member.GetCustomAttribute<CustomControlAttribute>();
                 if (customControlDesc != null && // Is overriding requested?
                     customControlDesc.ControlType != null && // Is target type is not null?
                     customControlDesc.ControlType.IsSubclassOf(typeof(IGUIField))) // Is target type has correct inherience
@@ -137,8 +137,7 @@ namespace WpfHandler.UI.AutoLayout
 
                         // Try to get described one.
                         if(UniformDataOperator.AttributesHandler.
-                            TryToGetAttribute<ContentAttribute>
-                            (member, out ContentAttribute attribute))
+                            TryToGetAttribute (member, out ContentAttribute attribute))
                         {
                             // Buferize if found.
                             localizationHandler = attribute;
@@ -164,6 +163,7 @@ namespace WpfHandler.UI.AutoLayout
                             // Skip if not an option.
                             if (!(attr is IGUILayoutOption option)) continue;
 
+                            // Applying option to the element.
                             option.ApplyLayoutOption(fEl);
                         }
                     }
@@ -306,7 +306,7 @@ namespace WpfHandler.UI.AutoLayout
                 // Registrate member in auto layout handler.
                 control.RegistrateField(this, member, value);
 
-                // Adding herader to layout.
+                // Adding instiniated element to the layout.
                 activeLayer?.ApplyControl(control as FrameworkElement);
             }
             catch { }
@@ -316,7 +316,8 @@ namespace WpfHandler.UI.AutoLayout
         /// Trying to bind control to the auto layout handler.
         /// </summary>
         /// <param name="control">Control that would be binded.</param>
-        /// <param name="args">Must contains @UIDescriptor and @MemberInfo for success performing.</param>
+        /// <param name="args">Must contains <see cref="UIDescriptor"/> 
+        /// and <see cref="MemberInfo"/> for success performing.</param>
         /// <returns>Is control was binded?</returns>
         public static bool TryToBindControl(IGUIField control, params object[] args)
         {
@@ -339,7 +340,7 @@ namespace WpfHandler.UI.AutoLayout
         /// Bind control to the auto layout handler.
         /// </summary>
         /// <param name="control">Control that would be binded.</param>
-        /// <param name="args">Must contains @UIDescriptor and @MemberInfo.</param>
+        /// <param name="args">Must contains <see cref="UIDescriptor"/> and <see cref="MemberInfo"/>.</param>
         public static void ToBindControl(IGUIField control, params object[] args)
         {
             // Find required referendes.
@@ -366,8 +367,8 @@ namespace WpfHandler.UI.AutoLayout
         public static void ToBindControl(IGUIField control, UIDescriptor descriptor, MemberInfo member)
         {
             // Drop control sign up in case if member not shared.
-            if (descriptor == null) throw new NullReferenceException("@UIDescriptor not shared with @args");
-            if (member == null) throw new NullReferenceException("@MemberInfo not shared with @args");
+            if (descriptor == null) throw new NullReferenceException("Instance of the UIDescriptor not shared with @args");
+            if (member == null) throw new NullReferenceException("Instance of the MemberInfo not shared with @args");
 
             // Detecting default value seted up into descriptor.
             object defaultValue;
