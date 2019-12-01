@@ -20,7 +20,13 @@ limitations under the License.-->
              xmlns:local="clr-namespace:WpfHandler.UI.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Label x:Name="label" Content="{Binding Label}"/>
+    <Grid x:Name="canvas">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label x:Name="label" 
+               Content="{Binding Label}"
+               Foreground="{Binding Foreground}"/>
     </Grid>
 </UserControl>

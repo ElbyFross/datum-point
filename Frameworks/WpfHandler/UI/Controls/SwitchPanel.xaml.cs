@@ -40,8 +40,19 @@ namespace WpfHandler.UI.Controls
         /// </summary>
         public enum AnimationType
         {
+            /// <summary>
+            /// Animation not defined. Control will switch to the next element immediately.
+            /// </summary>
             None,
+            /// <summary>
+            /// Switching between elements via making current element transparency 
+            /// and rolling of the next element from the border of the current control.
+            /// </summary>
             AlphaSwipe,
+            /// <summary>
+            /// Shadowing the background and swipe current element out of the control's border. 
+            /// Removing the shadow when timeline is finished.
+            /// </summary>
             DarkSwipe
         }
 
@@ -50,6 +61,9 @@ namespace WpfHandler.UI.Controls
         /// </summary>
         public event Action AnimationFinished;
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty DurationProperty = DependencyProperty.Register(
           "Duration", typeof(TimeSpan), typeof(SwitchPanel));
 
@@ -89,6 +103,9 @@ namespace WpfHandler.UI.Controls
         /// </summary>
         public UIElement OrderBufer { get; protected set; }
 
+        /// <summary>
+        /// Instiniating the switch panel.
+        /// </summary>
         public SwitchPanel()
         {
             #region WPF Init
@@ -101,6 +118,7 @@ namespace WpfHandler.UI.Controls
         /// Requesting switch of UI to new Element.
         /// </summary>
         /// <param name="element">Element that would be showed instead current.</param>
+        /// <param name="animationType">The type of an animation that will be used during elemetns switching.</param>
         public void SwitchTo(UIElement element, AnimationType animationType)
         {
             // Buferize animation.

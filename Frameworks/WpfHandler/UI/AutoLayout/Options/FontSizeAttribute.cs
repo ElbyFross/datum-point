@@ -26,7 +26,9 @@ namespace WpfHandler.UI.AutoLayout.Options
     /// <summary>
     /// Define GUI element's text font size.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property |
+                    AttributeTargets.Class | AttributeTargets.Struct,
+                    AllowMultiple = false, Inherited = true)]
     public class FontSizeAttribute : Attribute, IGUILayoutOption, ILayoutSize
     {
         /// <summary>

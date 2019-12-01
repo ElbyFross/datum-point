@@ -34,6 +34,15 @@ namespace WpfHandler.UI.AutoLayout.Options
         public System.Windows.Controls.Orientation Value = System.Windows.Controls.Orientation.Horizontal;
 
         /// <summary>
+        /// Default cosntructor.
+        /// </summary>
+        /// <param name="orientation">Target UI orientation.</param>
+        public OrientationAttribute(System.Windows.Controls.Orientation orientation)
+        {
+            Value = orientation;
+        }
+
+        /// <summary>
         /// Applying orientation to the UI element.
         /// </summary>
         /// <param name="element">Must implements Interfaces.ILayoutOrientation.</param>

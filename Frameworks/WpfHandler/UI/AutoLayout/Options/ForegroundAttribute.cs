@@ -18,6 +18,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using WpfHandler.UI.AutoLayout;
 
 namespace WpfHandler.UI.AutoLayout.Options
@@ -25,9 +26,40 @@ namespace WpfHandler.UI.AutoLayout.Options
     /// <summary>
     /// Define GUI element's foreground brush.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property |
+                    AttributeTargets.Class | AttributeTargets.Struct,
+                    AllowMultiple = false, Inherited = true)]
     public class ForegroundAttribute : ColorAttribute, IGUILayoutOption
     {
+        /// <summary>
+        /// Instiniating attribute with applied brush.
+        /// </summary>
+        /// <param name="brush">Target brush.</param>
+        /// <remarks>No supported via attribute.</remarks>
+        public ForegroundAttribute(Brush brush) : base(brush) { }
+
+        /// <summary>
+        /// Instiniating attribute with applied brush.
+        /// </summary>
+        /// <param name="brush">Target brush.</param>
+        /// <remarks>No supported via attribute.</remarks>
+        public ForegroundAttribute(SolidColorBrush brush) : base(brush) { }
+
+        /// <summary>
+        /// Instiniating attribute with applied brush.
+        /// </summary>
+        /// <param name="colorCode">
+        /// Trying to apply string color code as brush by using <see cref="ColorConverter"/> rules.
+        /// Not throw excption in case if color's code invalid to prevent UI crash.</param>
+        public ForegroundAttribute(string colorCode) : base(colorCode) { }
+
+        /// <summary>
+        /// Instiniating attribute with applied color.
+        /// </summary>
+        /// <param name="color">Target color.</param>
+        /// <remarks>No supported via attribute.</remarks>
+        public ForegroundAttribute(Color color) : base(color) { }
+
         /// <summary>
         /// Define GUI element's foreground brush.
         /// </summary>

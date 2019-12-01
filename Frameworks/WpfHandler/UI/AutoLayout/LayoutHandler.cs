@@ -100,7 +100,8 @@ namespace WpfHandler.UI.AutoLayout
                 // define required width.
                 // Auto - if width of element less or equals 0, or is NaN.
                 // Shared element's width in case if defined.
-                Width = new GridLength(double.IsNaN(element.Width) || element.Width <= 0 ? double.NaN : element.Width)
+                Width = double.IsNaN(element.Width) || element.Width <= 0 ? 
+                        GridLength.Auto : new GridLength(element.Width)
             });
 
             // Add element as child.
@@ -294,6 +295,7 @@ namespace WpfHandler.UI.AutoLayout
         /// <summary>
         /// Binds <see cref="IGUIField"/> to the source type to using into auto generate ui panels based on <see cref="UIDescriptor"/> content.
         /// </summary>
+        /// <param name="table">Target table for binding the element.</param>
         /// <param name="controlType">Type with implemented <see cref="IGUIField"/> interface.</param>
         /// <param name="sourceType">Type that will cause spawning of binded <see cref="IGUIField"/> during building of auto-generated UIs.</param>
         public static void BindLayoutControlToType(Hashtable table, Type controlType, Type sourceType)
@@ -320,7 +322,7 @@ namespace WpfHandler.UI.AutoLayout
         {
             #region Enums
             // Is source type is enum?
-            if (sourceType.IsEnum  &&
+            if ( (sourceType.IsEnum || sourceType.Equals(typeof(Enum)) ) &&
                 // Check if requested type has binding into enum compatibe table.
                 EnumControlsBindings[sourceType] is Type enumControl)
                 {

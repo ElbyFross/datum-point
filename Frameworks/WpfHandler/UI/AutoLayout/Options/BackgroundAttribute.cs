@@ -26,9 +26,40 @@ namespace WpfHandler.UI.AutoLayout.Options
     /// <summary>
     /// Define GUI element's background brush.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property |
+                    AttributeTargets.Class | AttributeTargets.Struct,
+                    AllowMultiple = false, Inherited = true)]
     public class BackgroundAttribute : ColorAttribute, IGUILayoutOption
     {
+        /// <summary>
+        /// Instiniating attribute with applied brush.
+        /// </summary>
+        /// <param name="brush">Target brush.</param>
+        /// <remarks>No supported via attribute.</remarks>
+        public BackgroundAttribute(Brush brush) : base(brush) { }
+
+        /// <summary>
+        /// Instiniating attribute with applied brush.
+        /// </summary>
+        /// <param name="brush">Target brush.</param>
+        /// <remarks>No supported via attribute.</remarks>
+        public BackgroundAttribute(SolidColorBrush brush) : base(brush) { }
+
+        /// <summary>
+        /// Instiniating attribute with applied brush.
+        /// </summary>
+        /// <param name="colorCode">
+        /// Trying to apply string color code as brush by using <see cref="ColorConverter"/> rules.
+        /// Not throw excption in case if color's code invalid to prevent UI crash.</param>
+        public BackgroundAttribute(string colorCode) : base(colorCode) { }
+
+        /// <summary>
+        /// Instiniating attribute with applied color.
+        /// </summary>
+        /// <param name="color">Target color.</param>
+        /// <remarks>No supported via attribute.</remarks>
+        public BackgroundAttribute(Color color) : base(color) { }
+
         /// <summary>
         /// Define GUI element's background brush.
         /// </summary>

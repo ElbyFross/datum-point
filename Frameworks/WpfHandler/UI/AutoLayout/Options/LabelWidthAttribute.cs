@@ -26,6 +26,9 @@ namespace WpfHandler.UI.AutoLayout.Options
     /// <summary>
     /// Redefines lable width for the ILable objects.
     /// </summary>
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property |
+                    AttributeTargets.Class | AttributeTargets.Struct,
+                    AllowMultiple = false, Inherited = true)]
     public class LabelWidthAttribute : LayoutSizeAttribute, IGUILayoutOption
     {
         /// <summary>
@@ -52,7 +55,7 @@ namespace WpfHandler.UI.AutoLayout.Options
         /// <param name="element">Shared UI element. Must has implemented @ILable interface.</param>
         public void ApplyLayoutOption(FrameworkElement element)
         {
-            /// Skip if undefined.
+            // Skip if undefined.
             if (double.IsNaN(Size)) return;
 
             // Buferize shared element.

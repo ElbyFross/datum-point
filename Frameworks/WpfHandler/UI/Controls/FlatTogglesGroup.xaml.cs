@@ -35,10 +35,11 @@ namespace WpfHandler.UI.Controls
     /// <summary>
     /// TODO: Operating by group of the toggles.
     /// </summary>
-    [TypesCompatible(typeof(Object))]
+    [TypesCompatible(typeof(Object), typeof(Enum))]
     [EnumsCompatible]
     public partial class FlatTogglesGroup : UserControl, ILayoutOrientation, ILabel, IGUIField
     {
+        #region Dependency properties
         /// <summary>
         /// Property that bridging control's property between XAML and code.
         /// </summary>
@@ -50,12 +51,40 @@ namespace WpfHandler.UI.Controls
         /// </summary>
         public static readonly DependencyProperty LabelWidthProperty = DependencyProperty.Register(
           "LabelWidth", typeof(float), typeof(FlatTogglesGroup));
+        #endregion
 
+        #region Public members
+        /// <summary>
+        /// Type that binded to that GUI element.
+        /// </summary>
+        public Type BindedEnumType { get; protected set; }
 
         /// <summary>
-        /// Enum type that would be used like a source of values.
+        /// Return an array with values of the binded tnum type.
         /// </summary>
-        public Type SourceEnum { get; set; }
+        public Array Values
+        {
+            get
+            {
+                if (_Values == null)
+                {
+                    #region Validating source
+                    // Check if the source exist.
+                    if (BindedEnumType == null)
+                        throw new NullReferenceException("You must call OnGUI before calling that Values property.");
+
+                    // Check if the source is enum.
+                    if (!BindedEnumType.IsEnum)
+                        throw new NotSupportedException("The BindedEnumType is not Enum.");
+                    #endregion
+
+                    // Getting values.
+                    _Values = BindedEnumType.GetEnumValues();
+                }
+
+                return _Values;
+            }
+        }
 
         /// <summary>
         /// Layout orientation of the UI elements.
@@ -68,10 +97,14 @@ namespace WpfHandler.UI.Controls
                 // Updating value.
                 _Orientation = value;
 
-                // TODO: Updating layout.
+                UpdateElementsLayout();
             }
         }
 
+        /// <summary>
+        /// Instiniated element in direct order.
+        /// </summary>
+        public FrameworkElement[] Elements { get; protected set; }
 
         /// <summary>
         /// Text in label field.
@@ -98,19 +131,86 @@ namespace WpfHandler.UI.Controls
 
                 // Appling value.
                 SetValue(LabelWidthProperty, appliedSize);
+
+                // Defining visibility.
+                if (_LabelWidth <= 0)
+                {
+                    // Hide the lable.
+                    label.Visibility = Visibility.Collapsed;
+
+                    // Expand an items panel.
+                    if (ItemsPanel != null)
+                    {
+                        Grid.SetRow(ItemsPanel, 0);
+                        Grid.SetRowSpan(ItemsPanel, 2);
+                    }
+                }
+                else
+                {
+                    // Show the lable.
+                    label.Visibility = Visibility.Visible;
+
+                    // Warping an items panel.
+                    if (ItemsPanel != null)
+                    {
+                        Grid.SetRow(ItemsPanel, 1);
+                        Grid.SetRowSpan(ItemsPanel, 1);
+                    }
+                }
             }
         }
 
         /// <summary>
         /// Value of that control.
         /// </summary>
-        public object Value { get; set; }
+        public object Value
+        {
+            get => Values.GetValue(Index);
+            set
+            {
+
+                // Inform subscribers.
+                ValueChanged?.Invoke(this);
+            }
+        }
+
+        /// <summary>
+        /// Current selected element in the group.
+        /// </summary>
+        public int Index
+        {
+            get { return _Index; }
+            set
+            {
+                // Preventing out of index exception.
+                _Index = Math.Min(value, Values.Length);
+                // Check if less then 0.
+                _Index = Math.Max(_Index, 0);
+
+                // Inform subscribers.
+                ValueChanged?.Invoke(this);
+            }
+        }
 
         /// <summary>
         /// Memeber that will be used as source\target for the value into UI.
         /// </summary>
-        public MemberInfo BindedMember { get; set; }
+        /// <remarks>
+        /// The SET option is not supported.
+        /// </remarks>
+        public MemberInfo BindedMember
+        {
+            get { return _BindedMember; }
+            set => throw new NotSupportedException();
+        }
 
+        /// <summary>
+        /// Panel that contains instiniated elemtnts.
+        /// </summary>
+        public Panel ItemsPanel {get; protected set; }
+        #endregion
+
+        #region Protected members
         /// <summary>
         /// Bufer that contains las requested label width.
         /// </summary>
@@ -120,6 +220,22 @@ namespace WpfHandler.UI.Controls
         /// Bufer that contains current layout orientation.
         /// </summary>
         protected Orientation _Orientation = Orientation.Vertical;
+        
+        /// <summary>
+        /// Bufer that contains selected index.
+        /// </summary>
+        protected int _Index = 0;
+
+        /// <summary>
+        /// Bufer that contains reference to the binded member.
+        /// </summary>
+        protected MemberInfo _BindedMember;
+
+        /// <summary>
+        /// Bufer that contains the values of the binded enum.
+        /// </summary>
+        protected Array _Values;
+        #endregion
 
         /// <summary>
         /// Event that will occure in case if value of the field will be changed.
@@ -128,6 +244,7 @@ namespace WpfHandler.UI.Controls
         /// IGUIField - sender.
         /// </summary>
         public event Action<IGUIField> ValueChanged;
+
 
         /// <summary>
         /// Initialize component.
@@ -143,25 +260,130 @@ namespace WpfHandler.UI.Controls
         /// Calls once during UI spawn.
         /// </summary>
         /// <param name="layer">Target GUI layer.</param>
-        /// <param name="args">Shared arguments. Must contins <see cref="UIDescriptor"/> and</param>
+        /// <param name="args">Shared arguments. Must contains <see cref="MemberInfo"/>.</param>
+        /// <remarks>
+        /// Allow castomization enum's element by adding multiply <see cref="ContentAttribute"/>. 
+        /// First attribute will applied to the common lable. 
+        /// Any next <see cref="ContentAttribute"/> will be related to the elements by the direct order.
+        /// </remarks>
         public void OnGUI(ref LayoutLayer layer, params object[] args)
         {
             #region Getting shared data
             // Find required referendes.
-            UIDescriptor desc = null;
             MemberInfo member = null;
 
             // Trying to get shared properties.
             foreach (object obj in args)
             {
-                if (obj is UIDescriptor) desc = (UIDescriptor)obj;
-                if (obj is MemberInfo) member = (MemberInfo)obj;
+                if (obj is MemberInfo)
+                {
+                    member = (MemberInfo)obj;
+                    break;
+                }
             }
+
+            // Drop if member not shared.
+            if (member == null) return;
+
+            // Buferizing
+            _BindedMember = member;
             #endregion
-            
-            #region Bind as member
+
+            #region Getting description info
+            // Getting member's type.
             Type memberType = UIDescriptor.MembersHandler.GetSpecifiedMemberType(member);
+            // Drop if source is not enum.
+            if(!memberType.IsEnum) throw new NotSupportedException("Shared member must be enum");
+            // Storing received type.
+            BindedEnumType = memberType;
+
+            // Getting default members.
+            var names = memberType.GetEnumNames();
+            var values = memberType.GetEnumValues();
+            Elements = new FrameworkElement[names.Length];
+
+            // Getting defined content.
+            var contents = member.GetCustomAttributes<ContentAttribute>();
             #endregion
+
+            #region Instiniating UI elements
+            // Generating uniquem token for that UI group.
+            var groupToken = Guid.NewGuid().ToString();
+
+            // Perform oparation for every element.
+            for(int i = 0; i < names.Length; i++)
+            {
+                // Store index relavant for that element for local methods.
+                var localIndexBufer = i;
+
+                // Instiniating new UI element.
+                var element = new SelectableFlatButton()
+                { 
+                    Group = groupToken,
+                    ClickCallback = delegate(object sender)
+                    {
+                        // Updating current selected index.
+                        _Index = localIndexBufer;
+
+                        // Inform subscribers.
+                        ValueChanged?.Invoke(this);
+                    }
+                };
+
+                // Adding to the collection.
+                Elements[i] = element;
+            }
+            ((SelectableFlatButton)Elements[0]).Selected = true;
+
+            // Set elements to the layout.
+            UpdateElementsLayout();
+            #endregion
+        }
+
+        /// <summary>
+        /// Applying relevant layout to the elements.
+        /// </summary>
+        public void UpdateElementsLayout()
+        {
+            // Finilising old layout if exist.
+            if (ItemsPanel != null)
+            {
+                // Unbind elements from deprecated layout.
+                foreach(FrameworkElement element in Elements)
+                {
+                    ItemsPanel.Children.Remove(element);
+                }
+
+                // Removing layout.
+                canvas.Children.Remove(ItemsPanel);
+            }
+
+            if(Orientation == Orientation.Horizontal)
+            {
+                ItemsPanel = new Grid();
+
+                // Applying elements to the new layout.
+                foreach (FrameworkElement element in Elements)
+                {
+                    LayoutHandler.HorizontalLayoutAddChild(ItemsPanel, element);
+                }
+            }
+            else
+            {
+                ItemsPanel = new StackPanel()
+                { Orientation = Orientation.Vertical };
+
+
+                // Applying elements to the new layout.
+                foreach (FrameworkElement element in Elements)
+                {
+                    LayoutHandler.VerticalLayoutAddChild(ItemsPanel, element);
+                }
+            }
+
+            // Applying layout to the canvas.
+            canvas.Children.Add(ItemsPanel);
+            Grid.SetRow(ItemsPanel, 1);
         }
     }
 }

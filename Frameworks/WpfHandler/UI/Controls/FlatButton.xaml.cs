@@ -35,9 +35,15 @@ namespace WpfHandler.UI.Controls
     /// </summary>
     public partial class FlatButton : UserControl, ILabel
     {
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
           "Label", typeof(string), typeof(FlatButton), new PropertyMetadata("Sample"));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty ClickCallbackProperty = DependencyProperty.Register(
           "ClickCallback", typeof(Action<object>), typeof(FlatButton));
 

@@ -24,9 +24,11 @@ using System.Windows.Controls;
 
 namespace WpfHandler.UI.Animations
 {
+    /// <summary>
+    /// Profides API for managinf objects animations.
+    /// </summary>
     public static class ObjectAnimation
     {
-
         /// <summary>
         /// Start object animation.
         /// </summary>

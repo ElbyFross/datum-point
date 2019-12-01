@@ -101,7 +101,16 @@ namespace WpfHandler.UI.AutoLayout.Configuration
         public override void LanguagesDictionariesUpdated()
         {
             // Updating label.
-            BindedLabel.Label = Content.GetTitle(BindedMember);
+            if (Content != null)
+            {
+                // Updating lable's value.
+                BindedLabel.Label = Content.GetTitle(BindedMember);
+            }
+            else
+            {
+                // hidding label.
+                BindedLabel.LabelWidth = 0;
+            }
         }
 
         /// <summary>

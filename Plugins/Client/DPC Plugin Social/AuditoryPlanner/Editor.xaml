@@ -71,18 +71,15 @@ limitations under the License.-->
 
                     <Canvas Height="4.5" />
 
-                    <wpfHandler:SelectableFlatButton Text="Normal" Group="DPC_PS_SE_MODE" Selected="True"
+                    <wpfHandler:SelectableFlatButton Label="Normal" Group="DPC_PS_SE_MODE" Selected="True"
                                                      Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
-                                                     HightlightBackground="{DynamicResource ResourceKey=canvasForground}"
-                                                     FontSize="12" Height="17"/>
-                    <wpfHandler:SelectableFlatButton Text="Hide" Group="DPC_PS_SE_MODE" Selected="False"
+                                                     HightlightBackground="{DynamicResource ResourceKey=canvasForground}"/>
+                    <wpfHandler:SelectableFlatButton Label="Hide" Group="DPC_PS_SE_MODE" Selected="False"
                                                      Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
-                                                     HightlightBackground="{DynamicResource ResourceKey=canvasForground}"
-                                                     FontSize="12" Height="17"/>
-                    <wpfHandler:SelectableFlatButton Text="Block" Group="DPC_PS_SE_MODE" Selected="False"
+                                                     HightlightBackground="{DynamicResource ResourceKey=canvasForground}"/>
+                    <wpfHandler:SelectableFlatButton Label="Block" Group="DPC_PS_SE_MODE" Selected="False"
                                                      Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
-                                                     HightlightBackground="{DynamicResource ResourceKey=canvasForground}"
-                                                     FontSize="12" Height="17"/>
+                                                     HightlightBackground="{DynamicResource ResourceKey=canvasForground}"/>
                 </StackPanel>
                                 
                 <!--Panel that contain block settigns-->
@@ -97,13 +94,13 @@ limitations under the License.-->
 
                     <Grid>
                         <wpfHandler:SelectableFlatButton x:Name="symmetricStateOff"
-                                                     Text="Off" Group="DPC_PS_SE_BLOCK_SYMMETRY" Selected="True"
+                                                     Label="Off" Group="DPC_PS_SE_BLOCK_SYMMETRY" Selected="True"
                                                      Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
                                                      HightlightBackground="{DynamicResource ResourceKey=canvasForground}"
                                                      ClickCallback="Symmetric_StateChanged"
                                                      FontSize="12" Height="17"/>
                         <wpfHandler:SelectableFlatButton  x:Name="symmetricStateOn"
-                                                     Text="On" Group="DPC_PS_SE_BLOCK_SYMMETRY" Selected="False"
+                                                     Label="On" Group="DPC_PS_SE_BLOCK_SYMMETRY" Selected="False"
                                                      HorizontalAlignment="Right"
                                                      Foreground="{DynamicResource ResourceKey=catalogButtonForeground}"
                                                      HightlightBackground="{DynamicResource ResourceKey=canvasForground}"

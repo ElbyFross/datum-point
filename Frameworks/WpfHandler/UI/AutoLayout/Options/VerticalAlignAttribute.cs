@@ -25,7 +25,9 @@ namespace WpfHandler.UI.AutoLayout.Options
     /// <summary>
     /// Define vertical align of the GUI element.
     /// </summary>
-    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, AllowMultiple = false, Inherited = true)]
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property |
+                    AttributeTargets.Class | AttributeTargets.Struct,
+                    AllowMultiple = false, Inherited = true)]
     public class VerticalAlignAttribute : Attribute, IGUILayoutOption
     {
         /// <summary>

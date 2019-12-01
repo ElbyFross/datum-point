@@ -20,9 +20,9 @@ limitations under the License.-->
              xmlns:local="clr-namespace:WpfHandler.UI.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="20" d:DesignWidth="100"
-             FontSize="15"
+             FontSize="12" Height="17"
              Name="main"
-                          Loaded="UI_Loaded">
+             Loaded="UI_Loaded">
     
     <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
         
@@ -32,7 +32,7 @@ limitations under the License.-->
         
         <local:FlatButton x:Name="button" VerticalAlignment="Center" 
                           VerticalContentAlignment="Center"
-                          Label="{Binding Text, ElementName=main}"  
+                          Label="{Binding Label, ElementName=main}"  
                           FontSize="{Binding FontSize, ElementName=main}" 
                           FontWeight="{Binding FontWeight, ElementName=main}"
                           Foreground="{Binding Foreground, ElementName=main}"

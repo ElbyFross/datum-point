@@ -68,8 +68,16 @@ namespace WpfHandler.Plugins
 
 
         #region Constructors
+        /// <summary>
+        /// Default empty constructor.
+        /// </summary>
         public MenuItemMeta() { }
 
+        /// <summary>
+        /// Initializing core memebers.
+        /// </summary>
+        /// <param name="domain">Item domain into hierarchy.</param>
+        /// <param name="titleDictionaryCode">The resource key in XAML resource dictionary for getting the title.</param>
         public MenuItemMeta(string domain, string titleDictionaryCode)
         {
             this.domain = domain;

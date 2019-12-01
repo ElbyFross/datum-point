@@ -43,9 +43,17 @@ namespace WpfHandler.UI
         /// Auto initialize content with shared title value.
         /// </summary>
         /// <param name="title">Title that will be showed up into the label.</param>
+        /// <remarks>If the title value is null or empty then instiniating <see cref="GUIContent.None"/>.</remarks>
         public GUIContentAttribute(string title) : base()
         {
-            Content = new GUIContent(title);
+            if (string.IsNullOrEmpty(title))
+            {
+                Content = GUIContent.None;
+            }
+            else
+            {
+                Content = new GUIContent(title);
+            }
         }
 
         /// <summary>

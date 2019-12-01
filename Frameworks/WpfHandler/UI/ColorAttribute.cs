@@ -36,7 +36,7 @@ namespace WpfHandler.UI
         }
 
         /// <summary>
-        /// Trying to apply string color code as brush by using `System.Windows.Media.ColorConverter' rules.
+        /// Trying to apply string color code as brush by using <see cref="ColorConverter"/> rules.
         /// Not throw excption in case if color's code invalid to prevent UI crash.
         /// </summary>
         public string StringColor
@@ -67,5 +67,46 @@ namespace WpfHandler.UI
         /// Bufer that contains generated or shared Brush.
         /// </summary>
         private Brush _Brush;
+
+        /// <summary>
+        /// Instiniating attribute with applied brush.
+        /// </summary>
+        /// <param name="brush">Target brush.</param>
+        /// <remarks>No supported via attribute.</remarks>
+        public ColorAttribute(Brush brush) 
+        {
+            Brush = brush;
+        }
+
+        /// <summary>
+        /// Instiniating attribute with applied brush.
+        /// </summary>
+        /// <param name="brush">Target brush.</param>
+        /// <remarks>No supported via attribute.</remarks>
+        public ColorAttribute(SolidColorBrush brush)
+        {
+            Brush = brush;
+        }
+
+        /// <summary>
+        /// Instiniating attribute with applied brush.
+        /// </summary>
+        /// <param name="colorCode">
+        /// Trying to apply string color code as brush by using <see cref="ColorConverter"/> rules.
+        /// Not throw excption in case if color's code invalid to prevent UI crash.</param>
+        public ColorAttribute(string colorCode)
+        {
+            StringColor = colorCode;
+        }
+
+        /// <summary>
+        /// Instiniating attribute with applied color.
+        /// </summary>
+        /// <param name="color">Target color.</param>
+        /// <remarks>No supported via attribute.</remarks>
+        public ColorAttribute(Color color)
+        {
+            Color = color;
+        }
     }
 }

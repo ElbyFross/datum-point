@@ -111,10 +111,7 @@ namespace WpfHandler.UI.Controls
         /// <param name="layer">Target UI layer.</param>
         /// <param name="args">Must contains: <see cref="UIDescriptor"/> and <see cref="MemberInfo"/></param>
         public void OnGUI(ref LayoutLayer layer, params object[] args)
-        {
-            // Configurate UI if binded.
-            Foreground = Brushes.WhiteSmoke;
-            
+        {            
             // Find required referendes.
             MemberInfo member = null;
 

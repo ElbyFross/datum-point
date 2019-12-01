@@ -38,15 +38,27 @@ namespace WpfHandler.UI.Controls
     public partial class Header : UserControl, IGUIField, ILabel
     {
         #region Dependency properties
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
             "Label", typeof(string), typeof(Header), new PropertyMetadata("Sample"));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty GUIContentProperty = DependencyProperty.Register(
             "GUIContent", typeof(GUIContent), typeof(Header));//, new PropertyMetadata(GUIContent.None));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty ActiveProperty = DependencyProperty.Register(
             "Active", typeof(bool), typeof(Header), new PropertyMetadata(true));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty ArrowVisibleProperty = DependencyProperty.Register(
             "ArrowVisible", typeof(bool), typeof(Header), new PropertyMetadata(true));
         #endregion

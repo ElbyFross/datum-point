@@ -33,24 +33,42 @@ namespace WpfHandler.UI.Controls
     /// <summary>
     /// Interaction logic for SelectableFlatButton.xaml
     /// </summary>
-    public partial class SelectableFlatButton : UserControl
+    public partial class SelectableFlatButton : UserControl, ILabel, ISelectableControl
     {
         #region Dependency properties
-        public static readonly DependencyProperty TextProperty = DependencyProperty.Register(
-          "Text", typeof(string), typeof(SelectableFlatButton), new PropertyMetadata("Sample"));
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
+        public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
+          "Label", typeof(string), typeof(SelectableFlatButton), new PropertyMetadata("Sample"));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty ClickCallbackProperty = DependencyProperty.Register(
           "ClickCallback", typeof(Action<object>), typeof(SelectableFlatButton));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty SelectedProperty = DependencyProperty.Register(
           "Selected", typeof(bool), typeof(SelectableFlatButton));
-        
+
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty GroupProperty = DependencyProperty.Register(
           "Group", typeof(string), typeof(SelectableFlatButton), new PropertyMetadata("default"));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty MultiSelectionProperty = DependencyProperty.Register(
-          "MultiSelection", typeof(bool), typeof(SelectableFlatButton));
+          "MultiSelection", typeof(bool), typeof(SelectableFlatButton), new PropertyMetadata(false));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty HightlightBackgroundProperty = DependencyProperty.Register(
           "HightlightBackground", typeof(Brush), typeof(SelectableFlatButton),
           new PropertyMetadata(Brushes.Yellow));
@@ -72,10 +90,10 @@ namespace WpfHandler.UI.Controls
         /// <summary>
         /// Text that will be displayed on the button.
         /// </summary>
-        public string Text
+        public string Label
         {
-            get { return (string)button.GetValue(TextProperty); }
-            set {button.SetValue(TextProperty, value); }
+            get { return (string)GetValue(LabelProperty); }
+            set {SetValue(LabelProperty, value); }
         }
 
         /// <summary>
@@ -129,6 +147,11 @@ namespace WpfHandler.UI.Controls
             get { return (Brush)mark.GetValue(BackgroundProperty); }
             set { mark.SetValue(BackgroundProperty, value); }
         }
+
+        /// <summary>
+        /// Not supported.
+        /// </summary>
+        public float LabelWidth { get => throw new NotSupportedException(); set => throw new NotSupportedException(); }
         #endregion
 
 
@@ -242,7 +265,7 @@ namespace WpfHandler.UI.Controls
         /// <summary>
         /// Callback for button click.
         /// </summary>
-        /// <param name="sender">
+        /// <param name="_">
         /// Not using. Will be overided on `this` cause listener 
         /// can't khow reference tp the child button control.</param>
         public void OnButtonClick(object _)

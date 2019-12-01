@@ -17,13 +17,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using System.Windows.Controls;
 using WpfHandler.UI.AutoLayout.Configuration;
 using WpfHandler.UI.AutoLayout.Controls;
 using WpfHandler.UI.AutoLayout.Options;
 using WpfHandler.UI.AutoLayout;
+using WpfHandler.UI;
 
 namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
 {
+    [Foreground("WhiteSmoke")]
     public class LayoutPropertiesPanel : UIDescriptor
     {
         public enum Modes
@@ -58,6 +62,11 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
         [Header("TEST HEADER 2", "testheader2")]
         public float testFloat223sd = 4;
 
+        [Foreground("Blue")]
         public Modes enumField;
+
+        [Content]
+        [Orientation(Orientation.Horizontal)]
+        public Modes enumFieldRaw;
     }
 }

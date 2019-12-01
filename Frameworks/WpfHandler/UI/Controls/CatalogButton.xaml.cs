@@ -35,24 +35,39 @@ namespace WpfHandler.UI.Controls
     public partial class CatalogButton : UserControl, ILabel
     {
         #region Dependency properties
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
           "Label", typeof(string), typeof(CatalogButton));
 
         //public static readonly DependencyProperty HierarchyLevelProperty = DependencyProperty.Register(
         //  "HierarchyLevel", typeof(int), typeof(CatalogButton));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty UnfocusedBackgroundColorProperty = DependencyProperty.Register(
           "UnfocusedBackgroundColor", typeof(Brush), typeof(CatalogButton),
           new PropertyMetadata(Brushes.Transparent));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty FocusedBackgroundColorProperty = DependencyProperty.Register(
           "FocusedBackgroundColor", typeof(Brush), typeof(CatalogButton),
            new PropertyMetadata(new SolidColorBrush((Color)ColorConverter.ConvertFromString("#00A8E8"))));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty TextColorProperty = DependencyProperty.Register(
           "TextColor", typeof(Brush), typeof(CatalogButton),
           new PropertyMetadata(Brushes.White));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty ClickCallbackProperty = DependencyProperty.Register(
           "ClickCallback", typeof(System.Action<object>), typeof(CatalogButton));
         #endregion
@@ -109,6 +124,13 @@ namespace WpfHandler.UI.Controls
         public float LabelWidth { get => throw new NotSupportedException(); set => throw new NotSupportedException(); }
         #endregion
 
+        /// <summary>
+        /// Initialisign the catalog button.
+        /// </summary>
+        /// <remarks>
+        /// Trying to find "MenuButton" resource as <see cref="Style"/>. 
+        /// Applying in case if found.
+        /// </remarks>
         public CatalogButton()
         {
             InitializeComponent();

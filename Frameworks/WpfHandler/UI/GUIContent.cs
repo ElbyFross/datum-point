@@ -227,6 +227,9 @@ namespace WpfHandler.UI
             Dictionaries.API.LanguagesDictionariesUpdated += API_LanguagesDictionariesUpdated;
         }
 
+        /// <summary>
+        /// Resliasing unmanged memory.
+        /// </summary>
         ~GUIContent()
         {
             // Unsubscribe from events.
@@ -278,7 +281,6 @@ namespace WpfHandler.UI
         /// <summary>
         /// Define relevant description for certain member.
         /// </summary>
-        /// <param name="member">Binded member that would be used as source of auto generated member description.</param>
         /// <returns>Relevant description of the member.</returns>
         public string GetDescription()
         {

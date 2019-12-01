@@ -296,36 +296,69 @@ namespace WpfHandler.UI.Controls
         }
 
         #region Dependency properties
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty ColumnsCountProperty = DependencyProperty.Register(
           "ColumnsCount", typeof(int), typeof(SelectableGrid), new PropertyMetadata(1));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty RowsCountProperty = DependencyProperty.Register(
           "RowsCount", typeof(int), typeof(SelectableGrid), new PropertyMetadata(1));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty SelectebleRowsProperty = DependencyProperty.Register(
           "SelectebleRows", typeof(bool), typeof(SelectableGrid), new PropertyMetadata(true));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty SelectebleColumnsProperty = DependencyProperty.Register(
           "SelectebleColumns", typeof(bool), typeof(SelectableGrid), new PropertyMetadata(true));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty SelectebleBlocksProperty = DependencyProperty.Register(
           "SelectebleBlocks", typeof(bool), typeof(SelectableGrid), new PropertyMetadata(true));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty CellSizeProperty = DependencyProperty.Register(
             "CellSize", typeof(float), typeof(SelectableGrid), new PropertyMetadata(25.0f));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty CellsSpaceProperty = DependencyProperty.Register(
             "CellsSpace", typeof(float), typeof(SelectableGrid), new PropertyMetadata(5.0f));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty SelectedBorderBackgroundProperty = DependencyProperty.Register(
             "SelectedBorderBackground", typeof(Brush), typeof(SelectableGrid), new PropertyMetadata(Brushes.WhiteSmoke));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty SelectedGridBackgroundProperty = DependencyProperty.Register(
             "SelectedGridBackground", typeof(Brush), typeof(SelectableGrid), new PropertyMetadata(Brushes.WhiteSmoke));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty HorizontalSymmetryProperty = DependencyProperty.Register(
             "HorizontalSymmetry", typeof(bool), typeof(SelectableGrid), new PropertyMetadata(false));
 
+        /// <summary>
+        /// Bridging XAML declaring and the member.
+        /// </summary>
         public static readonly DependencyProperty HorizontalSymmetrySpaceProperty = DependencyProperty.Register(
             "HorizontalSymmetrySpace", typeof(float), typeof(SelectableGrid), new PropertyMetadata(0.0f));
         #endregion

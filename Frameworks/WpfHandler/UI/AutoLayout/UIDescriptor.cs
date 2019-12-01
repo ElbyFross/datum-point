@@ -41,15 +41,25 @@ namespace WpfHandler.UI.AutoLayout
         /// <param name="root">UI element that would contain instiniated UI elemets.</param>
         public void BindTo(Panel root)
         {
+            #region Getting descripting data
+            // Getting relevant type.
+            var selfType = this.GetType();
+
+            // Getting options applied to every memeber.
+            var globalOptions = Attribute.GetCustomAttributes(selfType, typeof(Attribute)).Where
+                (f => f.GetType().GetInterface(typeof(IGUILayoutOption).FullName) != null);
+
             // Get all memebers.
-            var members = GetType().GetMembers();
+            var members = selfType.GetMembers();
 
             // Sorting by order.
             var orderedMembers = members.Where(f => f.GetCustomAttribute<OrderAttribute>() != null).
                 OrderBy(f => f.GetCustomAttribute<OrderAttribute>().Order);
+
             // Sorting disordered members by metadata.
             var disorderedMembers = members.Where(f => f.GetCustomAttribute<OrderAttribute>() == null).
                 OrderBy(f => f.MetadataToken);
+            #endregion
 
             // Sort in declaretion order.
             members = orderedMembers.Concat(disorderedMembers).ToArray();
@@ -157,6 +167,12 @@ namespace WpfHandler.UI.AutoLayout
                     // Check if spawned control is framework element.
                     if (control is FrameworkElement fEl)
                     {
+                        // Applying global options
+                        foreach(IGUILayoutOption option in globalOptions)
+                        {
+                            option.ApplyLayoutOption(fEl);
+                        }
+
                         // Perform options attributes.
                         foreach (Attribute attr in attributes)
                         {
@@ -176,11 +192,11 @@ namespace WpfHandler.UI.AutoLayout
                     {
                         #region Configurating layout
                         // Add horizontal shift for sub descriptor.
-                        new Configuration.BeginHorizontalGroupAttribute().OnGUI(ref activeLayer);
+                        new BeginHorizontalGroupAttribute().OnGUI(ref activeLayer);
                         new Controls.SpaceAttribute(10).OnGUI(ref activeLayer);
 
                         // Add vertical group.
-                        var vertGroup = new Configuration.BeginVerticalGroupAttribute();
+                        var vertGroup = new BeginVerticalGroupAttribute();
                         vertGroup.OnGUI(ref activeLayer);
                         #endregion
 
