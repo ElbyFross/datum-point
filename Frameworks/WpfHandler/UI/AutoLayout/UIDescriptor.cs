@@ -325,7 +325,8 @@ namespace WpfHandler.UI.AutoLayout
                 // Adding instiniated element to the layout.
                 activeLayer?.ApplyControl(control as FrameworkElement);
             }
-            catch { }
+            catch(Exception ex) 
+            { MessageBox.Show("Constrol sign up failed.\n\nDetails:\n" + ex.Message); }
         }
 
         /// <summary>

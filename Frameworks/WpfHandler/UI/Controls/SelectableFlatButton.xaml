@@ -28,14 +28,17 @@ limitations under the License.-->
         
         <Grid Width="6.5"/>
         
-        <Grid x:Name="mark" Background="{Binding HightlightBackground}" Opacity="0" Width="5" Margin="0, 0, 0, 7"/>
+        <Grid x:Name="mark" 
+              Background="{Binding HightlightBackground}" 
+              VerticalAlignment="Stretch" Opacity="0" Width="5" Margin="0, 3, 0, 3"/>
         
-        <local:FlatButton x:Name="button" VerticalAlignment="Center" 
+        <local:FlatButton x:Name="button" VerticalAlignment="Stretch" 
                           VerticalContentAlignment="Center"
                           Label="{Binding Label, ElementName=main}"  
                           FontSize="{Binding FontSize, ElementName=main}" 
                           FontWeight="{Binding FontWeight, ElementName=main}"
                           Foreground="{Binding Foreground, ElementName=main}"
                           ClickCallback="OnButtonClick"/>
+
     </StackPanel>
 </UserControl>

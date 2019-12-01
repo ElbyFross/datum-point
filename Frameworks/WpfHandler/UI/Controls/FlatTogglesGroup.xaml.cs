@@ -50,7 +50,7 @@ namespace WpfHandler.UI.Controls
         /// Property that bridging control's property between XAML and code.
         /// </summary>
         public static readonly DependencyProperty LabelWidthProperty = DependencyProperty.Register(
-          "LabelWidth", typeof(float), typeof(FlatTogglesGroup));
+          "LabelWidth", typeof(float), typeof(FlatTogglesGroup), new PropertyMetadata(float.NaN));
         #endregion
 
         #region Public members
@@ -130,33 +130,7 @@ namespace WpfHandler.UI.Controls
                 float appliedSize = (float)Math.Min(_LabelWidth, ActualWidth - 25);
 
                 // Appling value.
-                SetValue(LabelWidthProperty, appliedSize);
-
-                // Defining visibility.
-                if (_LabelWidth <= 0)
-                {
-                    // Hide the lable.
-                    label.Visibility = Visibility.Collapsed;
-
-                    // Expand an items panel.
-                    if (ItemsPanel != null)
-                    {
-                        Grid.SetRow(ItemsPanel, 0);
-                        Grid.SetRowSpan(ItemsPanel, 2);
-                    }
-                }
-                else
-                {
-                    // Show the lable.
-                    label.Visibility = Visibility.Visible;
-
-                    // Warping an items panel.
-                    if (ItemsPanel != null)
-                    {
-                        Grid.SetRow(ItemsPanel, 1);
-                        Grid.SetRowSpan(ItemsPanel, 1);
-                    }
-                }
+                SetValue(LabelWidthProperty, appliedSize);              
             }
         }
 
@@ -168,9 +142,31 @@ namespace WpfHandler.UI.Controls
             get => Values.GetValue(Index);
             set
             {
+                // Initialize if core data is invalid.
+                if(BindedEnumType == null)
+                {
+                    var type = value.GetType();
+                    // Drop if source is not enum.
+                    if (!type.IsEnum) throw new NotSupportedException("Shared member must be enum");
+                    // Storing received type.
+                    BindedEnumType = type;
+                }
 
-                // Inform subscribers.
-                ValueChanged?.Invoke(this);
+                // Looking for relative index.
+                int targetIndex = -1;
+                for (int i = 0; i < Values.Length; i++)
+                {
+                    // Comparing values.
+                    if(Values.GetValue(i).Equals(value))
+                    {
+                        // Set as target indes if found.
+                        targetIndex = i;
+                        break;
+                    }
+                }
+
+                // Applying index
+                Index = targetIndex;
             }
         }
 
@@ -187,8 +183,14 @@ namespace WpfHandler.UI.Controls
                 // Check if less then 0.
                 _Index = Math.Max(_Index, 0);
 
-                // Inform subscribers.
-                ValueChanged?.Invoke(this);
+                if (Elements != null)
+                {
+                    // Updating UI.
+                    ((SelectableFlatButton)Elements[Index]).Selected = true;
+
+                    // Inform subscribers.
+                    ValueChanged?.Invoke(this);
+                }
             }
         }
 
@@ -253,6 +255,8 @@ namespace WpfHandler.UI.Controls
         {
             InitializeComponent();
             DataContext = this;
+
+            _LabelWidth = (float)label.Width;
         }
 
         /// <summary>
@@ -303,7 +307,7 @@ namespace WpfHandler.UI.Controls
             Elements = new FrameworkElement[names.Length];
 
             // Getting defined content.
-            var contents = member.GetCustomAttributes<ContentAttribute>();
+            var contents = member.GetCustomAttributes<ContentAttribute>().ToArray();
             #endregion
 
             #region Instiniating UI elements
@@ -311,16 +315,16 @@ namespace WpfHandler.UI.Controls
             var groupToken = Guid.NewGuid().ToString();
 
             // Perform oparation for every element.
-            for(int i = 0; i < names.Length; i++)
+            for (int i = 0; i < names.Length; i++)
             {
                 // Store index relavant for that element for local methods.
                 var localIndexBufer = i;
 
                 // Instiniating new UI element.
                 var element = new SelectableFlatButton()
-                { 
+                {
                     Group = groupToken,
-                    ClickCallback = delegate(object sender)
+                    ClickCallback = delegate (object sender)
                     {
                         // Updating current selected index.
                         _Index = localIndexBufer;
@@ -332,11 +336,14 @@ namespace WpfHandler.UI.Controls
 
                 // Adding to the collection.
                 Elements[i] = element;
-            }
-            ((SelectableFlatButton)Elements[0]).Selected = true;
 
-            // Set elements to the layout.
-            UpdateElementsLayout();
+                // Applying lable's value
+                try { contents[i + 1].BindToLable(element); } // Trying to bind a dynamic content.
+                catch { element.Label = names[i]; } // Loading fom the member's data..
+            }
+
+            // Activating current option.
+            ((SelectableFlatButton)Elements[Index]).Selected = true;
             #endregion
         }
 
@@ -349,7 +356,7 @@ namespace WpfHandler.UI.Controls
             if (ItemsPanel != null)
             {
                 // Unbind elements from deprecated layout.
-                foreach(FrameworkElement element in Elements)
+                foreach (FrameworkElement element in Elements)
                 {
                     ItemsPanel.Children.Remove(element);
                 }
@@ -358,9 +365,13 @@ namespace WpfHandler.UI.Controls
                 canvas.Children.Remove(ItemsPanel);
             }
 
-            if(Orientation == Orientation.Horizontal)
+            if (Orientation == Orientation.Horizontal)
             {
-                ItemsPanel = new Grid();
+                // Instiniating the panel.
+                ItemsPanel = new Grid()
+                {
+                    VerticalAlignment = VerticalAlignment.Center
+                };
 
                 // Applying elements to the new layout.
                 foreach (FrameworkElement element in Elements)
@@ -370,20 +381,55 @@ namespace WpfHandler.UI.Controls
             }
             else
             {
+                // Instiniating the panel.
                 ItemsPanel = new StackPanel()
                 { Orientation = Orientation.Vertical };
-
 
                 // Applying elements to the new layout.
                 foreach (FrameworkElement element in Elements)
                 {
                     LayoutHandler.VerticalLayoutAddChild(ItemsPanel, element);
                 }
+
             }
 
             // Applying layout to the canvas.
             canvas.Children.Add(ItemsPanel);
-            Grid.SetRow(ItemsPanel, 1);
+
+            // Defining visibility.
+            if (_LabelWidth <= 0)
+            {
+                // Hide the lable.
+                label.Visibility = Visibility.Collapsed;
+
+                // Expand an items panel.
+                if (ItemsPanel != null)
+                {
+                    Grid.SetRow(ItemsPanel, 0);
+                }
+            }
+            else
+            {
+                // Show the lable.
+                label.Visibility = Visibility.Visible;
+
+                // Warping an items panel.
+                if (ItemsPanel != null)
+                {
+                    Grid.SetRow(ItemsPanel, 1);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Occurs when element is loaded.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Set elements to the layout.
+            UpdateElementsLayout();
         }
     }
 }

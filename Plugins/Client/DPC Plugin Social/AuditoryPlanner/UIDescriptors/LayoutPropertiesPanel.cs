@@ -37,6 +37,12 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
             Pro
         }
 
+        public enum State
+        { 
+            On,
+            Off
+        }
+
         public string disorderedField = "s-ad2";
 
         [Order(0)]
@@ -62,11 +68,16 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
         [Header("TEST HEADER 2", "testheader2")]
         public float testFloat223sd = 4;
 
-        [Foreground("Blue")]
-        public Modes enumField;
+        [Foreground("Yellow")]
+        public Modes enumField = Modes.Advanced;
 
         [Content]
         [Orientation(Orientation.Horizontal)]
-        public Modes enumFieldRaw;
+        public Modes enumFieldRaw = Modes.Pro;
+        
+        [Orientation(Orientation.Horizontal)]
+        [Content("STATE")]
+        [Content("Вкл")]
+        public State state = State.Off;
     }
 }

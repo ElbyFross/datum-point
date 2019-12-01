@@ -19,14 +19,20 @@ limitations under the License.-->
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WpfHandler.UI.Controls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800"
+             Loaded="UserControl_Loaded">
     <Grid x:Name="canvas">
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition/>
+            <RowDefinition Height="2"/>
         </Grid.RowDefinitions>
         <Label x:Name="label" 
                Content="{Binding Label}"
-               Foreground="{Binding Foreground}"/>
+               Foreground="{Binding Foreground}"
+               Width="{Binding LabelWidth}"
+               VerticalAlignment="Center"
+               IsHitTestVisible="False"
+               Margin="0,-15"/>
     </Grid>
 </UserControl>

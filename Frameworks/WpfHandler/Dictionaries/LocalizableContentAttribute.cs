@@ -21,8 +21,11 @@ using System.Threading.Tasks;
 namespace WpfHandler.Dictionaries
 {
     /// <summary>
-    /// Base attribute that bind UI element to common auto localization system.
+    /// Base attribute that binding UI element to the common auto localization system.
     /// </summary>
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property |
+                    AttributeTargets.Class | AttributeTargets.Struct,
+                    AllowMultiple = true, Inherited = true)]
     public abstract class LocalizableContentAttribute : Attribute
     {
         /// <summary>
