@@ -62,16 +62,16 @@ limitations under the License.-->
                 </Grid.ColumnDefinitions>
 
                 <Label x:Name="errorMessage"
-                    IsHitTestVisible="False"
-                    Content="Error label"
+                       IsHitTestVisible="False"
+                       Content="Error label 2ddgopodd"
                        Visibility="Collapsed"
-                    Height="25"
-                    Grid.Column="0" 
-                    FontSize="14" 
-                    FontWeight="Light" 
-                    HorizontalAlignment="Left" 
-                    VerticalAlignment="Center"
-                    Foreground="Red" />
+                       Height="35"
+                       Grid.Column="0" 
+                       FontSize="14" 
+                       FontWeight="Light" 
+                       HorizontalAlignment="Left" 
+                       VerticalAlignment="Center"
+                       Foreground="Red" />
 
                 <!--Login button-->
                 <local:FlatButton x:Name="loginButton"

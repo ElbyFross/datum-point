@@ -1,0 +1,3482 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WpfHandler</name>
+    </assembly>
+    <members>
+        <member name="T:WpfHandler.UI.AutoLayout.Configuration.ContentAttribute">
+            <summary>
+            Defining content applied to the member.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.Configuration.ContentAttribute.Empty">
+            <summary>
+            Return new attribute instance with None content.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.Configuration.ContentAttribute.BindedLabel">
+            <summary>
+            Instiniated control with a label.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.Configuration.ContentAttribute.BindedMember">
+            <summary>
+            Member info that will be used to auto generation of the field's label content.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Configuration.ContentAttribute.#ctor">
+            <summary>
+            Instiniate new atribute with null GUI content.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Configuration.ContentAttribute.#ctor(System.String)">
+            <summary>
+            Auto initialize content with shared title value.
+            </summary>
+            <param name="title">Title that will be showed up into the label.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Configuration.ContentAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Constructor that allow to set title.
+            </summary>
+            <param name="title">Title of that element.</param>
+            <param name="description">Description of that element.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Configuration.ContentAttribute.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initialize all allowed fields.
+            </summary>
+            <param name="defaultTitle">Title that would be used by default if localization dictionary not found.</param>
+            <param name="defaultDescription">Default description if localization dictionary not found.</param>
+            <param name="decriptionLocalizationResourseKey">Key of description content in localized dynamic dictionary.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Configuration.ContentAttribute.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initialize all allowed fields.
+            </summary>
+            <param name="defaultTitle">Title that would be used by default if localization dictionary not found.</param>
+            <param name="defaultDescription">Default description if localization dictionary not found.</param>
+            <param name="titleLocalizationResourseKey">Key of title content in localized dynamic dictionary.</param>
+            <param name="decriptionLocalizationResourseKey">Key of description content in localized dynamic dictionary.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Configuration.ContentAttribute.LanguagesDictionariesUpdated">
+            <summary>
+            Callback that will occurs in case of updating of the language dictionaries.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Configuration.ContentAttribute.BindToLable(WpfHandler.UI.Controls.ILabel)">
+            <summary>
+            Connecting instiniated control with label to localization updates.
+            </summary>
+            <param name="lable">UI control that has a lable to content bridging.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Configuration.ContentAttribute.BindToLable(WpfHandler.UI.Controls.ILabel,System.Reflection.MemberInfo)">
+            <summary>
+            Connecting instiniated control with label to localization updates.
+            </summary>
+            <param name="lable">UI control that has a lable to content bridging.</param>
+            <param name="sourceMember">
+            Member infor that could be used as source for auto generated 
+            title in case if GUIContent not provided in resources.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Configuration.EnumerableCompatibleAttribute">
+            <summary>
+            Marking GUI element as compatible with enumerable collections.
+            </summary>
+            <remarks>
+            Class with that attribute will be allowed only for displaying enums.
+            Any other specifing will not has any effect.
+            </remarks>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Configuration.EnumsCompatibleAttribute">
+            <summary>
+            Marking GUI elemt as compatible with enum source fields.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Configuration.IGUIElementBindingAttribute">
+            <summary>
+            Implementing of that inerface mark attribute like the one 
+            who using into specifing of the GUI element binding process.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Configuration.OrderAttribute">
+            <summary>
+            Defines order of member into auto-generated UI.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Configuration.BeginHorizontalGroupAttribute">
+            <summary>
+            Starting horizontal layout group.
+            Will wait EndHorizontal to over the last begined group.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.Configuration.BeginHorizontalGroupAttribute.Layer">
+            <summary>
+            Layer that opereted into the handler.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.AutoLayout.Configuration.BeginHorizontalGroupAttribute._Layer">
+            <summary>
+            Bufer that contains layer.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Configuration.BeginHorizontalGroupAttribute.OnGUI(WpfHandler.UI.AutoLayout.LayoutLayer@,System.Object[])">
+            <summary>
+            Going one layer deeper into UI layout.
+            All child element will be placed in horizontal order till calling of the EndGroup element.
+            </summary>
+            <param name="layer">Curent layer. Refernece eill be changed to the new layer after performing.</param>
+            <param name="args">Not using into that elelment.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Configuration.BeginVerticalGroupAttribute">
+            <summary>
+            Starting vertical layout group.
+            Will wait EndVertical to over the last begined group.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.Configuration.BeginVerticalGroupAttribute.Layer">
+            <summary>
+            Layer that opereted into the handler.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.AutoLayout.Configuration.BeginVerticalGroupAttribute._Layer">
+            <summary>
+            Bufer that contains layer.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Configuration.BeginVerticalGroupAttribute.OnGUI(WpfHandler.UI.AutoLayout.LayoutLayer@,System.Object[])">
+            <summary>
+            Going one layer deeper into UI layout.
+            All child element will be placed in vertical order till calling of the EndGroup element.
+            </summary>
+            <param name="layer">Curent layer. Refernece eill be changed to the new layer after performing.</param>
+            <param name="args">Not using into that elelment.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Configuration.CustomControlAttribute">
+            <summary>
+            Allow to override of default control for relative field type to custom one.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.Configuration.CustomControlAttribute.ControlType">
+            <summary>
+            Control's type that would be instiniated into GUI.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.AutoLayout.Configuration.CustomControlAttribute._ControlType">
+            <summary>
+            Buffer tht contains stored type.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Configuration.CustomControlAttribute.#ctor(System.Type)">
+            <summary>
+            Configurating attribute.
+            </summary>
+            <param name="controlType">Type that would be instiniated during GUI spawn.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Configuration.EndGroupAttribute">
+            <summary>
+            Close the last started layout group.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.Configuration.EndGroupAttribute.Layer">
+            <summary>
+            Reference to the layer that had been got by handler doring GoUpper operation.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.AutoLayout.Configuration.EndGroupAttribute._Layer">
+            <summary>
+            Bufer that contains operated layer.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Configuration.EndGroupAttribute.OnGUI(WpfHandler.UI.AutoLayout.LayoutLayer@,System.Object[])">
+            <summary>
+            Trying to go to the upper UI's layer.
+            </summary>
+            <param name="layer">Current layer. Reference will be changed on relevant one.</param>
+            <param name="args">Not using in that element.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Configuration.HideInInspectorAttribute">
+            <summary>
+            Exclude member from auto-builded inspector.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Configuration.TypesCompatibleAttribute">
+            <summary>
+            Defines the types the compatible with the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.AutoLayout.Configuration.TypesCompatibleAttribute.CompatibleWith">
+            <summary>
+            Type that compatible with the member.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Configuration.TypesCompatibleAttribute.#ctor(System.Type[])">
+            <summary>
+            Configurating types compatible with the memeber.
+            </summary>
+            <param name="types">COmpatible types.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Options.LabelWidthAttribute">
+            <summary>
+            Redefines lable width for the ILable objects.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.Options.LabelWidthAttribute.BindedLabel">
+            <summary>
+            Lalbe binded to that attribute.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.LabelWidthAttribute.#ctor">
+            <summary>
+            Default constructor.
+            Using auto width.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.LabelWidthAttribute.#ctor(System.Double)">
+            <summary>
+            Set requested maximum height as Size.
+            </summary>
+            <param name="width">Target lable width.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.LabelWidthAttribute.ApplyLayoutOption(System.Windows.FrameworkElement)">
+            <summary>
+            Define max allowed height of the GUI element.
+            NaN size value will skiped.
+            </summary>
+            <param name="element">Shared UI element. Must has implemented @ILable interface.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.LabelWidthAttribute.LabelWidthAttribute_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Occurs when lable element will load.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Options.BackgroundAttribute">
+            <summary>
+            Define GUI element's background brush.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.BackgroundAttribute.#ctor(System.Windows.Media.Brush)">
+            <summary>
+            Instiniating attribute with applied brush.
+            </summary>
+            <param name="brush">Target brush.</param>
+            <remarks>No supported via attribute.</remarks>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.BackgroundAttribute.#ctor(System.Windows.Media.SolidColorBrush)">
+            <summary>
+            Instiniating attribute with applied brush.
+            </summary>
+            <param name="brush">Target brush.</param>
+            <remarks>No supported via attribute.</remarks>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.BackgroundAttribute.#ctor(System.String)">
+            <summary>
+            Instiniating attribute with applied brush.
+            </summary>
+            <param name="colorCode">
+            Trying to apply string color code as brush by using <see cref="T:System.Windows.Media.ColorConverter"/> rules.
+            Not throw excption in case if color's code invalid to prevent UI crash.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.BackgroundAttribute.#ctor(System.Windows.Media.Color)">
+            <summary>
+            Instiniating attribute with applied color.
+            </summary>
+            <param name="color">Target color.</param>
+            <remarks>No supported via attribute.</remarks>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.BackgroundAttribute.ApplyLayoutOption(System.Windows.FrameworkElement)">
+            <summary>
+            Define GUI element's background brush.
+            </summary>
+            <param name="element">
+            Shared UI element. Must be inheirted from 
+            `System.Windows.Controls.Control` to affect the font properties.
+            </param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Options.FontSizeAttribute">
+            <summary>
+            Define GUI element's text font size.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.Options.FontSizeAttribute.Size">
+            <summary>
+            Size of the font in points.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.FontSizeAttribute.ApplyLayoutOption(System.Windows.FrameworkElement)">
+            <summary>
+            Define GUI element's text font size.
+            </summary>
+            <param name="element">
+            Shared UI element. Must be inheirted from 
+            `System.Windows.Controls.Control` to affect the font properties.
+            </param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Options.ForegroundAttribute">
+            <summary>
+            Define GUI element's foreground brush.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.ForegroundAttribute.#ctor(System.Windows.Media.Brush)">
+            <summary>
+            Instiniating attribute with applied brush.
+            </summary>
+            <param name="brush">Target brush.</param>
+            <remarks>No supported via attribute.</remarks>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.ForegroundAttribute.#ctor(System.Windows.Media.SolidColorBrush)">
+            <summary>
+            Instiniating attribute with applied brush.
+            </summary>
+            <param name="brush">Target brush.</param>
+            <remarks>No supported via attribute.</remarks>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.ForegroundAttribute.#ctor(System.String)">
+            <summary>
+            Instiniating attribute with applied brush.
+            </summary>
+            <param name="colorCode">
+            Trying to apply string color code as brush by using <see cref="T:System.Windows.Media.ColorConverter"/> rules.
+            Not throw excption in case if color's code invalid to prevent UI crash.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.ForegroundAttribute.#ctor(System.Windows.Media.Color)">
+            <summary>
+            Instiniating attribute with applied color.
+            </summary>
+            <param name="color">Target color.</param>
+            <remarks>No supported via attribute.</remarks>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.ForegroundAttribute.ApplyLayoutOption(System.Windows.FrameworkElement)">
+            <summary>
+            Define GUI element's foreground brush.
+            </summary>
+            <param name="element">
+            Shared UI element. Must be inheirted from 
+            `System.Windows.Controls.Control` to affect the font properties.
+            </param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Options.HeightAttribute">
+            <summary>
+            Define height of the GUI element.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.HeightAttribute.#ctor">
+            <summary>
+            Default constructor.
+            Using auto height.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.HeightAttribute.#ctor(System.Double)">
+            <summary>
+            Set requested height as Size.
+            </summary>
+            <param name="height"></param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.HeightAttribute.ApplyLayoutOption(System.Windows.FrameworkElement)">
+            <summary>
+            Define height of the GUI element.
+            </summary>
+            <param name="element">Shared UI element.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Options.HorizontalAlignAttribute">
+            <summary>
+            Define horizontal align of the GUI element.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.Options.HorizontalAlignAttribute.Alignment">
+            <summary>
+            Alignment that will applied to GUI element.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.HorizontalAlignAttribute.ApplyLayoutOption(System.Windows.FrameworkElement)">
+            <summary>
+            Define horizontal align of the GUI element.
+            </summary>
+            <param name="element">Shared UI element.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Options.MaxHeightAttribute">
+            <summary>
+            Define max allowed height of the GUI element.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.MaxHeightAttribute.#ctor">
+            <summary>
+            Default constructor.
+            Using auto height.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.MaxHeightAttribute.#ctor(System.Double)">
+            <summary>
+            Set requested maximum height as Size.
+            </summary>
+            <param name="height">Element's maximum height.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.MaxHeightAttribute.ApplyLayoutOption(System.Windows.FrameworkElement)">
+            <summary>
+            Define max allowed height of the GUI element.
+            </summary>
+            <param name="element">Shared UI element.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Options.MaxWidthAttribute">
+            <summary>
+            Define max width of the GUI element.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.MaxWidthAttribute.#ctor">
+            <summary>
+            Default constructor.
+            Using auto width.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.MaxWidthAttribute.#ctor(System.Double)">
+            <summary>
+            Set requested max height as Size.
+            </summary>
+            <param name="width">Element's maximum width.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.MaxWidthAttribute.ApplyLayoutOption(System.Windows.FrameworkElement)">
+            <summary>
+            Define max width of the GUI element.
+            </summary>
+            <param name="element">Shared UI element.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Options.MinHeightAttribute">
+            <summary>
+            Define min height of the GUI element.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.MinHeightAttribute.#ctor">
+            <summary>
+            Default constructor.
+            Using auto height.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.MinHeightAttribute.#ctor(System.Double)">
+            <summary>
+            Set requested min height as Size.
+            </summary>
+            <param name="height">Element's min height.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.MinHeightAttribute.ApplyLayoutOption(System.Windows.FrameworkElement)">
+            <summary>
+            Define min height of the GUI element.
+            </summary>
+            <param name="element">Shared UI element.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Options.MinWidthAttribute">
+            <summary>
+            Define min width of the GUI element.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.MinWidthAttribute.#ctor">
+            <summary>
+            Default constructor.
+            Using auto width.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.MinWidthAttribute.#ctor(System.Double)">
+            <summary>
+            Set requested maximum height as Size.
+            </summary>
+            <param name="width">Element's minimum width.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.MinWidthAttribute.ApplyLayoutOption(System.Windows.FrameworkElement)">
+            <summary>
+            Define min width of the GUI element.
+            </summary>
+            <param name="element">Shared UI element.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Options.OrientationAttribute">
+            <summary>
+            Define orentation of the UI element.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.AutoLayout.Options.OrientationAttribute.Value">
+            <summary>
+            Orientation 
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.OrientationAttribute.#ctor(System.Windows.Controls.Orientation)">
+            <summary>
+            Default cosntructor.
+            </summary>
+            <param name="orientation">Target UI orientation.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.OrientationAttribute.ApplyLayoutOption(System.Windows.FrameworkElement)">
+            <summary>
+            Applying orientation to the UI element.
+            </summary>
+            <param name="element">Must implements Interfaces.ILayoutOrientation.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Options.StyleAttribute">
+            <summary>
+            Define custom style from resources that would be applied to the GUI element.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.Options.StyleAttribute.ResourceKey">
+            <summary>
+            Resource key that would be looking for style loading.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.Options.StyleAttribute.ShowErrorMessages">
+            <summary>
+            Marker that enable or disabling showing of error messages.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.StyleAttribute.ApplyLayoutOption(System.Windows.FrameworkElement)">
+            <summary>
+            Trying to apply requested style.
+            </summary>
+            <param name="element">Shared UI element.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Options.VerticalAlignAttribute">
+            <summary>
+            Define vertical align of the GUI element.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.Options.VerticalAlignAttribute.Alignment">
+            <summary>
+            Alignment that will applied to GUI element.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.VerticalAlignAttribute.ApplyLayoutOption(System.Windows.FrameworkElement)">
+            <summary>
+            Define vertical align of the GUI element.
+            </summary>
+            <param name="element">Shared UI element.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Options.WidthAttribute">
+            <summary>
+            Define width of GUI element.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.WidthAttribute.#ctor">
+            <summary>
+            Default constructor.
+            Using auto width.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.WidthAttribute.#ctor(System.Double)">
+            <summary>
+            Set requested width as Size.
+            </summary>
+            <param name="width">Element's width.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Options.WidthAttribute.ApplyLayoutOption(System.Windows.FrameworkElement)">
+            <summary>
+            Define width of GUI element.
+            </summary>
+            <param name="element">Shared UI element.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Controls.HeaderAttribute">
+            <summary>
+            Added header block element to UI.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.Controls.HeaderAttribute.DefaultState">
+            <summary>
+            Default state that will applied to the spawned UI element.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.Controls.HeaderAttribute.BindedUI">
+            <summary>
+            Instiniated UI element.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.HeaderAttribute.#ctor(System.String)">
+            <summary>
+            Auto initialize content with shared title value.
+            </summary>
+            <param name="title">Title that will be showed up into the label.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.HeaderAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Constructor that allow to set title.
+            </summary>
+            <param name="title">Title of that element.</param>
+            <param name="description">Description of that element.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.HeaderAttribute.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initialize all allowed fields.
+            </summary>
+            <param name="defaultTitle">Title that would be used by default if localization dictionary not found.</param>
+            <param name="defaultDescription">Default description if localization dictionary not found.</param>
+            <param name="decriptionLocalizationResourseKey">Key of description content in localized dynamic dictionary.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.HeaderAttribute.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initialize all allowed fields.
+            </summary>
+            <param name="defaultTitle">Title that would be used by default if localization dictionary not found.</param>
+            <param name="defaultDescription">Default description if localization dictionary not found.</param>
+            <param name="titleLocalizationResourseKey">Key of title content in localized dynamic dictionary.</param>
+            <param name="decriptionLocalizationResourseKey">Key of description content in localized dynamic dictionary.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.HeaderAttribute.OnGUI(WpfHandler.UI.AutoLayout.LayoutLayer@,System.Object[])">
+            <summary>
+            Spawning Header UI elements un shared layer. Connecting to the shared member.
+            </summary>
+            <param name="layer">Target UI layer.</param>
+            <param name="args">
+            Must contains: <see cref="T:WpfHandler.UI.AutoLayout.UIDescriptor"/>. 
+            <see cref="T:System.Reflection.MemberInfo"/> will excluded from array. Use UI.Controls.Header.OnGUI instead if you want to bind member to the field.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.HeaderAttribute.LanguagesDictionariesUpdated">
+            <summary>
+            TODO: Callback that occurs when content dictionaries are reloaded.
+            Updating header's content.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Controls.LabelAttribute">
+            <summary>
+            Allow to add custom label element to the UI.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.LabelAttribute.#ctor(System.String)">
+            <summary>
+            Auto initialize content with shared title value.
+            </summary>
+            <param name="title">Title that will be showed up into the label.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.LabelAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Constructor that allow to set title.
+            </summary>
+            <param name="title">Title of that element.</param>
+            <param name="description">Description of that element.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.LabelAttribute.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initialize all allowed fields.
+            </summary>
+            <param name="defaultTitle">Title that would be used by default if localization dictionary not found.</param>
+            <param name="defaultDescription">Default description if localization dictionary not found.</param>
+            <param name="decriptionLocalizationResourseKey">Key of description content in localized dynamic dictionary.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.LabelAttribute.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initialize all allowed fields.
+            </summary>
+            <param name="defaultTitle">Title that would be used by default if localization dictionary not found.</param>
+            <param name="defaultDescription">Default description if localization dictionary not found.</param>
+            <param name="titleLocalizationResourseKey">Key of title content in localized dynamic dictionary.</param>
+            <param name="decriptionLocalizationResourseKey">Key of description content in localized dynamic dictionary.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.LabelAttribute.OnGUI(WpfHandler.UI.AutoLayout.LayoutLayer@,System.Object[])">
+            <summary>
+            Spawn label element into the UI.
+            </summary>
+            <param name="layer"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.LabelAttribute.LanguagesDictionariesUpdated">
+            <summary>
+            TODO: Callback that occurs when content dictionaries are reloaded.
+            Updating label's content.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Controls.SpaceAttribute">
+            <summary>
+            Adding space between UI elements.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.Controls.SpaceAttribute.Size">
+            <summary>
+            Size of the space.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.SpaceAttribute.#ctor">
+            <summary>
+            Initialize space into 10 points.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.SpaceAttribute.#ctor(System.Single)">
+            <summary>
+            Set custom step value.
+            </summary>
+            <param name="space">Size of step.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.SpaceAttribute.OnGUI(WpfHandler.UI.AutoLayout.LayoutLayer@,System.Object[])">
+            <summary>
+            Instiniating Space GUI lement.
+            </summary>
+            <param name="layer">Target GUI layer.</param>
+            <param name="args">Not using in that element.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.Controls.AutoLayoutVeiw">
+            <summary>
+            Allow to connect auto generated GUI to the XAML descriptor.
+            </summary>
+            <summary>
+            AutoLayoutVeiw
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.Controls.AutoLayoutVeiw.Descriptor">
+            <summary>
+            Descriptor binded to the view.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.AutoLayout.Controls.AutoLayoutVeiw._Descriptor">
+            <summary>
+            BUfer that contains connected descriptor.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.AutoLayoutVeiw.#ctor">
+            <summary>
+            Initialize component.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.AutoLayoutVeiw.Finalize">
+            <summary>
+            Releasing unmanaged memory.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.AutoLayoutVeiw.Main_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Update dat after loading.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.Controls.AutoLayoutVeiw.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.IGUIElement">
+            <summary>
+            Implementing of that interface allow to modify current layout during calling.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.IGUIElement.OnGUI(WpfHandler.UI.AutoLayout.LayoutLayer@,System.Object[])">
+            <summary>
+            Modify current layer's layout according to GUI element requirments.
+            Calls once during UI spawn.
+            </summary>
+            <param name="layer">Target GUI layer.</param>
+            <param name="args">Shared arguments.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.IGUILayoutOption">
+            <summary>
+            Interface that implement custom layout options performing.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.IGUILayoutOption.ApplyLayoutOption(System.Windows.FrameworkElement)">
+            <summary>
+            Aplying option to the element.
+            </summary>
+            <param name="element">Target GUI element.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.ILayerAttribute">
+            <summary>
+            Define attribute like one that operate with layout layers.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.ILayerAttribute.Layer">
+            <summary>
+            Layer that opereted into the handler.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.ILayerBeginAttribute">
+            <summary>
+            Attribute that cause new layer.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.ILayerEndAttribute">
+            <summary>
+            Attribute that will cause end of work with current UI layer.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.IGUIField">
+            <summary>
+            Implementation of that interface allow to use that control in auto layout user interfaces.
+            </summary>
+        </member>
+        <member name="E:WpfHandler.UI.AutoLayout.IGUIField.ValueChanged">
+            <summary>
+            Event that will occure in case if value of the field will be changed.
+            Will cause updating of the BindedMember value.
+            
+            IGUIField - sender.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.IGUIField.Value">
+            <summary>
+            Value of that control.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.IGUIField.BindedMember">
+            <summary>
+            Memeber that will be used as source\target for the value into UI.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.LayoutHandler">
+            <summary>
+            Provides core methods for layout controls.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.AutoLayout.LayoutHandler.DefaultControlsBindings">
+            <summary>
+            Contains declared bindings from types to default layout controls.
+            </summary>
+            <remarks>
+            Key - The source <see cref="T:System.Type"/>
+            Value - The binded <see cref="T:System.Type"/> of the <see cref="T:WpfHandler.UI.AutoLayout.IGUIField"/> suitable for displaing a source data.
+            </remarks>
+        </member>
+        <member name="F:WpfHandler.UI.AutoLayout.LayoutHandler.EnumControlsBindings">
+            <summary>
+            Contains declared bindings from types to default layout controls comaptible with a enum members.
+            </summary>
+            <remarks>
+            Key - The source <see cref="T:System.Type"/>
+            Value - The binded <see cref="T:System.Type"/> of the <see cref="T:WpfHandler.UI.AutoLayout.IGUIField"/> suitable for displaing a source data.
+            </remarks>
+        </member>
+        <member name="F:WpfHandler.UI.AutoLayout.LayoutHandler.EnumerableControlsBindings">
+            <summary>
+            Contains declared bindings from types to default layout controls comaptible with an enumerable types.
+            </summary>
+            <remarks>
+            Key - The source <see cref="T:System.Type"/>
+            Value - The binded <see cref="T:System.Type"/> of the <see cref="T:WpfHandler.UI.AutoLayout.IGUIField"/> suitable for displaing a source data.
+            </remarks>
+        </member>
+        <member name="F:WpfHandler.UI.AutoLayout.LayoutHandler.RegistredCallbacks">
+            <summary>
+            Table that contains all registread value update callbacks.
+            
+            Key = Type of the binded <see cref="T:WpfHandler.UI.AutoLayout.IGUIField"/>
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.LayoutHandler.#cctor">
+            <summary>
+            Scaning asseblies to find descriptions of controls.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.LayoutHandler.HorizontalLayoutAddChild(System.Windows.Markup.IAddChild,System.Windows.FrameworkElement)">
+            <summary>
+            Adding child to horizontal grid.
+            </summary>
+            <param name="parent">Grid that will contain child.</param>
+            <param name="element">Element that will be added to the grid as child.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.LayoutHandler.VerticalLayoutAddChild(System.Windows.Markup.IAddChild,System.Windows.FrameworkElement)">
+            <summary>
+            Adding child to the bertical layout group.
+            </summary>
+            <param name="parent">VerticalStackPanel that will contin child.</param>
+            <param name="element">Element that will be added to the panel as child.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.LayoutHandler.RegistrateField(WpfHandler.UI.AutoLayout.IGUIField,WpfHandler.UI.AutoLayout.UIDescriptor,System.Reflection.MemberInfo,System.Object)">
+            <summary>
+            Registrating bool property into auto layout ui.
+            </summary>
+            <param name="control">Instiniated layout control.</param>
+            <param name="descriptor">Descriptor that hold fields or properties.</param>
+            <param name="member">Member in descriptor instance that will be used as target for value update.</param>
+            <param name="defautltValue">Value that will be setted by default.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.LayoutHandler.UnregistrateField(WpfHandler.UI.AutoLayout.IGUIField)">
+            <summary>
+            Unbind layout control from auto layout handler.
+            </summary>
+            <param name="control">Target layout control.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.LayoutHandler.RescanAssemblies">
+            <summary>
+            Rescaning solution for Layout controls bindings.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.LayoutHandler.BindLayoutControlToType(System.Collections.Hashtable,System.Type,System.Type)">
+            <summary>
+            Binds <see cref="T:WpfHandler.UI.AutoLayout.IGUIField"/> to the source type to using into auto generate ui panels based on <see cref="T:WpfHandler.UI.AutoLayout.UIDescriptor"/> content.
+            </summary>
+            <param name="table">Target table for binding the element.</param>
+            <param name="controlType">Type with implemented <see cref="T:WpfHandler.UI.AutoLayout.IGUIField"/> interface.</param>
+            <param name="sourceType">Type that will cause spawning of binded <see cref="T:WpfHandler.UI.AutoLayout.IGUIField"/> during building of auto-generated UIs.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.LayoutHandler.GetBindedControl(System.Type,System.Boolean)">
+            <summary>
+            Looking got control binded to the source type.
+            </summary>
+            <param name="sourceType">Type of the member that will be applied to the UI control.</param>
+            <param name="isInherited">Should it look into entire inheritance hierarchy of the source type till not found the binded one?</param>
+            <returns>Type of found control. Null if not found.</returns>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.LayoutLayer">
+            <summary>
+            Contains data about layout layer to relative element.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.AutoLayout.LayoutLayer.root">
+            <summary>
+            Element on that will contains child elements.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.LayoutLayer.Parent">
+            <summary>
+            Parent layer that contains that element.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.LayoutLayer.HasParent">
+            <summary>
+            Check does the layer has a parent.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.AutoLayout.LayoutLayer.Depth">
+            <summary>
+            Computing how many layers existed in that UI group.
+            If Parent layer not exist still count itself as 1 layer.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.AutoLayout.LayoutLayer._Parent">
+            <summary>
+            Bufer that containes reference to the parent layer.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.AutoLayout.LayoutLayer.orientation">
+            <summary>
+            Orientation of that UI layer.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.LayoutLayer.GoDeeper(System.Windows.Markup.IAddChild)">
+            <summary>
+            Create next UI layer and set it as active.
+            </summary>
+            <param name="nextLayerRoot">Element that will be root of the new layer.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.LayoutLayer.GoUpper">
+            <summary>
+            Change current layer to previous one.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.LayoutLayer.ApplyControl(System.Windows.FrameworkElement)">
+            <summary>
+             Applying UI element to the GUI.
+            </summary>
+            <param name="element">Shared UI element.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.UIDescriptor">
+            <summary>
+            Class that provides adopting of members by AutoLayout UI.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.AutoLayout.UIDescriptor.activeLayer">
+            <summary>
+            Cyrrent active UI layer.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.UIDescriptor.BindTo(System.Windows.Controls.Panel)">
+            <summary>
+            Insiniate UI by descriptor's attributes map and add it as child to parent element.
+            </summary>
+            <param name="root">UI element that would contain instiniated UI elemets.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.UIDescriptor.UnbindFrom(System.Windows.Controls.Panel)">
+            <summary>
+            Unbinding descriptor from panel.
+            Will affect only memeber defied into descriptor and leave and other GUI elements childed to the panel.
+            </summary>
+            <param name="root">Root panle that was binding target for descriptor.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.UIDescriptor.ControlSignUp(WpfHandler.UI.AutoLayout.IGUIField,System.Reflection.MemberInfo,System.Object)">
+            <summary>
+            Safely init layout control element and sighn up on internal hadler events.
+            </summary>
+            <param name="control">The GUI control that will be instiniated.</param>
+            <param name="member">The member that will be binded to the GUI.</param>
+            <param name="value">Value that will applied as default.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.UIDescriptor.TryToBindControl(WpfHandler.UI.AutoLayout.IGUIField,System.Object[])">
+            <summary>
+            Trying to bind control to the auto layout handler.
+            </summary>
+            <param name="control">Control that would be binded.</param>
+            <param name="args">Must contains <see cref="T:WpfHandler.UI.AutoLayout.UIDescriptor"/> 
+            and <see cref="T:System.Reflection.MemberInfo"/> for success performing.</param>
+            <returns>Is control was binded?</returns>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.UIDescriptor.ToBindControl(WpfHandler.UI.AutoLayout.IGUIField,System.Object[])">
+            <summary>
+            Bind control to the auto layout handler.
+            </summary>
+            <param name="control">Control that would be binded.</param>
+            <param name="args">Must contains <see cref="T:WpfHandler.UI.AutoLayout.UIDescriptor"/> and <see cref="T:System.Reflection.MemberInfo"/>.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.UIDescriptor.ToBindControl(WpfHandler.UI.AutoLayout.IGUIField,WpfHandler.UI.AutoLayout.UIDescriptor,System.Reflection.MemberInfo)">
+            <summary>
+            Bind control to the auto layout handler.
+            </summary>
+            <param name="control">Control that would be binded.</param>
+            <param name="descriptor">Source descriptor.</param>
+            <param name="member">Member from the descriptor.</param>
+        </member>
+        <member name="T:WpfHandler.UI.AutoLayout.UIDescriptor.MembersHandler">
+            <summary>
+            Handling tasks with members suitable for UI descriptor's operations.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.UIDescriptor.MembersHandler.GetSpecifiedMemberInfo(System.Reflection.MemberInfo,System.Reflection.PropertyInfo@,System.Reflection.FieldInfo@)">
+            <summary>
+            Get info suitable for field and properties members.
+            </summary>
+            <param name="member"></param>
+            <param name="propInfo"></param>
+            <param name="fieldInfo"></param>
+            <returns>Is the member is property of field?</returns>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.UIDescriptor.MembersHandler.SetValue(System.Reflection.MemberInfo,System.Object,System.Object)">
+            <summary>
+            Setingt value to the member.
+            </summary>
+            <param name="member">PropertyInfo ot FieldInfo instance.</param>
+            <param name="target">Object that contains member.</param>
+            <param name="value">Value to set.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.UIDescriptor.MembersHandler.GetValue(System.Reflection.MemberInfo,System.Object)">
+            <summary>
+            Getting value to the member.
+            </summary>
+            <param name="member">PropertyInfo ot FieldInfo instance.</param>
+            <param name="target">Object that contains member.</param>
+        </member>
+        <member name="M:WpfHandler.UI.AutoLayout.UIDescriptor.MembersHandler.GetSpecifiedMemberType(System.Reflection.MemberInfo)">
+            <summary>
+            Getting the type of the member.
+            </summary>
+            <param name="member">
+            Member for looking type. Allowed PropertyInfo or FieldInfo.
+            </param>
+            <returns>Type of the member.</returns>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.LayoutSizeAttribute">
+            <summary>
+            Attribute for managing layout size of some element.
+            Provides base members.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.LayoutSizeAttribute.Size">
+            <summary>
+            Value that will be used in the element's propeties.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.LayoutSizeAttribute.#ctor">
+            <summary>
+            Default constructor.
+            Use auto width.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.LayoutSizeAttribute.#ctor(System.Double)">
+            <summary>
+            Set requested width as Size.
+            </summary>
+            <param name="width"></param>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.AutoCollection">
+            <summary>
+            Creating UI element for work with binded collections.
+            </summary>
+            <summary>
+            AutoCollection
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.AutoCollection.AddButonVisibile">
+            <summary>
+            If the add button available for an user.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.AutoCollection.RemoveButonVisibile">
+            <summary>
+            Is the remove button available for an user.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.AutoCollection.ContentSplitersVisibility">
+            <summary>
+            Is the spliting lines between content elements are visible.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.AutoCollection.Orientation">
+            <summary>
+            Orientation of the items into colelction.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.AutoCollection.Elements">
+            <summary>
+            UI elemets existing into the current collection.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.AutoCollection.Value">
+            <summary>
+            Source collection applied to the UI.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.AutoCollection.BindedMember">
+            <summary>
+            Member from UIDescriptor binded to the UI leement.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.AutoCollection.#ctor">
+            <summary>
+            Initialize that component.
+            </summary>
+        </member>
+        <member name="E:WpfHandler.UI.Controls.AutoCollection.ValueChanged">
+            <summary>
+            Will occure when source or one from elements will change.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.AutoCollection.OnGUI(WpfHandler.UI.AutoLayout.LayoutLayer@,System.Object[])">
+            <summary>
+            TODO: Configurating collection and binding element to the descriptors handler.
+            </summary>
+            <param name="layer"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.AutoCollection.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.ILabel">
+            <summary>
+            Implement that interface for controls with existed text label.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.ILabel.Label">
+            <summary>
+            Text of the label.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.ILabel.LabelWidth">
+            <summary>
+            Width of label field.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.ILayoutOrientation">
+            <summary>
+            Implementing of that interface make UI element compatible with orientation modifiers.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.ILayoutOrientation.Orientation">
+            <summary>
+            Orientation of the UI element.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.ILayoutSize">
+            <summary>
+            Define properties for layout managment.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.ILayoutSize.Size">
+            <summary>
+            Value applied to layout property.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.ISelectableControl">
+            <summary>
+            Provides uinform way to operate selecteble elements.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.ISelectableControl.Selected">
+            <summary>
+            Is that elemet selected.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.ISelectableControl.Group">
+            <summary>
+            Group of buttons that will allow auto deselect other buttons from that group.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.ISelectableControl.MultiSelection">
+            <summary>
+            Is group allow few selected buttons in one group.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.CatalogButton">
+            <summary>
+            Interaction logic for CatalogButton.xaml
+            </summary>
+            <summary>
+            CatalogButton
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.CatalogButton.LabelProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.CatalogButton.UnfocusedBackgroundColorProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.CatalogButton.FocusedBackgroundColorProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.CatalogButton.TextColorProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.CatalogButton.ClickCallbackProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.CatalogButton.Label">
+            <summary>
+            Text that will be displayed on the button.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.CatalogButton.HierarchyLevel">
+            <summary>
+            Define offset of the button text. 
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.CatalogButton.AutoMargin">
+            <summary>
+            Compute margine relative to hierarchy level.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.CatalogButton.UnfocusedBackgroundColor">
+            <summary>
+            Collor of button when it unfocused.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.CatalogButton.FocusedBackgroundColor">
+            <summary>
+            Color of button when it focused.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.CatalogButton.TextColor">
+            <summary>
+            Collor of the text.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.CatalogButton.ClickCallback">
+            <summary>
+            Method that will has been calling during click on button.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.CatalogButton.LabelWidth">
+            <summary>
+            Not supported.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.CatalogButton.#ctor">
+            <summary>
+            Initialisign the catalog button.
+            </summary>
+            <remarks>
+            Trying to find "MenuButton" resource as <see cref="T:System.Windows.Style"/>. 
+            Applying in case if found.
+            </remarks>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.CatalogButton.CatalogButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Callback that will has been calling when button will be clicked.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.CatalogButton.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.FlatButton">
+            <summary>
+            Interaction logic for FlatButton.xaml
+            </summary>
+            <summary>
+            FlatButton
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.FlatButton.LabelProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.FlatButton.ClickCallbackProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatButton.Label">
+            <summary>
+            Text that will be displayed on the button.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatButton.LabelMargin">
+            <summary>
+            Offset applied to label.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatButton.LabelWidth">
+            <summary>
+            Not supported.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatButton.ClickCallback">
+            <summary>
+            Method that will has been calling during click on button.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.FlatButton.#ctor">
+            <summary>
+            Default constuctor.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.FlatButton.CatalogButton_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Callback that will has been calling when button will be clicked.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.FlatButton.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.FlatPasswordBox">
+            <summary>
+            Interaction logic for FlatPasswordBox.xaml
+            </summary>
+            <summary>
+            FlatPasswordBox
+            </summary>
+        </member>
+        <member name="E:WpfHandler.UI.Controls.FlatPasswordBox.ValueChanged">
+            <summary>
+            Event that will occure in case if value of the field will be changed.
+            Will cause updating of the BindedMember value.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatPasswordBox.Text">
+            <summary>
+            Text in textbox.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatPasswordBox.BindedMember">
+            <summary>
+            Member binded to that element by the auto layout handler.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatPasswordBox.LabelElement">
+            <summary>
+            Returns reference to the label block of UI element.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatPasswordBox.FieldElement">
+            <summary>
+            Returns reference to the field block of UI element.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.FlatPasswordBox.#ctor">
+            <summary>
+            Defalut constructor.
+            
+            Trying to load `FlatPasswordBox` as @Style resource.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.FlatPasswordBox.PasswordBox_PasswordChanged(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Callback that will occure when password will changed.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.FlatPasswordBox.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.FlatTextBox">
+            <summary>
+            Interaction logic for FlatTextBox.xaml
+            </summary>
+            <summary>
+            FlatTextBox
+            </summary>
+        </member>
+        <member name="E:WpfHandler.UI.Controls.FlatTextBox.ValueChanged">
+            <summary>
+            Event that will occure in case if value of the field will be changed.
+            Will cause updating of the BindedMember value.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatTextBox.BindedMember">
+            <summary>
+            Memeber that will be used as source\target for the value into UI.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatTextBox.LabelElement">
+            <summary>
+            Returns reference to the label block of UI element.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatTextBox.FieldElement">
+            <summary>
+            Returns reference to the field block of UI element.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.FlatTextBox.textPropertyBufer">
+            <summary>
+            Bufer that contains last valid stored text from textbox.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.FlatTextBox.#ctor">
+            <summary>
+            Defautl constructor.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.FlatTextBox.OnGUI(WpfHandler.UI.AutoLayout.LayoutLayer@,System.Object[])">
+            <summary>
+            Configurate GUI element and bind it to auto layout handler.
+            </summary>
+            <param name="layer">Target UI layer.</param>
+            <param name="args">Must contains: <see cref="T:WpfHandler.UI.AutoLayout.UIDescriptor"/> and <see cref="T:System.Reflection.MemberInfo"/></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.FlatTextBox.TextBox_TextChanged(System.Object,System.Windows.Controls.TextChangedEventArgs)">
+            <summary>
+            Will occure when password will be changed.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.FlatTextBox.TextFieldControl_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Init configs when all properties applied.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.FlatTextBox.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.Header">
+            <summary>
+            Interaction logic for Header.xaml
+            </summary>
+            <summary>
+            Header
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.Header.LabelProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.Header.GUIContentProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.Header.ActiveProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.Header.ArrowVisibleProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="E:WpfHandler.UI.Controls.Header.ValueChanged">
+            <summary>
+            Event that will occure in case if value of the field will be changed.
+            Will cause updating of the BindedMember value.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Header.BindedMember">
+            <summary>
+            Memeber that will be used as source\target for the value into UI.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Header.ChildLayer">
+            <summary>
+            Layer thst will be managed by that header.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Header.Label">
+            <summary>
+            Text in label field.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Header.Active">
+            <summary>
+            Is this header active.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Header.ArrowVisible">
+            <summary>
+            Is this header active state arrow is visible.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Header.GUIContent">
+            <summary>
+            Is this header active state arrow is visible.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Header.Value">
+            <summary>
+            Uniform value of that property.
+            Allow only bool. 
+            Deine state of @Active property.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Header.LabelWidth">
+            <summary>
+            Not supported.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.Header.#ctor">
+            <summary>
+            Default costructor.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.Header.OnGUI(WpfHandler.UI.AutoLayout.LayoutLayer@,System.Object[])">
+            <summary>
+            Connecting element to the UI handler.
+            </summary>
+            <param name="layer">Target UI layer.</param>
+            <param name="args">Must contains: <see cref="T:WpfHandler.UI.AutoLayout.UIDescriptor"/> and <see cref="T:System.Reflection.MemberInfo"/></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.Header.Button_Click(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Occurs when layer state button was clicked.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.Header.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.LockScreen">
+            <summary>
+            Interaction logic for LockScreen.xaml
+            </summary>
+            <summary>
+            LockScreen
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.LockScreen.lockedEllements">
+            <summary>
+            Elements that would locked.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.LockScreen.lockAnimationDuration">
+            <summary>
+            How many time will take blur animation.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.LockScreen.blurSize">
+            <summary>
+            Size of Gausian blur.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.LockScreen.OperationCancelCallback">
+            <summary>
+            Method that will has been calling during click on operation cancel button.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.LockScreen.Lock(System.String,System.Windows.FrameworkElement[])">
+            <summary>
+            Lock screen and enable loading animation. 
+            </summary>
+            <param name="message">Message that wold be showed up during lock.</param>
+            <param name="controls">elements that would be locked.</param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.LockScreen.Unlock">
+            <summary>
+            Unlock screen.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.LockScreen.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.Logon.LogonPanel">
+            <summary>
+            Interaction logic for LogonPanel.xaml
+            </summary>
+            <summary>
+            LogonPanel
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.LogonPanel.SingUpCallback">
+            <summary>
+            Method that will has been calling during click on button.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.LogonPanel.LoginCallback">
+            <summary>
+            Method that will has been calling during click on button.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.LogonPanel.LogonFormMargin">
+            <summary>
+            Margine of internal form.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.LogonPanel.Login">
+            <summary>
+            Entered login value.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.LogonPanel.Password">
+            <summary>
+            Entered password value.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.LogonPanel.ErrorMessage">
+            <summary>
+            Error message tha twould displayed at UI's label.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.Logon.LogonPanel.Clear">
+            <summary>
+            Clear all entered data from forms.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.Logon.LogonPanel.MainWindow_SizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
+            <summary>
+            Callback that will has been calling when widow size will be changed.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.Logon.LogonPanel.LogonPanel_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Callback that will caling when panel will loaded.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.Logon.LogonPanel.LoginCallbackHandler(System.Object)">
+            <summary>
+            Callback to login button.
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.Logon.LogonPanel.SingUpCallbackHandler(System.Object)">
+            <summary>
+            Callback to sing up button.
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.Logon.LogonPanel.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.Logon.LogonScreen">
+            <summary>
+            Interaction logic for LogonScreen.xaml
+            </summary>
+            <summary>
+            LogonScreen
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.LogonScreen.LogonPanel_LoginCallback">
+            <summary>
+            Method that will has been calling during click on button.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.LogonScreen.LogonPanel_SingUpCallback">
+            <summary>
+            Method that will has been calling during click on button.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.LogonScreen.RegPanel_ContinueCallback">
+            <summary>
+            Method that will has been calling during continue on button.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.LogonScreen.RegPanel_BackCallback">
+            <summary>
+            Method that will has been calling during back on button.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.LogonScreen.OperationCancelCallback">
+            <summary>
+            Method that will has been calling during click on operation cancel button.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.LogonScreen.FormsAnimationDuration">
+            <summary>
+            How many time will take swich animation of forms.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.LogonScreen.CurrentForm">
+            <summary>
+            Returns current active form.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.Logon.LogonScreen.logonPanel">
+            <summary>
+            Instance of logon panel.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.Logon.LogonScreen.registrationPanel">
+            <summary>
+            Instance of refistration panel.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.Logon.LogonScreen.Clear">
+            <summary>
+            Clear all temporal data and the data from forms.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.Logon.LogonScreen.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.Logon.RegistrationPanel">
+            <summary>
+            Interaction logic for RegistrationPanel.xaml
+            </summary>
+            <summary>
+            RegistrationPanel
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.RegistrationPanel.ContinueCallback">
+            <summary>
+            Method that will has been calling during click on button.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.RegistrationPanel.BackCallback">
+            <summary>
+            Method that will has been calling during click on button.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.RegistrationPanel.RegFormMargin">
+            <summary>
+            Margine of scalable panel.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.RegistrationPanel.RegFormWidth">
+            <summary>
+            Auto-scalable form width.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.RegistrationPanel.Login">
+            <summary>
+            Current login value in the field.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.RegistrationPanel.Password">
+            <summary>
+            Current password value in the field.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.RegistrationPanel.PasswordConfirmation">
+            <summary>
+            Current password's confirmation value in the field.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.RegistrationPanel.FirstName">
+            <summary>
+            Current first name value in the field.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.RegistrationPanel.MiddleName">
+            <summary>
+            Current first name value in the field.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.RegistrationPanel.LastName">
+            <summary>
+            Current first name value in the field.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.RegistrationPanel.PasswordNotMatchErrorLabel">
+            <summary>
+            Does "password not match" error label is enabled.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.RegistrationPanel.FillAllFieldErrorLabel">
+            <summary>
+            Does "fiill all field" error label is enabled.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.RegistrationPanel.ErrorMessage">
+            <summary>
+            Error message tha twould displayed at UI's label.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.Logon.RegistrationPanel.IsPasswordsTheSame">
+            <summary>
+            Check if passwords is the same and not null.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.Logon.RegistrationPanel.Clear">
+            <summary>
+            Clear all data filled to form.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.Logon.RegistrationPanel.MainWindow_SizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
+            <summary>
+            Callback that will has been calling when widow size will be changed.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.Logon.RegistrationPanel.LogonPanel_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Callback that will caling when panel will loaded.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.Logon.RegistrationPanel.ContinueCallbackHandler(System.Object)">
+            <summary>
+            Callback to continue button.
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.Logon.RegistrationPanel.BackCallbackHandler(System.Object)">
+            <summary>
+            Callback to back button.
+            </summary>
+            <param name="sender"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.Logon.RegistrationPanel.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.SelectableFlatButton">
+            <summary>
+            Interaction logic for SelectableFlatButton.xaml
+            </summary>
+            <summary>
+            SelectableFlatButton
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableFlatButton.LabelProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableFlatButton.ClickCallbackProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableFlatButton.SelectedProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableFlatButton.GroupProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableFlatButton.MultiSelectionProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableFlatButton.HightlightBackgroundProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="E:WpfHandler.UI.Controls.SelectableFlatButton.ButtonActivated">
+            <summary>
+            Ivent that will bne called when button wil selected.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableFlatButton.activeGroupsItems">
+            <summary>
+            Hashtable that contain registred groups's items.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableFlatButton.Label">
+            <summary>
+            Text that will be displayed on the button.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableFlatButton.ClickCallback">
+            <summary>
+            Method that will has been calling during click on button.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableFlatButton.Selected">
+            <summary>
+            Does that button selected.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableFlatButton.Group">
+            <summary>
+            Group of buttons that will allow auto deselect other buttons from that group.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableFlatButton.MultiSelection">
+            <summary>
+            Is group allow few selected buttons in one group.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableFlatButton.HightlightBackground">
+            <summary>
+            Color of highlight mark.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableFlatButton.LabelWidth">
+            <summary>
+            Not supported.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.SelectableFlatButton.#ctor">
+            <summary>
+            Default button.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.SelectableFlatButton.TryToGetSelected(System.String,WpfHandler.UI.Controls.SelectableFlatButton@)">
+            <summary>
+            Trying to get curernt selected button in certain group.
+            </summary>
+            <param name="group">Code of buttons' group.</param>
+            <param name="button">Selected button. Null if not selected.</param>
+            <returns>is any button selected?</returns>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.SelectableFlatButton.SelectedCallback(System.Object)">
+            <summary>
+            Callback that will be called when button will be clicked.
+            </summary>
+            <param name="clicked"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.SelectableFlatButton.UI_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Callback that will be called when UI finish loading.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.SelectableFlatButton.OnButtonClick(System.Object)">
+            <summary>
+            Callback for button click.
+            </summary>
+            <param name="_">
+            Not using. Will be overided on `this` cause listener 
+            can't khow reference tp the child button control.</param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.SelectableFlatButton.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.SelectableGrid">
+            <summary>
+            Interaction logic for SelectableGrid.xaml
+            </summary>
+            <summary>
+            SelectableGrid
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.SelectableGrid.ActiveBorder">
+            <summary>
+            Class that contains information about active border element.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.SelectableGrid.ActiveBorder.Direction">
+            <summary>
+            Define direction of the border.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableGrid.ActiveBorder.Direction.Horizontal">
+            <summary>
+            Cells snaped by horizontal order.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableGrid.ActiveBorder.Direction.Vertical">
+            <summary>
+            Cells snaped by vertical order.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableGrid.ActiveBorder.x">
+            <summary>
+            X coords of element in grid.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableGrid.ActiveBorder.y">
+            <summary>
+            Y coords of element in grid.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.ActiveBorder.FromSize">
+            <summary>
+            Size of unselected element.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.ActiveBorder.ToSize">
+            <summary>
+            Size of selected element.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.ActiveBorder.ZOrder">
+            <summary>
+            Z order of sorting.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableGrid.ActiveBorder.direction">
+            <summary>
+            Direction of the border.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.ActiveBorder.Parent">
+            <summary>
+            Grid that contain's that Active border.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.ActiveBorder.OnClickHandler">
+            <summary>
+            Delegate that contains methods that will called when border will be clicled.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.ActiveBorder.Background">
+            <summary>
+            Background of the Active border.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableGrid.ActiveBorder._Background">
+            <summary>
+            Bifer that contains background value.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.ActiveBorder.UI">
+            <summary>
+            UI control binded to that active border.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableGrid.ActiveBorder._UI">
+            <summary>
+            Bufer that contains instiniated UI element.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.ActiveBorder.DebugLabel">
+            <summary>
+            Label that will be used to debug logs.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.SelectableGrid.ActiveBorder.UpdateLayout">
+            <summary>
+            Updating layout settings.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableGrid.ColumnsCountProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableGrid.RowsCountProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableGrid.SelectebleRowsProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableGrid.SelectebleColumnsProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableGrid.SelectebleBlocksProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableGrid.CellSizeProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableGrid.CellsSpaceProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableGrid.SelectedBorderBackgroundProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableGrid.SelectedGridBackgroundProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableGrid.HorizontalSymmetryProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SelectableGrid.HorizontalSymmetrySpaceProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.Active">
+            <summary>
+            Current active grid.
+            </summary>
+        </member>
+        <member name="E:WpfHandler.UI.Controls.SelectableGrid.GridSelected">
+            <summary>
+            Event that will be called when the grid will be activated.
+            </summary>
+        </member>
+        <member name="E:WpfHandler.UI.Controls.SelectableGrid.BorderSelected">
+            <summary>
+            Event that will be called when some border will selected.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.ColumnsCount">
+            <summary>
+            How many collumns will contain grid.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.RowsCount">
+            <summary>
+            How many rows will contain grid.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.SelectebleRows">
+            <summary>
+            Is you able to select row's zone between elements?
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.SelectebleColumns">
+            <summary>
+            Is you able to select column's zone between elements?
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.SelectebleBlocks">
+            <summary>
+            Is you able to select whole block by selecting corner?
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.SelectedBorderBackground">
+            <summary>
+            Color of the border elements when that has selected state.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.SelectedGridBackground">
+            <summary>
+            Color of the entire grid when that has selected state.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.CellSize">
+            <summary>
+            Size of the grid's cell.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.CellsSpace">
+            <summary>
+            Space between grid's cells.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.HorizontalSymmetry">
+            <summary>
+            Is you able to select whole block by selecting corner?
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.HorizontalSymmetrySpace">
+            <summary>
+            Space betwwen sivided symmetric blocks.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SelectableGrid.OnElementIstiniation">
+            <summary>
+            Handler that will be called suring grid filling.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.SelectableGrid.UISpawnHandler">
+            <summary>
+            Delegate that will be called duiring UI spawn.
+            </summary>
+            <param name="x">X coordinate of an element in the grid.</param>
+            <param name="y">Y coordinate of an element in the grid.</param>
+            <returns>Instiniated element. Will be applied to the grid layout automaticly.</returns>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.SelectableGrid.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.SelectableGrid.UpdateGrid">
+            <summary>
+            Updating grid of elements relative to that block.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.SelectableGrid.FillGridRect(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Filling rect of grid with a cells.
+            </summary>
+            <param name="startX"></param>
+            <param name="startY"></param>
+            <param name="width"></param>
+            <param name="height"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.SelectableGrid.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.SwitchPanel">
+            <summary>
+            Interaction logic for SwitchPanel.xaml
+            </summary>
+            <summary>
+            SwitchPanel
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.SwitchPanel.AnimationType">
+            <summary>
+            Type of animation.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SwitchPanel.AnimationType.None">
+            <summary>
+            Animation not defined. Control will switch to the next element immediately.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SwitchPanel.AnimationType.AlphaSwipe">
+            <summary>
+            Switching between elements via making current element transparency 
+            and rolling of the next element from the border of the current control.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SwitchPanel.AnimationType.DarkSwipe">
+            <summary>
+            Shadowing the background and swipe current element out of the control's border. 
+            Removing the shadow when timeline is finished.
+            </summary>
+        </member>
+        <member name="E:WpfHandler.UI.Controls.SwitchPanel.AnimationFinished">
+            <summary>
+            Event that woul be called when animation will be finished.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.SwitchPanel.DurationProperty">
+            <summary>
+            Bridging XAML declaring and the member.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SwitchPanel.Duration">
+            <summary>
+            How many time woult take animation duration.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SwitchPanel.Current">
+            <summary>
+            Current active element.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SwitchPanel.LastAnmimationType">
+            <summary>
+            Animation type that was used during last switch request.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SwitchPanel.InProcessing">
+            <summary>
+            Element that now in processing.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.SwitchPanel.OrderBufer">
+            <summary>
+            Element that was ordered during processing.
+            Would be automaticly call switch to that element after finishing processing.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.SwitchPanel.#ctor">
+            <summary>
+            Instiniating the switch panel.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.SwitchPanel.SwitchTo(System.Windows.UIElement,WpfHandler.UI.Controls.SwitchPanel.AnimationType)">
+            <summary>
+            Requesting switch of UI to new Element.
+            </summary>
+            <param name="element">Element that would be showed instead current.</param>
+            <param name="animationType">The type of an animation that will be used during elemetns switching.</param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.SwitchPanel.StartSwitchAnimation">
+            <summary>
+            Starting animation of elements switching.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.SwitchPanel.AlphaSwipe">
+            <summary>
+            Swipe animation.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.SwitchPanel.Animation_Completed(System.Object,System.EventArgs)">
+            <summary>
+            Callback that will has been calling when swwitch animation would be fisnished.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.SwitchPanel.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.FlatTogglesGroup">
+            <summary>
+            TODO: Operating by group of the toggles.
+            </summary>
+            <summary>
+            FlatTogglesGroup
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.FlatTogglesGroup.LabelProperty">
+            <summary>
+            Property that bridging control's property between XAML and code.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.FlatTogglesGroup.LabelWidthProperty">
+            <summary>
+            Property that bridging control's property between XAML and code.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatTogglesGroup.BindedEnumType">
+            <summary>
+            Type that binded to that GUI element.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatTogglesGroup.Values">
+            <summary>
+            Return an array with values of the binded tnum type.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatTogglesGroup.Orientation">
+            <summary>
+            Layout orientation of the UI elements.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatTogglesGroup.Elements">
+            <summary>
+            Instiniated element in direct order.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatTogglesGroup.Label">
+            <summary>
+            Text in label field.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatTogglesGroup.LabelWidth">
+            <summary>
+            Width of label field.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatTogglesGroup.Value">
+            <summary>
+            Value of that control.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatTogglesGroup.Index">
+            <summary>
+            Current selected element in the group.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatTogglesGroup.BindedMember">
+            <summary>
+            Memeber that will be used as source\target for the value into UI.
+            </summary>
+            <remarks>
+            The SET option is not supported.
+            </remarks>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.FlatTogglesGroup.ItemsPanel">
+            <summary>
+            Panel that contains instiniated elemtnts.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.FlatTogglesGroup._LabelWidth">
+            <summary>
+            Bufer that contains las requested label width.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.FlatTogglesGroup._Orientation">
+            <summary>
+            Bufer that contains current layout orientation.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.FlatTogglesGroup._Index">
+            <summary>
+            Bufer that contains selected index.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.FlatTogglesGroup._BindedMember">
+            <summary>
+            Bufer that contains reference to the binded member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.FlatTogglesGroup._Values">
+            <summary>
+            Bufer that contains the values of the binded enum.
+            </summary>
+        </member>
+        <member name="E:WpfHandler.UI.Controls.FlatTogglesGroup.ValueChanged">
+            <summary>
+            Event that will occure in case if value of the field will be changed.
+            Will cause updating of the BindedMember value.
+            
+            IGUIField - sender.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.FlatTogglesGroup.#ctor">
+            <summary>
+            Initialize component.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.FlatTogglesGroup.OnGUI(WpfHandler.UI.AutoLayout.LayoutLayer@,System.Object[])">
+            <summary>
+            Modify current layer's layout according to GUI element requirments.
+            Calls once during UI spawn.
+            </summary>
+            <param name="layer">Target GUI layer.</param>
+            <param name="args">Shared arguments. Must contains <see cref="T:System.Reflection.MemberInfo"/>.</param>
+            <remarks>
+            Allow castomization enum's element by adding multiply <see cref="T:WpfHandler.UI.AutoLayout.Configuration.ContentAttribute"/>. 
+            First attribute will applied to the common lable. 
+            Any next <see cref="T:WpfHandler.UI.AutoLayout.Configuration.ContentAttribute"/> will be related to the elements by the direct order.
+            </remarks>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.FlatTogglesGroup.UpdateElementsLayout">
+            <summary>
+            Applying relevant layout to the elements.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.FlatTogglesGroup.UserControl_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Occurs when element is loaded.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.FlatTogglesGroup.InitializeComponent">
+            <summary>
+            InitializeComponent
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.TextFieldControl">
+            <summary>
+            Defines base members for all text field for providing uniform way to operate with GUI elemetns.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.Controls.TextFieldControl.Mode">
+            <summary>
+            Mode of value operating.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.TextFieldControl.Mode.String">
+            <summary>
+            Allow any string value.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.TextFieldControl.Mode.Int">
+            <summary>
+            Allow only int formated values.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.TextFieldControl.Mode.Float">
+            <summary>
+            Allow only float values.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.TextFieldControl.Mode.Double">
+            <summary>
+            Allow only double values.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.TextFieldControl.Mode.Regex">
+            <summary>
+            TODO: Use custom regex to define if value is valid.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.TextFieldControl.TextProperty">
+            <summary>
+            Property that bridging control's property between XAML and code.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.TextFieldControl.ValueModeProperty">
+            <summary>
+            Property that bridging control's property between XAML and code.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.TextFieldControl.TextChangedEvent">
+            <summary>
+            Property that bridging control's property between XAML and code.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.TextFieldControl.LabelProperty">
+            <summary>
+            Property that bridging control's property between XAML and code.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.TextFieldControl.LabelWidthProperty">
+            <summary>
+            Property that bridging control's property between XAML and code.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.TextFieldControl.TextBoxForegroundProperty">
+            <summary>
+            Property that bridging control's property between XAML and code.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.TextFieldControl.TextBoxBackgroundProperty">
+            <summary>
+            Property that bridging control's property between XAML and code.
+            </summary>
+        </member>
+        <member name="E:WpfHandler.UI.Controls.TextFieldControl.TextChanged">
+            <summary>
+            Occurs when content changes in the text element.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.TextFieldControl.Text">
+            <summary>
+            Text in textbox.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.TextFieldControl.ValueMode">
+            <summary>
+            Text in textbox.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.TextFieldControl.Value">
+            <summary>
+            Uniform value.
+            Allowed type depends from @ValueMode.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.TextFieldControl.Label">
+            <summary>
+            Text in label field.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.TextFieldControl.LabelWidth">
+            <summary>
+            Width of label field.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Controls.TextFieldControl._LabelWidth">
+            <summary>
+            Bufer that contains las requested label width.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.TextFieldControl.TextBoxForeground">
+            <summary>
+            Color of the text in textbox.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.TextFieldControl.TextBoxBackground">
+            <summary>
+            Collor of the text box backplate.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.TextFieldControl.LabelElement">
+            <summary>
+            Returns reference to the label block of UI element.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Controls.TextFieldControl.FieldElement">
+            <summary>
+            Returns reference to the field block of UI element.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.TextFieldControl.#ctor">
+            <summary>
+            Initizlize base UserControl contructor.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.TextFieldControl.Finalize">
+            <summary>
+            Releasing unmanaged memory.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.TextFieldControl.RecomputeLayout">
+            <summary>
+            Recomputing dinamic layout values for providing hight quiality view.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.TextFieldControl.TextFieldControl_Loaded(System.Object,System.Windows.RoutedEventArgs)">
+            <summary>
+            Init configs when all properties applied.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:WpfHandler.UI.Controls.TextFieldControl.TextFieldControl_SizeChanged(System.Object,System.Windows.SizeChangedEventArgs)">
+            <summary>
+            Occurs when element size will shanged.
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="T:WpfHandler.UI.Effects.BlurEffect">
+            <summary>
+            Provide blur operations.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Effects.BlurEffect.BlurApply(System.Windows.UIElement,System.Double,System.TimeSpan,System.TimeSpan,System.Windows.Media.Animation.FillBehavior)">
+            <summary>
+            Turning blur on.
+            </summary>
+            <param name="element">bluring element</param>
+            <param name="blurRadius">blur radius</param>
+            <param name="duration">blur animation duration</param>
+            <param name="beginTime">blur animation delay</param>
+            <param name="fillBehavior">
+            Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
+            its active period but its parent is inside its active or hold period.</param>
+            <returns>Created animation.</returns>
+        </member>
+        <member name="M:WpfHandler.UI.Effects.BlurEffect.BlurApply(System.Windows.UIElement,System.Double,System.TimeSpan,System.TimeSpan,System.Windows.Media.Animation.FillBehavior,System.Action{System.Windows.Media.Animation.DoubleAnimation})">
+            <summary>
+            Turning blur on.
+            </summary>
+            <param name="element">bluring element</param>
+            <param name="blurRadius">blur radius</param>
+            <param name="duration">blur animation duration</param>
+            <param name="beginTime">blur animation delay</param>
+            <param name="fillBehavior">
+            Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
+            its active period but its parent is inside its active or hold period.</param>
+            <param name="initHandler">Handler that would be called before animation start.
+            There you can subscrube on events or reconfigurate settigns.</param>
+            <returns>Created animation.</returns>
+        </member>
+        <member name="M:WpfHandler.UI.Effects.BlurEffect.BlurDisable(System.Windows.UIElement,System.TimeSpan,System.TimeSpan)">
+            <summary>
+            Turning blur off.
+            </summary>
+            <param name="element">bluring element</param>
+            <param name="duration">blur animation duration</param>
+            <param name="beginTime">blur animation delay</param>
+            <returns>Created animation.</returns>
+        </member>
+        <member name="M:WpfHandler.UI.Effects.BlurEffect.BlurDisable(System.Windows.UIElement,System.TimeSpan,System.TimeSpan,System.Action{System.Windows.Media.Animation.DoubleAnimation})">
+            <summary>
+            Turning blur off.
+            </summary>
+            <param name="element">bluring element</param>
+            <param name="duration">blur animation duration</param>
+            <param name="beginTime">blur animation delay</param>
+            <param name="initHandler">Handler that would be called before animation start.
+            There you can subscrube on events or reconfigurate settigns.</param>
+            <returns>Created animation.</returns>
+        </member>
+        <member name="T:WpfHandler.UI.Animations.FloatAnimation">
+            <summary>
+            Provide base float animations operations.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Animations.FloatAnimation.StartStoryboard(System.Windows.FrameworkElement,System.String,System.Windows.PropertyPath,System.TimeSpan,System.Windows.Media.Animation.FillBehavior,System.Single,System.Single)">
+            <summary>
+            Start float animation.
+            </summary>
+            <param name="parent">Object that contains property.</param>
+            <param name="controlName">A name of the UI Elemnt.</param>
+            <param name="propertyPath">A path that describe the dependency property to be animated.</param>
+            <param name="duration">How many time would take transit.</param>
+            <param name="fillBehavior">
+            Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
+            its active period but its parent is inside its active or hold period.</param>
+            <param name="from">Start value.</param>
+            <param name="to">Finish value.</param>
+            <returns>Created storyboard.</returns>
+        </member>
+        <member name="M:WpfHandler.UI.Animations.FloatAnimation.StartStoryboard(System.Windows.FrameworkElement,System.String,System.Windows.PropertyPath,System.TimeSpan,System.Windows.Media.Animation.FillBehavior,System.Single,System.Single,System.Action{System.Windows.Media.Animation.Storyboard})">
+            <summary>
+            Start float animation.
+            </summary>
+            <param name="parent">Object that contains property.</param>
+            <param name="controlName">A name of the UI element.</param>
+            <param name="propertyPath">A path that describe the dependency property to be animated.</param>
+            <param name="duration">How many time would take transit.</param>
+            <param name="fillBehavior">
+            Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
+            its active period but its parent is inside its active or hold period.</param>
+            <param name="from">Start value.</param>
+            <param name="to">Finish value.</param>
+            <param name="initHandler">Handler that would be called before animation start.
+            There you can subscrube on events or reconfigurate settigns.</param>
+            <returns>Created storyboard.</returns>
+        </member>
+        <member name="M:WpfHandler.UI.Animations.FloatAnimation.StartStoryboard(System.Windows.FrameworkElement,System.Windows.DependencyObject,System.Windows.PropertyPath,System.TimeSpan,System.Windows.Media.Animation.FillBehavior,System.Single,System.Single,System.Action{System.Windows.Media.Animation.Storyboard})">
+            <summary>
+            Start float animation.
+            </summary>
+            <param name="parent">Object that contains target control.</param>
+            <param name="control">UI element that will be animated.</param>
+            <param name="propertyPath">A path that describe the dependency property to be animated.</param>
+            <param name="duration">How many time would take transit.</param>
+            <param name="fillBehavior">
+            Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
+            its active period but its parent is inside its active or hold period.</param>
+            <param name="from">Start value.</param>
+            <param name="to">Finish value.</param>
+            <param name="initHandler">Handler that would be called before animation start.
+            There you can subscrube on events or reconfigurate settigns.</param>
+            <returns>Created storyboard.</returns>
+        </member>
+        <member name="T:WpfHandler.UI.Animations.GridLengthAnimation">
+            <summary>
+            Animates a grid length value just like the DoubleAnimation animates a double value
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Animations.GridLengthAnimation.IsCompleted">
+            <summary>
+            Marks the animation as completed
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Animations.GridLengthAnimation.ReverseValue">
+            <summary>
+            Sets the reverse value for the second animation
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Animations.GridLengthAnimation.ReverseValueProperty">
+            <summary>
+            Dependency property. Sets the reverse value for the second animation
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Animations.GridLengthAnimation.TargetPropertyType">
+            <summary>
+            Returns the type of object to animate
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Animations.GridLengthAnimation.CreateInstanceCore">
+            <summary>
+            Creates an instance of the animation object
+            </summary>
+            <returns>Returns the instance of the GridLengthAnimation</returns>
+        </member>
+        <member name="F:WpfHandler.UI.Animations.GridLengthAnimation.FromProperty">
+            <summary>
+            Dependency property for the From property
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Animations.GridLengthAnimation.From">
+            <summary>
+            CLR Wrapper for the From depenendency property
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Animations.GridLengthAnimation.ToProperty">
+            <summary>
+            Dependency property for the To property
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Animations.GridLengthAnimation.To">
+            <summary>
+            CLR Wrapper for the To property
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Animations.GridLengthAnimation.VerifyAnimationCompletedStatus(System.Windows.Media.Animation.AnimationClock)">
+            <summary>
+            registers to the completed event of the animation clock
+            </summary>
+            <param name="clock">the animation clock to notify completion status</param>
+        </member>
+        <member name="M:WpfHandler.UI.Animations.GridLengthAnimation.GetCurrentValue(System.Object,System.Object,System.Windows.Media.Animation.AnimationClock)">
+            <summary>
+            Animates the grid let set
+            </summary>
+            <param name="defaultOriginValue">The original value to animate</param>
+            <param name="defaultDestinationValue">The final value</param>
+            <param name="animationClock">The animation clock (timer)</param>
+            <returns>Returns the new grid length to set</returns>
+        </member>
+        <member name="M:WpfHandler.UI.Animations.GridLengthAnimation.StartStoryboard(System.Windows.FrameworkElement,System.Windows.DependencyObject,System.Windows.PropertyPath,System.TimeSpan,System.Windows.Media.Animation.FillBehavior,System.Windows.GridLength,System.Windows.GridLength,System.Action{System.Windows.Media.Animation.Storyboard})">
+            <summary>
+            Creating story board with that animation.
+            </summary>
+            <param name="parent"></param>
+            <param name="control"></param>
+            <param name="propertyPath"></param>
+            <param name="duration"></param>
+            <param name="fillBehavior"></param>
+            <param name="from"></param>
+            <param name="to"></param>
+            <param name="initHandler"></param>
+            <returns></returns>
+        </member>
+        <member name="T:WpfHandler.UI.Animations.GridLengthAnimation.ExpanderDoubleAnimation">
+            <summary>
+            Animates a double value 
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Animations.GridLengthAnimation.ExpanderDoubleAnimation.FromProperty">
+            <summary>
+            Dependency property for the From property
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Animations.GridLengthAnimation.ExpanderDoubleAnimation.From">
+            <summary>
+            CLR Wrapper for the From depenendency property
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Animations.GridLengthAnimation.ExpanderDoubleAnimation.ToProperty">
+            <summary>
+            Dependency property for the To property
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Animations.GridLengthAnimation.ExpanderDoubleAnimation.To">
+            <summary>
+            CLR Wrapper for the To property
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.Animations.GridLengthAnimation.ExpanderDoubleAnimation.ReverseValue">
+            <summary>
+            Sets the reverse value for the second animation
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.Animations.GridLengthAnimation.ExpanderDoubleAnimation.ReverseValueProperty">
+            <summary>
+            Sets the reverse value for the second animation
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Animations.GridLengthAnimation.ExpanderDoubleAnimation.CreateInstanceCore">
+            <summary>
+            Creates an instance of the animation
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WpfHandler.UI.Animations.GridLengthAnimation.ExpanderDoubleAnimation.GetCurrentValueCore(System.Double,System.Double,System.Windows.Media.Animation.AnimationClock)">
+            <summary>
+            Animates the double value
+            </summary>
+            <param name="defaultOriginValue">The original value to animate</param>
+            <param name="defaultDestinationValue">The final value</param>
+            <param name="animationClock">The animation clock (timer)</param>
+            <returns>Returns the new double to set</returns>
+        </member>
+        <member name="T:WpfHandler.UI.Animations.ObjectAnimation">
+            <summary>
+            Profides API for managinf objects animations.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.Animations.ObjectAnimation.StartStoryboard(System.Windows.FrameworkElement,System.String,System.Windows.PropertyPath,System.TimeSpan,System.Object,System.Object,System.Windows.Media.Animation.FillBehavior,System.Action{System.Windows.Media.Animation.Storyboard})">
+            <summary>
+            Start object animation.
+            </summary>
+            <param name="parent">Object that contains property.</param>
+            <param name="propertyName">A name of the property.</param>
+            <param name="propertyPath">A path that describe the dependency property to be animated.</param>
+            <param name="duration">How many time would take transit.</param>
+            <param name="from">Start value.</param>
+            <param name="to">Finish value.</param>
+            <param name="fillBehavior">
+            Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
+            its active period but its parent is inside its active or hold period.</param>
+            <param name="initHandler">Handler that would be called before animation start.
+            There you can subscrube on events or reconfigurate settigns.</param>
+            <returns>Created storyboard.</returns>
+        </member>
+        <member name="M:WpfHandler.UI.Animations.ObjectAnimation.StartStoryboard(System.Windows.FrameworkElement,System.Windows.DependencyObject,System.Windows.PropertyPath,System.TimeSpan,System.Object,System.Object,System.Windows.Media.Animation.FillBehavior,System.Action{System.Windows.Media.Animation.Storyboard})">
+            <summary>
+            Start object animation.
+            </summary>
+            <param name="parent">Object that contains property.</param>
+            <param name="obj">object that will animated.</param>
+            <param name="propertyPath">A path that describe the dependency property to be animated.</param>
+            <param name="duration">How many time would take transit.</param>
+            <param name="from">Start value.</param>
+            <param name="to">Finish value.</param>
+            <param name="fillBehavior">
+            Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
+            its active period but its parent is inside its active or hold period.</param>
+            <param name="initHandler">Handler that would be called before animation start.
+            There you can subscrube on events or reconfigurate settigns.</param>
+            <returns>Created storyboard.</returns>
+        </member>
+        <member name="M:WpfHandler.UI.Animations.ObjectAnimation.StartStoryboard(System.Windows.FrameworkElement,System.String,System.Windows.DependencyObject,System.Windows.PropertyPath,System.TimeSpan,System.Object,System.Object,System.Windows.Media.Animation.FillBehavior,System.Action{System.Windows.Media.Animation.Storyboard})">
+            <summary>
+            Start object animation.
+            </summary>
+            <param name="parent">Object that contains property.</param>
+            <param name="propertyName">A name of the property.</param>
+            <param name="obj">Object that will animated. Using in case if @propertyName is null.</param>
+            <param name="propertyPath">A path that describe the dependency property to be animated.</param>
+            <param name="duration">How many time would take transit.</param>
+            <param name="from">Start value.</param>
+            <param name="to">Finish value.</param>
+            <param name="fillBehavior">
+            Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
+            its active period but its parent is inside its active or hold period.</param>
+            <param name="initHandler">Handler that would be called before animation start.
+            There you can subscrube on events or reconfigurate settigns.</param>
+            <returns>Created storyboard.</returns>
+        </member>
+        <member name="M:WpfHandler.UI.Animations.ThinknessAnimation.StartStoryboard(System.Windows.FrameworkElement,System.String,System.Windows.PropertyPath,System.TimeSpan,System.Windows.Thickness,System.Windows.Thickness,System.Windows.Media.Animation.FillBehavior)">
+            <summary>
+            Start thinkness animation.
+            </summary>
+            <param name="parent">Object that contains property.</param>
+            <param name="propertyName">A name of the property.</param>
+            <param name="propertyPath">A path that describe the dependency property to be animated.</param>
+            <param name="duration">How many time would take transit.</param>
+            <param name="from">Start value.</param>
+            <param name="to">Finish value.</param>
+            <param name="fillBehavior">
+            Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
+            its active period but its parent is inside its active or hold period.</param>
+            <returns>Created storyboard.</returns>
+        </member>
+        <member name="M:WpfHandler.UI.Animations.ThinknessAnimation.StartStoryboard(System.Windows.FrameworkElement,System.String,System.Windows.PropertyPath,System.TimeSpan,System.Windows.Thickness,System.Windows.Thickness,System.Windows.Media.Animation.FillBehavior,System.Action{System.Windows.Media.Animation.Storyboard})">
+            <summary>
+            Start thinkness animation.
+            </summary>
+            <param name="parent">Object that contains property.</param>
+            <param name="propertyName">A name of the property.</param>
+            <param name="propertyPath">A path that describe the dependency property to be animated.</param>
+            <param name="duration">How many time would take transit.</param>
+            <param name="from">Start value.</param>
+            <param name="to">Finish value.</param>
+            <param name="fillBehavior">
+            Specifies how a System.Windows.Media.Animation.Timeline behaves when it is outside
+            its active period but its parent is inside its active or hold period.</param>
+            <param name="initHandler">Handler that would be called before animation start.
+            There you can subscrube on events or reconfigurate settigns.</param>
+            <returns>Created storyboard.</returns>
+        </member>
+        <member name="T:WpfHandler.UI.ColorAttribute">
+            <summary>
+            Base class for color attributes that provides unioform convertion API for color mamangment relative to the WPF.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.ColorAttribute.Color">
+            <summary>
+            Applying color to hte brush.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.ColorAttribute.StringColor">
+            <summary>
+            Trying to apply string color code as brush by using <see cref="T:System.Windows.Media.ColorConverter"/> rules.
+            Not throw excption in case if color's code invalid to prevent UI crash.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.ColorAttribute.Brush">
+            <summary>
+            Brush that will applied to GUI element.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.ColorAttribute._Brush">
+            <summary>
+            Bufer that contains generated or shared Brush.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.ColorAttribute.#ctor(System.Windows.Media.Brush)">
+            <summary>
+            Instiniating attribute with applied brush.
+            </summary>
+            <param name="brush">Target brush.</param>
+            <remarks>No supported via attribute.</remarks>
+        </member>
+        <member name="M:WpfHandler.UI.ColorAttribute.#ctor(System.Windows.Media.SolidColorBrush)">
+            <summary>
+            Instiniating attribute with applied brush.
+            </summary>
+            <param name="brush">Target brush.</param>
+            <remarks>No supported via attribute.</remarks>
+        </member>
+        <member name="M:WpfHandler.UI.ColorAttribute.#ctor(System.String)">
+            <summary>
+            Instiniating attribute with applied brush.
+            </summary>
+            <param name="colorCode">
+            Trying to apply string color code as brush by using <see cref="T:System.Windows.Media.ColorConverter"/> rules.
+            Not throw excption in case if color's code invalid to prevent UI crash.</param>
+        </member>
+        <member name="M:WpfHandler.UI.ColorAttribute.#ctor(System.Windows.Media.Color)">
+            <summary>
+            Instiniating attribute with applied color.
+            </summary>
+            <param name="color">Target color.</param>
+            <remarks>No supported via attribute.</remarks>
+        </member>
+        <member name="T:WpfHandler.UI.GUIContent">
+            <summary>
+            Define content of GUI lement.
+            </summary>
+        </member>
+        <member name="E:WpfHandler.UI.GUIContent.ContentUpdated">
+            <summary>
+            Event that will occure when content properties will updated.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.GUIContent.None">
+            <summary>
+            Empty content.
+            Can't change none state after instiniation.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.GUIContent.DefaultTitle">
+            <summary>
+            Title that would be used by default in case if dynamic dictionry not found.
+            in case if null then would be automaticly generated from the name of the binded member.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.GUIContent.DefaultDescription">
+            <summary>
+            Description that would be used by default in case if dynamic dictionry not found.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.GUIContent.TitleLocalizationResourseKey">
+            <summary>
+            Key of resource from dynamic dictionary that would be used for loading of localized title.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.GUIContent.DecriptionLocalizationResourseKey">
+            <summary>
+            Key of resource from dynamic dictionary that would be used for loading of localized description.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.GUIContent.IsNone">
+            <summary>
+            Is that conent is defult none.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.GUIContent._Title">
+            <summary>
+            Bufer that contains last defined title.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.GUIContent._Description">
+            <summary>
+            Bufer that contains last defined description.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.GUIContent._isNone">
+            <summary>
+            is that content is none.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.GUIContent._DefaultTitle">
+            <summary>
+            Title that would be used by default in case if dynamic dictionry not found.
+            in case if null then would be automaticly generated from the name of the binded member.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.GUIContent._DefaultDescription">
+            <summary>
+            Description that would be used by default in case if dynamic dictionry not found.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.GUIContent._TitleLocalizationResourseKey">
+            <summary>
+            Key of resource from dynamic dictionary that would be used for loading of localized title.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.UI.GUIContent._DecriptionLocalizationResourseKey">
+            <summary>
+            Key of resource from dynamic dictionary that would be used for loading of localized description.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.GUIContent.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.GUIContent.#ctor(System.String)">
+            <summary>
+            Constructor that allow to set title.
+            </summary>
+            <param name="title">Title of the element.</param>
+        </member>
+        <member name="M:WpfHandler.UI.GUIContent.#ctor(System.String,System.String)">
+            <summary>
+            Constructor that allow to set title.
+            </summary>
+            <param name="title">Title of that element.</param>
+            <param name="description">Description of that element.</param>
+        </member>
+        <member name="M:WpfHandler.UI.GUIContent.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initialize all allowed fields.
+            </summary>
+            <param name="defaultTitle">Title that would be used by default if localization dictionary not found.</param>
+            <param name="defaultDescription">Default description if localization dictionary not found.</param>
+            <param name="decriptionLocalizationResourseKey">Key of description content in localized dynamic dictionary.</param>
+        </member>
+        <member name="M:WpfHandler.UI.GUIContent.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initialize all allowed fields.
+            </summary>
+            <param name="defaultTitle">Title that would be used by default if localization dictionary not found.</param>
+            <param name="defaultDescription">Default description if localization dictionary not found.</param>
+            <param name="titleLocalizationResourseKey">Key of title content in localized dynamic dictionary.</param>
+            <param name="decriptionLocalizationResourseKey">Key of description content in localized dynamic dictionary.</param>
+        </member>
+        <member name="M:WpfHandler.UI.GUIContent.Finalize">
+            <summary>
+            Resliasing unmanged memory.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.GUIContent.GetTitle">
+            <summary>
+            Define relevant title for certain member.
+            </summary>
+            <returns>Relevant title based on internal data of content.</returns>
+        </member>
+        <member name="M:WpfHandler.UI.GUIContent.GetTitle(System.Reflection.MemberInfo)">
+            <summary>
+            Define relevant title for certain member.
+            </summary>
+            <param name="member">Binded member that would be used as source of auto generated member title.</param>
+            <returns>Relevant title of the member.</returns>
+        </member>
+        <member name="M:WpfHandler.UI.GUIContent.GetDescription">
+            <summary>
+            Define relevant description for certain member.
+            </summary>
+            <returns>Relevant description of the member.</returns>
+        </member>
+        <member name="M:WpfHandler.UI.GUIContent.Format(System.String)">
+            <summary>
+            Format member name to user reandly veiw.
+            </summary>
+            <param name="memberName">Name of the member.</param>
+            <returns>Formated name.</returns>
+        </member>
+        <member name="M:WpfHandler.UI.GUIContent.Clear">
+            <summary>
+            Clearing current data. To allow update.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.GUIContent.API_LanguagesDictionariesUpdated">
+            <summary>
+            WIll occure when new pool of language dictionaries will loaded.
+            Drop current value to allow reloading.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.UI.GUIContentAttribute">
+            <summary>
+            Define members for attributes focused on managing GUIContent.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.UI.GUIContentAttribute.Content">
+            <summary>
+            Content applied to that GUI element.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.GUIContentAttribute.#ctor">
+            <summary>
+            Instiniate new atribute with null GUI content.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.UI.GUIContentAttribute.#ctor(System.String)">
+            <summary>
+            Auto initialize content with shared title value.
+            </summary>
+            <param name="title">Title that will be showed up into the label.</param>
+            <remarks>If the title value is null or empty then instiniating <see cref="P:WpfHandler.UI.GUIContent.None"/>.</remarks>
+        </member>
+        <member name="M:WpfHandler.UI.GUIContentAttribute.#ctor(System.String,System.String)">
+            <summary>
+            Constructor that allow to set title.
+            </summary>
+            <param name="title">Title of that element.</param>
+            <param name="description">Description of that element.</param>
+        </member>
+        <member name="M:WpfHandler.UI.GUIContentAttribute.#ctor(System.String,System.String,System.String)">
+            <summary>
+            Initialize all allowed fields.
+            </summary>
+            <param name="defaultTitle">Title that would be used by default if localization dictionary not found.</param>
+            <param name="defaultDescription">Default description if localization dictionary not found.</param>
+            <param name="decriptionLocalizationResourseKey">Key of description content in localized dynamic dictionary.</param>
+        </member>
+        <member name="M:WpfHandler.UI.GUIContentAttribute.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Initialize all allowed fields.
+            </summary>
+            <param name="defaultTitle">Title that would be used by default if localization dictionary not found.</param>
+            <param name="defaultDescription">Default description if localization dictionary not found.</param>
+            <param name="titleLocalizationResourseKey">Key of title content in localized dynamic dictionary.</param>
+            <param name="decriptionLocalizationResourseKey">Key of description content in localized dynamic dictionary.</param>
+        </member>
+        <member name="T:WpfHandler.Dictionaries.LocalizableContentAttribute">
+            <summary>
+            Base attribute that binding UI element to the common auto localization system.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.Dictionaries.LocalizableContentAttribute.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.Dictionaries.LocalizableContentAttribute.Finalize">
+            <summary>
+            Unsubscribe from events.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.Dictionaries.LocalizableContentAttribute.LanguagesDictionariesUpdated">
+            <summary>
+            Occurs when would reloaded dynamic dictionaries.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.Dictionaries.API">
+            <summary>
+            Class that provide methods for controll WPF application localization.
+            </summary>
+        </member>
+        <member name="E:WpfHandler.Dictionaries.API.LanguagesDictionariesUpdated">
+            <summary>
+            Event that will occure when languages dictionary will be loaded.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.Dictionaries.API.LoadXAML_Thems(System.String)">
+            <summary>
+            Scaning for language dictionaries in XAML files, and load them to Merged dictionaries.
+            Loading new theme by code if found. Leave already loaded if overrided dictionary not found.
+            
+            Require files format: *.theme.THEME_CODE.xaml, where theme code equal current theme selected on the app. 
+            Example: plugin.feed.theme.blueTheme.xaml
+            </summary>
+            <param name="themeCode"></param>
+        </member>
+        <member name="M:WpfHandler.Dictionaries.API.LoadXAML_LangDicts(System.Globalization.CultureInfo,System.Globalization.CultureInfo)">
+            <summary>
+            Scaning for language dictionaries in XAML files, and load them to Merged dictionaries.
+            Load relative to new culture if found. Leave previous culture if not.
+            
+            Require files format: *.lang.CULTURE_CODE.xaml, where culture code equal current translation of the app. 
+            Example: plugin.feed.lang.en-US.xaml
+            </summary>
+            <param name="targetCulture">Culture that will be serched with hightest priority.</param>
+            <param name="secondaryCulture">Culture that will be prefured in case of target not implemented. If also not implemented than will be used first entry.</param>
+        </member>
+        <member name="M:WpfHandler.Dictionaries.API.UpdateDictionariesGroup(System.String,System.String,System.String[])">
+            <summary>
+            
+            </summary>
+            <param name="directory"></param>
+            <param name="groupCode"></param>
+            <param name="subCodes">Codes that will be required from group of plugins.
+            Will be looced in order of prefernces. Lower index - more prefered.
+            Will load any exist in case if any requested code not found.
+            
+            Exmples: 
+            Culture code for localization plugins. 
+            Theme code for design plugins.
+            </param>
+        </member>
+        <member name="T:WpfHandler.Dictionaries.DomainContainer">
+            <summary>
+            Class that provide information about dictionary domain.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.Dictionaries.DomainContainer.key">
+            <summary>
+            Key code of this dictionary.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.Dictionaries.DomainContainer.pluginDomain">
+            <summary>
+            Full domain of plugin.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.Dictionaries.DomainContainer.path">
+            <summary>
+            Path to dictionary xaml.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.Plugins.API">
+            <summary>
+            Class that profide simplifyed way to integrate WPF plugins to client.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.Plugins.API.LoadPluginsEnumerable">
+            <summary>
+            Load plugins from assembly and instiniate them to list.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WpfHandler.Plugins.API.LoadPluginsCollection">
+            <summary>
+            Load plugins from assembly and instiniate them to list.
+            </summary>
+            <param name="list"></param>
+        </member>
+        <member name="M:WpfHandler.Plugins.API.OpenGUI(WpfHandler.Plugins.IPlugin,System.String)">
+            <summary>
+            Oppenig plugin GUI.
+            </summary>
+            <param name="plugin">Target plugin.</param>
+            <param name="panelName">Name of the Panel control that would contrin content.</param>
+        </member>
+        <member name="M:WpfHandler.Plugins.API.SortByDomains(System.Collections.Generic.ICollection{WpfHandler.Plugins.IPlugin})">
+            <summary>
+            Sorting items in collection by tomain recommended orders and hierarchy depth.
+            </summary>
+            <param name="plugins"></param>
+        </member>
+        <member name="F:WpfHandler.Plugins.Constants.PLUGINS_DIR">
+            <summary>
+            Relative directory with plugins.
+            </summary>
+        </member>
+        <member name="F:WpfHandler.Plugins.Constants.THEMES_DIR">
+            <summary>
+            Relative directory with themes xaml files. 
+            </summary>
+        </member>
+        <member name="T:WpfHandler.Plugins.IPlugin">
+            <summary>
+            Interface that allow to create a plugin that can be connect to client application.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.Plugins.IPlugin.Meta">
+            <summary>
+            Meta data that contains description for main menu integration.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.Plugins.IPlugin.OnStart(System.Object)">
+            <summary>
+            Method that will has been calling when menu item would press.
+            Use to apply executable part of the plugin.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.Plugins.IPluginSettings">
+            <summary>
+            Provide possibility to implement setting ui block in application.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.Plugins.IPluginSettings.Meta">
+            <summary>
+            Meta data that contains description for main menu integration.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.Plugins.IPluginSettings.GUI">
+            <summary>
+            Return control that can be displayed as block of settings menu.
+            </summary>
+        </member>
+        <member name="T:WpfHandler.Plugins.MenuItemMeta">
+            <summary>
+            Contain information that will be used for connection to the automatic navigation menu in client application 
+            </summary>
+        </member>
+        <member name="F:WpfHandler.Plugins.MenuItemMeta.domain">
+            <summary>
+            Path of item in menu hierarchy.
+            
+            Domain fragment format: [prority]_domainPart.
+            Priority will be used for sorting of plugins in menu. 
+            If not defined then will be auto changed to SUBDOMAIN.GetHashcode().
+            </summary>
+            
+            <remarks>
+            Attention: 
+            0_DomainName != DomainName
+            0_DomainName.SubdomainName != 10_DomainName.SubdomainName
+            
+            Example of plugins menu map:
+            0_main
+                0_main.0_plugin_1
+                0_main.1_plugin_2
+                
+            big_plugin_3
+                big_plugin_3.10_plugin1
+                big_plugin_3.20_pl_2
+                    big_plugin_3.20_pl_2.minor_plugin
+                big_plugin_3.p_3
+                
+            big_plugin_3 // Dublicated plugin's domain. Will be added to menu but all childs will applied to first entry plugin.
+            </remarks>
+        </member>
+        <member name="F:WpfHandler.Plugins.MenuItemMeta.titleDictionaryCode">
+            <summary>
+            Code of resource in language xaml dictionary that will contain translated title.
+            </summary>
+            <remarks>
+            For avoidance of conflicts recommended naming format is: "p_" + author + "_" + plugin_name + "_" + title.
+            </remarks>
+        </member>
+        <member name="F:WpfHandler.Plugins.MenuItemMeta.defaultTitle">
+            <summary>
+            Title that will be showed in case if dictionary not found.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.Plugins.MenuItemMeta.#ctor">
+            <summary>
+            Default empty constructor.
+            </summary>
+        </member>
+        <member name="M:WpfHandler.Plugins.MenuItemMeta.#ctor(System.String,System.String)">
+            <summary>
+            Initializing core memebers.
+            </summary>
+            <param name="domain">Item domain into hierarchy.</param>
+            <param name="titleDictionaryCode">The resource key in XAML resource dictionary for getting the title.</param>
+        </member>
+        <member name="T:WpfHandler.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:WpfHandler.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="T:XamlGeneratedNamespace.GeneratedInternalTypeHelper">
+            <summary>
+            GeneratedInternalTypeHelper
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateInstance(System.Type,System.Globalization.CultureInfo)">
+            <summary>
+            CreateInstance
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.GetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            GetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.SetPropertyValue(System.Reflection.PropertyInfo,System.Object,System.Object,System.Globalization.CultureInfo)">
+            <summary>
+            SetPropertyValue
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.CreateDelegate(System.Type,System.Object,System.String)">
+            <summary>
+            CreateDelegate
+            </summary>
+        </member>
+        <member name="M:XamlGeneratedNamespace.GeneratedInternalTypeHelper.AddEventHandler(System.Reflection.EventInfo,System.Object,System.Delegate)">
+            <summary>
+            AddEventHandler
+            </summary>
+        </member>
+    </members>
+</doc>

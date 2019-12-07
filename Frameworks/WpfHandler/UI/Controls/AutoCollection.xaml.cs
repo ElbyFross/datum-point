@@ -15,8 +15,8 @@
 using System;
 using System.Reflection;
 using System.Collections;
-using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -39,102 +39,221 @@ namespace WpfHandler.UI.Controls
     /// </summary>
     [TypesCompatible(typeof(Object))]
     [EnumerableCompatible]
-    public partial class AutoCollection : UserControl, IGUIField
+    public partial class AutoCollection : CollectionControl
     {
+        #region Dependency properties
+        /// <summary>
+        /// Property that bridging control's property between XAML and code.
+        /// </summary>
+        public static readonly DependencyProperty BackplateBackgroundProperty = DependencyProperty.Register(
+          "BackplateBackground", typeof(Brush), typeof(AutoCollection),
+          new PropertyMetadata(Brushes.WhiteSmoke));
+
+        /// <summary>
+        /// Property that bridging control's property between XAML and code.
+        /// </summary>
+        public static readonly DependencyProperty SpliterColorProperty = DependencyProperty.Register(
+          "SpliterColor", typeof(Brush), typeof(AutoCollection),
+          new PropertyMetadata(Brushes.LightGray));
+
+        /// <summary>
+        /// Property that bridging control's property between XAML and code.
+        /// </summary>
+        public static readonly DependencyProperty CornerRadiusProperty = DependencyProperty.Register(
+          "CornerRadius", typeof(double), typeof(AutoCollection),
+          new PropertyMetadata(7.0d));
+
+        /// <summary>
+        /// Property that bridging control's property between XAML and code.
+        /// </summary>
+        public static readonly DependencyProperty SplitersDrawProperty = DependencyProperty.Register(
+          "SplitersDraw", typeof(bool), typeof(AutoCollection),
+          new PropertyMetadata(true));
+
+        /// <summary>
+        /// Property that bridging control's property between XAML and code.
+        /// </summary>
+        public static readonly DependencyProperty AddButtonVisibileProperty = DependencyProperty.Register(
+          "AddButonVisibile", typeof(bool), typeof(AutoCollection),
+          new PropertyMetadata(true));
+
+        /// <summary>
+        /// Property that bridging control's property between XAML and code.
+        /// </summary>
+        public static readonly DependencyProperty RemoveButonVisibileProperty = DependencyProperty.Register(
+          "RemoveButonVisibile", typeof(bool), typeof(AutoCollection),
+          new PropertyMetadata(true));
+        #endregion
+
+        #region Public members
         /// <summary>
         /// If the add button available for an user.
         /// </summary>
-        public bool AddButonVisibile { get; set; }
+        public bool AddButonVisibile
+        {
+            get { return (bool)this.GetValue(AddButtonVisibileProperty); }
+            set
+            {
+                // Updating stored value.
+                this.SetValue(AddButtonVisibileProperty, value);
+
+                // Recomputing UI.
+                RecomputeLayout();
+            }
+        }
 
         /// <summary>
         /// Is the remove button available for an user.
         /// </summary>
-        public bool RemoveButonVisibile { get; set; }
+        public bool RemoveButonVisibile
+        {
+            get { return (bool)this.GetValue(RemoveButonVisibileProperty); }
+            set 
+            { 
+                // Updating stored value.
+                this.SetValue(RemoveButonVisibileProperty, value);
+
+                // Recomputing UI.
+                RecomputeLayout();
+            }
+        }
 
         /// <summary>
         /// Is the spliting lines between content elements are visible.
         /// </summary>
-        public bool ContentSplitersVisibility { get; set; }
+        public bool SplitersDraw { get; set; } = true;
 
         /// <summary>
-        /// Orientation of the items into colelction.
+        /// Radius of the rounded corders.
         /// </summary>
-        public Orientation Orientation { get; set; }
-
-        /// <summary>
-        /// UI elemets existing into the current collection.
-        /// </summary>
-        public ObservableCollection<IGUIField> Elements { get; } = new ObservableCollection<IGUIField>();
-
-        /// <summary>
-        /// Source collection applied to the UI.
-        /// </summary>
-        public object Value
-        { 
-            get { return source; }
-            set
-            {
-                // Drop if applied source is not IEnumerable.
-                if (!(value is IEnumerable))
-                    throw new InvalidCastException("Source member mus implement IEnumerable interface.");
-
-                // Updating referece.
-                source = value;
-
-                // TODO: Unsubscribe from current handlers.
-
-                // TODO: Clearing the current GUI.
-
-                // TODO: Instiniating new UI elements.
-
-                // Inform subscribers.
-                ValueChanged?.Invoke(this);
-            }
+        public double CornerRadius
+        {
+            get { return (double)this.GetValue(CornerRadiusProperty); }
+            set { this.SetValue(CornerRadiusProperty, value); }
         }
 
-        private object source;
+        /// <summary>
+        /// Color of the spliters.
+        /// </summary>
+        public Brush SpliterColor
+        {
+            get { return (Brush)this.GetValue(SpliterColorProperty); }
+            set { this.SetValue(SpliterColorProperty, value);}
+        }
 
         /// <summary>
-        /// Member from UIDescriptor binded to the UI leement.
+        /// Bindted lsit element that will manage items.
         /// </summary>
-        public MemberInfo BindedMember { get; set; }
+        public override ListBox ListContent => contentPanel;
+        #endregion
 
+        #region Constructor & destructors
         /// <summary>
         /// Initialize that component.
         /// </summary>
-        public AutoCollection()
+        public AutoCollection() : base()
         {
             InitializeComponent();
-            DataContext = this;
+            base.DataContext = this;
+
+            Loaded += AutoCollection_Loaded;
+        }
+        #endregion
+
+        /// <summary>
+        /// Recomputing element layout.
+        /// </summary>
+        protected void RecomputeLayout()
+        {
+            // Getting current states.
+            bool addButtonState = AddButonVisibile;
+            bool removeButtonState = RemoveButonVisibile;
+
+            // Updating the backplate visibility.
+            bool twoButtonsEnabled = addButtonState && removeButtonState;
+            buttonsBridge.Visibility = twoButtonsEnabled ? Visibility.Visible : Visibility.Collapsed;
+
+            // Updating buttons visibility.
+            addButtonGroup.Visibility = addButtonState ? Visibility.Visible : Visibility.Collapsed;
+            removeButtonGroup.Visibility = removeButtonState ? Visibility.Visible : Visibility.Collapsed;
+
+            // Updating the state of the bridge between the panel and buttons.
+            cornerBackplate.Visibility = removeButtonGroup.Visibility;
+
+            // Updating the grid layout.
+            bool anyButtonEnabled = addButtonState || removeButtonState;
+            Grid.SetRowSpan(collectionPanel, anyButtonEnabled ? 1 : 2);
         }
 
+        #region Callbacks
         /// <summary>
-        /// Will occure when source or one from elements will change.
+        /// Registrating an item of the list.
         /// </summary>
-        public event Action<IGUIField> ValueChanged;
+        /// <param name="index">An index of item into the source collection.</param>
+        /// <returns></returns>
+        protected override FrameworkElement ItemRegistration(int index)
+        {
+            // Getting base element.
+            var element = base.ItemRegistration(index);
 
-        /// <summary>
-        /// TODO: Configurating collection and binding element to the descriptors handler.
-        /// </summary>
-        /// <param name="layer"></param>
-        /// <param name="args"></param>
-        public void OnGUI(ref LayoutLayer layer, params object[] args)
-        { 
-            // Find required referendes.
-            UIDescriptor desc = null;
-            MemberInfo member = null;
-
-            // Trying to get shared properties.
-            foreach (object obj in args)
+            // Adding spliters if requested.
+            if(SplitersDraw)
             {
-                if (obj is UIDescriptor) desc = (UIDescriptor)obj;
-                if (obj is MemberInfo) member = (MemberInfo)obj;
+                // Instiniating panel that will contains the layout.
+                var panel = new StackPanel()
+                {
+                    Orientation = Orientation.Vertical
+                };
+                
+                // Instiniating spliter.
+                var spliter = new Grid()
+                {
+                    Height = 1,
+                    MaxHeight = 1,
+                    Background = SpliterColor,
+                    Margin = new Thickness(-3, 3, -3 ,0),
+                    IsHitTestVisible = false
+                };
+                
+                // Add new elements to the layout parent.
+                panel.Children.Add(element);
+                panel.Children.Add(spliter);
+
+                // Returning parent as target element.
+                return panel;
             }
 
-            // Try to bind control to auto layout handler. Drop if failed.
-            //if (!UIDescriptor.TryToBindControl(this, desc, member)) return;
-
-            // TODO: Update GUI.
+            // Returning defult element.
+            return element;
         }
+
+        /// <summary>
+        /// Occurs when user pressing add button.
+        /// </summary>
+        /// <param name="sender"></param>
+        protected void OnAdd(object sender)
+        {
+            MessageBox.Show("Add");
+        }
+
+        /// <summary>
+        /// Iccurs when user pressing remove button.
+        /// </summary>
+        /// <param name="sender"></param>
+        protected void OnRemove(object sender)
+        {
+            MessageBox.Show("Remove");
+        }
+
+        /// <summary>
+        /// Occurs when the contol is loaded.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AutoCollection_Loaded(object sender, RoutedEventArgs e)
+        {
+            RecomputeLayout();
+        }
+        #endregion
     }
 }

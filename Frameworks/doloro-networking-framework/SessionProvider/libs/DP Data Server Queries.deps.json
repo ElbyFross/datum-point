@@ -12,7 +12,7 @@
           "NETStandard.Library": "2.0.3",
           "AuthorityController": "1.1.0.0",
           "DNFCore": "1.1.0.0",
-          "UniformDataOperator": "1.0.8.2",
+          "UniformDataOperator": "1.0.9.2",
           "UniformQueries": "1.0.0.0"
         },
         "runtime": {
@@ -60,11 +60,11 @@
           }
         }
       },
-      "UniformDataOperator/1.0.8.2": {
+      "UniformDataOperator/1.0.9.2": {
         "runtime": {
           "UniformDataOperator.dll": {
-            "assemblyVersion": "1.0.8.2",
-            "fileVersion": "1.1.0.1"
+            "assemblyVersion": "1.0.9.2",
+            "fileVersion": "1.2.0.2"
           }
         }
       },
@@ -166,7 +166,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "UniformDataOperator/1.0.8.2": {
+    "UniformDataOperator/1.0.9.2": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

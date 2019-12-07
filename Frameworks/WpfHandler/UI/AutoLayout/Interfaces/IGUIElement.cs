@@ -32,6 +32,6 @@ namespace WpfHandler.UI.AutoLayout
         /// </summary>
         /// <param name="layer">Target GUI layer.</param>
         /// <param name="args">Shared arguments.</param>
-        void OnGUI(ref LayoutLayer layer, params object[] args);
+        void OnLayout(ref LayoutLayer layer, params object[] args);
     }
 }

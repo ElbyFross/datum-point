@@ -84,7 +84,7 @@ namespace WpfHandler.UI.AutoLayout.Controls
         /// <param name="args">
         /// Must contains: <see cref="UIDescriptor"/>. 
         /// <see cref="MemberInfo"/> will excluded from array. Use UI.Controls.Header.OnGUI instead if you want to bind member to the field.</param>
-        public virtual void OnGUI(ref LayoutLayer layer, params object[] args)
+        public virtual void OnLayout(ref LayoutLayer layer, params object[] args)
         {
             // Instiniate header UI.
             BindedUI = new UI.Controls.Header()
@@ -106,7 +106,7 @@ namespace WpfHandler.UI.AutoLayout.Controls
             }
 
             // Call GUI processing.
-            BindedUI.OnGUI(ref layer, args);
+            BindedUI.OnLayout(ref layer, args);
 
             // Apply state to the element.
             BindedUI.Active = DefaultState;

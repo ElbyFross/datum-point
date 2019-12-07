@@ -45,7 +45,7 @@ limitations under the License.-->
             - Editing of existing schema
             - Creating new schema
             - Openning help overlay
-            -->            
+            -->
 
             <Grid Background="Gray" Grid.Row="1" Grid.Column="1"/>
 
@@ -61,6 +61,7 @@ limitations under the License.-->
                   HorizontalAlignment="Center"
                   VerticalAlignment="Center"/>
 
+            <ScrollViewer Grid.Column="0" Grid.Row="0" Grid.RowSpan="20" VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="controlPanel" Grid.Column="0" Grid.Row="0" Grid.RowSpan="20" Loaded="ControlPanel_Loaded">
                 <Canvas Height="20"/>
 
@@ -175,7 +176,8 @@ limitations under the License.-->
                     </StackPanel>                                                    
                 </StackPanel>
             </StackPanel>
-
+            </ScrollViewer>
+                
             <StackPanel Orientation="Horizontal" Grid.Column="1">
                 <Canvas Width="10.5" />
                 <Canvas Width="0.5" Background="{DynamicResource ResourceKey=controlMenuBackground}"/>

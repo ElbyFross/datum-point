@@ -34,7 +34,7 @@ namespace WpfHandler.UI.Controls
     /// <summary>
     /// Interaction logic for FlatTextBox.xaml
     /// </summary>
-    [AutoLayout.Configuration.TypesCompatibleAttribute(typeof(int), typeof(float), typeof(double), typeof(string))]
+    [AutoLayout.Configuration.TypesCompatible(typeof(int), typeof(float), typeof(double), typeof(string))]
     public partial class FlatTextBox : TextFieldControl, IGUIField
     {
         #region Properties
@@ -52,7 +52,7 @@ namespace WpfHandler.UI.Controls
         /// <summary>
         /// Returns reference to the label block of UI element.
         /// </summary>
-        public override FrameworkElement LabelElement { get { return lableElement; } }
+        public override FrameworkElement LabelElement { get { return labelElement; } }
 
         /// <summary>
         /// Returns reference to the field block of UI element.
@@ -110,7 +110,7 @@ namespace WpfHandler.UI.Controls
         /// </summary>
         /// <param name="layer">Target UI layer.</param>
         /// <param name="args">Must contains: <see cref="UIDescriptor"/> and <see cref="MemberInfo"/></param>
-        public void OnGUI(ref LayoutLayer layer, params object[] args)
+        public void OnLayout(ref LayoutLayer layer, params object[] args)
         {            
             // Find required referendes.
             MemberInfo member = null;
@@ -137,6 +137,18 @@ namespace WpfHandler.UI.Controls
                 case TypeCode.Int64: ValueMode = Mode.Int; break;
                 default: ValueMode = Mode.String; break;
             }
+        }
+        
+        /// <summary>
+        /// Recomputing dinamic layout values for providing hight quiality view.
+        /// </summary>
+        public override void RecomputeLayout()
+        {
+            base.RecomputeLayout();
+
+            // Ipdating spliter visibility.
+            if (string.IsNullOrEmpty(Label)) spliter.Visibility = Visibility.Collapsed;
+            else spliter.Visibility = Visibility.Visible;
         }
         #endregion
 

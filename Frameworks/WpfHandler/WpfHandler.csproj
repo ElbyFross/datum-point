@@ -60,6 +60,7 @@
     <Compile Include="UI\AutoLayout\Configuration\EnumsCompatibleAttribute.cs" />
     <Compile Include="UI\AutoLayout\Configuration\IGUIElementBindingAttribute.cs" />
     <Compile Include="UI\AutoLayout\Options\LabelWidthAttribute.cs" />
+    <Compile Include="UI\Controls\CollectionControl.cs" />
     <Compile Include="UI\Controls\LayoutSizeAttribute.cs" />
     <Compile Include="UI\Effects\BlurEffect.cs" />
     <Compile Include="UI\Animations\FloatAnimation.cs" />

@@ -18,13 +18,14 @@ using System.Text;
 using UniformQueries;
 using UniformQueries.Executable;
 using DatumPoint.Types.Personality;
+using DatumPoint.Queries.Handlers;
 
 namespace DatumPoint.Queries.Users
 {
     /// <summary>
     /// Updating the user's profile info.
     /// </summary>
-    public class USER_SET_INFO : Handlers.UniformedSqlSetQueryHandler
+    public class USER_SET_INFO : UniformedSqlSetQueryHandler
     {
         public override UserRank RankUperThen { get; set; } = UserRank.Guest;
         public override string SharedObjectProperty { get; set; } = "user";

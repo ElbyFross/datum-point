@@ -46,7 +46,7 @@ namespace WpfHandler.UI.AutoLayout.Configuration
         /// </summary>
         /// <param name="layer">Current layer. Reference will be changed on relevant one.</param>
         /// <param name="args">Not using in that element.</param>
-        public void OnGUI(ref LayoutLayer layer, params object[] args)
+        public void OnLayout(ref LayoutLayer layer, params object[] args)
         {
             // Trying to go to the upper UI's layer.
             layer = layer.GoUpper();

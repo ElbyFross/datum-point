@@ -49,7 +49,7 @@ namespace WpfHandler.UI.AutoLayout.Configuration
         /// </summary>
         /// <param name="layer">Curent layer. Refernece eill be changed to the new layer after performing.</param>
         /// <param name="args">Not using into that elelment.</param>
-        public void OnGUI(ref LayoutLayer layer, params object[] args)
+        public void OnLayout(ref LayoutLayer layer, params object[] args)
         {
             // Creating stack panel.
             IAddChild root = new StackPanel()

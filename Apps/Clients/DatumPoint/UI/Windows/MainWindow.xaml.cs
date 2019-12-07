@@ -79,6 +79,10 @@ namespace DatumPoint.UI.Windows
                 return width;
             }
         }
+
+        public Storyboard LogonSwipeSB { get; protected set; }
+
+        public bool LogonScreenIsActive { get; protected set; } = true;
         #endregion
 
         #region Constructors & destructors
@@ -173,6 +177,36 @@ namespace DatumPoint.UI.Windows
         {
             // Update size of control panel.
             BindingOperations.GetBindingExpression(controlPanelColumn, ColumnDefinition.WidthProperty).UpdateTarget();
+
+            // Stoping current animation.
+            LogonSwipeSB?.Stop();
+
+            // Finalizing overlay position.
+            Thickness overlayTargetMargin;
+            if(LogonScreenIsActive)
+            {
+                overlayTargetMargin = new Thickness(0, -0.5f, 0, 0);
+                LogonSwipeSB = WpfHandler.UI.Animations.ThinknessAnimation.StartStoryboard(
+                this,
+                logonScreen.Name,
+                new PropertyPath(Control.MarginProperty),
+                TimeSpan.Zero,
+                overlayTargetMargin,
+                overlayTargetMargin,
+                FillBehavior.HoldEnd);
+            }
+            else
+            {
+                overlayTargetMargin = new Thickness(0, -0.5f - main.ActualHeight - 5, 0, main.ActualHeight + 5);
+                LogonSwipeSB = WpfHandler.UI.Animations.ThinknessAnimation.StartStoryboard(
+                this,
+                logonScreen.Name,
+                new PropertyPath(Control.MarginProperty),
+                TimeSpan.Zero,
+                overlayTargetMargin,
+                overlayTargetMargin,
+                FillBehavior.HoldEnd);
+            }
         }
 
         /// <summary>
@@ -240,7 +274,7 @@ namespace DatumPoint.UI.Windows
             }
 
             // Set entry data.
-            queriesChanelInstruction.authLogin = logonScreen.logonPanel.Login;
+            queriesChanelInstruction.authLogin = (string)logonScreen.logonPanel.Login.Clone();
             queriesChanelInstruction.authPassword = logonScreen.logonPanel.Password;
 
             // Request logon
@@ -380,6 +414,9 @@ namespace DatumPoint.UI.Windows
                 return;
             }
 
+            // Updating relevant data.
+            queriesChanelInstruction.authLogin = (string)logonScreen.registrationPanel.Login.Clone();
+
             // Check if instruction is has authorized guest token.
             if (!queriesChanelInstruction.IsPartialAuthorized)
             {
@@ -398,7 +435,7 @@ namespace DatumPoint.UI.Windows
             // Unlock overlay.
             overlay.Unlock();
             #endregion
-            
+
             #region Send registration query
             // Method that build and send query with registration data to server.
             async Task SendRegistrationCallback()
@@ -476,6 +513,9 @@ namespace DatumPoint.UI.Windows
                     // Disable logon screen.
                     await DisableLogonScreenAsync();
 
+                    // Applying received auth info like the target.
+                    queriesChanelInstruction.LogonHandler.ServerAnswer = receivedAnswer;
+
                     // Impersionate like authorized user.
                     await ImpersonateUserAsync(queriesChanelInstruction.authLogin, queriesChanelInstruction);
                 }
@@ -549,7 +589,7 @@ namespace DatumPoint.UI.Windows
             userRoleLabel.Content = null;
 
             // If answer not contains error.
-            if (!recevideAnswer.First.PropertyValueString.StartsWith("error"))
+            if (!recevideAnswer.First.PropertyValueString.StartsWith("error", StringComparison.OrdinalIgnoreCase))
             {
                 // Get profile data.
                 var profile = UniformDataOperator.Binary.BinaryHandler.FromByteArray
@@ -602,6 +642,9 @@ namespace DatumPoint.UI.Windows
         /// </summary>
         protected async Task DisableLogonScreenAsync()
         {
+            // Mark as desabled.
+            LogonScreenIsActive = false;
+
             // Drop auth data.
             logonScreen.Clear();
 
@@ -609,7 +652,7 @@ namespace DatumPoint.UI.Windows
             //logonScreen.IsHitTestVisible = false;
 
             // Hide panel.
-            WpfHandler.UI.Animations.ThinknessAnimation.StartStoryboard(
+            LogonSwipeSB = WpfHandler.UI.Animations.ThinknessAnimation.StartStoryboard(
                 this,
                 logonScreen.Name,
                 new PropertyPath(Control.MarginProperty),
@@ -635,11 +678,14 @@ namespace DatumPoint.UI.Windows
         /// </summary>
         protected void EnableLogonScreen()
         {
+            // Mark as enabled.
+            LogonScreenIsActive = true;
+
             // Drop auth data.
             logonScreen.Clear();
 
             // Hide panel.
-            WpfHandler.UI.Animations.ThinknessAnimation.StartStoryboard(
+            LogonSwipeSB = WpfHandler.UI.Animations.ThinknessAnimation.StartStoryboard(
                 this,
                 logonScreen.Name,
                 new PropertyPath(Control.MarginProperty),

@@ -17,6 +17,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Windows.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -104,7 +105,22 @@ namespace WpfHandler.UI.Controls
         /// <summary>
         /// Instiniated element in direct order.
         /// </summary>
-        public FrameworkElement[] Elements { get; protected set; }
+        public FrameworkElement[] Elements
+        {
+            get
+            {
+                // Init element if not exist.
+                if (_Elements == null)
+                {
+                    InstiniateElements();
+                }
+                return _Elements;
+            }
+            protected set
+            {
+                _Elements = value;
+            }
+        }
 
         /// <summary>
         /// Text in label field.
@@ -124,10 +140,10 @@ namespace WpfHandler.UI.Controls
             set
             {
                 // Buferize requested value.
-                _LabelWidth = value;
+                LastLableWidth = value;
 
                 // Set value but apply at least 25 point to input field.
-                float appliedSize = (float)Math.Min(_LabelWidth, ActualWidth - 25);
+                float appliedSize = (float)Math.Min(LastLableWidth, ActualWidth - 25);
 
                 // Appling value.
                 SetValue(LabelWidthProperty, appliedSize);              
@@ -216,7 +232,7 @@ namespace WpfHandler.UI.Controls
         /// <summary>
         /// Bufer that contains las requested label width.
         /// </summary>
-        protected float _LabelWidth;
+        protected float LastLableWidth = 0;
 
         /// <summary>
         /// Bufer that contains current layout orientation.
@@ -237,6 +253,11 @@ namespace WpfHandler.UI.Controls
         /// Bufer that contains the values of the binded enum.
         /// </summary>
         protected Array _Values;
+
+        /// <summary>
+        /// Array that contains instiniated UI elements.
+        /// </summary>
+        protected FrameworkElement[] _Elements;
         #endregion
 
         /// <summary>
@@ -255,8 +276,6 @@ namespace WpfHandler.UI.Controls
         {
             InitializeComponent();
             DataContext = this;
-
-            _LabelWidth = (float)label.Width;
         }
 
         /// <summary>
@@ -270,81 +289,44 @@ namespace WpfHandler.UI.Controls
         /// First attribute will applied to the common lable. 
         /// Any next <see cref="ContentAttribute"/> will be related to the elements by the direct order.
         /// </remarks>
-        public void OnGUI(ref LayoutLayer layer, params object[] args)
+        public void OnLayout(ref LayoutLayer layer, params object[] args)
         {
-            #region Getting shared data
-            // Find required referendes.
-            MemberInfo member = null;
+            Dispatcher.Invoke(DispatcherPriority.Background,
+                  new Action(delegate ()
+                  {
+                      #region Getting shared data
+                      // Find required referendes.
+                      MemberInfo member = null;
 
-            // Trying to get shared properties.
-            foreach (object obj in args)
-            {
-                if (obj is MemberInfo)
-                {
-                    member = (MemberInfo)obj;
-                    break;
-                }
-            }
+                      // Trying to get shared properties.
+                      foreach (object obj in args)
+                      {
+                          if (obj is MemberInfo)
+                          {
+                              member = (MemberInfo)obj;
+                              break;
+                          }
+                      }
 
-            // Drop if member not shared.
-            if (member == null) return;
+                      // Drop if member not shared.
+                      if (member == null) return;
 
-            // Buferizing
-            _BindedMember = member;
-            #endregion
+                      // Buferizing
+                      _BindedMember = member;
+                      #endregion
 
-            #region Getting description info
-            // Getting member's type.
-            Type memberType = UIDescriptor.MembersHandler.GetSpecifiedMemberType(member);
-            // Drop if source is not enum.
-            if(!memberType.IsEnum) throw new NotSupportedException("Shared member must be enum");
-            // Storing received type.
-            BindedEnumType = memberType;
+                      #region Getting description info
+                      // Getting member's type.
+                      Type memberType = UIDescriptor.MembersHandler.GetSpecifiedMemberType(member);
+                      // Drop if source is not enum.
+                      if (!memberType.IsEnum) throw new NotSupportedException("Shared member must be enum");
+                      // Storing received type.
+                      BindedEnumType = memberType;
+                      #endregion
 
-            // Getting default members.
-            var names = memberType.GetEnumNames();
-            var values = memberType.GetEnumValues();
-            Elements = new FrameworkElement[names.Length];
-
-            // Getting defined content.
-            var contents = member.GetCustomAttributes<ContentAttribute>().ToArray();
-            #endregion
-
-            #region Instiniating UI elements
-            // Generating uniquem token for that UI group.
-            var groupToken = Guid.NewGuid().ToString();
-
-            // Perform oparation for every element.
-            for (int i = 0; i < names.Length; i++)
-            {
-                // Store index relavant for that element for local methods.
-                var localIndexBufer = i;
-
-                // Instiniating new UI element.
-                var element = new SelectableFlatButton()
-                {
-                    Group = groupToken,
-                    ClickCallback = delegate (object sender)
-                    {
-                        // Updating current selected index.
-                        _Index = localIndexBufer;
-
-                        // Inform subscribers.
-                        ValueChanged?.Invoke(this);
-                    }
-                };
-
-                // Adding to the collection.
-                Elements[i] = element;
-
-                // Applying lable's value
-                try { contents[i + 1].BindToLable(element); } // Trying to bind a dynamic content.
-                catch { element.Label = names[i]; } // Loading fom the member's data..
-            }
-
-            // Activating current option.
-            ((SelectableFlatButton)Elements[Index]).Selected = true;
-            #endregion
+                      // Instiniating UI elements.
+                      InstiniateElements();
+                  }));
         }
 
         /// <summary>
@@ -397,7 +379,7 @@ namespace WpfHandler.UI.Controls
             canvas.Children.Add(ItemsPanel);
 
             // Defining visibility.
-            if (_LabelWidth <= 0)
+            if (LastLableWidth <= 0 || string.IsNullOrEmpty(Label))
             {
                 // Hide the lable.
                 label.Visibility = Visibility.Collapsed;
@@ -406,6 +388,7 @@ namespace WpfHandler.UI.Controls
                 if (ItemsPanel != null)
                 {
                     Grid.SetRow(ItemsPanel, 0);
+                    Grid.SetRowSpan(ItemsPanel, 2);
                 }
             }
             else
@@ -417,17 +400,75 @@ namespace WpfHandler.UI.Controls
                 if (ItemsPanel != null)
                 {
                     Grid.SetRow(ItemsPanel, 1);
+                    Grid.SetRowSpan(ItemsPanel, 1);
                 }
             }
         }
 
+
         /// <summary>
-        /// Occurs when element is loaded.
+        /// Instiniating UI elements from binded meta.
+        /// </summary>
+        protected void InstiniateElements()
+        {
+            #region Getting meta data
+            // Getting default members.
+            var names = BindedEnumType.GetEnumNames();
+            var values = BindedEnumType.GetEnumValues();
+
+            // Getting defined content.
+            var contents = BindedEnumType.GetCustomAttributes<ContentAttribute>().ToArray();
+
+            // Instiniating the array.
+            Elements = new FrameworkElement[names.Length];
+            #endregion
+
+            #region Instiniating UI elements
+            // Generating uniquem token for that UI group.
+            var groupToken = Guid.NewGuid().ToString();
+
+            // Perform oparation for every element.
+            for (int i = 0; i < names.Length; i++)
+            {
+                // Store index relavant for that element for local methods.
+                var localIndexBufer = i;
+
+                // Instiniating new UI element.
+                var element = new SelectableFlatButton()
+                {
+                    Group = groupToken,
+                    ClickCallback = delegate (object sender)
+                    {
+                        // Updating current selected index.
+                        _Index = localIndexBufer;
+
+                        // Inform subscribers.
+                        ValueChanged?.Invoke(this);
+                    }
+                };
+
+                // Adding to the collection.
+                Elements[i] = element;
+
+                // Applying lable's value
+                try { contents[i + 1].BindToLable(element); } // Trying to bind a dynamic content.
+                catch { element.Label = names[i]; } // Loading fom the member's data..
+            }
+
+            // Activating current option.
+            ((SelectableFlatButton)Elements[Index]).Selected = true;
+            #endregion
+        }
+
+        /// <summary>
+        /// Occurs when the element is loaded.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        protected void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
+            LastLableWidth = (float)label.Width;
+
             // Set elements to the layout.
             UpdateElementsLayout();
         }

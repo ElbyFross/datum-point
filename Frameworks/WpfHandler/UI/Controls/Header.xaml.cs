@@ -203,7 +203,7 @@ namespace WpfHandler.UI.Controls
         /// </summary>
         /// <param name="layer">Target UI layer.</param>
         /// <param name="args">Must contains: <see cref="UIDescriptor"/> and <see cref="MemberInfo"/></param>
-        public void OnGUI(ref LayoutLayer layer, params object[] args)
+        public void OnLayout(ref LayoutLayer layer, params object[] args)
         {
             #region Looking for shared data
             // Find required referendes.
@@ -238,7 +238,7 @@ namespace WpfHandler.UI.Controls
 
             #region Start child managment group
             // Starting new vertical layout group.
-            new AutoLayout.Configuration.BeginVerticalGroupAttribute().OnGUI(ref layer, args);
+            new AutoLayout.Configuration.BeginVerticalGroupAttribute().OnLayout(ref layer, args);
 
             // Store new layer as child.
             ChildLayer = layer;

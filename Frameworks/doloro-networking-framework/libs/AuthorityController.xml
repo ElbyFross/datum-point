@@ -819,7 +819,12 @@
         </member>
         <member name="P:AuthorityController.Queries.USER_LOGON.OperatingType">
             <summary>
-             Type that will be used in operations.
+            A type that will be used in operations.
+            </summary>
+        </member>
+        <member name="P:AuthorityController.Queries.USER_LOGON.BanInfoOperatingType">
+            <summary>
+            A type that will used for defining ban ifo descriptors. 
             </summary>
         </member>
         <member name="M:AuthorityController.Queries.USER_LOGON.Description(System.String)">

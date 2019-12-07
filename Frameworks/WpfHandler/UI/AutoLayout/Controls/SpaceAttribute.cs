@@ -56,7 +56,7 @@ namespace WpfHandler.UI.AutoLayout.Controls
         /// </summary>
         /// <param name="layer">Target GUI layer.</param>
         /// <param name="args">Not using in that element.</param>
-        public void OnGUI(ref LayoutLayer layer, params object[] args)
+        public void OnLayout(ref LayoutLayer layer, params object[] args)
         {
             // Instiniate GUI element.
             var canvas = new Canvas();

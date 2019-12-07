@@ -144,6 +144,17 @@ namespace WpfHandler.UI.Controls
         }
 
         /// <summary>
+        /// Applyong value as lable content.
+        /// </summary>
+        /// <remarks>
+        /// Allow only the <see cref="string"/> values.</remarks>
+        public new object Content
+        {
+            get { return Label; }
+            set { Label = value as string; }
+        }
+
+        /// <summary>
         /// Uniform value.
         /// Allowed type depends from @ValueMode.
         /// </summary>

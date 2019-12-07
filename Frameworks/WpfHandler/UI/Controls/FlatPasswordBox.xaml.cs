@@ -103,9 +103,26 @@ namespace WpfHandler.UI.Controls
             ValueChanged?.Invoke(this);
         }
 
-        public void OnGUI(ref LayoutLayer layer, params object[] args)
+        /// <summary>
+        /// Not supported.
+        /// </summary>
+        /// <param name="layer"></param>
+        /// <param name="args"></param>
+        public void OnLayout(ref LayoutLayer layer, params object[] args)
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
+        }
+               
+        /// <summary>
+        /// Recomputing dinamic layout values for providing hight quiality view.
+        /// </summary>
+        public override void RecomputeLayout()
+        {
+            base.RecomputeLayout();
+
+            // Ipdating spliter visibility.
+            if (string.IsNullOrEmpty(Label)) spliter.Visibility = Visibility.Collapsed;
+            else spliter.Visibility = Visibility.Visible;
         }
     }
 }

@@ -128,26 +128,6 @@ namespace WpfHandler.UI.AutoLayout
             panel.Children.Add(element);
         }
 
-        //public static void RegistrateField(this ILayoutControl control, ref object bindingTarget)
-        //{
-        //    // Apply default value.
-        //    control.Value = bindingTarget;
-
-        //    // Instiniate UI field update callback for property members.
-        //    Action<ILayoutControl> changeCallback = delegate (ILayoutControl _)
-        //    {
-        //        // Try to set value.
-        //        try { bindingTarget = control.Value; } catch { };
-        //    };
-
-        //    // To to registrate control into handler.
-        //    try { RegistredCallbacks.Add(control, handler); }
-        //    catch { throw new NotSupportedException("Instance of the IGUIField could be registred only once."); }
-            
-        //    // Subscribe on value change.
-        //    control.ValueChanged += propChangeCallback;
-        //}
-
         /// <summary>
         /// Registrating bool property into auto layout ui.
         /// </summary>
@@ -333,12 +313,44 @@ namespace WpfHandler.UI.AutoLayout
 
             #region Collections
             // If has implemented IEnumerable type then will auto applied to collections GUI elements.
-            if (sourceType.GetInterface(typeof(IEnumerable).FullName) != null &&
-                // Check if requested type has binding into enumerable collections compatibe table.
-                EnumerableControlsBindings[sourceType] is Type collectionControl)
+            if (sourceType.GetInterface(typeof(IEnumerable).FullName) != null)
             {
-                // Return binded control if found.
-                return collectionControl;
+                // Getting the generic type.
+                Type genericType = null;
+
+                if(sourceType.IsSubclassOf(typeof(Array)))
+                {
+                    // operate like array.
+                    genericType = sourceType.GetElementType();
+                }
+                else
+                {
+                    // If has generic types.
+                    if (sourceType.GenericTypeArguments.Length > 0)
+                    {
+                        // Operate like generic.
+                        genericType = sourceType.GenericTypeArguments[0];
+                    }
+                }
+
+                if (genericType != null)
+                {
+
+                    // Lookin for compatible UI element by the entire hierarchy.
+                    do
+                    {
+                        // Check if requested type has binding into enumerable collections compatibe table.
+                        if (EnumerableControlsBindings[genericType] is Type collectionControl)
+                        {
+                            // Return binded control if found.
+                            return collectionControl;
+                        }
+
+                        // Moving deeper.
+                        genericType = genericType.BaseType;
+                    }
+                    while (genericType != null);
+                }
             }
             #endregion
 

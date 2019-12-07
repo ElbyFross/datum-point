@@ -313,36 +313,11 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
 
         private void ControlPanel_Loaded(object sender, RoutedEventArgs e)
         {
-            //controlPanel.Children.Add(new WpfHandler.UI.Controls.FlatTextBox());
-            //controlPanel.Children.Add(new WpfHandler.UI.Controls.FlatTextBox()
-            //{
-            //    Label = "11"
-            //});
-            //controlPanel.Children.Add(new WpfHandler.UI.Controls.FlatTextBox()
-            //{
-            //    Text = "sad"
-            //});
-            //controlPanel.Children.Add(new WpfHandler.UI.Controls.FlatTextBox()
-            //{
-            //    LabelWidth = 25,
-            //    Label = "Test"});
-            //controlPanel.Children.Add(new WpfHandler.UI.Controls.FlatTextBox()
-            //{
-            //    LabelWidth = 0,
-            //    Text = "324aa "});
-            //controlPanel.Children.Add(new WpfHandler.UI.Controls.FlatTextBox()
-            //{
-            //    LabelWidth = 25,
-            //    Label = "das",
-            //    Text = "324aa "
-            //}); ;
-
-            //return;
-
             var view = new WpfHandler.UI.AutoLayout.Controls.AutoLayoutVeiw();
             controlPanel.Children.Add(view);
             
-            view.Descriptor = new UIDescriptors.LayoutPropertiesPanel();
+            var descriptor = new UIDescriptors.LayoutPropertiesPanel();
+            view.Descriptor = descriptor;
         }
     }
 }

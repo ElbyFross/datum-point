@@ -101,7 +101,7 @@ namespace WpfHandler.UI.AutoLayout
                     // Apply layout control to GUI.
                     if (attr is IGUIElement attrControl)
                     {
-                        attrControl.OnGUI(ref activeLayer, this, member);
+                        attrControl.OnLayout(ref activeLayer, this, member);
                     }
                 }
                 #endregion
@@ -135,7 +135,7 @@ namespace WpfHandler.UI.AutoLayout
                     TryToBindControl(control, this, member);
 
                     // Initialize control.
-                    control.OnGUI(ref activeLayer, this, member);
+                    control.OnLayout(ref activeLayer, this, member);
                     #endregion
 
                     #region Set prefix label
@@ -192,12 +192,12 @@ namespace WpfHandler.UI.AutoLayout
                     {
                         #region Configurating layout
                         // Add horizontal shift for sub descriptor.
-                        new BeginHorizontalGroupAttribute().OnGUI(ref activeLayer);
-                        new Controls.SpaceAttribute(10).OnGUI(ref activeLayer);
+                        new BeginHorizontalGroupAttribute().OnLayout(ref activeLayer);
+                        new Controls.SpaceAttribute(10).OnLayout(ref activeLayer);
 
                         // Add vertical group.
                         var vertGroup = new BeginVerticalGroupAttribute();
-                        vertGroup.OnGUI(ref activeLayer);
+                        vertGroup.OnLayout(ref activeLayer);
                         #endregion
 
                         #region Looking for descriptor object.

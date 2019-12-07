@@ -26,7 +26,7 @@ namespace DatumPoint.Queries.Users
     /// Getting an information from the certain user profile.
     /// Relative to token rights will return different list of data.
     /// </summary>
-    public class USER_GET_INFO : Handlers.UniformedSqlGetQueryHandler
+    public class USER_GET_INFO : UniformedSqlGetQueryHandler
     {
         public override UserRank RankUperThen { get; set; } = UserRank.Guest;
         public override string SharedObjectProperty { get; set; } = "user";

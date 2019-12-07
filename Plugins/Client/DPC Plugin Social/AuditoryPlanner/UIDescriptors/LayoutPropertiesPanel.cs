@@ -49,6 +49,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
         public string a = "abs";
 
         [Order(10)]
+        [EndGroup]
         [Header("Test header", "testheader")]
         public string testString2 = "field one";
 
@@ -65,7 +66,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
 
         [Order(110)]
         [EndGroup]
-        [Header("TEST HEADER 2", "testheader2")]
+        [Header("TEST HEADER 2", "testheader2", DefaultState = false)]
         public float testFloat223sd = 4;
 
         [Foreground("Yellow")]
@@ -74,10 +75,25 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
         [Content]
         [Orientation(Orientation.Horizontal)]
         public Modes enumFieldRaw = Modes.Pro;
-        
+
         [Orientation(Orientation.Horizontal)]
         [Content("STATE")]
         [Content("Вкл")]
         public State state = State.Off;
+
+        [EndGroup]
+        [Header("Collections test", "testheader2")]
+        [Order(-2)]
+        public List<object> objCollection = new List<object>();
+
+        [Order(-1)]
+        public string[] stringArray = new string[] { "abc", "bca", "aoa" };
+
+        public LayoutPropertiesPanel()
+        {
+            objCollection.Add(Modes.Pro);
+            objCollection.Add(43);
+            objCollection.Add("String");
+        }
     }
 }
