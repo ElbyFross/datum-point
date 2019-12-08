@@ -59,6 +59,7 @@
     <Compile Include="UI\AutoLayout\Configuration\EnumerableCompatibleAttribute.cs" />
     <Compile Include="UI\AutoLayout\Configuration\EnumsCompatibleAttribute.cs" />
     <Compile Include="UI\AutoLayout\Configuration\IGUIElementBindingAttribute.cs" />
+    <Compile Include="UI\AutoLayout\Options\AutoCollectionPropertiesAttribute.cs" />
     <Compile Include="UI\AutoLayout\Options\LabelWidthAttribute.cs" />
     <Compile Include="UI\Controls\CollectionControl.cs" />
     <Compile Include="UI\Controls\LayoutSizeAttribute.cs" />

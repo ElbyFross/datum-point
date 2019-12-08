@@ -28,17 +28,18 @@ using WpfHandler.UI;
 namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
 {
     [Foreground("WhiteSmoke")]
+    [AutoCollectionProperties(BackplateBackground = "#00A8E8", SpliterColor = "#007ea7")]
     public class LayoutPropertiesPanel : UIDescriptor
     {
         public enum Modes
-        { 
+        {
             Normal,
             Advanced,
             Pro
         }
 
         public enum State
-        { 
+        {
             On,
             Off
         }
@@ -83,17 +84,45 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
 
         [EndGroup]
         [Header("Collections test", "testheader2")]
-        [Order(-2)]
+        [Order(-3)]
         public List<object> objCollection = new List<object>();
 
+        [Order(-2)]
+        [AutoCollectionProperties(AddButtonVisibile = false)]
+        public List<int> intCollection = new List<int>();
+
         [Order(-1)]
-        public string[] stringArray = new string[] { "abc", "bca", "aoa" };
+        [AutoCollectionProperties(
+            BackplateBackground = "WhiteSmoke",
+            SpliterColor = "LightGray", 
+            SplitersDraw = false)]
+        public string[] stringArray = new string[] { "1", "2", "3", "4", "5" };
+
+        public List<object> callbackHandling = new List<object>();
 
         public LayoutPropertiesPanel()
         {
             objCollection.Add(Modes.Pro);
             objCollection.Add(43);
             objCollection.Add("String");
+
+            Loaded += LayoutPropertiesPanel_Loaded;
+        }
+
+        private void LayoutPropertiesPanel_Loaded(UIDescriptor obj)
+        {
+            var field = GetFieldByMember("callbackHandling");
+
+            var ac = field as WpfHandler.UI.Controls.AutoCollection;
+            ac.OnAddClick += delegate (object sender)
+            {
+                System.Windows.MessageBox.Show("Custom add");
+            };
+
+            ac.OnRemoveClick += delegate (object sender)
+            {
+                System.Windows.MessageBox.Show("Custom remove");
+            };
         }
     }
 }

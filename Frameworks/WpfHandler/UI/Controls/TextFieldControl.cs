@@ -40,6 +40,10 @@ namespace WpfHandler.UI.Controls
         public enum Mode
         {
             /// <summary>
+            /// Type not defined yet.
+            /// </summary>
+            Undefined,
+            /// <summary>
             /// Allow any string value.
             /// </summary>
             String,
@@ -164,6 +168,7 @@ namespace WpfHandler.UI.Controls
             {
                 try
                 {
+                    // Applying the value.
                     switch (ValueMode)
                     {
                         case Mode.String:
@@ -180,6 +185,12 @@ namespace WpfHandler.UI.Controls
             }
             set
             {
+                // Definig mode if not defined yet.
+                if (ValueMode == Mode.Undefined)
+                {
+                    DefineModeByType(value.GetType());
+                }
+
                 try
                 {
                     if (ValueMode != Mode.Regex)
@@ -310,6 +321,24 @@ namespace WpfHandler.UI.Controls
 
             // Reqcomputing width.
             LabelWidth = _LabelWidth;
+        }
+
+        /// <summary>
+        /// Defining an element mode by the target type.
+        /// </summary>
+        /// <param name="type">Type applyied to that field.</param>
+        public void DefineModeByType(Type type)
+        {
+            var typeCode = Type.GetTypeCode(type);
+            switch (typeCode)
+            {
+                case TypeCode.Single: ValueMode = Mode.Float; break;
+                case TypeCode.Double: ValueMode = Mode.Double; break;
+                case TypeCode.Int16:
+                case TypeCode.Int32:
+                case TypeCode.Int64: ValueMode = Mode.Int; break;
+                default: ValueMode = Mode.String; break;
+            }
         }
         #endregion
 

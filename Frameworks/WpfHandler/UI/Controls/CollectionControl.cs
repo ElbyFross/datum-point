@@ -40,7 +40,7 @@ namespace WpfHandler.UI.Controls
     /// <remarks>
     /// Fully compatible with <see cref="UIDescriptor"/> and auto layout handlers.
     /// </remarks>
-    public abstract class CollectionControl : UserControl, IGUIField
+    public abstract class CollectionControl : UserControl, IGUIField, IList
     {
         #region Dependency properties
         /// <summary>
@@ -56,6 +56,7 @@ namespace WpfHandler.UI.Controls
         /// Is list allows to drag elements.
         /// </summary>
         /// <remarks>
+        /// Can be true only in case if<see cref="IsFixedSize"/> is false.
         /// </remarks>
         public virtual bool DragAllowed
         {
@@ -107,6 +108,54 @@ namespace WpfHandler.UI.Controls
         /// UI elemets existing into the current collection.
         /// </summary>
         public ObservableCollection<FrameworkElement> Elements { get; } = new ObservableCollection<FrameworkElement>();
+
+        /// <summary>
+        /// Collection that contains  instiniated GUI fields.
+        /// </summary>
+        public ObservableCollection<IGUIField> Fields { get; } = new ObservableCollection<IGUIField>();
+
+        /// <summary>
+        /// Gets a value indicating whether the System.Collections.IList is read-only.
+        /// </summary>
+        public bool IsReadOnly => source.IsReadOnly;
+
+        /// <summary>
+        /// Gets a value indicating whether the System.Collections.IList has a fixed size.
+        /// </summary>
+        public bool IsFixedSize => source.IsFixedSize;
+
+        /// <summary>
+        /// Gets the number of elements contained in the System.Collections.ICollection.
+        /// </summary>
+        public int Count => source.Count;
+
+        /// <summary>
+        /// Gets an object that can be used to synchronize access to the System.Collections.ICollection.
+        /// </summary>
+        public object SyncRoot => throw new NotImplementedException();
+
+        /// <summary>
+        /// Gets a value indicating whether access to the System.Collections.ICollection
+        /// is synchronized (thread safe).
+        /// </summary>
+        public bool IsSynchronized => throw new NotImplementedException();
+
+        /// <summary>
+        /// Gets or sets the element at the specified index.
+        /// </summary>
+        /// <param name="index">The zero-based index of the element to get or set</param>
+        /// <returns>The element at the specified index.</returns>
+        /// <exception cref="ArgumentOutOfRangeException">
+        /// index is not a valid index in the System.Collections.IList.
+        /// </exception>
+        /// <exception cref="NotSupportedException">
+        /// The property is set and the System.Collections.IList is read-only.
+        /// </exception>
+        public object this[int index] 
+        { 
+            get => Fields[index].Value;
+            set => Fields[index].Value = value;
+        }
         #endregion
 
         #region Events
@@ -122,7 +171,7 @@ namespace WpfHandler.UI.Controls
         /// <see cref="IGUIField"/> - key
         /// <see cref="int"/> - index in the list.
         /// </summary>
-        protected readonly Hashtable map = new Hashtable();
+        protected readonly Hashtable indexMap = new Hashtable();
 
         /// <summary>
         /// Bufer that contains source sollection.
@@ -149,7 +198,272 @@ namespace WpfHandler.UI.Controls
                 ListContent.SizeChanged += UpdateElementsWidth;
             };
         }
-        
+
+        #region API
+        /// <summary>
+        /// Adds an item to the System.Collections.IList.
+        /// </summary>
+        /// <param name="value">The object to add to the System.Collections.IList.</param>
+        /// <returns>
+        /// The position into which the new element was inserted, or -1 to indicate that
+        /// the item was not inserted into the collection.
+        /// </returns>
+        /// <exception cref="System.NotSupportedException">
+        /// The System.Collections.IList is read-only.-or- The System.Collections.IList has
+        /// a fixed size.-or- <see cref="IGUIField"/> for the object type not registred.
+        /// </exception>
+        public int Add(object value)
+        {
+            // The bufer that contains position of element into the collection.
+            int position = source.Count;
+
+            // Inserting object.
+            Insert(position, value);
+
+            // Returning the defined pisition.
+            return position;
+        }
+
+        /// <summary>
+        /// Determines whether the System.Collections.IList contains a specific value.
+        /// </summary>
+        /// <param name="value">The object to locate in the System.Collections.IList.</param>
+        /// <returns>
+        /// true if the System.Object is found in the System.Collections.IList; otherwise,
+        /// false.
+        /// </returns>
+        /// <remarks>
+        /// In case if value is <see cref="IGUIField"/> then looking via registred UI fileds.-or-
+        /// Otherwise looking via the <see cref="source"/> list.
+        /// </remarks>
+        public bool Contains(object value)
+        {
+            // Looking for an registred fields.
+            if (value is IGUIField field) return Fields.Contains(field);
+
+            // Looking for background value.
+            return source.Contains(value);
+        }
+
+        /// <summary>
+        /// Removes all items from the System.Collections.IList.
+        /// </summary>
+        /// <exception cref="System.NotSupportedException">
+        /// The System.Collections.IList is read-only.
+        /// </exception>
+        public void Clear()
+        {
+            // Clearing the source.
+            source.Clear();
+
+            // Clearing registred fields.
+            Fields.Clear();
+
+            // Clearing UI elements.
+            Elements.Clear();
+
+            // Clearing index map.
+            indexMap.Clear();
+
+            // Inform subscribers.
+            ValueChanged?.Invoke(this);
+        }
+
+        /// <summary>
+        /// Determines the index of a specific item in the System.Collections.IList.
+        /// </summary>
+        /// <param name="value">The object to locate in the System.Collections.IList.</param>
+        /// <returns>The index of value if found in the list; otherwise, -1.</returns>
+        /// <remarks>
+        /// In case if value is <see cref="IGUIField"/> then looking via registred UI fileds.-or-
+        /// Otherwise looking via the <see cref="source"/> list.
+        /// </remarks>
+        public int IndexOf(object value)
+        {
+            // Looking for an registred field.
+            if(value is IGUIField field) return Fields.IndexOf(field);
+
+            return source.IndexOf(value);
+        }
+
+        /// <summary>
+        /// Inserts an item to the System.Collections.IList at the specified index.
+        /// </summary>
+        /// <param name="index">The zero-based index at which value should be inserted.</param>
+        /// <param name="value">The object to insert into the System.Collections.IList.</param>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        /// index is not a valid index in the System.Collections.IList.
+        /// </exception>
+        /// <exception cref="System.NotSupportedException">
+        /// The System.Collections.IList is read-only.-or- The System.Collections.IList has
+        /// a fixed size.
+        /// </exception>
+        /// <exception cref="System.NullReferenceException">
+        /// value is null reference in the System.Collections.IList.
+        /// </exception>
+        public void Insert(int index, object value)
+        {
+            if (IsFixedSize)
+            {
+                throw new NotSupportedException(
+                    "Can't add an element to the fixed size collection");
+            }
+
+            // If is already instiniated field.
+            if (value is IGUIField field)
+            {
+                // Inserting the element to the source.
+                source.Insert(index, field.Value);
+
+                // Inserting ellement to the maping table.
+                indexMap.Add(field, index);
+
+                // Inserting reference to the field.
+                Fields.Insert(index, field);
+
+                // Add to the elements.
+                Elements.Insert(index, GetRoot((FrameworkElement)field));
+
+                // Subscribing on the index of the value changing.
+                field.ValueChanged += CollectionElementValueChanged;
+            }
+            // If a new source value.
+            else
+            {
+                // Getting data.
+                source.Insert(index, value);
+
+                // Calling an item registration.
+                var element = ItemRegistration(index);
+
+                // Adding element to the list.
+                if (element != null) Elements.Add(element);
+            }
+
+            // Informing subscribers.
+            ValueChanged?.Invoke(this);
+
+            FrameworkElement GetRoot(FrameworkElement element)
+            {
+                if (element.Parent != null) return GetRoot(element.Parent as FrameworkElement);
+                else return element;
+            }
+        }
+
+        /// <summary>
+        /// Removes the first occurrence of a specific object from the System.Collections.IList.
+        /// </summary>
+        /// <param name="value">The object to remove from the System.Collections.IList.</param>
+        /// <exception cref="System.NotSupportedException">
+        /// The System.Collections.IList is read-only.-or- The System.Collections.IList has
+        /// a fixed size.
+        /// </exception>
+        public void Remove(object value)
+        {
+            // Looking for element into the list.
+            int index = IndexOf(value);
+
+            // Drop if not found.
+            if (index == -1) return;
+
+            // Removing by the index.
+            RemoveAt(index);
+        }
+
+        /// <summary>
+        /// Removes the System.Collections.IList item at the specified index.
+        /// </summary>
+        /// <param name="index">The zero-based index of the item to remove.</param>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        /// index is not a valid index in the System.Collections.IList.
+        /// </exception>
+        /// <exception cref="System.NotSupportedException">
+        /// The System.Collections.IList is read-only.-or- The System.Collections.IList has
+        /// a fixed size.
+        /// </exception>
+        public void RemoveAt(int index)
+        {
+            if (IsFixedSize)
+            {
+                throw new NotSupportedException(
+                    "Can't remove an element from the fixed size collection");
+            }
+
+            // Removing value for the source.
+            source.RemoveAt(index);
+
+            // Removing the UI element.
+            Elements.RemoveAt(index);
+
+            // Getting registred filed.
+            var field = Fields[index];
+            List<IGUIField> registredFields = new List<IGUIField>();
+            foreach (IGUIField collectionField in indexMap.Keys)
+            {
+                registredFields.Add(collectionField);
+            }
+
+            for(int i =0; i < registredFields.Count; i++)
+            {
+                var collectionField = registredFields[i];
+                var internalIndex = (int)indexMap[collectionField];
+                if (internalIndex > index)
+                {
+                    // Decrementing stored index.
+                    indexMap[collectionField] = internalIndex - 1;
+                }
+            }
+            // Removing field from index map.
+            indexMap.Remove(field);
+
+            // Unregistring the field  from collections.
+            Fields.RemoveAt(index);
+
+            // Unsubscribing from the index of the value changing.
+            field.ValueChanged -= CollectionElementValueChanged;
+
+            // Informing subscribers.
+            ValueChanged?.Invoke(this);
+        }
+
+        /// <summary>
+        /// Copies the elements of the <see cref="source"/> to an System.Array,
+        /// starting at a particular System.Array index.
+        /// </summary>
+        /// <param name="array">The one-dimensional System.Array that is the destination of the elements copied
+        /// from System.Collections.ICollection. The System.Array must have zero-based indexing.</param>
+        /// <param name="index">The zero-based index in array at which copying begins.</param>
+        /// <exception cref="System.ArgumentNullException">
+        /// array is null.
+        /// </exception>
+        /// <exception cref="System.ArgumentOutOfRangeException">
+        /// index is less than zero.
+        /// </exception>
+        /// <exception cref="System.ArgumentNullException">
+        /// array is multidimensional.-or- The number of elements in the source System.Collections.ICollection
+        /// is greater than the available space from index to the end of the destination
+        /// array.-or-The type of the source System.Collections.ICollection cannot be cast
+        /// automatically to the type of the destination array.
+        /// </exception>
+        public void CopyTo(Array array, int index)
+        {
+            // Copying the source.
+            source.CopyTo(array, index);
+        }
+
+        /// <summary>
+        /// Returns an enumerator that iterates through a collection.
+        /// </summary>
+        /// <returns>
+        /// An System.Collections.IEnumerator object that can be used to iterate through
+        /// the collection.
+        /// </returns>
+        public IEnumerator GetEnumerator()
+        {
+            return source.GetEnumerator();
+        }
+        #endregion
+
         /// <summary>
         /// Configurating collection and binding element to the descriptors handler.
         /// </summary>
@@ -166,7 +480,7 @@ namespace WpfHandler.UI.Controls
             {
                 // Instinating an element.
                 var element = ItemRegistration(i);
-                
+
                 // Adding element to the list.
                 if (element != null) Elements.Add(element);
             }
@@ -174,62 +488,7 @@ namespace WpfHandler.UI.Controls
             // Applying elements as source.
             ListContent.ItemsSource = Elements;
         }
-
-
-        #region API
-        /// <summary>
-        /// TODO: Clearing the collection and UI.
-        /// </summary>
-        public virtual void Clear()
-        {
-            new NotImplementedException();
-        }
-
-        /// <summary>
-        /// TODO: Adding source to the collection.
-        /// </summary>
-        /// <param name="source">An object that will adde dto the collection as item. Also wil applied to the GUI.</param>
-        public virtual void Add(object source)
-        {
-            new NotImplementedException();
-        }
-
-        /// <summary>
-        /// TODO: Reordering two elements.
-        /// </summary>
-        /// <param name="firstElementIndex">An index of an element in the collection.</param>
-        /// <param name="secondElementIndex">An index of an element in the collection.</param>
-        public virtual void Reorder(int firstElementIndex, int secondElementIndex)
-        {
-            // Getting sources.
-            var fSource = source[firstElementIndex];
-            var sSource = source[secondElementIndex];
-
-            // Getting binded indexes.
-            var fElementIndex = (int)map[fSource];
-            var sElementIndex = (int)map[sSource];
-            new NotImplementedException();
-        }
-
-        /// <summary>
-        /// TODO: Removing element form collection by index.
-        /// </summary>
-        /// <param name="index">An index of an element.</param>
-        public virtual void RemoveAt(int index)
-        {
-            new NotImplementedException();
-        }
-
-        /// <summary>
-        /// TODO: Remove collection element if exist.
-        /// </summary>
-        /// <param name="source">An element of the collection.</param>
-        public virtual void Remove(object source)
-        {
-            new NotImplementedException();
-        }
-        #endregion
-
+        
         #region Local
         /// <summary>
         /// Requiesting recomputing of the elements width.
@@ -269,8 +528,14 @@ namespace WpfHandler.UI.Controls
             // Defining contaier style.
             Style itemContainerStyle = new Style(typeof(ListBoxItem));
 
+            // Prefenting drag into the fixed size collections.
+            if(IsFixedSize)
+            {
+                this.SetValue(DragAllowedProperty, false);
+            }
+
             // Enable drop possibility.
-            if (AllowDrop)
+            if (DragAllowed)
             {
                 itemContainerStyle.Setters.Add(new Setter(ListBoxItem.AllowDropProperty, true));
                 itemContainerStyle.Setters.Add(new EventSetter(
@@ -315,8 +580,11 @@ namespace WpfHandler.UI.Controls
             element.Value = obj;
 
             // Adding ellement to the maping table.
-            map.Add(element, index);
-            
+            indexMap.Add(element, index);
+
+            // Adding reference to the field.
+            Fields.Add(element);
+
             // Subscribing on the index of the value changing.
             element.ValueChanged += CollectionElementValueChanged;
 
@@ -329,8 +597,11 @@ namespace WpfHandler.UI.Controls
         /// <param name="obj">The GUI element that initialize event.</param>
         protected virtual void CollectionElementValueChanged(IGUIField obj)
         {
-            if (map[obj] is int index)
+            // If index for that element is registred.
+            if (indexMap.ContainsKey(obj))
             {
+                var index = (int)indexMap[obj];
+
                 source[index] = obj.Value;
                 
                 // Inform subscribers.
@@ -377,21 +648,17 @@ namespace WpfHandler.UI.Controls
             int removedIdx = ListContent.Items.IndexOf(droppedData);
             int targetIdx = ListContent.Items.IndexOf(target);
 
-            if (removedIdx < targetIdx)
-            {
-                Elements.Insert(targetIdx + 1, droppedData);
-                Elements.RemoveAt(removedIdx);
-            }
-            else
-            {
-                int remIdx = removedIdx + 1;
-                if (Elements.Count + 1 > remIdx)
-                {
-                    Elements.Insert(targetIdx, droppedData);
-                    Elements.RemoveAt(remIdx);
-                }
-            }
-        }
+            // Drop if the same position.
+            if (removedIdx == targetIdx) return;
+
+            IGUIField dropedField = Fields[removedIdx];
+            
+            RemoveAt(removedIdx);
+            Insert(targetIdx, dropedField);
+
+            // Inform subscribers.
+            ValueChanged?.Invoke(this);
+        }       
         #endregion
     }
 }

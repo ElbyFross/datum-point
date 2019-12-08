@@ -291,9 +291,9 @@ namespace WpfHandler.UI.Controls
         /// </remarks>
         public void OnLayout(ref LayoutLayer layer, params object[] args)
         {
-            Dispatcher.Invoke(DispatcherPriority.Background,
-                  new Action(delegate ()
-                  {
+            //Dispatcher.Invoke(DispatcherPriority.Background,
+            //      new Action(delegate ()
+            //      {
                       #region Getting shared data
                       // Find required referendes.
                       MemberInfo member = null;
@@ -326,7 +326,7 @@ namespace WpfHandler.UI.Controls
 
                       // Instiniating UI elements.
                       InstiniateElements();
-                  }));
+                  //}));
         }
 
         /// <summary>
@@ -417,7 +417,8 @@ namespace WpfHandler.UI.Controls
             var values = BindedEnumType.GetEnumValues();
 
             // Getting defined content.
-            var contents = BindedEnumType.GetCustomAttributes<ContentAttribute>().ToArray();
+            var typeContents = BindedEnumType?.GetCustomAttributes<ContentAttribute>().ToArray();
+            var memberContents = BindedMember?.GetCustomAttributes<ContentAttribute>().ToArray();
 
             // Instiniating the array.
             Elements = new FrameworkElement[names.Length];
@@ -451,7 +452,15 @@ namespace WpfHandler.UI.Controls
                 Elements[i] = element;
 
                 // Applying lable's value
-                try { contents[i + 1].BindToLable(element); } // Trying to bind a dynamic content.
+                try 
+                {
+                    // Trying to bind a dynamic content.
+                    int index = i + 1;
+                    if (memberContents?.Count() > index)
+                        memberContents[index].BindToLable(element);
+                    else
+                        typeContents[i + 1].BindToLable(element); 
+                } 
                 catch { element.Label = names[i]; } // Loading fom the member's data..
             }
 

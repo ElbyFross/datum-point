@@ -68,7 +68,8 @@ namespace WpfHandler.UI.Controls
         #endregion
 
         /// <summary>
-        /// Defautl constructor.
+        /// Default constructor.
+        /// Looking for the `FlatTextBox` Style resource. Use default if not found.
         /// </summary>
         public FlatTextBox() : base()
         {
@@ -91,18 +92,6 @@ namespace WpfHandler.UI.Controls
             // Subscribe on events.
             textBox.TextChanged += TextBox_TextChanged;
         }
-
-        //public override string Text
-        //{
-        //    get
-        //    {
-        //        return textBox.Text;
-        //    }
-        //    set
-        //    {
-        //        textBox.Text = value;
-        //    }
-        //}
 
         #region API
         /// <summary>
@@ -127,18 +116,9 @@ namespace WpfHandler.UI.Controls
 
             // Defining field value mode.
             var type = UIDescriptor.MembersHandler.GetSpecifiedMemberType(member);
-            var typeCode = Type.GetTypeCode(type);
-            switch (typeCode)
-            {
-                case TypeCode.Single: ValueMode = Mode.Float; break;
-                case TypeCode.Double: ValueMode = Mode.Double; break;
-                case TypeCode.Int16:
-                case TypeCode.Int32:
-                case TypeCode.Int64: ValueMode = Mode.Int; break;
-                default: ValueMode = Mode.String; break;
-            }
+            DefineModeByType(type);
         }
-        
+
         /// <summary>
         /// Recomputing dinamic layout values for providing hight quiality view.
         /// </summary>

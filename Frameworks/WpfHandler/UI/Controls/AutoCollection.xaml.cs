@@ -74,22 +74,34 @@ namespace WpfHandler.UI.Controls
         /// Property that bridging control's property between XAML and code.
         /// </summary>
         public static readonly DependencyProperty AddButtonVisibileProperty = DependencyProperty.Register(
-          "AddButonVisibile", typeof(bool), typeof(AutoCollection),
+          "AddButtonVisibile", typeof(bool), typeof(AutoCollection),
           new PropertyMetadata(true));
 
         /// <summary>
         /// Property that bridging control's property between XAML and code.
         /// </summary>
-        public static readonly DependencyProperty RemoveButonVisibileProperty = DependencyProperty.Register(
-          "RemoveButonVisibile", typeof(bool), typeof(AutoCollection),
+        public static readonly DependencyProperty RemoveButtonVisibileProperty = DependencyProperty.Register(
+          "RemoveButtonVisibile", typeof(bool), typeof(AutoCollection),
           new PropertyMetadata(true));
+
+        /// <summary>
+        /// Property that bridging control's property between XAML and code.
+        /// </summary>
+        public static readonly RoutedEvent OnAddEvent = EventManager.RegisterRoutedEvent("OnAddClick",
+            RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(AutoCollection));
+
+        /// <summary>
+        /// Property that bridging control's property between XAML and code.
+        /// </summary>
+        public static readonly RoutedEvent OnRemoveEvent = EventManager.RegisterRoutedEvent("OnRemoveClick",
+            RoutingStrategy.Bubble, typeof(RoutedEventHandler), typeof(AutoCollection));
         #endregion
 
         #region Public members
         /// <summary>
         /// If the add button available for an user.
         /// </summary>
-        public bool AddButonVisibile
+        public bool AddButtonVisibile
         {
             get { return (bool)this.GetValue(AddButtonVisibileProperty); }
             set
@@ -105,13 +117,13 @@ namespace WpfHandler.UI.Controls
         /// <summary>
         /// Is the remove button available for an user.
         /// </summary>
-        public bool RemoveButonVisibile
+        public bool RemoveButtonVisibile
         {
-            get { return (bool)this.GetValue(RemoveButonVisibileProperty); }
+            get { return (bool)this.GetValue(RemoveButtonVisibileProperty); }
             set 
             { 
                 // Updating stored value.
-                this.SetValue(RemoveButonVisibileProperty, value);
+                this.SetValue(RemoveButtonVisibileProperty, value);
 
                 // Recomputing UI.
                 RecomputeLayout();
@@ -138,23 +150,83 @@ namespace WpfHandler.UI.Controls
         public Brush SpliterColor
         {
             get { return (Brush)this.GetValue(SpliterColorProperty); }
-            set { this.SetValue(SpliterColorProperty, value);}
+            set
+            {
+                this.SetValue(SpliterColorProperty, value);
+                try
+                {
+                    // Is spliter active?
+                    if (SplitersDraw)
+                    {
+                        // Update every element.
+                        foreach (FrameworkElement element in Elements)
+                        {
+
+                            // Operating if element is a panel.
+                            if (element is Panel panel)
+                            {
+                                // Getting spliter element.
+                                var spliter = panel.Children[1] as Grid;
+
+                                // Applying new color.
+                                spliter.Background = value;
+                            }
+                        }
+                    }
+                }
+                catch { }
+            }
+        }
+
+        /// <summary>
+        /// Color of the backplate.
+        /// </summary>
+        public Brush BackplateBackground
+        {
+            get { return (Brush)this.GetValue(BackplateBackgroundProperty); }
+            set { this.SetValue(BackplateBackgroundProperty, value); }
         }
 
         /// <summary>
         /// Bindted lsit element that will manage items.
         /// </summary>
         public override ListBox ListContent => contentPanel;
+
+        /// <summary>
+        /// The delegate that will be called during Add button click.
+        /// In case if initialized then will be called instead default.
+        /// </summary>
+        public Action<object> OnAddClick;
+
+        /// <summary>
+        /// The delegate that will be called during Remove button click.
+        /// In case if initialized then will be called instead default.
+        /// </summary>
+        public Action<object> OnRemoveClick;
         #endregion
 
         #region Constructor & destructors
         /// <summary>
         /// Initialize that component.
+        /// Looking for the `AutoCollection` Style resource. Use default if not found.
         /// </summary>
         public AutoCollection() : base()
         {
             InitializeComponent();
             base.DataContext = this;
+
+            // Try to load default style
+            try
+            {
+                if (Application.Current.FindResource("AutoCollection") is Style style)
+                {
+                    Style = style;
+                }
+            }
+            catch
+            {
+                // Not found in dictionary. Not important.
+            }
 
             Loaded += AutoCollection_Loaded;
         }
@@ -166,8 +238,15 @@ namespace WpfHandler.UI.Controls
         protected void RecomputeLayout()
         {
             // Getting current states.
-            bool addButtonState = AddButonVisibile;
-            bool removeButtonState = RemoveButonVisibile;
+            bool addButtonState = AddButtonVisibile;
+            bool removeButtonState = RemoveButtonVisibile;
+            
+            // Prevent changing in case of fixed size.
+            if(IsFixedSize)
+            {
+                addButtonState = false;
+                removeButtonState = false;
+            }
 
             // Updating the backplate visibility.
             bool twoButtonsEnabled = addButtonState && removeButtonState;
@@ -229,20 +308,59 @@ namespace WpfHandler.UI.Controls
 
         /// <summary>
         /// Occurs when user pressing add button.
+        /// Adding an element of the type that described 
+        /// in the first generic type argument of the source <see cref="IList"/>.
         /// </summary>
-        /// <param name="sender"></param>
+        /// <param name="sender">An element that caused that callback.</param>
         protected void OnAdd(object sender)
         {
-            MessageBox.Show("Add");
+            // Call the custom callback instead default.
+            if(OnAddClick != null)
+            {
+                OnAddClick.Invoke(this);
+                return;
+            }
+
+            try
+            {
+                // Trying to get generic type.
+                var defaultElementType = source.GetType().GenericTypeArguments[0];
+
+                // Instiniating object.
+                var element = Activator.CreateInstance(defaultElementType);
+
+                //Adding object to the collection.
+                Add(element);
+            }
+            catch (Exception ex)
+            {
+                // Log message.
+                MessageBox.Show(
+                    "ERROR:" +
+                    "\nCan't add new element." +
+                    "\n\nDeltails:\n" +
+                    ex.Message);
+            }
         }
 
         /// <summary>
-        /// Iccurs when user pressing remove button.
+        /// Occurs when user pressing remove button.
         /// </summary>
-        /// <param name="sender"></param>
+        /// <param name="sender">>An element that caused that callback.</param>
         protected void OnRemove(object sender)
         {
-            MessageBox.Show("Remove");
+            // Call the custom callback instead default.
+            if (OnRemoveClick != null)
+            {
+                OnRemoveClick.Invoke(this);
+                return;
+            }
+
+
+            var index = ListContent.SelectedIndex; // Getting the selected index.
+            if (index == -1) return; // Drop if not selected.
+
+            RemoveAt(index); // Requesting removing.
         }
 
         /// <summary>

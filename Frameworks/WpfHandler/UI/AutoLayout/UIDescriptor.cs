@@ -13,6 +13,7 @@
 //limitations under the License.
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,9 +32,29 @@ namespace WpfHandler.UI.AutoLayout
     public abstract class UIDescriptor
     {
         /// <summary>
+        /// Is that descriptor loaded?
+        /// </summary>
+        [HideInInspector]
+        public bool IsLoaded { get; private set; }
+
+        /// <summary>
+        /// Will occurs when the descripot get loaded state.
+        /// </summary>
+        public event Action<UIDescriptor> Loaded;
+
+        /// <summary>
         /// Cyrrent active UI layer.
         /// </summary>
+        [HideInInspector]
         LayoutLayer activeLayer = new LayoutLayer();
+
+        /// <summary>
+        /// The table that contais instiniated elements.
+        /// Key - <see cref="MemberInfo"/>.
+        /// Value - <see cref="IGUIField"/>.
+        /// </summary>
+        [HideInInspector]
+        Hashtable RegistredFields { get; set; } = new Hashtable();
 
         /// <summary>
         /// Insiniate UI by descriptor's attributes map and add it as child to parent element.
@@ -136,6 +157,9 @@ namespace WpfHandler.UI.AutoLayout
 
                     // Initialize control.
                     control.OnLayout(ref activeLayer, this, member);
+
+                    // Adding field to the registration table.
+                    RegistredFields.Add(member, control);
                     #endregion
 
                     #region Set prefix label
@@ -239,6 +263,12 @@ namespace WpfHandler.UI.AutoLayout
                     }
                 }
             }
+
+            // Marking as loaded.
+            IsLoaded = true;
+
+            // Inform subscribers.
+            Loaded?.Invoke(this);
         }
 
         /// <summary>
@@ -330,6 +360,30 @@ namespace WpfHandler.UI.AutoLayout
         }
 
         /// <summary>
+        /// Return an UI field binded to the member.
+        /// </summary>
+        /// <param name="memberName">The name of the member from the source descriptor.</param>
+        /// <returns>A GUI Field binded to the member.</returns>
+        public IGUIField GetFieldByMember(string memberName)
+        {
+            // Looking for the member.
+            MemberInfo member = GetType().GetField(memberName); // via felds.
+            if(member == null) member = GetType().GetProperty(memberName); // via properties.
+
+            return GetFieldByMember(member);
+        }
+
+        /// <summary>
+        /// Return an UI field binded to the member.
+        /// </summary>
+        /// <param name="member">The member from the source descriptor.</param>
+        /// <returns>A GUI Field binded to the member.</returns>
+        public IGUIField GetFieldByMember(MemberInfo member)
+        {
+            return RegistredFields[member] as IGUIField;
+        }
+
+        /// <summary>
         /// Trying to bind control to the auto layout handler.
         /// </summary>
         /// <param name="control">Control that would be binded.</param>
@@ -399,7 +453,6 @@ namespace WpfHandler.UI.AutoLayout
             // Sing up this control on desctiptor events.
             descriptor.ControlSignUp(control, member, defaultValue);
         }
-
 
         /// <summary>
         /// Handling tasks with members suitable for UI descriptor's operations.
