@@ -24,5 +24,10 @@ namespace WpfHandler.Plugins
         /// Relative directory with plugins.
         /// </summary>
         public const string PLUGINS_DIR = "plugins/";
+
+        /// <summary>
+        /// Relative directory with themes xaml files. 
+        /// </summary>
+        public const string THEMES_DIR = "plugins/themes/";
     }
 }

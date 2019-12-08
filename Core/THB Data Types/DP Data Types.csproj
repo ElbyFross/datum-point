@@ -3,6 +3,31 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>DatumPoint.Types</RootNamespace>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Frameworks\WpfHandler\WpfHandler.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AuthorityController">
+      <HintPath>..\..\Frameworks\doloro-networking-framework\libs\AuthorityController.dll</HintPath>
+    </Reference>
+    <Reference Include="DNFCore">
+      <HintPath>..\..\Frameworks\doloro-networking-framework\libs\DNFCore.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>..\..\Frameworks\uniform-data-operator\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="UniformDataOperator">
+      <HintPath>..\..\Frameworks\uniform-data-operator\UniformDataOperator.dll</HintPath>
+    </Reference>
+    <Reference Include="UniformQueries">
+      <HintPath>..\..\Frameworks\doloro-networking-framework\libs\UniformQueries.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 
 </Project>

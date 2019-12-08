@@ -1,0 +1,63 @@
+﻿<!--Copyright 2019 Volodymyr Podshyvalov
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.-->
+
+<UserControl x:Class="DatumPoint.Plugins.Social.AuditoryPlanner.Seat"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DatumPoint.Plugins.Social.AuditoryPlanner"
+             mc:Ignorable="d" 
+             d:DesignHeight="35" d:DesignWidth="35"
+             Name="main"
+             Height="26" Width="26">
+    
+    <Grid x:Name="seatManagmentButton"
+          HorizontalAlignment="Center"
+          VerticalAlignment="Center"
+          Height="25" Width="25">
+        
+        <Rectangle x:Name="rect"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center" 
+                   Stroke="Gray" 
+                   StrokeThickness="1.5"
+                   Fill="WhiteSmoke"
+                   RadiusX="3" 
+                   RadiusY="3"
+                   Height="25" Width="25"/>
+
+        <Rectangle x:Name="onFocusOverlay"
+                   IsHitTestVisible="False"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center" 
+                   Stroke="Gray" 
+                   StrokeThickness="1.5"
+                   Fill="LightSkyBlue"
+                   Opacity="0"
+                   RadiusX="3" 
+                   RadiusY="3"
+                   Height="25" Width="25"/>
+
+        <Label Name="indexLabel"
+                   IsHitTestVisible="False"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   HorizontalContentAlignment="Center"
+                   VerticalContentAlignment="Center"
+                   Content="135" 
+                   FontSize="13" FontWeight="Medium"
+                   Width="35" Height="35"/>
+    </Grid>
+</UserControl>

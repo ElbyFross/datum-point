@@ -48,11 +48,37 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AuditoryPlanner\Editor.xaml.cs">
+      <DependentUpon>Editor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AuditoryPlanner\Seat.xaml.cs">
+      <DependentUpon>Seat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AuditoryPlanner\SeatsBlock.xaml.cs">
+      <DependentUpon>SeatsBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AuditoryPlanner\UIDescriptors\EditingModesPanel.cs" />
+    <Compile Include="AuditoryPlanner\UIDescriptors\LayoutPropertiesPanel.cs" />
+    <Compile Include="Schedule\ScheduleRow.xaml.cs">
+      <DependentUpon>ScheduleRow.xaml</DependentUpon>
+    </Compile>
     <Page Include="Achievements\Page.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Advices\Page.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AuditoryPlanner\Editor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AuditoryPlanner\Seat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AuditoryPlanner\SeatsBlock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -87,6 +113,10 @@
     <Compile Include="Schedule\Page.xaml.cs">
       <DependentUpon>Page.xaml</DependentUpon>
     </Compile>
+    <Page Include="Schedule\ScheduleRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -111,6 +141,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Readme.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Achievements\Readme.md" />
@@ -119,6 +150,10 @@
     <ProjectReference Include="..\..\..\Frameworks\WpfHandler\WpfHandler.csproj">
       <Project>{9a1f206b-1f7a-43df-8a08-d86f26b8fc81}</Project>
       <Name>WpfHandler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DPC Plugin Social Types\DPC Plugin Social Types.csproj">
+      <Project>{53eb73f7-dcb0-4054-bbcf-c25f9e78f43b}</Project>
+      <Name>DPC Plugin Social Types</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

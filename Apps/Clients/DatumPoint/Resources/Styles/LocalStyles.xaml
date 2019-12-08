@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:DP">
+
+    <!--Style of application header-->
+    <Style x:Key="Header" TargetType="Grid">
+        <Setter Property="Background" Value="{DynamicResource canvasForground}" />
+    </Style>
+
+    <!--Style of left control menu with plugins list-->
+    <Style x:Key="Controlmenu" TargetType="Grid">
+        <Setter Property="Background" Value="{DynamicResource controlMenuBackground}" />
+    </Style>
+
+</ResourceDictionary>
+    

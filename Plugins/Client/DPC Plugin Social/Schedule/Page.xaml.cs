@@ -38,6 +38,7 @@ namespace DatumPoint.Plugins.Schedule
         public Page()
         {
             InitializeComponent();
+            DataContext = this;
         }
 
         public MenuItemMeta Meta { get; set; } = new MenuItemMeta() {

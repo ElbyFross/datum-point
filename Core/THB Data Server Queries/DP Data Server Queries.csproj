@@ -3,6 +3,9 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <RootNamespace>DatumPoint.Queries</RootNamespace>
+    <Version>1.0.2</Version>
+    <AssemblyVersion>1.0.2.0</AssemblyVersion>
+    <FileVersion>1.0.2.0</FileVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -14,6 +17,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="AuthorityController">
+      <HintPath>..\..\Frameworks\doloro-networking-framework\libs\AuthorityController.dll</HintPath>
+    </Reference>
+    <Reference Include="DNFCore">
+      <HintPath>..\..\Frameworks\doloro-networking-framework\libs\DNFCore.dll</HintPath>
+    </Reference>
+    <Reference Include="UniformDataOperator">
+      <HintPath>..\..\Frameworks\uniform-data-operator\UniformDataOperator.dll</HintPath>
+    </Reference>
     <Reference Include="UniformQueries">
       <HintPath>..\..\Frameworks\doloro-networking-framework\libs\UniformQueries.dll</HintPath>
     </Reference>

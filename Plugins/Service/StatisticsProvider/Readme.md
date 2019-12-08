@@ -65,7 +65,7 @@ Clients and server has the same data analysis libraries that simplify computing 
 
 #### IOperation
 Interface that provide possibility to proceed data.
-- Compute(string guid, object data) - method that will be called fro operation computing.
+- Compute(string guid, object data) - method that will has been calling fro operation computing.
 
 ### Data's types
 #### DB concept

@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<RoutingTable xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <intructions>
+    <Instruction xsi:type="RelayInstruction">
+      <title>Public chanel</title>
+      <commentary />
+      <routingIP>localhost</routingIP>
+      <pipeName>DP_DS_QM_MAIN_INOUT</pipeName>
+      <logonConfig>
+        <userName />
+        <password />
+        <domain>ELBY-MEGAPC-II</domain>
+      </logonConfig>
+      <queryPatterns>
+        <string>!user</string>
+      </queryPatterns>
+      <RSAEncryption>true</RSAEncryption>
+      <guestChanel>guests</guestChanel>
+      <entryPipeName>THB_QUERY_SERVER</entryPipeName>
+      <behavior>Duplex</behavior>
+    </Instruction>
+	<Instruction xsi:type="RelayInstruction">
+      <title>Public chanel</title>
+      <commentary />
+      <routingIP>localhost</routingIP>
+      <pipeName>dnfAUTH</pipeName>
+      <logonConfig>
+        <userName />
+        <password />
+        <domain>ELBY-MEGAPC-II</domain>
+      </logonConfig>
+      <queryPatterns>
+        <string>user</string>
+      </queryPatterns>
+      <RSAEncryption>true</RSAEncryption>
+      <guestChanel>guests</guestChanel>
+      <entryPipeName>THB_QUERY_SERVER</entryPipeName>
+      <behavior>Duplex</behavior>
+    </Instruction>
+    <Instruction xsi:type="RelayInstruction">
+      <title>Guests chanel</title>
+      <commentary />
+      <routingIP>localhost</routingIP>
+      <pipeName>guests</pipeName>
+      <logonConfig>
+        <userName />
+        <password />
+        <domain>ELBY-MEGAPC-II</domain>
+      </logonConfig>
+      <queryPatterns>
+        <string />
+      </queryPatterns>
+      <RSAEncryption>false</RSAEncryption>
+      <guestChanel>guests</guestChanel>
+      <entryPipeName>publicGuests</entryPipeName>
+      <behavior>Broadcasting</behavior>
+    </Instruction>
+  </intructions>
+</RoutingTable>

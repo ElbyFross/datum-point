@@ -50,6 +50,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AuthorityController, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Frameworks\doloro-networking-framework\libs\AuthorityController.dll</HintPath>
+    </Reference>
+    <Reference Include="DNFCore, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Frameworks\doloro-networking-framework\libs\DNFCore.dll</HintPath>
+    </Reference>
+    <Reference Include="PipesProvider, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Frameworks\doloro-networking-framework\libs\PipesProvider.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -63,9 +75,13 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
-    <Reference Include="UniformClient, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="UniformDataOperator, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\doloro-networking-framework\libs\UniformClient.dll</HintPath>
+      <HintPath>..\..\..\Frameworks\uniform-data-operator\UniformDataOperator.dll</HintPath>
+    </Reference>
+    <Reference Include="UniformQueries, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Frameworks\doloro-networking-framework\libs\UniformQueries.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -76,10 +92,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="UI\Controls\CatalogButton.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="UI\Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -89,9 +101,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Networking\Client.cs" />
-    <Compile Include="UI\Controls\CatalogButton.xaml.cs">
-      <DependentUpon>CatalogButton.xaml</DependentUpon>
-    </Compile>
     <Compile Include="UI\Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -100,9 +109,13 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Resources\Thems\blueTheme.xaml">
+    <Page Include="Resources\Styles\LocalStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Styles\WpfHandlerStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -132,6 +145,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\THB Data Types\DP Data Types.csproj">
+      <Project>{51dacea7-a2be-4be2-82e8-8f6d9532f6d3}</Project>
+      <Name>DP Data Types</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\..\Frameworks\WpfHandler\WpfHandler.csproj">
       <Project>{9a1f206b-1f7a-43df-8a08-d86f26b8fc81}</Project>
       <Name>WpfHandler</Name>
@@ -159,6 +176,9 @@
     <Resource Include="Resources\Images\logout-24.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Thems\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

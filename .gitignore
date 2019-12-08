@@ -11,3 +11,5 @@
 **/publish
 *.user
 **/packages
+**/Debug
+**/Release
