@@ -58,6 +58,9 @@
     <Reference Include="UniformQueries">
       <HintPath>..\..\..\Frameworks\doloro-networking-framework\libs\UniformQueries.dll</HintPath>
     </Reference>
+    <Reference Include="WpfHandler">
+      <HintPath>..\..\..\Frameworks\wpf-handler\WpfHandler.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuditoryPlanner\Auditorium.cs" />

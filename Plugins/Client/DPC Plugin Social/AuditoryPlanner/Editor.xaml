@@ -215,7 +215,7 @@ limitations under the License.-->
                                       FontSize="15"
                                       Grid.Column="2"
                                       Foreground="{DynamicResource ResourceKey=textButtonForground}"
-                                      ClickCallback="InfoCallback"/>
+                                      Click="InfoCallback"/>
                 <Canvas Width="0.5" Background="{DynamicResource ResourceKey=controlMenuBackground}"/>
                 <Canvas Width="10.5" />
             </StackPanel>

@@ -28,7 +28,7 @@ using WpfHandler.UI;
 namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
 {
     [Foreground("WhiteSmoke")]
-    [AutoCollectionProperties(BackplateBackground = "#00A8E8", SpliterColor = "#007ea7")]
+    [AutoCollectionProperties(BackplateBackground = "#00A8E8", SpliterColor = "#007ea7", CornerRadius = 2)]
     public class LayoutPropertiesPanel : UIDescriptor
     {
         public enum Modes
@@ -88,13 +88,13 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
         public List<object> objCollection = new List<object>();
 
         [Order(-2)]
-        [AutoCollectionProperties(AddButtonVisibile = false)]
+        [AutoCollectionProperties(RemoveButtonVisibile = false, CornerRadius = 2)]
         public List<int> intCollection = new List<int>();
 
         [Order(-1)]
         [AutoCollectionProperties(
             BackplateBackground = "WhiteSmoke",
-            SpliterColor = "LightGray", 
+            SpliterColor = "LightGray",
             SplitersDraw = false)]
         public string[] stringArray = new string[] { "1", "2", "3", "4", "5" };
 
@@ -122,6 +122,17 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner.UIDescriptors
             ac.OnRemoveClick += delegate (object sender)
             {
                 System.Windows.MessageBox.Show("Custom remove");
+            };
+
+            var recatField = GetFieldByMember("intCollection");
+            recatField.ValueChanged += delegate (IGUIField objw)
+            {
+                //string message = "";
+                //foreach (int i in intCollection)
+                //{
+                //    message += i.ToString() + "\n";
+                //}
+                //System.Windows.MessageBox.Show(message);
             };
         }
     }

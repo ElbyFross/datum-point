@@ -122,7 +122,7 @@ namespace DatumPoint.Plugins.Social.AuditoryPlanner
         /// Callback for info button.
         /// </summary>
         /// <param name="sender">Not using.</param>
-        public void InfoCallback(object _)
+        public void InfoCallback(object _, RoutedEventArgs __)
         {
             #region Enable animation
             // Block input.

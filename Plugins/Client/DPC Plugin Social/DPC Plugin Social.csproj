@@ -46,6 +46,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WpfHandler">
+      <HintPath>..\..\..\Frameworks\wpf-handler\WpfHandler.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuditoryPlanner\Editor.xaml.cs">
@@ -147,10 +150,6 @@
     <None Include="Achievements\Readme.md" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Frameworks\WpfHandler\WpfHandler.csproj">
-      <Project>{9a1f206b-1f7a-43df-8a08-d86f26b8fc81}</Project>
-      <Name>WpfHandler</Name>
-    </ProjectReference>
     <ProjectReference Include="..\DPC Plugin Social Types\DPC Plugin Social Types.csproj">
       <Project>{53eb73f7-dcb0-4054-bbcf-c25f9e78f43b}</Project>
       <Name>DPC Plugin Social Types</Name>

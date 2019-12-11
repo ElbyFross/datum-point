@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Frameworks\WpfHandler\WpfHandler.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="AuthorityController">
       <HintPath>..\..\Frameworks\doloro-networking-framework\libs\AuthorityController.dll</HintPath>
     </Reference>
@@ -27,6 +23,9 @@
     </Reference>
     <Reference Include="UniformQueries">
       <HintPath>..\..\Frameworks\doloro-networking-framework\libs\UniformQueries.dll</HintPath>
+    </Reference>
+    <Reference Include="WpfHandler">
+      <HintPath>..\..\Frameworks\wpf-handler\WpfHandler.dll</HintPath>
     </Reference>
   </ItemGroup>
 

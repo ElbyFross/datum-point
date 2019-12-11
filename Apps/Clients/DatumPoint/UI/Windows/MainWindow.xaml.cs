@@ -252,7 +252,7 @@ namespace DatumPoint.UI.Windows
         /// Handle logon process.
         /// </summary>
         /// <param name="sender"></param>
-        private async void LogonScreen_LoginButton(object sender)
+        private async void LogonScreen_LoginButton(object sender, RoutedEventArgs e)
         {
             // Lock screen until lockon confiramtion. 
             overlay.Lock("Authorization", main);//, controlPanel, canvas, logonScreen);
@@ -372,7 +372,7 @@ namespace DatumPoint.UI.Windows
         /// Handle registration process.
         /// </summary>
         /// <param name="sender"></param>
-        private async void LogonScreen_RegistrationButton(object sender)
+        private async void LogonScreen_RegistrationButton(object sender, RoutedEventArgs e)
         {
             #region Validate data
             bool IsFieledsFilled = true; // Marker that contain surfacly data validation to prevent braking of base rules.

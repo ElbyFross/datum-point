@@ -46,6 +46,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WpfHandler">
+      <HintPath>..\..\..\Frameworks\wpf-handler\WpfHandler.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddOrder\Page.xaml.cs">
@@ -86,12 +89,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\Frameworks\WpfHandler\WpfHandler.csproj">
-      <Project>{9a1f206b-1f7a-43df-8a08-d86f26b8fc81}</Project>
-      <Name>WpfHandler</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
